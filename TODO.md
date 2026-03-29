@@ -5,21 +5,29 @@
 - [x] **Build `check_integrity.py`** — verify index, YouTube, Discourse, and local archive all agree on counts and status. Read-only, report-only.
 - [ ] **Reconcile legacy imports** — 60 Discourse topics (of 279) don't match video IDs in the index. Likely older posts imported under different parameters or non-standard formats. Need deep matching pass.
 - [ ] **Normalise transcript naming** — 12 transcripts use legacy `{video_id}.txt` instead of `{video_id}_transcript.txt`. Standardise naming.
-- [ ] **Problem video index** — build a visualization of YouTube-side issues (missing subtitles, fetch failures) shareable with the Dungeon Dive team.
+- [x] **Problem video index** — problem videos table added to health.html dashboard.
 
 ## Scheduled Task
 
-- [ ] **Full autonomous workflow** — the scheduled task should:
-  1. Run integrity check
-  2. Fetch new videos from YouTube
-  3. Select which pending videos to process (thematic groupings, priority)
-  4. Fetch transcripts
-  5. Generate promotional summaries
-  6. Post to Discourse with backdating
-  7. Create a Keeper post summarising the run, posted to the dedicated Dungeon Dive video archive topic
-- [ ] **Keeper post format** — define the format and target topic for automated Keeper posts. Target: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170 (post as reply)
+- [x] **Full autonomous workflow** — prompt written, scripts built, tested end-to-end locally (HeroQuest batch).
+- [x] **Keeper post format** — defined and working. Target: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170 (post as reply via `post_reply.py`).
+- [ ] **Cloud environment network access** — Anthropic cloud proxy blocks `dungeondive.quest` and `googleapis.com`. Need to resolve domain allowlisting for remote scheduled execution.
+- [ ] **Local schedule fallback** — if cloud can't be resolved, set up local `/schedule` as interim.
 
 ## Dashboard
 
-- [ ] **Problem videos section** — add a section to the dashboard showing videos with issues
-- [ ] **Archive coverage stats** — show transcript/post coverage percentages
+- [x] **Three-page dashboard** — Archive, Health, Content with Chart.js and Keeper art hero banners.
+- [x] **Problem videos section** — added to health.html.
+- [x] **Archive coverage stats** — coverage donuts on health.html, archive coverage card on index.html.
+- [ ] **Content analytics expansion** — only 34 of 1008 transcripts analyzed. Expand `transcript_analytics.json` as more transcripts are processed.
+
+## GitHub Integration (Next Session)
+
+- [ ] **GitHub Issues for problem videos** — when integrity check finds a video with no subtitles, auto-create a GitHub issue tagged `problem-video` with title, YouTube link, and the problem. The YouTube manager can see, fix, and close the issue. Next sync run detects the fix.
+- [ ] **PR-based sync workflow** — instead of committing to main, each sync run:
+  1. Creates a branch (`sync/YYYY-MM-DD-theme`)
+  2. Does all work on the branch
+  3. Opens a PR with the Keeper summary as the description
+  4. Auto-merges with `gh pr merge --auto --squash`
+  This creates a permanent, browsable record of each sync run with rich diffs and the Keeper narrative.
+- [ ] **Retire file-based TODO/CHANGELOG** — once GitHub Issues and PRs are the audit trail, these files become redundant. Migrate remaining TODO items to GitHub Issues.
