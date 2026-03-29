@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-03-29 — Project Bootstrap (Full Session Summary)
+
+### Migration
+- Git repo initialized from existing project, pushed to modius/dungeon-dive (public)
+- GitHub Pages dashboard live at modius.io/dungeon-dive/
+- 1008 videos indexed, scripts promoted to top-level, one-off artifacts gitignored
+
+### Scripts Built
+- `config_utils.py` — shared config loading with environment variable fallback for remote execution
+- `check_integrity.py` — 6-check integrity verification (index, archive, file validity, naming, dashboard sync, Discourse)
+- `post_reply.py` — post replies to existing Discourse topics (Keeper updates to topic 1170)
+- `update_dashboard.py` — programmatic dashboard stats and _raw data updates
+- All existing scripts updated to shared config loader
+
+### Sync Workflow
+- Full end-to-end workflow tested locally: fetch → transcribe → post → Keeper update → dashboard → commit
+- 8 HeroQuest videos imported as test batch, Keeper post live at topic 1170
+- Scheduled task prompt written and cloud environment created (blocked by proxy — needs follow-up)
+
+### Dashboard (3 pages)
+- **Archive** (index.html) — stacked year chart, archive status columns, 5 stat cards, search/filter
+- **Health** (health.html) — integrity cards, coverage donuts, sync timeline, problem videos, recommendations
+- **Content** (content.html) — top games, content categories, keeper timeline, import velocity
+- Keeper art hero banners on all pages (quest board, keeper at desk, hex dungeon map)
+- Chart.js for all visualizations
+
+### Outstanding
+- Cloud environment network access (proxy blocking Discourse + YouTube APIs from Anthropic infrastructure)
+- Problem video index visualization
+- Legacy import reconciliation (60 unmatched Discourse topics, 12 legacy transcript filenames)
+- Content analytics expansion (34 of 1008 transcripts analyzed so far)
+
 ## 2026-03-29 — HeroQuest Batch (8 videos)
 - Imported 8 HeroQuest videos: 6 Advanced HeroQuest (review + full let's play campaign) + 2 HeroQuest episodes
 - Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/19
