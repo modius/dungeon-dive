@@ -262,7 +262,7 @@
     <div class="stat-card imported">
       <div class="stat-label">Imported</div>
       <div class="stat-value green" id="stat-imported"></div>
-      <div class="stat-sub">206 transcripts &bull; 195 posts</div>
+      <div class="stat-sub">214 transcripts &bull; 203 posts</div>
     </div>
     <div class="stat-card pending">
       <div class="stat-label">Pending</div>
@@ -482,6 +482,8 @@ K4YFVRGWGEY|Top 5 Games with Unique Settings|2023-09-28|imported|227
 v9INdKeBJEI|Top 10 Solo RPG Things (games, tools, systems etc.)|2023-09-12|imported|1400
 rqcOPT_Dg7A|Runebound Retrospective - Episode 7 - Runebound 3rd edition|2023-09-10|imported|1352
 H-jiaEptrx0|A Curated Top 10 List - Produced by Tom Cohen|2023-08-31|imported|1393
+Zq-NFi8kxlo|HeroQuest - Episode 2 - the Hasbro / Avalon Hill expansions|2023-08-10|imported|1420
+qd6gmV0qrrk|HeroQuest - Episode 1 - My history with HQ / a look at the base games|2023-08-08|imported|1424
 SGOEY0I_FQA|Top 10 Solo Games (board and card games)|2023-07-18|imported|310
 sXRGp_ttFI4|More(k) Borg - Trapped Within & Glimpses of a Dying World (Mork Borg RPG)|2023-07-16|imported|1274
 lCTSpZlGMb4|Runebound Retrospective - Episode 6 - Small box expansions and brief buyer's advice|2023-07-11|imported|1350
@@ -564,8 +566,14 @@ VTszds8Y7rU|HEXplore It - Choices, Choices, Choices!|2020-05-03|imported|1407
 t1UIIjuMirY|Top Ten Adventure Games - Part Two|2020-05-01|imported|1399
 pKvwesJ8-t0|Top Ten Adventure Games - Part One|2020-04-29|imported|1398
 C9AMwVwgVPo|Top 10 “Normie” Games|2020-04-29|imported|1390
+SCwP-bR498o|Advanced HeroQuest - Let’s Play - Finale - Rolling All the Ones|2020-04-24|imported|1419
+kr9WECLcJWU|Advanced HeroQuest - Let’s Play - Part Three|2020-04-24|imported|1422
+pzLWWa96_lE|Advanced HeroQuest - Let’s Play - Part Two|2020-04-22|imported|1423
+tyRJESdSDm4|Advanced HeroQuest - Lets Play - Part One|2020-04-20|imported|1425
 dURDUSYCm68|Top 10 Dungeon Crawls - Part Two|2020-04-17|imported|1396
 h_v3GcIgbvM|Top 10 Dungeon Crawls - Part One|2020-04-16|imported|1397
+eK7uM-EeLIk|Advanced HeroQuest - Lets Play - Intro|2020-04-16|imported|1421
+7Odyxk-S9f0|Advanced HeroQuest (is Awesome)|2020-04-14|imported|1418
 xxC2s5JBYZM|Ash Versus the Land of Talisman - Part Four|2020-03-26|imported|1257
 MvMstvlNNzQ|Ash Versus the Land of Talisman - Part Three|2020-03-25|imported|1251
 CYn4JoQTD1I|Ash Versus the Land of Talisman - Part Two|2020-03-24|imported|1250
@@ -585,7 +593,7 @@ VKMMVQtaDrM|Dungeon Degenerates - Let's Play - Establishing a Base - Part 1|2018
 YA85ddRTnus|Dungeon Degenerates - Part One - Introduction, the story so far, and some set up|2018-05-14|imported|1377
 SeWXiEIm9oI|The Dungeon Dive Collection as of January, 2018|2018-01-01|imported|518`;
 
-const stats = { total: 1008, imported: 277, pending: 727, noTranscript: 4 };
+const stats = { total: 1008, imported: 285, pending: 719, noTranscript: 4 };
 const allVideos = _raw.split('\n').map(l => {
   const [id,title,date,status,topicId] = l.split('|');
   return {id,title,date,year:date.slice(0,4),status,topicId: topicId ? Number(topicId) : null};
