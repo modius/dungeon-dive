@@ -13,7 +13,7 @@ dashboard tracking progress.
 
 ## Live Dashboard
 
-<https://modius.github.io/dungeon-dive/>
+<https://modius.io/dungeon-dive/>
 
 ## External Services
 
@@ -21,7 +21,7 @@ dashboard tracking progress.
 |---------|-----|---------|
 | YouTube Channel | [The Dungeon Dive](https://www.youtube.com/@TheDungeonDive) (`UCKW6yMwL_aEu83g6DdjVfxw`) | Source content |
 | Discourse Forum | [dungeondive.quest](https://dungeondive.quest) | Target for posts (category ID 5) |
-| GitHub Pages | [modius.github.io/dungeon-dive](https://modius.github.io/dungeon-dive/) | Public dashboard |
+| GitHub Pages | [modius.github.io/dungeon-dive](https://modius.io/dungeon-dive/) | Public dashboard |
 
 ## Setup
 
