@@ -41,21 +41,20 @@ def count_archive_files(archive_dir: str) -> tuple:
     return tx_count, post_count
 
 
-def get_imported_videos(videos: list) -> list:
-    """Get all imported videos sorted by published_at descending."""
-    imported = [v for v in videos if v.get("status") == "imported" and v.get("discourse_topic_id")]
-    return sorted(imported, key=lambda v: v.get("published_at", ""), reverse=True)
+def get_all_videos_sorted(videos: list) -> list:
+    """Get all videos sorted by published_at descending."""
+    return sorted(videos, key=lambda v: v.get("published_at", ""), reverse=True)
 
 
-def build_raw_entries(imported_videos: list) -> str:
-    """Build the _raw pipe-delimited data for imported videos."""
+def build_raw_entries(videos: list) -> str:
+    """Build the _raw pipe-delimited data for all videos."""
     lines = []
-    for v in imported_videos:
+    for v in videos:
         vid = v["video_id"]
         title = v["title"].replace("|", "-")  # escape pipe in titles
         date = v["published_at"][:10]  # YYYY-MM-DD
-        status = "imported"
-        topic_id = v["discourse_topic_id"]
+        status = v.get("status", "pending")
+        topic_id = v.get("discourse_topic_id") or ""
         lines.append("{}|{}|{}|{}|{}".format(vid, title, date, status, topic_id))
     return "\\n".join(lines)
 
@@ -86,9 +85,9 @@ def update_dashboard(html: str, videos: list, archive_dir: str) -> str:
         html,
     )
 
-    # 3. Update _raw data with all imported videos
-    imported_videos = get_imported_videos(videos)
-    new_raw = build_raw_entries(imported_videos)
+    # 3. Update _raw data with all videos
+    all_videos = get_all_videos_sorted(videos)
+    new_raw = build_raw_entries(all_videos)
 
     html = re.sub(
         r"const _raw = `[^`]*`",
@@ -123,15 +122,13 @@ def main():
     # Show what changed
     status_counts = Counter(v.get("status") for v in videos)
     tx_count, post_count = count_archive_files(args.archive_dir)
-    imported_count = len(get_imported_videos(videos))
-
     print("Dashboard updates:")
     print("  Stats: total={}, imported={}, pending={}, noTranscript={}".format(
         len(videos), status_counts.get("imported", 0),
         status_counts.get("pending", 0), status_counts.get("no_transcript", 0)
     ))
     print("  Archive: {} transcripts, {} posts".format(tx_count, post_count))
-    print("  Video entries in _raw: {}".format(imported_count))
+    print("  Video entries in _raw: {}".format(len(videos)))
 
     if args.dry_run:
         print("\nDRY RUN — no changes written.")
