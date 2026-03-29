@@ -268,7 +268,9 @@
   <!-- Sync Activity Timeline -->
   <div class="chart-card">
     <div class="chart-title">Sync Activity Timeline</div>
-    <canvas id="chart-timeline" height="200"></canvas>
+    <div style="position: relative; height: 200px;">
+      <canvas id="chart-timeline"></canvas>
+    </div>
   </div>
 
   <!-- Problem Videos -->
@@ -522,16 +524,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 3. Sync Activity Timeline ---
   new Chart(document.getElementById('chart-timeline'), {
-    type: 'scatter',
+    type: 'bar',
     data: {
+      labels: BATCH_DATA.map(b => b.date),
       datasets: [{
         label: 'Videos posted',
-        data: BATCH_DATA.map(b => ({ x: b.date, y: b.count })),
+        data: BATCH_DATA.map(b => b.count),
         backgroundColor: 'rgba(129, 140, 248, 0.7)',
         borderColor: '#818cf8',
         borderWidth: 1,
-        pointRadius: BATCH_DATA.map(b => Math.max(4, Math.sqrt(b.count) * 3)),
-        pointHoverRadius: BATCH_DATA.map(b => Math.max(6, Math.sqrt(b.count) * 3 + 2))
+        borderRadius: 4
       }]
     },
     options: {
@@ -539,10 +541,8 @@ document.addEventListener('DOMContentLoaded', () => {
       maintainAspectRatio: false,
       scales: {
         x: {
-          type: 'category',
-          labels: [...new Set(BATCH_DATA.map(b => b.date))],
           grid: { color: '#2e3347' },
-          ticks: { color: '#5c6078', font: { size: 11 }, maxRotation: 45 }
+          ticks: { color: '#5c6078', font: { size: 10 }, maxRotation: 45 }
         },
         y: {
           beginAtZero: true,
@@ -558,11 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
           titleColor: '#e2e4eb',
           bodyColor: '#8b8fa3',
           borderColor: '#2e3347',
-          borderWidth: 1,
-          callbacks: {
-            title: items => items[0].raw.x,
-            label: item => item.raw.y + ' videos'
-          }
+          borderWidth: 1
         }
       }
     }
