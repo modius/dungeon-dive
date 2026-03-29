@@ -21,6 +21,7 @@
     --amber-dim: #78350f;
     --red: #f87171;
     --purple: #a78bfa;
+    --gold: #d4a853;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -32,48 +33,34 @@
   }
   .container { max-width: 1100px; margin: 0 auto; }
 
-  /* Navigation */
+  /* Hero */
+  .hero {
+    position: relative; height: 220px; margin: -24px -24px 28px -24px;
+    background-size: cover; background-position: center;
+    display: flex; align-items: flex-end; padding: 24px 32px;
+    border-radius: 0 0 16px 16px;
+  }
+  .hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(15,17,23,0.2) 0%, rgba(15,17,23,0.8) 65%, rgba(15,17,23,1) 100%);
+    border-radius: 0 0 16px 16px;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; width: 100%; }
+  .hero h1 { font-size: 32px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; margin-bottom: 4px; }
+  .hero .subtitle { color: var(--text-dim); font-size: 14px; }
   .nav {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 28px;
-    padding: 10px 16px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    position: absolute; top: 16px; left: 0; right: 0; z-index: 2;
+    display: flex; gap: 6px; justify-content: center; align-items: center;
   }
   .nav a {
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 8px;
-    color: var(--text-dim);
-    transition: all 0.2s;
+    color: rgba(255,255,255,0.7); text-decoration: none; padding: 7px 14px;
+    border-radius: 8px; font-size: 12px; letter-spacing: 0.3px;
+    backdrop-filter: blur(8px); background: rgba(0,0,0,0.3); transition: all 0.2s;
+    border: 1px solid transparent;
   }
-  .nav a:hover { color: var(--text); background: var(--surface2); }
-  .nav a.active { color: var(--accent); background: rgba(129, 140, 248, 0.1); }
-  .nav .sep {
-    color: var(--text-faint);
-    margin: 0 6px;
-    font-size: 13px;
-    user-select: none;
-  }
-  .nav .spacer { flex: 1; }
-
-  /* Header */
-  .header { text-align: center; margin-bottom: 32px; }
-  .header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, var(--accent), var(--purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 6px;
-  }
-  .header .subtitle { color: var(--text-dim); font-size: 14px; }
+  .nav a:hover { color: #fff; background: rgba(0,0,0,0.5); }
+  .nav a.active { color: #fff; background: rgba(0,0,0,0.5); border-bottom: 2px solid var(--gold); }
+  .nav .sep { color: rgba(255,255,255,0.2); font-size: 12px; }
 
   /* Summary cards */
   .summary-cards {
@@ -244,20 +231,19 @@
 <body>
 <div class="container">
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <a href="index.html">Archive</a>
-    <a href="health.html" class="active">Health</a>
-    <a href="content.html">Content</a>
-    <span class="sep">|</span>
-    <a href="https://dungeondive.quest/" target="_blank" rel="noopener">Discourse</a>
-    <a href="https://github.com/modius/dungeon-dive" target="_blank" rel="noopener">GitHub</a>
-  </nav>
-
-  <!-- Header -->
-  <div class="header">
-    <h1>System Health</h1>
-    <p class="subtitle">Dungeon Dive Video Archive integrity and coverage report</p>
+  <div class="hero" style="background-image: url('images/hero-health.jpg')">
+    <nav class="nav">
+      <a href="index.html">Archive</a>
+      <a href="health.html" class="active">Health</a>
+      <a href="content.html">Content</a>
+      <span class="sep">|</span>
+      <a href="https://dungeondive.quest" target="_blank">Discourse</a>
+      <a href="https://github.com/modius/dungeon-dive" target="_blank">GitHub</a>
+    </nav>
+    <div class="hero-content">
+      <h1>System Health</h1>
+      <div class="subtitle">Dungeon Dive Video Archive</div>
+    </div>
   </div>
 
   <!-- Integrity Summary Cards -->
