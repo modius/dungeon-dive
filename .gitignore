@@ -1,0 +1,39 @@
+# API credentials
+config.json
+
+# Transient working directories
+pending_imports/*
+!pending_imports/.gitkeep
+ready_to_post/*
+!ready_to_post/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# One-off/deprecated files (kept locally, not committed)
+sync-status.jsx
+transcript_analytics.json
+discourse_topics_export.json
+*.csv
+fetch_*.sh
+fix_sf_books_post.py
+post_body.txt
+test_write.txt
+
+# Original skill directory (contents promoted to top-level)
+youtube-discourse-sync/
+
+# Root-level originals (promoted copies live in their new locations)
+keeper_post_4ad.md
+sync-status.html
+
+# Skill file (Claude Code internal)
+youtube-discourse-sync.skill
+
+# Migration plan (superseded by repo docs)
+MIGRATION-PLAN.md
+PROJECT.md

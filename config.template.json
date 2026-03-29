@@ -1,0 +1,13 @@
+{
+  "youtube": {
+    "api_key": "YOUR_YOUTUBE_API_KEY",
+    "channel_id": "UC_DUNGEON_DIVE_CHANNEL_ID"
+  },
+  "discourse": {
+    "base_url": "https://dungeondive.quest",
+    "api_key": "YOUR_DISCOURSE_API_KEY",
+    "api_username": "archive_bot",
+    "post_as_username": "archive_bot",
+    "category_id": 5
+  }
+}
