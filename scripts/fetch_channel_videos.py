@@ -20,10 +20,7 @@ except ImportError:
     sys.exit(1)
 
 
-def load_config(config_path: str) -> dict:
-    """Load configuration from JSON file."""
-    with open(config_path) as f:
-        return json.load(f)
+from config_utils import load_config
 
 
 def load_index(index_path: str) -> dict:

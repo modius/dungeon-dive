@@ -27,9 +27,7 @@ except ImportError:
     requests = None
 
 
-def load_config(config_path: str) -> dict:
-    with open(config_path) as f:
-        return json.load(f)
+from config_utils import load_config
 
 
 def load_index(index_path: str) -> dict:

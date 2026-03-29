@@ -38,9 +38,7 @@ BATCH3_MAPPING = {
     "zceKtRTdgSo": 1232,
 }
 
-def load_config(config_path):
-    with open(config_path) as f:
-        return json.load(f)
+from config_utils import load_config
 
 def load_video_index(index_path):
     with open(index_path) as f:
