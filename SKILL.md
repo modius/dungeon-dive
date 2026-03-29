@@ -237,7 +237,7 @@ What dead CCG do you wish had been released as a complete boxed game instead?
 
 - **Length**: 2-4 paragraphs (150-250 words)
 - **Tone**: Engaging, community-focused, slightly witty
-- **Daniel mention**: First reference MUST be "Daniel (@dungeondive)" — subsequent mentions just "Daniel"
+- **Daniel mention**: Every post MUST use "Daniel (@dungeondive)" on its first mention of Daniel. Subsequent mentions within the same post can just use "Daniel". This applies to EVERY post independently — not once per batch.
 - **Include**: Topics covered, highlights, why viewers would enjoy
 - **Avoid**: Spoilers, timestamps, excessive detail
 - **Closing**: ALWAYS end with `----` followed by a discussion-prompting question related to the video content
