@@ -21,6 +21,15 @@
 - [x] **Archive coverage stats** — coverage donuts on health.html, archive coverage card on index.html.
 - [ ] **Content analytics expansion** — only 34 of 1008 transcripts analyzed. Expand `transcript_analytics.json` as more transcripts are processed.
 
+## Taxonomy & Classification
+
+- [ ] **Analyse transcripts for Dungeon Dive taxonomy** — process all available transcripts to extract a consolidated set of terms, topics, game names, and content types. Build a tight taxonomy for classifying posts (e.g., review, let's play, unboxing, interview, top 10, digital dive, etc.).
+- [ ] **Discourse category mapping** — verify videos are posted to the correct Discourse subcategories. Interviews should go under GabFest, digital games under Digital Dive, etc. Cross-reference the taxonomy against existing category assignments and flag mismatches.
+
+## Archive Backfill
+
+- [ ] **Backfill missing transcripts** — 71 imported videos have no transcript in the local archive (processed before archiving was automated). Run a background task to re-fetch these transcripts from YouTube and add them to `archive/transcripts/`. This also feeds the taxonomy analysis.
+
 ## GitHub Integration (Next Session)
 
 - [ ] **GitHub Issues for problem videos** — when integrity check finds a video with no subtitles, auto-create a GitHub issue tagged `problem-video` with title, YouTube link, and the problem. The YouTube manager can see, fix, and close the issue. Next sync run detects the fix.
