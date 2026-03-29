@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Analytics — Dungeon Dive Video Archive</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #232733;
+    --border: #2e3347;
+    --text: #e2e4eb;
+    --text-dim: #8b8fa3;
+    --text-faint: #5c6078;
+    --accent: #818cf8;
+    --green: #34d399;
+    --green-dim: #064e3b;
+    --amber: #fbbf24;
+    --amber-dim: #78350f;
+    --red: #f87171;
+    --purple: #a78bfa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Navigation */
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 32px;
+    padding: 10px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .navbar a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .navbar a:hover { color: var(--text); background: var(--surface2); }
+  .navbar a.active { color: var(--accent); background: rgba(129, 140, 248, 0.1); font-weight: 600; }
+  .navbar .sep { color: var(--text-faint); margin: 0 4px; font-size: 14px; }
+  .navbar .spacer { flex: 1; }
+
+  /* Header */
+  .header { text-align: center; margin-bottom: 32px; }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+  }
+  .header .subtitle { color: var(--text-dim); font-size: 14px; }
+
+  /* Cards */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+  .chart-title {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .chart-note {
+    font-size: 12px;
+    color: var(--text-faint);
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  /* Two-column layout for categories + timeline */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 768px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+
+  /* Timeline */
+  .timeline { list-style: none; }
+  .timeline li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline .tl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .timeline .tl-content { flex: 1; }
+  .timeline .tl-theme {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .timeline .tl-theme a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .timeline .tl-theme a:hover { color: var(--accent); }
+  .timeline .tl-meta {
+    font-size: 12px;
+    color: var(--text-dim);
+    display: flex;
+    gap: 12px;
+  }
+  .timeline .tl-count {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Canvas sizing */
+  .chart-canvas-wrap { position: relative; width: 100%; }
+  .chart-canvas-wrap.bar-chart { height: 420px; }
+  .chart-canvas-wrap.donut-chart { height: 320px; }
+  .chart-canvas-wrap.line-chart { height: 260px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <nav class="navbar">
+    <a href="index.html">Archive</a>
+    <a href="health.html">Health</a>
+    <a href="content.html" class="active">Content</a>
+    <span class="sep">|</span>
+    <a href="https://dungeondive.quest/" target="_blank" rel="noopener">Discourse</a>
+    <a href="https://github.com/modius/dungeon-dive" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+
+  <div class="header">
+    <h1>Content Analytics</h1>
+    <p class="subtitle">Insights from the Dungeon Dive Video Archive</p>
+  </div>
+
+  <!-- Top Games Chart -->
+  <div class="chart-card">
+    <div class="chart-title">Most Mentioned Games</div>
+    <div class="chart-canvas-wrap bar-chart">
+      <canvas id="topGamesChart"></canvas>
+    </div>
+    <p class="chart-note">Based on 34 analyzed transcripts</p>
+  </div>
+
+  <!-- Categories + Keeper Timeline -->
+  <div class="grid-2">
+    <div class="chart-card">
+      <div class="chart-title">Content Categories</div>
+      <div class="chart-canvas-wrap donut-chart">
+        <canvas id="categoriesChart"></canvas>
+      </div>
+      <p class="chart-note">Based on 34 analyzed transcripts</p>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Keeper Post Timeline</div>
+      <ul class="timeline" id="keeperTimeline"></ul>
+    </div>
+  </div>
+
+  <!-- Publishing Velocity -->
+  <div class="chart-card">
+    <div class="chart-title">Import Velocity (by week)</div>
+    <div class="chart-canvas-wrap line-chart">
+      <canvas id="velocityChart"></canvas>
+    </div>
+    <p class="chart-note">Tracking acceleration of archive imports over time. Analytics are based on 34 analyzed transcripts and will grow as more are processed.</p>
+  </div>
+
+</div>
+
+<script>
+// Embedded data
+const topGames = [["Vantage",14],["Rove",10],["Talisman",7],["Warhammer Quest",5],["Arkham Horror",4],["Four Against Darkness",3],["Shadows of Brimstone",3],["Runebound",3],["Gathering Gloom",3],["Legendary",3],["Scarlet Heroes",2],["Fallen Land",2],["Witcher Adventure Game",2],["Restless",2],["HeroQuest",2]];
+
+const categories = {"review":28,"cooperative":23,"dungeon-crawler":18,"adventure-game":17,"digital":16,"campaign":11,"crowdfund":11,"deck-builder":10,"solo-rpg":10,"house-rules":7,"top-10":6,"dice-game":5,"hex-crawl":3,"press-your-luck":2};
+
+const keeperPosts = [
+  {"theme":"Four Against Darkness","date":"2026-03-29","count":0,"note":"12 episodes"},
+  {"theme":"Dungeon Degenerates","date":"2026-03-29","count":11},
+  {"theme":"HEXplore It","date":"2026-03-29","count":10},
+  {"theme":"Sword & Sorcery Saga","date":"2026-03-29","count":11},
+  {"theme":"Top 10 Lists","date":"2026-03-29","count":12},
+  {"theme":"HeroQuest","date":"2026-03-29","count":8}
+];
+
+const weeklyImports = [["2026-01-26",36],["2026-02-02",71],["2026-02-09",26],["2026-02-23",15],["2026-03-09",35],["2026-03-23",33]];
+
+// Chart defaults
+Chart.defaults.color = '#8b8fa3';
+Chart.defaults.borderColor = '#2e3347';
+Chart.defaults.font.family = "'Inter', system-ui, -apple-system, sans-serif";
+
+// 1. Top Games — horizontal bar
+const topGamesCtx = document.getElementById('topGamesChart').getContext('2d');
+new Chart(topGamesCtx, {
+  type: 'bar',
+  data: {
+    labels: topGames.map(g => g[0]),
+    datasets: [{
+      data: topGames.map(g => g[1]),
+      backgroundColor: '#818cf8',
+      borderRadius: 4,
+      barThickness: 18
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1a1d27',
+        borderColor: '#2e3347',
+        borderWidth: 1,
+        titleColor: '#e2e4eb',
+        bodyColor: '#e2e4eb',
+        padding: 10,
+        cornerRadius: 8,
+        callbacks: {
+          label: ctx => ctx.raw + ' mentions'
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(46,51,71,0.5)' },
+        ticks: { stepSize: 2 }
+      },
+      y: {
+        grid: { display: false },
+        ticks: { font: { size: 12 } }
+      }
+    }
+  }
+});
+
+// 2. Categories — donut
+const catLabels = Object.keys(categories).map(c => c.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()));
+const catValues = Object.values(categories);
+const catColors = [
+  '#818cf8', '#a78bfa', '#c084fc', '#e879f9', '#f472b6',
+  '#fb7185', '#f87171', '#fbbf24', '#34d399', '#2dd4bf',
+  '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa'
+];
+const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
+new Chart(categoriesCtx, {
+  type: 'doughnut',
+  data: {
+    labels: catLabels,
+    datasets: [{
+      data: catValues,
+      backgroundColor: catColors,
+      borderColor: '#1a1d27',
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '55%',
+    plugins: {
+      legend: {
+        position: 'right',
+        labels: {
+          color: '#8b8fa3',
+          padding: 8,
+          font: { size: 11 },
+          usePointStyle: true,
+          pointStyleWidth: 10
+        }
+      },
+      tooltip: {
+        backgroundColor: '#1a1d27',
+        borderColor: '#2e3347',
+        borderWidth: 1,
+        titleColor: '#e2e4eb',
+        bodyColor: '#e2e4eb',
+        padding: 10,
+        cornerRadius: 8,
+        callbacks: {
+          label: ctx => ctx.label + ': ' + ctx.raw + ' videos'
+        }
+      }
+    }
+  }
+});
+
+// 3. Keeper Post Timeline
+const tl = document.getElementById('keeperTimeline');
+const archiveUrl = 'https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170';
+keeperPosts.forEach(p => {
+  const videoText = p.count > 0 ? p.count + ' videos linked' : (p.note || 'Series catalogued');
+  const li = document.createElement('li');
+  li.innerHTML = `
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <div class="tl-theme"><a href="${archiveUrl}" target="_blank" rel="noopener">${p.theme}</a></div>
+      <div class="tl-meta">
+        <span>${p.date}</span>
+        <span class="tl-count">${videoText}</span>
+      </div>
+    </div>
+  `;
+  tl.appendChild(li);
+});
+
+// 4. Publishing Velocity — line chart
+const velCtx = document.getElementById('velocityChart').getContext('2d');
+const weekLabels = weeklyImports.map(w => {
+  const d = new Date(w[0] + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+});
+new Chart(velCtx, {
+  type: 'line',
+  data: {
+    labels: weekLabels,
+    datasets: [{
+      label: 'Imports',
+      data: weeklyImports.map(w => w[1]),
+      borderColor: '#818cf8',
+      backgroundColor: 'rgba(129, 140, 248, 0.1)',
+      fill: true,
+      tension: 0.3,
+      pointBackgroundColor: '#818cf8',
+      pointBorderColor: '#1a1d27',
+      pointBorderWidth: 2,
+      pointRadius: 5
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1a1d27',
+        borderColor: '#2e3347',
+        borderWidth: 1,
+        titleColor: '#e2e4eb',
+        bodyColor: '#e2e4eb',
+        padding: 10,
+        cornerRadius: 8,
+        callbacks: {
+          label: ctx => ctx.raw + ' imports'
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(46,51,71,0.5)' },
+        ticks: { font: { size: 12 } }
+      },
+      y: {
+        grid: { color: 'rgba(46,51,71,0.5)' },
+        beginAtZero: true,
+        ticks: { stepSize: 10 }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

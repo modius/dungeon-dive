@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dungeon Dive Video Archive</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <style>
   :root {
     --bg: #0f1117;
@@ -30,7 +31,7 @@
     padding: 24px;
   }
   .container { max-width: 1100px; margin: 0 auto; }
-  
+
   /* Header */
   .header { text-align: center; margin-bottom: 32px; }
   .header h1 {
@@ -43,7 +44,13 @@
     margin-bottom: 6px;
   }
   .header .subtitle { color: var(--text-dim); font-size: 14px; }
-  
+
+  /* Nav */
+  .nav { display: flex; gap: 8px; justify-content: center; margin-bottom: 24px; align-items: center; }
+  .nav a { color: var(--text-dim); text-decoration: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; transition: all 0.2s; }
+  .nav a:hover, .nav a.active { color: var(--text); background: var(--surface2); }
+  .nav .sep { color: var(--border); }
+
   /* Progress bar */
   .progress-wrap {
     background: var(--surface);
@@ -59,9 +66,9 @@
     border-radius: 12px;
     transition: width 0.6s ease;
   }
-  
+
   /* Stat cards */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
+  .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 28px; }
   .stat-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -79,14 +86,16 @@
   .stat-card.total::before { background: var(--accent); }
   .stat-card.imported::before { background: var(--green); }
   .stat-card.pending::before { background: var(--amber); }
+  .stat-card.no-transcript::before { background: var(--red); }
   .stat-card.archive::before { background: var(--purple); }
   .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); margin-bottom: 6px; }
   .stat-value { font-size: 32px; font-weight: 700; letter-spacing: -1px; }
   .stat-value.green { color: var(--green); }
   .stat-value.amber { color: var(--amber); }
+  .stat-value.red { color: var(--red); }
   .stat-value.purple { color: var(--purple); }
   .stat-sub { font-size: 11px; color: var(--text-faint); margin-top: 4px; }
-  
+
   /* Year chart */
   .chart-card {
     background: var(--surface);
@@ -96,31 +105,8 @@
     margin-bottom: 28px;
   }
   .chart-title { font-size: 13px; color: var(--text-dim); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.8px; }
-  .chart { display: flex; align-items: flex-end; gap: 8px; height: 120px; }
-  .chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
-  .chart-bar-wrap { width: 100%; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; position: relative; }
-  .chart-bar {
-    width: 100%;
-    border-radius: 4px 4px 0 0;
-    position: relative;
-    transition: all 0.3s;
-    cursor: pointer;
-    min-height: 2px;
-  }
-  .chart-bar-imported {
-    background: var(--green);
-    opacity: 0.9;
-  }
-  .chart-bar-pending {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
-  }
-  .chart-bar:hover { opacity: 1; filter: brightness(1.2); }
-  .chart-label { font-size: 11px; color: var(--text-faint); }
-  .chart-count { font-size: 10px; color: var(--text-dim); position: absolute; top: -16px; width: 100%; text-align: center; }
-  
+  .chart-container { position: relative; height: 200px; }
+
   /* Filters */
   .filters {
     background: var(--surface);
@@ -165,7 +151,7 @@
   }
   select:focus { border-color: var(--accent); }
   .result-count { font-size: 13px; color: var(--text-faint); white-space: nowrap; }
-  
+
   /* Table */
   .table-wrap {
     background: var(--surface);
@@ -188,9 +174,12 @@
   td { padding: 12px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
   tr:last-child td { border-bottom: none; }
   tr:hover { background: rgba(129, 140, 248, 0.04); }
-  .title-cell { max-width: 500px; }
+  .title-cell { max-width: 400px; }
   .date-cell { color: var(--text-dim); white-space: nowrap; font-variant-numeric: tabular-nums; }
-  
+  .check-cell { text-align: center; font-size: 14px; }
+  .check-yes { color: var(--green); }
+  .check-no { color: var(--text-faint); }
+
   .badge {
     display: inline-flex;
     align-items: center;
@@ -205,13 +194,13 @@
   .badge-imported { background: #052e23; color: #6ee7b7; }
   .badge-pending { background: var(--amber-dim); color: var(--amber); }
   .badge-no_transcript { background: #1e1b4b; color: #818cf8; }
-  
+
   .link { text-decoration: none; font-weight: 600; font-size: 12px; letter-spacing: 0.3px; }
   .link-yt { color: var(--red); margin-right: 12px; }
   .link-yt:hover { color: #fca5a5; }
   .link-forum { color: var(--accent); }
   .link-forum:hover { color: #a5b4fc; }
-  
+
   /* Pagination */
   .pagination {
     display: flex;
@@ -233,13 +222,34 @@
   .page-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
   .page-btn:disabled { opacity: 0.3; cursor: not-allowed; }
   .page-info { font-size: 13px; color: var(--text-dim); }
-  
+
+  /* Chart.js legend styling */
+  .chart-legend {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  .chart-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .chart-legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
     .stats { grid-template-columns: repeat(2, 1fr); }
     .filters { flex-direction: column; }
     .search-input { min-width: 100%; }
     .title-cell { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .chart-container { height: 160px; }
   }
 </style>
 </head>
@@ -249,11 +259,20 @@
     <h1>Dungeon Dive Video Archive</h1>
     <p class="subtitle" id="subtitle"></p>
   </div>
-  
+
+  <div class="nav">
+    <a href="#" class="active">Archive</a>
+    <a href="#health" onclick="showSection('health')">Health</a>
+    <a href="#content" onclick="showSection('content')">Content</a>
+    <span class="sep">|</span>
+    <a href="https://dungeondive.quest" target="_blank">Discourse</a>
+    <a href="https://github.com/modius/dungeon-dive" target="_blank">GitHub</a>
+  </div>
+
   <div class="progress-wrap">
     <div class="progress-bar" id="progress"></div>
   </div>
-  
+
   <div class="stats">
     <div class="stat-card total">
       <div class="stat-label">Total Videos</div>
@@ -262,23 +281,35 @@
     <div class="stat-card imported">
       <div class="stat-label">Imported</div>
       <div class="stat-value green" id="stat-imported"></div>
-      <div class="stat-sub">214 transcripts &bull; 203 posts</div>
+      <div class="stat-sub" id="stat-imported-sub"></div>
     </div>
     <div class="stat-card pending">
       <div class="stat-label">Pending</div>
       <div class="stat-value amber" id="stat-pending"></div>
     </div>
+    <div class="stat-card no-transcript">
+      <div class="stat-label">No Transcript</div>
+      <div class="stat-value red" id="stat-notranscript"></div>
+    </div>
     <div class="stat-card archive">
-      <div class="stat-label">Complete</div>
+      <div class="stat-label">Archive Coverage</div>
       <div class="stat-value purple" id="stat-pct"></div>
+      <div class="stat-sub" id="stat-coverage-sub"></div>
     </div>
   </div>
-  
+
   <div class="chart-card">
     <div class="chart-title">Videos by Year</div>
-    <div class="chart" id="chart"></div>
+    <div class="chart-container">
+      <canvas id="yearChart"></canvas>
+    </div>
+    <div class="chart-legend">
+      <div class="chart-legend-item"><div class="chart-legend-swatch" style="background:#34d399"></div>Imported</div>
+      <div class="chart-legend-item"><div class="chart-legend-swatch" style="background:#fbbf24"></div>Pending</div>
+      <div class="chart-legend-item"><div class="chart-legend-swatch" style="background:#f87171"></div>No Transcript</div>
+    </div>
   </div>
-  
+
   <div class="filters">
     <input type="text" class="search-input" id="search" placeholder="Search videos..." />
     <select id="yearFilter"><option value="all">All Years</option></select>
@@ -286,10 +317,17 @@
       <option value="all">All Status</option>
       <option value="imported">Imported</option>
       <option value="pending">Pending</option>
+      <option value="no_transcript">No Transcript</option>
+    </select>
+    <select id="archiveFilter">
+      <option value="all">Archive Status</option>
+      <option value="complete">Complete</option>
+      <option value="partial">Partial</option>
+      <option value="none">None</option>
     </select>
     <span class="result-count" id="resultCount"></span>
   </div>
-  
+
   <div class="table-wrap">
     <table>
       <thead>
@@ -297,6 +335,8 @@
           <th>Title</th>
           <th style="width:90px">Date</th>
           <th style="width:100px">Status</th>
+          <th style="width:50px" title="Has Transcript">Trans.</th>
+          <th style="width:50px" title="Has Post">Post</th>
           <th style="width:110px">Links</th>
         </tr>
       </thead>
@@ -307,7 +347,8 @@
 </div>
 
 <script>
-const _raw = `5b4RSDrkc8I|Aberration - Gothic Horror Tower Defense (Review)|2026-03-25|pending|
+const _raw = `
+5b4RSDrkc8I|Aberration - Gothic Horror Tower Defense (Review)|2026-03-25|pending|
 Ati51CQqpKY|The Restless - The Masterwork of an Outsider (Review)|2026-03-22|imported|1403
 UxyCkiufJyg|The Lands of Galzyr: Dreams & Mysteries Expansion, Discussion, and Gameplay|2026-03-18|imported|1404
 f1eFQJocAow|Dungeon Degenerates: Dirty Deeds Review and a Look at Moon Madness (Review)|2026-03-15|imported|1379
@@ -1316,11 +1357,28 @@ Om4MsEtTrnw|City of Chaos: Introduction|2018-01-21|pending|
 SeWXiEIm9oI|The Dungeon Dive Collection as of January, 2018|2018-01-01|imported|518
 DohrPYUe11o|Slowquest: Quest 1: The Goblin Guard - Review and Let's Read|2017-12-30|pending|`;
 
-const stats = { total: 1008, imported: 285, pending: 719, noTranscript: 4 };
+const _archiveData = {"-Fkj0aK2dO8":{"hasTranscript":true,"hasPost":true},"0A3d0lovA9c":{"hasTranscript":true,"hasPost":false},"0BvJ_8VSpAQ":{"hasTranscript":true,"hasPost":true},"0JFuxpSFiLo":{"hasTranscript":true,"hasPost":true},"0Mur3o4gJn4":{"hasTranscript":true,"hasPost":true},"0dqRFbgCuVg":{"hasTranscript":true,"hasPost":true},"1k6Bzkiw48o":{"hasTranscript":true,"hasPost":true},"24Ib0j0xDxE":{"hasTranscript":true,"hasPost":true},"2JqFe4tSOyk":{"hasTranscript":true,"hasPost":false},"2lZK2lUb6ew":{"hasTranscript":true,"hasPost":true},"2qLT-wnFaP0":{"hasTranscript":true,"hasPost":true},"2qron8l5-WA":{"hasTranscript":true,"hasPost":true},"3Nh8y-oesJ0":{"hasTranscript":true,"hasPost":true},"4tli9Q4KZ3w":{"hasTranscript":true,"hasPost":true},"5sVEspUzpGY":{"hasTranscript":true,"hasPost":true},"6Bmjis1ofzE":{"hasTranscript":true,"hasPost":true},"6TcR8BFdyJM":{"hasTranscript":true,"hasPost":true},"6Xmd08nL2G4":{"hasTranscript":true,"hasPost":true},"6iCAxQUz4aQ":{"hasTranscript":true,"hasPost":true},"6l3bIPltt3A":{"hasTranscript":true,"hasPost":true},"7FZrM9iMsCM":{"hasTranscript":true,"hasPost":false},"7IZ5eCJ3Vqc":{"hasTranscript":true,"hasPost":true},"7Odyxk-S9f0":{"hasTranscript":true,"hasPost":true},"7dlhZLngdvM":{"hasTranscript":true,"hasPost":true},"7sRKccOoPbY":{"hasTranscript":true,"hasPost":true},"7ufObjxCBKI":{"hasTranscript":true,"hasPost":true},"7zHiFWEJfZY":{"hasTranscript":true,"hasPost":false},"8pRl03u-hjI":{"hasTranscript":true,"hasPost":true},"8tmQ6wySUSI":{"hasTranscript":true,"hasPost":true},"900BOlBTFNg":{"hasTranscript":true,"hasPost":true},"9O3XYd0F6VI":{"hasTranscript":true,"hasPost":true},"9_6yRxY8iiY":{"hasTranscript":true,"hasPost":true},"AcR00ZHbVKU":{"hasTranscript":true,"hasPost":true},"Ati51CQqpKY":{"hasTranscript":true,"hasPost":true},"C5ETgNOq1gQ":{"hasTranscript":true,"hasPost":true},"C9AMwVwgVPo":{"hasTranscript":true,"hasPost":true},"CMh4ttABaiE":{"hasTranscript":true,"hasPost":true},"CSTFP0gKnd8":{"hasTranscript":true,"hasPost":false},"CYn4JoQTD1I":{"hasTranscript":true,"hasPost":true},"ClAz_Etby1k":{"hasTranscript":true,"hasPost":true},"Cpa04rQyl18":{"hasTranscript":true,"hasPost":true},"Cy2qJ0Win1I":{"hasTranscript":true,"hasPost":true},"D-dgFUvl7YA":{"hasTranscript":true,"hasPost":true},"D50nmITTLp8":{"hasTranscript":true,"hasPost":true},"Dcu_IubxG8I":{"hasTranscript":true,"hasPost":true},"DiLjnRqx0xo":{"hasTranscript":true,"hasPost":true},"FAfQTG-v0Cs":{"hasTranscript":true,"hasPost":true},"FG5G2G-XjhE":{"hasTranscript":true,"hasPost":true},"Gjf4AsYGwU8":{"hasTranscript":true,"hasPost":true},"GqWbo7Uo8Ec":{"hasTranscript":true,"hasPost":true},"Gx6Z5Aj875s":{"hasTranscript":true,"hasPost":true},"H-jiaEptrx0":{"hasTranscript":true,"hasPost":true},"HBhaj0_Zm34":{"hasTranscript":true,"hasPost":true},"I1sccj6fjQs":{"hasTranscript":true,"hasPost":true},"IAdR2JdoGr8":{"hasTranscript":true,"hasPost":true},"IHsdTOEuG4g":{"hasTranscript":true,"hasPost":true},"IQQViyty9zM":{"hasTranscript":true,"hasPost":true},"IXOacyfD7V4":{"hasTranscript":true,"hasPost":true},"Jl2XOwlw5Z4":{"hasTranscript":true,"hasPost":false},"JpfqYvUYNr8":{"hasTranscript":true,"hasPost":true},"KrjMNWiU52A":{"hasTranscript":true,"hasPost":true},"KtjAJuKUbDM":{"hasTranscript":true,"hasPost":true},"LD8rxn2RFNE":{"hasTranscript":true,"hasPost":true},"M61DCig7ZJY":{"hasTranscript":true,"hasPost":true},"MRxgJpEyabo":{"hasTranscript":true,"hasPost":true},"MVWyRSiH4uQ":{"hasTranscript":true,"hasPost":true},"MvMstvlNNzQ":{"hasTranscript":true,"hasPost":true},"N9CZswDtnCA":{"hasTranscript":true,"hasPost":true},"NJelRHbyeWw":{"hasTranscript":true,"hasPost":true},"Nhb3_wu7Ddk":{"hasTranscript":true,"hasPost":true},"NvFqtHcCCXs":{"hasTranscript":true,"hasPost":true},"O14qr6DPo4Q":{"hasTranscript":true,"hasPost":true},"OsN0NNVuu7o":{"hasTranscript":true,"hasPost":true},"P5dvh5HrHaE":{"hasTranscript":true,"hasPost":true},"PUTrIDHNxQs":{"hasTranscript":true,"hasPost":true},"Pwf2T_cntdg":{"hasTranscript":true,"hasPost":true},"QQh0twun7tg":{"hasTranscript":true,"hasPost":true},"R1S8PFUsVWg":{"hasTranscript":true,"hasPost":true},"ROV6ce9dkfI":{"hasTranscript":true,"hasPost":true},"RUy1hElRuUQ":{"hasTranscript":true,"hasPost":true},"SCwP-bR498o":{"hasTranscript":true,"hasPost":true},"ShJ_j2paClA":{"hasTranscript":true,"hasPost":true},"ShkacKGq5Vk":{"hasTranscript":true,"hasPost":true},"Sl5Fl_vOthI":{"hasTranscript":true,"hasPost":true},"Tb4JB3eFPXw":{"hasTranscript":true,"hasPost":true},"TgJqTy_mCR4":{"hasTranscript":true,"hasPost":true},"U4zBHwf2MTw":{"hasTranscript":true,"hasPost":true},"UCaZFYzYm9k":{"hasTranscript":true,"hasPost":true},"UOOBf83nIco":{"hasTranscript":true,"hasPost":true},"UVdc7kYPJEs":{"hasTranscript":true,"hasPost":true},"UxyCkiufJyg":{"hasTranscript":true,"hasPost":true},"V1jmHGrVs_k":{"hasTranscript":true,"hasPost":true},"V3nsGV2yOV8":{"hasTranscript":true,"hasPost":true},"V6Lm17-mfxA":{"hasTranscript":true,"hasPost":true},"VKJLsmW95wc":{"hasTranscript":true,"hasPost":true},"VKMMVQtaDrM":{"hasTranscript":true,"hasPost":true},"VTszds8Y7rU":{"hasTranscript":true,"hasPost":true},"VwTMGmXxghU":{"hasTranscript":true,"hasPost":true},"W3I8gwLv0Ro":{"hasTranscript":true,"hasPost":true},"WKMTSCW51fI":{"hasTranscript":true,"hasPost":true},"WYGsRorORyI":{"hasTranscript":true,"hasPost":false},"X5L0LaarTLg":{"hasTranscript":true,"hasPost":true},"XAQ_GYsV52A":{"hasTranscript":true,"hasPost":true},"Y66yYblAsq8":{"hasTranscript":true,"hasPost":true},"YA85ddRTnus":{"hasTranscript":true,"hasPost":true},"YBMZINlORaw":{"hasTranscript":true,"hasPost":true},"YDlHWsYd23o":{"hasTranscript":true,"hasPost":true},"YpCAi9ofhjs":{"hasTranscript":true,"hasPost":true},"Z9Jjrb6xQeo":{"hasTranscript":true,"hasPost":true},"ZfQ7oKzL-Pw":{"hasTranscript":true,"hasPost":true},"ZgN1aMmXELI":{"hasTranscript":true,"hasPost":true},"Zq-NFi8kxlo":{"hasTranscript":true,"hasPost":true},"_auL36M33Aw":{"hasTranscript":true,"hasPost":true},"_xEjpsA_iVg":{"hasTranscript":true,"hasPost":true},"_zVLb3rpe5I":{"hasTranscript":true,"hasPost":true},"_zuQYhMwTgs":{"hasTranscript":true,"hasPost":true},"a2L6AbyANjw":{"hasTranscript":true,"hasPost":true},"aMG8tqZ6bW0":{"hasTranscript":true,"hasPost":true},"ath0o3oOJCs":{"hasTranscript":true,"hasPost":true},"cMFi9XkhDDQ":{"hasTranscript":true,"hasPost":true},"cWyP2mrcwdM":{"hasTranscript":true,"hasPost":true},"d-msiY5zz5A":{"hasTranscript":true,"hasPost":true},"d-zJskCnHpI":{"hasTranscript":true,"hasPost":true},"dA0DwmLmQ9s":{"hasTranscript":true,"hasPost":true},"dIqUY3R2_3A":{"hasTranscript":true,"hasPost":true},"dURDUSYCm68":{"hasTranscript":true,"hasPost":true},"dnI29M9CE44":{"hasTranscript":true,"hasPost":false},"dp7vq7hweXs":{"hasTranscript":true,"hasPost":true},"dx9Qe_629yE":{"hasTranscript":true,"hasPost":true},"eK7uM-EeLIk":{"hasTranscript":true,"hasPost":true},"eOxOgo6VNzQ":{"hasTranscript":true,"hasPost":true},"eUkmg5xOC7c":{"hasTranscript":true,"hasPost":true},"ecutxRcKQ6I":{"hasTranscript":true,"hasPost":true},"eokbRB_Y2CU":{"hasTranscript":true,"hasPost":true},"f-aH0vpaoyo":{"hasTranscript":true,"hasPost":false},"f1eFQJocAow":{"hasTranscript":true,"hasPost":true},"f7yvLMqdMJo":{"hasTranscript":true,"hasPost":true},"ff5ZGdHsgIA":{"hasTranscript":true,"hasPost":true},"gNEGNjVWO0Q":{"hasTranscript":true,"hasPost":true},"gVj7YvOUjfc":{"hasTranscript":true,"hasPost":true},"goQs8La8e94":{"hasTranscript":true,"hasPost":true},"hD4BjVn9YXw":{"hasTranscript":true,"hasPost":true},"h_v3GcIgbvM":{"hasTranscript":true,"hasPost":true},"hhwrtf3g0yY":{"hasTranscript":true,"hasPost":true},"iFu9J3h8RBY":{"hasTranscript":true,"hasPost":true},"iRyAJEXB_hE":{"hasTranscript":true,"hasPost":true},"ipf-y1PaGBg":{"hasTranscript":true,"hasPost":true},"ixG3RWG-Xdw":{"hasTranscript":true,"hasPost":true},"jCGuQ1T3kUE":{"hasTranscript":true,"hasPost":true},"jV8i3ErC3MA":{"hasTranscript":true,"hasPost":true},"k4GBTLOy9aE":{"hasTranscript":true,"hasPost":true},"k73d1z4sXCE":{"hasTranscript":true,"hasPost":false},"kFWumpkL5yI":{"hasTranscript":true,"hasPost":true},"ko82nHa36U4":{"hasTranscript":true,"hasPost":true},"kr9WECLcJWU":{"hasTranscript":true,"hasPost":true},"kuoLAhyeaJQ":{"hasTranscript":true,"hasPost":true},"lCTSpZlGMb4":{"hasTranscript":true,"hasPost":true},"lOomWUxwNlQ":{"hasTranscript":true,"hasPost":false},"lSkunEYX5Go":{"hasTranscript":true,"hasPost":true},"lZm2ZwjEy38":{"hasTranscript":true,"hasPost":true},"mNKdQ1YwHPc":{"hasTranscript":true,"hasPost":true},"nF0VXXPcAh4":{"hasTranscript":true,"hasPost":true},"nuEwWBGiQ4c":{"hasTranscript":true,"hasPost":true},"oKTvQ7d9gYw":{"hasTranscript":true,"hasPost":true},"oZh7YlRGlqA":{"hasTranscript":true,"hasPost":true},"p8GqOFBpR5w":{"hasTranscript":true,"hasPost":true},"pKvwesJ8-t0":{"hasTranscript":true,"hasPost":true},"pTqxjQV_PYU":{"hasTranscript":true,"hasPost":true},"pWY2T3MqfCw":{"hasTranscript":true,"hasPost":true},"pdIXWsxp0_g":{"hasTranscript":true,"hasPost":true},"pzLWWa96_lE":{"hasTranscript":true,"hasPost":true},"q52xE5uCNT0":{"hasTranscript":true,"hasPost":true},"qIxGLqP2ZBA":{"hasTranscript":true,"hasPost":true},"qd6gmV0qrrk":{"hasTranscript":true,"hasPost":true},"rJeHPb9VWP4":{"hasTranscript":true,"hasPost":true},"rlnx986Qxkc":{"hasTranscript":true,"hasPost":true},"rojYn7h_-U4":{"hasTranscript":true,"hasPost":true},"rqcOPT_Dg7A":{"hasTranscript":true,"hasPost":true},"ruxKM1qX0Dc":{"hasTranscript":true,"hasPost":true},"rzIPT2DPtvA":{"hasTranscript":true,"hasPost":true},"sXRGp_ttFI4":{"hasTranscript":true,"hasPost":true},"skABNIsQ3fA":{"hasTranscript":true,"hasPost":true},"smATVd6dk-k":{"hasTranscript":true,"hasPost":true},"sqx6twZgR-k":{"hasTranscript":true,"hasPost":true},"ssIA_N2u50Y":{"hasTranscript":true,"hasPost":true},"svTgRSTyypU":{"hasTranscript":true,"hasPost":true},"t1UIIjuMirY":{"hasTranscript":true,"hasPost":true},"tyRJESdSDm4":{"hasTranscript":true,"hasPost":true},"u7xKzLuKt5I":{"hasTranscript":true,"hasPost":true},"uXbngiOXOD0":{"hasTranscript":true,"hasPost":true},"usRrwR8CUb8":{"hasTranscript":true,"hasPost":true},"v9INdKeBJEI":{"hasTranscript":true,"hasPost":true},"vKYW7MTBAFg":{"hasTranscript":true,"hasPost":true},"vM5V9hoDKnQ":{"hasTranscript":true,"hasPost":true},"vmSPrsKC8i8":{"hasTranscript":true,"hasPost":true},"vy88MX2ss_g":{"hasTranscript":true,"hasPost":true},"wGDSdaXZj00":{"hasTranscript":true,"hasPost":true},"wLB8pR4uME0":{"hasTranscript":true,"hasPost":true},"wSnq-Unha34":{"hasTranscript":true,"hasPost":true},"wg1R2_G_LEc":{"hasTranscript":true,"hasPost":true},"wpHm4ARAChc":{"hasTranscript":true,"hasPost":true},"wutJAXwvMqo":{"hasTranscript":true,"hasPost":true},"xe6w3VmUf5I":{"hasTranscript":true,"hasPost":true},"xxC2s5JBYZM":{"hasTranscript":true,"hasPost":true},"y3rXMXG_UF8":{"hasTranscript":true,"hasPost":true},"y4Yqheg9DuY":{"hasTranscript":true,"hasPost":true},"y76fsYJCAO0":{"hasTranscript":true,"hasPost":true},"yPh9jEw5_Lw":{"hasTranscript":true,"hasPost":true},"yUQ4NYv_io0":{"hasTranscript":true,"hasPost":true},"yeBCQurwTAM":{"hasTranscript":true,"hasPost":true},"zceKtRTdgSo":{"hasTranscript":true,"hasPost":true},"zksWnpcM05I":{"hasTranscript":true,"hasPost":true},"zsYZHcSRvB8":{"hasTranscript":true,"hasPost":true},"zzWIE6Sg_E0":{"hasTranscript":true,"hasPost":true}};
+
 const allVideos = _raw.split('\n').map(l => {
   const [id,title,date,status,topicId] = l.split('|');
-  return {id,title,date,year:date.slice(0,4),status,topicId: topicId ? Number(topicId) : null};
+  const archive = _archiveData[id] || { hasTranscript: false, hasPost: false };
+  return {id,title,date,year:date.slice(0,4),status,topicId: topicId ? Number(topicId) : null,
+    hasTranscript: archive.hasTranscript, hasPost: archive.hasPost};
 });
+
+// Compute stats
+const stats = {
+  total: allVideos.length,
+  imported: allVideos.filter(v => v.status === 'imported').length,
+  pending: allVideos.filter(v => v.status === 'pending').length,
+  noTranscript: allVideos.filter(v => v.status === 'no_transcript').length
+};
+
+const importedVideos = allVideos.filter(v => v.status === 'imported');
+const withBoth = importedVideos.filter(v => v.hasTranscript && v.hasPost).length;
+const withTranscript = importedVideos.filter(v => v.hasTranscript).length;
+const withPost = importedVideos.filter(v => v.hasPost).length;
+const coveragePct = stats.imported > 0 ? ((withBoth / stats.imported) * 100).toFixed(1) : '0.0';
 
 const perPage = 25;
 let page = 0;
@@ -1330,8 +1388,11 @@ let filtered = allVideos;
 const pct = ((stats.imported / stats.total) * 100).toFixed(1);
 document.getElementById('stat-total').textContent = stats.total;
 document.getElementById('stat-imported').textContent = stats.imported;
+document.getElementById('stat-imported-sub').textContent = `${withTranscript} transcripts \u2022 ${withPost} posts`;
 document.getElementById('stat-pending').textContent = stats.pending;
-document.getElementById('stat-pct').textContent = pct + '%';
+document.getElementById('stat-notranscript').textContent = stats.noTranscript;
+document.getElementById('stat-pct').textContent = coveragePct + '%';
+document.getElementById('stat-coverage-sub').textContent = `${withBoth} of ${stats.imported} imported`;
 document.getElementById('subtitle').textContent = `${stats.total} videos \u2022 ${stats.imported} imported \u2022 ${pct}% complete`;
 document.getElementById('progress').style.width = pct + '%';
 
@@ -1344,49 +1405,103 @@ years.forEach(y => {
   yearSelect.appendChild(opt);
 });
 
-// Year chart
-const yearData = {};
-const yearImported = {};
+// Year chart with Chart.js
+const yearDataMap = {};
 allVideos.forEach(v => {
-  yearData[v.year] = (yearData[v.year] || 0) + 1;
-  if (v.status === 'imported') yearImported[v.year] = (yearImported[v.year] || 0) + 1;
+  if (!yearDataMap[v.year]) yearDataMap[v.year] = { imported: 0, pending: 0, no_transcript: 0 };
+  if (v.status === 'imported') yearDataMap[v.year].imported++;
+  else if (v.status === 'no_transcript') yearDataMap[v.year].no_transcript++;
+  else yearDataMap[v.year].pending++;
 });
-const maxCount = Math.max(...Object.values(yearData));
-const chartEl = document.getElementById('chart');
-years.sort().forEach(yr => {
-  const total = yearData[yr] || 0;
-  const imp = yearImported[yr] || 0;
-  const pend = total - imp;
-  const totalPct = (total / maxCount * 100);
-  const impPct = (imp / maxCount * 100);
-  const pendPct = (pend / maxCount * 100);
-  
-  const col = document.createElement('div');
-  col.className = 'chart-col';
-  col.innerHTML = `
-    <div class="chart-bar-wrap">
-      <span class="chart-count">${total}</span>
-      <div class="chart-bar chart-bar-pending" style="height:${pendPct}%" title="${pend} pending"></div>
-      <div class="chart-bar chart-bar-imported" style="height:${impPct}%" title="${imp} imported"></div>
-    </div>
-    <span class="chart-label">${yr.slice(2)}</span>
-  `;
-  chartEl.appendChild(col);
+
+const sortedYears = years.slice().sort();
+const chartLabels = sortedYears;
+const importedData = sortedYears.map(y => (yearDataMap[y] || {}).imported || 0);
+const pendingData = sortedYears.map(y => (yearDataMap[y] || {}).pending || 0);
+const noTranscriptData = sortedYears.map(y => (yearDataMap[y] || {}).no_transcript || 0);
+
+const ctx = document.getElementById('yearChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: chartLabels,
+    datasets: [
+      {
+        label: 'Imported',
+        data: importedData,
+        backgroundColor: '#34d399',
+        borderRadius: 2,
+      },
+      {
+        label: 'Pending',
+        data: pendingData,
+        backgroundColor: '#fbbf24',
+        borderRadius: 2,
+      },
+      {
+        label: 'No Transcript',
+        data: noTranscriptData,
+        backgroundColor: '#f87171',
+        borderRadius: 2,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#232733',
+        titleColor: '#e2e4eb',
+        bodyColor: '#8b8fa3',
+        borderColor: '#2e3347',
+        borderWidth: 1,
+        padding: 10,
+        cornerRadius: 8,
+      }
+    },
+    scales: {
+      x: {
+        stacked: true,
+        grid: { display: false },
+        ticks: { color: '#5c6078', font: { size: 11 } },
+        border: { display: false }
+      },
+      y: {
+        stacked: true,
+        grid: { color: '#2e3347' },
+        ticks: { color: '#5c6078', font: { size: 11 } },
+        border: { display: false }
+      }
+    }
+  }
 });
+
+// Navigation
+function showSection(section) {
+  document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+  event.target.classList.add('active');
+}
 
 // Filter + render
 function applyFilters() {
   const search = document.getElementById('search').value.toLowerCase();
   const yearF = yearSelect.value;
   const statusF = document.getElementById('statusFilter').value;
-  
+  const archiveF = document.getElementById('archiveFilter').value;
+
   filtered = allVideos.filter(v => {
     const matchSearch = !search || v.title.toLowerCase().includes(search);
     const matchYear = yearF === 'all' || v.year === yearF;
     const matchStatus = statusF === 'all' || v.status === statusF;
-    return matchSearch && matchYear && matchStatus;
+    let matchArchive = true;
+    if (archiveF === 'complete') matchArchive = v.hasTranscript && v.hasPost;
+    else if (archiveF === 'partial') matchArchive = (v.hasTranscript || v.hasPost) && !(v.hasTranscript && v.hasPost);
+    else if (archiveF === 'none') matchArchive = !v.hasTranscript && !v.hasPost;
+    return matchSearch && matchYear && matchStatus && matchArchive;
   });
-  
+
   page = 0;
   render();
 }
@@ -1394,22 +1509,26 @@ function applyFilters() {
 function render() {
   const totalPages = Math.ceil(filtered.length / perPage);
   const paged = filtered.slice(page * perPage, (page + 1) * perPage);
-  
+
   document.getElementById('resultCount').textContent = filtered.length + ' results';
-  
+
   const tbody = document.getElementById('tbody');
   tbody.innerHTML = paged.map(v => {
     const badgeClass = 'badge-' + v.status;
     const badgeText = v.status === 'imported' ? 'Imported' : v.status === 'pending' ? 'Pending' : 'No transcript';
     const forumLink = v.topicId ? `<a href="https://dungeondive.quest/t/${v.topicId}" target="_blank" class="link link-forum">Forum</a>` : '';
+    const transCheck = v.hasTranscript ? '<span class="check-yes">\u2713</span>' : '<span class="check-no">\u2014</span>';
+    const postCheck = v.hasPost ? '<span class="check-yes">\u2713</span>' : '<span class="check-no">\u2014</span>';
     return `<tr>
       <td class="title-cell">${v.title}</td>
       <td class="date-cell">${v.date}</td>
       <td><span class="badge ${badgeClass}">${badgeText}</span></td>
+      <td class="check-cell">${transCheck}</td>
+      <td class="check-cell">${postCheck}</td>
       <td><a href="https://youtube.com/watch?v=${v.id}" target="_blank" class="link link-yt">YT</a>${forumLink}</td>
     </tr>`;
   }).join('');
-  
+
   const pagEl = document.getElementById('pagination');
   if (totalPages > 1) {
     pagEl.innerHTML = `
@@ -1428,6 +1547,7 @@ function nextPage() { const tp = Math.ceil(filtered.length / perPage); if (page 
 document.getElementById('search').addEventListener('input', applyFilters);
 yearSelect.addEventListener('change', applyFilters);
 document.getElementById('statusFilter').addEventListener('change', applyFilters);
+document.getElementById('archiveFilter').addEventListener('change', applyFilters);
 
 applyFilters();
 </script>

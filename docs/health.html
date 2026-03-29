@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Health — Dungeon Dive Video Archive</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #232733;
+    --border: #2e3347;
+    --text: #e2e4eb;
+    --text-dim: #8b8fa3;
+    --text-faint: #5c6078;
+    --accent: #818cf8;
+    --green: #34d399;
+    --green-dim: #064e3b;
+    --amber: #fbbf24;
+    --amber-dim: #78350f;
+    --red: #f87171;
+    --purple: #a78bfa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 24px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Navigation */
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 28px;
+    padding: 10px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .nav a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    color: var(--text-dim);
+    transition: all 0.2s;
+  }
+  .nav a:hover { color: var(--text); background: var(--surface2); }
+  .nav a.active { color: var(--accent); background: rgba(129, 140, 248, 0.1); }
+  .nav .sep {
+    color: var(--text-faint);
+    margin: 0 6px;
+    font-size: 13px;
+    user-select: none;
+  }
+  .nav .spacer { flex: 1; }
+
+  /* Header */
+  .header { text-align: center; margin-bottom: 32px; }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+  }
+  .header .subtitle { color: var(--text-dim); font-size: 14px; }
+
+  /* Summary cards */
+  .summary-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .summary-card.status-pass::before { background: var(--green); }
+  .summary-card.status-warn::before { background: var(--amber); }
+  .summary-card.status-error::before { background: var(--red); }
+  .card-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .card-value {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .card-detail { font-size: 11px; color: var(--text-faint); }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .badge-pass { background: #052e23; color: #6ee7b7; }
+  .badge-warn { background: var(--amber-dim); color: var(--amber); }
+  .badge-error { background: #3b1111; color: var(--red); }
+
+  /* Chart cards */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 28px;
+  }
+  .chart-title {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* Donut row */
+  .donut-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .donut-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .donut-wrap canvas { max-width: 220px; max-height: 220px; }
+  .donut-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .coverage-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-faint);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Table */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  .table-header {
+    padding: 16px 20px 0 20px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: var(--surface2); }
+  th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-faint);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  td { padding: 12px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover { background: rgba(129, 140, 248, 0.04); }
+  .date-cell { color: var(--text-dim); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .link { text-decoration: none; font-weight: 600; font-size: 12px; letter-spacing: 0.3px; }
+  .link-yt { color: var(--red); }
+  .link-yt:hover { color: #fca5a5; }
+
+  /* Recommendations */
+  .rec-list {
+    list-style: none;
+    padding: 0;
+  }
+  .rec-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .rec-list li:last-child { border-bottom: none; }
+  .rec-list li::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--amber);
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .summary-cards { grid-template-columns: repeat(3, 1fr); }
+    .donut-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .summary-cards { grid-template-columns: repeat(2, 1fr); }
+    .nav { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html">Archive</a>
+    <a href="health.html" class="active">Health</a>
+    <a href="content.html">Content</a>
+    <span class="sep">|</span>
+    <a href="https://dungeondive.quest/" target="_blank" rel="noopener">Discourse</a>
+    <a href="https://github.com/modius/dungeon-dive" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>System Health</h1>
+    <p class="subtitle">Dungeon Dive Video Archive integrity and coverage report</p>
+  </div>
+
+  <!-- Integrity Summary Cards -->
+  <div class="summary-cards" id="summary-cards"></div>
+
+  <!-- Archive Coverage -->
+  <div class="chart-card">
+    <div class="chart-title">Archive Coverage</div>
+    <div class="donut-row">
+      <div class="donut-wrap">
+        <div class="donut-label">Transcripts</div>
+        <canvas id="chart-transcripts"></canvas>
+      </div>
+      <div class="donut-wrap">
+        <div class="donut-label">Posts</div>
+        <canvas id="chart-posts"></canvas>
+      </div>
+    </div>
+    <div class="coverage-note" id="coverage-note"></div>
+  </div>
+
+  <!-- Sync Activity Timeline -->
+  <div class="chart-card">
+    <div class="chart-title">Sync Activity Timeline</div>
+    <canvas id="chart-timeline" height="200"></canvas>
+  </div>
+
+  <!-- Problem Videos -->
+  <div class="table-wrap">
+    <div class="table-header">
+      <div class="chart-title">Problem Videos <span style="font-size:11px; color:var(--text-faint); text-transform:none; letter-spacing:0;">&mdash; no transcript available</span></div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Published</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody id="problem-table"></tbody>
+    </table>
+  </div>
+
+  <!-- Recommendations -->
+  <div class="chart-card">
+    <div class="chart-title">Recommendations</div>
+    <ul class="rec-list" id="rec-list"></ul>
+  </div>
+
+</div>
+
+<!-- Embedded Data -->
+<script>
+const INTEGRITY = {
+  "run_at": "2026-03-29T08:43:49.059328+00:00",
+  "overall_status": "warn",
+  "error_count": 0,
+  "warning_count": 3,
+  "checks": {
+    "index_integrity": {
+      "status": "warn",
+      "issues": ["69 imported video(s) without imported_at timestamp"],
+      "counts": { "total": 1008, "imported": 277, "pending": 727, "no_transcript": 4, "skipped": 0 }
+    },
+    "archive_files": {
+      "status": "warn",
+      "issues": ["82 imported videos missing post files, 71 missing transcripts"],
+      "post_files_count": 195,
+      "transcript_files_count": 206,
+      "transcript_files_legacy": 12,
+      "imported_count": 277,
+      "missing_posts_count": 82,
+      "missing_transcripts_count": 71
+    },
+    "file_validity": {
+      "status": "pass",
+      "issues": [],
+      "posts_checked": 195,
+      "transcripts_checked": 206
+    },
+    "naming_anomalies": {
+      "status": "warn",
+      "issues": ["12 transcript files using legacy naming (missing _transcript suffix)"],
+      "legacy_count": 12
+    },
+    "dashboard_sync": {
+      "status": "pass",
+      "issues": [],
+      "mismatch_count": 0
+    }
+  },
+  "recommendations": [
+    "Rename 12 legacy transcript files to *_transcript.txt format",
+    "82 imported videos missing local post archives",
+    "71 imported videos missing local transcripts"
+  ]
+};
+
+const BATCH_DATA = [
+  {"date":"2026-01-31","count":23},
+  {"date":"2026-02-02","count":1},
+  {"date":"2026-02-02","count":9},
+  {"date":"2026-02-02","count":10},
+  {"date":"2026-02-03","count":17},
+  {"date":"2026-02-05","count":6},
+  {"date":"2026-02-07","count":1},
+  {"date":"2026-02-07","count":11},
+  {"date":"2026-02-08","count":16},
+  {"date":"2026-02-11","count":12},
+  {"date":"2026-02-12","count":14},
+  {"date":"2026-02-28","count":15},
+  {"date":"2026-03-09","count":3},
+  {"date":"2026-03-09","count":10},
+  {"date":"2026-03-11","count":11},
+  {"date":"2026-03-15","count":11},
+  {"date":"2026-03-23","count":12},
+  {"date":"2026-03-24","count":2},
+  {"date":"2026-03-24","count":10},
+  {"date":"2026-03-29","count":1},
+  {"date":"2026-03-29","count":8}
+];
+
+const PROBLEM_VIDEOS = [
+  {"title":"The Dungeon Dive Live Stream","published_at":"2025-10-05","video_id":"YiKIKU-5KpY"},
+  {"title":"The Art of Talisman 2nd Edition with Music by Daniel J. Davis","published_at":"2020-12-25","video_id":"0jvB7_mRdVk"},
+  {"title":"The Sword & Sorcery Saga - Thematic Introduction","published_at":"2020-10-27","video_id":"c6WqvHRlRkc"},
+  {"title":"Let's talk about Talisman","published_at":"2018-10-14","video_id":"-SxNX1_ipZ0"}
+];
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- 1. Summary Cards ---
+  const checks = INTEGRITY.checks;
+  const cards = [
+    {
+      label: 'Index Integrity',
+      status: checks.index_integrity.status,
+      value: checks.index_integrity.status.toUpperCase(),
+      detail: checks.index_integrity.issues[0] || 'No issues'
+    },
+    {
+      label: 'Archive Coverage',
+      status: checks.archive_files.status,
+      value: checks.archive_files.post_files_count + ' / ' + checks.archive_files.transcript_files_count,
+      detail: 'post files / transcripts'
+    },
+    {
+      label: 'File Validity',
+      status: checks.file_validity.status,
+      value: checks.file_validity.status.toUpperCase(),
+      detail: (checks.file_validity.posts_checked + checks.file_validity.transcripts_checked) + ' files checked'
+    },
+    {
+      label: 'Naming Issues',
+      status: checks.naming_anomalies.status,
+      value: String(checks.naming_anomalies.legacy_count),
+      detail: 'legacy transcript files'
+    },
+    {
+      label: 'Dashboard Sync',
+      status: checks.dashboard_sync.status,
+      value: checks.dashboard_sync.status.toUpperCase(),
+      detail: checks.dashboard_sync.mismatch_count + ' mismatches'
+    }
+  ];
+
+  const cardsEl = document.getElementById('summary-cards');
+  cards.forEach(c => {
+    const div = document.createElement('div');
+    div.className = 'summary-card status-' + c.status;
+    div.innerHTML = `
+      <div class="card-label">${c.label}</div>
+      <div class="card-value"><span class="badge badge-${c.status}">${c.value}</span></div>
+      <div class="card-detail">${c.detail}</div>
+    `;
+    cardsEl.appendChild(div);
+  });
+
+  // --- 2. Archive Coverage Donuts ---
+  const imported = checks.index_integrity.counts.imported;
+  const pending = checks.index_integrity.counts.pending;
+  const noTranscript = checks.index_integrity.counts.no_transcript;
+  const missingPosts = checks.archive_files.missing_posts_count;
+  const missingTranscripts = checks.archive_files.missing_transcripts_count;
+  const havePosts = imported - missingPosts;
+  const haveTranscripts = imported - missingTranscripts;
+
+  const donutOpts = {
+    responsive: true,
+    maintainAspectRatio: true,
+    cutout: '65%',
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1a1d27',
+        titleColor: '#e2e4eb',
+        bodyColor: '#8b8fa3',
+        borderColor: '#2e3347',
+        borderWidth: 1
+      }
+    }
+  };
+
+  const donutColors = ['#34d399', '#f87171', '#5c6078'];
+
+  // Transcripts donut
+  new Chart(document.getElementById('chart-transcripts'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Have transcript', 'Imported missing', 'Pending/Other'],
+      datasets: [{
+        data: [haveTranscripts, missingTranscripts, pending + noTranscript],
+        backgroundColor: donutColors,
+        borderWidth: 0
+      }]
+    },
+    options: donutOpts,
+    plugins: [{
+      id: 'centerText',
+      afterDraw(chart) {
+        const { ctx, chartArea: { left, right, top, bottom } } = chart;
+        const cx = (left + right) / 2;
+        const cy = (top + bottom) / 2;
+        ctx.save();
+        ctx.fillStyle = '#e2e4eb';
+        ctx.font = 'bold 28px Inter, system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(haveTranscripts, cx, cy - 8);
+        ctx.font = '11px Inter, system-ui, sans-serif';
+        ctx.fillStyle = '#8b8fa3';
+        ctx.fillText('of ' + imported + ' imported', cx, cy + 14);
+        ctx.restore();
+      }
+    }]
+  });
+
+  // Posts donut
+  new Chart(document.getElementById('chart-posts'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Have post', 'Imported missing', 'Pending/Other'],
+      datasets: [{
+        data: [havePosts, missingPosts, pending + noTranscript],
+        backgroundColor: donutColors,
+        borderWidth: 0
+      }]
+    },
+    options: donutOpts,
+    plugins: [{
+      id: 'centerText2',
+      afterDraw(chart) {
+        const { ctx, chartArea: { left, right, top, bottom } } = chart;
+        const cx = (left + right) / 2;
+        const cy = (top + bottom) / 2;
+        ctx.save();
+        ctx.fillStyle = '#e2e4eb';
+        ctx.font = 'bold 28px Inter, system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(havePosts, cx, cy - 8);
+        ctx.font = '11px Inter, system-ui, sans-serif';
+        ctx.fillStyle = '#8b8fa3';
+        ctx.fillText('of ' + imported + ' imported', cx, cy + 14);
+        ctx.restore();
+      }
+    }]
+  });
+
+  document.getElementById('coverage-note').textContent =
+    missingPosts + ' imported videos missing post files \u2022 ' +
+    missingTranscripts + ' missing transcripts';
+
+  // --- 3. Sync Activity Timeline ---
+  new Chart(document.getElementById('chart-timeline'), {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: 'Videos posted',
+        data: BATCH_DATA.map(b => ({ x: b.date, y: b.count })),
+        backgroundColor: 'rgba(129, 140, 248, 0.7)',
+        borderColor: '#818cf8',
+        borderWidth: 1,
+        pointRadius: BATCH_DATA.map(b => Math.max(4, Math.sqrt(b.count) * 3)),
+        pointHoverRadius: BATCH_DATA.map(b => Math.max(6, Math.sqrt(b.count) * 3 + 2))
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          type: 'category',
+          labels: [...new Set(BATCH_DATA.map(b => b.date))],
+          grid: { color: '#2e3347' },
+          ticks: { color: '#5c6078', font: { size: 11 }, maxRotation: 45 }
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: '#2e3347' },
+          ticks: { color: '#5c6078', font: { size: 11 } },
+          title: { display: true, text: 'Videos posted', color: '#8b8fa3', font: { size: 12 } }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1d27',
+          titleColor: '#e2e4eb',
+          bodyColor: '#8b8fa3',
+          borderColor: '#2e3347',
+          borderWidth: 1,
+          callbacks: {
+            title: items => items[0].raw.x,
+            label: item => item.raw.y + ' videos'
+          }
+        }
+      }
+    }
+  });
+
+  // --- 4. Problem Videos Table ---
+  const tbody = document.getElementById('problem-table');
+  PROBLEM_VIDEOS.forEach(v => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${v.title}</td>
+      <td class="date-cell">${v.published_at}</td>
+      <td><a class="link link-yt" href="https://www.youtube.com/watch?v=${v.video_id}" target="_blank" rel="noopener">YouTube</a></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // --- 5. Recommendations ---
+  const recList = document.getElementById('rec-list');
+  INTEGRITY.recommendations.forEach(r => {
+    const li = document.createElement('li');
+    li.textContent = r;
+    recList.appendChild(li);
+  });
+
+});
+</script>
+</body>
+</html>
