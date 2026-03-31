@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-03-31 — HeroQuest Part II + Siege of Shaddis Horne (7 videos)
+- Completed the HeroQuest series: 6 remaining videos (Episodes 3, AxianQuest, Armory, Ogre Horde, board love letter, Jungles of Delthrak)
+- New video: Siege of Shaddis Horne (Pauper's Ladder review, published Mar 29)
+- Aberration (5b4RSDrkc8I) marked as no_transcript — subtitles still disabled
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/20
+- Stats: 1009 total, 292 imported, 712 pending, 5 no_transcript
+
 ## 2026-03-29 — Project Bootstrap (Full Session Summary)
 
 ### Migration
