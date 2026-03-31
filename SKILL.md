@@ -319,6 +319,19 @@ Claude MUST follow this exact sequence and never skip steps or get ahead:
 - `yearData` counts are TOTAL videos per year (not just imported) — update from index totals, not imported counts
 - Always use Python to parse and rewrite `_raw`/allVideos — never use sed on the compact format
 
+## Keeper Post Sign-Off Format
+
+Every Keeper post MUST end with this exact structure:
+
+```
+*NNN transcripts • NNN posts archived*
+
+-- The Keeper
+*[Witty observation in italics, relevant to the batch theme]*
+```
+
+The stats line is factual (current archive counts). The sign-off is always "-- The Keeper" on its own line. The closing observation is a one-liner in italics — wry, thematic, never generic.
+
 ## Git Workflow (Scheduled Task)
 
 When running as a scheduled task, follow this sequence after completing the sync workflow:

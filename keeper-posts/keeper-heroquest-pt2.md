@@ -31,4 +31,7 @@ The 2024 coverage accelerates: [Advanced Armory and Monks](https://dungeondive.q
 
 Fifteen HeroQuest entries total. The quest is complete — though with HeroQuest, one suspects the furniture has merely been rearranged for the next party.
 
-*221 transcripts • 210 posts archived • The Keeper has placed the final tile and closed the quest book. For now.*
+*221 transcripts • 210 posts archived*
+
+-- The Keeper
+*Has placed the final tile and closed the quest book. For now.*
