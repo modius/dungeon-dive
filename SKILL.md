@@ -332,6 +332,14 @@ Every Keeper post MUST end with this exact structure:
 
 The stats line is factual (current archive counts). The sign-off is always "-- The Keeper" on its own line. The closing observation is a one-liner in italics — wry, thematic, never generic.
 
+## Rate Limit Check
+
+Before fetching transcripts, always run:
+```bash
+python3 scripts/check_rate_limit.py
+```
+If exit code 1, the daily limit (2 runs per 24h) has been reached. Skip the run entirely.
+
 ## Git Workflow (Scheduled Task)
 
 When running as a scheduled task, follow this sequence after completing the sync workflow:
