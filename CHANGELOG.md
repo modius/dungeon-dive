@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-04 — Shadows of Brimstone Part I + Dungeon Degenerates (10 videos)
+- Imported 9 Shadows of Brimstone videos: campaign preview, FoFo character overview, buyer's guide, core sets Parts 1-5, five loves/five dislikes
+- Imported 1 new Dungeon Degenerates video: Goblin Mode + Lowlife RPG thoughts (published Apr 1)
+- 1 new video discovered during fetch (1010 total)
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/22
+- Stats: 1010 total, 312 imported, 693 pending, 5 no_transcript
+- 33 more Shadows of Brimstone videos remain for future batches
+
 ## 2026-04-01 — Warhammer Quest Part I (10 videos)
 - Imported 10 Warhammer Quest "Take a Look" videos: Parts 1-10 covering base game, big box expansions, warrior packs, and White Dwarf issues
 - Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/21
