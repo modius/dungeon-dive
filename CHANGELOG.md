@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-04-01 — Warhammer Quest Part I (10 videos)
+- Imported 10 Warhammer Quest "Take a Look" videos: Parts 1-10 covering base game, big box expansions, warrior packs, and White Dwarf issues
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/21
+- Stats: 1009 total, 302 imported, 702 pending, 5 no_transcript
+- 25 more Warhammer Quest videos remain for future batches
+
 ## 2026-03-31 — HeroQuest Part II + Siege of Shaddis Horne (7 videos)
 - Completed the HeroQuest series: 6 remaining videos (Episodes 3, AxianQuest, Armory, Ogre Horde, board love letter, Jungles of Delthrak)
 - New video: Siege of Shaddis Horne (Pauper's Ladder review, published Mar 29)

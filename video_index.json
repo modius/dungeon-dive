@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-03-31T02:43:31.447792+00:00",
+  "last_fetched": "2026-04-01T08:22:17.232667+00:00",
   "videos": [
     {
       "video_id": "pj41DZonKFU",
@@ -9730,9 +9730,9 @@
       "description": "",
       "published_at": "2018-05-09T13:34:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/zI6L_SkYqkU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1443,
+      "imported_at": "2026-04-01T08:40:45.675808Z"
     },
     {
       "video_id": "SQdrkq_hBzE",
@@ -9740,9 +9740,9 @@
       "description": "Starting our look at the White Dwarf issues featuring WHQ articles.",
       "published_at": "2018-05-07T04:50:10Z",
       "thumbnail_url": "https://i.ytimg.com/vi/SQdrkq_hBzE/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1439,
+      "imported_at": "2026-04-01T08:40:26.453157Z"
     },
     {
       "video_id": "ADwtKtLtE8Q",
@@ -9760,9 +9760,9 @@
       "description": "The final part of our look at the officially released Warrior expansions for Warhammer Quest.",
       "published_at": "2018-04-27T05:37:36Z",
       "thumbnail_url": "https://i.ytimg.com/vi/vyg196YvsgE/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1442,
+      "imported_at": "2026-04-01T08:40:40.796038Z"
     },
     {
       "video_id": "Aq3emUbqTbA",
@@ -9840,9 +9840,9 @@
       "description": "Taking a look at more warrior expansions.",
       "published_at": "2018-04-08T18:02:37Z",
       "thumbnail_url": "https://i.ytimg.com/vi/1qYWYaGdxt4/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1434,
+      "imported_at": "2026-04-01T08:39:57.146534Z"
     },
     {
       "video_id": "P7i-qgVG7c4",
@@ -9850,9 +9850,9 @@
       "description": "Taking a look at the Pit Fighter, The Warrior Priest, and the Chaos Warrior.",
       "published_at": "2018-04-06T06:44:17Z",
       "thumbnail_url": "https://i.ytimg.com/vi/P7i-qgVG7c4/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1438,
+      "imported_at": "2026-04-01T08:40:21.499676Z"
     },
     {
       "video_id": "6d8jMrgjDuE",
@@ -9860,9 +9860,9 @@
       "description": "Warhammer Quest - Take a Look - Part 5 - The Catacombs of Terror",
       "published_at": "2018-04-04T04:44:15Z",
       "thumbnail_url": "https://i.ytimg.com/vi/6d8jMrgjDuE/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1435,
+      "imported_at": "2026-04-01T08:40:04.418935Z"
     },
     {
       "video_id": "Kn5RCzQ9ufc",
@@ -9870,9 +9870,9 @@
       "description": "Warhammer Quest - Take a Look - Part Four - The Lair of the Orc Lord",
       "published_at": "2018-03-31T20:33:12Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Kn5RCzQ9ufc/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1437,
+      "imported_at": "2026-04-01T08:40:15.975672Z"
     },
     {
       "video_id": "l4OOeF2yo9Y",
@@ -9880,9 +9880,9 @@
       "description": "Warhammer Quest - Take a Look - Part Three - The Treasure and Event cards",
       "published_at": "2018-03-28T03:49:20Z",
       "thumbnail_url": "https://i.ytimg.com/vi/l4OOeF2yo9Y/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1441,
+      "imported_at": "2026-04-01T08:40:35.640093Z"
     },
     {
       "video_id": "Z-s3rXFeosc",
@@ -9890,9 +9890,9 @@
       "description": "In this video we finish up taking a look at the WHQ base game, focusing on the Adventure Book, and the absolutely incredible Role Play book.",
       "published_at": "2018-03-19T04:21:20Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Z-s3rXFeosc/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1440,
+      "imported_at": "2026-04-01T08:40:30.889399Z"
     },
     {
       "video_id": "Ju3_gwctpM8",
@@ -9900,9 +9900,9 @@
       "description": "Don't forget about the contest! Entries open through the end of March, 2018. Like, subscribe and comment below with your favorite dungeon dive game. I'll select a user at random and send them the original pages for the White Dwarf WHQ expansion, The Flames of Khazla. Free shipping to continental US.",
       "published_at": "2018-03-15T05:05:43Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Ju3_gwctpM8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1436,
+      "imported_at": "2026-04-01T08:40:10.891016Z"
     },
     {
       "video_id": "LMbdAdrLzXg",
