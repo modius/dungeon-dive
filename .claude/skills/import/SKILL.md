@@ -1,3 +1,12 @@
+---
+name: import
+description: >
+  Run a full Dungeon Dive video archive import cycle. Fetches new videos from YouTube,
+  selects a thematic batch, downloads transcripts, generates summaries, posts to Discourse,
+  writes a Keeper update, and updates the dashboard.
+  Triggers: "import", "sync", "run import", "archive sync"
+---
+
 Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post format guidelines and keeper-posts/ for The Keeper's voice.
 
 ## Pre-flight
