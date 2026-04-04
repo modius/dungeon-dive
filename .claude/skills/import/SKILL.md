@@ -21,7 +21,9 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 5. `python3 scripts/fetch_channel_videos.py --config config.json --index video_index.json`
 6. Select a batch:
    - **PRIORITY**: Any videos published in the last 14 days that are still pending.
-   - **ARCHIVE**: Choose a thematic group from older pending videos. Scan titles for game names, series, or topics. Pick a theme that makes a compelling Keeper post. Aim for 5-10 videos. If a theme has more, save the rest for the next run.
+   - **SERIES CONTINUATION**: Check `series_queue.json` for active series with `"status": "continuing"`. The next archive batch MUST continue the series at `rotation_index` (0-based into the `active_series` array). After importing, advance `rotation_index` to the next active series (wrapping around). This ensures multi-part series alternate rather than being abandoned.
+   - **NEW THEME**: Only start a new series if no active series remain (all completed) or if a compelling theme presents itself AND no series is overdue (last_imported > 14 days ago). When starting a new series, add it to `active_series` in `series_queue.json`.
+   - **ARCHIVE** (fallback): If the rotation series has no good sub-theme available, choose a thematic group from older pending videos. Scan titles for game names, series, or topics. Pick a theme that makes a compelling Keeper post. Aim for 5-10 videos. If a theme has more, save the rest for the next run.
    - Check `keeper-posts/` to avoid themes already covered.
    - Total batch must not exceed 12 videos.
 
@@ -56,10 +58,14 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 ## Wrap Up
 
 11. `python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html`
-12. Update CHANGELOG.md with run summary.
-13. Commit and push:
+12. Update `series_queue.json`:
+    - If this batch continued an active series: increment `last_part`, update `videos_remaining`, `last_imported`, and `keeper_post`. If no videos remain, set `"status": "completed"` and move the entry to `completed_series`.
+    - Advance `rotation_index` to the next active series (wrap to 0 if past the end).
+    - If a new series was started: add it to `active_series`.
+13. Update CHANGELOG.md with run summary.
+14. Commit and push:
     ```
-    git add video_index.json docs/index.html archive/ keeper-posts/ CHANGELOG.md
+    git add video_index.json docs/index.html archive/ keeper-posts/ CHANGELOG.md series_queue.json
     git commit -m "sync: imported N videos (theme description)"
     git push origin main
     ```
