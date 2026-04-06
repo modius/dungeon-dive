@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-07 — Warhammer Quest Part II + Dice Commandos (8 videos)
+- Imported 7 Warhammer Quest videos: Take a Look Parts 11-16 (White Dwarf issues c-e, Deathblow, fan/DIY content, Littlemonk's card brick) + Blackstone Fortress overview
+- Imported 1 new video: Dice Commandos (published Apr 5)
+- 1 new video discovered during fetch (1011 total)
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/23
+- Stats: 1011 total, 320 imported, 686 pending, 5 no_transcript
+- 18 more Warhammer Quest videos remain (Let's Play campaign, Silver Tower, retrospectives)
+- Next rotation: Shadows of Brimstone Part II
+
 ## 2026-04-04 — Shadows of Brimstone Part I + Dungeon Degenerates (10 videos)
 - Imported 9 Shadows of Brimstone videos: campaign preview, FoFo character overview, buyer's guide, core sets Parts 1-5, five loves/five dislikes
 - Imported 1 new Dungeon Degenerates video: Goblin Mode + Lowlife RPG thoughts (published Apr 1)

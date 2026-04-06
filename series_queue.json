@@ -4,10 +4,10 @@
       "theme": "warhammer-quest",
       "title": "Warhammer Quest",
       "search_pattern": "warhammer quest",
-      "last_part": 1,
-      "videos_remaining": 25,
-      "last_imported": "2026-04-01",
-      "keeper_post": "keeper-warhammer-quest-pt1.md"
+      "last_part": 2,
+      "videos_remaining": 18,
+      "last_imported": "2026-04-07",
+      "keeper_post": "keeper-warhammer-quest-pt2.md"
     },
     {
       "theme": "shadows-of-brimstone",
@@ -28,5 +28,5 @@
       "completed_date": "2026-03-31"
     }
   ],
-  "rotation_index": 0
+  "rotation_index": 1
 }
