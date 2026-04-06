@@ -169,7 +169,7 @@
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="topGamesChart"></canvas>
     </div>
-    <p class="chart-note">Based on 34 analyzed transcripts</p>
+    <p class="chart-note">Based on 241 analyzed transcripts</p>
   </div>
 
   <!-- Categories + Keeper Timeline -->
@@ -179,7 +179,7 @@
       <div class="chart-canvas-wrap donut-chart">
         <canvas id="categoriesChart"></canvas>
       </div>
-      <p class="chart-note">Based on 34 analyzed transcripts</p>
+      <p class="chart-note">Based on 241 analyzed transcripts</p>
     </div>
 
     <div class="chart-card">
@@ -206,15 +206,54 @@ const topGames = [["Vantage",14],["Rove",10],["Talisman",7],["Warhammer Quest",5
 const categories = {"review":28,"cooperative":23,"dungeon-crawler":18,"adventure-game":17,"digital":16,"campaign":11,"crowdfund":11,"deck-builder":10,"solo-rpg":10,"house-rules":7,"top-10":6,"dice-game":5,"hex-crawl":3,"press-your-luck":2};
 
 const keeperPosts = [
-  {"theme":"Four Against Darkness","date":"2026-03-29","count":0,"note":"12 episodes"},
-  {"theme":"Dungeon Degenerates","date":"2026-03-29","count":11},
-  {"theme":"HEXplore It","date":"2026-03-29","count":10},
-  {"theme":"Sword & Sorcery Saga","date":"2026-03-29","count":11},
-  {"theme":"Top 10 Lists","date":"2026-03-29","count":12},
-  {"theme":"HeroQuest","date":"2026-03-29","count":8}
+  {
+    "theme": "Dungeon Degenerates: The Hand of Doom",
+    "date": "2026-03-29",
+    "count": 11
+  },
+  {
+    "theme": "HeroQuest: The Obligatory Pilgrimage, Part II",
+    "date": "2026-03-31",
+    "count": 15
+  },
+  {
+    "theme": "HeroQuest: The Obligatory Pilgrimage",
+    "date": "2026-03-29",
+    "count": 8
+  },
+  {
+    "theme": "HEXplore It",
+    "date": "2026-03-29",
+    "count": 10
+  },
+  {
+    "theme": "Shadows of Brimstone: Into the Mines",
+    "date": "2026-04-04",
+    "count": 10
+  },
+  {
+    "theme": "The Sword & Sorcery Saga",
+    "date": "2026-03-29",
+    "count": 11
+  },
+  {
+    "theme": "The Lists",
+    "date": "2026-03-29",
+    "count": 12
+  },
+  {
+    "theme": "Warhammer Quest: The Undisputed King",
+    "date": "2026-04-01",
+    "count": 10
+  },
+  {
+    "theme": "Warhammer Quest: The Undisputed King",
+    "date": "2026-04-07",
+    "count": 8
+  }
 ];
 
-const weeklyImports = [["2026-01-26",36],["2026-02-02",71],["2026-02-09",26],["2026-02-23",15],["2026-03-09",35],["2026-03-23",33]];
+const weeklyImports = [["2026-01-26", 36], ["2026-02-02", 71], ["2026-02-09", 26], ["2026-02-23", 15], ["2026-03-09", 35], ["2026-03-23", 33], ["2026-03-30", 27], ["2026-04-06", 8]];
 
 // Chart defaults
 Chart.defaults.color = '#8b8fa3';
