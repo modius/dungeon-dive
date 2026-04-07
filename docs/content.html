@@ -84,12 +84,21 @@
     text-align: center;
   }
 
-  /* Two-column layout for categories + timeline */
+  /* Grid layouts */
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 28px;
     margin-bottom: 28px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 900px) {
+    .grid-3 { grid-template-columns: 1fr; }
   }
   @media (max-width: 768px) {
     .grid-2 { grid-template-columns: 1fr; }
@@ -98,51 +107,37 @@
   /* Timeline */
   .timeline { list-style: none; }
   .timeline li {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-    position: relative;
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 14px 0; border-bottom: 1px solid var(--border); position: relative;
   }
   .timeline li:last-child { border-bottom: none; }
-  .timeline .tl-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-    margin-top: 5px;
-    flex-shrink: 0;
-  }
+  .timeline .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 5px; flex-shrink: 0; }
   .timeline .tl-content { flex: 1; }
-  .timeline .tl-theme {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-  .timeline .tl-theme a {
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .timeline .tl-theme { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .timeline .tl-theme a { color: var(--text); text-decoration: none; transition: color 0.2s; }
   .timeline .tl-theme a:hover { color: var(--accent); }
-  .timeline .tl-meta {
-    font-size: 12px;
-    color: var(--text-dim);
-    display: flex;
-    gap: 12px;
+  .timeline .tl-meta { font-size: 12px; color: var(--text-dim); display: flex; gap: 12px; }
+  .timeline .tl-count { color: var(--accent); font-weight: 600; }
+
+  /* Tag Cloud */
+  .tag-cloud {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    padding: 12px 0;
   }
-  .timeline .tl-count {
-    color: var(--accent);
-    font-weight: 600;
+  .tag-cloud .tag {
+    display: inline-block; padding: 5px 14px; border-radius: 20px;
+    font-weight: 500; white-space: nowrap; transition: all 0.2s;
+    cursor: default;
   }
+  .tag-cloud .tag:hover { transform: scale(1.08); }
 
   /* Canvas sizing */
   .chart-canvas-wrap { position: relative; width: 100%; }
   .chart-canvas-wrap.bar-chart { height: 420px; }
   .chart-canvas-wrap.donut-chart { height: 320px; }
   .chart-canvas-wrap.line-chart { height: 260px; }
+  .chart-canvas-wrap.radar-chart { height: 300px; }
+  .chart-canvas-wrap.polar-chart { height: 300px; }
 </style>
 </head>
 <body>
@@ -163,23 +158,53 @@
     </div>
   </div>
 
+  <!-- Tag Cloud -->
+  <div class="chart-card">
+    <div class="chart-title">Taxonomy Tag Cloud</div>
+    <div class="tag-cloud" id="tagCloud"></div>
+    <p class="chart-note">Based on 320 analyzed videos — tag size reflects frequency across all content</p>
+  </div>
+
   <!-- Top Games Chart -->
   <div class="chart-card">
-    <div class="chart-title">Most Mentioned Games</div>
+    <div class="chart-title">Most Featured Games</div>
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="topGamesChart"></canvas>
     </div>
-    <p class="chart-note">Based on 241 analyzed transcripts</p>
+    <p class="chart-note">Based on 320 analyzed videos — primary game subject per video</p>
   </div>
 
-  <!-- Categories + Keeper Timeline -->
+  <!-- Themes + Player Modes + Formats -->
+  <div class="grid-3">
+    <div class="chart-card">
+      <div class="chart-title">Settings &amp; Themes</div>
+      <div class="chart-canvas-wrap polar-chart">
+        <canvas id="themesChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Player Modes</div>
+      <div class="chart-canvas-wrap polar-chart">
+        <canvas id="modesChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Content Formats</div>
+      <div class="chart-canvas-wrap polar-chart">
+        <canvas id="formatsChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mechanics + Keeper Timeline -->
   <div class="grid-2">
     <div class="chart-card">
-      <div class="chart-title">Content Categories</div>
+      <div class="chart-title">Game Mechanics</div>
       <div class="chart-canvas-wrap donut-chart">
         <canvas id="categoriesChart"></canvas>
       </div>
-      <p class="chart-note">Based on 241 analyzed transcripts</p>
     </div>
 
     <div class="chart-card">
@@ -194,16 +219,23 @@
     <div class="chart-canvas-wrap line-chart">
       <canvas id="velocityChart"></canvas>
     </div>
-    <p class="chart-note">Tracking acceleration of archive imports over time. Analytics are based on 34 analyzed transcripts and will grow as more are processed.</p>
+    <p class="chart-note">Tracking acceleration of archive imports over time</p>
   </div>
 
 </div>
 
 <script>
-// Embedded data
-const topGames = [["Vantage",14],["Rove",10],["Talisman",7],["Warhammer Quest",5],["Arkham Horror",4],["Four Against Darkness",3],["Shadows of Brimstone",3],["Runebound",3],["Gathering Gloom",3],["Legendary",3],["Scarlet Heroes",2],["Fallen Land",2],["Witcher Adventure Game",2],["Restless",2],["HeroQuest",2]];
+// ── Embedded data (updated by update_dashboard.py + analyze_content.py) ──
 
-const categories = {"review":28,"cooperative":23,"dungeon-crawler":18,"adventure-game":17,"digital":16,"campaign":11,"crowdfund":11,"deck-builder":10,"solo-rpg":10,"house-rules":7,"top-10":6,"dice-game":5,"hex-crawl":3,"press-your-luck":2};
+const topGames = [["Warhammer Quest", 23], ["Mork Borg", 18], ["Talisman", 14], ["Four Against Darkness", 14], ["Dungeon Degenerates", 13], ["Shadows of Brimstone", 12], ["Arkham Horror", 10], ["HEXplore It", 10], ["Rove", 8], ["Vantage", 8], ["Runebound", 8], ["HeroQuest", 8], ["Legendary", 6], ["Advanced HeroQuest", 6], ["Dark Venture", 4], ["Dungeon Degenerates: The Hand of Doom", 4], ["The Sword & Sorcery Saga", 4], ["League of Dungeoneers", 3], ["Quest for the Lost Pixel", 3], ["Witcher Adventure Game", 2], ["Fallen Land", 2], ["Scarlet Heroes", 2], ["Doom Pilgrim", 2], ["Hellbringer", 2], ["Blackstone Fortress", 2]];
+
+const categories = {"overview": 185, "review": 167, "comparison": 112, "lets-play": 110, "crowdfund-preview": 73, "unboxing": 66, "discussion": 64, "deep-dive": 59, "buyers-guide": 57, "top-list": 49, "tutorial": 46, "digital-dive": 42, "dungeon-crawler": 176, "rpg": 156, "campaign": 136, "miniatures": 109, "sandbox": 45, "hex-crawl": 32, "card-game": 29, "press-your-luck": 24, "wargame": 21, "dice-game": 20, "deck-builder": 15, "tower-defense": 8, "tile-laying": 3};
+
+const tagCloud = [["overview", 185], ["tabletop", 183], ["fantasy", 182], ["dungeon-crawler", 176], ["solo", 175], ["review", 167], ["rpg", 156], ["campaign", 136], ["horror", 123], ["comparison", 112], ["lets-play", 110], ["miniatures", 109], ["digital", 78], ["crowdfund-preview", 73], ["unboxing", 66], ["discussion", 64], ["deep-dive", 59], ["buyers-guide", 57], ["cooperative", 53], ["sci-fi", 53], ["classic", 50], ["top-list", 49], ["tutorial", 46], ["sandbox", 45], ["competitive", 44], ["digital-dive", 42], ["post-apocalyptic", 37], ["pirate", 35], ["modern", 34], ["hex-crawl", 32], ["western", 31], ["card-game", 29], ["press-your-luck", 24], ["wargame", 21], ["dice-game", 20], ["deck-builder", 15], ["two-player", 10], ["tower-defense", 8], ["mythology", 5], ["tile-laying", 3], ["print-and-play", 2], ["steampunk", 2]];
+
+const themeData = [["fantasy", 182], ["horror", 123], ["sci-fi", 53], ["post-apocalyptic", 37], ["pirate", 35], ["western", 31], ["mythology", 5], ["steampunk", 2]];
+
+const playerModes = [["solo", 175], ["cooperative", 53], ["competitive", 44], ["two-player", 10]];
 
 const keeperPosts = [
   {
@@ -255,14 +287,81 @@ const keeperPosts = [
 
 const weeklyImports = [["2026-01-26", 36], ["2026-02-02", 71], ["2026-02-09", 26], ["2026-02-23", 15], ["2026-03-09", 35], ["2026-03-23", 33], ["2026-03-30", 27], ["2026-04-06", 8]];
 
-// Chart defaults
+// ── Chart defaults ──
 Chart.defaults.color = '#8b8fa3';
 Chart.defaults.borderColor = '#2e3347';
 Chart.defaults.font.family = "'Inter', system-ui, -apple-system, sans-serif";
 
-// 1. Top Games — horizontal bar
-const topGamesCtx = document.getElementById('topGamesChart').getContext('2d');
-new Chart(topGamesCtx, {
+const tooltipStyle = {
+  backgroundColor: '#1a1d27',
+  borderColor: '#2e3347',
+  borderWidth: 1,
+  titleColor: '#e2e4eb',
+  bodyColor: '#e2e4eb',
+  padding: 10,
+  cornerRadius: 8
+};
+
+const palette = [
+  '#818cf8', '#a78bfa', '#c084fc', '#e879f9', '#f472b6',
+  '#fb7185', '#f87171', '#fbbf24', '#34d399', '#2dd4bf',
+  '#38bdf8', '#60a5fa', '#93c5fd', '#c4b5fd', '#d4a853',
+  '#f0abfc', '#86efac', '#fcd34d', '#fca5a5', '#67e8f9'
+];
+
+// ── 0. Tag Cloud ──
+(function() {
+  const el = document.getElementById('tagCloud');
+  if (!tagCloud.length) return;
+  const max = tagCloud[0][1];
+  const min = tagCloud[tagCloud.length - 1][1];
+  const tagColors = {
+    // format
+    'review': '#818cf8', 'overview': '#818cf8', 'lets-play': '#818cf8',
+    'deep-dive': '#818cf8', 'unboxing': '#818cf8', 'comparison': '#818cf8',
+    'top-list': '#818cf8', 'crowdfund-preview': '#818cf8', 'tutorial': '#818cf8',
+    'discussion': '#818cf8', 'digital-dive': '#818cf8', 'buyers-guide': '#818cf8',
+    // mechanics
+    'dungeon-crawler': '#34d399', 'rpg': '#34d399', 'campaign': '#34d399',
+    'miniatures': '#34d399', 'sandbox': '#34d399', 'hex-crawl': '#34d399',
+    'card-game': '#34d399', 'press-your-luck': '#34d399', 'wargame': '#34d399',
+    'dice-game': '#34d399', 'tile-laying': '#34d399', 'tower-defense': '#34d399',
+    // theme
+    'fantasy': '#fbbf24', 'horror': '#fbbf24', 'sci-fi': '#fbbf24',
+    'post-apocalyptic': '#fbbf24', 'pirate': '#fbbf24', 'western': '#fbbf24',
+    'mythology': '#fbbf24', 'steampunk': '#fbbf24',
+    // mode
+    'solo': '#f472b6', 'cooperative': '#f472b6', 'competitive': '#f472b6',
+    'two-player': '#f472b6',
+    // platform
+    'tabletop': '#60a5fa', 'digital': '#60a5fa', 'print-and-play': '#60a5fa',
+    // era
+    'classic': '#d4a853', 'modern': '#d4a853',
+  };
+
+  tagCloud.forEach(([tag, count]) => {
+    const ratio = max === min ? 1 : (count - min) / (max - min);
+    const size = 11 + ratio * 16;
+    const opacity = 0.45 + ratio * 0.55;
+    const color = tagColors[tag] || '#8b8fa3';
+    const span = document.createElement('span');
+    span.className = 'tag';
+    span.textContent = tag;
+    span.title = count + ' videos';
+    span.style.fontSize = size + 'px';
+    span.style.color = color;
+    span.style.opacity = opacity;
+    span.style.background = color.replace(')', ', 0.1)').replace('rgb', 'rgba').replace('#', '');
+    // Hex to rgba background
+    const r = parseInt(color.slice(1,3),16), g = parseInt(color.slice(3,5),16), b = parseInt(color.slice(5,7),16);
+    span.style.background = 'rgba('+r+','+g+','+b+',0.1)';
+    span.style.border = '1px solid rgba('+r+','+g+','+b+',0.2)';
+    el.appendChild(span);
+  });
+})();
+
+// ── 1. Top Games — horizontal bar ──
+new Chart(document.getElementById('topGamesChart'), {
   type: 'bar',
   data: {
     labels: topGames.map(g => g[0]),
@@ -277,86 +376,79 @@ new Chart(topGamesCtx, {
     indexAxis: 'y',
     responsive: true,
     maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        backgroundColor: '#1a1d27',
-        borderColor: '#2e3347',
-        borderWidth: 1,
-        titleColor: '#e2e4eb',
-        bodyColor: '#e2e4eb',
-        padding: 10,
-        cornerRadius: 8,
-        callbacks: {
-          label: ctx => ctx.raw + ' mentions'
-        }
-      }
-    },
+    plugins: { legend: { display: false }, tooltip: { ...tooltipStyle, callbacks: { label: ctx => ctx.raw + ' videos' } } },
     scales: {
-      x: {
-        grid: { color: 'rgba(46,51,71,0.5)' },
-        ticks: { stepSize: 2 }
-      },
-      y: {
-        grid: { display: false },
-        ticks: { font: { size: 12 } }
-      }
+      x: { grid: { color: 'rgba(46,51,71,0.5)' }, ticks: { stepSize: 2 } },
+      y: { grid: { display: false }, ticks: { font: { size: 12 } } }
     }
   }
 });
 
-// 2. Categories — donut
-const catLabels = Object.keys(categories).map(c => c.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()));
-const catValues = Object.values(categories);
-const catColors = [
-  '#818cf8', '#a78bfa', '#c084fc', '#e879f9', '#f472b6',
-  '#fb7185', '#f87171', '#fbbf24', '#34d399', '#2dd4bf',
-  '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa'
-];
-const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
-new Chart(categoriesCtx, {
+// ── 2. Themes — polar area ──
+new Chart(document.getElementById('themesChart'), {
+  type: 'polarArea',
+  data: {
+    labels: themeData.map(t => t[0].replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())),
+    datasets: [{ data: themeData.map(t => t[1]), backgroundColor: ['#fbbf24','#f87171','#38bdf8','#34d399','#60a5fa','#d4a853','#c084fc','#e879f9'].map(c => c + 'cc') }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'bottom', labels: { color: '#8b8fa3', padding: 8, font: { size: 10 }, usePointStyle: true } }, tooltip: { ...tooltipStyle, callbacks: { label: ctx => ctx.label + ': ' + ctx.raw } } },
+    scales: { r: { grid: { color: '#2e3347' }, ticks: { display: false } } }
+  }
+});
+
+// ── 3. Player Modes — polar area ──
+new Chart(document.getElementById('modesChart'), {
+  type: 'polarArea',
+  data: {
+    labels: playerModes.map(m => m[0].replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())),
+    datasets: [{ data: playerModes.map(m => m[1]), backgroundColor: ['#f472b6cc','#34d399cc','#f87171cc','#818cf8cc'] }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'bottom', labels: { color: '#8b8fa3', padding: 8, font: { size: 10 }, usePointStyle: true } }, tooltip: { ...tooltipStyle, callbacks: { label: ctx => ctx.label + ': ' + ctx.raw } } },
+    scales: { r: { grid: { color: '#2e3347' }, ticks: { display: false } } }
+  }
+});
+
+// ── 4. Content Formats — polar area ──
+const formatData = Object.entries(categories).filter(([k]) => ['overview','review','lets-play','deep-dive','unboxing','comparison','crowdfund-preview','discussion','top-list','tutorial','digital-dive','buyers-guide'].includes(k));
+new Chart(document.getElementById('formatsChart'), {
+  type: 'polarArea',
+  data: {
+    labels: formatData.map(([k]) => k.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())),
+    datasets: [{ data: formatData.map(([,v]) => v), backgroundColor: palette.map(c => c + 'cc') }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'bottom', labels: { color: '#8b8fa3', padding: 6, font: { size: 9 }, usePointStyle: true } }, tooltip: { ...tooltipStyle, callbacks: { label: ctx => ctx.label + ': ' + ctx.raw } } },
+    scales: { r: { grid: { color: '#2e3347' }, ticks: { display: false } } }
+  }
+});
+
+// ── 5. Game Mechanics — doughnut ──
+const mechData = Object.entries(categories).filter(([k]) => ['dungeon-crawler','rpg','campaign','miniatures','sandbox','hex-crawl','card-game','press-your-luck','wargame','dice-game','tile-laying','tower-defense'].includes(k));
+new Chart(document.getElementById('categoriesChart'), {
   type: 'doughnut',
   data: {
-    labels: catLabels,
+    labels: mechData.map(([k]) => k.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())),
     datasets: [{
-      data: catValues,
-      backgroundColor: catColors,
-      borderColor: '#1a1d27',
-      borderWidth: 2
+      data: mechData.map(([,v]) => v),
+      backgroundColor: palette.slice(0, mechData.length),
+      borderColor: '#1a1d27', borderWidth: 2
     }]
   },
   options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    cutout: '55%',
+    responsive: true, maintainAspectRatio: false, cutout: '55%',
     plugins: {
-      legend: {
-        position: 'right',
-        labels: {
-          color: '#8b8fa3',
-          padding: 8,
-          font: { size: 11 },
-          usePointStyle: true,
-          pointStyleWidth: 10
-        }
-      },
-      tooltip: {
-        backgroundColor: '#1a1d27',
-        borderColor: '#2e3347',
-        borderWidth: 1,
-        titleColor: '#e2e4eb',
-        bodyColor: '#e2e4eb',
-        padding: 10,
-        cornerRadius: 8,
-        callbacks: {
-          label: ctx => ctx.label + ': ' + ctx.raw + ' videos'
-        }
-      }
+      legend: { position: 'right', labels: { color: '#8b8fa3', padding: 8, font: { size: 11 }, usePointStyle: true, pointStyleWidth: 10 } },
+      tooltip: { ...tooltipStyle, callbacks: { label: ctx => ctx.label + ': ' + ctx.raw + ' videos' } }
     }
   }
 });
 
-// 3. Keeper Post Timeline
+// ── 6. Keeper Post Timeline ──
 const tl = document.getElementById('keeperTimeline');
 const archiveUrl = 'https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170';
 keeperPosts.forEach(p => {
@@ -375,57 +467,31 @@ keeperPosts.forEach(p => {
   tl.appendChild(li);
 });
 
-// 4. Publishing Velocity — line chart
-const velCtx = document.getElementById('velocityChart').getContext('2d');
-const weekLabels = weeklyImports.map(w => {
-  const d = new Date(w[0] + 'T00:00:00');
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-});
-new Chart(velCtx, {
+// ── 7. Publishing Velocity — line chart ──
+new Chart(document.getElementById('velocityChart'), {
   type: 'line',
   data: {
-    labels: weekLabels,
+    labels: weeklyImports.map(w => {
+      const d = new Date(w[0] + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    }),
     datasets: [{
       label: 'Imports',
       data: weeklyImports.map(w => w[1]),
       borderColor: '#818cf8',
       backgroundColor: 'rgba(129, 140, 248, 0.1)',
-      fill: true,
-      tension: 0.3,
+      fill: true, tension: 0.3,
       pointBackgroundColor: '#818cf8',
       pointBorderColor: '#1a1d27',
-      pointBorderWidth: 2,
-      pointRadius: 5
+      pointBorderWidth: 2, pointRadius: 5
     }]
   },
   options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        backgroundColor: '#1a1d27',
-        borderColor: '#2e3347',
-        borderWidth: 1,
-        titleColor: '#e2e4eb',
-        bodyColor: '#e2e4eb',
-        padding: 10,
-        cornerRadius: 8,
-        callbacks: {
-          label: ctx => ctx.raw + ' imports'
-        }
-      }
-    },
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { ...tooltipStyle, callbacks: { label: ctx => ctx.raw + ' imports' } } },
     scales: {
-      x: {
-        grid: { color: 'rgba(46,51,71,0.5)' },
-        ticks: { font: { size: 12 } }
-      },
-      y: {
-        grid: { color: 'rgba(46,51,71,0.5)' },
-        beginAtZero: true,
-        ticks: { stepSize: 10 }
-      }
+      x: { grid: { color: 'rgba(46,51,71,0.5)' }, ticks: { font: { size: 12 } } },
+      y: { grid: { color: 'rgba(46,51,71,0.5)' }, beginAtZero: true, ticks: { stepSize: 10 } }
     }
   }
 });

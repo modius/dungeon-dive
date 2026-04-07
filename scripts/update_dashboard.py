@@ -283,8 +283,18 @@ def build_weekly_imports(videos: list) -> list:
     return [[k, v] for k, v in sorted(weeks.items())]
 
 
-def update_content(html: str, videos: list, keeper_dir: str) -> str:
-    """Update embedded data in content.html that can be derived from project state."""
+def load_analytics(analytics_path: str):
+    """Load transcript_analytics.json if it exists."""
+    if os.path.exists(analytics_path):
+        with open(analytics_path) as f:
+            return json.load(f)
+    return None
+
+
+def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str = "transcript_analytics.json") -> str:
+    """Update embedded data in content.html from analytics and project state."""
+
+    analytics = load_analytics(analytics_path)
 
     # Update keeperPosts
     keeper_data = build_keeper_posts_data(keeper_dir)
@@ -308,17 +318,71 @@ def update_content(html: str, videos: list, keeper_dir: str) -> str:
             flags=re.DOTALL,
         )
 
-    # Update "Based on N analyzed transcripts" notes
-    tx_dir = os.path.join("archive", "transcripts")
-    tx_count = 0
-    if os.path.isdir(tx_dir):
-        tx_count = len([f for f in os.listdir(tx_dir) if f.endswith(".txt")])
-    if tx_count > 0:
-        html = re.sub(
-            r"Based on \d+ analyzed transcripts",
-            "Based on {} analyzed transcripts".format(tx_count),
-            html,
-        )
+    if analytics:
+        agg = analytics.get("aggregates", {})
+        total = analytics.get("total_analyzed", 0)
+
+        # Update topGames
+        games = agg.get("primary_games") or agg.get("games", [])
+        if games:
+            html = re.sub(
+                r"const topGames = \[.*?\];",
+                "const topGames = {};".format(json.dumps(games[:25])),
+                html,
+                flags=re.DOTALL,
+            )
+
+        # Update categories (merge formats + mechanics)
+        cats = {}
+        for tag, count in agg.get("formats", []):
+            cats[tag] = count
+        for tag, count in agg.get("mechanics", []):
+            cats[tag] = count
+        if cats:
+            html = re.sub(
+                r"const categories = \{.*?\};",
+                "const categories = {};".format(json.dumps(cats)),
+                html,
+                flags=re.DOTALL,
+            )
+
+        # Update tag cloud data
+        tag_cloud = agg.get("tag_cloud", [])
+        if tag_cloud:
+            html = re.sub(
+                r"const tagCloud = \[.*?\];",
+                "const tagCloud = {};".format(json.dumps(tag_cloud)),
+                html,
+                flags=re.DOTALL,
+            )
+
+        # Update theme data
+        themes = agg.get("themes", [])
+        if themes:
+            html = re.sub(
+                r"const themeData = \[.*?\];",
+                "const themeData = {};".format(json.dumps(themes)),
+                html,
+                flags=re.DOTALL,
+            )
+
+        # Update player modes
+        modes = agg.get("player_modes", [])
+        if modes:
+            html = re.sub(
+                r"const playerModes = \[.*?\];",
+                "const playerModes = {};".format(json.dumps(modes)),
+                html,
+                flags=re.DOTALL,
+            )
+
+        # Update "Based on N analyzed" notes
+        if total > 0:
+            html = re.sub(
+                r"Based on \d+ analyzed (?:transcripts|videos)",
+                "Based on {} analyzed videos".format(total),
+                html,
+            )
 
     return html
 
