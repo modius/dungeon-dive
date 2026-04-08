@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-08 — Shadows of Brimstone Part II: Through the Portals (8 videos)
+- Imported 8 Shadows of Brimstone videos: expansion deep dives Parts 8-14 + Weird West fiction interlude
+- Covers Frontier Town, Derelict Ship, Caverns of Cynder, Trederra, Blasted Wastes, Forest of the Dead, Temple of Shadows
+- No new videos discovered (1011 total unchanged)
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/24
+- Stats: 1011 total, 328 imported, 678 pending, 5 no_transcript
+- 26 more Shadows of Brimstone videos remain (allies, enemies, mission packs, hexcrawl, solo RPG, wrap-up)
+- Next rotation: Warhammer Quest Part III
+- Note: 8 orphaned post files from previous run found in ready_to_post/ (already posted, archival missed)
+
 ## 2026-04-07 — Warhammer Quest Part II + Dice Commandos (8 videos)
 - Imported 7 Warhammer Quest videos: Take a Look Parts 11-16 (White Dwarf issues c-e, Deathblow, fan/DIY content, Littlemonk's card brick) + Blackstone Fortress overview
 - Imported 1 new video: Dice Commandos (published Apr 5)
