@@ -298,11 +298,126 @@ def extract_games_from_text(text, title_games):
     return games
 
 
+def classify_content_category(title, text, has_transcript):
+    """Classify video into a content category using title + full text.
+
+    Categories: interview, digital, books, rpg, boardgame.
+
+    When a transcript is available, uses content-level signals (what is
+    actually discussed) rather than just title keywords. The category_source
+    field tracks whether classification used transcript or title-only.
+
+    Returns (category, source) tuple.
+    """
+    title_lower = title.lower()
+    text_lower = text.lower() if text else ""
+    source = "transcript" if has_transcript else "keyword"
+
+    # --- Interviews: format overrides topic ---
+    # Title signals (strong)
+    interview_title = any(w in title_lower for w in [
+        "interview", "conversation", "a chat with",
+        "a casual chat", "talking with", "panel discussion",
+        "q&a", "hobbycast",
+    ])
+    if interview_title:
+        return "interview", source
+
+    # Transcript signals: multiple speakers, "guest", "welcome to the show"
+    if has_transcript and text_lower:
+        interview_phrases = sum(1 for p in [
+            "welcome to the show", "thanks for having me", "our guest",
+            "joining me today", "tell us about", "your background",
+            "how did you get into", "thanks for coming on",
+            "i appreciate you", "it's great to have you",
+        ] if p in text_lower)
+        if interview_phrases >= 2:
+            return "interview", source
+
+    # --- Digital games ---
+    digital_title = any(w in title_lower for w in [
+        "digital dive", "video game", "steam", "pc game", "ps4", "ps5",
+        "xbox", "nintendo", "switch game", "vampire survivors",
+        "king's field", "elden ring", "dark souls", "bloodborne",
+        "roguelike", "pixel", "retro game",
+    ]) or "(digital dive)" in title_lower
+    if digital_title:
+        return "digital", source
+
+    # Transcript signals: heavy digital game discussion
+    if has_transcript and text_lower:
+        digital_phrases = sum(1 for p in [
+            "controller", "keyboard", "mouse and keyboard", "save file",
+            "loading screen", "frame rate", "pixel art", "indie game",
+            "early access", "steam page", "wishlist", "download",
+            "roguelite", "roguelike", "auto battler",
+        ] if p in text_lower)
+        if digital_phrases >= 4:
+            return "digital", source
+
+    # --- Books & literature ---
+    book_title = any(w in title_lower for w in [
+        "fiction", "novel", "book review", "novelization",
+        "literature", "best horror fiction", "best science fiction",
+        "weird and wonderful world of novelization",
+    ])
+    if book_title:
+        return "books", source
+
+    # Transcript signals: extended book/author discussion
+    # Requires strong literary focus — board games often reference source material
+    if has_transcript and text_lower:
+        book_phrases = sum(1 for p in [
+            "this book", "the novel", "the author", "i've read",
+            "this collection", "short stories", "the protagonist",
+            "published in", "the prose", "first edition", "paperback",
+            "hardcover", "novelization", "anthology", "weird fiction",
+            "horror fiction", "science fiction", "fantasy fiction",
+            "sword and sorcery", "read this", "on my shelf",
+        ] if p in text_lower)
+        # Negative: if it's primarily about a board game, don't classify as books
+        boardgame_phrases = sum(1 for p in [
+            "components", "miniatures", "dice roll", "game board",
+            "expansion", "player count", "setup", "rulebook",
+        ] if p in text_lower)
+        if book_phrases >= 7 and book_phrases > boardgame_phrases * 2:
+            return "books", source
+
+    # --- Tabletop RPG ---
+    rpg_title = any(w in title_lower for w in [
+        "solo rpg", "(solo rpg)", "ttrpg", "pen and paper",
+        "role-playing game", "role playing game", "roleplaying",
+        "game master", "dungeon master", "character creation",
+        "session 0", "session 1", "actual play",
+    ])
+    rpg_explicit = "rpg" in title_lower and not any(w in title_lower for w in [
+        "board game", "card game", "dungeon crawl", "miniatures",
+    ])
+    if rpg_title or rpg_explicit:
+        return "rpg", source
+
+    # Transcript signals: RPG-specific language dominates
+    if has_transcript and text_lower:
+        rpg_phrases = sum(1 for p in [
+            "game master", "dungeon master", "character sheet",
+            "hit points", "saving throw", "skill check",
+            "role playing", "tabletop rpg", "solo rpg",
+            "narrative game", "journaling game", "oracle table",
+            "random table", "hex crawl rpg", "sandbox rpg",
+        ] if p in text_lower)
+        if rpg_phrases >= 4:
+            return "rpg", source
+
+    # --- Default: board game ---
+    return "boardgame", source
+
+
 def analyze_video(video, post_body, transcript_text=None):
     """Analyze a single video and return tag structure."""
     title = video.get("title", "")
     # Combine title + post body + transcript for analysis
     text = "{}\n{}\n{}".format(title, post_body or "", transcript_text or "")
+    has_transcript = bool(transcript_text and len(transcript_text) > 100)
 
     title_games = extract_games_from_title(title)
     all_games = extract_games_from_text(text, title_games)
@@ -314,12 +429,18 @@ def analyze_video(video, post_body, transcript_text=None):
     elif all_games:
         primary_game = sorted(all_games, key=len, reverse=True)[0]
 
+    # Content category classification
+    content_category, category_source = classify_content_category(
+        title, text, has_transcript)
+
     result = {
         "video_id": video["video_id"],
         "title": title,
         "published_at": video.get("published_at", "")[:10],
         "primary_game": primary_game,
         "games": sorted(all_games),
+        "content_category": content_category,
+        "category_source": category_source,
         "format": sorted(match_tags(text, FORMAT_RE)),
         "mechanics": sorted(match_tags(text, MECHANIC_RE)),
         "themes": sorted(match_tags(text, THEME_RE)),

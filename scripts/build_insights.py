@@ -422,7 +422,11 @@ def compute_content_categories(videos, stats, analytics):
 
             s = st[vid]
             analyzed = analyzed_lookup.get(vid)
-            cat = classify_content_category(v, analyzed)
+            # Prefer analytics classification (transcript-based) over keyword fallback
+            if analyzed and analyzed.get("content_category"):
+                cat = analyzed["content_category"]
+            else:
+                cat = classify_content_category(v, analyzed)
             vc = s.get("view_count", 0)
             lc = s.get("like_count", 0)
             cc = s.get("comment_count", 0)
