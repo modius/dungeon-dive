@@ -361,8 +361,20 @@ def _percentile(data, p):
     return s[f] * (c - k) + s[c] * (k - f)
 
 
+def _safe_ratio(num, denom, digits=2):
+    """Safe percentage ratio."""
+    if not denom:
+        return 0
+    return round(num / denom * 100, digits)
+
+
 def compute_content_categories(videos, stats, analytics):
-    """Compare performance across 4 content categories with robust statistics."""
+    """Compare performance across 4 content categories with robust statistics.
+
+    Includes view-based IQR analysis plus engagement depth metrics:
+    like/view ratio, comment/view ratio, avg duration, and composite
+    engagement score.
+    """
     if not stats:
         return []
 
@@ -375,8 +387,11 @@ def compute_content_categories(videos, stats, analytics):
         for v in analytics.get("videos", []):
             analyzed_lookup[v.get("video_id")] = v
 
-    cat_views = {"boardgame": [], "rpg": [], "digital": [], "books": []}
-    cat_outlier_titles = {"boardgame": [], "rpg": [], "digital": [], "books": []}
+    KEYS = ["boardgame", "rpg", "digital", "books"]
+    # Per-category raw data collectors
+    raw = {k: {"views": [], "likes": [], "comments": [], "durations": [],
+               "like_ratios": [], "comment_ratios": [], "titles": []}
+           for k in KEYS}
 
     for v in videos:
         vid = v.get("video_id")
@@ -384,11 +399,23 @@ def compute_content_categories(videos, stats, analytics):
         if not vid or vid not in st or not pa or pa < cutoff_12m:
             continue
 
+        s = st[vid]
         analyzed = analyzed_lookup.get(vid)
         cat = classify_content_category(v, analyzed)
-        vc = st[vid].get("view_count", 0)
-        cat_views[cat].append(vc)
-        cat_outlier_titles[cat].append((v.get("title", ""), vc))
+        vc = s.get("view_count", 0)
+        lc = s.get("like_count", 0)
+        cc = s.get("comment_count", 0)
+        dur = s.get("duration_seconds", 0)
+
+        raw[cat]["views"].append(vc)
+        raw[cat]["likes"].append(lc)
+        raw[cat]["comments"].append(cc)
+        if dur > 0:
+            raw[cat]["durations"].append(dur)
+        if vc > 100:  # avoid noisy ratios on near-zero views
+            raw[cat]["like_ratios"].append(lc / vc * 100)
+            raw[cat]["comment_ratios"].append(cc / vc * 100)
+        raw[cat]["titles"].append((v.get("title", ""), vc))
 
     labels = {
         "boardgame": "Board Games",
@@ -404,18 +431,22 @@ def compute_content_categories(videos, stats, analytics):
     }
 
     results = []
-    for key in ["boardgame", "rpg", "digital", "books"]:
-        data = cat_views[key]
+    for key in KEYS:
+        d = raw[key]
+        data = d["views"]
         n = len(data)
         if n < 2:
             results.append({
                 "category": labels[key], "color": colors[key],
                 "n": n, "median": 0, "p25": 0, "p75": 0,
                 "trimmed_mean": 0, "mean": 0,
+                "like_ratio": 0, "comment_ratio": 0,
+                "avg_duration_min": 0, "engagement_score": 0,
                 "outliers": [], "insight": "",
             })
             continue
 
+        # View-count IQR analysis
         q1 = int(_percentile(data, 25))
         q3 = int(_percentile(data, 75))
         iqr = q3 - q1
@@ -428,9 +459,19 @@ def compute_content_categories(videos, stats, analytics):
         med = int(_percentile(data, 50))
         mean = int(sum(data) / n)
 
-        # Get outlier titles
+        # Engagement depth metrics
+        like_ratio = round(_percentile(d["like_ratios"], 50), 2) if d["like_ratios"] else 0
+        comment_ratio = round(_percentile(d["comment_ratios"], 50), 2) if d["comment_ratios"] else 0
+        avg_dur = int(sum(d["durations"]) / len(d["durations"]) / 60) if d["durations"] else 0
+
+        # Composite engagement score: normalized views + likes weight + comments weight
+        # Score = trimmed_mean_views + (median_like_ratio * 200) + (median_comment_ratio * 500)
+        # The weights reflect that comments are harder to get than likes
+        engagement_score = int(trimmed + (like_ratio * 200) + (comment_ratio * 500))
+
+        # Outlier titles
         outlier_list = []
-        for title, vc in sorted(cat_outlier_titles[key], key=lambda x: x[1], reverse=True):
+        for title, vc in sorted(d["titles"], key=lambda x: x[1], reverse=True):
             if vc in outlier_vals:
                 outlier_list.append({"title": title, "views": vc})
                 outlier_vals.discard(vc)
@@ -444,20 +485,24 @@ def compute_content_categories(videos, stats, analytics):
             "p75": q3,
             "trimmed_mean": trimmed,
             "mean": mean,
+            "like_ratio": like_ratio,
+            "comment_ratio": comment_ratio,
+            "avg_duration_min": avg_dur,
+            "engagement_score": engagement_score,
             "outliers": outlier_list[:3],
             "insight": "",
         })
 
     # Generate per-category insight text
     if len(results) >= 2:
-        best = max(results, key=lambda r: r["trimmed_mean"])
+        best = max(results, key=lambda r: r["engagement_score"])
         for r in results:
             if r["n"] < 3:
-                r["insight"] = "Too few videos for reliable comparison."
+                r["insight"] = "Small sample — interpret with caution."
             elif r is best:
-                r["insight"] = "Strongest performer by trimmed mean."
-            elif r["trimmed_mean"] > 0 and best["trimmed_mean"] > 0:
-                pct = int((1 - r["trimmed_mean"] / best["trimmed_mean"]) * 100)
+                r["insight"] = "Highest engagement score."
+            elif r["engagement_score"] > 0 and best["engagement_score"] > 0:
+                pct = int((1 - r["engagement_score"] / best["engagement_score"]) * 100)
                 r["insight"] = "{}% below top category.".format(pct)
 
     return results
