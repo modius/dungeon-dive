@@ -19,6 +19,11 @@ from collections import Counter
 from datetime import datetime, timezone
 
 
+def safe_re_sub(pattern, replacement, string, **kwargs):
+    """re.sub that escapes backslashes in the replacement string."""
+    return re.sub(pattern, lambda m: replacement, string, **kwargs)
+
+
 def load_index(index_path: str) -> dict:
     with open(index_path) as f:
         return json.load(f)
@@ -300,7 +305,7 @@ def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str
     keeper_data = build_keeper_posts_data(keeper_dir)
     if keeper_data:
         keeper_js = json.dumps(keeper_data, indent=2)
-        html = re.sub(
+        html = safe_re_sub(
             r"const keeperPosts = \[.*?\];",
             "const keeperPosts = {};".format(keeper_js),
             html,
@@ -311,7 +316,7 @@ def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str
     weekly = build_weekly_imports(videos)
     if weekly:
         weekly_js = json.dumps(weekly)
-        html = re.sub(
+        html = safe_re_sub(
             r"const weeklyImports = \[.*?\];",
             "const weeklyImports = {};".format(weekly_js),
             html,
@@ -325,7 +330,7 @@ def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str
         # Update topGames
         games = agg.get("primary_games") or agg.get("games", [])
         if games:
-            html = re.sub(
+            html = safe_re_sub(
                 r"const topGames = \[.*?\];",
                 "const topGames = {};".format(json.dumps(games[:25])),
                 html,
@@ -339,7 +344,7 @@ def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str
         for tag, count in agg.get("mechanics", []):
             cats[tag] = count
         if cats:
-            html = re.sub(
+            html = safe_re_sub(
                 r"const categories = \{.*?\};",
                 "const categories = {};".format(json.dumps(cats)),
                 html,
@@ -349,7 +354,7 @@ def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str
         # Update tag cloud data
         tag_cloud = agg.get("tag_cloud", [])
         if tag_cloud:
-            html = re.sub(
+            html = safe_re_sub(
                 r"const tagCloud = \[.*?\];",
                 "const tagCloud = {};".format(json.dumps(tag_cloud)),
                 html,
@@ -359,7 +364,7 @@ def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str
         # Update theme data
         themes = agg.get("themes", [])
         if themes:
-            html = re.sub(
+            html = safe_re_sub(
                 r"const themeData = \[.*?\];",
                 "const themeData = {};".format(json.dumps(themes)),
                 html,
@@ -369,7 +374,7 @@ def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str
         # Update player modes
         modes = agg.get("player_modes", [])
         if modes:
-            html = re.sub(
+            html = safe_re_sub(
                 r"const playerModes = \[.*?\];",
                 "const playerModes = {};".format(json.dumps(modes)),
                 html,
