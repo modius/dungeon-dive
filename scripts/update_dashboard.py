@@ -100,6 +100,32 @@ def update_dashboard(html: str, videos: list, archive_dir: str) -> str:
         flags=re.DOTALL,
     )
 
+    # 4. Rebuild _archiveData from actual archive files
+    transcripts_dir = os.path.join(archive_dir, "transcripts")
+    posts_dir = os.path.join(archive_dir, "posts")
+    tx_ids = set()
+    post_ids = set()
+    if os.path.isdir(transcripts_dir):
+        tx_ids = {f.replace("_transcript.txt", "") for f in os.listdir(transcripts_dir)
+                  if f.endswith("_transcript.txt")}
+    if os.path.isdir(posts_dir):
+        post_ids = {f.replace("_post.json", "") for f in os.listdir(posts_dir)
+                    if f.endswith("_post.json")}
+    all_ids = tx_ids | post_ids
+    archive_data = {}
+    for vid in sorted(all_ids):
+        archive_data[vid] = {
+            "hasTranscript": vid in tx_ids,
+            "hasPost": vid in post_ids,
+        }
+    archive_json = json.dumps(archive_data, separators=(",", ":"))
+    html = safe_re_sub(
+        r"const _archiveData = \{.*?\};",
+        "const _archiveData = {};".format(archive_json),
+        html,
+        flags=re.DOTALL,
+    )
+
     return html
 
 
