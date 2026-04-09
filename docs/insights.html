@@ -194,6 +194,10 @@
     text-align: center; color: var(--text-faint); padding: 32px;
     font-size: 13px;
   }
+  .section-desc {
+    font-size: 13px; color: var(--text-dim); margin-bottom: 16px;
+    line-height: 1.5;
+  }
 </style>
 </head>
 <body>
@@ -221,6 +225,7 @@
   <!-- Section 2: Game Performance -->
   <div class="chart-card">
     <div class="chart-title">Game Performance (Avg Views, 3+ Videos)</div>
+    <p class="section-desc">Which games draw the most viewers? This ranks games by average views per video, filtering to games with 3+ dedicated videos to avoid one-hit outliers. Weighted toward the last 2 years to reflect current audience interests rather than legacy traffic.</p>
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="gamePerformanceChart"></canvas>
     </div>
@@ -229,6 +234,7 @@
   <!-- Section 3: Format Performance -->
   <div class="chart-card">
     <div class="chart-title">Format Performance (Avg Views)</div>
+    <p class="section-desc">Content format matters. Tutorials and top-lists may outperform straight reviews. This shows average views by format type, helping identify what style of content resonates most with the audience right now.</p>
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="formatPerformanceChart"></canvas>
     </div>
@@ -238,12 +244,14 @@
   <div class="grid-2">
     <div class="chart-card">
       <div class="chart-title">Uploads by Day of Week</div>
+      <p class="section-desc">Publishing consistency and timing can affect discoverability. Shows which days Daniel tends to upload — useful for identifying patterns and optimizing the schedule.</p>
       <div class="chart-canvas-wrap line-chart">
         <canvas id="dayOfWeekChart"></canvas>
       </div>
     </div>
     <div class="chart-card">
       <div class="chart-title">Monthly Upload Volume</div>
+      <p class="section-desc">Upload frequency over time — reveals periods of high output and gaps. Consistent publishing tends to build momentum with the algorithm.</p>
       <div class="chart-canvas-wrap line-chart">
         <canvas id="monthlyChart"></canvas>
       </div>
@@ -253,24 +261,28 @@
   <!-- Section 5: Coverage Analysis -->
   <div class="chart-card">
     <div class="chart-title">Coverage Analysis</div>
+    <p class="section-desc">Games that Daniel mentions frequently across multiple videos but hasn't given dedicated coverage to. These represent potential untapped topics the audience has already shown interest in — the gap between mentions and dedicated videos suggests latent demand.</p>
     <div id="coverageTable"></div>
   </div>
 
   <!-- Section 6: Series Completion -->
   <div class="chart-card">
     <div class="chart-title">Series Completion</div>
+    <p class="section-desc">Multi-part series build audience investment and return viewership. Tracking completion helps identify stalled series that may benefit from continuation and shows how much archival work remains for each topic.</p>
     <div id="seriesProgress"></div>
   </div>
 
   <!-- Section 7: Content Web -->
   <div class="chart-card">
     <div class="chart-title">Content Web — Game Co-Appearances</div>
+    <p class="section-desc">Which games get discussed together? Co-appearances reveal natural recommendation paths and thematic clusters. Games that frequently appear alongside each other share an audience — useful for planning companion content or cross-referencing in video descriptions.</p>
     <div id="contentWebTable"></div>
   </div>
 
   <!-- Section 8: Engagement Trends -->
   <div class="chart-card">
     <div class="chart-title">Engagement Trends</div>
+    <p class="section-desc">View counts by publish date show how audience engagement has evolved. The moving average line smooths out individual video variance to reveal the overall trajectory — is the channel growing, stable, or declining? Note: older videos accumulate more views over time, so the left side of the chart has a natural advantage.</p>
     <div class="chart-canvas-wrap scatter-chart">
       <canvas id="engagementChart"></canvas>
     </div>
@@ -280,6 +292,7 @@
   <!-- Section 9: Actionable Suggestions -->
   <div class="chart-card">
     <div class="chart-title">Actionable Suggestions</div>
+    <p class="section-desc">Auto-generated recommendations based on the data above. High-priority items indicate strong signals; medium and low are softer patterns worth considering. All suggestions are derived from the last 2 years of content where possible.</p>
     <div id="suggestionsPanel"></div>
   </div>
 
@@ -294,8 +307,8 @@ const keyMetrics = {
   "most_viewed_game": "Four Against Darkness",
   "avg_days_between_uploads": 3.0
 };
-const gamePerformance = [["Four Against Darkness",22410,14],["HeroQuest",20524,8],["Advanced HeroQuest",14404,6],["Mork Borg",12744,18],["Dungeon Degenerates: The Hand of Doom",10358,4],["Shadows of Brimstone",9943,20],["HEXplore It",9598,10],["Legendary",9446,6],["Vantage",8578,8],["Runebound",7883,8],["The Sword & Sorcery Saga",7751,4],["Quest for the Lost Pixel",6688,3],["League of Dungeoneers",6195,3],["Arkham Horror",5749,11],["Dungeon Degenerates",5559,13]];
-const formatPerformance = [["tutorial",17346,48],["top-list",13232,50],["deep-dive",12436,68],["crowdfund-preview",10774,75],["buyers-guide",10472,57],["comparison",10172,115],["review",9738,173],["lets-play",9292,119],["unboxing",9223,67],["digital-dive",8796,45],["overview",8438,197],["discussion",7803,65]];
+const gamePerformance = [["Four Against Darkness",38236,4],["Legendary",9375,4],["Vantage",8578,8],["HeroQuest",8046,3],["Runebound",7379,4],["Dungeon Degenerates",5460,5],["Arkham Horror",5454,10],["Dark Venture",5107,3],["Warhammer Quest",5089,6],["Rove",4877,7],["Talisman",2672,4]];
+const formatPerformance = [["deep-dive",15892,14],["tutorial",15383,32],["top-list",15322,28],["buyers-guide",10827,25],["crowdfund-preview",10445,45],["comparison",9747,53],["lets-play",9235,57],["digital-dive",8456,31],["review",8447,106],["overview",7991,101],["unboxing",7038,40],["discussion",6428,34]];
 const publishingPatterns = {
   "day_of_week": [
     66,
@@ -742,25 +755,7 @@ const suggestions = [
   {
     "category": "Performance",
     "title": "High performer: Four Against Darkness",
-    "detail": "Four Against Darkness averages 22,410 views vs channel average of 7,267",
-    "priority": "high"
-  },
-  {
-    "category": "Performance",
-    "title": "High performer: HeroQuest",
-    "detail": "HeroQuest averages 20,524 views vs channel average of 7,267",
-    "priority": "high"
-  },
-  {
-    "category": "Performance",
-    "title": "High performer: Advanced HeroQuest",
-    "detail": "Advanced HeroQuest averages 14,404 views vs channel average of 7,267",
-    "priority": "high"
-  },
-  {
-    "category": "Performance",
-    "title": "High performer: Mork Borg",
-    "detail": "Mork Borg averages 12,744 views vs channel average of 7,267",
+    "detail": "Four Against Darkness averages 38,236 views vs channel average of 7,267",
     "priority": "high"
   },
   {
@@ -801,44 +796,38 @@ const suggestions = [
   },
   {
     "category": "Format",
+    "title": "Format insight: deep-dive",
+    "detail": "deep-dive content averages 15,892 views",
+    "priority": "low"
+  },
+  {
+    "category": "Format",
     "title": "Format insight: tutorial",
-    "detail": "tutorial content averages 17,346 views",
+    "detail": "tutorial content averages 15,383 views",
     "priority": "low"
   },
   {
     "category": "Format",
     "title": "Format insight: top-list",
-    "detail": "top-list content averages 13,232 views",
-    "priority": "low"
-  },
-  {
-    "category": "Format",
-    "title": "Format insight: deep-dive",
-    "detail": "deep-dive content averages 12,436 views",
-    "priority": "low"
-  },
-  {
-    "category": "Format",
-    "title": "Format insight: crowdfund-preview",
-    "detail": "crowdfund-preview content averages 10,774 views",
+    "detail": "top-list content averages 15,322 views",
     "priority": "low"
   },
   {
     "category": "Format",
     "title": "Format insight: buyers-guide",
-    "detail": "buyers-guide content averages 10,472 views",
+    "detail": "buyers-guide content averages 10,827 views",
+    "priority": "low"
+  },
+  {
+    "category": "Format",
+    "title": "Format insight: crowdfund-preview",
+    "detail": "crowdfund-preview content averages 10,445 views",
     "priority": "low"
   },
   {
     "category": "Format",
     "title": "Format insight: comparison",
-    "detail": "comparison content averages 10,172 views",
-    "priority": "low"
-  },
-  {
-    "category": "Format",
-    "title": "Format insight: review",
-    "detail": "review content averages 9,738 views",
+    "detail": "comparison content averages 9,747 views",
     "priority": "low"
   },
   {

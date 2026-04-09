@@ -78,18 +78,30 @@ def compute_key_metrics(videos, stats, analytics):
     }
 
 
+def _recency_cutoff():
+    """Return date string for 2 years ago (recency weighting window)."""
+    return (datetime.now() - timedelta(days=730)).strftime("%Y-%m-%d")
+
+
+def _is_recent(video, cutoff):
+    """Check if an analyzed video was published within the recency window."""
+    pa = video.get("published_at", "")[:10]
+    return pa >= cutoff if pa else False
+
+
 def compute_game_performance(analytics, stats):
-    """Top 15 games by avg views, minimum 3 videos."""
+    """Top 15 games by avg views, minimum 3 videos, weighted to last 2 years."""
     if not analytics or not stats:
         return []
 
     st = stats.get("stats", {})
+    cutoff = _recency_cutoff()
     game_data = defaultdict(list)
 
     for v in analytics.get("videos", []):
         vid = v.get("video_id")
         pg = v.get("primary_game")
-        if pg and vid and vid in st:
+        if pg and vid and vid in st and _is_recent(v, cutoff):
             game_data[pg].append(st[vid].get("view_count", 0))
 
     results = []
@@ -103,17 +115,18 @@ def compute_game_performance(analytics, stats):
 
 
 def compute_format_performance(analytics, stats):
-    """Formats by avg views."""
+    """Formats by avg views, weighted to last 2 years."""
     if not analytics or not stats:
         return []
 
     st = stats.get("stats", {})
+    cutoff = _recency_cutoff()
     format_data = defaultdict(list)
 
     for v in analytics.get("videos", []):
         vid = v.get("video_id")
         formats = v.get("format", [])
-        if vid and vid in st:
+        if vid and vid in st and _is_recent(v, cutoff):
             vc = st[vid].get("view_count", 0)
             for fmt in formats:
                 format_data[fmt].append(vc)
@@ -277,6 +290,10 @@ def generate_suggestions(key_metrics, game_perf, format_perf, coverage_gaps,
         })
         return suggestions
 
+    # Use recent avg (last 2 years) for comparisons
+    cutoff = _recency_cutoff()
+    st = stats.get("stats", {}) if stats else {}
+    recent_views = [s.get("view_count", 0) for vid, s in st.items()]
     channel_avg = key_metrics.get("avg_views")
     if not channel_avg:
         return suggestions

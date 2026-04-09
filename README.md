@@ -114,39 +114,59 @@ Do NOT modify the Python scripts unless explicitly asked.
 
 ```
 dungeon-dive/
-├── docs/                     GitHub Pages root (dashboard)
-│   └── index.html
-├── scripts/                  Python scripts
-│   ├── fetch_channel_videos.py
-│   ├── batch_fetch_transcripts.py
-│   ├── batch_post.py
-│   ├── get_transcript.py
-│   ├── post_to_discourse.py
-│   ├── sync_discourse_status.py
-│   ├── build_index_from_csv.py
-│   ├── backdate_batch3.py
-│   └── test_config.py
+├── docs/                     GitHub Pages root (dashboards)
+│   ├── index.html            Archive overview dashboard
+│   ├── health.html           System health dashboard
+│   ├── content.html          Content analytics dashboard
+│   └── insights.html         Channel insights dashboard
+├── scripts/
+│   ├── fetch_channel_videos.py    Fetch video index from YouTube
+│   ├── fetch_youtube_stats.py     Fetch engagement data (views, likes, duration)
+│   ├── batch_fetch_transcripts.py Batch transcript download
+│   ├── batch_post.py              Post to Discourse
+│   ├── analyze_content.py         Content taxonomy analysis
+│   ├── build_insights.py          Compute channel insights
+│   ├── update_dashboard.py        Update all dashboard pages
+│   ├── check_integrity.py         Archive integrity checks
+│   ├── check_rate_limit.py        Rate limit guard
+│   ├── repair_data.py             Incremental data repair
+│   └── test_config.py             Config validation
+├── .claude/skills/           Claude Code skill definitions
+│   ├── import/SKILL.md
+│   ├── analyze/SKILL.md
+│   ├── fetch-stats/SKILL.md
+│   ├── repair/SKILL.md
+│   └── insights/SKILL.md
 ├── archive/
 │   ├── transcripts/          Downloaded transcript text files
 │   └── posts/                Post metadata JSON files
-├── pending_imports/          Transient working directory (gitignored)
-├── ready_to_post/            Staging for posts awaiting publish (gitignored)
-├── keeper-posts/             Curated keeper announcement posts
-├── assets/
-│   ├── post-template.md      Post body template
-│   └── references/
-│       └── api-setup.md      API key setup guide
+├── keeper-posts/             Themed Keeper announcement posts
 ├── video_index.json          Source of truth for all video status
+├── series_queue.json         Active/completed series rotation
+├── youtube_stats.json        Engagement data (gitignored, volatile)
+├── transcript_analytics.json Content taxonomy tags (gitignored, computed)
 ├── config.json               API credentials (gitignored)
-├── config.template.json      Credential template
-├── SKILL.md                  Claude Code skill instructions
 ├── CHANGELOG.md              Sync run log
 └── requirements.txt          Python dependencies
 ```
 
+## Claude Code Skills
+
+The project includes purpose-built skills invoked via Claude Code slash commands:
+
+| Skill | Trigger | Purpose |
+|-------|---------|---------|
+| `/import` | `import`, `sync` | Full import cycle: fetch videos, select themed batch, transcribe, generate summaries, post to Discourse, write Keeper update, update dashboards |
+| `/analyze` | `analyze`, `run analysis` | Content taxonomy analysis: extract games, formats, mechanics, themes, player modes from transcripts; update tag cloud and content dashboard |
+| `/fetch-stats` | `fetch stats`, `get youtube stats` | Fetch YouTube engagement data (views, likes, comments, duration) via Data API. Safe to run frequently — uses 0.2% of daily quota |
+| `/repair` | `repair`, `fix data` | Incremental data repair: fix timestamps, rename legacy files, clean stale data, recover missing posts/transcripts |
+| `/insights` | `insights`, `build insights` | Build channel insights dashboard with performance analytics, publishing patterns, coverage gaps, and actionable suggestions |
+
+Skill definitions live in `.claude/skills/*/SKILL.md`.
+
 ## Current Stats
 
-- **1007** videos indexed
-- **276** imported to Discourse
-- **205** transcripts archived
-- **213** posts archived
+- **1012** videos indexed
+- **338** imported to Discourse
+- **259** transcripts archived
+- **338** posts archived
