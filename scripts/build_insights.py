@@ -34,10 +34,23 @@ def load_json(path):
 
 
 def compute_key_metrics(videos, stats, analytics):
-    """Compute top-level channel metrics."""
+    """Compute top-level channel metrics with time-period awareness."""
     has_stats = stats is not None
     total_views = 0
     view_counts = []
+
+    # Build video_id -> published_at lookup
+    vid_dates = {}
+    for v in videos:
+        vid = v.get("video_id")
+        pa = v.get("published_at", "")[:10]
+        if vid and pa:
+            vid_dates[vid] = pa
+
+    # 12-month cutoff for "recent" metrics
+    recent_cutoff = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
+
+    recent_views = []
 
     if has_stats:
         st = stats.get("stats", {})
@@ -45,36 +58,46 @@ def compute_key_metrics(videos, stats, analytics):
             vc = s.get("view_count", 0)
             total_views += vc
             view_counts.append(vc)
+            if vid_dates.get(vid, "") >= recent_cutoff:
+                recent_views.append(vc)
 
-    avg_views = int(total_views / len(view_counts)) if view_counts else None
+    avg_views_recent = int(sum(recent_views) / len(recent_views)) if recent_views else None
 
-    # Most viewed game (by total views)
+    # Most viewed game (last 2 years)
     most_viewed_game = None
+    game_cutoff = _recency_cutoff()
     if has_stats and analytics:
         st = stats.get("stats", {})
         game_views = defaultdict(int)
+        game_counts = defaultdict(int)
         for v in analytics.get("videos", []):
             vid = v.get("video_id")
             pg = v.get("primary_game")
-            if pg and vid and vid in st:
+            pa = v.get("published_at", "")[:10]
+            if pg and vid and vid in st and pa >= game_cutoff:
                 game_views[pg] += st[vid].get("view_count", 0)
-        if game_views:
-            most_viewed_game = max(game_views, key=game_views.get)
+                game_counts[pg] += 1
+        # Best by average views (min 3 videos)
+        game_avgs = {g: game_views[g] // game_counts[g]
+                     for g, c in game_counts.items() if c >= 3}
+        if game_avgs:
+            most_viewed_game = max(game_avgs, key=game_avgs.get)
 
-    # Average days between uploads
-    dates = sorted(v.get("published_at", "")[:10] for v in videos if v.get("published_at"))
-    dates = [d for d in dates if d]
+    # Average days between uploads (last 12 months)
+    recent_dates = sorted(d for d in vid_dates.values() if d >= recent_cutoff)
     avg_days = None
-    if len(dates) >= 2:
-        dt_dates = [datetime.strptime(d, "%Y-%m-%d") for d in dates]
+    if len(recent_dates) >= 2:
+        dt_dates = [datetime.strptime(d, "%Y-%m-%d") for d in recent_dates]
         total_span = (dt_dates[-1] - dt_dates[0]).days
         avg_days = round(total_span / (len(dt_dates) - 1), 1)
 
     return {
         "total_views": total_views if has_stats else None,
-        "avg_views": avg_views,
+        "avg_views": avg_views_recent,
         "most_viewed_game": most_viewed_game,
         "avg_days_between_uploads": avg_days,
+        "total_videos": len(videos),
+        "recent_video_count": len(recent_views),
     }
 
 
@@ -168,11 +191,16 @@ def compute_publishing_patterns(videos):
 
 
 def compute_coverage_gaps(analytics):
-    """Games with mention_count > dedicated_count."""
+    """Games mentioned across videos but with few dedicated videos.
+
+    Only surfaces genuinely under-served games: those with 3+ cross-references
+    but 2 or fewer dedicated videos. Games with substantial dedicated coverage
+    are excluded — being mentioned often is a sign of importance, not a gap.
+    """
     if not analytics:
         return []
 
-    # Count dedicated (primary_game) and mentions (games list)
+    # Count dedicated (primary_game) and cross-references (games list)
     dedicated = Counter()
     mentions = Counter()
 
@@ -186,9 +214,11 @@ def compute_coverage_gaps(analytics):
     results = []
     for game, mention_count in mentions.items():
         ded_count = dedicated.get(game, 0)
-        gap = mention_count - ded_count
-        if gap > 0 and mention_count > ded_count:
-            results.append([game, mention_count, ded_count, gap])
+        # Only show games that are genuinely under-covered:
+        # mentioned in 3+ videos but with 2 or fewer dedicated videos
+        if mention_count >= 3 and ded_count <= 2:
+            ratio = round(mention_count / max(ded_count, 1), 1)
+            results.append([game, mention_count, ded_count, ratio])
 
     results.sort(key=lambda x: x[3], reverse=True)
     return results
@@ -309,16 +339,15 @@ def generate_suggestions(key_metrics, game_perf, format_perf, coverage_gaps,
                 "priority": "high",
             })
 
-    # Coverage gaps
-    for game, mentions, dedicated, gap in coverage_gaps:
-        if mentions >= 5 and dedicated <= 2:
-            suggestions.append({
-                "category": "Coverage",
-                "title": "Coverage gap: {}".format(game),
-                "detail": "{} mentioned in {} videos but only {} dedicated".format(
-                    game, mentions, dedicated),
-                "priority": "medium",
-            })
+    # Coverage gaps (only genuinely under-served games)
+    for game, mentions, dedicated, ratio in coverage_gaps[:6]:
+        suggestions.append({
+            "category": "Coverage",
+            "title": "Untapped topic: {}".format(game),
+            "detail": "Cross-referenced in {} videos but only {} dedicated — {}x mention-to-coverage ratio".format(
+                mentions, dedicated, ratio),
+            "priority": "medium",
+        })
 
     # Format insights
     for fmt, avg, count in format_perf:

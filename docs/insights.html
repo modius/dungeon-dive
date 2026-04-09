@@ -224,8 +224,8 @@
 
   <!-- Section 2: Game Performance -->
   <div class="chart-card">
-    <div class="chart-title">Game Performance (Avg Views, 3+ Videos)</div>
-    <p class="section-desc">Which games draw the most viewers? This ranks games by average views per video, filtering to games with 3+ dedicated videos to avoid one-hit outliers. Weighted toward the last 2 years to reflect current audience interests rather than legacy traffic.</p>
+    <div class="chart-title">Game Performance — Avg Views, Last 2 Years (3+ Videos)</div>
+    <p class="section-desc">Which games draw the most viewers right now? Ranks games by average views per video from the last 2 years only, filtering to games with 3+ dedicated videos to avoid one-hit outliers. Older content is excluded to reflect current audience interests rather than legacy traffic.</p>
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="gamePerformanceChart"></canvas>
     </div>
@@ -233,8 +233,8 @@
 
   <!-- Section 3: Format Performance -->
   <div class="chart-card">
-    <div class="chart-title">Format Performance (Avg Views)</div>
-    <p class="section-desc">Content format matters. Tutorials and top-lists may outperform straight reviews. This shows average views by format type, helping identify what style of content resonates most with the audience right now.</p>
+    <div class="chart-title">Format Performance — Avg Views, Last 2 Years</div>
+    <p class="section-desc">Content format matters. Tutorials and top-lists may outperform straight reviews. Shows average views by format type from the last 2 years, helping identify what style of content resonates most with the current audience.</p>
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="formatPerformanceChart"></canvas>
     </div>
@@ -261,7 +261,7 @@
   <!-- Section 5: Coverage Analysis -->
   <div class="chart-card">
     <div class="chart-title">Coverage Analysis</div>
-    <p class="section-desc">Games that Daniel mentions frequently across multiple videos but hasn't given dedicated coverage to. These represent potential untapped topics the audience has already shown interest in — the gap between mentions and dedicated videos suggests latent demand.</p>
+    <p class="section-desc">Games that get cross-referenced frequently but have few dedicated videos (2 or fewer). Well-covered games like Warhammer Quest and Shadows of Brimstone are excluded — being mentioned often alongside lots of dedicated content is a sign of importance, not a gap. This surfaces genuinely under-served topics. Based on 338 analyzed transcripts.</p>
     <div id="coverageTable"></div>
   </div>
 
@@ -303,9 +303,11 @@
 
 const keyMetrics = {
   "total_views": 7355037,
-  "avg_views": 7267,
+  "avg_views": 8286,
   "most_viewed_game": "Four Against Darkness",
-  "avg_days_between_uploads": 3.0
+  "avg_days_between_uploads": 3.5,
+  "total_videos": 1012,
+  "recent_video_count": 106
 };
 const gamePerformance = [["Four Against Darkness",38236,4],["Legendary",9375,4],["Vantage",8578,8],["HeroQuest",8046,3],["Runebound",7379,4],["Dungeon Degenerates",5460,5],["Arkham Horror",5454,10],["Dark Venture",5107,3],["Warhammer Quest",5089,6],["Rove",4877,7],["Talisman",2672,4]];
 const formatPerformance = [["deep-dive",15892,14],["tutorial",15383,32],["top-list",15322,28],["buyers-guide",10827,25],["crowdfund-preview",10445,45],["comparison",9747,53],["lets-play",9235,57],["digital-dive",8456,31],["review",8447,106],["overview",7991,101],["unboxing",7038,40],["discussion",6428,34]];
@@ -722,7 +724,7 @@ const publishingPatterns = {
     ]
   ]
 };
-const coverageGaps = [["Rove",62,8,54],["Warhammer Quest",65,24,41],["Talisman",50,14,36],["Vantage",34,8,26],["Legendary",31,6,25],["Arkham Horror",34,11,23],["Descent",17,1,16],["Runebound",24,8,16],["Dungeon Degenerates",26,13,13],["Shadows of Brimstone",33,20,13],["HeroQuest",20,8,12],["Four Against Darkness",22,14,8],["Space Hulk",8,0,8],["Scarlet Heroes",9,2,7],["Restless",7,1,6],["Fallen Land",8,2,6],["Dark Venture",9,4,5],["Massive Darkness",4,0,4],["Doom Pilgrim",5,2,3],["The Restless",4,1,3],["Machine Gods",3,0,3],["Silver Tower",3,0,3],["Downcrawl",4,2,2],["Gathering Gloom",3,1,2],["Mork Borg",20,18,2],["Advanced HeroQuest",8,6,2],["Pauper's Ladder",2,1,1],["Sol Cesto",1,0,1],["Grimscar",2,1,1],["Blackstone Fortress",3,2,1],["Elder Space",1,0,1],["Void Realm",2,1,1],["Dungeons & Dragons",2,1,1],["Stalagbite",1,0,1],["League of Dungeoneers",4,3,1],["7th Citadel",1,0,1],["Gloomhaven",1,0,1],["Cursed City",1,0,1],["Die Wurst",1,0,1],["Altar Quest",1,0,1]];
+const coverageGaps = [["Descent",17,1,17.0],["Space Hulk",8,0,8.0],["Restless",7,1,7.0],["Scarlet Heroes",9,2,4.5],["The Restless",4,1,4.0],["Massive Darkness",4,0,4.0],["Fallen Land",8,2,4.0],["Gathering Gloom",3,1,3.0],["Machine Gods",3,0,3.0],["Silver Tower",3,0,3.0],["Doom Pilgrim",5,2,2.5],["Downcrawl",4,2,2.0],["Blackstone Fortress",3,2,1.5]];
 const seriesHealth = [
   {
     "title": "Warhammer Quest",
@@ -755,43 +757,43 @@ const suggestions = [
   {
     "category": "Performance",
     "title": "High performer: Four Against Darkness",
-    "detail": "Four Against Darkness averages 38,236 views vs channel average of 7,267",
+    "detail": "Four Against Darkness averages 38,236 views vs channel average of 8,286",
     "priority": "high"
   },
   {
     "category": "Coverage",
-    "title": "Coverage gap: Descent",
-    "detail": "Descent mentioned in 17 videos but only 1 dedicated",
+    "title": "Untapped topic: Descent",
+    "detail": "Cross-referenced in 17 videos but only 1 dedicated \u2014 17.0x mention-to-coverage ratio",
     "priority": "medium"
   },
   {
     "category": "Coverage",
-    "title": "Coverage gap: Space Hulk",
-    "detail": "Space Hulk mentioned in 8 videos but only 0 dedicated",
+    "title": "Untapped topic: Space Hulk",
+    "detail": "Cross-referenced in 8 videos but only 0 dedicated \u2014 8.0x mention-to-coverage ratio",
     "priority": "medium"
   },
   {
     "category": "Coverage",
-    "title": "Coverage gap: Scarlet Heroes",
-    "detail": "Scarlet Heroes mentioned in 9 videos but only 2 dedicated",
+    "title": "Untapped topic: Restless",
+    "detail": "Cross-referenced in 7 videos but only 1 dedicated \u2014 7.0x mention-to-coverage ratio",
     "priority": "medium"
   },
   {
     "category": "Coverage",
-    "title": "Coverage gap: Restless",
-    "detail": "Restless mentioned in 7 videos but only 1 dedicated",
+    "title": "Untapped topic: Scarlet Heroes",
+    "detail": "Cross-referenced in 9 videos but only 2 dedicated \u2014 4.5x mention-to-coverage ratio",
     "priority": "medium"
   },
   {
     "category": "Coverage",
-    "title": "Coverage gap: Fallen Land",
-    "detail": "Fallen Land mentioned in 8 videos but only 2 dedicated",
+    "title": "Untapped topic: The Restless",
+    "detail": "Cross-referenced in 4 videos but only 1 dedicated \u2014 4.0x mention-to-coverage ratio",
     "priority": "medium"
   },
   {
     "category": "Coverage",
-    "title": "Coverage gap: Doom Pilgrim",
-    "detail": "Doom Pilgrim mentioned in 5 videos but only 2 dedicated",
+    "title": "Untapped topic: Massive Darkness",
+    "detail": "Cross-referenced in 4 videos but only 0 dedicated \u2014 4.0x mention-to-coverage ratio",
     "priority": "medium"
   },
   {
@@ -816,18 +818,6 @@ const suggestions = [
     "category": "Format",
     "title": "Format insight: buyers-guide",
     "detail": "buyers-guide content averages 10,827 views",
-    "priority": "low"
-  },
-  {
-    "category": "Format",
-    "title": "Format insight: crowdfund-preview",
-    "detail": "crowdfund-preview content averages 10,445 views",
-    "priority": "low"
-  },
-  {
-    "category": "Format",
-    "title": "Format insight: comparison",
-    "detail": "comparison content averages 9,747 views",
     "priority": "low"
   },
   {
@@ -857,10 +847,10 @@ const tooltipStyle = {
 (function() {
   const el = document.getElementById('metricsStrip');
   const items = [
-    { value: keyMetrics.total_views, label: 'Total Views', fmt: v => v != null ? v.toLocaleString() : '—' },
-    { value: keyMetrics.avg_views, label: 'Avg Views / Video', fmt: v => v != null ? v.toLocaleString() : '—' },
-    { value: keyMetrics.most_viewed_game, label: 'Top Game', fmt: v => v || '—' },
-    { value: keyMetrics.avg_days_between_uploads, label: 'Upload Cadence', fmt: v => v != null ? v + 'd' : '—' },
+    { value: keyMetrics.total_views, label: 'Total Views (all time)', fmt: v => v != null ? v.toLocaleString() : '—' },
+    { value: keyMetrics.avg_views, label: 'Avg Views / Video (12 mo)', fmt: v => v != null ? v.toLocaleString() : '—' },
+    { value: keyMetrics.most_viewed_game, label: 'Top Game (2 yr avg)', fmt: v => v || '—' },
+    { value: keyMetrics.avg_days_between_uploads, label: 'Upload Cadence (12 mo)', fmt: v => v != null ? v + 'd' : '—' },
   ];
   items.forEach(item => {
     const card = document.createElement('div');
@@ -995,12 +985,12 @@ const tooltipStyle = {
 (function() {
   const el = document.getElementById('coverageTable');
   if (!coverageGaps.length) { el.innerHTML = '<div class="no-data">No coverage gaps detected</div>'; return; }
-  const maxGap = Math.max(...coverageGaps.map(g => g[3]));
-  let html = '<table class="coverage-table"><thead><tr><th>Game</th><th>Mentions</th><th>Dedicated</th><th>Gap</th><th></th></tr></thead><tbody>';
+  const maxRatio = Math.max(...coverageGaps.map(g => g[3]));
+  let html = '<table class="coverage-table"><thead><tr><th>Game</th><th>Cross-References</th><th>Dedicated Videos</th><th>Ratio</th><th></th></tr></thead><tbody>';
   coverageGaps.forEach(g => {
     const cls = g[3] > 5 ? ' class="highlight"' : '';
-    const w = Math.max(8, (g[3] / maxGap) * 80);
-    html += '<tr' + cls + '><td>' + g[0] + '</td><td>' + g[1] + '</td><td>' + g[2] + '</td><td>' + g[3] + '</td><td><span class="gap-bar" style="width:' + w + 'px"></span></td></tr>';
+    const w = Math.max(8, (g[3] / maxRatio) * 80);
+    html += '<tr' + cls + '><td>' + g[0] + '</td><td>' + g[1] + '</td><td>' + g[2] + '</td><td>' + g[3] + 'x</td><td><span class="gap-bar" style="width:' + w + 'px"></span></td></tr>';
   });
   html += '</tbody></table>';
   el.innerHTML = html;
