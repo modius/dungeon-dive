@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-04-08T02:48:25.662638+00:00",
+  "last_fetched": "2026-04-09T01:45:23.061601+00:00",
   "videos": [
+    {
+      "video_id": "xZIOdejjTlg",
+      "title": "The Best Horror Fiction (According to the Dungeon Dive)",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-04-08T16:01:39Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/xZIOdejjTlg/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1495,
+      "imported_at": "2026-04-09T01:51:45.312185Z"
+    },
     {
       "video_id": "KNwEQXDv5XM",
       "title": "Dice Commandos - Tactical Espionage Dice Rolling Action",
@@ -9060,9 +9070,9 @@
       "description": "",
       "published_at": "2019-09-17T04:46:48Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Nh7jDVmtg0I/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1488,
+      "imported_at": "2026-04-09T01:51:14.679193Z"
     },
     {
       "video_id": "tz7n--I4rDU",
@@ -9070,9 +9080,9 @@
       "description": "",
       "published_at": "2019-09-11T02:38:55Z",
       "thumbnail_url": "https://i.ytimg.com/vi/tz7n--I4rDU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1493,
+      "imported_at": "2026-04-09T01:51:36.526544Z"
     },
     {
       "video_id": "TXAe5nqafRY",
@@ -9080,9 +9090,9 @@
       "description": "",
       "published_at": "2019-09-10T02:43:29Z",
       "thumbnail_url": "https://i.ytimg.com/vi/TXAe5nqafRY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1489,
+      "imported_at": "2026-04-09T01:51:19.090485Z"
     },
     {
       "video_id": "6SV0Lm47pvY",
@@ -9090,9 +9100,9 @@
       "description": "",
       "published_at": "2019-09-02T19:02:32Z",
       "thumbnail_url": "https://i.ytimg.com/vi/6SV0Lm47pvY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1487,
+      "imported_at": "2026-04-09T01:51:09.671677Z"
     },
     {
       "video_id": "kjl_jo_1HTg",
@@ -9100,9 +9110,9 @@
       "description": "",
       "published_at": "2019-08-24T17:58:34Z",
       "thumbnail_url": "https://i.ytimg.com/vi/kjl_jo_1HTg/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1491,
+      "imported_at": "2026-04-09T01:51:27.819563Z"
     },
     {
       "video_id": "14FLm6zvvlM",
@@ -9110,9 +9120,9 @@
       "description": "",
       "published_at": "2019-08-22T02:15:37Z",
       "thumbnail_url": "https://i.ytimg.com/vi/14FLm6zvvlM/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1486,
+      "imported_at": "2026-04-09T01:51:05.274847Z"
     },
     {
       "video_id": "vIAhcX4SppA",
@@ -9120,9 +9130,9 @@
       "description": "",
       "published_at": "2019-08-16T16:21:54Z",
       "thumbnail_url": "https://i.ytimg.com/vi/vIAhcX4SppA/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1494,
+      "imported_at": "2026-04-09T01:51:40.965089Z"
     },
     {
       "video_id": "oo0K4ydn4rw",
@@ -9130,9 +9140,9 @@
       "description": "Warhammer Quest - Let\u2019s Play - Part 2",
       "published_at": "2019-08-13T14:41:27Z",
       "thumbnail_url": "https://i.ytimg.com/vi/oo0K4ydn4rw/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1492,
+      "imported_at": "2026-04-09T01:51:32.135417Z"
     },
     {
       "video_id": "dl3KzRCU-aQ",
@@ -9140,9 +9150,9 @@
       "description": "Part One of the WHQ let's play series.",
       "published_at": "2019-08-11T19:09:28Z",
       "thumbnail_url": "https://i.ytimg.com/vi/dl3KzRCU-aQ/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1490,
+      "imported_at": "2026-04-09T01:51:23.432721Z"
     },
     {
       "video_id": "49KORRES2ks",

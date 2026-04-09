@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-09 — Warhammer Quest Part III: The Let's Play Campaign (10 videos)
+- Imported 9 Warhammer Quest Let's Play videos: Parts 1-9 (Barbarian & Witch Hunter campaign)
+- Imported 1 new priority video: The Best Horror Fiction (published Apr 8)
+- 1 new video discovered during fetch (1012 total)
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/25
+- Stats: 1012 total, 338 imported, 669 pending, 5 no_transcript
+- 9 more Warhammer Quest videos remain (Silver Tower, retrospectives, "Still the Gold Standard")
+- Next rotation: Shadows of Brimstone Part III
+
 ## 2026-04-08 — Shadows of Brimstone Part II: Through the Portals (8 videos)
 - Imported 8 Shadows of Brimstone videos: expansion deep dives Parts 8-14 + Weird West fiction interlude
 - Covers Frontier Town, Derelict Ship, Caverns of Cynder, Trederra, Blasted Wastes, Forest of the Dead, Temple of Shadows
