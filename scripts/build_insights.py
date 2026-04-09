@@ -288,6 +288,121 @@ def compute_content_web(analytics):
     return results
 
 
+def classify_content_category(video, analyzed_video=None):
+    """Classify a video into one of four content categories.
+
+    Categories:
+      digital   — video games, digital adaptations, digital-only content
+      books     — fiction, literature, novelizations, book reviews
+      rpg       — tabletop RPGs, solo RPGs, pen-and-paper RPGs
+      boardgame — board games, dungeon crawlers, card games, miniatures (default)
+    """
+    title = video.get("title", "").lower()
+    desc = video.get("description", "").lower()
+
+    # Get taxonomy tags if available
+    formats = []
+    mechs = []
+    if analyzed_video:
+        formats = analyzed_video.get("format", [])
+        mechs = analyzed_video.get("mechanics", [])
+
+    # --- Digital games ---
+    digital_title = any(w in title for w in [
+        "digital dive", "video game", "steam", "pc game", "ps4", "ps5",
+        "xbox", "nintendo", "switch game", "vampire survivors",
+        "king's field", "elden ring", "dark souls", "bloodborne",
+        "roguelike", "pixel", "retro game",
+    ])
+    # "Digital Dive" is Daniel's specific series name for video game content
+    if digital_title or "(digital dive)" in title:
+        return "digital"
+
+    # --- Books & literature ---
+    book_title = any(w in title for w in [
+        "fiction", "novel", "book review", "novelization",
+        "literature", "sword and sorcery fiction",
+        "science fiction book", "horror fiction",
+        "best horror fiction", "best science fiction",
+        "weird and wonderful world of novelization",
+    ])
+    if book_title:
+        return "books"
+
+    # --- Tabletop RPG ---
+    rpg_title = any(w in title for w in [
+        "solo rpg", "(solo rpg)", "ttrpg", "pen and paper",
+        "role-playing game", "role playing game", "roleplaying",
+        "game master", "dungeon master", "character creation",
+        "session 0", "session 1", "actual play",
+    ])
+    # Also check: if title explicitly says "rpg" and it's not a board game
+    rpg_explicit = "rpg" in title and not any(w in title for w in [
+        "board game", "card game", "dungeon crawl", "miniatures",
+    ])
+    if rpg_title or rpg_explicit:
+        return "rpg"
+
+    # --- Default: board game ---
+    return "boardgame"
+
+
+def compute_content_categories(videos, stats, analytics):
+    """Compare performance across 4 content categories."""
+    if not stats:
+        return []
+
+    st = stats.get("stats", {})
+    cutoff_12m = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
+
+    # Build analyzed lookup
+    analyzed_lookup = {}
+    if analytics:
+        for v in analytics.get("videos", []):
+            analyzed_lookup[v.get("video_id")] = v
+
+    categories = {
+        "digital": {"label": "Digital Games", "views": [], "views_recent": [], "dates": []},
+        "books": {"label": "Books & Literature", "views": [], "views_recent": [], "dates": []},
+        "rpg": {"label": "Tabletop RPG", "views": [], "views_recent": [], "dates": []},
+        "boardgame": {"label": "Board Games", "views": [], "views_recent": [], "dates": []},
+    }
+
+    for v in videos:
+        vid = v.get("video_id")
+        pa = v.get("published_at", "")[:10]
+        if not vid or vid not in st:
+            continue
+
+        analyzed = analyzed_lookup.get(vid)
+        cat = classify_content_category(v, analyzed)
+        vc = st[vid].get("view_count", 0)
+
+        categories[cat]["views"].append(vc)
+        categories[cat]["dates"].append(pa)
+        if pa >= cutoff_12m:
+            categories[cat]["views_recent"].append(vc)
+
+    results = []
+    for key in ["boardgame", "rpg", "digital", "books"]:
+        c = categories[key]
+        total = len(c["views"])
+        recent = len(c["views_recent"])
+        avg_all = int(sum(c["views"]) / total) if total else 0
+        avg_recent = int(sum(c["views_recent"]) / recent) if recent else 0
+        total_views = sum(c["views"])
+        results.append({
+            "category": c["label"],
+            "total_videos": total,
+            "recent_videos": recent,
+            "avg_views_all": avg_all,
+            "avg_views_recent": avg_recent,
+            "total_views": total_views,
+        })
+
+    return results
+
+
 def compute_engagement_trends(videos, stats):
     """All videos sorted by date with view counts."""
     if not stats:
@@ -420,6 +535,7 @@ def update_insights_html(html, data):
         "coverageGaps": data["coverageGaps"],
         "seriesHealth": data["seriesHealth"],
         "contentWeb": data["contentWeb"],
+        "contentCategories": data["contentCategories"],
         "engagementTrends": data["engagementTrends"],
         "suggestions": data["suggestions"],
     }
@@ -487,6 +603,7 @@ def main():
     gaps = compute_coverage_gaps(analytics)
     series = compute_series_health(series_data, analytics)
     web = compute_content_web(analytics)
+    content_cats = compute_content_categories(videos, stats, analytics)
     engagement = compute_engagement_trends(videos, stats)
     suggestions = generate_suggestions(
         key_metrics, game_perf, format_perf, gaps,
@@ -500,6 +617,7 @@ def main():
         "coverageGaps": gaps,
         "seriesHealth": series,
         "contentWeb": web,
+        "contentCategories": content_cats,
         "engagementTrends": engagement,
         "suggestions": suggestions,
     }
@@ -512,6 +630,8 @@ def main():
         key_metrics.get("avg_days_between_uploads")))
     print("  Game performance: {} games (3+ videos)".format(len(game_perf)))
     print("  Format performance: {} formats".format(len(format_perf)))
+    print("  Content categories: {}".format(
+        ", ".join("{} ({})".format(c["category"], c["total_videos"]) for c in content_cats)))
     print("  Coverage gaps: {} games".format(len(gaps)))
     print("  Series health: {} series".format(len(series)))
     print("  Content web: {} pairs".format(len(web)))
