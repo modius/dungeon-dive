@@ -17,6 +17,7 @@ __pycache__/
 # One-off/deprecated files (kept locally, not committed)
 sync-status.jsx
 transcript_analytics.json
+youtube_stats.json
 discourse_topics_export.json
 *.csv
 fetch_*.sh
