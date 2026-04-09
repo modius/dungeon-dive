@@ -289,23 +289,28 @@ def compute_content_web(analytics):
 
 
 def classify_content_category(video, analyzed_video=None):
-    """Classify a video into one of four content categories.
+    """Classify a video into one of five content categories.
 
     Categories:
+      interview — interviews, conversations, panels, Q&As
       digital   — video games, digital adaptations, digital-only content
       books     — fiction, literature, novelizations, book reviews
       rpg       — tabletop RPGs, solo RPGs, pen-and-paper RPGs
       boardgame — board games, dungeon crawlers, card games, miniatures (default)
+
+    Interview is checked first because an interview about an RPG or
+    board game is still primarily an interview in format.
     """
     title = video.get("title", "").lower()
-    desc = video.get("description", "").lower()
 
-    # Get taxonomy tags if available
-    formats = []
-    mechs = []
-    if analyzed_video:
-        formats = analyzed_video.get("format", [])
-        mechs = analyzed_video.get("mechanics", [])
+    # --- Interviews (check first — format overrides topic) ---
+    interview_title = any(w in title for w in [
+        "interview", "conversation with", "a chat with",
+        "talking with", "panel discussion", "q&a with",
+        "hobbycast",
+    ])
+    if interview_title:
+        return "interview"
 
     # --- Digital games ---
     digital_title = any(w in title for w in [
@@ -314,7 +319,6 @@ def classify_content_category(video, analyzed_video=None):
         "king's field", "elden ring", "dark souls", "bloodborne",
         "roguelike", "pixel", "retro game",
     ])
-    # "Digital Dive" is Daniel's specific series name for video game content
     if digital_title or "(digital dive)" in title:
         return "digital"
 
@@ -336,7 +340,6 @@ def classify_content_category(video, analyzed_video=None):
         "game master", "dungeon master", "character creation",
         "session 0", "session 1", "actual play",
     ])
-    # Also check: if title explicitly says "rpg" and it's not a board game
     rpg_explicit = "rpg" in title and not any(w in title for w in [
         "board game", "card game", "dungeon crawl", "miniatures",
     ])
@@ -376,10 +379,11 @@ def compute_content_categories(videos, stats, analytics):
     engagement score.
     """
     if not stats:
-        return []
+        return [], []
 
     st = stats.get("stats", {})
     cutoff_12m = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
+    cutoff_3y = (datetime.now() - timedelta(days=1095)).strftime("%Y-%m-%d")
 
     # Build analyzed lookup
     analyzed_lookup = {}
@@ -387,125 +391,135 @@ def compute_content_categories(videos, stats, analytics):
         for v in analytics.get("videos", []):
             analyzed_lookup[v.get("video_id")] = v
 
-    KEYS = ["boardgame", "rpg", "digital", "books"]
-    # Per-category raw data collectors
-    raw = {k: {"views": [], "likes": [], "comments": [], "durations": [],
-               "like_ratios": [], "comment_ratios": [], "titles": []}
-           for k in KEYS}
-
-    for v in videos:
-        vid = v.get("video_id")
-        pa = v.get("published_at", "")[:10]
-        if not vid or vid not in st or not pa or pa < cutoff_12m:
-            continue
-
-        s = st[vid]
-        analyzed = analyzed_lookup.get(vid)
-        cat = classify_content_category(v, analyzed)
-        vc = s.get("view_count", 0)
-        lc = s.get("like_count", 0)
-        cc = s.get("comment_count", 0)
-        dur = s.get("duration_seconds", 0)
-
-        raw[cat]["views"].append(vc)
-        raw[cat]["likes"].append(lc)
-        raw[cat]["comments"].append(cc)
-        if dur > 0:
-            raw[cat]["durations"].append(dur)
-        if vc > 100:  # avoid noisy ratios on near-zero views
-            raw[cat]["like_ratios"].append(lc / vc * 100)
-            raw[cat]["comment_ratios"].append(cc / vc * 100)
-        raw[cat]["titles"].append((v.get("title", ""), vc))
+    KEYS = ["boardgame", "rpg", "interview", "digital", "books"]
 
     labels = {
         "boardgame": "Board Games",
         "rpg": "Solo / Tabletop RPG",
+        "interview": "Interviews & Panels",
         "digital": "Digital Games",
         "books": "Books & Literature",
     }
     colors = {
         "boardgame": "#818cf8",
         "rpg": "#a78bfa",
+        "interview": "#f472b6",
         "digital": "#34d399",
         "books": "#fbbf24",
     }
 
-    results = []
-    for key in KEYS:
-        d = raw[key]
-        data = d["views"]
-        n = len(data)
-        if n < 2:
+    def _collect(cutoff_date):
+        """Collect raw engagement data for videos after cutoff_date."""
+        raw = {k: {"views": [], "likes": [], "comments": [], "durations": [],
+                    "like_ratios": [], "comment_ratios": [], "titles": []}
+               for k in KEYS}
+
+        for v in videos:
+            vid = v.get("video_id")
+            pa = v.get("published_at", "")[:10]
+            if not vid or vid not in st or not pa or pa < cutoff_date:
+                continue
+
+            s = st[vid]
+            analyzed = analyzed_lookup.get(vid)
+            cat = classify_content_category(v, analyzed)
+            vc = s.get("view_count", 0)
+            lc = s.get("like_count", 0)
+            cc = s.get("comment_count", 0)
+            dur = s.get("duration_seconds", 0)
+
+            raw[cat]["views"].append(vc)
+            raw[cat]["likes"].append(lc)
+            raw[cat]["comments"].append(cc)
+            if dur > 0:
+                raw[cat]["durations"].append(dur)
+            if vc > 100:
+                raw[cat]["like_ratios"].append(lc / vc * 100)
+                raw[cat]["comment_ratios"].append(cc / vc * 100)
+            raw[cat]["titles"].append((v.get("title", ""), vc))
+        return raw
+
+    def _build_results(raw):
+        """Build results list from collected raw data."""
+        results = []
+        for key in KEYS:
+            d = raw[key]
+            data = d["views"]
+            n = len(data)
+            if n < 2:
+                results.append({
+                    "category": labels[key], "color": colors[key],
+                    "n": n, "median": 0, "p25": 0, "p75": 0,
+                    "trimmed_mean": 0, "mean": 0,
+                    "like_ratio": 0, "comment_ratio": 0,
+                    "avg_duration_min": 0, "engagement_score": 0,
+                    "outliers": [], "insight": "",
+                })
+                continue
+
+            q1 = int(_percentile(data, 25))
+            q3 = int(_percentile(data, 75))
+            iqr = q3 - q1
+            upper_fence = q3 + 1.5 * iqr
+            lower_fence = q1 - 1.5 * iqr
+
+            inliers = [x for x in data if lower_fence <= x <= upper_fence]
+            outlier_vals = set(x for x in data if x > upper_fence or x < lower_fence)
+            trimmed = int(sum(inliers) / len(inliers)) if inliers else 0
+            med = int(_percentile(data, 50))
+            mean = int(sum(data) / n)
+
+            like_ratio = round(_percentile(d["like_ratios"], 50), 2) if d["like_ratios"] else 0
+            comment_ratio = round(_percentile(d["comment_ratios"], 50), 2) if d["comment_ratios"] else 0
+            avg_dur = int(sum(d["durations"]) / len(d["durations"]) / 60) if d["durations"] else 0
+
+            engagement_score = int(trimmed + (like_ratio * 200) + (comment_ratio * 500))
+
+            outlier_list = []
+            for title, vc in sorted(d["titles"], key=lambda x: x[1], reverse=True):
+                if vc in outlier_vals:
+                    outlier_list.append({"title": title, "views": vc})
+                    outlier_vals.discard(vc)
+
             results.append({
-                "category": labels[key], "color": colors[key],
-                "n": n, "median": 0, "p25": 0, "p75": 0,
-                "trimmed_mean": 0, "mean": 0,
-                "like_ratio": 0, "comment_ratio": 0,
-                "avg_duration_min": 0, "engagement_score": 0,
-                "outliers": [], "insight": "",
+                "category": labels[key],
+                "color": colors[key],
+                "n": n,
+                "median": med,
+                "p25": q1,
+                "p75": q3,
+                "trimmed_mean": trimmed,
+                "mean": mean,
+                "like_ratio": like_ratio,
+                "comment_ratio": comment_ratio,
+                "avg_duration_min": avg_dur,
+                "engagement_score": engagement_score,
+                "outliers": outlier_list[:3],
+                "insight": "",
             })
-            continue
 
-        # View-count IQR analysis
-        q1 = int(_percentile(data, 25))
-        q3 = int(_percentile(data, 75))
-        iqr = q3 - q1
-        upper_fence = q3 + 1.5 * iqr
-        lower_fence = q1 - 1.5 * iqr
+        # Generate per-category insight text
+        scored = [r for r in results if r["n"] >= 2]
+        if len(scored) >= 2:
+            best = max(scored, key=lambda r: r["engagement_score"])
+            for r in results:
+                if r["n"] < 3:
+                    r["insight"] = "Small sample — interpret with caution."
+                elif r is best:
+                    r["insight"] = "Highest engagement score."
+                elif r["engagement_score"] > 0 and best["engagement_score"] > 0:
+                    pct = int((1 - r["engagement_score"] / best["engagement_score"]) * 100)
+                    r["insight"] = "{}% below top.".format(pct)
 
-        inliers = [x for x in data if lower_fence <= x <= upper_fence]
-        outlier_vals = set(x for x in data if x > upper_fence or x < lower_fence)
-        trimmed = int(sum(inliers) / len(inliers)) if inliers else 0
-        med = int(_percentile(data, 50))
-        mean = int(sum(data) / n)
+        return results
 
-        # Engagement depth metrics
-        like_ratio = round(_percentile(d["like_ratios"], 50), 2) if d["like_ratios"] else 0
-        comment_ratio = round(_percentile(d["comment_ratios"], 50), 2) if d["comment_ratios"] else 0
-        avg_dur = int(sum(d["durations"]) / len(d["durations"]) / 60) if d["durations"] else 0
+    # Build both windows
+    raw_12m = _collect(cutoff_12m)
+    raw_3y = _collect(cutoff_3y)
+    results_12m = _build_results(raw_12m)
+    results_3y = _build_results(raw_3y)
 
-        # Composite engagement score: normalized views + likes weight + comments weight
-        # Score = trimmed_mean_views + (median_like_ratio * 200) + (median_comment_ratio * 500)
-        # The weights reflect that comments are harder to get than likes
-        engagement_score = int(trimmed + (like_ratio * 200) + (comment_ratio * 500))
-
-        # Outlier titles
-        outlier_list = []
-        for title, vc in sorted(d["titles"], key=lambda x: x[1], reverse=True):
-            if vc in outlier_vals:
-                outlier_list.append({"title": title, "views": vc})
-                outlier_vals.discard(vc)
-
-        results.append({
-            "category": labels[key],
-            "color": colors[key],
-            "n": n,
-            "median": med,
-            "p25": q1,
-            "p75": q3,
-            "trimmed_mean": trimmed,
-            "mean": mean,
-            "like_ratio": like_ratio,
-            "comment_ratio": comment_ratio,
-            "avg_duration_min": avg_dur,
-            "engagement_score": engagement_score,
-            "outliers": outlier_list[:3],
-            "insight": "",
-        })
-
-    # Generate per-category insight text
-    if len(results) >= 2:
-        best = max(results, key=lambda r: r["engagement_score"])
-        for r in results:
-            if r["n"] < 3:
-                r["insight"] = "Small sample — interpret with caution."
-            elif r is best:
-                r["insight"] = "Highest engagement score."
-            elif r["engagement_score"] > 0 and best["engagement_score"] > 0:
-                pct = int((1 - r["engagement_score"] / best["engagement_score"]) * 100)
-                r["insight"] = "{}% below top category.".format(pct)
-
-    return results
+    return results_12m, results_3y
 
 
 def compute_engagement_trends(videos, stats):
@@ -641,6 +655,7 @@ def update_insights_html(html, data):
         "seriesHealth": data["seriesHealth"],
         "contentWeb": data["contentWeb"],
         "contentCategories": data["contentCategories"],
+        "contentCategories3y": data["contentCategories3y"],
         "engagementTrends": data["engagementTrends"],
         "suggestions": data["suggestions"],
     }
@@ -708,7 +723,7 @@ def main():
     gaps = compute_coverage_gaps(analytics)
     series = compute_series_health(series_data, analytics)
     web = compute_content_web(analytics)
-    content_cats = compute_content_categories(videos, stats, analytics)
+    content_cats, content_cats_3y = compute_content_categories(videos, stats, analytics)
     engagement = compute_engagement_trends(videos, stats)
     suggestions = generate_suggestions(
         key_metrics, game_perf, format_perf, gaps,
@@ -723,6 +738,7 @@ def main():
         "seriesHealth": series,
         "contentWeb": web,
         "contentCategories": content_cats,
+        "contentCategories3y": content_cats_3y,
         "engagementTrends": engagement,
         "suggestions": suggestions,
     }
