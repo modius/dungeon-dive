@@ -347,8 +347,22 @@ def classify_content_category(video, analyzed_video=None):
     return "boardgame"
 
 
+def _percentile(data, p):
+    """Compute percentile using linear interpolation."""
+    import math
+    s = sorted(data)
+    if not s:
+        return 0
+    k = (len(s) - 1) * p / 100
+    f = math.floor(k)
+    c = math.ceil(k)
+    if f == c:
+        return s[int(k)]
+    return s[f] * (c - k) + s[c] * (k - f)
+
+
 def compute_content_categories(videos, stats, analytics):
-    """Compare performance across 4 content categories."""
+    """Compare performance across 4 content categories with robust statistics."""
     if not stats:
         return []
 
@@ -361,44 +375,90 @@ def compute_content_categories(videos, stats, analytics):
         for v in analytics.get("videos", []):
             analyzed_lookup[v.get("video_id")] = v
 
-    categories = {
-        "digital": {"label": "Digital Games", "views": [], "views_recent": [], "dates": []},
-        "books": {"label": "Books & Literature", "views": [], "views_recent": [], "dates": []},
-        "rpg": {"label": "Tabletop RPG", "views": [], "views_recent": [], "dates": []},
-        "boardgame": {"label": "Board Games", "views": [], "views_recent": [], "dates": []},
-    }
+    cat_views = {"boardgame": [], "rpg": [], "digital": [], "books": []}
+    cat_outlier_titles = {"boardgame": [], "rpg": [], "digital": [], "books": []}
 
     for v in videos:
         vid = v.get("video_id")
         pa = v.get("published_at", "")[:10]
-        if not vid or vid not in st:
+        if not vid or vid not in st or not pa or pa < cutoff_12m:
             continue
 
         analyzed = analyzed_lookup.get(vid)
         cat = classify_content_category(v, analyzed)
         vc = st[vid].get("view_count", 0)
+        cat_views[cat].append(vc)
+        cat_outlier_titles[cat].append((v.get("title", ""), vc))
 
-        categories[cat]["views"].append(vc)
-        categories[cat]["dates"].append(pa)
-        if pa >= cutoff_12m:
-            categories[cat]["views_recent"].append(vc)
+    labels = {
+        "boardgame": "Board Games",
+        "rpg": "Solo / Tabletop RPG",
+        "digital": "Digital Games",
+        "books": "Books & Literature",
+    }
+    colors = {
+        "boardgame": "#818cf8",
+        "rpg": "#a78bfa",
+        "digital": "#34d399",
+        "books": "#fbbf24",
+    }
 
     results = []
     for key in ["boardgame", "rpg", "digital", "books"]:
-        c = categories[key]
-        total = len(c["views"])
-        recent = len(c["views_recent"])
-        avg_all = int(sum(c["views"]) / total) if total else 0
-        avg_recent = int(sum(c["views_recent"]) / recent) if recent else 0
-        total_views = sum(c["views"])
+        data = cat_views[key]
+        n = len(data)
+        if n < 2:
+            results.append({
+                "category": labels[key], "color": colors[key],
+                "n": n, "median": 0, "p25": 0, "p75": 0,
+                "trimmed_mean": 0, "mean": 0,
+                "outliers": [], "insight": "",
+            })
+            continue
+
+        q1 = int(_percentile(data, 25))
+        q3 = int(_percentile(data, 75))
+        iqr = q3 - q1
+        upper_fence = q3 + 1.5 * iqr
+        lower_fence = q1 - 1.5 * iqr
+
+        inliers = [x for x in data if lower_fence <= x <= upper_fence]
+        outlier_vals = set(x for x in data if x > upper_fence or x < lower_fence)
+        trimmed = int(sum(inliers) / len(inliers)) if inliers else 0
+        med = int(_percentile(data, 50))
+        mean = int(sum(data) / n)
+
+        # Get outlier titles
+        outlier_list = []
+        for title, vc in sorted(cat_outlier_titles[key], key=lambda x: x[1], reverse=True):
+            if vc in outlier_vals:
+                outlier_list.append({"title": title, "views": vc})
+                outlier_vals.discard(vc)
+
         results.append({
-            "category": c["label"],
-            "total_videos": total,
-            "recent_videos": recent,
-            "avg_views_all": avg_all,
-            "avg_views_recent": avg_recent,
-            "total_views": total_views,
+            "category": labels[key],
+            "color": colors[key],
+            "n": n,
+            "median": med,
+            "p25": q1,
+            "p75": q3,
+            "trimmed_mean": trimmed,
+            "mean": mean,
+            "outliers": outlier_list[:3],
+            "insight": "",
         })
+
+    # Generate per-category insight text
+    if len(results) >= 2:
+        best = max(results, key=lambda r: r["trimmed_mean"])
+        for r in results:
+            if r["n"] < 3:
+                r["insight"] = "Too few videos for reliable comparison."
+            elif r is best:
+                r["insight"] = "Strongest performer by trimmed mean."
+            elif r["trimmed_mean"] > 0 and best["trimmed_mean"] > 0:
+                pct = int((1 - r["trimmed_mean"] / best["trimmed_mean"]) * 100)
+                r["insight"] = "{}% below top category.".format(pct)
 
     return results
 
@@ -631,7 +691,7 @@ def main():
     print("  Game performance: {} games (3+ videos)".format(len(game_perf)))
     print("  Format performance: {} formats".format(len(format_perf)))
     print("  Content categories: {}".format(
-        ", ".join("{} ({})".format(c["category"], c["total_videos"]) for c in content_cats)))
+        ", ".join("{} ({})".format(c["category"], c["n"]) for c in content_cats)))
     print("  Coverage gaps: {} games".format(len(gaps)))
     print("  Series health: {} series".format(len(series)))
     print("  Content web: {} pairs".format(len(web)))
