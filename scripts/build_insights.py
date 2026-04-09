@@ -305,9 +305,9 @@ def classify_content_category(video, analyzed_video=None):
 
     # --- Interviews (check first — format overrides topic) ---
     interview_title = any(w in title for w in [
-        "interview", "conversation with", "a chat with",
-        "talking with", "panel discussion", "q&a with",
-        "hobbycast",
+        "interview", "conversation", "a chat with",
+        "a casual chat", "talking with", "panel discussion",
+        "q&a", "hobbycast",
     ])
     if interview_title:
         return "interview"
