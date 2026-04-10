@@ -13,10 +13,10 @@
       "theme": "shadows-of-brimstone",
       "title": "Shadows of Brimstone",
       "search_pattern": "brimstone",
-      "last_part": 2,
-      "videos_remaining": 26,
-      "last_imported": "2026-04-08",
-      "keeper_post": "keeper-shadows-of-brimstone-pt2.md"
+      "last_part": 3,
+      "videos_remaining": 16,
+      "last_imported": "2026-04-10",
+      "keeper_post": "keeper-shadows-of-brimstone-pt3.md"
     }
   ],
   "completed_series": [
@@ -28,5 +28,5 @@
       "completed_date": "2026-03-31"
     }
   ],
-  "rotation_index": 1
+  "rotation_index": 0
 }

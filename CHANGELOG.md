@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-10 — Shadows of Brimstone Part III: Allies, Enemies & Bosses (10 videos)
+- Imported 10 Shadows of Brimstone videos: Parts 15-21 + unboxing interlude + 2 giveaways
+- Covers ally expansions, mission packs (Crimson Hand, Werewolves, Vampires, Succubi, Black Fang), enemy deep dives (Serpentmen, Void Sorcerers, Undead Outlaws, Flesh Stalkers, Thunder Warriors, Ninja Clan, etc.), and all bosses
+- No new videos discovered (1012 total unchanged)
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/26
+- Stats: 1012 total, 348 imported, 659 pending, 5 no_transcript
+- 16 more Shadows of Brimstone videos remain (expansion heroes, hex crawl, house rules, solo RPG, wrap-up)
+- Next rotation: Warhammer Quest Part IV
+- Insights dashboard given unique hero image (owl library)
+
 ## 2026-04-09 — Warhammer Quest Part III: The Let's Play Campaign (10 videos)
 - Imported 9 Warhammer Quest Let's Play videos: Parts 1-9 (Barbarian & Witch Hunter campaign)
 - Imported 1 new priority video: The Best Horror Fiction (published Apr 8)
