@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-11 — No import (YouTube IP block)
+- youtube-transcript-api upgraded to v1.2.4 (breaking API change) + IP blocked by YouTube
+- All transcript fetches failing — not a subtitle availability issue
+- Fixed integrity errors: 10 videos from Apr 10 import missing discourse_topic_id/imported_at
+- No videos imported this run; both active series (WQ, SoB) have pending videos awaiting transcript access
+- Stats: 1012 total, 348 imported, 659 pending, 5 no_transcript
+- Action needed: wait for IP block to lift, or configure proxy per youtube-transcript-api docs
+
 ## 2026-04-10 — Shadows of Brimstone Part III: Allies, Enemies & Bosses (10 videos)
 - Imported 10 Shadows of Brimstone videos: Parts 15-21 + unboxing interlude + 2 giveaways
 - Covers ally expansions, mission packs (Crimson Hand, Werewolves, Vampires, Succubi, Black Fang), enemy deep dives (Serpentmen, Void Sorcerers, Undead Outlaws, Flesh Stalkers, Thunder Warriors, Ninja Clan, etc.), and all bosses

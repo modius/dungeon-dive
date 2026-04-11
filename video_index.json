@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-04-10T09:10:03.405132+00:00",
+  "last_fetched": "2026-04-11T09:11:36.666712+00:00",
   "videos": [
     {
       "video_id": "xZIOdejjTlg",
@@ -6841,8 +6841,8 @@
       "published_at": "2021-03-11T08:00:03Z",
       "thumbnail_url": "https://i.ytimg.com/vi/9hOkPAYmpPM/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1497,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1497
     },
     {
@@ -6852,8 +6852,8 @@
       "published_at": "2021-03-10T08:00:05Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Q1zf4SC-AvQ/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1500,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1500
     },
     {
@@ -6863,8 +6863,8 @@
       "published_at": "2021-03-09T08:00:06Z",
       "thumbnail_url": "https://i.ytimg.com/vi/_UWA2fCxRHI/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1501,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1501
     },
     {
@@ -6874,8 +6874,8 @@
       "published_at": "2021-03-08T08:00:04Z",
       "thumbnail_url": "https://i.ytimg.com/vi/GgtIBQCZxkQ/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1499,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1499
     },
     {
@@ -6885,8 +6885,8 @@
       "published_at": "2021-03-07T08:00:01Z",
       "thumbnail_url": "https://i.ytimg.com/vi/0nv1NY1lx_E/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1496,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1496
     },
     {
@@ -6896,8 +6896,8 @@
       "published_at": "2021-03-06T19:29:00Z",
       "thumbnail_url": "https://i.ytimg.com/vi/a65XoIF7K7Y/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1502,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1502
     },
     {
@@ -6917,8 +6917,8 @@
       "published_at": "2021-03-05T14:57:09Z",
       "thumbnail_url": "https://i.ytimg.com/vi/adsB3sGIcVQ/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1503,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1503
     },
     {
@@ -6928,8 +6928,8 @@
       "published_at": "2021-03-03T23:39:29Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ul9Sw7brukY/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1504,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1504
     },
     {
@@ -6939,8 +6939,8 @@
       "published_at": "2021-03-03T15:29:39Z",
       "thumbnail_url": "https://i.ytimg.com/vi/DouSkzKX7NE/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1498,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1498
     },
     {
@@ -7060,8 +7060,8 @@
       "published_at": "2021-02-19T23:19:47Z",
       "thumbnail_url": "https://i.ytimg.com/vi/zLgpLCYCbyA/hqdefault.jpg",
       "status": "imported",
-      "discourse_topic_id": null,
-      "imported_at": null,
+      "discourse_topic_id": 1505,
+      "imported_at": "2026-04-10T09:18:00Z",
       "topic_id": 1505
     },
     {
