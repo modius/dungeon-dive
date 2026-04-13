@@ -1,15 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "warhammer-quest",
-      "title": "Warhammer Quest",
-      "search_pattern": "warhammer quest",
-      "last_part": 3,
-      "videos_remaining": 9,
-      "last_imported": "2026-04-09",
-      "keeper_post": "keeper-warhammer-quest-pt3.md"
-    },
-    {
       "theme": "shadows-of-brimstone",
       "title": "Shadows of Brimstone",
       "search_pattern": "brimstone",
@@ -26,6 +17,13 @@
       "parts_completed": 2,
       "total_videos": 15,
       "completed_date": "2026-03-31"
+    },
+    {
+      "theme": "warhammer-quest",
+      "title": "Warhammer Quest",
+      "parts_completed": 4,
+      "total_videos": 27,
+      "completed_date": "2026-04-13"
     }
   ],
   "rotation_index": 0

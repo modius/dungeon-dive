@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-13 — Warhammer Quest Part IV: The Complete Excavation (10 videos)
+- IP block lifted; transcripts working again
+- Imported 9 Warhammer Quest videos: Silver Tower Parts 1-4, Gold Standard Parts 1-3, Old and New shelf tour, League of Dungeoneers crossover
+- Imported 1 new priority video: Choir of Flesh (published Apr 12)
+- 1 new video discovered during fetch (1013 total)
+- **Warhammer Quest series complete** — all 27 videos archived across 4 Keeper posts
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/27
+- Stats: 1013 total, 358 imported, 650 pending, 5 no_transcript
+- Next rotation: Shadows of Brimstone Part IV (16 remaining, only active series)
+
 ## 2026-04-11 — No import (YouTube IP block)
 - youtube-transcript-api upgraded to v1.2.4 (breaking API change) + IP blocked by YouTube
 - All transcript fetches failing — not a subtitle availability issue
