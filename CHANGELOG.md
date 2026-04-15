@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-15 — Shadows of Brimstone Part IV: Hex Crawl & the Hobby (8 videos)
+- Imported 8 Shadows of Brimstone videos: Expansion Heroes (Part 22), Storage (Part 23), Lamination (Part 24), Hexcrawl Parts 1-4 (Parts 26-29), House Rules (Part 30)
+- 1 video failed transcript fetch: Part 25 (Art of Shadows of Brimstone) — marked no_transcript
+- No new videos discovered (1013 total unchanged)
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/28
+- Stats: 1013 total, 366 imported, 641 pending, 6 no_transcript
+- 8 Shadows of Brimstone videos remain (Solo RPG trilogy, Gates of Valhalla, Wrap Up, two 2024 retrospectives)
+- Next rotation: Shadows of Brimstone Part V (only active series)
+
 ## 2026-04-13 — Warhammer Quest Part IV: The Complete Excavation (10 videos)
 - IP block lifted; transcripts working again
 - Imported 9 Warhammer Quest videos: Silver Tower Parts 1-4, Gold Standard Parts 1-3, Old and New shelf tour, League of Dungeoneers crossover
