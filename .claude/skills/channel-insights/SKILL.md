@@ -1,9 +1,9 @@
 ---
-name: insights
+name: channel-insights
 description: >
   Build and update the channel insights dashboard with performance analytics,
   publishing patterns, coverage gaps, and actionable suggestions for Daniel.
-  Triggers: "insights", "build insights", "update insights", "channel analytics"
+  Triggers: "channel insights", "build insights", "update insights", "channel analytics"
 ---
 
 Build the Channel Insights dashboard with actionable analytics for the Dungeon Dive.

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-04-17 — Shadows of Brimstone Part V: The Final Descent (8 videos)
+- Imported 7 Shadows of Brimstone videos: Wrap Up, Solo RPG Episodes 1-3, Gates of Valhalla (Part 31), two 2024 bestiary retrospectives
+- Imported 1 new priority video: Fortune and Glory / Conquest of Planet Earth micro expansions (published Apr 15)
+- 1 new video discovered during fetch (1014 total)
+- **Shadows of Brimstone series complete** — all 38 videos archived across 5 Keeper posts
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/29
+- Stats: 1014 total, 374 imported, 634 pending, 6 no_transcript
+- No active series remaining — next import will select a new theme or start a new series
+- Renamed `/insights` skill to `/channel-insights` to avoid conflict with built-in Claude Code insights
+- Created `/refresh` skill to chain analyze + fetch-stats + channel-insights
+
 ## 2026-04-15 — Shadows of Brimstone Part IV: Hex Crawl & the Hobby (8 videos)
 - Imported 8 Shadows of Brimstone videos: Expansion Heroes (Part 22), Storage (Part 23), Lamination (Part 24), Hexcrawl Parts 1-4 (Parts 26-29), House Rules (Part 30)
 - 1 video failed transcript fetch: Part 25 (Art of Shadows of Brimstone) — marked no_transcript

@@ -1,15 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "shadows-of-brimstone",
-      "title": "Shadows of Brimstone",
-      "search_pattern": "brimstone",
-      "last_part": 4,
-      "videos_remaining": 8,
-      "last_imported": "2026-04-15",
-      "keeper_post": "keeper-shadows-of-brimstone-pt4.md"
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -24,6 +14,13 @@
       "parts_completed": 4,
       "total_videos": 27,
       "completed_date": "2026-04-13"
+    },
+    {
+      "theme": "shadows-of-brimstone",
+      "title": "Shadows of Brimstone",
+      "parts_completed": 5,
+      "total_videos": 38,
+      "completed_date": "2026-04-17"
     }
   ],
   "rotation_index": 0
