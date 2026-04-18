@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-18 — Mythos Part I: The Gates of Arkham (8 videos)
+- New series started: **Arkham Horror / Mythos**
+- Imported 8 Arkham Horror videos: AH 3e Take a Look (2018), AH 3e Review (2018), AH 3e vs Fallout vs Skyrim comparative review (2024), Curse of the Dark Pharaoh + Appendix M (2024), Arkham Horror RPG: The Hungering Abyss starter set (2024), Top 5 Places in Arkham City (2024), The Dunwich Horror expansion (2025), Buffy the Vampire Slayer board game (2025)
+- No new videos discovered (1014 total unchanged)
+- No priority videos in last 21 days — selected new theme from pending archive
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/30
+- Stats: 1014 total, 382 imported, 626 pending, 6 no_transcript
+- 11 more Lovecraftian/Mythos videos remain (Mansions of Madness, Elder Sign, Eldritch Horror, Cthulhu: Death May Die x2, Call of Cthulhu RPG x2, Little Town / Eldritch Town, earlier Arkham commentary)
+- Next rotation: Arkham Horror / Mythos Part II (only active series)
+
 ## 2026-04-17 — Shadows of Brimstone Part V: The Final Descent (8 videos)
 - Imported 7 Shadows of Brimstone videos: Wrap Up, Solo RPG Episodes 1-3, Gates of Valhalla (Part 31), two 2024 bestiary retrospectives
 - Imported 1 new priority video: Fortune and Glory / Conquest of Planet Earth micro expansions (published Apr 15)
