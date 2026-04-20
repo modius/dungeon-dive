@@ -19,14 +19,23 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 ## Fetch & Select
 
 5. `python3 scripts/fetch_channel_videos.py --config config.json --index video_index.json`
-6. Select a batch. If the user has already chosen a batch via `/plan-batch`, use that slate directly and skip the selection logic below. Otherwise apply the default precedence:
-   - **PRIORITY**: Any videos published in the last 14 days that are still pending.
-   - **SERIES CONTINUATION**: Check `series_queue.json`. If `active_series` is non-empty, the next archive batch MUST continue the series at `rotation_index` (0-based into the `active_series` array). After importing, advance `rotation_index` to the next entry (wrapping around). This ensures multi-part series alternate rather than being abandoned.
-   - **NEW THEME**: Only start a new series if no active series remain (all completed) or if a compelling theme presents itself AND no series is overdue (last_imported > 14 days ago). When starting a new series, add it to `active_series` in `series_queue.json`.
-   - **ARCHIVE** (fallback): If the rotation series has no good sub-theme available, choose a thematic group from older pending videos. Scan titles for game names, series, or topics. Pick a theme that makes a compelling Keeper post. Aim for 5-10 videos. If a theme has more, save the rest for the next run.
-   - Check `keeper-posts/` to avoid themes already covered.
-   - Total batch must not exceed 12 videos.
-   - Prefer `/plan-batch` first for anything beyond a routine series continuation — it surfaces taxonomy, engagement, and untapped-topic signals that this default logic doesn't use.
+6. Select a batch. Batch selection is now queue-driven — `/plan-batch` populates `series_queue.json`; `/import` drains it.
+
+   **Selection decision tree:**
+
+   1. **Drain the queue.** If `series_queue.active_series` is non-empty and `active_series[rotation_index].video_ids` is non-empty:
+      - Take the first `videos_per_batch` IDs from `video_ids`.
+      - **Drift check:** for each ID, look it up in `video_index.json`. Skip any where `status != "pending"` (already imported, or `no_transcript`) — log skipped IDs to CHANGELOG. If an ID isn't found in `video_index.json` at all, that's an error; stop and surface it.
+      - If after drift-check the slate is empty, skip this series (remove its remaining `video_ids`, move to `completed_series` with a note), advance `rotation_index`, and re-evaluate from step 1.
+      - Otherwise, proceed to import the surviving IDs. Cap at 12.
+
+   2. **Ad-hoc priority.** If the queue is empty OR the current entry's `video_ids` is empty: check for pending videos published in the last 14 days. If any exist, import them as an ad-hoc batch (no series entry). Cap at 12.
+
+   3. **Skip.** If queue empty and no priority videos: do nothing, log "queue empty — run /plan-batch" to CHANGELOG, exit cleanly.
+
+   **Unattended mode:** when `/import` is invoked by a scheduler (not interactively), the decision tree above is authoritative. Never start a new theme, never fabricate a batch by scanning titles, never ask for clarification. Drain, priority, or skip — in that order.
+
+   **Interactive mode:** the user may override the selection at any point ("actually import these 5 instead"). Respect the override and skip queue mutation in step 12.
 
 ## Transcribe & Post
 
@@ -63,11 +72,15 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 ## Wrap Up
 
 11. `python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html`
-12. Update `series_queue.json`:
-    - If this batch continued an active series: increment `last_part`, update `videos_remaining`, `last_imported`, and `keeper_post`.
-    - If a series has no videos remaining: remove it from `active_series` and add it to `completed_series` (with `parts_completed`, `total_videos`, `completed_date`).
-    - Advance `rotation_index` to the next active series. If the index is now past the end of `active_series`, wrap to 0. If `active_series` is empty, set to 0.
-    - If a new series was started: add it to `active_series` with `status: "continuing"`.
+12. Update `series_queue.json` (skip entirely if this was an ad-hoc priority run or an interactive user override):
+    - **Drain:** remove the imported IDs from `active_series[rotation_index].video_ids`.
+    - **Record progress:** increment `last_part`, set `last_imported` to today's date (YYYY-MM-DD), set `keeper_post` to the URL of the keeper reply just posted.
+    - **Complete if drained:** if `video_ids` is now empty, remove the entry from `active_series` and append to `completed_series` with:
+      - `parts_completed`: final `last_part` value
+      - `total_videos`: sum of all videos imported across parts (track via a running counter, or count post files)
+      - `completed_date`: today (YYYY-MM-DD)
+      Drop fields that don't apply to completed entries (`video_ids`, `videos_per_batch`, `one_shot`, `status`, `last_imported`, `keeper_post`).
+    - **Advance rotation:** if the entry was completed, advance `rotation_index`. If it now points past the end of `active_series`, wrap to 0. If `active_series` is empty, set to 0.
 13. Update CHANGELOG.md with run summary.
 14. Commit and push:
     ```
@@ -81,4 +94,6 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 - If rate limited on transcripts, import what you have and note it in CHANGELOG.md
 - One Keeper post per run
 - Quality over quantity: a themed batch of 5 is better than 12 random videos
-- If no new videos and no good theme presents itself, skip and note why in CHANGELOG.md
+- In **unattended mode**, if no queued batch and no priority videos, skip cleanly — never fabricate a theme
+- In **interactive mode**, if the queue is empty, prompt the user to run `/plan-batch` rather than guessing
+- Batch selection is queue-driven. The legacy title-scanning heuristic is gone — `/plan-batch` is the only source of non-priority batches.

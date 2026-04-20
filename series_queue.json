@@ -1,15 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "arkham-horror",
-      "title": "Arkham Horror / Mythos",
-      "status": "continuing",
-      "last_part": 2,
-      "last_imported": "2026-04-20",
-      "videos_remaining": 1,
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/31"
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -31,6 +21,13 @@
       "parts_completed": 5,
       "total_videos": 38,
       "completed_date": "2026-04-17"
+    },
+    {
+      "theme": "arkham-horror",
+      "title": "Arkham Horror / Mythos",
+      "parts_completed": 2,
+      "total_videos": 18,
+      "completed_date": "2026-04-20"
     }
   ],
   "rotation_index": 0

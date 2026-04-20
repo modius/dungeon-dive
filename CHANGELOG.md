@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-04-20 — Queue-driven batch selection
+- Migrated `series_queue.json` schema: active entries now carry explicit `video_ids`, `videos_per_batch`, and `one_shot` fields. Batch selection is queue-driven; `/plan-batch` writes, `/import` drains.
+- Reconciled the stale arkham-horror active_series entry (reported `videos_remaining: 1`, reality was 0). Moved to `completed_series` with `parts_completed: 2`, `total_videos: 18`, `completed_date: 2026-04-20`.
+- Removed the legacy title-scanning fallback from `/import`. Theme selection is now always via `/plan-batch` — in unattended mode, empty queue means skip, not guess.
+- Added drift check: before importing a queued slate, `/import` verifies each `video_id` still has `status: pending` in `video_index.json` and drops any that don't.
+
 ## 2026-04-20 — Mythos Part II: Beyond Arkham (11 videos)
 - Series continuation: **Arkham Horror / Mythos** (Part 2 of N)
 - Imported 10 Lovecraftian Mythos videos: A Failing of the Cthulhu Mythos Board Games (2019), Cthulhu: Death May Die review (2019), Mansions of Madness 2E Thoughts (2021), Eldritch Horror / Lovecraftian theming / Brian Lumley (2021), Call of Cthulhu 7e Starter Set (2022), Returning to Cthulhu: Death May Die (2022), CoC 40th Anniversary + Solo Investigator's Handbook (2022), FOMO / why not backing new Cthulhu & Wander (2022), Little Town & Eldritch Town solo RPG (2023), Galzyr vs Freelancers vs Mansions of Madness 2e comparative review (2024)
