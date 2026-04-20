@@ -55,60 +55,59 @@ See [`assets/references/api-setup.md`](assets/references/api-setup.md) for detai
 python3 scripts/test_config.py --config config.json
 ```
 
-## Manual Workflow
+## Operator Workflow
+
+The project is driven by Claude Code skills. You rarely need to run scripts directly — the skills chain the scripts together, handle state files, and write commit messages for you.
+
+### The common path — "I want to import some videos"
+
+Run these skills in order from a Claude Code session in this repo:
+
+1. **`/refresh`** — pulls fresh analytics: content taxonomy, YouTube engagement, insights dashboard. Cheap (~30s, 0.2% of YouTube quota). Do this first so `/plan-batch` has up-to-date signals.
+2. **`/plan-batch`** — proposes 2–4 candidate batches based on taxonomy, engagement, untapped topics, and series state. You pick one (or several); the skill writes them into `series_queue.json` as explicit `video_ids` slates.
+3. **`/import`** — drains the queue: fetches new YouTube videos, transcribes the queued slate, writes per-video posts to Discourse, composes the Keeper archive update, updates dashboards, commits, pushes. One Keeper post per run.
+
+If the queue is already populated (e.g. you planned yesterday, executing today), skip `/plan-batch` — `/import` will drain whatever is at `active_series[rotation_index]`.
+
+If nothing is queued **and** there are no pending videos from the last 14 days, `/import` will skip cleanly and note the empty queue in CHANGELOG — run `/plan-batch` first.
+
+### Utility skills (use when needed)
+
+| Skill | When |
+|-------|------|
+| `/fetch-stats` | Refresh engagement numbers only (subset of `/refresh`). |
+| `/analyze` | Rebuild the taxonomy only (subset of `/refresh`). Run with `--reanalyze` inside the skill when patterns change. |
+| `/channel-insights` | Rebuild the insights dashboard only (subset of `/refresh`). |
+| `/repair` | Something is broken — missing posts, stale timestamps, orphaned transcripts. Incremental fixes. |
+
+### Raw scripts (reference)
+
+Skills invoke these under the hood. Rarely needed by operators, but useful for debugging:
 
 ```bash
-# 1. Fetch latest videos from YouTube
+python3 scripts/test_config.py --config config.json          # verify API keys
+python3 scripts/check_integrity.py --config config.json      # archive self-check
 python3 scripts/fetch_channel_videos.py --config config.json --index video_index.json
-
-# 2. Sync status with Discourse
-python3 scripts/sync_discourse_status.py --config config.json --index video_index.json
-
-# 3. Fetch transcripts (batch)
-python3 scripts/batch_fetch_transcripts.py --config config.json --index video_index.json --limit 10
-
-# 4. Post to Discourse (after generating summary files in ready_to_post/)
-python3 scripts/batch_post.py --config config.json --input-dir ready_to_post --dry-run
+python3 scripts/batch_fetch_transcripts.py VIDEO_ID1 VIDEO_ID2 ...
 python3 scripts/batch_post.py --config config.json --input-dir ready_to_post
+python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html
 ```
 
-See [SKILL.md](SKILL.md) for the full workflow, post format guidelines, and Claude integration details.
+### Rate limits
 
-## Automated Sync (Claude Code Schedule)
+- **YouTube transcript API:** ~12-15 fetches before IP throttle (resets in ~1 hour). The 12-video batch cap in `/import` stays within this.
+- **YouTube Data API (stats):** 0.2% of daily quota per `/fetch-stats` run — safe to run frequently.
+- **Discourse API:** No practical limit at current volumes.
+- **Recommended frequency:** every few days while there's a backlog; weekly otherwise.
 
-The project can run autonomously via a scheduled Claude Code task.
+## Scheduled / Unattended Imports
 
-### Schedule Setup
+`/import` is designed to be schedule-safe. In unattended mode it:
+- Drains the next queued batch from `series_queue.json`, **or**
+- Imports any pending videos from the last 14 days (ad-hoc priority), **or**
+- Skips cleanly and logs "queue empty — run /plan-batch" to CHANGELOG.
 
-From Claude Code CLI:
-
-```
-/schedule create dd-sync
-```
-
-### Schedule Prompt
-
-```
-You are maintaining the Dungeon Dive video archive. Read SKILL.md for instructions.
-
-1. git pull
-2. Fetch latest videos from YouTube
-3. Fetch up to 12 transcripts for pending videos (prefer thematic groupings)
-4. Generate Discourse post files following SKILL.md format
-5. Post to Discourse using batch_post.py
-6. Update docs/index.html dashboard
-7. Log the run in CHANGELOG.md
-8. Commit and push all changes
-
-If rate limited on transcripts, commit what you have and note it in the changelog.
-Do NOT modify the Python scripts unless explicitly asked.
-```
-
-### Rate Limits
-
-- **YouTube transcript API:** ~12-15 fetches before IP throttle (resets in ~1 hour)
-- **Discourse API:** No practical limit at current volumes
-- **Recommended frequency:** Daily or every few days
+It never fabricates a theme on its own. Pre-plan batches with `/plan-batch` so the scheduler has work to do.
 
 ## Project Structure
 
@@ -132,11 +131,13 @@ dungeon-dive/
 │   ├── repair_data.py             Incremental data repair
 │   └── test_config.py             Config validation
 ├── .claude/skills/           Claude Code skill definitions
-│   ├── import/SKILL.md
-│   ├── analyze/SKILL.md
-│   ├── fetch-stats/SKILL.md
-│   ├── repair/SKILL.md
-│   └── insights/SKILL.md
+│   ├── plan-batch/SKILL.md   Propose & queue candidate batches
+│   ├── import/SKILL.md       Drain queue & run full import cycle
+│   ├── refresh/SKILL.md      Chain analyze + fetch-stats + insights
+│   ├── analyze/SKILL.md      Content taxonomy tagging
+│   ├── fetch-stats/SKILL.md  YouTube engagement data
+│   ├── channel-insights/SKILL.md  Rebuild insights dashboard
+│   └── repair/SKILL.md       Incremental data repair
 ├── archive/
 │   ├── transcripts/          Downloaded transcript text files
 │   └── posts/                Post metadata JSON files
@@ -156,17 +157,21 @@ The project includes purpose-built skills invoked via Claude Code slash commands
 
 | Skill | Trigger | Purpose |
 |-------|---------|---------|
-| `/import` | `import`, `sync` | Full import cycle: fetch videos, select themed batch, transcribe, generate summaries, post to Discourse, write Keeper update, update dashboards |
-| `/analyze` | `analyze`, `run analysis` | Content taxonomy analysis: extract games, formats, mechanics, themes, player modes from transcripts; update tag cloud and content dashboard |
-| `/fetch-stats` | `fetch stats`, `get youtube stats` | Fetch YouTube engagement data (views, likes, comments, duration) via Data API. Safe to run frequently — uses 0.2% of daily quota |
-| `/repair` | `repair`, `fix data` | Incremental data repair: fix timestamps, rename legacy files, clean stale data, recover missing posts/transcripts |
-| `/insights` | `insights`, `build insights` | Build channel insights dashboard with performance analytics, publishing patterns, coverage gaps, and actionable suggestions |
+| `/plan-batch` | `plan batch`, `propose batch`, `next batch` | Propose 2–4 candidate batches using taxonomy, engagement, and series state. On user pick, queues the slate(s) into `series_queue.json`. Proposal + queue write only — never imports. |
+| `/import` | `import`, `sync` | Drain the next queued batch: transcribe, generate per-video summaries, post to Discourse, compose Keeper archive update, update dashboards, commit, push. Falls back to ad-hoc priority (last 14 days) if queue is empty. |
+| `/refresh` | `refresh`, `refresh analytics` | Chains `/analyze` + `/fetch-stats` + `/channel-insights` into one pass. Run before `/plan-batch` for fresh signals. |
+| `/analyze` | `analyze`, `run analysis` | Content taxonomy analysis: extract games, formats, mechanics, themes, player modes from transcripts; update tag cloud and content dashboard. |
+| `/fetch-stats` | `fetch stats`, `get youtube stats` | Fetch YouTube engagement data (views, likes, comments, duration) via Data API. Safe to run frequently — uses 0.2% of daily quota. |
+| `/channel-insights` | `channel insights`, `build insights` | Build channel insights dashboard with performance analytics, publishing patterns, coverage gaps, and actionable suggestions. |
+| `/repair` | `repair`, `fix data` | Incremental data repair: fix timestamps, rename legacy files, clean stale data, recover missing posts/transcripts. |
 
 Skill definitions live in `.claude/skills/*/SKILL.md`.
 
 ## Current Stats
 
-- **1012** videos indexed
-- **338** imported to Discourse
-- **259** transcripts archived
-- **338** posts archived
+- **1015** videos indexed
+- **393** imported to Discourse
+- **314** transcripts archived
+- **393** posts archived
+
+(Live counts on the [dashboard](https://modius.io/dungeon-dive/).)
