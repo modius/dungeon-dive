@@ -41,10 +41,12 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 
 ## Keeper Post
 
-10. Compose a Keeper post in The Keeper's voice — Vancian wry humour, atmospheric, thematic:
-    - Group videos by theme with narrative commentary
-    - Include new videos naturally
-    - List all imported videos with links: `[Title](https://dungeondive.quest/t/TOPIC_ID)`
+10. Compose a Keeper post in The Keeper's voice — Vancian wry humour, atmospheric, thematic. This is a **teaser**, not an index: the per-video post summaries already do the analytical work. The Keeper's job here is to set atmosphere, frame the batch, and hook readers into clicking through.
+    - **Target 400 words, hard cap 600 words.** Under the cap is fine; over it means cut.
+    - Open with a short atmospheric framing paragraph (an arrival, a delivery, a rumour reaching the archive).
+    - Group videos by sub-theme with one or two sentences of narrative per video — never a paragraph per video, never a full recap. If a video needs more than two sentences of set-up, the Keeper is doing the post summary's job.
+    - Include new/priority videos naturally, ideally in their own short coda if they don't fit the theme.
+    - Links in the flowing prose use the video title; no need for a separate exhibit catalogue when the batch is small (≤6). For larger batches, a terse linked list at the end is fine — but don't re-describe entries already mentioned above.
     - Sign off with:
       ```
       *NNN transcripts • NNN posts archived*
@@ -54,6 +56,8 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
       ```
     - Save to `keeper-posts/keeper-THEME.md`
     - `python3 scripts/post_reply.py --config config.json --topic-id 1170 --body @keeper-posts/keeper-THEME.md`
+
+**Note on The Keeper's two voices:** the per-video post summaries (step 8) and the Keeper archive update (step 10) are the same character but different registers. The video summaries are analytical and encourage viewing the video — 150-250 words of content analysis. The archive update is atmospheric and encourages browsing the forum — 400-600 words of framing and hooks. Don't conflate them.
 
 ## Wrap Up
 
