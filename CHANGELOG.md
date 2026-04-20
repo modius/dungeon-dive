@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-20 — Mythos Part II: Beyond Arkham (11 videos)
+- Series continuation: **Arkham Horror / Mythos** (Part 2 of N)
+- Imported 10 Lovecraftian Mythos videos: A Failing of the Cthulhu Mythos Board Games (2019), Cthulhu: Death May Die review (2019), Mansions of Madness 2E Thoughts (2021), Eldritch Horror / Lovecraftian theming / Brian Lumley (2021), Call of Cthulhu 7e Starter Set (2022), Returning to Cthulhu: Death May Die (2022), CoC 40th Anniversary + Solo Investigator's Handbook (2022), FOMO / why not backing new Cthulhu & Wander (2022), Little Town & Eldritch Town solo RPG (2023), Galzyr vs Freelancers vs Mansions of Madness 2e comparative review (2024)
+- Imported 1 new priority video: Stonesaga review (published Apr 19)
+- 1 new video discovered during fetch (1015 total)
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/31
+- Stats: 1015 total, 393 imported, 616 pending, 6 no_transcript
+- 1 Lovecraftian/Mythos video still pending (per series_queue) — series continues in future rotation
+
 ## 2026-04-18 — Mythos Part I: The Gates of Arkham (8 videos)
 - New series started: **Arkham Horror / Mythos**
 - Imported 8 Arkham Horror videos: AH 3e Take a Look (2018), AH 3e Review (2018), AH 3e vs Fallout vs Skyrim comparative review (2024), Curse of the Dark Pharaoh + Appendix M (2024), Arkham Horror RPG: The Hungering Abyss starter set (2024), Top 5 Places in Arkham City (2024), The Dunwich Horror expansion (2025), Buffy the Vampire Slayer board game (2025)
