@@ -1,7 +1,27 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-04-20T00:08:18.963299+00:00",
+  "last_fetched": "2026-04-28T07:23:12.613037+00:00",
   "videos": [
+    {
+      "video_id": "MOmBOx1LEJU",
+      "title": "The Ultimate Guide to Solo Hexcrawls (Solo RPGs and Board Games)",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive\n\n00:00 - What is a Hexcrawl?\n02:59 - Board Game Hexcrawls\n07:52 - Miru Hex Kit and Legacy of Cthulhu\n12:09 - Barbarian Prince\n14:58 - The Drifter Series\n18:11 - Morkin\n20:38 - Small Hexcrawls\n24:23 - Mork Borg Hexcrawl\n25:35 - Mork Borg Kinle",
+      "published_at": "2026-04-26T16:00:35Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/MOmBOx1LEJU/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1557,
+      "imported_at": "2026-04-28T07:25:49.574998Z"
+    },
+    {
+      "video_id": "SoVnrdQ7b_s",
+      "title": "CY_Korg - A Simple Cyberpunk Solo Game",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-04-23T13:08:33Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/SoVnrdQ7b_s/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1558,
+      "imported_at": "2026-04-28T07:25:54.465297Z"
+    },
     {
       "video_id": "_ALc4VJkpjA",
       "title": "Stonesaga - A Triumph of the Modern Adventure Game (Review)",

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-04-28 — Priority drop: Solo Hexcrawls + CY_Korg (2 videos)
+- Ad-hoc priority run — both videos published in last 14 days; queue waits one cycle.
+- Imported 2 priority videos: The Ultimate Guide to Solo Hexcrawls (2026-04-26), CY_Korg - A Simple Cyberpunk Solo Game (2026-04-23)
+- 2 new videos discovered during fetch (1017 total)
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/32
+- Stats: 1017 total, 395 imported, 616 pending, 6 no_transcript
+- `series_queue.json` untouched — priority runs never mutate the queue. Next rotation still: league-of-dungeoneers Part 1.
+- Health: still 79 imported videos missing local transcripts (tracked in issue #2).
+
 ## 2026-04-20 — Queue-driven batch selection
 - Migrated `series_queue.json` schema: active entries now carry explicit `video_ids`, `videos_per_batch`, and `one_shot` fields. Batch selection is queue-driven; `/plan-batch` writes, `/import` drains.
 - Reconciled the stale arkham-horror active_series entry (reported `videos_remaining: 1`, reality was 0). Moved to `completed_series` with `parts_completed: 2`, `total_videos: 18`, `completed_date: 2026-04-20`.
