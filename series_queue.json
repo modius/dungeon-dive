@@ -1,5 +1,86 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "league-of-dungeoneers",
+      "title": "League of Dungeoneers",
+      "status": "continuing",
+      "one_shot": false,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "RXEipSzDgtc",
+        "nbqcaybmEe8",
+        "r0ZddKvFa9w",
+        "sVwAWTxKDJ0",
+        "Z_REKs508KY",
+        "kUDZK_9QPtA",
+        "w9kpcvkWngA",
+        "dn-xSg_FT0A",
+        "H97Ldv1IXtw",
+        "Z2njQkTQDKY",
+        "FgTt2XD_ryA"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "scarlet-heroes",
+      "title": "Scarlet Heroes: The Peril of Cymbaline Isle",
+      "status": "continuing",
+      "one_shot": false,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "CJkJWnPzguM",
+        "IE6oyFF67A0",
+        "lTCDfNnY4u8",
+        "YpMxtemC5y8",
+        "LadLiCQaAwQ",
+        "G9YcpN4TAZw",
+        "BdCpg8-TlGg",
+        "ol_M2L_mjBI",
+        "ZE2dghmFE8Y"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "top-50-games-of-all-time",
+      "title": "The Top 50 Games of All Time",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "KOF8EQ_YcOU",
+        "c3rRnSi93Lw",
+        "AmYVHRf2Aq8",
+        "i_bfUG57Je8",
+        "5kFO9eUjRPk",
+        "i5Ufb0FYkDM"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "fallen-land",
+      "title": "Fallen Land: Wasteland Chronicles",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "pUPzkqLt5WM",
+        "OHt_00p2dmY",
+        "a2n31BGGWFI",
+        "_Jlf2Q0xGZ8",
+        "dmbvfKzFSLo",
+        "SOXoRwvxcv0"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",

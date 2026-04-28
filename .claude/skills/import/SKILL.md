@@ -23,17 +23,17 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 
    **Selection decision tree:**
 
-   1. **Drain the queue.** If `series_queue.active_series` is non-empty and `active_series[rotation_index].video_ids` is non-empty:
+   1. **Ad-hoc priority.** Check for pending videos published in the last 14 days. If any exist, import them as an ad-hoc batch (no series entry), cap at 12, and **exit this run after posting** — do not drain the queue this session. Priority videos always jump the queue; the queue waits one cycle.
+
+   2. **Drain the queue.** Only if no priority videos exist. If `series_queue.active_series` is non-empty and `active_series[rotation_index].video_ids` is non-empty:
       - Take the first `videos_per_batch` IDs from `video_ids`.
       - **Drift check:** for each ID, look it up in `video_index.json`. Skip any where `status != "pending"` (already imported, or `no_transcript`) — log skipped IDs to CHANGELOG. If an ID isn't found in `video_index.json` at all, that's an error; stop and surface it.
-      - If after drift-check the slate is empty, skip this series (remove its remaining `video_ids`, move to `completed_series` with a note), advance `rotation_index`, and re-evaluate from step 1.
+      - If after drift-check the slate is empty, skip this series (remove its remaining `video_ids`, move to `completed_series` with a note), advance `rotation_index`, and re-evaluate from step 2.
       - Otherwise, proceed to import the surviving IDs. Cap at 12.
 
-   2. **Ad-hoc priority.** If the queue is empty OR the current entry's `video_ids` is empty: check for pending videos published in the last 14 days. If any exist, import them as an ad-hoc batch (no series entry). Cap at 12.
+   3. **Skip.** If no priority videos and the queue is empty (or fully drift-checked to nothing): do nothing, log "queue empty — run /plan-batch" to CHANGELOG, exit cleanly.
 
-   3. **Skip.** If queue empty and no priority videos: do nothing, log "queue empty — run /plan-batch" to CHANGELOG, exit cleanly.
-
-   **Unattended mode:** when `/import` is invoked by a scheduler (not interactively), the decision tree above is authoritative. Never start a new theme, never fabricate a batch by scanning titles, never ask for clarification. Drain, priority, or skip — in that order.
+   **Unattended mode:** when `/import` is invoked by a scheduler (not interactively), the decision tree above is authoritative. Never start a new theme, never fabricate a batch by scanning titles, never ask for clarification. Priority, drain, or skip — in that order.
 
    **Interactive mode:** the user may override the selection at any point ("actually import these 5 instead"). Respect the override and skip queue mutation in step 12.
 
@@ -72,7 +72,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 ## Wrap Up
 
 11. `python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html`
-12. Update `series_queue.json` (skip entirely if this was an ad-hoc priority run or an interactive user override):
+12. Update `series_queue.json` (skip entirely if this was an ad-hoc priority run — priority videos never touch the queue — or an interactive user override):
     - **Drain:** remove the imported IDs from `active_series[rotation_index].video_ids`.
     - **Record progress:** increment `last_part`, set `last_imported` to today's date (YYYY-MM-DD), set `keeper_post` to the URL of the keeper reply just posted.
     - **Complete if drained:** if `video_ids` is now empty, remove the entry from `active_series` and append to `completed_series` with:
