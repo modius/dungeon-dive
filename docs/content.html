@@ -163,7 +163,7 @@
   <div class="chart-card">
     <div class="chart-title">Taxonomy Tag Cloud</div>
     <div class="tag-cloud" id="tagCloud"></div>
-    <p class="chart-note">Based on 393 analyzed videos — tag size reflects frequency across all content</p>
+    <p class="chart-note">Based on 395 analyzed videos — tag size reflects frequency across all content</p>
   </div>
 
   <!-- Top Games Chart -->
@@ -172,7 +172,7 @@
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="topGamesChart"></canvas>
     </div>
-    <p class="chart-note">Based on 393 analyzed videos — primary game subject per video</p>
+    <p class="chart-note">Based on 395 analyzed videos — primary game subject per video</p>
   </div>
 
   <!-- Themes + Player Modes + Formats -->
@@ -228,15 +228,15 @@
 <script>
 // ── Embedded data (updated by update_dashboard.py + analyze_content.py) ──
 
-const topGames = [["Shadows of Brimstone", 46], ["Warhammer Quest", 29], ["Arkham Horror", 21], ["Mork Borg", 19], ["Four Against Darkness", 17], ["Dungeon Degenerates", 14], ["Talisman", 14], ["Rove", 10], ["HeroQuest", 10], ["HEXplore It", 10], ["Vantage", 9], ["Runebound", 8], ["Warhammer Quest - Let\u2019s Play", 8], ["Legendary", 7], ["Advanced HeroQuest", 6], ["Cthulhu: Death May Die", 5], ["League of Dungeoneers", 5], ["Dungeon Degenerates: The Hand of Doom", 5], ["Dark Venture", 4], ["The Sword & Sorcery Saga", 4], ["Quest for the Lost Pixel", 3], ["Dragons Down", 3], ["Warhammer Quest (1995) - Still the Gold Standard", 3], ["Witcher Adventure Game", 2], ["Fallen Land", 2]];
+const topGames = [["Shadows of Brimstone", 46], ["Warhammer Quest", 29], ["Arkham Horror", 21], ["Mork Borg", 19], ["Four Against Darkness", 17], ["Dungeon Degenerates", 14], ["Talisman", 14], ["Rove", 10], ["HeroQuest", 10], ["HEXplore It", 10], ["Vantage", 9], ["Runebound", 8], ["Warhammer Quest - Let\u2019s Play", 8], ["Legendary", 7], ["Advanced HeroQuest", 6], ["Cthulhu: Death May Die", 5], ["League of Dungeoneers", 5], ["Dungeon Degenerates: The Hand of Doom", 5], ["Dark Venture", 4], ["The Sword & Sorcery Saga", 4], ["Scarlet Heroes", 3], ["Quest for the Lost Pixel", 3], ["Dragons Down", 3], ["Warhammer Quest (1995) - Still the Gold Standard", 3], ["Witcher Adventure Game", 2]];
 
-const categories = {"overview": 256, "review": 218, "lets-play": 149, "comparison": 137, "deep-dive": 114, "crowdfund-preview": 97, "unboxing": 90, "discussion": 89, "buyers-guide": 67, "tutorial": 64, "top-list": 64, "digital-dive": 53, "dungeon-crawler": 246, "rpg": 215, "campaign": 206, "miniatures": 174, "sandbox": 68, "hex-crawl": 54, "wargame": 37, "card-game": 36, "press-your-luck": 29, "dice-game": 25, "deck-builder": 18, "tower-defense": 9, "tile-laying": 4};
+const categories = {"overview": 258, "review": 220, "lets-play": 150, "comparison": 138, "deep-dive": 115, "crowdfund-preview": 98, "unboxing": 91, "discussion": 90, "buyers-guide": 67, "top-list": 65, "tutorial": 65, "digital-dive": 54, "dungeon-crawler": 247, "rpg": 217, "campaign": 207, "miniatures": 175, "sandbox": 69, "hex-crawl": 55, "card-game": 37, "wargame": 37, "press-your-luck": 29, "dice-game": 26, "deck-builder": 18, "tower-defense": 10, "tile-laying": 4};
 
-const tagCloud = [["tabletop", 265], ["overview", 256], ["fantasy", 253], ["dungeon-crawler", 246], ["solo", 244], ["review", 218], ["rpg", 215], ["campaign", 206], ["horror", 177], ["miniatures", 174], ["lets-play", 149], ["comparison", 137], ["deep-dive", 114], ["digital", 105], ["crowdfund-preview", 97], ["unboxing", 90], ["discussion", 89], ["classic", 81], ["sci-fi", 73], ["cooperative", 68], ["sandbox", 68], ["buyers-guide", 67], ["tutorial", 64], ["top-list", 64], ["western", 56], ["post-apocalyptic", 55], ["hex-crawl", 54], ["digital-dive", 53], ["competitive", 51], ["modern", 48], ["pirate", 41], ["wargame", 37], ["card-game", 36], ["press-your-luck", 29], ["dice-game", 25], ["deck-builder", 18], ["two-player", 14], ["tower-defense", 9], ["mythology", 8], ["steampunk", 6], ["tile-laying", 4], ["print-and-play", 2]];
+const tagCloud = [["tabletop", 267], ["overview", 258], ["fantasy", 254], ["dungeon-crawler", 247], ["solo", 246], ["review", 220], ["rpg", 217], ["campaign", 207], ["horror", 178], ["miniatures", 175], ["lets-play", 150], ["comparison", 138], ["deep-dive", 115], ["digital", 107], ["crowdfund-preview", 98], ["unboxing", 91], ["discussion", 90], ["classic", 83], ["sci-fi", 75], ["sandbox", 69], ["cooperative", 68], ["buyers-guide", 67], ["top-list", 65], ["tutorial", 65], ["western", 57], ["post-apocalyptic", 56], ["hex-crawl", 55], ["digital-dive", 54], ["competitive", 51], ["modern", 48], ["pirate", 41], ["card-game", 37], ["wargame", 37], ["press-your-luck", 29], ["dice-game", 26], ["deck-builder", 18], ["two-player", 14], ["tower-defense", 10], ["mythology", 8], ["steampunk", 6], ["tile-laying", 4], ["print-and-play", 3]];
 
-const themeData = [["fantasy", 253], ["horror", 177], ["sci-fi", 73], ["western", 56], ["post-apocalyptic", 55], ["pirate", 41], ["mythology", 8], ["steampunk", 6]];
+const themeData = [["fantasy", 254], ["horror", 178], ["sci-fi", 75], ["western", 57], ["post-apocalyptic", 56], ["pirate", 41], ["mythology", 8], ["steampunk", 6]];
 
-const playerModes = [["solo", 244], ["cooperative", 68], ["competitive", 51], ["two-player", 14]];
+const playerModes = [["solo", 246], ["cooperative", 68], ["competitive", 51], ["two-player", 14]];
 
 const keeperPosts = [
   {
