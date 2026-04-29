@@ -163,7 +163,7 @@
   <div class="chart-card">
     <div class="chart-title">Taxonomy Tag Cloud</div>
     <div class="tag-cloud" id="tagCloud"></div>
-    <p class="chart-note">Based on 395 analyzed videos — tag size reflects frequency across all content</p>
+    <p class="chart-note">Based on 401 analyzed videos — tag size reflects frequency across all content</p>
   </div>
 
   <!-- Top Games Chart -->
@@ -172,7 +172,7 @@
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="topGamesChart"></canvas>
     </div>
-    <p class="chart-note">Based on 395 analyzed videos — primary game subject per video</p>
+    <p class="chart-note">Based on 401 analyzed videos — primary game subject per video</p>
   </div>
 
   <!-- Themes + Player Modes + Formats -->
@@ -228,40 +228,40 @@
 <script>
 // ── Embedded data (updated by update_dashboard.py + analyze_content.py) ──
 
-const topGames = [["Shadows of Brimstone", 46], ["Warhammer Quest", 29], ["Arkham Horror", 21], ["Mork Borg", 19], ["Four Against Darkness", 17], ["Dungeon Degenerates", 14], ["Talisman", 14], ["Rove", 10], ["HeroQuest", 10], ["HEXplore It", 10], ["Vantage", 9], ["Runebound", 8], ["Warhammer Quest - Let\u2019s Play", 8], ["Legendary", 7], ["Advanced HeroQuest", 6], ["Cthulhu: Death May Die", 5], ["League of Dungeoneers", 5], ["Dungeon Degenerates: The Hand of Doom", 5], ["Dark Venture", 4], ["The Sword & Sorcery Saga", 4], ["Scarlet Heroes", 3], ["Quest for the Lost Pixel", 3], ["Dragons Down", 3], ["Warhammer Quest (1995) - Still the Gold Standard", 3], ["Witcher Adventure Game", 2]];
+const topGames = [["Shadows of Brimstone", 46], ["Warhammer Quest", 29], ["Arkham Horror", 21], ["Mork Borg", 19], ["Four Against Darkness", 17], ["Dungeon Degenerates", 14], ["Talisman", 14], ["League of Dungeoneers", 11], ["Rove", 10], ["HeroQuest", 10], ["HEXplore It", 10], ["Vantage", 9], ["Runebound", 8], ["Warhammer Quest - Let\u2019s Play", 8], ["Legendary", 7], ["Advanced HeroQuest", 6], ["Cthulhu: Death May Die", 5], ["Dungeon Degenerates: The Hand of Doom", 5], ["Dark Venture", 4], ["The Sword & Sorcery Saga", 4], ["Scarlet Heroes", 3], ["Quest for the Lost Pixel", 3], ["Dragons Down", 3], ["Warhammer Quest (1995) - Still the Gold Standard", 3], ["Witcher Adventure Game", 2]];
 
-const categories = {"overview": 258, "review": 220, "lets-play": 150, "comparison": 138, "deep-dive": 115, "crowdfund-preview": 98, "unboxing": 91, "discussion": 90, "buyers-guide": 67, "top-list": 65, "tutorial": 65, "digital-dive": 54, "dungeon-crawler": 247, "rpg": 217, "campaign": 207, "miniatures": 175, "sandbox": 69, "hex-crawl": 55, "card-game": 37, "wargame": 37, "press-your-luck": 29, "dice-game": 26, "deck-builder": 18, "tower-defense": 10, "tile-laying": 4};
+const categories = {"overview": 263, "review": 222, "lets-play": 151, "comparison": 142, "deep-dive": 116, "crowdfund-preview": 102, "unboxing": 94, "discussion": 90, "buyers-guide": 68, "tutorial": 66, "top-list": 65, "digital-dive": 54, "dungeon-crawler": 252, "rpg": 223, "campaign": 211, "miniatures": 179, "sandbox": 70, "hex-crawl": 56, "wargame": 40, "card-game": 37, "press-your-luck": 29, "dice-game": 26, "deck-builder": 18, "tower-defense": 10, "tile-laying": 4};
 
-const tagCloud = [["tabletop", 267], ["overview", 258], ["fantasy", 254], ["dungeon-crawler", 247], ["solo", 246], ["review", 220], ["rpg", 217], ["campaign", 207], ["horror", 178], ["miniatures", 175], ["lets-play", 150], ["comparison", 138], ["deep-dive", 115], ["digital", 107], ["crowdfund-preview", 98], ["unboxing", 91], ["discussion", 90], ["classic", 83], ["sci-fi", 75], ["sandbox", 69], ["cooperative", 68], ["buyers-guide", 67], ["top-list", 65], ["tutorial", 65], ["western", 57], ["post-apocalyptic", 56], ["hex-crawl", 55], ["digital-dive", 54], ["competitive", 51], ["modern", 48], ["pirate", 41], ["card-game", 37], ["wargame", 37], ["press-your-luck", 29], ["dice-game", 26], ["deck-builder", 18], ["two-player", 14], ["tower-defense", 10], ["mythology", 8], ["steampunk", 6], ["tile-laying", 4], ["print-and-play", 3]];
+const tagCloud = [["tabletop", 273], ["overview", 263], ["fantasy", 260], ["dungeon-crawler", 252], ["solo", 249], ["rpg", 223], ["review", 222], ["campaign", 211], ["horror", 182], ["miniatures", 179], ["lets-play", 151], ["comparison", 142], ["deep-dive", 116], ["digital", 107], ["crowdfund-preview", 102], ["unboxing", 94], ["discussion", 90], ["classic", 84], ["sci-fi", 75], ["sandbox", 70], ["cooperative", 69], ["buyers-guide", 68], ["tutorial", 66], ["top-list", 65], ["western", 57], ["hex-crawl", 56], ["post-apocalyptic", 56], ["digital-dive", 54], ["competitive", 52], ["modern", 48], ["pirate", 42], ["wargame", 40], ["card-game", 37], ["press-your-luck", 29], ["dice-game", 26], ["deck-builder", 18], ["two-player", 14], ["tower-defense", 10], ["mythology", 8], ["steampunk", 6], ["tile-laying", 4], ["print-and-play", 3]];
 
-const themeData = [["fantasy", 254], ["horror", 178], ["sci-fi", 75], ["western", 57], ["post-apocalyptic", 56], ["pirate", 41], ["mythology", 8], ["steampunk", 6]];
+const themeData = [["fantasy", 260], ["horror", 182], ["sci-fi", 75], ["western", 57], ["post-apocalyptic", 56], ["pirate", 42], ["mythology", 8], ["steampunk", 6]];
 
-const playerModes = [["solo", 246], ["cooperative", 68], ["competitive", 51], ["two-player", 14]];
+const playerModes = [["solo", 249], ["cooperative", 69], ["competitive", 52], ["two-player", 14]];
 
 const keeperPosts = [
   {
     "theme": "The Gates of Arkham (Mythos, Part I)",
-    "date": "2026-04-18",
+    "date": "2026-04-29",
     "count": 0
   },
   {
     "theme": "Dungeon Degenerates: The Hand of Doom",
-    "date": "2026-03-29",
+    "date": "2026-04-29",
     "count": 11
   },
   {
     "theme": "HeroQuest: The Obligatory Pilgrimage, Part II",
-    "date": "2026-03-31",
+    "date": "2026-04-29",
     "count": 15
   },
   {
     "theme": "HeroQuest: The Obligatory Pilgrimage",
-    "date": "2026-03-29",
+    "date": "2026-04-29",
     "count": 8
   },
   {
     "theme": "HEXplore It",
-    "date": "2026-03-29",
+    "date": "2026-04-29",
     "count": 10
   },
   {
@@ -271,67 +271,67 @@ const keeperPosts = [
   },
   {
     "theme": "Beyond Arkham (Mythos, Part II)",
-    "date": "2026-04-20",
+    "date": "2026-04-29",
     "count": 0
   },
   {
     "theme": "Two Despatches from the Solo Frontier",
-    "date": "2026-04-28",
+    "date": "2026-04-29",
     "count": 0
   },
   {
     "theme": "Shadows of Brimstone: Into the Mines",
-    "date": "2026-04-04",
+    "date": "2026-04-29",
     "count": 10
   },
   {
     "theme": "Shadows of Brimstone: Through the Portals",
-    "date": "2026-04-08",
+    "date": "2026-04-29",
     "count": 8
   },
   {
     "theme": "Shadows of Brimstone: Allies, Enemies & Bosses",
-    "date": "2026-04-10",
+    "date": "2026-04-29",
     "count": 10
   },
   {
     "theme": "Shadows of Brimstone: Hex Crawl & the Hobby",
-    "date": "2026-04-15",
+    "date": "2026-04-29",
     "count": 8
   },
   {
     "theme": "Shadows of Brimstone: The Final Descent",
-    "date": "2026-04-17",
+    "date": "2026-04-29",
     "count": 8
   },
   {
     "theme": "The Sword & Sorcery Saga",
-    "date": "2026-03-29",
+    "date": "2026-04-29",
     "count": 11
   },
   {
     "theme": "The Lists",
-    "date": "2026-03-29",
+    "date": "2026-04-29",
     "count": 12
   },
   {
     "theme": "Warhammer Quest: The Undisputed King",
-    "date": "2026-04-01",
+    "date": "2026-04-29",
     "count": 10
   },
   {
     "theme": "Warhammer Quest: The Undisputed King",
-    "date": "2026-04-07",
+    "date": "2026-04-29",
     "count": 8
   },
   {
     "theme": "Warhammer Quest: The Undisputed King",
-    "date": "2026-04-09",
+    "date": "2026-04-29",
     "count": 10
   },
   {
     "theme": "Warhammer Quest: The Complete Excavation",
-    "date": "2026-04-13",
+    "date": "2026-04-29",
     "count": 10
   }
 ];
