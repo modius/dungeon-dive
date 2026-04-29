@@ -7,21 +7,15 @@
       "one_shot": false,
       "videos_per_batch": 6,
       "video_ids": [
-        "RXEipSzDgtc",
-        "nbqcaybmEe8",
-        "r0ZddKvFa9w",
-        "sVwAWTxKDJ0",
-        "Z_REKs508KY",
-        "kUDZK_9QPtA",
         "w9kpcvkWngA",
         "dn-xSg_FT0A",
         "H97Ldv1IXtw",
         "Z2njQkTQDKY",
         "FgTt2XD_ryA"
       ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
+      "last_part": 1,
+      "last_imported": "2026-04-29",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/33"
     },
     {
       "theme": "scarlet-heroes",

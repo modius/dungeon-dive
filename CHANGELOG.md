@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-29 — League of Dungeoneers Part I (6 videos)
+- Series start: **League of Dungeoneers** (Part 1 of 2)
+- Imported 6 videos forming the prototype-to-mechanics arc: A Look at League of Dungeoneers (2022), all-in Kickstarter unboxing (2023), Companions/standees/bestiary deep-dive, Quests, Character creation, Game flow overview
+- No new videos discovered (1017 total unchanged)
+- No priority videos in last 14 days — drained from queue head
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/33
+- Stats: 1017 total, 401 imported, 610 pending, 6 no_transcript
+- 5 League of Dungeoneers videos remain (solo customization, review, comparison, expansion preview, 2024 update) — Part II next rotation
+- All transcripts pulled cleanly from residential IP — no transient failures (validates the local /import architectural decision from earlier today)
+
 ## 2026-04-28 — Priority drop: Solo Hexcrawls + CY_Korg (2 videos)
 - Ad-hoc priority run — both videos published in last 14 days; queue waits one cycle.
 - Imported 2 priority videos: The Ultimate Guide to Solo Hexcrawls (2026-04-26), CY_Korg - A Simple Cyberpunk Solo Game (2026-04-23)
