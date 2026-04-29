@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-04-29 — Import aborted: Discourse API key failure
+- Pre-flight check `test_config.py` exited non-zero: Discourse API key invalid or insufficient permissions.
+- YouTube API confirmed OK; Discourse API FAILED.
+- Run stopped cleanly before any transcripts were fetched or posts attempted.
+- Action required: verify Discourse API key in `config.json` and re-run `/import`.
+
 ## 2026-04-28 — Priority drop: Solo Hexcrawls + CY_Korg (2 videos)
 - Ad-hoc priority run — both videos published in last 14 days; queue waits one cycle.
 - Imported 2 priority videos: The Ultimate Guide to Solo Hexcrawls (2026-04-26), CY_Korg - A Simple Cyberpunk Solo Game (2026-04-23)
