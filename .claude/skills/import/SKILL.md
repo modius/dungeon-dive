@@ -40,7 +40,10 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 ## Transcribe & Post
 
 7. `python3 scripts/batch_fetch_transcripts.py VIDEO_ID1 VIDEO_ID2 ...`
-   - If some fail (no subtitles), mark them as `no_transcript` in video_index.json and continue.
+   - The script writes structured failure records to `pending_imports/manifest.json` under the `failures` key, each with `error_type` and `permanent: true|false`.
+   - **Permanent failures** (`permanent: true` — i.e. `TranscriptsDisabled`, `NoTranscriptFound`, `VideoUnavailable`): the video genuinely has no captions. Mark it as `no_transcript` in `video_index.json` and continue.
+   - **Transient failures** (`permanent: false` — typically `RequestBlocked`, `IpBlocked`, `TooManyRequests`, `YouTubeRequestFailed`, network errors): DO NOT mutate the index. The video remains `pending`. Note in CHANGELOG which IDs hit transient errors and continue with whatever transcripts succeeded.
+   - **Exit code 2** means the script bailed: more than half the batch hit transient failures, so the runner is almost certainly IP-blocked from YouTube. In that case: do NOT mark anything as `no_transcript`, log "transcript fetch blocked — runner IP issue" to CHANGELOG, abort the run cleanly without proceeding to post generation. The queue is unchanged so the next run will retry.
 8. Generate post files for each video:
    - Read transcript from `pending_imports/`
    - Write 150-250 word summary per SKILL.md guidelines
@@ -103,7 +106,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 
 ## Rules
 - Do NOT modify Python scripts unless explicitly asked
-- If rate limited on transcripts, import what you have and note it in CHANGELOG.md
+- If transcript fetch returns transient failures (IP block, rate limit, network), do NOT mark videos as `no_transcript` — they remain `pending` for the next run. Only `permanent: true` failures from `manifest.json` warrant the `no_transcript` flag.
 - One Keeper post per run
 - Quality over quantity: a themed batch of 5 is better than 12 random videos
 - In **unattended mode**, if no queued batch and no priority videos, skip cleanly — never fabricate a theme

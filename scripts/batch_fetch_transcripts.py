@@ -15,6 +15,7 @@ import json
 import os
 import sys
 import time
+from collections import namedtuple
 
 try:
     from youtube_transcript_api import YouTubeTranscriptApi
@@ -24,18 +25,54 @@ except ImportError:
     sys.exit(1)
 
 
-def fetch_transcript(video_id: str) -> str:
-    """Fetch transcript for a single video."""
+# Exception class names that mean the video genuinely has no captions
+# (no point retrying — the answer won't change).
+PERMANENT_FAILURES = {
+    "TranscriptsDisabled",       # uploader disabled captions
+    "NoTranscriptFound",         # no transcript in any language
+    "NoTranscriptAvailable",     # alternate name in some library versions
+    "VideoUnavailable",          # video deleted, private, or region-blocked
+    "TranslationLanguageNotAvailable",
+}
+
+# Everything else (network errors, IP blocks, rate limits, library bugs)
+# is treated as TRANSIENT. Don't mark such videos as no_transcript.
+
+TranscriptResult = namedtuple(
+    "TranscriptResult",
+    ["text", "error_type", "error_message", "permanent"],
+)
+
+
+def fetch_transcript(video_id: str) -> TranscriptResult:
+    """Fetch a single video's transcript, classifying failures.
+
+    Returns:
+        TranscriptResult with text=None and error_type/permanent set on failure.
+        On success, error_type is None.
+    """
     try:
         ytt_api = YouTubeTranscriptApi()
         entries = ytt_api.fetch(video_id)
         texts = []
         for entry in entries:
-            text = entry.text if hasattr(entry, 'text') else entry.get('text', '')
+            text = entry.text if hasattr(entry, "text") else entry.get("text", "")
             texts.append(text)
-        return " ".join(texts)
+        return TranscriptResult(
+            text=" ".join(texts),
+            error_type=None,
+            error_message=None,
+            permanent=False,
+        )
     except Exception as e:
-        return None
+        error_type = type(e).__name__
+        error_message = str(e)[:300]  # cap to keep manifest readable
+        return TranscriptResult(
+            text=None,
+            error_type=error_type,
+            error_message=error_message,
+            permanent=error_type in PERMANENT_FAILURES,
+        )
 
 
 def load_video_index(index_path: str) -> dict:
@@ -145,12 +182,14 @@ def main():
     # Create manifest file
     manifest = {
         'created_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
-        'videos': []
+        'videos': [],      # successful fetches
+        'failures': [],    # structured failure records (NEW)
     }
 
     # Fetch transcripts
     success = 0
-    failed = 0
+    permanent_failed = 0
+    transient_failed = 0
 
     for i, video in enumerate(videos, 1):
         vid = video['video_id']
@@ -159,13 +198,13 @@ def main():
 
         print(f"[{i}/{len(videos)}] Fetching: {title[:50]}...")
 
-        transcript = fetch_transcript(vid)
+        result = fetch_transcript(vid)
 
-        if transcript:
+        if result.text:
             # Save transcript
             transcript_file = os.path.join(output_dir, f"{vid}_transcript.txt")
             with open(transcript_file, 'w') as f:
-                f.write(transcript)
+                f.write(result.text)
 
             # Save metadata
             meta_file = os.path.join(output_dir, f"{vid}_meta.json")
@@ -180,10 +219,23 @@ def main():
 
             manifest['videos'].append(meta)
             success += 1
-            print(f"    ✓ Saved transcript ({len(transcript)} chars)")
+            print(f"    ✓ Saved transcript ({len(result.text)} chars)")
         else:
-            failed += 1
-            print(f"    ✗ Failed to fetch transcript")
+            classification = "PERMANENT" if result.permanent else "TRANSIENT"
+            print(f"    ✗ {classification} {result.error_type}: {result.error_message[:120]}")
+            if result.permanent:
+                print(f"      → genuinely no captions, OK to mark no_transcript")
+                permanent_failed += 1
+            else:
+                print(f"      → transient (network/IP block?) — DO NOT mark no_transcript")
+                transient_failed += 1
+            manifest['failures'].append({
+                'video_id': vid,
+                'title': title,
+                'error_type': result.error_type,
+                'error_message': result.error_message,
+                'permanent': result.permanent,
+            })
 
         # Delay between fetches to avoid rate limiting
         if i < len(videos):
@@ -195,8 +247,18 @@ def main():
         json.dump(manifest, f, indent=2)
 
     print(f"\n{'='*50}")
-    print(f"Fetched {success} transcripts, {failed} failed")
+    print(f"Fetched {success}, permanent failures {permanent_failed}, transient failures {transient_failed}")
     print(f"Output directory: {output_dir}")
+
+    # Bail-out signal: if more than half the batch failed transiently,
+    # the runner is likely IP-blocked. Surface this loudly so the agent
+    # knows not to mark anything as no_transcript and to abort the run.
+    total = success + permanent_failed + transient_failed
+    if total > 0 and transient_failed / total > 0.5:
+        print(f"\n⚠ TRANSIENT FAILURE RATE > 50% — runner is likely IP-blocked from YouTube.")
+        print(f"  Do NOT mark videos as no_transcript. Abort the import run cleanly.")
+        sys.exit(2)
+
     print(f"\nNext step: Share the transcripts with Claude to generate summaries")
     print(f"Or run: cat {output_dir}/*_transcript.txt")
 
