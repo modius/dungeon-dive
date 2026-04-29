@@ -16,6 +16,15 @@ Finally, [the game flow itself](https://dungeondive.quest/t/league-of-dungeoneer
 
 Six volumes catalogued. The dungeon proper is opened in Part II.
 
+**The Exhibit Catalogue:**
+
+- [A Look at League of Dungeoneers](https://dungeondive.quest/t/a-look-at-league-of-dungeoneers/1559) — the 2022 prototype preview that started it all
+- [The all-in Kickstarter unboxing](https://dungeondive.quest/t/league-of-dungeoneers-a-detailed-unboxing-of-the-all-in-kickstarter/1562) — thirty pounds of game, 380 standees
+- [Companions, hero standees, and bestiary](https://dungeondive.quest/t/league-of-dungeoneers-companions-hero-standees-and-bestiary/1563) — mercenaries, monsters, and a persistent-world house rule
+- [Questing and creating your own persistent world](https://dungeondive.quest/t/league-of-dungeoneers-questing-and-creating-your-own-persistent-world/1564) — fifty quests, sandbox-style
+- [Character and Party creation](https://dungeondive.quest/t/league-of-dungeoneers-character-and-party-creation/1560) — Bella Starkweather and Carrick Thorntok join the party
+- [The lowdown on the game flow](https://dungeondive.quest/t/league-of-dungeoneers-the-lowdown-on-the-game-flow/1561) — settlement, exploration, threat dice, wandering monsters
+
 *322 transcripts • 401 posts archived*
 
 -- The Keeper

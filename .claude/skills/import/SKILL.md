@@ -62,7 +62,8 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
     - **Target 400 words, hard cap 600 words.** Under the cap is fine; over it means cut.
     - Open with a short atmospheric framing paragraph (an arrival, a delivery, a rumour reaching the archive).
     - Group videos by sub-theme with one or two sentences of narrative per video — never a paragraph per video, never a full recap. If a video needs more than two sentences of set-up, the Keeper is doing the post summary's job.
-    - Links in the flowing prose use the video title; no need for a separate exhibit catalogue when the batch is small (≤6). For larger batches, a terse linked list at the end is fine — but don't re-describe entries already mentioned above.
+    - Links in the flowing prose use the video title for atmospheric context.
+    - **Always include an "Exhibit Catalogue" linked list near the bottom**, regardless of batch size. Place it between the closing prose and the stats/sign-off. Each entry: bullet, link with the video title, em-dash, one short hook phrase (≤12 words). This gives readers a scannable index without forcing them to read the prose to find video links. Do not re-describe entries already covered in the prose — the hook is a one-line tag, not a recap.
 
     **B. Priority drop (ad-hoc priority run, fresh uploads):**
     - **Target 100-200 words, hard cap 250 words.** This is an alert, not an essay. The aim is to flag that fresh material has arrived, not to summarise it — the per-video posts already exist for that.
