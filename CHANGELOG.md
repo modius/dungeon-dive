@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-04-29 — Import aborted: Discourse API failure
+
+- Pre-flight check failed: `test_config.py` reported Discourse API key invalid or insufficient permissions (exit 1).
+- Run aborted cleanly — no videos fetched, no transcripts downloaded, no posts attempted.
+- Queue unchanged: next target remains league-of-dungeoneers Part 1 (rotation_index=0).
+- Action required: verify/rotate Discourse API key in `config.json` and re-run `/import`.
+
 ## 2026-04-28 — Priority drop: Solo Hexcrawls + CY_Korg (2 videos)
 - Ad-hoc priority run — both videos published in last 14 days; queue waits one cycle.
 - Imported 2 priority videos: The Ultimate Guide to Solo Hexcrawls (2026-04-26), CY_Korg - A Simple Cyberpunk Solo Game (2026-04-23)
