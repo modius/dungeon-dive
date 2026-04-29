@@ -49,6 +49,21 @@ See [`assets/references/api-setup.md`](assets/references/api-setup.md) for detai
 
 > **Warning:** `config.json` is gitignored. Never commit API keys.
 
+### Environment variables (cloud / scheduled runs)
+
+When running in an environment where `config.json` cannot be present (cloud schedulers, CI, ephemeral containers), `scripts/config_utils.py` falls back to environment variables. If `--config` points to a missing file, env vars are used instead.
+
+| Variable | Required | Default | Notes |
+|----------|----------|---------|-------|
+| `YOUTUBE_API_KEY` | for YouTube fetch / stats | — | Same value as `youtube.api_key` |
+| `YOUTUBE_CHANNEL_ID` | no | `UCKW6yMwL_aEu83g6DdjVfxw` | The Dungeon Dive channel |
+| `DISCOURSE_URL` | for Discourse posting | — | e.g. `https://dungeondive.quest` |
+| `DISCOURSE_API_KEY` | for Discourse posting | — | Admin key for backdating support |
+| `DISCOURSE_USERNAME` | for Discourse posting | — | e.g. `thekeeper` |
+| `DISCOURSE_CATEGORY_ID` | no | `5` | The Channel category |
+
+Discourse requires all three of `DISCOURSE_URL`, `DISCOURSE_API_KEY`, `DISCOURSE_USERNAME` together — partial setups fail loudly with a clear error rather than crashing downstream.
+
 ### Verify Setup
 
 ```bash
