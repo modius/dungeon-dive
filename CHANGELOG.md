@@ -1,13 +1,13 @@
 # Changelog
 
-## 2026-04-29 — Queue drain attempted: League of Dungeoneers (0 videos imported)
+## 2026-04-29 — Queue drain blocked: League of Dungeoneers (0 videos imported)
 - Attempted to drain league-of-dungeoneers Part 1 (rotation_index 0, 6 videos: RXEipSzDgtc, nbqcaybmEe8, r0ZddKvFa9w, sVwAWTxKDJ0, Z_REKs508KY, kUDZK_9QPtA).
-- All 6 transcript fetches failed — these 2022–2023 videos appear to lack auto-captions or have subtitles disabled.
-- All 6 marked as `no_transcript` in video_index.json and removed from queue entry.
-- No posts made, no Keeper update this cycle.
-- Stats: 1017 total, 395 imported, 610 pending, 12 no_transcript.
-- league-of-dungeoneers has 5 remaining video_ids (w9kpcvkWngA, dn-xSg_FT0A, H97Ldv1IXtw, Z2njQkTQDKY, FgTt2XD_ryA) to attempt next cycle.
-- Exited cleanly — rate limit preserved (1 run remaining in 24h window).
+- All 6 transcript fetches failed simultaneously. Initially marked `no_transcript`, but Daniel confirmed RXEipSzDgtc has a visible transcript on YouTube — the failures were almost certainly `youtube-transcript-api` being blocked (bot check / IP throttle), not missing captions.
+- Reverted all 6 to `pending` and restored their order at the head of league-of-dungeoneers `video_ids` (11 total again).
+- No posts made, no Keeper update this cycle. Queue and index are back to their pre-run state aside from the run record.
+- Stats: 1017 total, 395 imported, 616 pending, 6 no_transcript (unchanged from 2026-04-28).
+- Rate limit preserved (1 run remaining in 24h window).
+- Follow-up: investigate transcript-API blocking — the script's "Failed to fetch transcript" message doesn't distinguish "no captions" from "blocked," which led to the false `no_transcript` flagging this run.
 
 ## 2026-04-28 — Priority drop: Solo Hexcrawls + CY_Korg (2 videos)
 - Ad-hoc priority run — both videos published in last 14 days; queue waits one cycle.
