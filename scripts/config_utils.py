@@ -15,6 +15,19 @@ import os
 import sys
 
 
+def _clean_env(name: str) -> str:
+    """Read an env var and strip surrounding whitespace.
+
+    Schedulers' secret managers commonly pick up trailing newlines or spaces
+    from web-form paste, which then break API auth in ways that are hard to
+    diagnose. We strip defensively — any actual secret with leading/trailing
+    whitespace is invalid anyway.
+
+    Returns "" for unset vars (so callers can use a single truthiness check).
+    """
+    return (os.environ.get(name) or "").strip()
+
+
 def load_config(config_path: str) -> dict:
     """Load configuration from file or environment variables.
 
@@ -33,38 +46,40 @@ def load_config(config_path: str) -> dict:
     config = {}
 
     # YouTube section — only api_key is required
-    yt_key = os.environ.get("YOUTUBE_API_KEY")
+    yt_key = _clean_env("YOUTUBE_API_KEY")
+    yt_channel = _clean_env("YOUTUBE_CHANNEL_ID") or "UCKW6yMwL_aEu83g6DdjVfxw"
     if yt_key:
         config["youtube"] = {
             "api_key": yt_key,
-            "channel_id": os.environ.get("YOUTUBE_CHANNEL_ID", "UCKW6yMwL_aEu83g6DdjVfxw"),
+            "channel_id": yt_channel,
         }
 
     # Discourse section — all three of URL/KEY/USERNAME are required together.
-    # If any are set but not all, that's a partial setup — fail loud rather than
-    # silently dropping the section and failing later with KeyError downstream.
-    disc_url = os.environ.get("DISCOURSE_URL")
-    disc_key = os.environ.get("DISCOURSE_API_KEY")
-    disc_user = os.environ.get("DISCOURSE_USERNAME")
-    disc_present = [(n, v) for n, v in [
+    # If any are set but not all (post-strip), that's a partial setup — fail
+    # loud rather than silently dropping the section and crashing later.
+    disc_url = _clean_env("DISCOURSE_URL")
+    disc_key = _clean_env("DISCOURSE_API_KEY")
+    disc_user = _clean_env("DISCOURSE_USERNAME")
+    disc_present = [
         ("DISCOURSE_URL", disc_url),
         ("DISCOURSE_API_KEY", disc_key),
         ("DISCOURSE_USERNAME", disc_user),
-    ]]
+    ]
     set_count = sum(1 for _, v in disc_present if v)
     if 0 < set_count < 3:
         missing = [n for n, v in disc_present if not v]
         print(
-            f"Error: Partial Discourse env-var setup — missing: {', '.join(missing)}\n"
+            f"Error: Partial Discourse env-var setup — missing or empty: {', '.join(missing)}\n"
             "Set all three of DISCOURSE_URL, DISCOURSE_API_KEY, DISCOURSE_USERNAME "
-            "or none.",
+            "or none. Values are stripped of surrounding whitespace before checking.",
             file=sys.stderr,
         )
         sys.exit(1)
 
     if disc_url and disc_key and disc_user:
+        cat_raw = _clean_env("DISCOURSE_CATEGORY_ID") or "5"
         try:
-            cat_id = int(os.environ.get("DISCOURSE_CATEGORY_ID", "5"))
+            cat_id = int(cat_raw)
         except ValueError as e:
             print(f"Error: DISCOURSE_CATEGORY_ID must be an integer ({e})", file=sys.stderr)
             sys.exit(1)

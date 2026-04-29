@@ -64,6 +64,10 @@ When running in an environment where `config.json` cannot be present (cloud sche
 
 Discourse requires all three of `DISCOURSE_URL`, `DISCOURSE_API_KEY`, `DISCOURSE_USERNAME` together — partial setups fail loudly with a clear error rather than crashing downstream.
 
+**Whitespace handling:** all env-var values are stripped of surrounding whitespace before use. Schedulers' secret managers commonly capture trailing newlines from web-form paste, which silently break API auth in ways that are hard to diagnose. Defensive stripping prevents this. After stripping, empty values are treated as unset.
+
+**Diagnosing remote auth failures:** if the API rejects a key on a remote runner but works locally, run `python3 scripts/diagnose_config.py` on the runner. It prints fingerprints (length + first/last 4 chars, never the full secret) and flags suspicious values like `[⚠ TRAILING_WHITESPACE]` or `[⚠ QUOTED]`. Compare fingerprint output between local and remote to spot mismatches without exposing secrets in logs.
+
 ### Verify Setup
 
 ```bash
