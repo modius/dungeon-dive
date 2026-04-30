@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-04-30 — /import skipped: rate limit reached
+- `check_rate_limit.py` reported 2 sync runs in last 24h (limit: 2) — daily transcript-fetch quota exhausted.
+- Last two runs: 2026-04-29T03:24 (6 videos, League of Dungeoneers Part I) and 2026-04-30T01:55 (1 video, Jotunnslayer priority drop).
+- No fetch, no posts, no Keeper update. Queue and index untouched.
+- Next rotation still queued: league-of-dungeoneers Part II (5 videos).
+
 ## 2026-04-30 — Priority drop: Jotunnslayer Hordes of Hel + Conan DLC (1 video)
 - Ad-hoc priority run — single video published 2026-04-29, queue waits one cycle.
 - Imported: Jotunnslayer: Hordes of Hel (Playing as Conan) — survivor-like, sword-and-sorcery, Conan DLC.
