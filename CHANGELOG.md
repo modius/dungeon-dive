@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-30 — Priority drop: Jotunnslayer Hordes of Hel + Conan DLC (1 video)
+- Ad-hoc priority run — single video published 2026-04-29, queue waits one cycle.
+- Imported: Jotunnslayer: Hordes of Hel (Playing as Conan) — survivor-like, sword-and-sorcery, Conan DLC.
+- 1 new video discovered during fetch (1018 total).
+- Transcript pulled cleanly (residential IP, no transient failures).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/34
+- Stats: 1018 total, 402 imported, 610 pending, 6 no_transcript
+- `series_queue.json` untouched — priority run. Next rotation still: league-of-dungeoneers Part II.
+- Health: 79 imported videos still missing local transcripts (issue #2).
+
 ## 2026-04-29 — League of Dungeoneers Part I (6 videos)
 - Series start: **League of Dungeoneers** (Part 1 of 2)
 - Imported 6 videos forming the prototype-to-mechanics arc: A Look at League of Dungeoneers (2022), all-in Kickstarter unboxing (2023), Companions/standees/bestiary deep-dive, Quests, Character creation, Game flow overview
