@@ -1,23 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "league-of-dungeoneers",
-      "title": "League of Dungeoneers",
-      "status": "continuing",
-      "one_shot": false,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "w9kpcvkWngA",
-        "dn-xSg_FT0A",
-        "H97Ldv1IXtw",
-        "Z2njQkTQDKY",
-        "FgTt2XD_ryA"
-      ],
-      "last_part": 1,
-      "last_imported": "2026-04-29",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/33"
-    },
-    {
       "theme": "scarlet-heroes",
       "title": "Scarlet Heroes: The Peril of Cymbaline Isle",
       "status": "continuing",
@@ -103,6 +86,13 @@
       "parts_completed": 2,
       "total_videos": 18,
       "completed_date": "2026-04-20"
+    },
+    {
+      "theme": "league-of-dungeoneers",
+      "title": "League of Dungeoneers",
+      "parts_completed": 2,
+      "total_videos": 11,
+      "completed_date": "2026-04-30"
     }
   ],
   "rotation_index": 0

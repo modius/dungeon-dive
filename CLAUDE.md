@@ -105,7 +105,7 @@ Dependencies: `pip3 install -r requirements.txt` (just `requests` and `youtube-t
 
 - **YouTube transcript API:** ~12–15 fetches before IP throttle (~1h reset). The 12-video cap in `/import` stays under this.
 - **YouTube Data API:** ~0.2% of daily quota per `/fetch-stats` — safe to run frequently.
-- **`check_rate_limit.py`:** enforces 2 transcript runs per 24h locally; respect its exit code.
+- **`check_rate_limit.py`:** enforces a video-count quota per 24h locally (default 20 videos posted in the period); respect its exit code. The video count is the meaningful unit — a 1-video priority drop and a 12-video drain don't deserve equal weight.
 - **Discourse:** no practical limit at current volumes.
 
 ## Workflow rules (from SKILL.md, easy to violate)

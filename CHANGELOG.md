@@ -1,10 +1,21 @@
 # Changelog
 
-## 2026-04-30 — /import skipped: rate limit reached
-- `check_rate_limit.py` reported 2 sync runs in last 24h (limit: 2) — daily transcript-fetch quota exhausted.
-- Last two runs: 2026-04-29T03:24 (6 videos, League of Dungeoneers Part I) and 2026-04-30T01:55 (1 video, Jotunnslayer priority drop).
-- No fetch, no posts, no Keeper update. Queue and index untouched.
-- Next rotation still queued: league-of-dungeoneers Part II (5 videos).
+## 2026-04-30 — League of Dungeoneers Part II completes the series (5 videos)
+- Series complete: **League of Dungeoneers** (Part 2 of 2 — final). Total imported across both parts: 11.
+- Drained queue head: customizing for solo RPG (2023), 12-point Review (2023), three-way Showdown vs Crusade & Universalis (2023), Expansion Preview / reprint announcement (2023), False Prophet expansion + acrylic standees + 2nd-edition upgrade kit (2024).
+- Through-line: first-printing rulebook errata caught by Daniel's review → designer responds → second-printing fix arrives, big-box expansion in tow.
+- All transcripts pulled cleanly from residential IP — 0 transient failures, 0 permanent failures.
+- No new videos discovered (1018 total unchanged from this morning's priority drop).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/35
+- Stats: 1018 total, 407 imported, 605 pending, 6 no_transcript.
+- `series_queue.json`: league-of-dungeoneers moved to `completed_series` (parts_completed: 2, total_videos: 11, completed_date: 2026-04-30). rotation_index stays at 0 — next rotation: **scarlet-heroes** (now at index 0, 9 videos queued).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
+## 2026-04-30 — Rate limit guard now counts videos, not runs
+- `check_rate_limit.py` now sums videos posted across the last 24h (default cap: 20) instead of counting runs (was: 2).
+- Motivation: a 1-video priority drop and a 12-video archive drain shouldn't burn equal quota. Video count tracks the actual YouTube transcript-API throttle signal.
+- Argument renamed `--max-runs` → `--max-videos`. No callers pass it explicitly, so no breakage. `repair_data.py` still invokes with defaults.
+- CLAUDE.md updated.
 
 ## 2026-04-30 — Priority drop: Jotunnslayer Hordes of Hel + Conan DLC (1 video)
 - Ad-hoc priority run — single video published 2026-04-29, queue waits one cycle.
