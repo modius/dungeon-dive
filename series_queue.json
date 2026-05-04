@@ -1,22 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "scarlet-heroes",
-      "title": "Scarlet Heroes: The Peril of Cymbaline Isle",
-      "status": "continuing",
-      "one_shot": false,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "G9YcpN4TAZw",
-        "BdCpg8-TlGg",
-        "ol_M2L_mjBI",
-        "ZE2dghmFE8Y"
-      ],
-      "last_part": 1,
-      "last_imported": "2026-05-04",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/37"
-    },
-    {
       "theme": "top-50-games-of-all-time",
       "title": "The Top 50 Games of All Time",
       "status": "continuing",
@@ -130,6 +114,13 @@
       "parts_completed": 2,
       "total_videos": 11,
       "completed_date": "2026-04-30"
+    },
+    {
+      "theme": "scarlet-heroes",
+      "title": "Scarlet Heroes: The Peril of Cymbaline Isle",
+      "parts_completed": 2,
+      "total_videos": 9,
+      "completed_date": "2026-05-04"
     }
   ],
   "rotation_index": 0

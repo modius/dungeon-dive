@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-05-04T02:14:07.504207+00:00",
+  "last_fetched": "2026-05-04T05:09:10.175244+00:00",
   "videos": [
     {
       "video_id": "p-Ig77st4KY",
@@ -5880,9 +5880,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-02-13T15:45:09Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ZE2dghmFE8Y/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1582,
+      "imported_at": "2026-05-04T05:11:42.951858Z"
     },
     {
       "video_id": "y8mTWAs2PPw",
@@ -6260,9 +6260,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-09-29T04:09:39Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ol_M2L_mjBI/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1583,
+      "imported_at": "2026-05-04T05:11:47.707336Z"
     },
     {
       "video_id": "3Nh8y-oesJ0",
@@ -6290,9 +6290,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-09-14T15:52:45Z",
       "thumbnail_url": "https://i.ytimg.com/vi/BdCpg8-TlGg/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1580,
+      "imported_at": "2026-05-04T05:11:31.770450Z"
     },
     {
       "video_id": "G9YcpN4TAZw",
@@ -6300,9 +6300,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-09-10T07:00:09Z",
       "thumbnail_url": "https://i.ytimg.com/vi/G9YcpN4TAZw/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1581,
+      "imported_at": "2026-05-04T05:11:37.276036Z"
     },
     {
       "video_id": "LadLiCQaAwQ",

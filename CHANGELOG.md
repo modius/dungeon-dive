@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-04 — Scarlet Heroes: The Peril of Cymbaline Isle Part II — series complete (4 videos)
+- Series complete: **Scarlet Heroes: The Peril of Cymbaline Isle** (Part 2 of 2 — final). Total imported across both parts: 9.
+- Drained queue head: Let's Make Some Ruins (Sep 2021), Cymbaline Isle Sessions 4 (wilderness leg) and 5 (Hungry Mother + d20-trade boredom), and the Feb 2022 coda Random Solo RPG Thoughts (Paldren Omtar, *Arcane Artifacts*, weather table, open-Q on offstage rivals).
+- Through-line: out of the city, into the wilds — and then a frank in-session craft revelation about rerouting unwinnable encounters through reaction tables, plus an honest mid-fight admission that boss-stand-up combat stalls into pure d20 trades.
+- All transcripts pulled cleanly from residential IP — 0 transient failures, 0 permanent failures.
+- 0 new videos discovered during fetch (1019 total unchanged from this morning's run).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/38
+- Stats: 1019 total, 417 imported, 596 pending, 6 no_transcript.
+- `series_queue.json`: scarlet-heroes moved to `completed_series` (parts_completed: 2, total_videos: 9, completed_date: 2026-05-04). rotation_index stays at 0 — next rotation: **top-50-games-of-all-time** (now at index 0, 6 videos queued).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-04 — Scarlet Heroes: The Peril of Cymbaline Isle Part I (5 videos)
 - Queue drain: scarlet-heroes Part 1 of 2. First 5 of 9 video IDs imported (Sessions 0–3 + Encounter Building Cards supplement).
 - Imported (Aug–Sep 2021): Session 0 (system + character creation), Session 1 (Crooked Violin tavern, Plundered Tribute hook), Session 2 (cult named — Slaves of the Judging Cloud), Session 3 (church brawl, plague-page recovery), and the supplemental Encounter Building Decks review.
