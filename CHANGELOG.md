@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-05-04 — Priority drop: The Adventurer solo hexcrawl review (1 video)
+- Ad-hoc priority run — single video published 2026-05-03, queue waits one cycle.
+- Imported: The Adventurer: Solo Hexcrawl Review and Game Play — Ken Kennedy's Drifter series, fantasy entry.
+- 1 new video discovered during fetch (1019 total).
+- Transcript pulled cleanly (residential IP, no transient failures).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/36
+- Stats: 1019 total, 408 imported, 605 pending, 6 no_transcript.
+- `series_queue.json` untouched — priority run. Next rotation still: scarlet-heroes (index 0, 9 videos queued).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-04-30 — League of Dungeoneers Part II completes the series (5 videos)
 - Series complete: **League of Dungeoneers** (Part 2 of 2 — final). Total imported across both parts: 11.
 - Drained queue head: customizing for solo RPG (2023), 12-point Review (2023), three-way Showdown vs Crusade & Universalis (2023), Expansion Preview / reprint announcement (2023), False Prophet expansion + acrylic standees + 2nd-edition upgrade kit (2024).

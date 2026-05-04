@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-04-30T02:42:25.691670+00:00",
+  "last_fetched": "2026-05-04T01:50:17.471458+00:00",
   "videos": [
+    {
+      "video_id": "p-Ig77st4KY",
+      "title": "The Adventurer: Solo Hexcrawl Review and Game Play",
+      "description": "Get the game:\nhttps://www.drivethrurpg.com/en/product/517191/adventurer\n\nJoin the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-05-03T16:01:23Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/p-Ig77st4KY/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1574,
+      "imported_at": "2026-05-04T01:51:53.687873Z"
+    },
     {
       "video_id": "3A0Gwb7nmw8",
       "title": "Jotunnslayer: Hordes of Hel (Playing as Conan)",
