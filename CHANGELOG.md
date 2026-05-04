@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-04 — Scarlet Heroes: The Peril of Cymbaline Isle Part I (5 videos)
+- Queue drain: scarlet-heroes Part 1 of 2. First 5 of 9 video IDs imported (Sessions 0–3 + Encounter Building Cards supplement).
+- Imported (Aug–Sep 2021): Session 0 (system + character creation), Session 1 (Crooked Violin tavern, Plundered Tribute hook), Session 2 (cult named — Slaves of the Judging Cloud), Session 3 (church brawl, plague-page recovery), and the supplemental Encounter Building Decks review.
+- Through-line: warts-and-all chronicle of learning solo RPG play; Daniel scrapped two Session 1 takes before this run, then settled into the principle "set up situations, not plots."
+- All transcripts pulled cleanly (residential IP, 0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1019 total unchanged from this morning's priority drop).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/37
+- Stats: 1019 total, 413 imported, 600 pending, 6 no_transcript.
+- `series_queue.json`: scarlet-heroes drained 5 IDs (last_part=1, 4 IDs remain). rotation_index stays at 0 — next rotation: **scarlet-heroes Part II** (4 videos remaining).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-04 — Priority drop: The Adventurer solo hexcrawl review (1 video)
 - Ad-hoc priority run — single video published 2026-05-03, queue waits one cycle.
 - Imported: The Adventurer: Solo Hexcrawl Review and Game Play — Ken Kennedy's Drifter series, fantasy entry.

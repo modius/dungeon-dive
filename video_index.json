@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-05-04T01:50:17.471458+00:00",
+  "last_fetched": "2026-05-04T02:14:07.504207+00:00",
   "videos": [
     {
       "video_id": "p-Ig77st4KY",
@@ -6310,9 +6310,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-09-09T14:43:40Z",
       "thumbnail_url": "https://i.ytimg.com/vi/LadLiCQaAwQ/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1577,
+      "imported_at": "2026-05-04T02:16:53.211440Z"
     },
     {
       "video_id": "YpMxtemC5y8",
@@ -6320,9 +6320,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-09-08T13:45:56Z",
       "thumbnail_url": "https://i.ytimg.com/vi/YpMxtemC5y8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1578,
+      "imported_at": "2026-05-04T02:16:58.329034Z"
     },
     {
       "video_id": "xQKEy65zAso",
@@ -6340,9 +6340,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-09-06T18:49:14Z",
       "thumbnail_url": "https://i.ytimg.com/vi/lTCDfNnY4u8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1579,
+      "imported_at": "2026-05-04T02:17:03.460970Z"
     },
     {
       "video_id": "IE6oyFF67A0",
@@ -6350,9 +6350,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-09-02T04:41:03Z",
       "thumbnail_url": "https://i.ytimg.com/vi/IE6oyFF67A0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1576,
+      "imported_at": "2026-05-04T02:16:47.983296Z"
     },
     {
       "video_id": "CJkJWnPzguM",
@@ -6360,9 +6360,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\n\n\nhttp://adventureaweek.com/",
       "published_at": "2021-08-30T12:59:37Z",
       "thumbnail_url": "https://i.ytimg.com/vi/CJkJWnPzguM/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1575,
+      "imported_at": "2026-05-04T02:16:42.812421Z"
     },
     {
       "video_id": "Xm4ScqSNV10",
