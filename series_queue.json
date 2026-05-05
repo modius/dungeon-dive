@@ -1,24 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "top-50-games-of-all-time",
-      "title": "The Top 50 Games of All Time",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "KOF8EQ_YcOU",
-        "c3rRnSi93Lw",
-        "AmYVHRf2Aq8",
-        "i_bfUG57Je8",
-        "5kFO9eUjRPk",
-        "i5Ufb0FYkDM"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "fallen-land",
       "title": "Fallen Land: Wasteland Chronicles",
       "status": "continuing",
@@ -38,7 +20,7 @@
     },
     {
       "theme": "dungeon-universalis",
-      "title": "Dungeon Universalis — the third leg of the heavyweights triangle",
+      "title": "Dungeon Universalis \u2014 the third leg of the heavyweights triangle",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 7,
@@ -57,7 +39,7 @@
     },
     {
       "theme": "dungeon-crusade",
-      "title": "Dungeon Crusade — Avalon Beckons",
+      "title": "Dungeon Crusade \u2014 Avalon Beckons",
       "status": "continuing",
       "one_shot": false,
       "videos_per_batch": 6,
@@ -121,6 +103,13 @@
       "parts_completed": 2,
       "total_videos": 9,
       "completed_date": "2026-05-04"
+    },
+    {
+      "theme": "top-50-games-of-all-time",
+      "title": "The Top 50 Games of All Time",
+      "parts_completed": 1,
+      "total_videos": 6,
+      "completed_date": "2026-05-05"
     }
   ],
   "rotation_index": 0

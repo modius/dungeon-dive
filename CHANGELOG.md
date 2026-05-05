@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-05-05 — Top 50 Games of All Time — series complete in one drain (6 videos)
+- Series complete: **Top 50 Games of All Time** (one_shot, all 6 IDs imported in a single batch). Total imported: 6.
+- Drained queue head: Parts 1–5 of the countdown (March–April 2022) plus the June 2022 Hobbycast Episode 14 postmortem.
+- Through-line: Daniel ran 200 games through the Pub Meeple comparison engine in one sitting in March 2022, took the top 50, and rolled them out ten per episode. Two recurring threads across the series — *length* as the genre's chronic flaw, and *verve over polish* as the explicit reason Secrets of the Lost Tomb beats Warhammer Quest at #1. Postmortem flags Tomb as a regret (kept on potential alone), names three forgotten games (Walking Dead: Here's Negan, Hand of Fate: Ordeals, Fallen Land), and delivers four explicit negative reviews — Gloomhaven, Middara, Sword & Sorcery, Mage Knight — landing the case that "balance" is another word for boring.
+- Part 5 also doubles as Daniel's full-time business plan: aiming for 1000 patrons at $5/month, plus podcast ads, merch, dungeon-synth albums, solo RPG modules.
+- All transcripts pulled cleanly (residential IP, 0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1019 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/39
+- Stats: 1019 total, 423 imported, 590 pending, 6 no_transcript.
+- `series_queue.json`: top-50-games-of-all-time moved to `completed_series` (parts_completed: 1, total_videos: 6, completed_date: 2026-05-05). rotation_index stays at 0 — next rotation: **fallen-land** (6 videos queued).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-04 — Scarlet Heroes: The Peril of Cymbaline Isle Part II — series complete (4 videos)
 - Series complete: **Scarlet Heroes: The Peril of Cymbaline Isle** (Part 2 of 2 — final). Total imported across both parts: 9.
 - Drained queue head: Let's Make Some Ruins (Sep 2021), Cymbaline Isle Sessions 4 (wilderness leg) and 5 (Hungry Mother + d20-trade boredom), and the Feb 2022 coda Random Solo RPG Thoughts (Paldren Omtar, *Arcane Artifacts*, weather table, open-Q on offstage rivals).
