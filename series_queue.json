@@ -1,24 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "fallen-land",
-      "title": "Fallen Land: Wasteland Chronicles",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "pUPzkqLt5WM",
-        "OHt_00p2dmY",
-        "a2n31BGGWFI",
-        "_Jlf2Q0xGZ8",
-        "dmbvfKzFSLo",
-        "SOXoRwvxcv0"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "dungeon-universalis",
       "title": "Dungeon Universalis \u2014 the third leg of the heavyweights triangle",
       "status": "continuing",
@@ -110,6 +92,13 @@
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-05-05"
+    },
+    {
+      "theme": "fallen-land",
+      "title": "Fallen Land: Wasteland Chronicles",
+      "parts_completed": 1,
+      "total_videos": 6,
+      "completed_date": "2026-05-06"
     }
   ],
   "rotation_index": 0

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-06 — Fallen Land — six-year wasteland chronicle, series complete in one drain (6 videos)
+- Series complete: **Fallen Land: Wasteland Chronicles** (one_shot, all 6 IDs imported in a single batch). Total imported: 6.
+- Drained queue head: a 2019 take-a-look (the original Arthur's-Toys-flavoured discovery video), a 2023 four-years-on revisit, the 2023 Descendants expansion review, the 2023 second-edition unboxing (with comp copy from the publisher), the 2024 "one thing I love about" documentation appreciation, and the 2024 definitive solo review of 2nd edition + Descendants.
+- Through-line: the first run in the channel archive to track a *complete relationship arc* with a single game — find → fixture → permanent shelf slot. Two recurring threads: Daniel's praise for Fallen Dominion's commitment to retail availability after Kickstarter, and his framing of the game's documentation (quick start guide, scenario book, first-player council-of-towns sheet, indexed rulebook) as a gold standard and a signal of designer confidence. Postmortem-noted as one of the games he forgot to enter into the Top 50 comparison engine.
+- All transcripts pulled cleanly (residential IP, 0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1019 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/40
+- Stats: 1019 total, 429 imported, 584 pending, 6 no_transcript.
+- `series_queue.json`: fallen-land moved to `completed_series` (parts_completed: 1, total_videos: 6, completed_date: 2026-05-06). rotation_index stays at 0 — next rotation: **dungeon-universalis** (7 videos queued).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-05 — Top 50 Games of All Time — series complete in one drain (6 videos)
 - Series complete: **Top 50 Games of All Time** (one_shot, all 6 IDs imported in a single batch). Total imported: 6.
 - Drained queue head: Parts 1–5 of the countdown (March–April 2022) plus the June 2022 Hobbycast Episode 14 postmortem.
