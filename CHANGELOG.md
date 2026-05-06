@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-05-07 — Priority drop: GameMaster's Apprentice — An Oracle for Every Genre (1 video)
+- Ad-hoc priority run — single video published 2026-05-06, queue waits one cycle.
+- Imported: GameMaster's Apprentice: An Oracle for Every Genre — Daniel compares post-apocalyptic, cyberpunk, weird horror, sci-fi, steampunk and basic decks side-by-side after an $80–90 DriveThruRPG haul; lands on "buy the basic plus one genre" rather than the full set.
+- 1 new video discovered during fetch (1020 total).
+- Transcript pulled cleanly (residential IP, 0 transient failures).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/41
+- Stats: 1020 total, 430 imported, 584 pending, 6 no_transcript.
+- `series_queue.json` unchanged — priority videos never touch the queue. Next rotation remains: **dungeon-universalis** (7 videos queued).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-06 — Fallen Land — six-year wasteland chronicle, series complete in one drain (6 videos)
 - Series complete: **Fallen Land: Wasteland Chronicles** (one_shot, all 6 IDs imported in a single batch). Total imported: 6.
 - Drained queue head: a 2019 take-a-look (the original Arthur's-Toys-flavoured discovery video), a 2023 four-years-on revisit, the 2023 Descendants expansion review, the 2023 second-edition unboxing (with comp copy from the publisher), the 2024 "one thing I love about" documentation appreciation, and the 2024 definitive solo review of 2nd edition + Descendants.
