@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-07 — Dungeon Universalis — third leg of the heavyweights triangle, series complete in one drain (7 videos)
+- Series complete: **Dungeon Universalis — the third leg of the heavyweights triangle** (one_shot, all 7 IDs imported in a single batch). Total imported: 7.
+- Drained queue head: a five-video first-week deep dive in May 2020 (Take a Look Parts 1–3, Boxing it All Up bonus, Creating Characters), the May 2020 defining review, and an August 2022 follow-up on the official upgrade pack.
+- Through-line: anachronistic Spanish-designed kitchen-sink dungeon crawl from Oscar Bribián / Ludic Dragon, started life as a fan-made Advanced HeroQuest expansion. Daniel's frame across the run is *toolbox over tightly-tuned design* — twelve hundred pieces of unique art, sixteen schools of magic, two complete bestiaries, an in-box solo app, and a 120-page rulebook that wrote a rule for everything from swimming to turning your ally into a living bomb. The 2022 follow-up confirms Ludic Dragon shipped the rulebook revisions and bestiary cards Daniel asked for in his original review. Verdict in the review: \"a good game that is almost a great game.\"
+- All transcripts pulled cleanly (residential IP, 0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1020 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/42
+- Stats: 1020 total, 437 imported, 577 pending, 6 no_transcript.
+- `series_queue.json`: dungeon-universalis moved to `completed_series` (parts_completed: 1, total_videos: 7, completed_date: 2026-05-07). rotation_index stays at 0 — next rotation: **dungeon-crusade** (11 videos queued, 6+5 split).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-07 — Priority drop: GameMaster's Apprentice — An Oracle for Every Genre (1 video)
 - Ad-hoc priority run — single video published 2026-05-06, queue waits one cycle.
 - Imported: GameMaster's Apprentice: An Oracle for Every Genre — Daniel compares post-apocalyptic, cyberpunk, weird horror, sci-fi, steampunk and basic decks side-by-side after an $80–90 DriveThruRPG haul; lands on "buy the basic plus one genre" rather than the full set.

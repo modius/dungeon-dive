@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-05-06T22:22:05.045146+00:00",
+  "last_fetched": "2026-05-07T01:13:18.102423+00:00",
   "videos": [
     {
       "video_id": "UVkQsLv7n2s",
@@ -4900,9 +4900,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive FB Group  \nhttps://www.facebook.com/groups/2571172249675057    \n\nThe Dungeon Dive Guild  \nhttps://boardgamegeek.com/guild/4030    \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2022-08-09T07:00:07Z",
       "thumbnail_url": "https://i.ytimg.com/vi/TP7VDtErEvY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1598,
+      "imported_at": "2026-05-07T01:17:20.273425Z"
     },
     {
       "video_id": "ptv9GRoEKs0",
@@ -8240,9 +8240,9 @@
       "description": "",
       "published_at": "2020-05-25T22:58:07Z",
       "thumbnail_url": "https://i.ytimg.com/vi/lvOd4uyJkFE/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1602,
+      "imported_at": "2026-05-07T01:17:39.313734Z"
     },
     {
       "video_id": "TS9rxa7-CXg",
@@ -8250,9 +8250,9 @@
       "description": "",
       "published_at": "2020-05-19T02:50:25Z",
       "thumbnail_url": "https://i.ytimg.com/vi/TS9rxa7-CXg/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1599,
+      "imported_at": "2026-05-07T01:17:25.081722Z"
     },
     {
       "video_id": "wwtaQ_PNx1M",
@@ -8260,9 +8260,9 @@
       "description": "Links to plastic containers I used:\n\n\nhttps://www.amazon.com/gp/product/B07HHZ2YTS/ref=ppx_yo_dt_b_asin_title_o01_s01?ie=UTF8&psc=1\n\n\nhttps://www.amazon.com/gp/product/B07TT4P118/ref=ppx_yo_dt_b_asin_title_o01_s02?ie=UTF8&psc=1",
       "published_at": "2020-05-15T04:34:22Z",
       "thumbnail_url": "https://i.ytimg.com/vi/wwtaQ_PNx1M/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1603,
+      "imported_at": "2026-05-07T01:17:43.958788Z"
     },
     {
       "video_id": "eymQ0rXs7d8",
@@ -8270,9 +8270,9 @@
       "description": "",
       "published_at": "2020-05-14T23:50:45Z",
       "thumbnail_url": "https://i.ytimg.com/vi/eymQ0rXs7d8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1601,
+      "imported_at": "2026-05-07T01:17:34.673992Z"
     },
     {
       "video_id": "XEqxbZoaqUw",
@@ -8280,9 +8280,9 @@
       "description": "",
       "published_at": "2020-05-14T16:34:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/XEqxbZoaqUw/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1600,
+      "imported_at": "2026-05-07T01:17:29.789165Z"
     },
     {
       "video_id": "Rs5p0EuuTDw",
@@ -8290,9 +8290,9 @@
       "description": "",
       "published_at": "2020-05-14T01:17:38Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Rs5p0EuuTDw/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1597,
+      "imported_at": "2026-05-07T01:17:15.467663Z"
     },
     {
       "video_id": "cJwXjAKA0-k",

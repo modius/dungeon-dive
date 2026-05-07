@@ -1,25 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "dungeon-universalis",
-      "title": "Dungeon Universalis \u2014 the third leg of the heavyweights triangle",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "Rs5p0EuuTDw",
-        "XEqxbZoaqUw",
-        "eymQ0rXs7d8",
-        "wwtaQ_PNx1M",
-        "TS9rxa7-CXg",
-        "lvOd4uyJkFE",
-        "TP7VDtErEvY"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "dungeon-crusade",
       "title": "Dungeon Crusade \u2014 Avalon Beckons",
       "status": "continuing",
@@ -99,6 +80,13 @@
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-05-06"
+    },
+    {
+      "theme": "dungeon-universalis",
+      "title": "Dungeon Universalis \u2014 the third leg of the heavyweights triangle",
+      "parts_completed": 1,
+      "total_videos": 7,
+      "completed_date": "2026-05-07"
     }
   ],
   "rotation_index": 0
