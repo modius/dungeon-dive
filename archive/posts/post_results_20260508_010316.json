@@ -1,0 +1,41 @@
+{
+  "posted_at": "2026-05-08T01:03:16.135814Z",
+  "results": [
+    {
+      "video_id": "4VN65sXHXSU",
+      "topic_id": 1604,
+      "url": "https://dungeondive.quest/t/dungeon-crusade-part-one-welcome-to-avalon/1604",
+      "status": "success"
+    },
+    {
+      "video_id": "bi3ZAQbw8EI",
+      "topic_id": 1605,
+      "url": "https://dungeondive.quest/t/dungeon-crusade-part-four-component-deep-dive-part-two/1605",
+      "status": "success"
+    },
+    {
+      "video_id": "c9CotszUwYQ",
+      "topic_id": 1606,
+      "url": "https://dungeondive.quest/t/dungeon-crusade-part-two-organize-it/1606",
+      "status": "success"
+    },
+    {
+      "video_id": "hVMJN3o6-5g",
+      "topic_id": 1607,
+      "url": "https://dungeondive.quest/t/dungeon-crusade-an-up-hill-battle-to-greatness/1607",
+      "status": "success"
+    },
+    {
+      "video_id": "hwX4Jil8AFY",
+      "topic_id": 1608,
+      "url": "https://dungeondive.quest/t/dungeon-crusade-part-three-component-deep-dive-part-one/1608",
+      "status": "success"
+    },
+    {
+      "video_id": "v0kp6W42yf4",
+      "topic_id": 1609,
+      "url": "https://dungeondive.quest/t/dungeon-crusade-part-five-the-tomb-of-kaladar/1609",
+      "status": "success"
+    }
+  ]
+}

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-05-08 — Dungeon Crusade — Avalon Beckons, Part 1 (6 videos)
+- Drained queue head: the first six videos of Daniel's January 2021 series on **Dungeon Crusade Book One: Genesis of Evil** — a welcome-to-Avalon opener with the Avalon Adventure Board Game appetizer, a storage walkthrough, a two-part spoiler-rich component deep dive, the Tomb of Kaladar small-table setup, and the first review.
+- Through-line: Daniel discloses the Roger-Pearce friendship up front and uses it as a discipline rather than a free pass. The series settles on a *layers-of-simple-systems* frame — patrol routes that give the dungeon a life of its own, an upkeep-phase initiative that splinters six heroes into improvised sub-parties, a difficulty dial the player turns rather than the designer, a mining-and-recipe gem loop, and an interactive book of lore in the avalon adventure board game. The standees are the best he has ever held; Dean Spencer's trap art is his personal favourite. The sustained criticism, all the way through to the review, is the 70-page conversational Crusader's Handbook — verbose enough to bury simple rules in paragraphs of voice and probably under-blind-tested (icon mismatches, treasure-chest icons stamped over critical raid arrows, dungeons unlabelled in the rulebook). Hero special abilities also flat from level 1 to 3 (just +1 damage per tier). Verdict: an uphill climb that the four-to-eight-hour epic dungeon crawl underneath fully earns.
+- All 6 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1020 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/43
+- Stats: 1020 total, 443 imported, 571 pending, 6 no_transcript.
+- `series_queue.json`: dungeon-crusade drained 6 of 11 IDs (last_part: 1, last_imported: 2026-05-08). 5 IDs remain queued for the next drain. rotation_index stays at 0 — series continues.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-07 — Dungeon Universalis — third leg of the heavyweights triangle, series complete in one drain (7 videos)
 - Series complete: **Dungeon Universalis — the third leg of the heavyweights triangle** (one_shot, all 7 IDs imported in a single batch). Total imported: 7.
 - Drained queue head: a five-video first-week deep dive in May 2020 (Take a Look Parts 1–3, Boxing it All Up bonus, Creating Characters), the May 2020 defining review, and an August 2022 follow-up on the official upgrade pack.
