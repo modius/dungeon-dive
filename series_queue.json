@@ -1,23 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "dungeon-crusade",
-      "title": "Dungeon Crusade \u2014 Avalon Beckons",
-      "status": "continuing",
-      "one_shot": false,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "X22UHszz5Dg",
-        "LXW_Z8rp3bU",
-        "I70TmekxAXE",
-        "fIo8SE2ky98",
-        "lADjNtrJtIo"
-      ],
-      "last_part": 1,
-      "last_imported": "2026-05-08",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/43"
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -77,10 +59,17 @@
     },
     {
       "theme": "dungeon-universalis",
-      "title": "Dungeon Universalis \u2014 the third leg of the heavyweights triangle",
+      "title": "Dungeon Universalis — the third leg of the heavyweights triangle",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-07"
+    },
+    {
+      "theme": "dungeon-crusade",
+      "title": "Dungeon Crusade — Avalon Beckons",
+      "parts_completed": 2,
+      "total_videos": 11,
+      "completed_date": "2026-05-09"
     }
   ],
   "rotation_index": 0
