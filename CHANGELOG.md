@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-05-11 — Priority drop: A New Look at Vantage (1 video)
+- Ad-hoc priority run — single video published 2026-05-10, queue stays empty (already drained yesterday).
+- Imported: **A New Look at Vantage: Was I Wrong?** — Daniel reaffirms his *modern masterpiece* call on Vantage after an economic-victory game won via a non-exploitative path (took over a vacant tailor's shop, made and sold garments, only used three of the 800 location cards). Also flags the Rule Pop app as a significant upgrade over the physical storybooks.
+- 1 new video discovered during fetch (1021 total).
+- Transcript pulled cleanly (residential IP, 0 transient failures, 0 permanent failures).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/44 (priority-drop register, 126 words)
+- Stats: 1021 total, 449 imported, 566 pending, 6 no_transcript.
+- `series_queue.json` unchanged — priority videos never touch the queue. Queue remains empty — **run /plan-batch before next non-priority /import**.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
+## 2026-05-10 — Queue empty — no import (skipped)
+- Pre-flight passed; fetch found no new videos; queue empty after dungeon-crusade completion.
+- Decision: skip cleanly. No priority videos in last 14 days, no active series to drain.
+- Action requested: run /plan-batch to populate the queue before next /import.
+
 ## 2026-05-09 — Dungeon Crusade — Avalon Beckons, Part 2 — series complete (5 videos)
 - Series complete: **Dungeon Crusade — Avalon Beckons** (parts_completed: 2, total_videos: 11). Final drain of 5 IDs.
 - Drained queue tail: an Oct 2021 status update on the Quick Reference Guide and KS reprint, a Nov 2021 dining-table session braided with sword-and-sorcery novels (The Maze of Peril, Engor's Sword Arm), the Jul 2022 Hobbycast Episode 20 long-form interview with Roger Pearce, a Sep 2022 custom-quest design walkthrough, and a Mar 2024 short-form encounter-deck appreciation.

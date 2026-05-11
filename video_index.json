@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-05-09T04:38:17.524915+00:00",
+  "last_fetched": "2026-05-11T00:40:57.992809+00:00",
   "videos": [
+    {
+      "video_id": "Kh_0ICA5cfg",
+      "title": "A New Look at Vantage: Was I Wrong?",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-05-10T16:00:27Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/Kh_0ICA5cfg/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1619,
+      "imported_at": "2026-05-11T00:42:03.786966Z"
+    },
     {
       "video_id": "UVkQsLv7n2s",
       "title": "GameMaster's Apprentice: An Oracle for Every Genre",
