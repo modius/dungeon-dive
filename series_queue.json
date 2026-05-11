@@ -1,5 +1,61 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "folklore-fall-of-the-spire",
+      "title": "Folklore the Affliction — Fall of the Spire",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "hy7L_a8J9z4",
+        "z0A-aCcVXSA",
+        "4zfnW56TcvY",
+        "WD7EzA2sbnI",
+        "8T1Pe58GJpw",
+        "L_mpuGgHhfE"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "aftermath",
+      "title": "Aftermath — Daniel's Wasteland Let's Play",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "HDN25GTdn40",
+        "d09nbbfOIA8",
+        "4qtFClwSzc8",
+        "TaY5NrLNABM",
+        "TMvgKj-2Z9k",
+        "syPu5HdMT4k",
+        "m_vvvpnOHfw",
+        "St5jhqEeasY"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "one-thing-i-love",
+      "title": "One thing I love about... — a 2024 micro-format experiment",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "XIhM9oLObuU",
+        "a8g5MvFPwxo",
+        "gAPX20Ja0zk",
+        "VlgtaUj_dho",
+        "s2GjWfPbh9I"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -70,6 +126,13 @@
       "parts_completed": 2,
       "total_videos": 11,
       "completed_date": "2026-05-09"
+    },
+    {
+      "theme": "machina-arcana",
+      "title": "Machina Arcana — Three Editions of the Lovecraftian Crawler",
+      "parts_completed": 1,
+      "total_videos": 4,
+      "completed_date": "2026-05-11"
     }
   ],
   "rotation_index": 0

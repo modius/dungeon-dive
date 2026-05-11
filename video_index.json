@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-05-11T00:40:57.992809+00:00",
+  "last_fetched": "2026-05-11T00:54:43.635016+00:00",
   "videos": [
     {
       "video_id": "Kh_0ICA5cfg",
@@ -5590,9 +5590,10 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-04-27T07:00:09Z",
       "thumbnail_url": "https://i.ytimg.com/vi/hRgIER_2tZg/hqdefault.jpg",
-      "status": "pending",
+      "status": "no_transcript",
       "discourse_topic_id": null,
-      "imported_at": null
+      "imported_at": null,
+      "updated_at": "2026-05-11"
     },
     {
       "video_id": "F1hpeZ_T-ww",
@@ -5600,9 +5601,9 @@
       "description": "",
       "published_at": "2022-04-26T07:00:08Z",
       "thumbnail_url": "https://i.ytimg.com/vi/F1hpeZ_T-ww/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1621,
+      "imported_at": "2026-05-11T00:57:27.977906Z"
     },
     {
       "video_id": "T_jQIJSkjGo",
@@ -5610,9 +5611,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nPurchase\nhttps://bridgedist.com/machina-arcana/",
       "published_at": "2022-04-25T07:00:15Z",
       "thumbnail_url": "https://i.ytimg.com/vi/T_jQIJSkjGo/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1622,
+      "imported_at": "2026-05-11T00:57:32.546215Z"
     },
     {
       "video_id": "htuK8cgwC-E",
@@ -8210,9 +8211,9 @@
       "description": "",
       "published_at": "2020-06-20T19:27:40Z",
       "thumbnail_url": "https://i.ytimg.com/vi/69_RI4iZxuQ/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1620,
+      "imported_at": "2026-05-11T00:57:23.299180Z"
     },
     {
       "video_id": "xTpYdSgeWPc",
@@ -8770,9 +8771,9 @@
       "description": "",
       "published_at": "2020-01-14T14:00:27Z",
       "thumbnail_url": "https://i.ytimg.com/vi/rLZUcW0DBTM/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1623,
+      "imported_at": "2026-05-11T00:57:37.247849Z"
     },
     {
       "video_id": "WjgW6u9Tde8",

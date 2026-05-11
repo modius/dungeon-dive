@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-11 — Machina Arcana — Three Editions of the Lovecraftian Crawler, series complete (4 videos)
+- Series complete: **Machina Arcana — Three Editions of the Lovecraftian Crawler** (one_shot, 4 of 5 IDs imported in a single batch). Total imported: 4. 1 ID marked no_transcript.
+- Drained queue: a Jan 2020 long-form 2nd-edition review, a Jun 2020 *cure for new-game fatigue* revisit, and Apr 2022 parts 1 and 2 of the 3rd-edition + *To Eternity* expansion deep look. Fifth video (*The Art of Machina Arcana*, hRgIER_2tZg) marked `no_transcript` — captions disabled (TranscriptsDisabled permanent failure); it's a music-and-art piece Daniel composed a score for.
+- Through-line: a *rewarding frustration* whose 3rd edition is a *teaching rewrite* rather than a rules rewrite — new guidebook walks the player through opening rounds, manual reorganised, icon clarifications retrofitted via update pack. *To Eternity* expansion replaces roll-to-spawn with timed ticks and flips chapter cards into new map tiles. Andy Lennon's *Codex Eternum* reads as standalone weird fiction. Uri Bilik has named every map tile.
+- Drift check: all 5 IDs were pending; 4 transcripts pulled cleanly, 1 permanent failure (TranscriptsDisabled) on hRgIER_2tZg → marked `no_transcript` in video_index.json.
+- 0 new videos discovered during fetch (1021 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/45 (467 words)
+- Stats: 1021 total, 453 imported, 561 pending, 7 no_transcript.
+- `series_queue.json`: machina-arcana moved to `completed_series` (parts_completed: 1, total_videos: 4, completed_date: 2026-05-11). rotation_index stays at 0 — next rotation: **folklore-fall-of-the-spire** (6 videos queued).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged); no_transcript count rises to 7 with hRgIER_2tZg.
+
 ## 2026-05-11 — Priority drop: A New Look at Vantage (1 video)
 - Ad-hoc priority run — single video published 2026-05-10, queue stays empty (already drained yesterday).
 - Imported: **A New Look at Vantage: Was I Wrong?** — Daniel reaffirms his *modern masterpiece* call on Vantage after an economic-victory game won via a non-exploitative path (took over a vacant tailor's shop, made and sold garments, only used three of the 800 location cards). Also flags the Rule Pop app as a significant upgrade over the physical storybooks.
