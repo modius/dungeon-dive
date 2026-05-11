@@ -1,24 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "folklore-fall-of-the-spire",
-      "title": "Folklore the Affliction — Fall of the Spire",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "hy7L_a8J9z4",
-        "z0A-aCcVXSA",
-        "4zfnW56TcvY",
-        "WD7EzA2sbnI",
-        "8T1Pe58GJpw",
-        "L_mpuGgHhfE"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "aftermath",
       "title": "Aftermath — Daniel's Wasteland Let's Play",
       "status": "continuing",
@@ -132,6 +114,13 @@
       "title": "Machina Arcana — Three Editions of the Lovecraftian Crawler",
       "parts_completed": 1,
       "total_videos": 4,
+      "completed_date": "2026-05-11"
+    },
+    {
+      "theme": "folklore-fall-of-the-spire",
+      "title": "Folklore the Affliction — Fall of the Spire",
+      "parts_completed": 1,
+      "total_videos": 6,
       "completed_date": "2026-05-11"
     }
   ],

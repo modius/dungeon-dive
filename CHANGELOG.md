@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-11 — Folklore the Affliction — Fall of the Spire, series complete (6 videos)
+- Series complete: **Folklore the Affliction — Fall of the Spire** (one_shot, all 6 IDs imported in a single batch). Total imported: 6.
+- Drained queue: a 5-part Oct 2020 campaign playthrough of Story One *Into the City* (character selection + 4 chapter recaps + final review), plus an Apr 2024 *One thing I love about...* coda nominating the Adventure Creation Kit toolkit-book.
+- Through-line: Daniel's most arresting verdict in the run — Folklore feels to him like *a board-game version of a PlayStation-1-era Japanese RPG* (overworld + small pre-rendered adventure tiles + skirmish-versus-map combat + items + class abilities + fetch-quest rumours). The unique-nostalgia argument earns the game its forgiveness for an enormous bookkeeping load. *Fall of the Spire*'s headline additions surface across the chapters: an **initiative track** (random-then-finesseable position slots with 2-player-scaled bonuses), **charged abilities** on new foes (soft combat timer — three hits triggers a super), **town events** push-your-luck deck, **rumors** deck of side quests Daniel calls one of his favourite features of any dungeon crawl. The 2024 coda completes the *love-letter coda* arc (same shape as Fallen Land): the toolkit-book is the real engine.
+- All 6 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1021 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/46 (461 words)
+- Stats: 1021 total, 459 imported, 555 pending, 7 no_transcript.
+- `series_queue.json`: folklore-fall-of-the-spire moved to `completed_series` (parts_completed: 1, total_videos: 6, completed_date: 2026-05-11). rotation_index stays at 0 — next rotation: **aftermath** (8 videos queued).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-11 — Machina Arcana — Three Editions of the Lovecraftian Crawler, series complete (4 videos)
 - Series complete: **Machina Arcana — Three Editions of the Lovecraftian Crawler** (one_shot, 4 of 5 IDs imported in a single batch). Total imported: 4. 1 ID marked no_transcript.
 - Drained queue: a Jan 2020 long-form 2nd-edition review, a Jun 2020 *cure for new-game fatigue* revisit, and Apr 2022 parts 1 and 2 of the 3rd-edition + *To Eternity* expansion deep look. Fifth video (*The Art of Machina Arcana*, hRgIER_2tZg) marked `no_transcript` — captions disabled (TranscriptsDisabled permanent failure); it's a music-and-art piece Daniel composed a score for.
