@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-12 — Aftermath — Daniel's Wasteland Let's Play, series complete (8 videos)
+- Series complete: **Aftermath — Daniel's Wasteland Let's Play** (one_shot, all 8 IDs imported in a single batch). Total imported: 8.
+- Drained queue: a 7-part Nov–Dec 2019 Let's Play of Jerry Hawthorne's *Raid on Enjo* mission (Introduction + 5 chapter playthroughs + Finale colony phase) plus the Dec 2019 Critter Crawl review.
+- Through-line: Daniel coins the channel term *critter crawl* in volume one and never quite stops using it. The whole run is one campaign mission — *Raid on Enjo* (the dungeon is an old vending machine; the prize is a bag of *onions noodles*) — with a guinea pig (Grumpel) and a mouse (Mesaiya) as heroes. Across the playthrough Daniel surfaces the design highlights one at a time: the encounter-card-references-storybook crosslink (hundreds of narrative moments from a small deck), the four-personal-goal campaign win condition, the Hunt mechanic (enemies follow you between maps), Group Tasks (cards bank across turns toward one collective check), environment rules (heavy objects, low visibility, forced movement), and the colony phase. The final review verdict: *Jerry Hawthorne's best game since Mice and Mystics* — with a sustained rule-book gripe that started in Comanauts (too thin, too dry, no examples, no flavour). One specific in-game complaint: the boss-chapter roach swarm is anticlimactic and house-rule-worthy.
+- All 8 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1021 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/47 (493 words)
+- Stats: 1021 total, 467 imported, 547 pending, 7 no_transcript.
+- `series_queue.json`: aftermath moved to `completed_series` (parts_completed: 1, total_videos: 8, completed_date: 2026-05-12). rotation_index stays at 0 — next rotation: **one-thing-i-love** (5 videos queued, the last entry in the current active_series).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-11 — Folklore the Affliction — Fall of the Spire, series complete (6 videos)
 - Series complete: **Folklore the Affliction — Fall of the Spire** (one_shot, all 6 IDs imported in a single batch). Total imported: 6.
 - Drained queue: a 5-part Oct 2020 campaign playthrough of Story One *Into the City* (character selection + 4 chapter recaps + final review), plus an Apr 2024 *One thing I love about...* coda nominating the Adventure Creation Kit toolkit-book.

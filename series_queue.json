@@ -1,26 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "aftermath",
-      "title": "Aftermath — Daniel's Wasteland Let's Play",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 8,
-      "video_ids": [
-        "HDN25GTdn40",
-        "d09nbbfOIA8",
-        "4qtFClwSzc8",
-        "TaY5NrLNABM",
-        "TMvgKj-2Z9k",
-        "syPu5HdMT4k",
-        "m_vvvpnOHfw",
-        "St5jhqEeasY"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "one-thing-i-love",
       "title": "One thing I love about... — a 2024 micro-format experiment",
       "status": "continuing",
@@ -122,6 +102,13 @@
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-05-11"
+    },
+    {
+      "theme": "aftermath",
+      "title": "Aftermath — Daniel's Wasteland Let's Play",
+      "parts_completed": 1,
+      "total_videos": 8,
+      "completed_date": "2026-05-12"
     }
   ],
   "rotation_index": 0
