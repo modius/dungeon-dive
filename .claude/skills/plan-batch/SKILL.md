@@ -47,12 +47,26 @@ Cap candidates at **4**. Minimum **2**.
 
 **Risk / notes:** One line — overlap with prior keeper posts, narrow pool, etc.
 
-**Videos:**
+**Videos to import:**
 - 2019-12-07 — A Failing of the Cthulhu Mythos Board Games (wxWz6zDC2wo)
+- …
+
+**Related already-imported (suggested cross-references):**
+- 2021-04-02 — A Conversation with Jason Glover (9hgzA60ZGZg) — the designer behind the catalogue
 - …
 ```
 
-End with: *"Which batch(es) should I queue? Reply with numbers (e.g. '1' or '1,3') or say 'none'."*
+End with: *"Which batch(es) should I queue? Reply with numbers (e.g. '1' or '1,3') or say 'none'. To edit a candidate's related-imported list, say so."*
+
+## Related-imported survey — the editorial cross-reference pass
+
+Each Keeper post publishes an *Exhibit Catalogue* that is an integrated thematic index of the subject — not just the videos imported in this batch, but every video in the channel that belongs in this exhibit. The catalogue draws from two pools: the videos *just imported* by this run, plus any *already-imported* videos that are tightly bound to the same subject. The editorial pick of which already-imported videos to fold into the exhibit belongs to `/plan-batch` — `/import` does not curate; it just renders what the queue tells it to (in chronological order by publish date).
+
+For each candidate batch, scan the imported pool (`video_index.json` entries with `status: "imported"`, cross-referenced with `transcript_analytics.json` tags) for videos that share game tags, designer references, or theme tags with the batch. Surface up to 5 strong matches under **Related already-imported** for the user to verify or edit. Strict-match rules (the same standards used for batch composition apply): a related video must reference the batch's subject *directly* — designer-tagged, game-tagged, or thematically tight. Don't pad. If a candidate has no clean related-imported matches, omit the section.
+
+When the user picks a candidate they can also direct edits to the related list ("add X, drop Y, the rest are fine"). Default: queue the suggested list as-is unless overridden.
+
+Note for the user-facing proposal: the *Related already-imported* section in each candidate is informational only — at render time the related-imported entries and the just-imported entries become a single chronologically-ordered Exhibit Catalogue in the Keeper post. The reader sees one coherent thematic tour.
 
 ## Queue — what to write when user picks
 
@@ -66,6 +80,7 @@ When the user selects one or more candidates, append each to `series_queue.activ
   "one_shot": true,
   "videos_per_batch": 8,
   "video_ids": ["vid1", "vid2", ...],
+  "related_imported_ids": ["existing_vid1", ...],
   "last_part": 0,
   "last_imported": null,
   "keeper_post": null
@@ -78,6 +93,7 @@ Rules for queue writes:
 - `videos_per_batch`: default to `len(video_ids)` for a one-shot. If the user's candidate has >8 videos, ask whether to split (e.g. "9 videos — one batch or split into 5+4?"). Clamp to 3–12.
 - `one_shot`: `true` when `len(video_ids) <= videos_per_batch`, else `false`.
 - `status: "continuing"` for multi-part; `one_shot` flag carries the rest of the intent.
+- `related_imported_ids`: the editorial cross-references the user confirmed. Each ID must exist in `video_index.json` with `status: "imported"` *and* a non-null `discourse_topic_id` (so `/import` can build a valid Discourse link). Cap at 5. The IDs themselves are unordered — `/import` renders the integrated Exhibit Catalogue in chronological order by publish date. Omit the field or use `[]` when there are no clean matches.
 - `last_part: 0`, `last_imported: null`, `keeper_post: null` — `/import` populates these as it drains.
 - Theme slug: lowercase, hyphenated, no spaces; if it collides with a `completed_series` theme, suffix with `-pt2` (or next available part number).
 
