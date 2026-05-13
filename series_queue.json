@@ -87,6 +87,76 @@
       "last_part": 0,
       "last_imported": null,
       "keeper_post": null
+    },
+    {
+      "theme": "a-touch-of-evil",
+      "title": "A Touch of Evil — a five-year supernatural-game dossier",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 4,
+      "video_ids": [
+        "fQwyeIriRx8",
+        "13jLs1WwfTY",
+        "_FzLqe9KziY",
+        "--eCZ5KJphU"
+      ],
+      "related_imported_ids": [
+        "gAPX20Ja0zk"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "solo-rpg-toolkit-canon",
+      "title": "Solo RPG Tools — the 2022–2023 toolkit canon",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "fKvvShsdaWU",
+        "LNWGlnt3wF4",
+        "4vHxpaifn9w",
+        "ZtUTR0E7VPY",
+        "WNhZUBZ8tUc",
+        "kzQhIJnlTsI",
+        "Ocp1_PPM4sI",
+        "SHzg-IgnKuI"
+      ],
+      "related_imported_ids": [
+        "iYHt1pdScK0",
+        "v9INdKeBJEI",
+        "eM2S4pWeczs",
+        "7m_UlzkGLlA",
+        "wSnq-Unha34"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "small-box-non-glover",
+      "title": "Small Box Dungeon Crawls (non-Glover) — the 2020–2022 boom, minus Grey Gnome",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "1yK9VWnQpx4",
+        "BfLT1TlZInE",
+        "9TvuNO-fnXM",
+        "aqbo0yu_l6g",
+        "MM879hqJf1U",
+        "mDDcQa5yCfI",
+        "B9FbWxNdJPY",
+        "w68xGF_YIgU"
+      ],
+      "related_imported_ids": [
+        "flbyvShpL18",
+        "R1S8PFUsVWg"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
     }
   ],
   "completed_series": [
