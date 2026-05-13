@@ -1,5 +1,94 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "darklight-memento-mori",
+      "title": "Darklight Memento Mori — a 2018 Let's Play with two later codas",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "ySg8CEjxwwo",
+        "HbNx1HcTEk4",
+        "bqTNuZQOziA",
+        "C5Rh96Gz8yg",
+        "BSum-2t0a28",
+        "lgNWcFP2Ltg",
+        "v1J7bERLirA",
+        "Q-dHeMod7T0"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "d100-dungeon",
+      "title": "D100 Dungeon — a complete game's arc, all of it",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "gWdtuyZNxeQ",
+        "iKMz8ICRe8I",
+        "neQ91eM5hw4",
+        "6zLWdLXiJC8",
+        "flJTAxtk67w",
+        "u4e1ijV4iRQ",
+        "WIP6ZDjQmww"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "secrets-of-the-lost-tomb",
+      "title": "Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "XsCgtUDrxck",
+        "AUxR3aTc3ng",
+        "3HUs08W6-8o",
+        "V6AOpDTpCO4",
+        "qZi9yeRBf94",
+        "eLhCLA0Jndo",
+        "ZcdQLCEyjjU"
+      ],
+      "related_imported_ids": [
+        "5kFO9eUjRPk",
+        "i5Ufb0FYkDM"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "grey-gnome-games",
+      "title": "Grey Gnome Games — the Jason Glover catalogue, all of it",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 11,
+      "video_ids": [
+        "ensnUIxTUHE",
+        "L5c4VvuaU7w",
+        "lvtS_HSjXUA",
+        "hSuSN9-UZUY",
+        "cFn-fD2GmYU",
+        "z-n_vz4gFRw",
+        "Pt8zI30MFm8",
+        "Df9q7HerAA4",
+        "z2SU31i7Uo4",
+        "Y8YjZOGrhJI",
+        "FYtl1LolxwQ"
+      ],
+      "related_imported_ids": [
+        "9hgzA60ZGZg"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
