@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-13 — One thing I love about... — 2024 micro-format experiment, series complete (5 videos)
+- Series complete: **One thing I love about... — a 2024 micro-format experiment** (one_shot, all 5 IDs imported in a single batch). Total imported: 5. Queue is now **empty**.
+- Drained queue: five short-form Mar–May 2024 *one thing I love about...* videos — Deities & Demigods (1980 AD&D Cthulhu Mythos chapter as historical document), The Walking Dead Universe RPG (d66 random locations table for the mundane-modern shelf), A Touch of Evil (three small square pen-and-ink Hammer-Horror-style game boards), The True OSR (Chapter 5's 40+ d100 random tables — system itself adversarial-by-design, mixed-to-negative on gameplay but unreservedly loved for the tables), and Here's Negan (Negan as AI-controlled NPC chaos engine, plus a hidden reputation race underneath the co-op).
+- Through-line: the *form* itself — Daniel set himself the discipline of picking exactly one thing per game and defending only that. Across five disparate titles the answers shape into a pattern (a chapter, a table, a map, a chapter of tables, an AI-controlled NPC). The series is filed not by theme but by *format discipline*. Note: a sixth video in the same format (the Folklore the Affliction *one thing* coda) was already filed with the Folklore dossier earlier in the rotation.
+- All 5 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1021 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/48 (450 words)
+- Stats: 1021 total, 472 imported, 542 pending, 7 no_transcript.
+- `series_queue.json`: one-thing-i-love moved to `completed_series` (parts_completed: 1, total_videos: 5, completed_date: 2026-05-13). **`active_series` now empty; rotation_index reset to 0.** Run /plan-batch before next non-priority /import.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-12 — Aftermath — Daniel's Wasteland Let's Play, series complete (8 videos)
 - Series complete: **Aftermath — Daniel's Wasteland Let's Play** (one_shot, all 8 IDs imported in a single batch). Total imported: 8.
 - Drained queue: a 7-part Nov–Dec 2019 Let's Play of Jerry Hawthorne's *Raid on Enjo* mission (Introduction + 5 chapter playthroughs + Finale colony phase) plus the Dec 2019 Critter Crawl review.

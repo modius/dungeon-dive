@@ -1,23 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "one-thing-i-love",
-      "title": "One thing I love about... — a 2024 micro-format experiment",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "XIhM9oLObuU",
-        "a8g5MvFPwxo",
-        "gAPX20Ja0zk",
-        "VlgtaUj_dho",
-        "s2GjWfPbh9I"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -109,6 +91,13 @@
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-05-12"
+    },
+    {
+      "theme": "one-thing-i-love",
+      "title": "One thing I love about... — a 2024 micro-format experiment",
+      "parts_completed": 1,
+      "total_videos": 5,
+      "completed_date": "2026-05-13"
     }
   ],
   "rotation_index": 0
