@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-14 — Priority drop: Ten Things I Look for in a Good Dungeon Crawl (1 video)
+- Ad-hoc priority run: fresh upload "Ten Things I Look for in a Good Dungeon Crawl and Adventure Game" (published 2026-05-13) — Daniel's reviewer-calibration primer ahead of his next round of top-10 lists. Ten preferences laid out as taste-signposts, not a scorecard.
+- Transcript pulled cleanly (0 transient failures, 0 permanent failures).
+- 1 new video discovered during fetch (1022 total, was 1021).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/49 (143 words, priority-drop register).
+- Stats: 1022 total, 473 imported, 542 pending, 7 no_transcript.
+- `series_queue.json`: untouched — priority runs never mutate the queue. Queue remains populated (rotation_index 0, 7 active series staged from prior `/plan-batch` runs); next non-priority `/import` will drain `darklight-memento-mori` first.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-13 — One thing I love about... — 2024 micro-format experiment, series complete (5 videos)
 - Series complete: **One thing I love about... — a 2024 micro-format experiment** (one_shot, all 5 IDs imported in a single batch). Total imported: 5. Queue is now **empty**.
 - Drained queue: five short-form Mar–May 2024 *one thing I love about...* videos — Deities & Demigods (1980 AD&D Cthulhu Mythos chapter as historical document), The Walking Dead Universe RPG (d66 random locations table for the mundane-modern shelf), A Touch of Evil (three small square pen-and-ink Hammer-Horror-style game boards), The True OSR (Chapter 5's 40+ d100 random tables — system itself adversarial-by-design, mixed-to-negative on gameplay but unreservedly loved for the tables), and Here's Negan (Negan as AI-controlled NPC chaos engine, plus a hidden reputation race underneath the co-op).
