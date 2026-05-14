@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-14 — Darklight: Memento Mori — full dossier, series complete (8 videos)
+- Series complete: **Darklight: Memento Mori** (one_shot, all 8 IDs imported in a single batch). Total imported: 8. The whole arc — 2018 unboxing through to a 2020 revisit — filed in a single run.
+- Drained queue: an April 2018 Take a Look unboxing, the four-part solo Exorcist Let's Play (Parts 1–4 ending in single-shot death to the dread worm's auto-max critical), the April 2018 Review (the *anti-Gloomhaven* verdict, 80% Warhammer Quest + 20% Souls), a February 2019 deep cut on the previously unfilmed Journey and Settlement phases, and a September 2020 Revisiting re-evaluation.
+- Through-line: a Kickstarter that announced itself on the box as *inspired by the classics of the '80s and '90s* and then meant it — Warhammer Quest cadence, perma-death from a single bad darkness roll, brutal critical hits, a settlement layer with persistent locations, and an Exploration-Pack environment deck that Daniel argues every crawl should have. By the 2020 revisit the game is effectively dead at the publisher but kept alive by replacement monster/hero cards from designer Mauro Pon and a community house-rule sheet on BGG (tests pass on 5s and 6s, critical hits roll doubled damage dice and keep top half rather than auto-max-ignoring-armour).
+- All 8 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1022 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/50 (459 words, series register).
+- Stats: 1022 total, 481 imported, 534 pending, 7 no_transcript.
+- `series_queue.json`: darklight-memento-mori moved to `completed_series` (parts_completed: 1, total_videos: 8, completed_date: 2026-05-14). `rotation_index` stays at 0; next drain runs `d100-dungeon` (7 video_ids).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-14 — Priority drop: Ten Things I Look for in a Good Dungeon Crawl (1 video)
 - Ad-hoc priority run: fresh upload "Ten Things I Look for in a Good Dungeon Crawl and Adventure Game" (published 2026-05-13) — Daniel's reviewer-calibration primer ahead of his next round of top-10 lists. Ten preferences laid out as taste-signposts, not a scorecard.
 - Transcript pulled cleanly (0 transient failures, 0 permanent failures).

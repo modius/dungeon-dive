@@ -1,28 +1,8 @@
 {
   "active_series": [
     {
-      "theme": "darklight-memento-mori",
-      "title": "Darklight Memento Mori — a 2018 Let's Play with two later codas",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 8,
-      "video_ids": [
-        "ySg8CEjxwwo",
-        "HbNx1HcTEk4",
-        "bqTNuZQOziA",
-        "C5Rh96Gz8yg",
-        "BSum-2t0a28",
-        "lgNWcFP2Ltg",
-        "v1J7bERLirA",
-        "Q-dHeMod7T0"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "d100-dungeon",
-      "title": "D100 Dungeon — a complete game's arc, all of it",
+      "title": "D100 Dungeon \u2014 a complete game's arc, all of it",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 7,
@@ -41,7 +21,7 @@
     },
     {
       "theme": "secrets-of-the-lost-tomb",
-      "title": "Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc",
+      "title": "Secrets of the Lost Tomb \u2014 Daniel's #1 of all time, complete arc",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 7,
@@ -64,7 +44,7 @@
     },
     {
       "theme": "grey-gnome-games",
-      "title": "Grey Gnome Games — the Jason Glover catalogue, all of it",
+      "title": "Grey Gnome Games \u2014 the Jason Glover catalogue, all of it",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 11,
@@ -90,7 +70,7 @@
     },
     {
       "theme": "a-touch-of-evil",
-      "title": "A Touch of Evil — a five-year supernatural-game dossier",
+      "title": "A Touch of Evil \u2014 a five-year supernatural-game dossier",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 4,
@@ -109,7 +89,7 @@
     },
     {
       "theme": "solo-rpg-toolkit-canon",
-      "title": "Solo RPG Tools — the 2022–2023 toolkit canon",
+      "title": "Solo RPG Tools \u2014 the 2022\u20132023 toolkit canon",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 8,
@@ -136,7 +116,7 @@
     },
     {
       "theme": "small-box-non-glover",
-      "title": "Small Box Dungeon Crawls (non-Glover) — the 2020–2022 boom, minus Grey Gnome",
+      "title": "Small Box Dungeon Crawls (non-Glover) \u2014 the 2020\u20132022 boom, minus Grey Gnome",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 8,
@@ -218,45 +198,51 @@
     },
     {
       "theme": "dungeon-universalis",
-      "title": "Dungeon Universalis — the third leg of the heavyweights triangle",
+      "title": "Dungeon Universalis \u2014 the third leg of the heavyweights triangle",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-07"
     },
     {
       "theme": "dungeon-crusade",
-      "title": "Dungeon Crusade — Avalon Beckons",
+      "title": "Dungeon Crusade \u2014 Avalon Beckons",
       "parts_completed": 2,
       "total_videos": 11,
       "completed_date": "2026-05-09"
     },
     {
       "theme": "machina-arcana",
-      "title": "Machina Arcana — Three Editions of the Lovecraftian Crawler",
+      "title": "Machina Arcana \u2014 Three Editions of the Lovecraftian Crawler",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-05-11"
     },
     {
       "theme": "folklore-fall-of-the-spire",
-      "title": "Folklore the Affliction — Fall of the Spire",
+      "title": "Folklore the Affliction \u2014 Fall of the Spire",
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-05-11"
     },
     {
       "theme": "aftermath",
-      "title": "Aftermath — Daniel's Wasteland Let's Play",
+      "title": "Aftermath \u2014 Daniel's Wasteland Let's Play",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-05-12"
     },
     {
       "theme": "one-thing-i-love",
-      "title": "One thing I love about... — a 2024 micro-format experiment",
+      "title": "One thing I love about... \u2014 a 2024 micro-format experiment",
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-05-13"
+    },
+    {
+      "theme": "darklight-memento-mori",
+      "parts_completed": 1,
+      "total_videos": 8,
+      "completed_date": "2026-05-14"
     }
   ],
   "rotation_index": 0
