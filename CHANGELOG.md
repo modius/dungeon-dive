@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-05-15 — D100 Dungeon — a complete game's arc, series complete (7 videos)
+- Series complete: **D100 Dungeon — a complete game's arc, all of it** (one_shot, all 7 IDs imported in a single batch). Total imported: 7.
+- Drained queue: two same-day June 2020 first-look videos (a *Let's Talk* introductory hands-on and a same-day *Let's Back Up* supplemental what-you-actually-need explainer) plus the full Nov 2021 World Builder arc — the expansion first-look that builds the Grasslands of Horror and the city of Ever Vamp hex by hex, three session reports following Hindar the Warrior through quest one (forest-of-elves armour fetch + first city brawl that chains into a *Stolen Items* event), quest two (tundra-of-coldness elf fetch + halberd/scythe finds, +5 strength upgrade), back to Ever Vamp for the full settlement-phase checklist (heal/repair/sell/buy/market/train + a plate-mail girdle replacing the stolen belt), and the closing top-twenty review.
+- Through-line: Martin Knight's solo paper crawler reframed across sixteen months. June 2020 entry: paper-and-pencil dungeon simulator pitched as a *red-box-on-the-shelf* artefact via the Game Crafter mapping box (entirely optional). Nov 2021 World Builder bolt-on: a hex-crawl overworld with 25-quests-per-page-island, a calendar with aging/fatigue/moon/religious-and-satanic days, action-point economy, and — most importantly — *shared time bookkeeping* where a full rotation of the in-dungeon time track marks one day on the overworld calendar and one pip of fatigue. The four-session arc demonstrates the system rather than reviews it. The final-video verdict: a probable top-twenty game of all time, with bookkeeping reframed as *an adventure diary worth keeping*.
+- All 7 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1022 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/51 (486 words, series register).
+- Stats: 1022 total, 488 imported, 527 pending, 7 no_transcript.
+- `series_queue.json`: d100-dungeon moved to `completed_series` (parts_completed: 1, total_videos: 7, completed_date: 2026-05-15). `rotation_index` stays at 0 (list shifted); next drain runs `secrets-of-the-lost-tomb` (7 video_ids + 2 related_imported_ids).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-14 — Darklight: Memento Mori — full dossier, series complete (8 videos)
 - Series complete: **Darklight: Memento Mori** (one_shot, all 8 IDs imported in a single batch). Total imported: 8. The whole arc — 2018 unboxing through to a 2020 revisit — filed in a single run.
 - Drained queue: an April 2018 Take a Look unboxing, the four-part solo Exorcist Let's Play (Parts 1–4 ending in single-shot death to the dread worm's auto-max critical), the April 2018 Review (the *anti-Gloomhaven* verdict, 80% Warhammer Quest + 20% Souls), a February 2019 deep cut on the previously unfilmed Journey and Settlement phases, and a September 2020 Revisiting re-evaluation.
