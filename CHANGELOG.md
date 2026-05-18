@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-05-18 — Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc (7 videos)
+- Series complete: **Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc** (one_shot, all 7 IDs imported in a single batch). Total imported: 7.
+- Drained queue: two October 2019 *Monster Stomp* videos (homebrew kill-count mode binning the scenarios entirely; Van Helsing flees on turn one, Joan Deeb finds Amelia Earhart's flight goggles and one-shots a poisonous spider), the four-part Dec 2020 – Jan 2021 *A Masterclass in Abundance* (the considered case for the prosecution and the defence — *Mr Toad's Wild Ride meets Indiana Jones by way of Tsui Hark*, the gold-standard adventure deck, every expansion walked, the five-reasons defence of an all-time Number One), and the Oct 2023 reaction to the incompatible 10th Anniversary Edition Kickstarter (Daniel quietly declines to back it).
+- Catalogue: 9 entries (7 new + 2 related-imported — Top-50 part 5 at topic 1584, Hobbycast Postmortem at topic 1588), chronological by publish date 2019 → 2023.
+- Through-line: this is the channel's official Number-One Game, the dossier Daniel has been pointing back to for years. The masterclass framing names it explicitly as *over-abundance* — the spiritual opposite of Warhammer Quest: Silver Tower's masterclass-in-efficiency, in the same series. The arc closes on a quiet act of fidelity: when an incompatible reprint arrives in 2023, Daniel passes — *he already has the perfect game.*
+- All 7 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1023 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/53 (499 readable words, series register — at the catalogue-driven upper end given 9 entries).
+- Stats: 1023 total, 496 imported, 520 pending, 7 no_transcript.
+- `series_queue.json`: secrets-of-the-lost-tomb moved to `completed_series` (parts_completed: 1, total_videos: 7, completed_date: 2026-05-18). `rotation_index` stays at 0 (list shifted); next drain runs `grey-gnome-games` (11 video_ids + 1 related_imported_id, videos_per_batch: 11).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-18 — Priority drop: The Adventurer: Craygor the Cleric (1 video)
 - Ad-hoc priority run: fresh upload "The Adventurer: Craygor the Cleric (Solo Hexcrawl Gameplay)" (published 2026-05-17) — second instalment of Daniel's continuing solo-hexcrawl playthrough of *The Adventurer*, with Craygor II (level-one cleric, lineage of Craygors) hunting the relic the first Craygor failed to protect. Win condition: 500 gold = relic found.
 - Session beats: flees a hill giant on initiative, explores desecrated god-of-light shrine (aura shield up to 4, tribute left), wins a 2-orc encampment fight and levels up to cleric 2 (gains *prayer* action), enters tomb passage beneath the camp (trap disarmed, 3g + 1 hero point), knifes a sleeping vampire in a forest cemetery. Ends 461g short.

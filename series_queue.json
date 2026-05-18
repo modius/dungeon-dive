@@ -1,29 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "secrets-of-the-lost-tomb",
-      "title": "Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "XsCgtUDrxck",
-        "AUxR3aTc3ng",
-        "3HUs08W6-8o",
-        "V6AOpDTpCO4",
-        "qZi9yeRBf94",
-        "eLhCLA0Jndo",
-        "ZcdQLCEyjjU"
-      ],
-      "related_imported_ids": [
-        "5kFO9eUjRPk",
-        "i5Ufb0FYkDM"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "grey-gnome-games",
       "title": "Grey Gnome Games — the Jason Glover catalogue, all of it",
       "status": "continuing",
@@ -231,6 +208,13 @@
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-15"
+    },
+    {
+      "theme": "secrets-of-the-lost-tomb",
+      "title": "Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc",
+      "parts_completed": 1,
+      "total_videos": 7,
+      "completed_date": "2026-05-18"
     }
   ],
   "rotation_index": 0
