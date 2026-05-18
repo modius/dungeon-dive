@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-05-15T04:16:30.471824+00:00",
+  "last_fetched": "2026-05-18T01:33:26.301908+00:00",
   "videos": [
+    {
+      "video_id": "sl11WONqgaQ",
+      "title": "The Adventurer: Craygor the Cleric (Solo Hexcrawl Gameplay)",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-05-17T16:01:20Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/sl11WONqgaQ/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1663,
+      "imported_at": "2026-05-18T01:34:57.771039Z"
+    },
     {
       "video_id": "iY0az_GdCiI",
       "title": "Ten Things I Look for in a Good Dungeon Crawl and Adventure Game",

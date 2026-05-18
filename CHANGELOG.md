@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-05-18 — Priority drop: The Adventurer: Craygor the Cleric (1 video)
+- Ad-hoc priority run: fresh upload "The Adventurer: Craygor the Cleric (Solo Hexcrawl Gameplay)" (published 2026-05-17) — second instalment of Daniel's continuing solo-hexcrawl playthrough of *The Adventurer*, with Craygor II (level-one cleric, lineage of Craygors) hunting the relic the first Craygor failed to protect. Win condition: 500 gold = relic found.
+- Session beats: flees a hill giant on initiative, explores desecrated god-of-light shrine (aura shield up to 4, tribute left), wins a 2-orc encampment fight and levels up to cleric 2 (gains *prayer* action), enters tomb passage beneath the camp (trap disarmed, 3g + 1 hero point), knifes a sleeping vampire in a forest cemetery. Ends 461g short.
+- Transcript pulled cleanly (0 transient failures, 0 permanent failures).
+- 1 new video discovered during fetch (1023 total, was 1022).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/52 (149 words, priority-drop register).
+- Stats: 1023 total, 489 imported, 527 pending, 7 no_transcript.
+- `series_queue.json`: untouched — priority runs never mutate the queue. Queue remains populated (rotation_index 0, 5 active series staged); next non-priority `/import` will drain `secrets-of-the-lost-tomb` first.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-15 — D100 Dungeon — a complete game's arc, series complete (7 videos)
 - Series complete: **D100 Dungeon — a complete game's arc, all of it** (one_shot, all 7 IDs imported in a single batch). Total imported: 7.
 - Drained queue: two same-day June 2020 first-look videos (a *Let's Talk* introductory hands-on and a same-day *Let's Back Up* supplemental what-you-actually-need explainer) plus the full Nov 2021 World Builder arc — the expansion first-look that builds the Grasslands of Horror and the city of Ever Vamp hex by hex, three session reports following Hindar the Warrior through quest one (forest-of-elves armour fetch + first city brawl that chains into a *Stolen Items* event), quest two (tundra-of-coldness elf fetch + halberd/scythe finds, +5 strength upgrade), back to Ever Vamp for the full settlement-phase checklist (heal/repair/sell/buy/market/train + a plate-mail girdle replacing the stolen belt), and the closing top-twenty review.
