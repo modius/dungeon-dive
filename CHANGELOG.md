@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-05-19 — Grey Gnome Games — the Jason Glover catalogue, all of it (11 videos)
+- Series complete: **Grey Gnome Games — the Jason Glover catalogue, all of it** (one_shot, all 11 IDs imported in a single batch). Total imported: 11.
+- Drained queue: the 2021 *Iron Helm* arrival, the 2021 *Tin Helm* micro-sibling, the 2022 *Iron Chest* big-box expansion, the 2022 *Gate / Gates* tower-defence pair, the 2023 *Zogar's Revenge* tokens-only memory-puzzle, the 2023 *Revisiting Iron Helm* essay that names the design ethos *this-that-or-press-your-luck*, the 2023 *DustRunner* tin-sized Fury-Road racer, the Oct 2023 same-day delivery of *Howling Abyss* + *Cobbled Aisle* (the latter making The Dungeon Dive itself a city location in *Pauper's Ladder*), the Feb 2024 four-way *Small Box Thunderdome*, the Mar 2024 *Gnome Pack #1* Trojan-horse promo bundle, and the May 2024 *Tin Realm* overland sequel.
+- Catalogue: 12 entries (11 new + 1 related-imported — the Apr 2023 *Conversation with Jason Glover* interview at topic 276), chronological by publish date 2021 → 2024.
+- Through-line: a three-year arc of one designer (Jason Glover) shipping micro-games out of tins, all unified by the *this-that-or-press-your-luck* choice mechanism Daniel finally names mid-arc. Smallest economies, tightest decisions, the cheapest shelf in the archive.
+- All 11 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1023 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/54 (series register).
+- Stats: 1023 total, 507 imported, 509 pending, 7 no_transcript.
+- `series_queue.json`: grey-gnome-games moved to `completed_series` (parts_completed: 1, total_videos: 11, completed_date: 2026-05-19). `rotation_index` stays at 0 (list shifted); next drain runs `a-touch-of-evil` (4 video_ids + 1 related_imported_id, videos_per_batch: 4).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-18 — Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc (7 videos)
 - Series complete: **Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc** (one_shot, all 7 IDs imported in a single batch). Total imported: 7.
 - Drained queue: two October 2019 *Monster Stomp* videos (homebrew kill-count mode binning the scenarios entirely; Van Helsing flees on turn one, Joan Deeb finds Amelia Earhart's flight goggles and one-shots a poisonous spider), the four-part Dec 2020 – Jan 2021 *A Masterclass in Abundance* (the considered case for the prosecution and the defence — *Mr Toad's Wild Ride meets Indiana Jones by way of Tsui Hark*, the gold-standard adventure deck, every expansion walked, the five-reasons defence of an all-time Number One), and the Oct 2023 reaction to the incompatible 10th Anniversary Edition Kickstarter (Daniel quietly declines to back it).
