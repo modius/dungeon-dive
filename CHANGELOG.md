@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-05-21 — Priority drop aborted: Discourse 500 (1 video)
+- Decision tree: 1 priority pending video in last 14 days (`zx1Xu1eI_UM` *Wastelandia: Solo and Co-Op Boss Battler (Review)*, published 2026-05-20). Ad-hoc priority run selected; queue untouched.
+- Fetch: 1 new video discovered (1024 total, 510 pending).
+- Transcript pulled cleanly (21,972 chars, 0 failures).
+- Post generated and validated; `ready_to_post/zx1Xu1eI_UM_post.json` staged.
+- `batch_post.py` failed twice against Discourse with HTTP 500 — `{"status":500,"error":"Internal Server Error"}`. `/latest.json` is also returning empty bodies, suggesting a Discourse-side hiccup. Run aborted cleanly: video remains `pending` in index, transcript stays in `pending_imports/`, post stays in `ready_to_post/`. No Keeper post composed (nothing to teaser).
+- Next run will retry the priority post for `zx1Xu1eI_UM` first thing.
+- Stats: 1024 total, 507 imported, 510 pending, 7 no_transcript.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-19 — Grey Gnome Games — the Jason Glover catalogue, all of it (11 videos)
 - Series complete: **Grey Gnome Games — the Jason Glover catalogue, all of it** (one_shot, all 11 IDs imported in a single batch). Total imported: 11.
 - Drained queue: the 2021 *Iron Helm* arrival, the 2021 *Tin Helm* micro-sibling, the 2022 *Iron Chest* big-box expansion, the 2022 *Gate / Gates* tower-defence pair, the 2023 *Zogar's Revenge* tokens-only memory-puzzle, the 2023 *Revisiting Iron Helm* essay that names the design ethos *this-that-or-press-your-luck*, the 2023 *DustRunner* tin-sized Fury-Road racer, the Oct 2023 same-day delivery of *Howling Abyss* + *Cobbled Aisle* (the latter making The Dungeon Dive itself a city location in *Pauper's Ladder*), the Feb 2024 four-way *Small Box Thunderdome*, the Mar 2024 *Gnome Pack #1* Trojan-horse promo bundle, and the May 2024 *Tin Realm* overland sequel.
