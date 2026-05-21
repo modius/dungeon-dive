@@ -1,13 +1,12 @@
 # Changelog
 
-## 2026-05-21 — Priority drop aborted: Discourse 500 (1 video)
-- Decision tree: 1 priority pending video in last 14 days (`zx1Xu1eI_UM` *Wastelandia: Solo and Co-Op Boss Battler (Review)*, published 2026-05-20). Ad-hoc priority run selected; queue untouched.
-- Fetch: 1 new video discovered (1024 total, 510 pending).
+## 2026-05-21 — Priority drop: Wastelandia (1 video)
+- Decision tree: 1 priority pending video in last 14 days (`zx1Xu1eI_UM` *Wastelandia: Solo and Co-Op Boss Battler (Review)*, published 2026-05-20). Ad-hoc priority run; queue untouched.
+- Fetch: 1 new video discovered (1024 total).
 - Transcript pulled cleanly (21,972 chars, 0 failures).
-- Post generated and validated; `ready_to_post/zx1Xu1eI_UM_post.json` staged.
-- `batch_post.py` failed twice against Discourse with HTTP 500 — `{"status":500,"error":"Internal Server Error"}`. `/latest.json` is also returning empty bodies, suggesting a Discourse-side hiccup. Run aborted cleanly: video remains `pending` in index, transcript stays in `pending_imports/`, post stays in `ready_to_post/`. No Keeper post composed (nothing to teaser).
-- Next run will retry the priority post for `zx1Xu1eI_UM` first thing.
-- Stats: 1024 total, 507 imported, 510 pending, 7 no_transcript.
+- Posting hit Discourse HTTP 500 twice on first attempt (forum was mid-update). Run was aborted with the post staged. On user-confirmed retry the post went through cleanly: https://dungeondive.quest/t/wastelandia-solo-and-co-op-boss-battler-review/1685 (backdated to 2026-05-20T16:01:45Z).
+- Keeper priority drop (terse alert, ~110 words): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/55.
+- Stats: 1024 total, 508 imported, 509 pending, 7 no_transcript. 429 transcripts, 508 posts archived.
 - Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
 
 ## 2026-05-19 — Grey Gnome Games — the Jason Glover catalogue, all of it (11 videos)
