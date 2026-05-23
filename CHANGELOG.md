@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-05-23 — A Touch of Evil — a five-year supernatural-game dossier (4 videos)
+- Series complete: **A Touch of Evil — a five-year supernatural-game dossier** (one_shot, all 4 IDs imported in a single batch). Total imported: 4.
+- Drained queue: the 2019 mid-game *Touch of Evil* review (Banshee session, Hammer-horror framing, "super talisman with theme tightened"), and the Feb 2021 three-part *Coast*-back-in-print run pitting Argot/Maria/Henrik against the Ghost Ship — Reverend Harding's turn-two defection, Argot's *Madness*-possessed lash-out at Henrik, four simultaneous *Order's Influence* cards across the elders, and the final 42-wound icy-waters showdown closing 10 short.
+- Catalogue: 5 entries (4 new + 1 related-imported — the May 2024 *One thing I love about...A Touch of Evil* single-mechanism dispatch at topic 1644), chronological by publish date 2019 → 2024.
+- Through-line: *the game writes the story, the player connects the dots.* Five years of Flying Frog's signature game returning to Daniel's table — review, full Coast-expanded session arc, and a late-2024 single-mechanism postscript on the town-elder system. Lone complaint after five years: the dice-fishing showdown is the 2% Daniel would redesign in a game that nails the other 98%.
+- All 4 transcripts pulled cleanly (0 transient failures, 0 permanent failures).
+- 0 new videos discovered during fetch (1024 total unchanged).
+- Keeper post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/56 (436 words, series register).
+- Stats: 1024 total, 512 imported, 505 pending, 7 no_transcript.
+- `series_queue.json`: a-touch-of-evil moved to `completed_series` (parts_completed: 1, total_videos: 4, completed_date: 2026-05-23). `rotation_index` stays at 0 (list shifted); next drain runs `solo-rpg-toolkit-canon` (8 video_ids + 5 related_imported_ids, videos_per_batch: 8).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-21 — Priority drop: Wastelandia (1 video)
 - Decision tree: 1 priority pending video in last 14 days (`zx1Xu1eI_UM` *Wastelandia: Solo and Co-Op Boss Battler (Review)*, published 2026-05-20). Ad-hoc priority run; queue untouched.
 - Fetch: 1 new video discovered (1024 total).

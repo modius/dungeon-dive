@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-05-21T04:48:02.225258+00:00",
+  "last_fetched": "2026-05-23T01:17:30.672677+00:00",
   "videos": [
     {
       "video_id": "zx1Xu1eI_UM",
@@ -7291,9 +7291,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nJoin the discussion on the Dungeon Dive FB group!\nhttps://www.facebook.com/groups/2571172249675057",
       "published_at": "2021-02-07T02:11:36Z",
       "thumbnail_url": "https://i.ytimg.com/vi/--eCZ5KJphU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1688,
+      "imported_at": "2026-05-23T01:19:40.834229Z"
     },
     {
       "video_id": "Vb5gSRAHXCA",
@@ -7311,9 +7311,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nJoin the discussion on the Dungeon Dive FB group!\nhttps://www.facebook.com/groups/2571172249675057",
       "published_at": "2021-02-05T00:20:05Z",
       "thumbnail_url": "https://i.ytimg.com/vi/_FzLqe9KziY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1690,
+      "imported_at": "2026-05-23T01:19:50.595127Z"
     },
     {
       "video_id": "13jLs1WwfTY",
@@ -7321,9 +7321,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nJoin the discussion on the Dungeon Dive FB group!\nhttps://www.facebook.com/groups/2571172249675057",
       "published_at": "2021-02-04T04:33:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/13jLs1WwfTY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1689,
+      "imported_at": "2026-05-23T01:19:45.884802Z"
     },
     {
       "video_id": "KNT1a6LakZI",
@@ -9371,9 +9371,9 @@
       "description": "A review for A Touch of Evil, including the Something Wicked expansion, from Flying Frog Productions.",
       "published_at": "2019-05-09T04:50:46Z",
       "thumbnail_url": "https://i.ytimg.com/vi/fQwyeIriRx8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1691,
+      "imported_at": "2026-05-23T01:19:55.604865Z"
     },
     {
       "video_id": "ASSnCNI-KlM",
