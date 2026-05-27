@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-05-27 — Priority drop: Alone Against the Zone (1 video)
+- Decision tree: 1 priority pending video in last 14 days (`ccZaP6LEaLI` *Alone Against the Zone - Review and Overview*, published 2026-05-24). Ad-hoc priority run; queue untouched.
+- Fetch: 1 new video discovered (1025 total).
+- Transcript pulled cleanly (28,630 chars, 0 transient failures, 0 permanent failures).
+- Post: https://dungeondive.quest/t/alone-against-the-zone-review-and-overview/1695 (226-word summary, backdated to 2026-05-24T16:00:45Z).
+- Keeper priority drop (terse alert, ~110 words): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/57.
+- Stats: 1025 total, 513 imported, 505 pending, 7 no_transcript.
+- `series_queue.json` untouched (priority run). Next drain still runs `solo-rpg-toolkit-canon`.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-23 — A Touch of Evil — a five-year supernatural-game dossier (4 videos)
 - Series complete: **A Touch of Evil — a five-year supernatural-game dossier** (one_shot, all 4 IDs imported in a single batch). Total imported: 4.
 - Drained queue: the 2019 mid-game *Touch of Evil* review (Banshee session, Hammer-horror framing, "super talisman with theme tightened"), and the Feb 2021 three-part *Coast*-back-in-print run pitting Argot/Maria/Henrik against the Ghost Ship — Reverend Harding's turn-two defection, Argot's *Madness*-possessed lash-out at Henrik, four simultaneous *Order's Influence* cards across the elders, and the final 42-wound icy-waters showdown closing 10 short.
