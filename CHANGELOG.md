@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-06-01 — Priority drop: Tomb Raider + Grimscar (2 videos)
+- Decision tree: 2 priority pending videos in last 14 days — `mOqGGh-ot08` *Tomb Raider: The Crypt of Chronos - I LOVE This Game (Review)* (published 2026-05-31) and `gAlQprevPh0` *Grimscar Expanded - Expansions Overview (Solo RPG)* (published 2026-05-27). Ad-hoc priority run; queue untouched.
+- Fetch: 2 new videos discovered (1027 total).
+- Transcripts pulled cleanly (39,257 + 13,713 chars, 0 transient failures, 0 permanent failures).
+- Posts:
+  - https://dungeondive.quest/t/grimscar-expanded-expansions-overview-solo-rpg/1697 (203-word summary, backdated to 2026-05-27T16:00:25Z).
+  - https://dungeondive.quest/t/tomb-raider-the-crypt-of-chronos-i-love-this-game-review/1698 (206-word summary, backdated to 2026-05-31T16:00:39Z).
+- Keeper priority drop (terse alert, 167 words): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/58.
+- Stats: 1027 total, 515 imported, 505 pending, 7 no_transcript.
+- `series_queue.json` untouched (priority run). Next drain still runs `solo-rpg-toolkit-canon`.
+- Setup note: fresh checkout — installed `requests` + `youtube-transcript-api` via `pip3 install --user` (Xcode python3 3.9; pip 21.2.4 doesn't support `--break-system-packages`).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-05-27 — Priority drop: Alone Against the Zone (1 video)
 - Decision tree: 1 priority pending video in last 14 days (`ccZaP6LEaLI` *Alone Against the Zone - Review and Overview*, published 2026-05-24). Ad-hoc priority run; queue untouched.
 - Fetch: 1 new video discovered (1025 total).
