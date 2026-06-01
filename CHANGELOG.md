@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-01 — Solo RPG Toolkit Canon — Solo RPG Friday founding episodes (8 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `solo-rpg-toolkit-canon` at rotation_index 0, one_shot, vpb=8. All 8 video_ids drift-checked pending; complete batch fetched in one go.
+- All 8 transcripts pulled cleanly (12,612 → 40,137 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/a-look-at-cairn-indie-rpg-along-with-the-escape-the-city-module/1705 (Cairn + Escape the City, 2022-09-08, 217w)
+  - https://dungeondive.quest/t/lets-make-a-sandbox-realm-fables-solo-rpg-tools-sandbox/1700 (Realm Fables sandbox build, 2022-09-25, 211w)
+  - https://dungeondive.quest/t/5-1-tips-for-starting-a-solo-rpg-solo-rpg-friday/1699 (Solo RPG Friday ep. 1 — six tips, 2022-11-11, 227w)
+  - https://dungeondive.quest/t/three-recommendations-for-solo-rpg-systems-combos-1-bonus-recommendation/1704 (Mörk Borg / D100 Dungeon / Scarlet Heroes + Fabled Lands, 2022-12-02, 217w)
+  - https://dungeondive.quest/t/2d6-dungeon-for-once-im-excited-about-the-combat-in-a-dungeon-crawler/1703 (Toby Lancaster's shift-and-interrupt combat, 2023-03-24, 211w)
+  - https://dungeondive.quest/t/sandbox-generator-a-tool-worth-its-weight-in-gold-review-solo-rpg/1706 (Atelier Clandestine — 19-hex regions, mega-dungeon connectivity, 2023-06-16, 224w)
+  - https://dungeondive.quest/t/cartograph-discover-a-land-draw-a-map-have-an-adventure-solo-rpg/1701 (Brandon Lee — map-making as prep for the next game, 2023-08-20, 228w)
+  - https://dungeondive.quest/t/dragonbane-rpg-from-the-solo-perspective-overview-review-solo-setup/1702 (Free League box from soloist's chair, 2023-11-19, 234w)
+- Keeper series post (498 words, series register with 13-entry Exhibit Catalogue — 8 new + 5 related-imported, chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/59.
+  - Catalogue spans 2022-08 beginner's guide through 2025-08 *It's Fun to Go Alone* round-up, framing the eight new entries inside Daniel's three-year solo-coverage arc.
+- Stats: 1027 total, 523 imported, 497 pending, 7 no_transcript.
+- `series_queue.json`: `solo-rpg-toolkit-canon` moved to `completed_series` (parts_completed: 1, total_videos: 8, completed_date: 2026-06-01). `rotation_index` stays at 0 (list shifted); next drain runs `small-box-non-glover` (8 video_ids + 2 related_imported_ids, vpb: 8).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-01 — Priority drop: Tomb Raider + Grimscar (2 videos)
 - Decision tree: 2 priority pending videos in last 14 days — `mOqGGh-ot08` *Tomb Raider: The Crypt of Chronos - I LOVE This Game (Review)* (published 2026-05-31) and `gAlQprevPh0` *Grimscar Expanded - Expansions Overview (Solo RPG)* (published 2026-05-27). Ad-hoc priority run; queue untouched.
 - Fetch: 2 new videos discovered (1027 total).
