@@ -57,6 +57,57 @@
       "last_part": 0,
       "last_imported": null,
       "keeper_post": null
+    },
+    {
+      "theme": "sleeping-gods",
+      "title": "Sleeping Gods \u2014 Red Raven's open-world deep dive (Feb 2021 + 2023 reappraisal)",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "ub9JNL8EhJ4",
+        "sZhgf8PQ5gc",
+        "DIv0FHIZiko",
+        "eLcRSVAncfc",
+        "h1qNF-YaHX8"
+      ],
+      "related_imported_ids": [],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "kingdom-death-monologues",
+      "title": "Kingdom Death: Monster \u2014 the Monologues + the art-book postscript (late-2018 \u2192 early-2019)",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 4,
+      "video_ids": [
+        "vDzWHTMsp_Y",
+        "t01TItG_UAQ",
+        "PM4DofLA2g0",
+        "qzy12XbaJQ4"
+      ],
+      "related_imported_ids": [],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "massive-darkness",
+      "title": "Massive Darkness \u2014 CMON's untapped crawl + the MD2 reassessment",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 3,
+      "video_ids": [
+        "DS_neiUmgrA",
+        "GYD-rQNG-rI",
+        "rV23IXWdDOY"
+      ],
+      "related_imported_ids": [],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
     }
   ],
   "completed_series": [
