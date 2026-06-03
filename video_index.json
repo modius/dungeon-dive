@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-01T00:33:45.903774+00:00",
+  "last_fetched": "2026-06-03T00:40:15.192324+00:00",
   "videos": [
     {
       "video_id": "mOqGGh-ot08",
@@ -5761,9 +5761,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-04-14T07:00:24Z",
       "thumbnail_url": "https://i.ytimg.com/vi/w68xGF_YIgU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1717,
+      "imported_at": "2026-06-03T00:44:45.074593Z"
     },
     {
       "video_id": "lN4Nv7R4sBI",
@@ -5811,9 +5811,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-04-05T15:00:05Z",
       "thumbnail_url": "https://i.ytimg.com/vi/B9FbWxNdJPY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1712,
+      "imported_at": "2026-06-03T00:44:17.660121Z"
     },
     {
       "video_id": "rV23IXWdDOY",
@@ -5941,9 +5941,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-02-21T01:50:06Z",
       "thumbnail_url": "https://i.ytimg.com/vi/mDDcQa5yCfI/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1716,
+      "imported_at": "2026-06-03T00:44:39.591856Z"
     },
     {
       "video_id": "KXoxeoaSwOA",
@@ -6011,9 +6011,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-01-23T08:00:14Z",
       "thumbnail_url": "https://i.ytimg.com/vi/MM879hqJf1U/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1714,
+      "imported_at": "2026-06-03T00:44:29.026112Z"
     },
     {
       "video_id": "CKAGWlmyXbA",
@@ -6721,9 +6721,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-05-14T00:55:28Z",
       "thumbnail_url": "https://i.ytimg.com/vi/aqbo0yu_l6g/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1715,
+      "imported_at": "2026-06-03T00:44:34.455019Z"
     },
     {
       "video_id": "iCrYuW2ixu8",
@@ -6801,9 +6801,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-04-24T20:25:15Z",
       "thumbnail_url": "https://i.ytimg.com/vi/9TvuNO-fnXM/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1711,
+      "imported_at": "2026-06-03T00:44:12.429607Z"
     },
     {
       "video_id": "ChKL1KyjlZ4",
@@ -6831,9 +6831,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nBuy the game:\nHttps://tgc.link/tdd-rd",
       "published_at": "2021-04-11T19:31:46Z",
       "thumbnail_url": "https://i.ytimg.com/vi/BfLT1TlZInE/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1713,
+      "imported_at": "2026-06-03T00:44:23.063136Z"
     },
     {
       "video_id": "ensnUIxTUHE",
@@ -8631,9 +8631,9 @@
       "description": "",
       "published_at": "2020-03-28T00:08:39Z",
       "thumbnail_url": "https://i.ytimg.com/vi/1yK9VWnQpx4/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1710,
+      "imported_at": "2026-06-03T00:44:06.683472Z"
     },
     {
       "video_id": "xxC2s5JBYZM",

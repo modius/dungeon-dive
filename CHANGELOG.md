@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-06-03 — Small-Box Dungeon Crawls (non-Glover) — 2020–2022 boom (8 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `small-box-non-glover` at rotation_index 0, one_shot, vpb=8. All 8 video_ids drift-checked pending; full batch fetched in one go.
+- All 8 transcripts pulled cleanly (15,667 → 26,598 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/bag-of-dungeon-the-review/1710 (Gunpowder Studios tile-laying crawl, 2020-03-28, 233w)
+  - https://dungeondive.quest/t/a-look-at-rogue-dungeon/1713 (Albert Danish / Chad Minnichia — Game Crafter favourite, 2021-04-11, 221w)
+  - https://dungeondive.quest/t/the-dungeon-of-d-a-small-box-dungeon-crawl-done-right/1711 (Jack D — multi-use card economy, 2021-04-24, 222w)
+  - https://dungeondive.quest/t/smaller-things-a-look-at-small-games-that-pack-a-lot-of-punch/1715 (shelf-tour of the small-box collection, 2021-05-14, 210w)
+  - https://dungeondive.quest/t/taking-a-look-at-mini-rogue-and-expansions-tabletop-rogue-like/1714 (Nuts Publishing — exploding sixes + stance card, 2022-01-23, 231w)
+  - https://dungeondive.quest/t/tiny-epic-dungeons-an-abundance-of-icons-decisions-challenge/1716 (Gamelyn — torch + goblin-cap dual timers, 2022-02-21, 223w)
+  - https://dungeondive.quest/t/a-look-at-deck-box-dungeons/1712 (app-driven small-box crawl, 2022-04-05, 223w)
+  - https://dungeondive.quest/t/which-of-these-four-small-box-games-is-right-for-you/1717 (Iron Helm vs Rogue Dungeon vs Mini Rogue vs Unbroken, five-axis bracket, 2022-04-14, 210w)
+- Keeper series post (452 words, series register with 10-entry Exhibit Catalogue — 8 new + 2 related-imported, chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/60.
+  - Catalogue spans 2020-03 *Bag of Dungeon* through 2025-04 *Rogue Dungeon: A Rogue's Tale*, with the two Rogue Dungeon follow-ups (2023 designer interview, 2025 expansion review) book-ending the cabinet.
+- Stats: 1027 total, 531 imported, 489 pending, 7 no_transcript.
+- `series_queue.json`: `small-box-non-glover` moved to `completed_series` (parts_completed: 1, total_videos: 8, completed_date: 2026-06-03). `active_series` now **empty**; rotation_index reset to 0.
+- **Next `/import` will skip cleanly — run `/plan-batch` to queue the next series.**
+- Setup note: pre-flight integrity check was momentarily denied by a permission policy citing rate-limit (misfire — `check_rate_limit.py` returned exit 0 with 20/20 headroom); succeeded on retry as a solo invocation. Worth flagging if it recurs.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-01 — Solo RPG Toolkit Canon — Solo RPG Friday founding episodes (8 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `solo-rpg-toolkit-canon` at rotation_index 0, one_shot, vpb=8. All 8 video_ids drift-checked pending; complete batch fetched in one go.
 - All 8 transcripts pulled cleanly (12,612 → 40,137 chars, 0 transient failures, 0 permanent failures).
