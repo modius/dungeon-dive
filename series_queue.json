@@ -108,6 +108,48 @@
       "last_part": 0,
       "last_imported": null,
       "keeper_post": null
+    },
+    {
+      "theme": "solo-rpg-tools",
+      "title": "Solo RPG Tools \u2014 oracles, encounter cards, and the toolkit-builder dispatches",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "o0dULDtKQ-8",
+        "yXWhKEoL3QU",
+        "vQI78T3g4Gg",
+        "3jZh-NYS564",
+        "OD8Jm9Yk0WY"
+      ],
+      "related_imported_ids": [
+        "zjYgzIlRmOk",
+        "kzQhIJnlTsI",
+        "Ocp1_PPM4sI",
+        "OsN0NNVuu7o",
+        "UVkQsLv7n2s"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "gamebooks-cyoa",
+      "title": "Gamebooks & Choose Your Own Adventure \u2014 the solo gamebook dispatches",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "8fwEHUkKTFc",
+        "YXqYOapYqYc",
+        "FKbiHBctwwA",
+        "hrA_TspDTyM",
+        "A9RXB8YTc6Y"
+      ],
+      "related_imported_ids": [],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
     }
   ],
   "completed_series": [
