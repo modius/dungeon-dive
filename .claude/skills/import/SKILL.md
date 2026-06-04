@@ -70,6 +70,11 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
     - **Target 100-200 words, hard cap 250 words.** This is an alert, not an essay. The aim is to flag that fresh material has arrived, not to summarise it — the per-video posts already exist for that.
     - One short atmospheric framing sentence or paragraph (a courier, a parcel, a despatch).
     - A linked list of the new videos with **at most one short sentence of hook** per entry — title-as-link, then a single phrase that gives the reader just enough to decide whether to click. No plot recap, no exhibit-catalogue prose.
+    - **"From the deeper stacks" cross-reference** (when warranted): immediately after the new-arrivals list, include a short follow-up section with **1–3** thematically related videos already in the archive. The framing is "if this caught your eye, here are a couple from the dark distant past in the same vein." Same bullet format as the new-arrivals list: title-as-link, em-dash, one short hook phrase.
+      - How to find candidates: extract the priority video's central subjects (game name, designer, franchise, mechanic, theme) from its title and post summary, then scan `video_index.json` for `status == "imported"` entries whose titles match those subjects. If `transcript_analytics.json` exists, prefer videos that share taxonomy tags. Pick the 1–3 strongest matches (a clear game-name or franchise overlap beats a vague genre overlap).
+      - Build links via the matched videos' `discourse_topic_id`: `https://dungeondive.quest/t/<discourse_topic_id>`.
+      - **Quality over quantity.** If nothing in the archive is a genuine fit, **omit the section entirely** — don't pad with weak matches. A priority drop with no cross-reference is fine.
+      - The 1–3 cap, the alert register, and the 250-word hard cap still apply with the cross-reference section included.
     - Close with a one-line note that planned excavations resume next cycle.
     - Sign-off as below.
 
