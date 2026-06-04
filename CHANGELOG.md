@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-03 — Priority drop: Mandalorian Adventures: Clan of Two + Star Wars Talk (1 video)
+- Decision tree: 1 priority pending in last 14 days (`F5WCr1Md6mk`, published 2026-06-03) → ad-hoc priority batch. Queue untouched.
+- Transcript fetched cleanly (42,716 chars, 0 failures).
+- Post: https://dungeondive.quest/t/mandalorian-adventures-clan-of-two-expansion-and-star-wars-talk/1720 (Clan of Two expansion + 14-entry live-action Star Wars ranking, 2026-06-03, 211w).
+- Keeper priority drop (191 words, alert register): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/61.
+  - **New pattern:** Keeper now includes a "From the deeper stacks" section pointing to thematically related videos already in the archive — in this case the 2024 base-game review (topic 175). Pattern to be codified in `import/SKILL.md`.
+- Stats: 1028 total, 532 imported, 489 pending, 7 no_transcript.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). `active_series` remains empty — next non-priority `/import` will skip cleanly unless `/plan-batch` is run first.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-03 — Small-Box Dungeon Crawls (non-Glover) — 2020–2022 boom (8 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `small-box-non-glover` at rotation_index 0, one_shot, vpb=8. All 8 video_ids drift-checked pending; full batch fetched in one go.
 - All 8 transcripts pulled cleanly (15,667 → 26,598 chars, 0 transient failures, 0 permanent failures).
