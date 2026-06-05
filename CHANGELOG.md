@@ -7,7 +7,7 @@
 - Keeper priority drop (191 words, alert register): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/61.
   - **New pattern:** Keeper now includes a "From the deeper stacks" section pointing to thematically related videos already in the archive — in this case the 2024 base-game review (topic 175). Pattern to be codified in `import/SKILL.md`.
 - Stats: 1028 total, 532 imported, 489 pending, 7 no_transcript.
-- `series_queue.json`: unchanged (priority runs never mutate the queue). `active_series` remains empty — next non-priority `/import` will skip cleanly unless `/plan-batch` is run first.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). `active_series` holds 8 queued series totalling ~36 videos (queued in the three `queue:` commits prior to the small-box import); next non-priority `/import` drains `ironsworn-starforged` at rotation_index 0.
 - Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
 
 ## 2026-06-03 — Small-Box Dungeon Crawls (non-Glover) — 2020–2022 boom (8 videos)
