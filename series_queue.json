@@ -1,24 +1,8 @@
 {
   "active_series": [
     {
-      "theme": "ironsworn-starforged",
-      "title": "Ironsworn: Starforged \u2014 Vincent Baker's sci-fi trilogy (May 2023)",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 3,
-      "video_ids": [
-        "PLFNoideC9s",
-        "QhRPaWYjWYc",
-        "PxyjUIyE5YI"
-      ],
-      "related_imported_ids": [],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "etherfields",
-      "title": "Etherfields \u2014 the dreams quartet (Nov\u2013Dec 2020)",
+      "title": "Etherfields — the dreams quartet (Nov–Dec 2020)",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 4,
@@ -35,7 +19,7 @@
     },
     {
       "theme": "solo-rpg-friday-2023",
-      "title": "Solo RPG Friday \u2014 the 2023 review wave",
+      "title": "Solo RPG Friday — the 2023 review wave",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 7,
@@ -60,7 +44,7 @@
     },
     {
       "theme": "sleeping-gods",
-      "title": "Sleeping Gods \u2014 Red Raven's open-world deep dive (Feb 2021 + 2023 reappraisal)",
+      "title": "Sleeping Gods — Red Raven's open-world deep dive (Feb 2021 + 2023 reappraisal)",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 5,
@@ -78,7 +62,7 @@
     },
     {
       "theme": "kingdom-death-monologues",
-      "title": "Kingdom Death: Monster \u2014 the Monologues + the art-book postscript (late-2018 \u2192 early-2019)",
+      "title": "Kingdom Death: Monster — the Monologues + the art-book postscript (late-2018 → early-2019)",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 4,
@@ -95,7 +79,7 @@
     },
     {
       "theme": "massive-darkness",
-      "title": "Massive Darkness \u2014 CMON's untapped crawl + the MD2 reassessment",
+      "title": "Massive Darkness — CMON's untapped crawl + the MD2 reassessment",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 3,
@@ -111,7 +95,7 @@
     },
     {
       "theme": "solo-rpg-tools",
-      "title": "Solo RPG Tools \u2014 oracles, encounter cards, and the toolkit-builder dispatches",
+      "title": "Solo RPG Tools — oracles, encounter cards, and the toolkit-builder dispatches",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 5,
@@ -135,7 +119,7 @@
     },
     {
       "theme": "gamebooks-cyoa",
-      "title": "Gamebooks & Choose Your Own Adventure \u2014 the solo gamebook dispatches",
+      "title": "Gamebooks & Choose Your Own Adventure — the solo gamebook dispatches",
       "status": "continuing",
       "one_shot": true,
       "videos_per_batch": 5,
@@ -211,42 +195,42 @@
     },
     {
       "theme": "dungeon-universalis",
-      "title": "Dungeon Universalis \u2014 the third leg of the heavyweights triangle",
+      "title": "Dungeon Universalis — the third leg of the heavyweights triangle",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-07"
     },
     {
       "theme": "dungeon-crusade",
-      "title": "Dungeon Crusade \u2014 Avalon Beckons",
+      "title": "Dungeon Crusade — Avalon Beckons",
       "parts_completed": 2,
       "total_videos": 11,
       "completed_date": "2026-05-09"
     },
     {
       "theme": "machina-arcana",
-      "title": "Machina Arcana \u2014 Three Editions of the Lovecraftian Crawler",
+      "title": "Machina Arcana — Three Editions of the Lovecraftian Crawler",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-05-11"
     },
     {
       "theme": "folklore-fall-of-the-spire",
-      "title": "Folklore the Affliction \u2014 Fall of the Spire",
+      "title": "Folklore the Affliction — Fall of the Spire",
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-05-11"
     },
     {
       "theme": "aftermath",
-      "title": "Aftermath \u2014 Daniel's Wasteland Let's Play",
+      "title": "Aftermath — Daniel's Wasteland Let's Play",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-05-12"
     },
     {
       "theme": "one-thing-i-love",
-      "title": "One thing I love about... \u2014 a 2024 micro-format experiment",
+      "title": "One thing I love about... — a 2024 micro-format experiment",
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-05-13"
@@ -259,45 +243,53 @@
     },
     {
       "theme": "d100-dungeon",
-      "title": "D100 Dungeon \u2014 a complete game's arc, all of it",
+      "title": "D100 Dungeon — a complete game's arc, all of it",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-15"
     },
     {
       "theme": "secrets-of-the-lost-tomb",
-      "title": "Secrets of the Lost Tomb \u2014 Daniel's #1 of all time, complete arc",
+      "title": "Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-18"
     },
     {
       "theme": "grey-gnome-games",
-      "title": "Grey Gnome Games \u2014 the Jason Glover catalogue, all of it",
+      "title": "Grey Gnome Games — the Jason Glover catalogue, all of it",
       "parts_completed": 1,
       "total_videos": 11,
       "completed_date": "2026-05-19"
     },
     {
       "theme": "a-touch-of-evil",
-      "title": "A Touch of Evil \u2014 a five-year supernatural-game dossier",
+      "title": "A Touch of Evil — a five-year supernatural-game dossier",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-05-23"
     },
     {
       "theme": "solo-rpg-toolkit-canon",
-      "title": "Solo RPG Tools \u2014 the 2022\u20132023 toolkit canon",
+      "title": "Solo RPG Tools — the 2022–2023 toolkit canon",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-06-01"
     },
     {
       "theme": "small-box-non-glover",
-      "title": "Small Box Dungeon Crawls (non-Glover) \u2014 the 2020\u20132022 boom, minus Grey Gnome",
+      "title": "Small Box Dungeon Crawls (non-Glover) — the 2020–2022 boom, minus Grey Gnome",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-06-03"
+    },
+    {
+      "theme": "ironsworn-starforged",
+      "title": "Ironsworn: Starforged — Vincent Baker's sci-fi trilogy (May 2023)",
+      "parts_completed": 1,
+      "total_videos": 3,
+      "completed_date": "2026-06-05",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/62"
     }
   ],
   "rotation_index": 0

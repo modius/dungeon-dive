@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-06-05 — Ironsworn: Starforged — Vincent Baker's sci-fi trilogy (3 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `ironsworn-starforged` at rotation_index 0, one_shot, vpb=3. All 3 video_ids drift-checked pending; full trilogy fetched in one go.
+- All 3 transcripts pulled cleanly (17,621 → 29,127 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/ironsworn-starforged-part-1-inspiration-and-session-0-solo-rpg/1727 (sci-fi inspirations + Truths-driven session zero with Brother Quint Savoy, 2023-05-05, 207w)
+  - https://dungeondive.quest/t/ironsworn-starforged-part-2-session-recap-and-detailed-look-at-the-oracles-solo-rpg/1729 (Astrid Ruiz arc + oracle architecture tour, 2023-05-10, 194w)
+  - https://dungeondive.quest/t/ironsworn-starforged-review-when-a-well-made-thing-isnt-for-me-solo-rpg/1728 (the move count breaks the campaign; praise survives, 2023-05-12, 220w)
+- Keeper series post (437 words, series register with 3-entry Exhibit Catalogue, chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/62.
+  - Word count overshot the 400 target but stayed under the 500 hard cap; the three-part confessional arc justified the extra room.
+- Stats: 1028 total, 535 imported, 486 pending, 7 no_transcript.
+- `series_queue.json`: `ironsworn-starforged` moved to `completed_series` (parts_completed: 1, total_videos: 3, completed_date: 2026-06-05). `active_series` now holds 7 series; `etherfields` slid into rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-03 — Priority drop: Mandalorian Adventures: Clan of Two + Star Wars Talk (1 video)
 - Decision tree: 1 priority pending in last 14 days (`F5WCr1Md6mk`, published 2026-06-03) → ad-hoc priority batch. Queue untouched.
 - Transcript fetched cleanly (42,716 chars, 0 failures).
