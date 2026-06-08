@@ -1,23 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "etherfields",
-      "title": "Etherfields — the dreams quartet (Nov–Dec 2020)",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 4,
-      "video_ids": [
-        "BskXYIlyNzA",
-        "trS0kTq6Tk8",
-        "YDmxUb_oNLI",
-        "a6qWlOZtG3E"
-      ],
-      "related_imported_ids": [],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "solo-rpg-friday-2023",
       "title": "Solo RPG Friday — the 2023 review wave",
       "status": "continuing",
@@ -290,6 +273,14 @@
       "total_videos": 3,
       "completed_date": "2026-06-05",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/62"
+    },
+    {
+      "theme": "etherfields",
+      "title": "Etherfields — the dreams quartet (Nov–Dec 2020)",
+      "parts_completed": 1,
+      "total_videos": 4,
+      "completed_date": "2026-06-08",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/64"
     }
   ],
   "rotation_index": 0

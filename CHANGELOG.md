@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-06-08 — Etherfields — the dreams quartet (Nov–Dec 2020) (4 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `etherfields` at rotation_index 0, one_shot, vpb=4. All 4 video_ids drift-checked pending; full quartet fetched in one go.
+- All 4 transcripts pulled cleanly (17,066 → 32,247 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/etherfields-part-one-preliminary-thoughts-after-tutorial-mission-minor-spoilers-on-tutorial/1732 (banished board + rewritten rulebook, metafictional tutorial hooks him, 2020-11-18, 202w)
+  - https://dungeondive.quest/t/etherfields-part-two-spoilers-component-flip-through-spoilers/1735 (spoiler-heavy component tour, 300+ tiles, hidden cloud deck, 2020-11-19, 205w)
+  - https://dungeondive.quest/t/etherfields-part-three-we-are-like-the-dreamer-who-dreams-and-then-lives-inside-the-dream/1733 (the long reverie review — Lynch, Lovecraft, The Caretaker, 2020-11-22, 206w)
+  - https://dungeondive.quest/t/etherfields-more-thoughts-spoiler-warnings-given/1734 (six-question Q&A, spoiler-rich defence of the nightly loop, 2020-12-02, 209w)
+- Keeper series post (348 words, series register with 4-entry Exhibit Catalogue, chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/64.
+- Stats: 1029 total, 540 imported, 482 pending, 7 no_transcript.
+- `series_queue.json`: `etherfields` moved to `completed_series` (parts_completed: 1, total_videos: 4, completed_date: 2026-06-08). `active_series` now holds 6 series; `solo-rpg-friday-2023` slid into rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-08 — Priority drop: Deep Regrets - Solo Review (1 video)
 - Decision tree: 1 priority pending in last 14 days (`ppIXkOvS4WI`, published 2026-06-07) → ad-hoc priority batch. Queue untouched.
 - Transcript fetched cleanly (26,387 chars, 0 failures).
