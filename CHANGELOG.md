@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-06-08 — Priority drop: Deep Regrets - Solo Review (1 video)
+- Decision tree: 1 priority pending in last 14 days (`ppIXkOvS4WI`, published 2026-06-07) → ad-hoc priority batch. Queue untouched.
+- Transcript fetched cleanly (26,387 chars, 0 failures).
+- Post: https://dungeondive.quest/t/deep-regrets-solo-review/1731 (rare negative review — gorgeous art, flat solo cataloguing with no conflict; hoped-for tabletop *Dredge* that wasn't, 2026-06-07, 212w).
+- Keeper priority drop (alert register): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/63.
+- Stats: 1029 total, 536 imported, 486 pending, 7 no_transcript.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). Next non-priority `/import` drains the series at rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-05 — Ironsworn: Starforged — Vincent Baker's sci-fi trilogy (3 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `ironsworn-starforged` at rotation_index 0, one_shot, vpb=3. All 3 video_ids drift-checked pending; full trilogy fetched in one go.
 - All 3 transcripts pulled cleanly (17,621 → 29,127 chars, 0 transient failures, 0 permanent failures).
