@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-06-09 — Solo RPG Friday — the 2023 review wave (7 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `solo-rpg-friday-2023` at rotation_index 0, one_shot, vpb=7. All 7 video_ids drift-checked pending; full slate fetched in one go.
+- All 7 transcripts pulled cleanly (9,403 → 29,787 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/a-detailed-look-at-sacrifice-from-blackoath-entertainment-solo-rpg/1736 (magicless Berserk/Dark Souls D20, branded survivors, 2023-01-06, 192w)
+  - https://dungeondive.quest/t/5-things-about-twelve-years-a-condensed-hex-and-dungeon-crawl-solo-rpg-friday/1742 (tiny zine crawl, 12-year Lich King clock, 2023-02-03, 198w)
+  - https://dungeondive.quest/t/wandering-souls-a-solo-rpg-adventure-journaling-game/1741 (journaling preview, rogue-legacy twist, 2023-02-17, 199w)
+  - https://dungeondive.quest/t/what-the-heck-is-an-rpg-anyway-solo-rpg-friday/1738 (discussion essay, seven markers of an RPG, 2023-03-03, 203w)
+  - https://dungeondive.quest/t/outdoor-encounter-cards-from-phil-reed-tools-for-random-encounters-solo-rpg-friday/1737 (rules-agnostic deck, on-camera island campaign, 2023-04-14, 189w)
+  - https://dungeondive.quest/t/broken-cask-society-culinary-adventure-time-solo-rpg/1739 (fantasy Bourdain inn-touring, the Water Wagon, 2023-06-07, 202w)
+  - https://dungeondive.quest/t/the-oracle-story-generator-a-tool-for-creating-adventures-and-campaigns-solo-rpg/1740 (Nord Games 5-deck actor/action/subject engine, 2023-10-01, 205w)
+- Keeper series post (457 words total, series register; Exhibit Catalogue integrates the 4 `related_imported_ids` with the 7 new posts, 11 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/65.
+- Stats: 1029 total, 547 imported, 475 pending, 7 no_transcript.
+- `series_queue.json`: `solo-rpg-friday-2023` moved to `completed_series` (parts_completed: 1, total_videos: 7, completed_date: 2026-06-09). `active_series` now holds 5 series; `sleeping-gods` slid into rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-08 — Etherfields — the dreams quartet (Nov–Dec 2020) (4 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `etherfields` at rotation_index 0, one_shot, vpb=4. All 4 video_ids drift-checked pending; full quartet fetched in one go.
 - All 4 transcripts pulled cleanly (17,066 → 32,247 chars, 0 transient failures, 0 permanent failures).

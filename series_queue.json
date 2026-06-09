@@ -1,31 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "solo-rpg-friday-2023",
-      "title": "Solo RPG Friday — the 2023 review wave",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "FkK2Rp5xEIc",
-        "yrcwoFLtS5Y",
-        "oCAyG5S7cIw",
-        "_BvUrcl5tls",
-        "TtCijTAgvPc",
-        "hUQqvZGsp6A",
-        "nwbp-b7PO4g"
-      ],
-      "related_imported_ids": [
-        "iYHt1pdScK0",
-        "4vHxpaifn9w",
-        "ZtUTR0E7VPY",
-        "v9INdKeBJEI"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "sleeping-gods",
       "title": "Sleeping Gods — Red Raven's open-world deep dive (Feb 2021 + 2023 reappraisal)",
       "status": "continuing",
@@ -281,6 +256,14 @@
       "total_videos": 4,
       "completed_date": "2026-06-08",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/64"
+    },
+    {
+      "theme": "solo-rpg-friday-2023",
+      "title": "Solo RPG Friday — the 2023 review wave",
+      "parts_completed": 1,
+      "total_videos": 7,
+      "completed_date": "2026-06-09",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/65"
     }
   ],
   "rotation_index": 0
