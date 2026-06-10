@@ -1,24 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "sleeping-gods",
-      "title": "Sleeping Gods — Red Raven's open-world deep dive (Feb 2021 + 2023 reappraisal)",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "ub9JNL8EhJ4",
-        "sZhgf8PQ5gc",
-        "DIv0FHIZiko",
-        "eLcRSVAncfc",
-        "h1qNF-YaHX8"
-      ],
-      "related_imported_ids": [],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "kingdom-death-monologues",
       "title": "Kingdom Death: Monster — the Monologues + the art-book postscript (late-2018 → early-2019)",
       "status": "continuing",
@@ -264,6 +246,14 @@
       "total_videos": 7,
       "completed_date": "2026-06-09",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/65"
+    },
+    {
+      "theme": "sleeping-gods",
+      "title": "Sleeping Gods — Red Raven's open-world deep dive (Feb 2021 + 2023 reappraisal)",
+      "parts_completed": 1,
+      "total_videos": 4,
+      "completed_date": "2026-06-10",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/66"
     }
   ],
   "rotation_index": 0

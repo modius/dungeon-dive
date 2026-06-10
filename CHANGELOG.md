@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-06-10 — Sleeping Gods — Red Raven's open-world deep dive (4 videos, 1 no_transcript)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `sleeping-gods` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending.
+- Transcript fetch: 4 succeeded cleanly (20,043 → 22,487 chars); 1 permanent failure — `ub9JNL8EhJ4` ("Sleeping Gods - Visual Introduction - With Music by Daniel J. Davis"), TranscriptsDisabled. It's a wordless music-over-visuals piece with genuinely no captions → marked `no_transcript` in video_index.json.
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/sleeping-gods-traversing-a-sea-of-wonder/1746 (pipe-and-whiskey first verdict — a masterpiece, top-10 of all time, 2021-02-09, 213w)
+  - https://dungeondive.quest/t/sleeping-gods-questions-and-answers-and-literature-discussion-no-spoilers/1743 (first Laukat game he loved + nautical-fantasy reading list, 2021-02-12, 214w)
+  - https://dungeondive.quest/t/sleeping-gods-the-spoiler-filled-look/1744 (post-campaign teardown, a crewman dies, carryover gripes, 2021-02-14, 205w)
+  - https://dungeondive.quest/t/lets-talk-about-the-everrain-and-sleeping-gods-pirate-borg-and-godshard/1745 (The Everrain weighed against Sleeping Gods and sold, 2023-04-19, 215w)
+- Keeper series post (360 words, series register with 4-entry Exhibit Catalogue, chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/66.
+- Stats: 1029 total, 551 imported, 470 pending, 8 no_transcript.
+- `series_queue.json`: `sleeping-gods` moved to `completed_series` (parts_completed: 1, total_videos: 4, completed_date: 2026-06-10); all 5 video_ids resolved (4 imported + 1 no_transcript). `active_series` now holds 4 series; `kingdom-death-monologues` slid into rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged); no_transcript count up to 8.
+
 ## 2026-06-09 — Solo RPG Friday — the 2023 review wave (7 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `solo-rpg-friday-2023` at rotation_index 0, one_shot, vpb=7. All 7 video_ids drift-checked pending; full slate fetched in one go.
 - All 7 transcripts pulled cleanly (9,403 → 29,787 chars, 0 transient failures, 0 permanent failures).
