@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-10T00:36:00.597409+00:00",
+  "last_fetched": "2026-06-10T00:50:43.591677+00:00",
   "videos": [
     {
       "video_id": "ppIXkOvS4WI",
@@ -9501,9 +9501,9 @@
       "description": "Fire on the Velvet Horizon, by Patrick Stuart and Scrap Princess",
       "published_at": "2019-03-05T04:19:21Z",
       "thumbnail_url": "https://i.ytimg.com/vi/qzy12XbaJQ4/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1748,
+      "imported_at": "2026-06-10T00:52:41.632291Z"
     },
     {
       "video_id": "oDeAAnpEEXU",
@@ -9631,9 +9631,9 @@
       "description": "Talk a bit about my failed paint and chat, some builds I've done, and some other tangentially-KDM related stuff.",
       "published_at": "2019-01-18T05:53:42Z",
       "thumbnail_url": "https://i.ytimg.com/vi/PM4DofLA2g0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1747,
+      "imported_at": "2026-06-10T00:52:36.380762Z"
     },
     {
       "video_id": "WWIB8ZW1i6w",
@@ -9671,9 +9671,9 @@
       "description": "My first time painting on camera. I used the wrong lens. Sorry it's a little rough. But I wanted to get used to doing this kind of thing. It will get better! Right? Won't it?",
       "published_at": "2018-12-07T04:36:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/t01TItG_UAQ/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1749,
+      "imported_at": "2026-06-10T00:52:46.504056Z"
     },
     {
       "video_id": "vDzWHTMsp_Y",
@@ -9681,9 +9681,9 @@
       "description": "A series in which I discuss Monster, and our campaign.",
       "published_at": "2018-12-06T06:05:11Z",
       "thumbnail_url": "https://i.ytimg.com/vi/vDzWHTMsp_Y/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1750,
+      "imported_at": "2026-06-10T00:52:51.596660Z"
     },
     {
       "video_id": "TwfHRcdWHRg",

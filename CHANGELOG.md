@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-06-10 — Kingdom Death: Monster — the Monologues + art-book postscript (4 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `kingdom-death-monologues` at rotation_index 0, one_shot, vpb=4. All 4 video_ids drift-checked pending; full slate fetched in one go.
+- All 4 transcripts pulled cleanly (13,190 → 14,011 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/the-monster-monologues-episode-1-kingdom-death-monster-discussion/1750 (modified Hero mode for character-driven survivors, stone-statue painting, 2018-12-06, 203w)
+  - https://dungeondive.quest/t/the-monster-monologues-episode-two-paint-and-chat/1749 (paint-along + Kickstarter "all-in" culture broadside, 2018-12-07, 191w)
+  - https://dungeondive.quest/t/the-monster-monologues-episode-3-kingdom-death-monster-discussion/1747 (lost-audio reshoot, primer post-mortem, expansion build tour, 2019-01-18, 212w)
+  - https://dungeondive.quest/t/fire-on-the-velvet-horizon-take-a-look-at-the-best-monster-manual-ever-written/1748 (Patrick Stuart & Scrap Princess, stat-free weird-fiction bestiary, 2019-03-05, 208w)
+- Keeper series post (338 words, series register with 4-entry Exhibit Catalogue, chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/67.
+- Stats: 1029 total, 555 imported, 466 pending, 8 no_transcript.
+- `series_queue.json`: `kingdom-death-monologues` moved to `completed_series` (parts_completed: 1, total_videos: 4, completed_date: 2026-06-10). `active_series` now holds 3 series; `massive-darkness` slid into rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-10 — Sleeping Gods — Red Raven's open-world deep dive (4 videos, 1 no_transcript)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `sleeping-gods` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending.
 - Transcript fetch: 4 succeeded cleanly (20,043 → 22,487 chars); 1 permanent failure — `ub9JNL8EhJ4` ("Sleeping Gods - Visual Introduction - With Music by Daniel J. Davis"), TranscriptsDisabled. It's a wordless music-over-visuals piece with genuinely no captions → marked `no_transcript` in video_index.json.

@@ -1,23 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "kingdom-death-monologues",
-      "title": "Kingdom Death: Monster — the Monologues + the art-book postscript (late-2018 → early-2019)",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 4,
-      "video_ids": [
-        "vDzWHTMsp_Y",
-        "t01TItG_UAQ",
-        "PM4DofLA2g0",
-        "qzy12XbaJQ4"
-      ],
-      "related_imported_ids": [],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "massive-darkness",
       "title": "Massive Darkness — CMON's untapped crawl + the MD2 reassessment",
       "status": "continuing",
@@ -254,6 +237,14 @@
       "total_videos": 4,
       "completed_date": "2026-06-10",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/66"
+    },
+    {
+      "theme": "kingdom-death-monologues",
+      "title": "Kingdom Death: Monster — the Monologues + the art-book postscript (late-2018 → early-2019)",
+      "parts_completed": 1,
+      "total_videos": 4,
+      "completed_date": "2026-06-10",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/67"
     }
   ],
   "rotation_index": 0
