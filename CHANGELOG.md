@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-11 — Priority drop: Kryptothera - The Cryptid Pursuit (1 video)
+- Decision tree: 1 priority pending in last 14 days (`hJ3DwYLFjcY`, published 2026-06-10) → ad-hoc priority batch. Queue untouched.
+- Channel fetch found 1 new video (total 1030).
+- Transcript fetched cleanly (31,680 chars, 0 failures).
+- Post: https://dungeondive.quest/t/kryptothera-the-cryptid-pursuit-overview/1751 (publisher review copy; competitive cryptid-hunting game played two-handed solo, great event deck, ~90 stat-check cryptids, 2026-06-10, 223w).
+- Keeper priority drop (144 words, alert register; no "deeper stacks" cross-reference — no genuinely cryptid/monster-hunting-themed video already in the archive, so omitted per quality-over-quantity rule): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/68.
+- Stats: 1030 total, 556 imported, 466 pending, 8 no_transcript.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). Next non-priority `/import` drains `massive-darkness` at rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-10 — Kingdom Death: Monster — the Monologues + art-book postscript (4 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `kingdom-death-monologues` at rotation_index 0, one_shot, vpb=4. All 4 video_ids drift-checked pending; full slate fetched in one go.
 - All 4 transcripts pulled cleanly (13,190 → 14,011 chars, 0 transient failures, 0 permanent failures).

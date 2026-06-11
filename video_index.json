@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-10T00:50:43.591677+00:00",
+  "last_fetched": "2026-06-11T00:49:05.791877+00:00",
   "videos": [
+    {
+      "video_id": "hJ3DwYLFjcY",
+      "title": "Kryptothera - The Cryptid Pursuit (Overview)",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-06-10T16:00:21Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/hJ3DwYLFjcY/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1751,
+      "imported_at": "2026-06-11T00:50:01.190174Z"
+    },
     {
       "video_id": "ppIXkOvS4WI",
       "title": "Deep Regrets - Solo Review",
