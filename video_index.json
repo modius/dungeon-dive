@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-11T00:49:05.791877+00:00",
+  "last_fetched": "2026-06-11T01:32:08.548617+00:00",
   "videos": [
     {
       "video_id": "hJ3DwYLFjcY",
@@ -5851,9 +5851,9 @@
       "description": "",
       "published_at": "2022-04-03T17:41:52Z",
       "thumbnail_url": "https://i.ytimg.com/vi/rV23IXWdDOY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1754,
+      "imported_at": "2026-06-11T01:34:01.456593Z"
     },
     {
       "video_id": "5kFO9eUjRPk",
@@ -8431,9 +8431,9 @@
       "description": "",
       "published_at": "2020-05-02T20:36:03Z",
       "thumbnail_url": "https://i.ytimg.com/vi/GYD-rQNG-rI/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1753,
+      "imported_at": "2026-06-11T01:33:56.476310Z"
     },
     {
       "video_id": "t1UIIjuMirY",
@@ -8451,9 +8451,9 @@
       "description": "",
       "published_at": "2020-04-30T18:27:21Z",
       "thumbnail_url": "https://i.ytimg.com/vi/DS_neiUmgrA/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1752,
+      "imported_at": "2026-06-11T01:33:51.058425Z"
     },
     {
       "video_id": "RhUoPPchFBU",

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-06-11 — Massive Darkness — CMON's untapped crawl + the MD2 reassessment (3 videos)
+- Decision tree: 0 priority pending in last 14 days (yesterday's Kryptothera now imported) → queue drain. `massive-darkness` at rotation_index 0, one_shot, vpb=3. All 3 video_ids drift-checked pending; full slate fetched in one go.
+- All 3 transcripts pulled cleanly (4,065 → 16,588 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/lets-objectify-some-plastic-featuring-massive-darkness/1752 ("Let's Objectify Some Plastic" series opener — pick the party on sculpts alone, 2020-04-30, 203w)
+  - https://dungeondive.quest/t/massive-darkness-review/1753 (a contrarian defence — great loot/monsters, lifeless map, Kickstarter-diluted, 2020-05-02, 210w)
+  - https://dungeondive.quest/t/massive-darkness-2-what-am-i-doing-wrong/1754 (MD2 combat plea — melee mobs one-shotting across the board, 2022-04-03, 199w)
+- Keeper series post (330 words, series register with 3-entry Exhibit Catalogue, chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/69.
+- Stats: 1030 total, 559 imported, 463 pending, 8 no_transcript.
+- `series_queue.json`: `massive-darkness` moved to `completed_series` (parts_completed: 1, total_videos: 3, completed_date: 2026-06-11). `active_series` now holds 2 series; `solo-rpg-tools` slid into rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-11 — Priority drop: Kryptothera - The Cryptid Pursuit (1 video)
 - Decision tree: 1 priority pending in last 14 days (`hJ3DwYLFjcY`, published 2026-06-10) → ad-hoc priority batch. Queue untouched.
 - Channel fetch found 1 new video (total 1030).
