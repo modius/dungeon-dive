@@ -41,6 +41,101 @@
       "last_part": 0,
       "last_imported": null,
       "keeper_post": null
+    },
+    {
+      "theme": "city-of-chaos",
+      "title": "Warhammer Quest: City of Chaos — the complete Let's Play",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 9,
+      "video_ids": [
+        "Om4MsEtTrnw",
+        "pC_lpEworvo",
+        "DPz-ktdaHII",
+        "4n-UnjzY3B0",
+        "CkghB9G4vOo",
+        "zCk1p-hPBCs",
+        "ZsIml_y5qU4",
+        "sHQg97i_Hp0",
+        "qkMCHJ28vsI"
+      ],
+      "related_imported_ids": [
+        "Ju3_gwctpM8",
+        "Kn5RCzQ9ufc"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "small-box-micro-crawls",
+      "title": "Small-Box & Micro Solo Crawls — big adventures, tiny footprints",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "ol2a1T0BgrM",
+        "bT7qGpnOpo4",
+        "Ac6AOC9yxJE",
+        "iCV7kvzQ_bA",
+        "JzsEVr4W5ng",
+        "_3MWGJ7MUTA",
+        "dSmFHbtrZ7g"
+      ],
+      "related_imported_ids": [
+        "9TvuNO-fnXM",
+        "w68xGF_YIgU",
+        "z2SU31i7Uo4",
+        "L5c4VvuaU7w",
+        "1k6Bzkiw48o"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "ran-king-of-king",
+      "title": "The Ran(King) of King — a ranked pilgrimage through Stephen King",
+      "status": "continuing",
+      "one_shot": false,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "DxUH69hEi9k",
+        "Gdybpz4wjgY",
+        "kpcxQ1XCrq8",
+        "qbXC7hLKuGM",
+        "IF966yryyqY",
+        "Ezrw0VHCy7w",
+        "3iUH-OYuGIo",
+        "4b4THjNuDW0",
+        "01F_B8RaurQ",
+        "FNVB3Ndlrw8",
+        "GEZg76Swgc8"
+      ],
+      "related_imported_ids": [
+        "UVdc7kYPJEs"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "xia-drift-system",
+      "title": "Xia: Legends of a Drift System — the space-western sandbox playthrough",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 3,
+      "video_ids": [
+        "yGc4NnBE6nY",
+        "FSFC8O9LxRU",
+        "qiI-rwVGiYQ"
+      ],
+      "related_imported_ids": [
+        "q_TknmNwvqA"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
     }
   ],
   "completed_series": [
