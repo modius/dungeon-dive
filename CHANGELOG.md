@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-12 — Solo RPG Tools — oracles, encounter cards, and the toolkit-builder dispatches (5 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `solo-rpg-tools` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending; full slate fetched in one go.
+- All 5 transcripts pulled cleanly (9,399 → 58,634 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/untold-encounters-of-the-random-kind-an-invaluable-tool-for-the-solo-gamer/1757 (Loke's 1,000+ encounter book, underrated solo staple, 2022-06-22, 202w)
+  - https://dungeondive.quest/t/campaign-creator-a-great-tool-for-solo-rpgs-from-shieldice-studio/1759 (Shieldice deck — quests/interludes/themes campaign skeleton, 2022-09-29, 200w)
+  - https://dungeondive.quest/t/doom-pilgrim-random-encounters-of-an-otherworldly-kind/1758 (Warclaw dice-less interactive-fiction deck, weird-fiction prompt-mine, 2023-03-12, 205w)
+  - https://dungeondive.quest/t/the-veiled-dungeon-and-the-long-road-rpg-tool-kits-from-loke-battle-mats-solo-rpg/1755 (Loke map+monster toolboxes, premade-meets-sandbox, 2023-08-22, 197w)
+  - https://dungeondive.quest/t/my-favorite-tool-for-solo-rpgs-a-deck-of-cards-a-land-in-peril-solo-rpg/1756 (deck-of-cards collection tour + A Land in Peril dev notes, 2024-03-24, 190w)
+- Keeper series post (434 words, series register; Exhibit Catalogue integrates the 5 `related_imported_ids` with the 5 new posts, 10 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/70.
+- Stats: 1030 total, 564 imported, 458 pending, 8 no_transcript.
+- `series_queue.json`: `solo-rpg-tools` moved to `completed_series` (parts_completed: 1, total_videos: 5, completed_date: 2026-06-12). `active_series` now holds 5 series; `gamebooks-cyoa` slid into rotation_index 0, followed by the four newly-queued series (city-of-chaos, small-box-micro-crawls, ran-king-of-king, xia-drift-system).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-11 — Massive Darkness — CMON's untapped crawl + the MD2 reassessment (3 videos)
 - Decision tree: 0 priority pending in last 14 days (yesterday's Kryptothera now imported) → queue drain. `massive-darkness` at rotation_index 0, one_shot, vpb=3. All 3 video_ids drift-checked pending; full slate fetched in one go.
 - All 3 transcripts pulled cleanly (4,065 → 16,588 chars, 0 transient failures, 0 permanent failures).

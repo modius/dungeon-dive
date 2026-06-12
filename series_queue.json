@@ -1,30 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "solo-rpg-tools",
-      "title": "Solo RPG Tools — oracles, encounter cards, and the toolkit-builder dispatches",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "o0dULDtKQ-8",
-        "yXWhKEoL3QU",
-        "vQI78T3g4Gg",
-        "3jZh-NYS564",
-        "OD8Jm9Yk0WY"
-      ],
-      "related_imported_ids": [
-        "zjYgzIlRmOk",
-        "kzQhIJnlTsI",
-        "Ocp1_PPM4sI",
-        "OsN0NNVuu7o",
-        "UVkQsLv7n2s"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "gamebooks-cyoa",
       "title": "Gamebooks & Choose Your Own Adventure — the solo gamebook dispatches",
       "status": "continuing",
@@ -332,6 +308,14 @@
       "total_videos": 3,
       "completed_date": "2026-06-11",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/69"
+    },
+    {
+      "theme": "solo-rpg-tools",
+      "title": "Solo RPG Tools — oracles, encounter cards, and the toolkit-builder dispatches",
+      "parts_completed": 1,
+      "total_videos": 5,
+      "completed_date": "2026-06-12",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/70"
     }
   ],
   "rotation_index": 0
