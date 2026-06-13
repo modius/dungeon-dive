@@ -1,24 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "gamebooks-cyoa",
-      "title": "Gamebooks & Choose Your Own Adventure — the solo gamebook dispatches",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "8fwEHUkKTFc",
-        "YXqYOapYqYc",
-        "FKbiHBctwwA",
-        "hrA_TspDTyM",
-        "A9RXB8YTc6Y"
-      ],
-      "related_imported_ids": [],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "city-of-chaos",
       "title": "Warhammer Quest: City of Chaos — the complete Let's Play",
       "status": "continuing",
@@ -316,6 +298,14 @@
       "total_videos": 5,
       "completed_date": "2026-06-12",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/70"
+    },
+    {
+      "theme": "gamebooks-cyoa",
+      "title": "Gamebooks & Choose Your Own Adventure — the solo gamebook dispatches",
+      "parts_completed": 1,
+      "total_videos": 5,
+      "completed_date": "2026-06-13",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/71"
     }
   ],
   "rotation_index": 0

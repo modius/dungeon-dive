@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-13 — Gamebooks & Choose Your Own Adventure — the solo gamebook dispatches (5 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `gamebooks-cyoa` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending; full slate fetched in one go.
+- All 5 transcripts pulled cleanly (11,245 → 31,342 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/choose-your-own-adventure-house-of-danger/1763 (Prospero Hall/Z-Man CYOA adaptation, zero-complexity comfort game, 2020-08-03, 211w)
+  - https://dungeondive.quest/t/cages-of-fear-a-gamebook-by-joe-ward/1766 (Escape the Dark Castle poured into a book, d3 room-advance, skeletons, 2022-07-21, 217w)
+  - https://dungeondive.quest/t/loom-portent-of-the-vale-part-game-book-part-solo-rpg-part-madlib-with-a-lot-of-atmosphere/1765 (Shield Dice madlib-prose monastery walk, FromSoft vibe; patron disclosure noted in post, 2023-09-05, 195w)
+  - https://dungeondive.quest/t/the-citadel-of-bureaucracy-endless-destinies-the-clockwork-city-a-gamebook-double-feature/1767 (Fighting-Fantasy office parody + 52-card-driven combat gamebook, 2024-01-17, 192w)
+  - https://dungeondive.quest/t/what-lies-beneath-a-game-book-of-solo-dungeon-diving-dice-decisions-and-death/1764 (Scaffidi/Glover crawl, dice-minigame tests, XP carryover between deaths, 2024-02-18, 196w)
+- Keeper series post (352 words, series register with 5-entry Exhibit Catalogue, chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/71.
+- Stats: 1030 total, 569 imported, 453 pending, 8 no_transcript.
+- `series_queue.json`: `gamebooks-cyoa` moved to `completed_series` (parts_completed: 1, total_videos: 5, completed_date: 2026-06-13). `active_series` now holds 4 series; `city-of-chaos` slid into rotation_index 0 (followed by small-box-micro-crawls, ran-king-of-king, xia-drift-system).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-12 — Solo RPG Tools — oracles, encounter cards, and the toolkit-builder dispatches (5 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `solo-rpg-tools` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending; full slate fetched in one go.
 - All 5 transcripts pulled cleanly (9,399 → 58,634 chars, 0 transient failures, 0 permanent failures).
