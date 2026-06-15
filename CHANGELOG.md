@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-15 — Priority drop: Ranking Every Video Game Console I've Owned (1 video)
+- Decision tree: 1 priority pending in last 14 days (`yJTEsQi0G98`, published 2026-06-14) → ad-hoc priority batch. Queue untouched.
+- Channel fetch found 1 new video (total 1031).
+- Transcript fetched cleanly (42,850 chars, 0 failures).
+- Post: https://dungeondive.quest/t/ranking-every-video-game-console-ive-owned/1768 (off-topic personal piece — 20 home consoles ranked Atari→PS5, PlayStation 1 at #1, 2026-06-14, 196w).
+- Keeper priority drop (177 words, alert register) with a "From the deeper stacks" cross-reference to topic 1161 ("Video Games? Why? Channel Update" — the genuine thematic companion; Runebound/"souls" title matches were false positives and excluded): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/72.
+- Stats: 1031 total, 570 imported, 453 pending, 8 no_transcript.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). Next non-priority `/import` drains `city-of-chaos` at rotation_index 0.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-13 — Gamebooks & Choose Your Own Adventure — the solo gamebook dispatches (5 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `gamebooks-cyoa` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending; full slate fetched in one go.
 - All 5 transcripts pulled cleanly (11,245 → 31,342 chars, 0 transient failures, 0 permanent failures).
