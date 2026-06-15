@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-06-15 — Warhammer Quest: City of Chaos — the complete Let's Play (9 videos)
+- Decision tree: 0 priority pending in last 14 days (yesterday's console-ranking now imported) → queue drain. `city-of-chaos` at rotation_index 0, one_shot, vpb=9. All 9 video_ids drift-checked pending; full slate fetched in one go (under the ~12-fetch transcript throttle).
+- All 9 transcripts pulled cleanly (10,866 → 26,774 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date; Intro → 7-part Let's Play → Review):
+  - https://dungeondive.quest/t/city-of-chaos-introduction/1772 (2018-01-21, 190w)
+  - https://dungeondive.quest/t/city-of-chaos-lets-play-part-1/1774 (2018-01-30, 184w)
+  - https://dungeondive.quest/t/city-of-chaos-lets-play-part-2/1771 (2018-02-02, 178w)
+  - https://dungeondive.quest/t/city-of-chaos-lets-play-part-3/1769 (2018-02-08, 188w)
+  - https://dungeondive.quest/t/city-of-chaos-lets-play-part-4/1770 (2018-02-10, 197w)
+  - https://dungeondive.quest/t/city-of-chaos-lets-play-part-5/1777 (2018-02-10, 197w)
+  - https://dungeondive.quest/t/city-of-chaos-lets-play-part-6/1773 (2018-02-16, 187w)
+  - https://dungeondive.quest/t/city-of-chaos-lets-play-part-7/1776 (2018-02-19, 183w)
+  - https://dungeondive.quest/t/city-of-chaos-the-review/1775 (2018-02-19, 193w)
+- Keeper series post: https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/73. Exhibit Catalogue integrates the 2 `related_imported_ids` (Warhammer Quest "Take a Look" topics 1436/1437) with the 9 new posts — 11 entries chronological by publish date.
+  - **Cap note:** the live reply ran **513 words, 13 over the 500 hard cap** — driven by the record 11-entry integrated catalogue. The committed `keeper-city-of-chaos.md` was trimmed to 487w (under cap); no edit tool to amend the live post, and re-posting would breach one-Keeper-post-per-run. Process takeaway: for large integrated catalogues (>8 entries), budget body prose to ~150w.
+- Stats: 1031 total, 579 imported, 444 pending, 8 no_transcript.
+- `series_queue.json`: `city-of-chaos` moved to `completed_series` (parts_completed: 1, total_videos: 9, completed_date: 2026-06-15). `active_series` now holds 3 series; `small-box-micro-crawls` slid into rotation_index 0 (followed by ran-king-of-king, xia-drift-system).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-15 — Priority drop: Ranking Every Video Game Console I've Owned (1 video)
 - Decision tree: 1 priority pending in last 14 days (`yJTEsQi0G98`, published 2026-06-14) → ad-hoc priority batch. Queue untouched.
 - Channel fetch found 1 new video (total 1031).

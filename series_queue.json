@@ -1,31 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "city-of-chaos",
-      "title": "Warhammer Quest: City of Chaos — the complete Let's Play",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 9,
-      "video_ids": [
-        "Om4MsEtTrnw",
-        "pC_lpEworvo",
-        "DPz-ktdaHII",
-        "4n-UnjzY3B0",
-        "CkghB9G4vOo",
-        "zCk1p-hPBCs",
-        "ZsIml_y5qU4",
-        "sHQg97i_Hp0",
-        "qkMCHJ28vsI"
-      ],
-      "related_imported_ids": [
-        "Ju3_gwctpM8",
-        "Kn5RCzQ9ufc"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "small-box-micro-crawls",
       "title": "Small-Box & Micro Solo Crawls — big adventures, tiny footprints",
       "status": "continuing",
@@ -306,6 +281,14 @@
       "total_videos": 5,
       "completed_date": "2026-06-13",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/71"
+    },
+    {
+      "theme": "city-of-chaos",
+      "title": "Warhammer Quest: City of Chaos — the complete Let's Play",
+      "parts_completed": 1,
+      "total_videos": 9,
+      "completed_date": "2026-06-15",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/73"
     }
   ],
   "rotation_index": 0

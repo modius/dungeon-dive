@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-15T01:06:46.361067+00:00",
+  "last_fetched": "2026-06-15T01:14:01.173551+00:00",
   "videos": [
     {
       "video_id": "yJTEsQi0G98",
@@ -10221,9 +10221,9 @@
       "description": "Review for City of Chaos",
       "published_at": "2018-02-19T23:45:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/qkMCHJ28vsI/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1775,
+      "imported_at": "2026-06-15T01:17:59.261134Z"
     },
     {
       "video_id": "sHQg97i_Hp0",
@@ -10231,9 +10231,9 @@
       "description": "The  Final Part",
       "published_at": "2018-02-19T22:33:52Z",
       "thumbnail_url": "https://i.ytimg.com/vi/sHQg97i_Hp0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1776,
+      "imported_at": "2026-06-15T01:18:04.298300Z"
     },
     {
       "video_id": "ZsIml_y5qU4",
@@ -10241,9 +10241,9 @@
       "description": "The Lovers and the Phantasm.",
       "published_at": "2018-02-16T05:45:38Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ZsIml_y5qU4/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1773,
+      "imported_at": "2026-06-15T01:17:49.069953Z"
     },
     {
       "video_id": "zCk1p-hPBCs",
@@ -10251,9 +10251,9 @@
       "description": "More chaos.",
       "published_at": "2018-02-10T22:43:57Z",
       "thumbnail_url": "https://i.ytimg.com/vi/zCk1p-hPBCs/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1777,
+      "imported_at": "2026-06-15T01:18:09.355341Z"
     },
     {
       "video_id": "CkghB9G4vOo",
@@ -10261,9 +10261,9 @@
       "description": "The Ballad of Chaos",
       "published_at": "2018-02-10T20:06:52Z",
       "thumbnail_url": "https://i.ytimg.com/vi/CkghB9G4vOo/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1770,
+      "imported_at": "2026-06-15T01:17:33.250615Z"
     },
     {
       "video_id": "4n-UnjzY3B0",
@@ -10271,9 +10271,9 @@
       "description": "Part the Third of the City of Chaos let's play.",
       "published_at": "2018-02-08T05:35:11Z",
       "thumbnail_url": "https://i.ytimg.com/vi/4n-UnjzY3B0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1769,
+      "imported_at": "2026-06-15T01:17:27.895649Z"
     },
     {
       "video_id": "DPz-ktdaHII",
@@ -10281,9 +10281,9 @@
       "description": "Continuing our excursion into the bizarre city of Byronitar, the City of Chaos. Join Bing and Dizzy as they traverse the city in search of the clues that will help them unravel the mysteries.",
       "published_at": "2018-02-02T06:20:33Z",
       "thumbnail_url": "https://i.ytimg.com/vi/DPz-ktdaHII/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1771,
+      "imported_at": "2026-06-15T01:17:38.183287Z"
     },
     {
       "video_id": "pC_lpEworvo",
@@ -10291,9 +10291,9 @@
       "description": "The first part of our excursion into the bizarre city of Byronitar, the City of Chaos. Join Bing and Dizzy as they traverse the city in search of the clues that will help them unravel the mysteries.",
       "published_at": "2018-01-30T05:22:58Z",
       "thumbnail_url": "https://i.ytimg.com/vi/pC_lpEworvo/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1774,
+      "imported_at": "2026-06-15T01:17:54.217942Z"
     },
     {
       "video_id": "Om4MsEtTrnw",
@@ -10301,9 +10301,9 @@
       "description": "A brief introduction for the let's play of City of Chaos, a narrative-focused, adventure board game. I also talk a little about the works of author Michael Cisco, and their thematic similarities to City of Chaos.",
       "published_at": "2018-01-21T06:11:49Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Om4MsEtTrnw/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1772,
+      "imported_at": "2026-06-15T01:17:43.774031Z"
     },
     {
       "video_id": "SeWXiEIm9oI",
