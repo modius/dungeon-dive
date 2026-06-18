@@ -7,12 +7,6 @@
       "one_shot": false,
       "videos_per_batch": 6,
       "video_ids": [
-        "DxUH69hEi9k",
-        "Gdybpz4wjgY",
-        "kpcxQ1XCrq8",
-        "qbXC7hLKuGM",
-        "IF966yryyqY",
-        "Ezrw0VHCy7w",
         "3iUH-OYuGIo",
         "4b4THjNuDW0",
         "01F_B8RaurQ",
@@ -22,9 +16,9 @@
       "related_imported_ids": [
         "UVdc7kYPJEs"
       ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
+      "last_part": 1,
+      "last_imported": "2026-06-18",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/76"
     },
     {
       "theme": "xia-drift-system",

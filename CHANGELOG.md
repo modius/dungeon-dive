@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-06-18 — The Ran(King) of King — Part 1 of 2 (6 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `ran-king-of-king` at rotation_index 0, **one_shot=false, vpb=6** (11 video_ids total). Took first 6; all drift-checked pending.
+- All 6 transcripts pulled cleanly (7,848 → 10,424 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date — the channel's original Part 1–6 order):
+  - https://dungeondive.quest/t/firestarter-the-ran-king-of-king-part-1/1789 (Firestarter — lower-tier, forgettable, 2020-08-05, 201w)
+  - https://dungeondive.quest/t/the-tommyknockers-the-ran-king-of-king-part-2/1791 (The Tommyknockers — unhinged but loved, Under the Dome seed, 2020-08-24, 208w)
+  - https://dungeondive.quest/t/desperation-the-ran-king-of-king-part-3/1793 (Desperation — desert firecracker, 2020-09-06, 205w)
+  - https://dungeondive.quest/t/needful-things-the-ran-king-of-king-part-4/1794 (Needful Things — greed satire, bloated middle, 2020-09-13, 199w)
+  - https://dungeondive.quest/t/skeleton-crew-and-the-mist-the-ran-king-of-king-part-5/1792 (Skeleton Crew + The Mist masterpiece, 2020-09-27, 194w)
+  - https://dungeondive.quest/t/pet-sematary-the-ran-king-of-king-part-6/1790 (Pet Sematary — bleakest, best straight horror, 2020-10-05, 205w)
+- Keeper series post (359 words, series register; Exhibit Catalogue = 6 new posts + 1 `related_imported_id` (Top 10 Horror Books t1395), 7 entries chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/76.
+- Stats: 1032 total, 593 imported, 431 pending, 8 no_transcript.
+- `series_queue.json`: **multi-part progress recorded, NOT completed.** Removed the 6 drained IDs; `last_part` 0→1, `last_imported` 2026-06-18, `keeper_post` set. 5 video_ids remain (Parts 7–11). Per SKILL, rotation_index advances only on completion → stays 0, so the next non-priority `/import` drains Part 2 (the final 5).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-18 — Small-Box & Micro Solo Crawls — big adventures, tiny footprints (7 videos)
 - Decision tree: 0 priority pending in last 14 days (the A Touch of Evil updated review now imported) → queue drain. `small-box-micro-crawls` at rotation_index 0, one_shot, vpb=7. All 7 video_ids drift-checked pending; full slate fetched in one go.
 - All 7 transcripts pulled cleanly (7,739 → 37,680 chars, 0 transient failures, 0 permanent failures).

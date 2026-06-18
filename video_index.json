@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-18T03:53:15.388769+00:00",
+  "last_fetched": "2026-06-18T04:08:00.563179+00:00",
   "videos": [
     {
       "video_id": "IM0HdpgIDq8",
@@ -7961,9 +7961,9 @@
       "description": "",
       "published_at": "2020-10-05T01:36:44Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Ezrw0VHCy7w/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1790,
+      "imported_at": "2026-06-18T04:10:57.311830Z"
     },
     {
       "video_id": "hy7L_a8J9z4",
@@ -8001,9 +8001,9 @@
       "description": "Ranking all of Stephen King's books. In this episode, Skeleton Crew and The Mist.",
       "published_at": "2020-09-27T17:48:37Z",
       "thumbnail_url": "https://i.ytimg.com/vi/IF966yryyqY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1792,
+      "imported_at": "2026-06-18T04:11:07.837890Z"
     },
     {
       "video_id": "ktZgSqvfl8o",
@@ -8071,9 +8071,9 @@
       "description": "",
       "published_at": "2020-09-13T20:48:18Z",
       "thumbnail_url": "https://i.ytimg.com/vi/qbXC7hLKuGM/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1794,
+      "imported_at": "2026-06-18T04:11:17.894137Z"
     },
     {
       "video_id": "Rb2-RE864YY",
@@ -8101,9 +8101,9 @@
       "description": "",
       "published_at": "2020-09-06T19:06:28Z",
       "thumbnail_url": "https://i.ytimg.com/vi/kpcxQ1XCrq8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1793,
+      "imported_at": "2026-06-18T04:11:12.771870Z"
     },
     {
       "video_id": "IKIrneFKwJY",
@@ -8161,9 +8161,9 @@
       "description": "",
       "published_at": "2020-08-24T03:00:18Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Gdybpz4wjgY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1791,
+      "imported_at": "2026-06-18T04:11:02.660092Z"
     },
     {
       "video_id": "Gs03wWJ6vFc",
@@ -8241,9 +8241,9 @@
       "description": "",
       "published_at": "2020-08-05T01:07:29Z",
       "thumbnail_url": "https://i.ytimg.com/vi/DxUH69hEi9k/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1789,
+      "imported_at": "2026-06-18T04:10:52.303992Z"
     },
     {
       "video_id": "7EgU3ReHrIc",
