@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-18 — Priority drop: Why I Love A Touch of Evil (Updated Review 2026) (1 video)
+- Decision tree: 1 priority pending in last 14 days (`IM0HdpgIDq8`, published 2026-06-17) → ad-hoc priority batch. Queue untouched.
+- Channel fetch found 1 new video (total 1032).
+- Transcript fetched cleanly (21,818 chars, 0 failures).
+- Post: https://dungeondive.quest/t/why-i-love-a-touch-of-evil-the-supernatural-game-updated-review-2026/1781 (top-10 re-evaluation — five things he loves; femme-fatale werewolf hunt; Goldilocks content, flat showdown, 2026-06-17, 198w).
+- Keeper priority drop (217 words, alert register) with a "From the deeper stacks" cross-reference to the archived A Touch of Evil coverage — the 2019 Review (t1691), the 2021 playthrough Part One (t1689), and the 2024 "One thing I love about" (t1644): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/74.
+- Stats: 1032 total, 580 imported, 444 pending, 8 no_transcript.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). Next non-priority `/import` drains `small-box-micro-crawls` at rotation_index 0 (then ran-king-of-king, xia-drift-system).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-15 — Warhammer Quest: City of Chaos — the complete Let's Play (9 videos)
 - Decision tree: 0 priority pending in last 14 days (yesterday's console-ranking now imported) → queue drain. `city-of-chaos` at rotation_index 0, one_shot, vpb=9. All 9 video_ids drift-checked pending; full slate fetched in one go (under the ~12-fetch transcript throttle).
 - All 9 transcripts pulled cleanly (10,866 → 26,774 chars, 0 transient failures, 0 permanent failures).
