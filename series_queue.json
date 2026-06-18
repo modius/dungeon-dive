@@ -1,32 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "small-box-micro-crawls",
-      "title": "Small-Box & Micro Solo Crawls — big adventures, tiny footprints",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "ol2a1T0BgrM",
-        "bT7qGpnOpo4",
-        "Ac6AOC9yxJE",
-        "iCV7kvzQ_bA",
-        "JzsEVr4W5ng",
-        "_3MWGJ7MUTA",
-        "dSmFHbtrZ7g"
-      ],
-      "related_imported_ids": [
-        "9TvuNO-fnXM",
-        "w68xGF_YIgU",
-        "z2SU31i7Uo4",
-        "L5c4VvuaU7w",
-        "1k6Bzkiw48o"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "ran-king-of-king",
       "title": "The Ran(King) of King — a ranked pilgrimage through Stephen King",
       "status": "continuing",
@@ -335,6 +309,14 @@
       "total_videos": 9,
       "completed_date": "2026-06-15",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/73"
+    },
+    {
+      "theme": "small-box-micro-crawls",
+      "title": "Small-Box & Micro Solo Crawls — big adventures, tiny footprints",
+      "parts_completed": 1,
+      "total_videos": 7,
+      "completed_date": "2026-06-18",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/75"
     }
   ],
   "rotation_index": 0

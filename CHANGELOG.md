@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-18 — Small-Box & Micro Solo Crawls — big adventures, tiny footprints (7 videos)
+- Decision tree: 0 priority pending in last 14 days (the A Touch of Evil updated review now imported) → queue drain. `small-box-micro-crawls` at rotation_index 0, one_shot, vpb=7. All 7 video_ids drift-checked pending; full slate fetched in one go.
+- All 7 transcripts pulled cleanly (7,739 → 37,680 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/crypt-of-chaos-a-small-box-dungeon-crawl/1788 (Crystal Dagger card-driven dungeon solitaire, 2021-08-15, 204w)
+  - https://dungeondive.quest/t/6-x-6-tales-a-micro-overland-crawl-from-jack-d/1785 (free PnP 6x6 overland survival crawl, 2022-05-25, 196w)
+  - https://dungeondive.quest/t/the-science-fiction-small-box-game-shoot-out/1782 (4-way SF small-box ranking, Deep Space D-6 wins, 2022-05-29, 190w)
+  - https://dungeondive.quest/t/micro-dungeon-crawl-travel-pack-how-many-games-can-i-fit-in-the-one-card-dungeon-box/1787 (5 games in one card-sized box, 2022-09-27, 193w)
+  - https://dungeondive.quest/t/one-card-dungeon-expansion-preview-and-more-super-small-crawls/1783 (OCD expansion preview — bosses, classes, treasure die, 2023-03-13, 179w)
+  - https://dungeondive.quest/t/squire-for-hire-a-micro-tile-laying-score-chasing-solo-puzzle-game/1784 (15-min loot-bag tile-laying puzzle, 2023-08-24, 197w)
+  - https://dungeondive.quest/t/a-small-box-solo-dungeon-crawl-set-in-a-world-of-pestilence-light-in-the-dark-review/1786 (Arona plague-doctor tile-laying crawl, 2024-04-24, 199w)
+- Keeper series post (390 words, series register; Exhibit Catalogue integrates the 5 `related_imported_ids` with the 7 new posts — 12 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/75.
+  - **Cap note (applied lesson):** with the largest catalogue yet (12 entries), body prose was budgeted tight at ~150w → total 390w, comfortably under the 500 hard cap (vs the 2026-06-15 City of Chaos overshoot to 513w on 11 entries).
+- Stats: 1032 total, 587 imported, 437 pending, 8 no_transcript.
+- `series_queue.json`: `small-box-micro-crawls` moved to `completed_series` (parts_completed: 1, total_videos: 7, completed_date: 2026-06-18). `active_series` now holds 4; `ran-king-of-king` (2-part) slid into rotation_index 0, followed by xia-drift-system, paupers-ladder, ker-nethalas-solo-osr.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-18 — Priority drop: Why I Love A Touch of Evil (Updated Review 2026) (1 video)
 - Decision tree: 1 priority pending in last 14 days (`IM0HdpgIDq8`, published 2026-06-17) → ad-hoc priority batch. Queue untouched.
 - Channel fetch found 1 new video (total 1032).
