@@ -163,7 +163,7 @@
   <div class="chart-card">
     <div class="chart-title">Taxonomy Tag Cloud</div>
     <div class="tag-cloud" id="tagCloud"></div>
-    <p class="chart-note">Based on 587 analyzed videos — tag size reflects frequency across all content</p>
+    <p class="chart-note">Based on 593 analyzed videos — tag size reflects frequency across all content</p>
   </div>
 
   <!-- Top Games Chart -->
@@ -172,7 +172,7 @@
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="topGamesChart"></canvas>
     </div>
-    <p class="chart-note">Based on 587 analyzed videos — primary game subject per video</p>
+    <p class="chart-note">Based on 593 analyzed videos — primary game subject per video</p>
   </div>
 
   <!-- Themes + Player Modes + Formats -->
@@ -228,15 +228,15 @@
 <script>
 // ── Embedded data (updated by update_dashboard.py + analyze_content.py) ──
 
-const topGames = [["Shadows of Brimstone", 57], ["Warhammer Quest", 33], ["Arkham Horror", 26], ["Four Against Darkness", 23], ["Vantage", 22], ["Rove", 20], ["Mork Borg", 19], ["Scarlet Heroes", 18], ["League of Dungeoneers", 18], ["Dungeon Degenerates", 14], ["Talisman", 14], ["Legendary", 11], ["HeroQuest", 10], ["HEXplore It", 10], ["Runebound", 9], ["Warhammer Quest - Let\u2019s Play", 8], ["City of Chaos", 8], ["Fallen Land", 7], ["Cthulhu: Death May Die", 6], ["Advanced HeroQuest", 6], ["Darklight Memento Mori", 6], ["Dark Venture", 5], ["Descent", 5], ["Dungeon Degenerates: The Hand of Doom", 5], ["Dungeon Universalis", 5]];
+const topGames = [["Shadows of Brimstone", 57], ["Warhammer Quest", 33], ["Arkham Horror", 25], ["Vantage", 22], ["Four Against Darkness", 22], ["Rove", 20], ["Mork Borg", 19], ["League of Dungeoneers", 19], ["Scarlet Heroes", 18], ["Dungeon Degenerates", 14], ["Talisman", 14], ["Legendary", 11], ["HeroQuest", 10], ["HEXplore It", 10], ["Runebound", 9], ["Warhammer Quest - Let\u2019s Play", 8], ["City of Chaos", 8], ["Fallen Land", 7], ["Cthulhu: Death May Die", 6], ["Advanced HeroQuest", 6], ["Darklight Memento Mori", 6], ["Dark Venture", 5], ["Descent", 5], ["Dungeon Degenerates: The Hand of Doom", 5], ["Dungeon Universalis", 5]];
 
-const categories = {"overview": 381, "review": 337, "lets-play": 243, "comparison": 215, "crowdfund-preview": 172, "unboxing": 151, "deep-dive": 140, "discussion": 133, "tutorial": 105, "top-list": 100, "digital-dive": 83, "buyers-guide": 82, "dungeon-crawler": 401, "rpg": 331, "campaign": 305, "miniatures": 255, "sandbox": 101, "hex-crawl": 76, "wargame": 60, "card-game": 47, "press-your-luck": 46, "dice-game": 42, "deck-builder": 24, "tower-defense": 14, "tile-laying": 9};
+const categories = {"overview": 382, "review": 339, "lets-play": 243, "comparison": 220, "crowdfund-preview": 172, "unboxing": 151, "deep-dive": 140, "discussion": 133, "top-list": 106, "tutorial": 105, "digital-dive": 83, "buyers-guide": 82, "dungeon-crawler": 401, "rpg": 331, "campaign": 306, "miniatures": 255, "sandbox": 101, "hex-crawl": 76, "wargame": 60, "card-game": 47, "press-your-luck": 46, "dice-game": 42, "deck-builder": 24, "tower-defense": 14, "tile-laying": 9};
 
-const tagCloud = [["tabletop", 413], ["dungeon-crawler", 401], ["fantasy", 381], ["overview", 381], ["solo", 372], ["review", 337], ["rpg", 331], ["campaign", 305], ["horror", 258], ["miniatures", 255], ["lets-play", 243], ["comparison", 215], ["crowdfund-preview", 172], ["digital", 160], ["unboxing", 151], ["deep-dive", 140], ["discussion", 133], ["classic", 117], ["cooperative", 110], ["tutorial", 105], ["sandbox", 101], ["top-list", 100], ["sci-fi", 96], ["digital-dive", 83], ["buyers-guide", 82], ["modern", 81], ["competitive", 80], ["hex-crawl", 76], ["post-apocalyptic", 71], ["western", 64], ["wargame", 60], ["pirate", 56], ["card-game", 47], ["press-your-luck", 46], ["dice-game", 42], ["deck-builder", 24], ["two-player", 22], ["tower-defense", 14], ["steampunk", 11], ["mythology", 10], ["print-and-play", 9], ["tile-laying", 9]];
+const tagCloud = [["tabletop", 414], ["dungeon-crawler", 401], ["fantasy", 382], ["overview", 382], ["solo", 372], ["review", 339], ["rpg", 331], ["campaign", 306], ["horror", 262], ["miniatures", 255], ["lets-play", 243], ["comparison", 220], ["crowdfund-preview", 172], ["digital", 161], ["unboxing", 151], ["deep-dive", 140], ["discussion", 133], ["classic", 119], ["cooperative", 110], ["top-list", 106], ["tutorial", 105], ["sandbox", 101], ["sci-fi", 98], ["competitive", 84], ["digital-dive", 83], ["buyers-guide", 82], ["modern", 81], ["hex-crawl", 76], ["post-apocalyptic", 71], ["western", 65], ["wargame", 60], ["pirate", 56], ["card-game", 47], ["press-your-luck", 46], ["dice-game", 42], ["deck-builder", 24], ["two-player", 22], ["tower-defense", 14], ["steampunk", 11], ["mythology", 10], ["print-and-play", 9], ["tile-laying", 9]];
 
-const themeData = [["fantasy", 381], ["horror", 258], ["sci-fi", 96], ["post-apocalyptic", 71], ["western", 64], ["pirate", 56], ["steampunk", 11], ["mythology", 10]];
+const themeData = [["fantasy", 382], ["horror", 262], ["sci-fi", 98], ["post-apocalyptic", 71], ["western", 65], ["pirate", 56], ["steampunk", 11], ["mythology", 10]];
 
-const playerModes = [["solo", 372], ["cooperative", 110], ["competitive", 80], ["two-player", 22]];
+const playerModes = [["solo", 372], ["cooperative", 110], ["competitive", 84], ["two-player", 22]];
 
 const keeperPosts = [
   {
@@ -256,7 +256,7 @@ const keeperPosts = [
   },
   {
     "theme": "The Holy Grail, Cracked Open",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 11
   },
   {
@@ -291,7 +291,7 @@ const keeperPosts = [
   },
   {
     "theme": "The Dreams Quartet",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 4
   },
   {
@@ -306,7 +306,7 @@ const keeperPosts = [
   },
   {
     "theme": "Turn to Section One",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 5
   },
   {
@@ -336,7 +336,7 @@ const keeperPosts = [
   },
   {
     "theme": "The Monster Monologues",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 4
   },
   {
@@ -356,7 +356,7 @@ const keeperPosts = [
   },
   {
     "theme": "In Defence of the Unloved",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 3
   },
   {
@@ -426,27 +426,27 @@ const keeperPosts = [
   },
   {
     "theme": "A Damp Parcel, Filed Under Regret",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 0
   },
   {
     "theme": "A Despatch from the Field, Net Still Damp",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 0
   },
   {
     "theme": "A Parcel of Cartridges and Cathode Light",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 1
   },
   {
     "theme": "A Return to Shadowbrook",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 3
   },
   {
     "theme": "The Ran(King) of King",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 7
   },
   {
@@ -491,12 +491,12 @@ const keeperPosts = [
   },
   {
     "theme": "A Chart of the Wandering Sea",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 4
   },
   {
     "theme": "Big Adventures, Tiny Footprints",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 12
   },
   {
@@ -506,7 +506,7 @@ const keeperPosts = [
   },
   {
     "theme": "The Friday Ledger",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 11
   },
   {
@@ -516,7 +516,7 @@ const keeperPosts = [
   },
   {
     "theme": "The Toolmaker's Drawer",
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "count": 10
   },
   {
