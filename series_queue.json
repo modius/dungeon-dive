@@ -1,24 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "xia-drift-system",
-      "title": "Xia: Legends of a Drift System — the space-western sandbox playthrough",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 3,
-      "video_ids": [
-        "yGc4NnBE6nY",
-        "FSFC8O9LxRU",
-        "qiI-rwVGiYQ"
-      ],
-      "related_imported_ids": [
-        "q_TknmNwvqA"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "paupers-ladder",
       "title": "Pauper's Ladder — the King-Crimson adventure game",
       "status": "continuing",
@@ -297,6 +279,13 @@
       "title": "The Ran(King) of King — a ranked pilgrimage through Stephen King",
       "parts_completed": 2,
       "total_videos": 11,
+      "completed_date": "2026-06-19"
+    },
+    {
+      "theme": "xia-drift-system",
+      "title": "Xia: Legends of a Drift System — the space-western sandbox playthrough",
+      "parts_completed": 1,
+      "total_videos": 3,
       "completed_date": "2026-06-19"
     }
   ],

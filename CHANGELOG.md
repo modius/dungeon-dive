@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-06-19 — Xia: Legends of a Drift System — space-western sandbox playthrough (3 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `xia-drift-system` at rotation_index 0, one_shot, vpb=3. All 3 video_ids drift-checked pending. (Second drain of the day — rate guard had 15-video headroom; this run brings the rolling 24h count to 8.)
+- All 3 transcripts pulled cleanly (17,725 → 20,450 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/xia-legends-of-a-drift-system-with-expansions-part-one/1802 (pre-game: table presence, ship backstories, Embers expansion essential, 2020-12-05, 204w)
+  - https://dungeondive.quest/t/xia-legends-of-a-drift-system-part-two-the-anxious-first-days-of-a-greenhorn-space-captain/1800 (the dozen roads to fame; NPC AI cards, 2020-12-07, 194w)
+  - https://dungeondive.quest/t/xia-legends-of-a-drift-system-part-three-see-you-space-cowboy/1801 (endgame + final thoughts; d20 NPC fame system; Patreon vote noted, 2020-12-10, 204w)
+- Keeper series post (331 words, series register; Exhibit Catalogue = 3 new posts + 1 `related_imported_id` (Spacers t36), 4 entries chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/78.
+- Stats: 1032 total, 601 imported, 423 pending, 8 no_transcript.
+- `series_queue.json`: `xia-drift-system` moved to `completed_series` (parts_completed: 1, total_videos: 3, completed_date: 2026-06-19). `active_series` now holds 2; `paupers-ladder` slid into rotation_index 0, then ker-nethalas-solo-osr.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-19 — The Ran(King) of King — Part 2 of 2 (5 videos; series complete)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `ran-king-of-king` at rotation_index 0, one_shot=false, vpb=6, last_part=1, 5 video_ids remaining. Took all 5 (final part); all drift-checked pending.
 - All 5 transcripts pulled cleanly (9,756 → 13,271 chars, 0 transient failures, 0 permanent failures).

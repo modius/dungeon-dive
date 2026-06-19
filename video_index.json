@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-19T04:45:33.324073+00:00",
+  "last_fetched": "2026-06-19T04:56:02.469330+00:00",
   "videos": [
     {
       "video_id": "IM0HdpgIDq8",
@@ -7661,9 +7661,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nJoin the discussion on the Dungeon Dive FB group!\n\nhttps://www.facebook.com/groups/2571172249675057",
       "published_at": "2020-12-10T02:40:17Z",
       "thumbnail_url": "https://i.ytimg.com/vi/qiI-rwVGiYQ/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1801,
+      "imported_at": "2026-06-19T04:57:56.748591Z"
     },
     {
       "video_id": "FSFC8O9LxRU",
@@ -7671,9 +7671,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nJoin the discussion on the Dungeon Dive FB group!\n\nhttps://www.facebook.com/groups/2571172249675057",
       "published_at": "2020-12-07T22:24:47Z",
       "thumbnail_url": "https://i.ytimg.com/vi/FSFC8O9LxRU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1800,
+      "imported_at": "2026-06-19T04:57:51.804590Z"
     },
     {
       "video_id": "yGc4NnBE6nY",
@@ -7681,9 +7681,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nJoin the discussion on the Dungeon Dive FB group!\n\nhttps://www.facebook.com/groups/2571172249675057",
       "published_at": "2020-12-05T21:27:47Z",
       "thumbnail_url": "https://i.ytimg.com/vi/yGc4NnBE6nY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1802,
+      "imported_at": "2026-06-19T04:58:02.069200Z"
     },
     {
       "video_id": "a6qWlOZtG3E",
