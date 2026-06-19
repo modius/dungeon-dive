@@ -1,26 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "ran-king-of-king",
-      "title": "The Ran(King) of King — a ranked pilgrimage through Stephen King",
-      "status": "continuing",
-      "one_shot": false,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "3iUH-OYuGIo",
-        "4b4THjNuDW0",
-        "01F_B8RaurQ",
-        "FNVB3Ndlrw8",
-        "GEZg76Swgc8"
-      ],
-      "related_imported_ids": [
-        "UVdc7kYPJEs"
-      ],
-      "last_part": 1,
-      "last_imported": "2026-06-18",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/76"
-    },
-    {
       "theme": "xia-drift-system",
       "title": "Xia: Legends of a Drift System — the space-western sandbox playthrough",
       "status": "continuing",
@@ -311,6 +291,13 @@
       "total_videos": 7,
       "completed_date": "2026-06-18",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/75"
+    },
+    {
+      "theme": "ran-king-of-king",
+      "title": "The Ran(King) of King — a ranked pilgrimage through Stephen King",
+      "parts_completed": 2,
+      "total_videos": 11,
+      "completed_date": "2026-06-19"
     }
   ],
   "rotation_index": 0

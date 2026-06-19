@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-19 — The Ran(King) of King — Part 2 of 2 (5 videos; series complete)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `ran-king-of-king` at rotation_index 0, one_shot=false, vpb=6, last_part=1, 5 video_ids remaining. Took all 5 (final part); all drift-checked pending.
+- All 5 transcripts pulled cleanly (9,756 → 13,271 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date — Parts 7–11):
+  - https://dungeondive.quest/t/cycle-of-the-werewolf-the-ran-king-of-king-part-7/1796 (Cycle of the Werewolf — Wrightson-illustrated novella, 2020-10-05, 192w)
+  - https://dungeondive.quest/t/the-dark-tower-i-the-gunslinger-the-ran-king-of-king-part-8/1797 (Dark Tower I: The Gunslinger — straight to #1, 2020-10-31, 192w)
+  - https://dungeondive.quest/t/it-mild-spoilers-the-ran-king-of-king-part-9/1795 (IT — cosmic dread + the Losers' love, 2020-11-30, 194w)
+  - https://dungeondive.quest/t/the-dark-tower-ii-the-drawing-of-the-three-the-ran-king-of-king-part-10-spoilers/1798 (Dark Tower II: Drawing of the Three — new #1, 2021-01-16, 199w)
+  - https://dungeondive.quest/t/the-dark-tower-iii-the-waste-lands-the-ran-king-of-king-part-11-spoilers/1799 (Dark Tower III: The Waste Lands, 2021-02-22, 204w)
+- Keeper series post (359 words, series register; Exhibit Catalogue = 5 new posts + 1 `related_imported_id` (Top 10 Horror Books t1395), 6 entries chronological. Per multi-part rendering, this Part-2 post covers its own slate + related — it does not re-list Part 1's six): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/77.
+- Stats: 1032 total, 598 imported, 426 pending, 8 no_transcript.
+- `series_queue.json`: **series COMPLETE.** Final 5 drained → video_ids empty. `ran-king-of-king` moved to `completed_series` (parts_completed: 2, total_videos: 11, completed_date: 2026-06-19). `active_series` now holds 3; `xia-drift-system` slid into rotation_index 0, followed by paupers-ladder, ker-nethalas-solo-osr.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-18 — The Ran(King) of King — Part 1 of 2 (6 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `ran-king-of-king` at rotation_index 0, **one_shot=false, vpb=6** (11 video_ids total). Took first 6; all drift-checked pending.
 - All 6 transcripts pulled cleanly (7,848 → 10,424 chars, 0 transient failures, 0 permanent failures).
