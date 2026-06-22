@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-22 — Priority drop: Tales of the Arabian Nights 40th Anniversary — new solo mode (1 video)
+- Decision tree: 1 priority pending in last 14 days (`GME--_-r_lU`, published 2026-06-21) → ad-hoc priority batch. Queue untouched (paupers-ladder still next).
+- Channel fetch found 1 new video (total 1033).
+- Transcript fetched cleanly (24,167 chars, 0 failures).
+- Post: https://dungeondive.quest/t/is-the-new-solo-mode-actually-good-tales-of-the-arabian-nights-40th-anniversary-edition/1804 (enthusiastic — the new dedicated solo mode is the most *complete* way to play; 15 CYOA quests layered on the full game, 2026-06-21, 196w).
+- Keeper priority drop (213 words, alert register) with a "From the deeper stacks" cross-reference to two storytelling-game matches: Tales of the Arthurian Knights (t1317, same paragraph-book engine) and Lovecraftesque (t1319): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/79.
+- Stats: 1033 total, 602 imported, 423 pending, 8 no_transcript.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). Next non-priority `/import` drains `paupers-ladder` at rotation_index 0 (then ker-nethalas-solo-osr).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-19 — Xia: Legends of a Drift System — space-western sandbox playthrough (3 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `xia-drift-system` at rotation_index 0, one_shot, vpb=3. All 3 video_ids drift-checked pending. (Second drain of the day — rate guard had 15-video headroom; this run brings the rolling 24h count to 8.)
 - All 3 transcripts pulled cleanly (17,725 → 20,450 chars, 0 transient failures, 0 permanent failures).
