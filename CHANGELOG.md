@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-06-22 — Pauper's Ladder — the King-Crimson adventure game (4 videos, 1 no_transcript)
+- Decision tree: 0 priority pending in last 14 days (yesterday's Arabian Nights now imported) → queue drain. `paupers-ladder` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending.
+- Transcript fetch: 4 succeeded cleanly (26,210 → 45,665 chars); 1 permanent failure — `P6a8zyHf7YY` ("The Art of Paupers' Ladder (with music by Daniel J. Davis)"), TranscriptsDisabled. Wordless music-over-art piece, genuinely no captions → marked `no_transcript` in video_index.json.
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/paupers-ladder-the-king-crimson-and-genesis-of-adventure-games/1806 (intro; prog-rock Talisman/Prophecy-adjacent crawl; provided by creator Paul Stapleton — disclosed in post, 2022-02-16, 195w)
+  - https://dungeondive.quest/t/a-look-at-moon-towers-an-expansion-for-paupers-ladder/1808 (Moon Towers expansion unbox + Illustrated Field Guide, 2022-07-03, 207w)
+  - https://dungeondive.quest/t/lets-explore-brighthelm-a-few-turns-of-paupers-ladder-with-the-moon-towers-expansion/1805 (casual solo playthrough as Darius Burr, 2022-07-05, 203w)
+  - https://dungeondive.quest/t/paupers-ladder-a-perfect-level-of-abundance-a-comprehensive-overview/1807 (comprehensive overview of all modes/expansions, 2023-10-15, 193w)
+- Keeper series post (376 words, series register; Exhibit Catalogue integrates the 3 `related_imported_ids` with the 4 new posts — 7 entries chronological. Music-only Art piece omitted as no_transcript): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/80.
+- Stats: 1033 total, 606 imported, 418 pending, 9 no_transcript.
+- `series_queue.json`: `paupers-ladder` moved to `completed_series` (parts_completed: 1, total_videos: 4, completed_date: 2026-06-22; 4 imported + 1 no_transcript). `active_series` now holds **1** — `ker-nethalas-solo-osr` is the last queued series. **Queue nearly dry — run /plan-batch after the next drain.**
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged); no_transcript count up to 9.
+
 ## 2026-06-22 — Priority drop: Tales of the Arabian Nights 40th Anniversary — new solo mode (1 video)
 - Decision tree: 1 priority pending in last 14 days (`GME--_-r_lU`, published 2026-06-21) → ad-hoc priority batch. Queue untouched (paupers-ladder still next).
 - Channel fetch found 1 new video (total 1033).

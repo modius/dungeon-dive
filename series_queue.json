@@ -1,28 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "paupers-ladder",
-      "title": "Pauper's Ladder — the King-Crimson adventure game",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "KXoxeoaSwOA",
-        "rixzhpBKdfg",
-        "BsWIaYs09vc",
-        "P6a8zyHf7YY",
-        "i6kooD4epJ0"
-      ],
-      "related_imported_ids": [
-        "Df9q7HerAA4",
-        "4Q1Xe92xmwI",
-        "pj41DZonKFU"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "ker-nethalas-solo-osr",
       "title": "Ker Nethalas & the Solo OSR Dungeon-Delve",
       "status": "continuing",
@@ -287,6 +265,13 @@
       "parts_completed": 1,
       "total_videos": 3,
       "completed_date": "2026-06-19"
+    },
+    {
+      "theme": "paupers-ladder",
+      "title": "Pauper's Ladder — the King-Crimson adventure game",
+      "parts_completed": 1,
+      "total_videos": 4,
+      "completed_date": "2026-06-22"
     }
   ],
   "rotation_index": 0
