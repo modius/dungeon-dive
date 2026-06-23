@@ -1,30 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "ker-nethalas-solo-osr",
-      "title": "Ker Nethalas & the Solo OSR Dungeon-Delve",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "BNze82M59-E",
-        "nyHN_s3QpkY",
-        "ZzYTRvOWH1I",
-        "Y7Rm_Bmu-K0",
-        "3BNqAqRukts"
-      ],
-      "related_imported_ids": [
-        "ensnUIxTUHE",
-        "WNhZUBZ8tUc",
-        "VlgtaUj_dho",
-        "eM2S4pWeczs",
-        "FG5G2G-XjhE"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -272,6 +247,13 @@
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-06-22"
+    },
+    {
+      "theme": "ker-nethalas-solo-osr",
+      "title": "Ker Nethalas & the Solo OSR Dungeon-Delve",
+      "parts_completed": 1,
+      "total_videos": 5,
+      "completed_date": "2026-06-23"
     }
   ],
   "rotation_index": 0

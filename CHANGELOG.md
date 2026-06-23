@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-23 — Ker Nethalas & the Solo OSR Dungeon-Delve (5 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `ker-nethalas-solo-osr` at rotation_index 0 (the last queued series), one_shot, vpb=5. All 5 video_ids drift-checked pending; full slate fetched in one go.
+- All 5 transcripts pulled cleanly (24,294 → 68,100 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/advanced-dungeon-goons-review-and-session-recap-solo-rpg/1810 (Tunnel-Goons-based rules-light fantasy, soloed with oracle + decks, 2022-11-25, 209w)
+  - https://dungeondive.quest/t/random-quest-dungeon-delve-straddling-the-line-between-boxed-card-board-game-and-solo-rpg/1813 (boxed crawl / solo-RPG identity crisis, 2023-08-27, 200w)
+  - https://dungeondive.quest/t/wail-solo-adventures-in-a-dream-like-fantasy-world-solo-rpg/1812 (FromSoft-flavoured hex-crawl + journaling, 2023-12-14, 217w)
+  - https://dungeondive.quest/t/a-mega-review-of-a-mega-dungeon-crawl-ker-nethalas-into-the-midnight-throne/1811 (the anchor — Blackoath's brutal living mega-dungeon, 2024-05-19, 205w)
+  - https://dungeondive.quest/t/knave-2nd-edition-review-from-the-solo-perspective-solo-rpg/1809 (Ben Milton's OSR toolkit; debuts the "solo score", 2024-06-30, 194w)
+- Keeper series post (400 words, series register; Exhibit Catalogue integrates the 5 `related_imported_ids` with the 5 new posts — 10 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/81.
+- Stats: 1033 total, 611 imported, 413 pending, 9 no_transcript.
+- `series_queue.json`: `ker-nethalas-solo-osr` moved to `completed_series` (parts_completed: 1, total_videos: 5, completed_date: 2026-06-23). **`active_series` is now EMPTY (rotation_index 0). Queue exhausted — run /plan-batch before the next non-priority /import (it would otherwise skip cleanly with a "queue empty" note).**
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-22 — Pauper's Ladder — the King-Crimson adventure game (4 videos, 1 no_transcript)
 - Decision tree: 0 priority pending in last 14 days (yesterday's Arabian Nights now imported) → queue drain. `paupers-ladder` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending.
 - Transcript fetch: 4 succeeded cleanly (26,210 → 45,665 chars); 1 permanent failure — `P6a8zyHf7YY` ("The Art of Paupers' Ladder (with music by Daniel J. Davis)"), TranscriptsDisabled. Wordless music-over-art piece, genuinely no captions → marked `no_transcript` in video_index.json.
