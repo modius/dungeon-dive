@@ -163,7 +163,7 @@
   <div class="chart-card">
     <div class="chart-title">Taxonomy Tag Cloud</div>
     <div class="tag-cloud" id="tagCloud"></div>
-    <p class="chart-note">Based on 496 analyzed videos — tag size reflects frequency across all content</p>
+    <p class="chart-note">Based on 611 analyzed videos — tag size reflects frequency across all content</p>
   </div>
 
   <!-- Top Games Chart -->
@@ -172,7 +172,7 @@
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="topGamesChart"></canvas>
     </div>
-    <p class="chart-note">Based on 496 analyzed videos — primary game subject per video</p>
+    <p class="chart-note">Based on 611 analyzed videos — primary game subject per video</p>
   </div>
 
   <!-- Themes + Player Modes + Formats -->
@@ -228,15 +228,15 @@
 <script>
 // ── Embedded data (updated by update_dashboard.py + analyze_content.py) ──
 
-const topGames = [["Shadows of Brimstone", 54], ["Warhammer Quest", 32], ["Arkham Horror", 22], ["Four Against Darkness", 20], ["Mork Borg", 19], ["League of Dungeoneers", 16], ["Vantage", 15], ["Rove", 15], ["Dungeon Degenerates", 14], ["Talisman", 14], ["Scarlet Heroes", 13], ["Legendary", 10], ["HeroQuest", 10], ["HEXplore It", 10], ["Runebound", 8], ["Warhammer Quest - Let\u2019s Play", 8], ["Fallen Land", 7], ["Cthulhu: Death May Die", 6], ["Advanced HeroQuest", 6], ["Darklight Memento Mori", 6], ["Dungeon Degenerates: The Hand of Doom", 5], ["Dungeon Universalis", 5], ["Dark Venture", 4], ["Blackstone Fortress", 4], ["The Sword & Sorcery Saga", 4]];
+const topGames = [["Shadows of Brimstone", 57], ["Warhammer Quest", 34], ["Arkham Horror", 26], ["Four Against Darkness", 25], ["Vantage", 22], ["Rove", 20], ["Mork Borg", 19], ["Scarlet Heroes", 18], ["League of Dungeoneers", 18], ["Dungeon Degenerates", 14], ["Talisman", 14], ["Legendary", 12], ["Runebound", 10], ["HeroQuest", 10], ["HEXplore It", 10], ["Warhammer Quest - Let\u2019s Play", 8], ["City of Chaos", 8], ["Fallen Land", 7], ["Cthulhu: Death May Die", 6], ["Pauper's Ladder", 6], ["Advanced HeroQuest", 6], ["Darklight Memento Mori", 6], ["Dark Venture", 5], ["Descent", 5], ["Dungeon Degenerates: The Hand of Doom", 5]];
 
-const categories = {"overview": 317, "review": 277, "lets-play": 201, "comparison": 184, "crowdfund-preview": 140, "deep-dive": 131, "unboxing": 129, "discussion": 109, "top-list": 86, "tutorial": 86, "buyers-guide": 73, "digital-dive": 68, "dungeon-crawler": 329, "rpg": 280, "campaign": 264, "miniatures": 222, "sandbox": 86, "hex-crawl": 68, "wargame": 53, "card-game": 39, "press-your-luck": 36, "dice-game": 33, "deck-builder": 20, "tower-defense": 10, "tile-laying": 6};
+const categories = {"overview": 397, "review": 350, "lets-play": 247, "comparison": 225, "crowdfund-preview": 177, "unboxing": 154, "deep-dive": 141, "discussion": 136, "top-list": 112, "tutorial": 108, "digital-dive": 83, "buyers-guide": 83, "dungeon-crawler": 412, "rpg": 337, "campaign": 312, "miniatures": 258, "sandbox": 103, "hex-crawl": 78, "wargame": 60, "card-game": 48, "press-your-luck": 46, "dice-game": 44, "deck-builder": 24, "tower-defense": 14, "tile-laying": 9};
 
-const tagCloud = [["tabletop", 347], ["dungeon-crawler", 329], ["fantasy", 319], ["overview", 317], ["solo", 308], ["rpg", 280], ["review", 277], ["campaign", 264], ["horror", 230], ["miniatures", 222], ["lets-play", 201], ["comparison", 184], ["crowdfund-preview", 140], ["digital", 131], ["deep-dive", 131], ["unboxing", 129], ["discussion", 109], ["classic", 101], ["cooperative", 94], ["sandbox", 86], ["top-list", 86], ["tutorial", 86], ["sci-fi", 84], ["buyers-guide", 73], ["hex-crawl", 68], ["competitive", 68], ["digital-dive", 68], ["post-apocalyptic", 67], ["modern", 65], ["western", 59], ["wargame", 53], ["pirate", 47], ["card-game", 39], ["press-your-luck", 36], ["dice-game", 33], ["deck-builder", 20], ["two-player", 18], ["mythology", 10], ["tower-defense", 10], ["steampunk", 9], ["tile-laying", 6], ["print-and-play", 4]];
+const tagCloud = [["tabletop", 424], ["dungeon-crawler", 412], ["fantasy", 397], ["overview", 397], ["solo", 385], ["review", 350], ["rpg", 337], ["campaign", 312], ["horror", 272], ["miniatures", 258], ["lets-play", 247], ["comparison", 225], ["crowdfund-preview", 177], ["digital", 166], ["unboxing", 154], ["deep-dive", 141], ["discussion", 136], ["classic", 125], ["top-list", 112], ["cooperative", 111], ["tutorial", 108], ["sci-fi", 104], ["sandbox", 103], ["competitive", 86], ["modern", 85], ["digital-dive", 83], ["buyers-guide", 83], ["hex-crawl", 78], ["western", 72], ["post-apocalyptic", 72], ["wargame", 60], ["pirate", 59], ["card-game", 48], ["press-your-luck", 46], ["dice-game", 44], ["deck-builder", 24], ["two-player", 23], ["tower-defense", 14], ["steampunk", 11], ["mythology", 10], ["print-and-play", 9], ["tile-laying", 9]];
 
-const themeData = [["fantasy", 319], ["horror", 230], ["sci-fi", 84], ["post-apocalyptic", 67], ["western", 59], ["pirate", 47], ["mythology", 10], ["steampunk", 9]];
+const themeData = [["fantasy", 397], ["horror", 272], ["sci-fi", 104], ["western", 72], ["post-apocalyptic", 72], ["pirate", 59], ["steampunk", 11], ["mythology", 10]];
 
-const playerModes = [["solo", 308], ["cooperative", 94], ["competitive", 68], ["two-player", 18]];
+const playerModes = [["solo", 385], ["cooperative", 111], ["competitive", 86], ["two-player", 23]];
 
 const keeperPosts = [
   {
