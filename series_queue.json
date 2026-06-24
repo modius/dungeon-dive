@@ -1,5 +1,56 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "into-the-grimdark",
+      "title": "Into the Grimdark — Games Workshop's Sci-Fi Skirmishes",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "5t3KYPZKUe4",
+        "T2tuMBwhuKc",
+        "t3G_N5DO6us",
+        "A5ojgoN39Lc",
+        "O1awyI-zPJs"
+      ],
+      "related_imported_ids": [
+        "TwfHRcdWHRg",
+        "E_DqVHrHIxM",
+        "DNsUjaDT3AQ",
+        "TV3fWx4rQh0",
+        "62v6RgdBly0"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "pulp-treasure-hunters",
+      "title": "Pulp Treasure-Hunters & Cursed Tombs",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "yKIM1UxtbpU",
+        "zufjmNpcSlg",
+        "aD-WkrzMJrk",
+        "x5fPiJUOMk0",
+        "kCcXFPN8bK0",
+        "gENAeokhMHI",
+        "XWSWCP3TBrc"
+      ],
+      "related_imported_ids": [
+        "ixG3RWG-Xdw",
+        "ShJ_j2paClA",
+        "ZcdQLCEyjjU",
+        "wLB8pR4uME0",
+        "mOqGGh-ot08"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
