@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-24T00:48:18.884165+00:00",
+  "last_fetched": "2026-06-24T05:39:49.334001+00:00",
   "videos": [
     {
       "video_id": "GME--_-r_lU",
@@ -3260,9 +3260,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nAll Fiction is Fantasy - the new all book channel!\nhttps://www.youtube.com/@allfictionisfantasy\n\nDungeon Dive FB Group  \nhttps://www.facebook.com/groups/2571172249675057    \n\nThe Dungeon Dive Guild  \nhttps://boardgamegeek.com/guild/4030    \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2023-08-15T17:00:19Z",
       "thumbnail_url": "https://i.ytimg.com/vi/XWSWCP3TBrc/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1821,
+      "imported_at": "2026-06-24T05:43:01.727840Z"
     },
     {
       "video_id": "3DNRCakknE0",
@@ -3320,9 +3320,9 @@
       "description": "Treasure By Torchlight on the GameCrafter - https://tgc.link/tdd-tbt\n\n***\n\nJoin the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nAll Fiction is Fantasy - the new all book channel!\nhttps://www.youtube.com/@allfictionisfantasy\n\nDungeon Dive FB Group  \nhttps://www.facebook.com/groups/2571172249675057    \n\nThe Dungeon Dive Guild  \nhttps://boardgamegeek.com/guild/4030    \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2023-08-01T17:00:23Z",
       "thumbnail_url": "https://i.ytimg.com/vi/gENAeokhMHI/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1823,
+      "imported_at": "2026-06-24T05:43:12.405372Z"
     },
     {
       "video_id": "NX-1jJ1PuxY",
@@ -4610,9 +4610,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive FB Group  \nhttps://www.facebook.com/groups/2571172249675057    \n\nThe Dungeon Dive Guild  \nhttps://boardgamegeek.com/guild/4030    \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2022-10-25T07:00:18Z",
       "thumbnail_url": "https://i.ytimg.com/vi/kCcXFPN8bK0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1824,
+      "imported_at": "2026-06-24T05:43:17.611066Z"
     },
     {
       "video_id": "YFjQz7FijWM",
@@ -5520,9 +5520,9 @@
       "description": "#solorpg Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nPurchase game:\nhttps://lonespelunker.itch.io/skull-island",
       "published_at": "2022-05-17T07:00:15Z",
       "thumbnail_url": "https://i.ytimg.com/vi/x5fPiJUOMk0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1825,
+      "imported_at": "2026-06-24T05:43:22.861441Z"
     },
     {
       "video_id": "RrVaJ5z_3mU",
@@ -5640,9 +5640,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-05-04T19:00:00Z",
       "thumbnail_url": "https://i.ytimg.com/vi/aD-WkrzMJrk/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1822,
+      "imported_at": "2026-06-24T05:43:06.961543Z"
     },
     {
       "video_id": "UJOAvX_FD7o",
@@ -5931,9 +5931,10 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nMusic by Daniel J. Davis - available here:\nhttps://carlsagansghost.bandcamp.com/album/that-old-highway",
       "published_at": "2022-03-22T07:00:14Z",
       "thumbnail_url": "https://i.ytimg.com/vi/zufjmNpcSlg/hqdefault.jpg",
-      "status": "pending",
+      "status": "no_transcript",
       "discourse_topic_id": null,
-      "imported_at": null
+      "imported_at": null,
+      "no_transcript_at": "2026-06-24T05:41:02.250255Z"
     },
     {
       "video_id": "AmYVHRf2Aq8",
@@ -8671,9 +8672,9 @@
       "description": "",
       "published_at": "2020-04-04T18:40:13Z",
       "thumbnail_url": "https://i.ytimg.com/vi/yKIM1UxtbpU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1826,
+      "imported_at": "2026-06-24T05:43:29.481415Z"
     },
     {
       "video_id": "hyisCTgnS0g",

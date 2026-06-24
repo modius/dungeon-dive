@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-06-24 — Pulp Treasure-Hunters & Cursed Tombs (6 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `pulp-treasure-hunters` at rotation_index 0, one_shot, vpb=7. All 7 video_ids drift-checked pending; full slate fetched in one go.
+- Transcripts: 6 of 7 pulled cleanly (15,408 → 26,801 chars). 1 permanent failure — `zufjmNpcSlg` (The art of TOMB) TranscriptsDisabled → marked `no_transcript`. 0 transient failures.
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/tomb-overview-and-solo-play-development/1826 (AEG's gorgeous-but-broken party crawler; Daniel's homebrew solo variant, 2020-04-04, 206w)
+  - https://dungeondive.quest/t/pulp-invasion-an-ok-game-with-a-great-look/1822 (Todd Sanders bag-builder; vintage Steeger pulp art over a pasted-on theme, 2022-05-04, 210w)
+  - https://dungeondive.quest/t/expedition-to-skull-island-pirate-themed-hex-crawling-perfect-for-slow-questing/1825 ($5 itch.io pirate hex-crawl; huge unexplored-hex tables, 2022-05-17, 206w)
+  - https://dungeondive.quest/t/curse-of-the-mummys-tomb-games-workshop-the-solo-mode-is-basically-candyland/1824 (1988 GW; Gary Chalk art atop a Candyland solo mode, 2022-10-25, 218w)
+  - https://dungeondive.quest/t/a-look-at-treasure-by-torchlight-a-light-and-simple-solo-dungeon-crawler/1823 (Dr. Trash Games crawler; charming but over-produced and overpriced, 2023-08-01, 203w)
+  - https://dungeondive.quest/t/search-for-the-emperors-treasure-another-classic-adventure-game-from-tom-wham/1821 (Tom Wham's 1981 Holy Grail; D&D night in a box, 2023-08-15, 210w)
+- Keeper series post (~210w prose / series register; Exhibit Catalogue integrates the 5 `related_imported_ids` — Dungeon Degenerates, Relic, Secrets of the Lost Tomb, Tomb Raider CCG, Tomb Raider: Crypt of Chronos — with the 6 new posts, 11 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/83.
+- Stats: 1033 total, 622 imported, 401 pending, 10 no_transcript.
+- `series_queue.json`: `pulp-treasure-hunters` moved to `completed_series` (parts_completed: 1, total_videos: 6, completed_date: 2026-06-24). `active_series` now **empty**, rotation_index 0 — next non-priority /import will skip cleanly; run /plan-batch to queue more.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-24 — Into the Grimdark: Games Workshop's Sci-Fi Skirmishes (5 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `into-the-grimdark` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending; full slate fetched in one go.
 - All 5 transcripts pulled cleanly (15,037 → 24,467 chars, 0 transient failures, 0 permanent failures).
