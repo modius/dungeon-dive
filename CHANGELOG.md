@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-06-24 — Into the Grimdark: Games Workshop's Sci-Fi Skirmishes (5 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `into-the-grimdark` at rotation_index 0, one_shot, vpb=5. All 5 video_ids drift-checked pending; full slate fetched in one go.
+- All 5 transcripts pulled cleanly (15,037 → 24,467 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/core-space-the-sci-fi-miniatures-game-from-battle-systems/1816 (Battle Systems' shape-shifting sci-fi sandbox; his favourite game of 2019, 2019-05-23, 199w)
+  - https://dungeondive.quest/t/revisiting-the-blackstone-fortress/1819 (deeper base-campaign dive; Strikeforce two-hero fix from White Dwarf 2019 annual, 2020-03-08, 191w)
+  - https://dungeondive.quest/t/core-space-new-expansions-take-a-look/1820 (Shift Change at Mega Core, Rogue Purge, Dangerous Days campaign book, 2020-06-05, 190w)
+  - https://dungeondive.quest/t/a-look-at-space-hulk-death-angel-the-card-game/1817 (Konieczka's co-op card-game distillation of Space Hulk; the brutal d6, 2022-05-26, 197w)
+  - https://dungeondive.quest/t/space-hulk-is-a-forever-game-review/1818 (the full board game; five reasons it endures, OverWatch + 2½-min timer, 2024-12-08, 190w)
+- Keeper series post (~360 words, series register; Exhibit Catalogue integrates the 5 `related_imported_ids` — Blackstone overview + Silver Tower parts 1–4 — with the 5 new posts, 10 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/82.
+- Stats: 1033 total, 616 imported, 408 pending, 9 no_transcript.
+- `series_queue.json`: `into-the-grimdark` moved to `completed_series` (parts_completed: 1, total_videos: 5, completed_date: 2026-06-24). `active_series` now holds only `pulp-treasure-hunters` (rotation_index 0) — queue still has one series for the next non-priority /import.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-23 — Ker Nethalas & the Solo OSR Dungeon-Delve (5 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `ker-nethalas-solo-osr` at rotation_index 0 (the last queued series), one_shot, vpb=5. All 5 video_ids drift-checked pending; full slate fetched in one go.
 - All 5 transcripts pulled cleanly (24,294 → 68,100 chars, 0 transient failures, 0 permanent failures).

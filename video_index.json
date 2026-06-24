@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-23T01:47:10.886627+00:00",
+  "last_fetched": "2026-06-24T00:48:18.884165+00:00",
   "videos": [
     {
       "video_id": "GME--_-r_lU",
@@ -1620,9 +1620,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nAll Fiction is Fantasy - the new all book channel!\nhttps://www.youtube.com/@allfictionisfantasy\n\nDungeon Dive FB Group  \nhttps://www.facebook.com/groups/2571172249675057    \n\nThe Dungeon Dive Guild  \nhttps://boardgamegeek.com/guild/4030    \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2024-12-08T17:00:18Z",
       "thumbnail_url": "https://i.ytimg.com/vi/O1awyI-zPJs/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1818,
+      "imported_at": "2026-06-24T00:50:52.589012Z"
     },
     {
       "video_id": "FG5G2G-XjhE",
@@ -5450,9 +5450,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-05-26T00:00:03Z",
       "thumbnail_url": "https://i.ytimg.com/vi/A5ojgoN39Lc/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1817,
+      "imported_at": "2026-06-24T00:50:47.506685Z"
     },
     {
       "video_id": "bT7qGpnOpo4",
@@ -8361,9 +8361,9 @@
       "description": "",
       "published_at": "2020-06-05T00:10:05Z",
       "thumbnail_url": "https://i.ytimg.com/vi/t3G_N5DO6us/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1820,
+      "imported_at": "2026-06-24T00:51:02.955700Z"
     },
     {
       "video_id": "lvOd4uyJkFE",
@@ -8761,9 +8761,9 @@
       "description": "",
       "published_at": "2020-03-08T20:19:10Z",
       "thumbnail_url": "https://i.ytimg.com/vi/T2tuMBwhuKc/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1819,
+      "imported_at": "2026-06-24T00:50:57.510233Z"
     },
     {
       "video_id": "3Cm_qVj04z0",
@@ -9441,9 +9441,9 @@
       "description": "Core Space: The Sci-Fi Miniatures game from Battle Systems",
       "published_at": "2019-05-23T22:37:06Z",
       "thumbnail_url": "https://i.ytimg.com/vi/5t3KYPZKUe4/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1816,
+      "imported_at": "2026-06-24T00:50:42.279506Z"
     },
     {
       "video_id": "fg72xV_ZX8g",
