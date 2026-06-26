@@ -1,30 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "modern-minis-crawlers",
-      "title": "The New Wave — Modern Miniatures Dungeon Crawlers",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "C9FJCiew0s8",
-        "yKCrM_XkKaY",
-        "3gPoLb5rT70",
-        "IEIg6U_krbY",
-        "3DNRCakknE0",
-        "CUpAWj1wVbU",
-        "pyuB406DLuo"
-      ],
-      "related_imported_ids": [
-        "GYD-rQNG-rI",
-        "dIqUY3R2_3A",
-        "svTgRSTyypU"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "escape-the-dark-card-crawl",
       "title": "Escape the Dark & the Atmospheric Card-Crawl",
       "status": "continuing",
@@ -344,6 +320,13 @@
       "title": "Screen to Tabletop — Video-Game Adaptations on the Table",
       "parts_completed": 1,
       "total_videos": 8,
+      "completed_date": "2026-06-26"
+    },
+    {
+      "theme": "modern-minis-crawlers",
+      "title": "The New Wave — Modern Miniatures Dungeon Crawlers",
+      "parts_completed": 1,
+      "total_videos": 7,
       "completed_date": "2026-06-26"
     }
   ],

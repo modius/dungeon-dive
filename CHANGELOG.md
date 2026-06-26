@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-06-26 — The New Wave: Modern Miniatures Dungeon Crawlers (7 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `modern-minis-crawlers` at rotation_index 0 (2nd of the 4 series queued this session), one_shot, vpb=7. All 7 video_ids drift-checked pending; full slate fetched in one go.
+- All 7 transcripts pulled cleanly (16,519 → 35,253 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/middara-take-a-look/1839 (Succubus's 500-page scripted JRPG-on-the-table; take-a-look, not review, 2019-02-14, 191w)
+  - https://dungeondive.quest/t/chronicles-of-drunagor-initial-thoughts/1843 (wuxia-flavoured action-cube heroes; scripted-campaign gripes, 2021-05-18, 183w)
+  - https://dungeondive.quest/t/dungeons-of-draggmar-amazing-art-and-initial-frustrations/1838 (gorgeous Darkest-Dungeon art, frustrating learning curve, 2022-11-23, 186w)
+  - https://dungeondive.quest/t/vanaheim-a-rogue-lite-indie-dungeon-crawl-for-your-table-top/1841 (Game Crafter roguelike with a town-building metagame, 2023-07-09, 178w)
+  - https://dungeondive.quest/t/midhalla-a-viking-themed-fantasy-dungeon-crawl-with-low-luck-strategy-kickstarter-preview/1837 (0%-luck keyword combat + tower defense; KS preview, 2023-08-13, 179w)
+  - https://dungeondive.quest/t/now-this-is-how-you-do-a-second-edition-rogue-dungeon-2nd-edition-overview-and-comparison/1840 (the community-driven HD remaster; a model 2e, 2024-04-10, 184w)
+  - https://dungeondive.quest/t/a-moody-trip-into-the-dark-depths-of-a-dungeon-crypts-of-obscurum-review/1842 (grimy solo gamebook; dice-assignment stat system, 2024-05-01, 187w)
+- Keeper series post (~217w prose / series register; Exhibit Catalogue integrates the 3 `related_imported_ids` — Massive Darkness, Swords & Sorcery, Valpiedra — with the 7 new posts, 10 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/86.
+- Stats: 1034 total, 638 imported, 386 pending, 10 no_transcript.
+- `series_queue.json`: `modern-minis-crawlers` moved to `completed_series` (parts_completed: 1, total_videos: 7, completed_date: 2026-06-26). rotation_index stays 0, now pointing at `escape-the-dark-card-crawl`. 2 series remain queued (escape-the-dark-card-crawl, map-making-solo-games).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-26 — Screen to Tabletop: Video-Game Adaptations (8 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `video-game-adaptations` at rotation_index 0 (first of 4 series queued by /plan-batch this session), one_shot, vpb=8. All 8 video_ids drift-checked pending; full slate fetched in one go.
 - All 8 transcripts pulled cleanly (12,958 → 55,486 chars, 0 transient failures, 0 permanent failures).
