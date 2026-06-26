@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-26 — Screen to Tabletop: Video-Game Adaptations (8 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `video-game-adaptations` at rotation_index 0 (first of 4 series queued by /plan-batch this session), one_shot, vpb=8. All 8 video_ids drift-checked pending; full slate fetched in one go.
+- All 8 transcripts pulled cleanly (12,958 → 55,486 chars, 0 transient failures, 0 permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/fallout-the-board-game-having-fun-with-a-flawed-game/1834 (FFG Fallout; nails exploration, fumbles the win condition, 2019-06-27, 207w)
+  - https://dungeondive.quest/t/fallout-atomic-bonds-cooperative-upgrade-take-a-look/1829 (the co-op upgrade that turned a flawed game great, 2020-09-14, 195w)
+  - https://dungeondive.quest/t/bloodborne-speedrun-the-board-game-or-times-up-stop-having-fun/1831 (great trick-weapon combat sabotaged by the timer, 2021-02-02, 185w)
+  - https://dungeondive.quest/t/revisiting-bloodborne-the-board-game-this-hunters-dream-is-a-frustrating-one/1833 (the revisit; off to the sale pile, 2022-11-01, 191w)
+  - https://dungeondive.quest/t/a-detailed-unboxing-of-skyrim-the-adventure-game/1830 (Modiphius Skyrim unboxing; expensive box, lots of air, 2023-04-09, 186w)
+  - https://dungeondive.quest/t/rune-yes-indeed-prepare-engraved-to-roll-dice-dark-souls-on-your-table/1832 (Spencer Campbell solo Souls-like; out-Dark-Souls the official game, 2023-08-29, 196w)
+  - https://dungeondive.quest/t/elder-scrolls-v-skyrim-the-adventure-game-the-biggest-but-in-gaming-review/1836 (the full review; flawed, overpriced, loved; best threat-timer he's seen, 2024-01-10, 194w)
+  - https://dungeondive.quest/t/heroes-of-cerulea-the-legend-of-zelda-solo-rpg-review/1835 (pixel-perfect Zelda solo RPG; video-game logic, 2024-08-14, 191w)
+- Keeper series post (~199w prose / series register; Exhibit Catalogue integrates the 5 `related_imported_ids` — Arkham 3e vs Fallout vs Skyrim, Hellbringer/Diablo, Witcher Adventure Game, Valpiedra, LA-1 — with the 8 new posts, 13 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/85.
+- Stats: 1034 total, 631 imported, 393 pending, 10 no_transcript.
+- `series_queue.json`: `video-game-adaptations` moved to `completed_series` (parts_completed: 1, total_videos: 8, completed_date: 2026-06-26). rotation_index stays 0, now pointing at `modern-minis-crawlers`. 3 series remain queued (modern-minis-crawlers, escape-the-dark-card-crawl, map-making-solo-games).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-26 — Priority drop: Rolling Deep (1 video)
 - Decision tree: 1 new video on fetch → 1 priority pending in last 14 days (`xGMFiacVSrk`, published 2026-06-24) → ad-hoc priority run. Queue untouched (`active_series` remains empty).
 - Transcript pulled cleanly (25,627 chars, 0 failures).

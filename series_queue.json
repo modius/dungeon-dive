@@ -1,5 +1,75 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "modern-minis-crawlers",
+      "title": "The New Wave — Modern Miniatures Dungeon Crawlers",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "C9FJCiew0s8",
+        "yKCrM_XkKaY",
+        "3gPoLb5rT70",
+        "IEIg6U_krbY",
+        "3DNRCakknE0",
+        "CUpAWj1wVbU",
+        "pyuB406DLuo"
+      ],
+      "related_imported_ids": [
+        "GYD-rQNG-rI",
+        "dIqUY3R2_3A",
+        "svTgRSTyypU"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "escape-the-dark-card-crawl",
+      "title": "Escape the Dark & the Atmospheric Card-Crawl",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "WWIB8ZW1i6w",
+        "-GYR8m5pqkI",
+        "Rb2-RE864YY",
+        "DAuagmdRSOE",
+        "hnnt5l96vVE",
+        "Wu4lafiHjh0"
+      ],
+      "related_imported_ids": [
+        "7ufObjxCBKI",
+        "OD8Jm9Yk0WY"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "map-making-solo-games",
+      "title": "Draw Your Own Dungeon — Map-Making Solo Games",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 4,
+      "video_ids": [
+        "coqZMUFd2C0",
+        "xQKEy65zAso",
+        "mnu4iJG72y8",
+        "cjpnhsKzs1Q"
+      ],
+      "related_imported_ids": [
+        "Ocp1_PPM4sI",
+        "zceKtRTdgSo",
+        "0dqRFbgCuVg",
+        "7zHiFWEJfZY",
+        "WNhZUBZ8tUc"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -268,6 +338,13 @@
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-06-24"
+    },
+    {
+      "theme": "video-game-adaptations",
+      "title": "Screen to Tabletop — Video-Game Adaptations on the Table",
+      "parts_completed": 1,
+      "total_videos": 8,
+      "completed_date": "2026-06-26"
     }
   ],
   "rotation_index": 0
