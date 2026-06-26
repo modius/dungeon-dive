@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-06-26 — Priority drop: Rolling Deep (1 video)
+- Decision tree: 1 new video on fetch → 1 priority pending in last 14 days (`xGMFiacVSrk`, published 2026-06-24) → ad-hoc priority run. Queue untouched (`active_series` remains empty).
+- Transcript pulled cleanly (25,627 chars, 0 failures).
+- Post: https://dungeondive.quest/t/rolling-deep-solo-dice-building-roguelike-kickstarter-preview/1828 (Bitewing solo dice-building roguelite Kickstarter preview; low-roll engine-building, Cuphead art, 2026-06-24, 205w).
+- Keeper priority-drop post (~170w, alert register): one new arrival + "From the deeper stacks" cross-reference (3 archive picks — Sigils of Nightfall, 9D6 Quest, Ball X Pit): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/84.
+- Stats: 1034 total, 623 imported, 401 pending, 10 no_transcript.
+- `series_queue.json` unchanged — priority runs never mutate the queue. `active_series` still empty; run /plan-batch before the next non-priority /import.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-24 — Pulp Treasure-Hunters & Cursed Tombs (6 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `pulp-treasure-hunters` at rotation_index 0, one_shot, vpb=7. All 7 video_ids drift-checked pending; full slate fetched in one go.
 - Transcripts: 6 of 7 pulled cleanly (15,408 → 26,801 chars). 1 permanent failure — `zufjmNpcSlg` (The art of TOMB) TranscriptsDisabled → marked `no_transcript`. 0 transient failures.

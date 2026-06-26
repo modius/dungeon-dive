@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-24T05:39:49.334001+00:00",
+  "last_fetched": "2026-06-26T00:19:31.395237+00:00",
   "videos": [
+    {
+      "video_id": "xGMFiacVSrk",
+      "title": "Rolling Deep: Solo Dice Building Roguelike (Kickstarter Preview)",
+      "description": "Get the game:\nhttps://www.kickstarter.com/projects/bitewinggamesnick/rolling-deep-and-eureka-dice-adventure-roguelike-and-campaign\n\nJoin the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-06-24T16:00:06Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/xGMFiacVSrk/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1828,
+      "imported_at": "2026-06-26T00:20:43.907686Z"
+    },
     {
       "video_id": "GME--_-r_lU",
       "title": "Is the new solo mode actually good? Tales of the Arabian Nights: 40th Anniversary Edition",
