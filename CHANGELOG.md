@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-06-29 — Escape the Dark & the Atmospheric Card-Crawl (6 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `escape-the-dark-card-crawl` at rotation_index 0 (3rd of the 4 series queued 2026-06-26), one_shot, vpb=6. All 6 video_ids drift-checked pending; full slate fetched in one go.
+- Transcript fetch note: video ID `-GYR8m5pqkI` begins with a hyphen, so argparse treated it as a flag — re-ran `batch_fetch_transcripts.py` with a `--` options terminator. All 6 transcripts then pulled cleanly (14,374 → 23,395 chars, 0 transient/permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/hand-of-fate-ordeals/1849 (deck-builder that feels like an adventure; bind-attacks combat, 2019-01-16, 198w)
+  - https://dungeondive.quest/t/escape-the-dark-castle-review/1846 (top-10 group nightcap; black-and-white art + Death Book, 2020-08-05, 192w)
+  - https://dungeondive.quest/t/escape-the-dark-sector-review/1848 ("Dark Castle Advanced": ammo/ranged combat; better solo, 2020-09-11, 178w)
+  - https://dungeondive.quest/t/revisiting-hand-of-fate-ordeals-a-game-that-should-have-been-a-massive-hit/1847 (Endless = best tabletop roguelike he's played, 2020-11-01, 192w)
+  - https://dungeondive.quest/t/escape-the-dark-sector-a-look-at-mission-packs-2-and-3/1851 (Mutant Syndrome + Quantum Rift; Dark Castle crossover idea, 2022-08-14, 186w)
+  - https://dungeondive.quest/t/hex-dek-a-hex-map-in-a-deck-of-cards-and-a-stealth-design-diary-for-the-land-in-peril-rpg/1850 (Philip Reed card tools + A Land in Peril RPG design diary, 2023-10-08, 195w)
+- Keeper series post (~216w prose / series register; Exhibit Catalogue integrates the 2 `related_imported_ids` — "A Deck of Cards" solo tool, Top 10 Card Decks — with the 6 new posts, 8 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/88.
+- Stats: 1035 total, 645 imported, 380 pending, 10 no_transcript.
+- `series_queue.json`: `escape-the-dark-card-crawl` moved to `completed_series` (parts_completed: 1, total_videos: 6, completed_date: 2026-06-29). rotation_index stays 0, now pointing at `map-making-solo-games` (the last queued series).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-29 — Priority drop: Recluse (1 video)
 - Decision tree: fetch found 1 new video → 1 priority pending in last 14 days (`zXbAf49C9vE`, published 2026-06-28) → ad-hoc priority run. Queue untouched (escape-the-dark-card-crawl still at rotation_index 0).
 - Transcript pulled cleanly (16,654 chars, 0 failures). Full 20-video posting headroom (24h window had rolled over since the 2026-06-26 runs).
