@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-06-29 — Draw Your Own Dungeon: Map-Making Solo Games (4 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `map-making-solo-games` at rotation_index 0 (4th and last of the series queued 2026-06-26), one_shot, vpb=4. All 4 video_ids drift-checked pending; full slate fetched in one go.
+- All 4 transcripts pulled cleanly (10,945 → 24,004 chars, 0 transient/permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/delve-a-map-making-drawing-game/1853 (Anna Blackwell solo map-drawing; dwarven hold, card-driven, 2020-11-28, 199w)
+  - https://dungeondive.quest/t/colostle-a-solo-rpg-adventure-take-a-look/1855 (Nick Angel journaling RPG; castle holding oceans, 2021-09-07, 195w)
+  - https://dungeondive.quest/t/paper-dungeons-a-dungeon-crawl-themed-roll-and-write-game/1854 (dungeon "scrawler" roll-and-write; 12 dungeons, 2022-04-17, 186w)
+  - https://dungeondive.quest/t/unexplored-2-the-wayfarers-legacy-a-video-game-i-recommend-to-fans-of-ttrpgs-and-board-games/1852 (roguelite w/ bag-builder challenges; very tabletop, 2022-07-15, 190w)
+- Keeper series post (~206w prose / series register; Exhibit Catalogue integrates the 5 `related_imported_ids` — 2D6 Dungeon, Cartograph, Cartograph Atlas, A Wayfarer's Tale, Fantasy Map Maker — with the 4 new posts, 9 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/89.
+- Stats: 1035 total, 649 imported, 376 pending, 10 no_transcript.
+- `series_queue.json`: `map-making-solo-games` moved to `completed_series` (parts_completed: 1, total_videos: 4, completed_date: 2026-06-29). **`active_series` now empty, rotation_index 0** — the four series queued by /plan-batch on 2026-06-26 are all drained. Next non-priority /import will skip cleanly; run /plan-batch to queue more.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-29 — Escape the Dark & the Atmospheric Card-Crawl (6 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `escape-the-dark-card-crawl` at rotation_index 0 (3rd of the 4 series queued 2026-06-26), one_shot, vpb=6. All 6 video_ids drift-checked pending; full slate fetched in one go.
 - Transcript fetch note: video ID `-GYR8m5pqkI` begins with a hyphen, so argparse treated it as a flag — re-ran `batch_fetch_transcripts.py` with a `--` options terminator. All 6 transcripts then pulled cleanly (14,374 → 23,395 chars, 0 transient/permanent failures).

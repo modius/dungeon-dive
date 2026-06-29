@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-29T05:00:56.689104+00:00",
+  "last_fetched": "2026-06-29T05:14:25.556095+00:00",
   "videos": [
     {
       "video_id": "zXbAf49C9vE",
@@ -5200,9 +5200,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support! \nhttps://www.patreon.com/thedungeondive  \n\nDungeon Dive FB Group \nhttps://www.facebook.com/groups/2571172249675057  \n\nThe Dungeon Dive Guild \nhttps://boardgamegeek.com/guild/4030  \n\nGet your Dungeon Dive T-Shirts! \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2022-07-15T07:00:12Z",
       "thumbnail_url": "https://i.ytimg.com/vi/cjpnhsKzs1Q/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1852,
+      "imported_at": "2026-06-29T05:16:17.690923Z"
     },
     {
       "video_id": "2qLT-wnFaP0",
@@ -5821,9 +5821,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-04-17T07:00:11Z",
       "thumbnail_url": "https://i.ytimg.com/vi/mnu4iJG72y8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1854,
+      "imported_at": "2026-06-29T05:16:28.980306Z"
     },
     {
       "video_id": "LMryIj-gt9A",
@@ -6492,9 +6492,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-09-07T14:07:23Z",
       "thumbnail_url": "https://i.ytimg.com/vi/xQKEy65zAso/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1855,
+      "imported_at": "2026-06-29T05:16:34.213306Z"
     },
     {
       "video_id": "lTCDfNnY4u8",
@@ -7742,9 +7742,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nJoin the discussion on the Dungeon Dive FB group!\n\nhttps://www.facebook.com/groups/2571172249675057",
       "published_at": "2020-11-28T16:40:35Z",
       "thumbnail_url": "https://i.ytimg.com/vi/coqZMUFd2C0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1853,
+      "imported_at": "2026-06-29T05:16:22.733412Z"
     },
     {
       "video_id": "t4gVVdxtNWE",

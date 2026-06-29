@@ -1,29 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "map-making-solo-games",
-      "title": "Draw Your Own Dungeon — Map-Making Solo Games",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 4,
-      "video_ids": [
-        "coqZMUFd2C0",
-        "xQKEy65zAso",
-        "mnu4iJG72y8",
-        "cjpnhsKzs1Q"
-      ],
-      "related_imported_ids": [
-        "Ocp1_PPM4sI",
-        "zceKtRTdgSo",
-        "0dqRFbgCuVg",
-        "7zHiFWEJfZY",
-        "WNhZUBZ8tUc"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -312,6 +288,13 @@
       "title": "Escape the Dark & the Atmospheric Card-Crawl",
       "parts_completed": 1,
       "total_videos": 6,
+      "completed_date": "2026-06-29"
+    },
+    {
+      "theme": "map-making-solo-games",
+      "title": "Draw Your Own Dungeon — Map-Making Solo Games",
+      "parts_completed": 1,
+      "total_videos": 4,
       "completed_date": "2026-06-29"
     }
   ],
