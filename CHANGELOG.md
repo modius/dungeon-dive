@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-06-29 — Priority drop: Recluse (1 video)
+- Decision tree: fetch found 1 new video → 1 priority pending in last 14 days (`zXbAf49C9vE`, published 2026-06-28) → ad-hoc priority run. Queue untouched (escape-the-dark-card-crawl still at rotation_index 0).
+- Transcript pulled cleanly (16,654 chars, 0 failures). Full 20-video posting headroom (24h window had rolled over since the 2026-06-26 runs).
+- Post: https://dungeondive.quest/t/recluse-a-solo-engine-for-mork-borg-solo-rpg/1845 (Maizy Rose's expanded Mörk Borg solo engine; Solitary Defilement grown Ironsworn-deep, 2026-06-28, 200w).
+- Keeper priority-drop post (~178w, alert register): one new arrival + "From the deeper stacks" cross-reference (3 archive picks — Solitary Defilement Session Zero, Mörk Manual, Ironsworn: Starforged Pt1): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/87.
+- Stats: 1035 total, 639 imported, 386 pending, 10 no_transcript.
+- `series_queue.json` unchanged — priority runs never mutate the queue. 2 series still queued (escape-the-dark-card-crawl, map-making-solo-games).
+- Note: the 2026-06-27 /import was deferred (rate-limit headroom too low for the 6-video escape-the-dark batch); no work done that run.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-26 — The New Wave: Modern Miniatures Dungeon Crawlers (7 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `modern-minis-crawlers` at rotation_index 0 (2nd of the 4 series queued this session), one_shot, vpb=7. All 7 video_ids drift-checked pending; full slate fetched in one go.
 - All 7 transcripts pulled cleanly (16,519 → 35,253 chars, 0 transient failures, 0 permanent failures).

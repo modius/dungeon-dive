@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-06-26T03:49:55.360557+00:00",
+  "last_fetched": "2026-06-29T04:57:35.323659+00:00",
   "videos": [
+    {
+      "video_id": "zXbAf49C9vE",
+      "title": "Recluse - A Solo Engine for Mork Borg (Solo RPG)",
+      "description": "Get Recluse:\nhttps://jadragames.itch.io/reclvse\n\nJoin the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-06-28T16:00:17Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/zXbAf49C9vE/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1845,
+      "imported_at": "2026-06-29T04:58:55.833925Z"
+    },
     {
       "video_id": "xGMFiacVSrk",
       "title": "Rolling Deep: Solo Dice Building Roguelike (Kickstarter Preview)",
