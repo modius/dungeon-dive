@@ -1,30 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "retrolook-vintage-classics",
-      "title": "RetroLook — Vintage Dungeon & Adventure Classics",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 8,
-      "video_ids": [
-        "UhuJQBAZv84",
-        "cJwXjAKA0-k",
-        "zDtacZ_qT0Y",
-        "N6qK7AUqn54",
-        "1fn9RPaSFvM",
-        "L0KEJ_zq0Ak",
-        "lr1GJQXbj4c",
-        "xMbY5fkmK0A"
-      ],
-      "related_imported_ids": [
-        "7Odyxk-S9f0",
-        "d-msiY5zz5A"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "effortless-fun-cozy-adventures",
       "title": "Effortless Fun — Cozy Narrative Adventures",
       "status": "continuing",
@@ -368,6 +344,13 @@
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-06-29"
+    },
+    {
+      "theme": "retrolook-vintage-classics",
+      "title": "RetroLook — Vintage Dungeon & Adventure Classics",
+      "parts_completed": 1,
+      "total_videos": 8,
+      "completed_date": "2026-06-30"
     }
   ],
   "rotation_index": 0

@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-30 — RetroLook: Vintage Dungeon & Adventure Classics (8 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `retrolook-vintage-classics` at rotation_index 0 (1st of the 3 series queued 2026-06-30), one_shot, vpb=8. All 8 video_ids drift-checked pending; full slate fetched in one go.
+- All 8 transcripts pulled cleanly (10,706 → 32,238 chars, 0 transient/permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/dragon-strike-1993-take-a-look/1860 (TSR's VHS-packed HeroQuest answer; secretly a fine RPG intro, 2019-02-21, 191w)
+  - https://dungeondive.quest/t/retrolook-dragonfire-1992/1861 (Heartbreaker's not-good-but-charming HeroQuest clone, 2020-05-09, 203w)
+  - https://dungeondive.quest/t/dungeons-dragons-dragon-quest-retrolook/1864 (TSR's art-soaked D&D on-ramp; teaches THAC0, 2020-09-02, 170w)
+  - https://dungeondive.quest/t/dark-world-1992-retrolook/1859 (Mattel's stunning toy castle wrapped around a hollow game, 2020-09-15, 179w)
+  - https://dungeondive.quest/t/tsrs-the-classic-dungeon-retrolook/1857 (the 1975 ur-dungeon reissued; basic but iconic board, 2020-10-18, 184w)
+  - https://dungeondive.quest/t/a-look-at-barbarian-prince-a-stone-cold-classic-of-solo-adventure-gaming/1858 (the free 1981 solo classic; getting lost is half the game, 2022-01-02, 176w)
+  - https://dungeondive.quest/t/minion-hunter-a-dark-conspiracy-game-retrolook-w-the-minion-nation-expansion/1862 (1992 GDW Talisman-meets-Arkham co-op; dry, begs a reprint, 2024-06-04, 183w)
+  - https://dungeondive.quest/t/the-hobbit-adventure-board-game-1995-retrolook/1863 (ICE Talisman-style Middle-earth race; gorgeous McBride cover, 2024-07-07, 180w)
+- Keeper series post (~228w prose / series register; Exhibit Catalogue integrates the 2 `related_imported_ids` — Talisman Casual Let's Play, Advanced HeroQuest — with the 8 new posts, 10 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/90.
+- Stats: 1035 total, 657 imported, 368 pending, 10 no_transcript.
+- `series_queue.json`: `retrolook-vintage-classics` moved to `completed_series` (parts_completed: 1, total_videos: 8, completed_date: 2026-06-30). rotation_index stays 0, now pointing at `effortless-fun-cozy-adventures`. 2 series remain queued (effortless-fun-cozy-adventures, survival-wilderness-crawls).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-29 — Draw Your Own Dungeon: Map-Making Solo Games (4 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `map-making-solo-games` at rotation_index 0 (4th and last of the series queued 2026-06-26), one_shot, vpb=4. All 4 video_ids drift-checked pending; full slate fetched in one go.
 - All 4 transcripts pulled cleanly (10,945 → 24,004 chars, 0 transient/permanent failures).
