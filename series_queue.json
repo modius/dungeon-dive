@@ -1,5 +1,77 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "retrolook-vintage-classics",
+      "title": "RetroLook — Vintage Dungeon & Adventure Classics",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "UhuJQBAZv84",
+        "cJwXjAKA0-k",
+        "zDtacZ_qT0Y",
+        "N6qK7AUqn54",
+        "1fn9RPaSFvM",
+        "L0KEJ_zq0Ak",
+        "lr1GJQXbj4c",
+        "xMbY5fkmK0A"
+      ],
+      "related_imported_ids": [
+        "7Odyxk-S9f0",
+        "d-msiY5zz5A"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "effortless-fun-cozy-adventures",
+      "title": "Effortless Fun — Cozy Narrative Adventures",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "MhZ5AKwboh0",
+        "yrJ1mvA6eIM",
+        "2bY_4Ut49J8",
+        "AgcnylfczPE",
+        "Lk6JhpGO69M",
+        "ZE9ENcHPRr8"
+      ],
+      "related_imported_ids": [
+        "FlGf6zZGtkk",
+        "sZhgf8PQ5gc",
+        "Gjf4AsYGwU8"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "survival-wilderness-crawls",
+      "title": "Survival & Wilderness Crawls",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "mkJ-QgvLtyk",
+        "AKDQisHl8Ek",
+        "lN4Nv7R4sBI",
+        "iEHsfr9bvpg",
+        "ZG72S1_wBC0",
+        "99bQhxWPWuo",
+        "2qZb4PtGQUg"
+      ],
+      "related_imported_ids": [
+        "pUPzkqLt5WM",
+        "OHt_00p2dmY",
+        "St5jhqEeasY"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
