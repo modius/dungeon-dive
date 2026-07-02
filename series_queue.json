@@ -1,29 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "effortless-fun-cozy-adventures",
-      "title": "Effortless Fun — Cozy Narrative Adventures",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "MhZ5AKwboh0",
-        "yrJ1mvA6eIM",
-        "2bY_4Ut49J8",
-        "AgcnylfczPE",
-        "Lk6JhpGO69M",
-        "ZE9ENcHPRr8"
-      ],
-      "related_imported_ids": [
-        "FlGf6zZGtkk",
-        "sZhgf8PQ5gc",
-        "Gjf4AsYGwU8"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "survival-wilderness-crawls",
       "title": "Survival & Wilderness Crawls",
       "status": "continuing",
@@ -350,6 +327,13 @@
       "title": "RetroLook — Vintage Dungeon & Adventure Classics",
       "parts_completed": 1,
       "total_videos": 8,
+      "completed_date": "2026-06-30"
+    },
+    {
+      "theme": "effortless-fun-cozy-adventures",
+      "title": "Effortless Fun — Cozy Narrative Adventures",
+      "parts_completed": 1,
+      "total_videos": 6,
       "completed_date": "2026-06-30"
     }
   ],

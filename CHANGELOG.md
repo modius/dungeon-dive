@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-06-30 — Effortless Fun: Cozy Narrative Adventures (6 videos)
+- Decision tree: 0 priority pending in last 14 days → queue drain. `effortless-fun-cozy-adventures` at rotation_index 0 (2nd of the 3 series queued 2026-06-30), one_shot, vpb=6. All 6 video_ids drift-checked pending; full slate fetched in one go.
+- All 6 transcripts pulled cleanly (14,786 → 23,910 chars, 0 transient/permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/roll-player-adventures-effortless-fun/1869 (the game that coined "effortless fun"; fail-forward gamebook hybrid, 2022-01-26, 202w)
+  - https://dungeondive.quest/t/dice-throne-adventures-a-great-game-that-can-be-hard-to-recommend/1871 (Puzzle-Quest-style thematic Yahtzee; pricey expansion barrier, 2022-06-26, 201w)
+  - https://dungeondive.quest/t/lands-of-galzyr-initial-thoughts/1866 (open-world critter-crawl; initial thoughts, 2022-12-07, 194w)
+  - https://dungeondive.quest/t/lands-of-galzyr-a-wonder-of-design-and-adventure/1867 (the full review; near-top-10; static-character gripe, 2022-12-14, 193w)
+  - https://dungeondive.quest/t/quests-over-coffee-have-coffee-will-quest/1868 (tiny 10-minute Game Crafter quest game; indie humour, 2023-07-20, 183w)
+  - https://dungeondive.quest/t/five-nearly-effortlessly-fun-games/1870 (the manifesto top-list: Seven Moons, Escape the Dark Castle, Glory, Bin1, Galzyr, 2025-01-08, 177w)
+- Keeper series post (~221w prose / series register; Exhibit Catalogue integrates the 3 `related_imported_ids` — Sleeping Gods, Six Runebound Alternatives, Lands of Galzyr vs Freelancers vs Mansions — with the 6 new posts, 9 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/91.
+- Note: run was interrupted after posting/archiving (session exit); Keeper post, dashboard, queue drain, CHANGELOG and commit completed in a follow-up pass.
+- Stats: 1035 total, 663 imported, 362 pending, 10 no_transcript.
+- `series_queue.json`: `effortless-fun-cozy-adventures` moved to `completed_series` (parts_completed: 1, total_videos: 6, completed_date: 2026-06-30). rotation_index stays 0, now pointing at `survival-wilderness-crawls` (the last queued series).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-30 — RetroLook: Vintage Dungeon & Adventure Classics (8 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `retrolook-vintage-classics` at rotation_index 0 (1st of the 3 series queued 2026-06-30), one_shot, vpb=8. All 8 video_ids drift-checked pending; full slate fetched in one go.
 - All 8 transcripts pulled cleanly (10,706 → 32,238 chars, 0 transient/permanent failures).
