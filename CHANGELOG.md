@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-02 — Priority drop: Star Wars: Outer Rim — Hot Shots (1 video)
+- Decision tree: 1 priority pending in last 14 days (`0PBCtb7Va-c`, published 2026-07-01) → ad-hoc priority run. Queue **not** drained; `survival-wilderness-crawls` (rotation_index 0) waits one cycle.
+- Transcript pulled cleanly (16,735 chars, 0 transient/permanent failures).
+- Post: https://dungeondive.quest/t/star-wars-outer-rim-hotshots-expansion-overview/1877 (fan-made Captain Kiwi expansion overview; ~$150, non-essential, 2026-07-01, 203w).
+- Keeper priority-drop post (~180w alert register; "From the deeper stacks" cross-refs 2 Star Wars videos — Mandalorian Adventures: Clan of Two (t/1720), The Mandalorian Adventures review (t/175)): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/92.
+- Stats: 1036 total, 664 imported, 362 pending, 10 no_transcript.
+- `series_queue.json` untouched (priority runs never mutate the queue).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-06-30 — Effortless Fun: Cozy Narrative Adventures (6 videos)
 - Decision tree: 0 priority pending in last 14 days → queue drain. `effortless-fun-cozy-adventures` at rotation_index 0 (2nd of the 3 series queued 2026-06-30), one_shot, vpb=6. All 6 video_ids drift-checked pending; full slate fetched in one go.
 - All 6 transcripts pulled cleanly (14,786 → 23,910 chars, 0 transient/permanent failures).
