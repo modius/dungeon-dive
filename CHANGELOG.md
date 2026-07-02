@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-02 — Survival & Wilderness Crawls (7 videos) — queue drain, series complete
+- Pre-flight: `fetch_channel_videos.py` hit transient SSL EOF errors (`www.googleapis.com`) on first two attempts; curl confirmed network healthy; succeeded on retry (0 new videos). Noted as intermittent TLS flakiness, not a quota/config issue.
+- Decision tree: 0 priority pending in last 14 days → queue drain. `survival-wilderness-crawls` at rotation_index 0 (one_shot, vpb=7). All 7 video_ids drift-checked pending; full slate fetched in one go.
+- Transcripts: 7/7 pulled cleanly (266 → 45,843 chars, 0 transient/permanent failures). Note: `iEHsfr9bvpg` (Robinson Crusoe) is a genuine ~15-second teaser clip (56 words) — real transcript, not a failure; posted as an honest 79-word teaser rather than padding to the 150-word floor.
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/spire-s-end-take-a-look/1884 (Spire's End card adventure; 2020-09-23, 191w)
+  - https://dungeondive.quest/t/a-look-at-rocky-mountain-man-a-game-of-wilderness-exploration-and-survival/1880 (1800s fur-trapper hex crawl; 2021-11-09, 183w)
+  - https://dungeondive.quest/t/a-look-at-unbroken-a-solo-survival-resource-management-dungeon-crawl/1883 (solo survival/revenge, euro-tight; 2022-04-12, 175w)
+  - https://dungeondive.quest/t/it-s-finally-time-for-robinson-crusoe/1882 (teaser clip; 2022-09-06, 79w)
+  - https://dungeondive.quest/t/a-look-at-spires-end-hildegard/1881 (standalone follow-up, slingshot dice; 2022-11-09, 176w)
+  - https://dungeondive.quest/t/broken-shores-aka-godshard-an-exhaustive-look-at-this-brutal-nautical-fantasy-survival-solo-rpg/1879 (drowned-world D100 RPG; 2023-04-21, 184w)
+  - https://dungeondive.quest/t/posthuman-saga-humans-vs-mutants-in-a-struggle-for-survival/1878 (competitive post-apoc survival; 2023-12-12, 187w)
+- Keeper series post (~250w prose / series register; Exhibit Catalogue integrates the 3 `related_imported_ids` — Fallen Land: Take a Look (t/1595), Critter Crawl: Aftermath (t/1634), Returning to Fallen Land (t/1590) — with the 7 new posts, 10 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/93.
+- Stats: 1036 total, 671 imported, 355 pending, 10 no_transcript. Archive: 592 transcripts, 671 posts.
+- `series_queue.json`: `survival-wilderness-crawls` moved to `completed_series` (parts_completed: 1, total_videos: 7, completed_date: 2026-07-02). `active_series` now empty; rotation_index reset to 0. **Queue is empty — run `/plan-batch` before the next drain.**
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-02 — Priority drop: Star Wars: Outer Rim — Hot Shots (1 video)
 - Decision tree: 1 priority pending in last 14 days (`0PBCtb7Va-c`, published 2026-07-01) → ad-hoc priority run. Queue **not** drained; `survival-wilderness-crawls` (rotation_index 0) waits one cycle.
 - Transcript pulled cleanly (16,735 chars, 0 transient/permanent failures).

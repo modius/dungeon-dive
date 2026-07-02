@@ -163,7 +163,7 @@
   <div class="chart-card">
     <div class="chart-title">Taxonomy Tag Cloud</div>
     <div class="tag-cloud" id="tagCloud"></div>
-    <p class="chart-note">Based on 664 analyzed videos — tag size reflects frequency across all content</p>
+    <p class="chart-note">Based on 649 analyzed videos — tag size reflects frequency across all content</p>
   </div>
 
   <!-- Top Games Chart -->
@@ -172,7 +172,7 @@
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="topGamesChart"></canvas>
     </div>
-    <p class="chart-note">Based on 664 analyzed videos — primary game subject per video</p>
+    <p class="chart-note">Based on 649 analyzed videos — primary game subject per video</p>
   </div>
 
   <!-- Themes + Player Modes + Formats -->
@@ -228,65 +228,65 @@
 <script>
 // ── Embedded data (updated by update_dashboard.py + analyze_content.py) ──
 
-const topGames = [["Shadows of Brimstone", 57], ["Warhammer Quest", 35], ["Arkham Horror", 28], ["Vantage", 25], ["Four Against Darkness", 24], ["Rove", 21], ["Mork Borg", 20], ["League of Dungeoneers", 19], ["Scarlet Heroes", 18], ["Talisman", 16], ["Legendary", 14], ["Dungeon Degenerates", 14], ["Runebound", 12], ["HeroQuest", 11], ["HEXplore It", 10], ["Warhammer Quest - Let\u2019s Play", 8], ["City of Chaos", 8], ["Cthulhu: Death May Die", 6], ["Fallen Land", 6], ["Pauper's Ladder", 6], ["Advanced HeroQuest", 6], ["Darklight Memento Mori", 6], ["Dark Venture", 5], ["Blackstone Fortress", 5], ["Descent", 5]];
+const topGames = [["Shadows of Brimstone", 57], ["Warhammer Quest", 34], ["Arkham Horror", 27], ["Four Against Darkness", 25], ["Vantage", 24], ["Rove", 21], ["Mork Borg", 20], ["Scarlet Heroes", 18], ["League of Dungeoneers", 18], ["Talisman", 17], ["Legendary", 14], ["Dungeon Degenerates", 14], ["Runebound", 11], ["HeroQuest", 10], ["HEXplore It", 10], ["Warhammer Quest - Let\u2019s Play", 8], ["City of Chaos", 8], ["Fallen Land", 7], ["Cthulhu: Death May Die", 6], ["Pauper's Ladder", 6], ["Advanced HeroQuest", 6], ["Darklight Memento Mori", 6], ["Dark Venture", 5], ["Blackstone Fortress", 5], ["Descent", 5]];
 
-const categories = {"overview": 440, "review": 391, "lets-play": 273, "comparison": 247, "crowdfund-preview": 201, "unboxing": 171, "discussion": 146, "deep-dive": 146, "tutorial": 119, "top-list": 117, "digital-dive": 97, "buyers-guide": 91, "dungeon-crawler": 453, "rpg": 371, "campaign": 344, "miniatures": 285, "sandbox": 111, "hex-crawl": 80, "wargame": 64, "card-game": 55, "press-your-luck": 52, "dice-game": 49, "deck-builder": 29, "tower-defense": 15, "tile-laying": 11};
+const categories = {"overview": 430, "review": 378, "lets-play": 266, "comparison": 239, "crowdfund-preview": 195, "unboxing": 164, "deep-dive": 145, "discussion": 144, "top-list": 115, "tutorial": 114, "digital-dive": 96, "buyers-guide": 88, "dungeon-crawler": 441, "rpg": 362, "campaign": 336, "miniatures": 277, "sandbox": 108, "hex-crawl": 80, "wargame": 64, "card-game": 54, "press-your-luck": 52, "dice-game": 49, "deck-builder": 28, "tower-defense": 15, "tile-laying": 11};
 
-const tagCloud = [["tabletop", 463], ["dungeon-crawler", 453], ["overview", 440], ["fantasy", 433], ["solo", 422], ["review", 391], ["rpg", 371], ["campaign", 344], ["horror", 288], ["miniatures", 285], ["lets-play", 273], ["comparison", 247], ["crowdfund-preview", 201], ["digital", 188], ["unboxing", 171], ["discussion", 146], ["deep-dive", 146], ["classic", 138], ["cooperative", 127], ["tutorial", 119], ["top-list", 117], ["sci-fi", 117], ["sandbox", 111], ["digital-dive", 97], ["competitive", 97], ["modern", 96], ["buyers-guide", 91], ["hex-crawl", 80], ["post-apocalyptic", 75], ["western", 74], ["pirate", 66], ["wargame", 64], ["card-game", 55], ["press-your-luck", 52], ["dice-game", 49], ["deck-builder", 29], ["two-player", 26], ["tower-defense", 15], ["steampunk", 11], ["tile-laying", 11], ["mythology", 10], ["print-and-play", 10]];
+const tagCloud = [["tabletop", 451], ["dungeon-crawler", 441], ["overview", 430], ["fantasy", 422], ["solo", 413], ["review", 378], ["rpg", 362], ["campaign", 336], ["horror", 285], ["miniatures", 277], ["lets-play", 266], ["comparison", 239], ["crowdfund-preview", 195], ["digital", 184], ["unboxing", 164], ["deep-dive", 145], ["discussion", 144], ["classic", 130], ["cooperative", 122], ["sci-fi", 116], ["top-list", 115], ["tutorial", 114], ["sandbox", 108], ["digital-dive", 96], ["competitive", 92], ["modern", 91], ["buyers-guide", 88], ["hex-crawl", 80], ["western", 74], ["post-apocalyptic", 74], ["pirate", 66], ["wargame", 64], ["card-game", 54], ["press-your-luck", 52], ["dice-game", 49], ["deck-builder", 28], ["two-player", 26], ["tower-defense", 15], ["steampunk", 11], ["tile-laying", 11], ["mythology", 10], ["print-and-play", 10]];
 
-const themeData = [["fantasy", 433], ["horror", 288], ["sci-fi", 117], ["post-apocalyptic", 75], ["western", 74], ["pirate", 66], ["steampunk", 11], ["mythology", 10]];
+const themeData = [["fantasy", 422], ["horror", 285], ["sci-fi", 116], ["western", 74], ["post-apocalyptic", 74], ["pirate", 66], ["steampunk", 11], ["mythology", 10]];
 
-const playerModes = [["solo", 422], ["cooperative", 127], ["competitive", 97], ["two-player", 26]];
+const playerModes = [["solo", 413], ["cooperative", 122], ["competitive", 92], ["two-player", 26]];
 
 const keeperPosts = [
   {
     "theme": "The Shadowbrook Dossier",
-    "date": "2026-06-30",
+    "date": "2026-05-23",
     "count": 1
   },
   {
     "theme": "Aftermath",
-    "date": "2026-06-30",
+    "date": "2026-05-12",
     "count": 8
   },
   {
     "theme": "The Gates of Arkham (Mythos, Part I)",
-    "date": "2026-06-30",
+    "date": "2026-04-18",
     "count": 0
   },
   {
     "theme": "The Holy Grail, Cracked Open",
-    "date": "2026-06-30",
+    "date": "2026-06-15",
     "count": 11
   },
   {
     "theme": "The Adventurer's Diary",
-    "date": "2026-06-30",
+    "date": "2026-05-15",
     "count": 0
   },
   {
     "theme": "A Despatch from the Dark Ice Cabinet",
-    "date": "2026-06-30",
+    "date": "2026-05-14",
     "count": 0
   },
   {
     "theme": "Dungeon Crusade",
-    "date": "2026-06-30",
+    "date": "2026-05-09",
     "count": 5
   },
   {
     "theme": "Dungeon Crusade",
-    "date": "2026-06-30",
+    "date": "2026-05-08",
     "count": 6
   },
   {
     "theme": "Dungeon Degenerates: The Hand of Doom",
-    "date": "2026-06-30",
+    "date": "2026-03-29",
     "count": 11
   },
   {
     "theme": "Dungeon Universalis",
-    "date": "2026-06-30",
+    "date": "2026-05-07",
     "count": 7
   },
   {
@@ -296,192 +296,192 @@ const keeperPosts = [
   },
   {
     "theme": "Dealt by Candlelight",
-    "date": "2026-06-30",
+    "date": "2026-06-29",
     "count": 8
   },
   {
     "theme": "The Dreams Quartet",
-    "date": "2026-06-30",
+    "date": "2026-06-08",
     "count": 4
   },
   {
     "theme": "Fallen Land",
-    "date": "2026-06-30",
+    "date": "2026-05-06",
     "count": 6
   },
   {
     "theme": "Folklore the Affliction",
-    "date": "2026-06-30",
+    "date": "2026-05-11",
     "count": 6
   },
   {
     "theme": "Turn to Section One",
-    "date": "2026-06-30",
+    "date": "2026-06-13",
     "count": 5
   },
   {
     "theme": "A Shelf of Tin",
-    "date": "2026-06-30",
+    "date": "2026-05-19",
     "count": 1
   },
   {
     "theme": "HeroQuest: The Obligatory Pilgrimage, Part II",
-    "date": "2026-06-30",
+    "date": "2026-03-31",
     "count": 15
   },
   {
     "theme": "HeroQuest: The Obligatory Pilgrimage",
-    "date": "2026-06-30",
+    "date": "2026-03-29",
     "count": 8
   },
   {
     "theme": "HEXplore It",
-    "date": "2026-06-30",
+    "date": "2026-03-29",
     "count": 10
   },
   {
     "theme": "The Sealed Bulkhead",
-    "date": "2026-06-30",
+    "date": "2026-06-24",
     "count": 10
   },
   {
     "theme": "The Brother Quint Dossier",
-    "date": "2026-06-30",
+    "date": "2026-06-08",
     "count": 3
   },
   {
     "theme": "Lone Torchlight in the Deep",
-    "date": "2026-06-30",
+    "date": "2026-06-23",
     "count": 10
   },
   {
     "theme": "The Monster Monologues",
-    "date": "2026-06-30",
+    "date": "2026-06-10",
     "count": 4
   },
   {
     "theme": "The League of Dungeoneers",
-    "date": "2026-06-30",
+    "date": "2026-04-29",
     "count": 0
   },
   {
     "theme": "The League of Dungeoneers",
-    "date": "2026-06-30",
+    "date": "2026-04-30",
     "count": 0
   },
   {
     "theme": "Machina Arcana",
-    "date": "2026-06-30",
+    "date": "2026-05-11",
     "count": 4
   },
   {
     "theme": "The Cartographer's Consignment",
-    "date": "2026-06-30",
+    "date": "2026-06-29",
     "count": 9
   },
   {
     "theme": "In Defence of the Unloved",
-    "date": "2026-06-30",
+    "date": "2026-06-11",
     "count": 3
   },
   {
     "theme": "The Plastic Tide",
-    "date": "2026-06-30",
+    "date": "2026-06-26",
     "count": 10
   },
   {
     "theme": "Beyond Arkham (Mythos, Part II)",
-    "date": "2026-06-30",
+    "date": "2026-04-20",
     "count": 0
   },
   {
     "theme": "One thing I love about...",
-    "date": "2026-06-30",
+    "date": "2026-05-13",
     "count": 5
   },
   {
     "theme": "A Ladder Built for the Lowly",
-    "date": "2026-06-30",
+    "date": "2026-06-22",
     "count": 7
   },
   {
     "theme": "Two Despatches from the Solo Frontier",
-    "date": "2026-06-30",
+    "date": "2026-04-28",
     "count": 0
   },
   {
     "theme": "A Single Despatch from the Cimmerian Frontier",
-    "date": "2026-06-30",
+    "date": "2026-04-30",
     "count": 0
   },
   {
     "theme": "A Single Despatch from the Solo Frontier",
-    "date": "2026-06-30",
+    "date": "2026-05-04",
     "count": 0
   },
   {
     "theme": "A Despatch from the Oracle Stacks",
-    "date": "2026-06-30",
+    "date": "2026-05-07",
     "count": 0
   },
   {
     "theme": "A Despatch from a Tailor's Shop",
-    "date": "2026-06-30",
+    "date": "2026-05-11",
     "count": 0
   },
   {
     "theme": "A Despatch from the Calibration Bench",
-    "date": "2026-06-30",
+    "date": "2026-05-14",
     "count": 0
   },
   {
     "theme": "A Despatch from the Order of Craygors",
-    "date": "2026-06-30",
+    "date": "2026-05-18",
     "count": 0
   },
   {
     "theme": "A Courier in Toxic Goo",
-    "date": "2026-06-30",
+    "date": "2026-05-21",
     "count": 0
   },
   {
     "theme": "A Despatch from the Exclusion Zone",
-    "date": "2026-06-30",
+    "date": "2026-05-27",
     "count": 0
   },
   {
     "theme": "Two Parcels at the Gate",
-    "date": "2026-06-30",
+    "date": "2026-06-08",
     "count": 0
   },
   {
     "theme": "A Despatch from the Outer Rim",
-    "date": "2026-06-30",
+    "date": "2026-06-08",
     "count": 2
   },
   {
     "theme": "A Damp Parcel, Filed Under Regret",
-    "date": "2026-06-30",
+    "date": "2026-06-08",
     "count": 0
   },
   {
     "theme": "A Despatch from the Field, Net Still Damp",
-    "date": "2026-06-30",
+    "date": "2026-06-11",
     "count": 0
   },
   {
     "theme": "A Parcel of Cartridges and Cathode Light",
-    "date": "2026-06-30",
+    "date": "2026-06-15",
     "count": 1
   },
   {
     "theme": "A Return to Shadowbrook",
-    "date": "2026-06-30",
+    "date": "2026-06-18",
     "count": 3
   },
   {
     "theme": "A Tale Forty Years in the Telling",
-    "date": "2026-06-30",
+    "date": "2026-06-22",
     "count": 2
   },
   {
@@ -491,22 +491,22 @@ const keeperPosts = [
   },
   {
     "theme": "The Map with the Torn Corner",
-    "date": "2026-06-30",
+    "date": "2026-06-24",
     "count": 11
   },
   {
     "theme": "The Ran(King) of King",
-    "date": "2026-06-30",
+    "date": "2026-06-18",
     "count": 7
   },
   {
     "theme": "The Ran(King) of King",
-    "date": "2026-06-30",
+    "date": "2026-06-19",
     "count": 6
   },
   {
     "theme": "A Hermit's Manuscript, Hand-Delivered",
-    "date": "2026-06-30",
+    "date": "2026-06-29",
     "count": 3
   },
   {
@@ -516,127 +516,132 @@ const keeperPosts = [
   },
   {
     "theme": "A Courier, Out of Breath",
-    "date": "2026-06-30",
+    "date": "2026-06-26",
     "count": 3
   },
   {
     "theme": "Scarlet Heroes: The Peril of Cymbaline Isle",
-    "date": "2026-06-30",
+    "date": "2026-05-04",
     "count": 0
   },
   {
     "theme": "Scarlet Heroes: The Peril of Cymbaline Isle",
-    "date": "2026-06-30",
+    "date": "2026-05-04",
     "count": 0
   },
   {
     "theme": "On the Materialisation of the Tomb",
-    "date": "2026-06-30",
+    "date": "2026-05-18",
     "count": 2
   },
   {
     "theme": "Shadows of Brimstone: Into the Mines",
-    "date": "2026-06-30",
+    "date": "2026-04-04",
     "count": 10
   },
   {
     "theme": "Shadows of Brimstone: Through the Portals",
-    "date": "2026-06-30",
+    "date": "2026-04-08",
     "count": 8
   },
   {
     "theme": "Shadows of Brimstone: Allies, Enemies & Bosses",
-    "date": "2026-06-30",
+    "date": "2026-04-10",
     "count": 10
   },
   {
     "theme": "Shadows of Brimstone: Hex Crawl & the Hobby",
-    "date": "2026-06-30",
+    "date": "2026-04-15",
     "count": 8
   },
   {
     "theme": "Shadows of Brimstone: The Final Descent",
-    "date": "2026-06-30",
+    "date": "2026-04-17",
     "count": 8
   },
   {
     "theme": "A Chart of the Wandering Sea",
-    "date": "2026-06-30",
+    "date": "2026-06-10",
     "count": 4
   },
   {
     "theme": "Big Adventures, Tiny Footprints",
-    "date": "2026-06-30",
+    "date": "2026-06-18",
     "count": 12
   },
   {
     "theme": "The Small Cabinet",
-    "date": "2026-06-30",
+    "date": "2026-06-08",
     "count": 10
   },
   {
     "theme": "The Friday Ledger",
-    "date": "2026-06-30",
+    "date": "2026-06-09",
     "count": 11
   },
   {
     "theme": "The Toolkit Drawer",
-    "date": "2026-06-30",
+    "date": "2026-06-08",
     "count": 13
   },
   {
     "theme": "The Toolmaker's Drawer",
-    "date": "2026-06-30",
+    "date": "2026-06-12",
+    "count": 10
+  },
+  {
+    "theme": "Provisions for the Long Dark",
+    "date": "2026-07-02",
     "count": 10
   },
   {
     "theme": "The Sword & Sorcery Saga",
-    "date": "2026-06-30",
+    "date": "2026-03-29",
     "count": 11
   },
   {
     "theme": "The Lists",
-    "date": "2026-06-30",
+    "date": "2026-03-29",
     "count": 12
   },
   {
     "theme": "The Top 50",
-    "date": "2026-06-30",
+    "date": "2026-05-05",
     "count": 6
   },
   {
     "theme": "The Cartridge in the Cardboard",
-    "date": "2026-06-30",
+    "date": "2026-06-26",
     "count": 13
   },
   {
     "theme": "Warhammer Quest: The Undisputed King",
-    "date": "2026-06-30",
+    "date": "2026-04-01",
     "count": 10
   },
   {
     "theme": "Warhammer Quest: The Undisputed King",
-    "date": "2026-06-30",
+    "date": "2026-04-07",
     "count": 8
   },
   {
     "theme": "Warhammer Quest: The Undisputed King",
-    "date": "2026-06-30",
+    "date": "2026-04-09",
     "count": 10
   },
   {
     "theme": "Warhammer Quest: The Complete Excavation",
-    "date": "2026-06-30",
+    "date": "2026-04-13",
     "count": 10
   },
   {
     "theme": "See You, Space Cowboy",
-    "date": "2026-06-30",
+    "date": "2026-06-19",
     "count": 4
   }
 ];
 
-const weeklyImports = [["2018-01-01", 1], ["2022-01-10", 1], ["2022-01-31", 1], ["2022-05-30", 1], ["2022-06-27", 1], ["2022-07-04", 1], ["2022-07-18", 1], ["2022-07-25", 1], ["2022-08-15", 1], ["2022-11-14", 1], ["2023-01-16", 1], ["2023-01-23", 1], ["2023-01-30", 1], ["2023-02-06", 1], ["2023-03-27", 1], ["2023-05-29", 1], ["2023-07-17", 1], ["2023-09-25", 1], ["2023-12-11", 1], ["2024-01-08", 1], ["2024-01-22", 1], ["2024-01-29", 1], ["2024-06-03", 1], ["2024-06-17", 1], ["2024-07-08", 1], ["2024-07-15", 2], ["2024-07-29", 1], ["2024-08-05", 1], ["2024-08-12", 1], ["2024-08-19", 5], ["2024-08-26", 1], ["2024-09-02", 3], ["2024-09-09", 2], ["2024-09-16", 2], ["2024-09-23", 2], ["2024-09-30", 1], ["2024-10-07", 1], ["2024-10-14", 3], ["2024-10-28", 1], ["2024-11-04", 3], ["2024-11-18", 1], ["2024-11-25", 2], ["2024-12-09", 2], ["2024-12-16", 1], ["2024-12-23", 1], ["2024-12-30", 1], ["2025-03-03", 1], ["2025-03-10", 1], ["2025-03-24", 1], ["2025-04-21", 1], ["2025-05-05", 1], ["2025-05-19", 1], ["2025-06-16", 1], ["2026-01-26", 36], ["2026-02-02", 71], ["2026-02-09", 26], ["2026-02-23", 15], ["2026-03-09", 35], ["2026-03-23", 33], ["2026-03-30", 27], ["2026-04-06", 36], ["2026-04-13", 34], ["2026-04-20", 11], ["2026-04-27", 14], ["2026-05-04", 41], ["2026-05-11", 40], ["2026-05-18", 24], ["2026-05-25", 3], ["2026-06-01", 20], ["2026-06-08", 34], ["2026-06-15", 32], ["2026-06-22", 37], ["2026-06-29", 26]];
+const weeklyImports = [["2018-01-01", 1], ["2022-01-10", 1], ["2022-01-31", 1], ["2022-05-30", 1], ["2022-06-27", 1], ["2022-07-04", 1], ["2022-07-18", 1], ["2022-07-25", 1], ["2022-08-15", 1], ["2022-11-14", 1], ["2023-01-16", 1], ["2023-01-23", 1], ["2023-01-30", 1], ["2023-02-06", 1], ["2023-03-27", 1], ["2023-05-29", 1], ["2023-07-17", 1], ["2023-09-25", 1], ["2023-12-11", 1], ["2024-01-08", 1], ["2024-01-22", 1], ["2024-01-29", 1], ["2024-06-03", 1], ["2024-06-17", 1], ["2024-07-08", 1], ["2024-07-15", 2], ["2024-07-29", 1], ["2024-08-05", 1], ["2024-08-12", 1], ["2024-08-19", 5], ["2024-08-26", 1], ["2024-09-02", 3], ["2024-09-09", 2], ["2024-09-16", 2], ["2024-09-23", 2], ["2024-09-30", 1], ["2024-10-07", 1], ["2024-10-14", 3], ["2024-10-28", 1], ["2024-11-04", 3], ["2024-11-18", 1], ["2024-11-25", 2], ["2024-12-09", 2], ["2024-12-16", 1], ["2024-12-23", 1], ["2024-12-30", 1], ["2025-03-03", 1], ["2025-03-10", 1], ["2025-03-24", 1], ["2025-04-21", 1], ["2025-05-05", 1], ["2025-05-19", 1], ["2025-06-16", 1], ["2026-01-26", 36], ["2026-02-02", 71], ["2026-02-09", 26], ["2026-02-23", 15], ["2026-03-09", 35], ["2026-03-23", 33], ["2026-03-30", 27], ["2026-04-06", 36], ["2026-04-13", 34], ["2026-04-20", 11], ["2026-04-27", 14], ["2026-05-04", 41], ["2026-05-11", 40], ["2026-05-18", 24], ["2026-05-25", 3], ["2026-06-01", 20], ["2026-06-08", 34], ["2026-06-15", 32], ["2026-06-22", 37], ["2026-06-29", 33]];
 
 // ── Chart defaults ──
 Chart.defaults.color = '#8b8fa3';
