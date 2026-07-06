@@ -1,31 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "zombie-undead-survival",
-      "title": "Zombie & Undead Survival",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 8,
-      "video_ids": [
-        "hsiq1QlJqCs",
-        "V3IHs2DwX0U",
-        "UZ3583GSSOo",
-        "k3yhL30Kpnw",
-        "j3BrzaBGJqY",
-        "wpWCpGTZE2A",
-        "dv-40oFi5ak",
-        "uk5ADKNqHoc"
-      ],
-      "related_imported_ids": [
-        "a8g5MvFPwxo",
-        "s2GjWfPbh9I",
-        "-pXsceBZ-uI"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "wander-barnacle-bay",
       "title": "Wander: The Cult of Barnacle Bay — Complete Let's Play",
       "status": "continuing",
@@ -404,6 +379,13 @@
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-07-02"
+    },
+    {
+      "theme": "zombie-undead-survival",
+      "title": "Zombie & Undead Survival",
+      "parts_completed": 1,
+      "total_videos": 8,
+      "completed_date": "2026-07-07"
     }
   ],
   "rotation_index": 0

@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-07 — Zombie & Undead Survival (8 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days → queue drain. `zombie-undead-survival` at rotation_index 0 (first of 4 series queued 2026-07-06), one_shot, vpb=8. All 8 video_ids drift-checked pending; full slate fetched in one go.
+- Transcripts: 8/8 pulled cleanly (12,291 → 60,793 chars, 0 transient/permanent failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/zombicide-black-plague-friends-and-foes-and-no-rest-for-the-wicked/1891 (Black Plague expansions overview; 2018-10-23, 193w)
+  - https://dungeondive.quest/t/let-s-objectify-some-plastic-featuring-zombicide-invader/1889 (Invader mini/party showcase; 2020-08-10, 185w)
+  - https://dungeondive.quest/t/zombicide-invader-review/1888 (Invader review — Daniel's farewell to the franchise; 2020-08-16, 203w)
+  - https://dungeondive.quest/t/carnival-zombie-second-edition-a-low-effort-unboxing-a-tower-defense-survival-zombie-game/1893 (Carnival Zombie 2E unboxing; 2022-08-30, 188w)
+  - https://dungeondive.quest/t/carnival-zombie-2nd-edition-initial-thoughts-on-the-agonizing-choices/1892 (Carnival Zombie 2E initial thoughts; 2022-09-06, 196w)
+  - https://dungeondive.quest/t/pandemonium-a-few-things-i-like-about-this-flawed-horror-survival-game/1895 (Pandemonium — B-movie horror survival; 2022-10-18, 190w)
+  - https://dungeondive.quest/t/last-night-on-earth-soloing-the-zombie-apocalypse/1890 (Last Night on Earth solo deep-dive; 2024-10-27, 198w)
+  - https://dungeondive.quest/t/last-night-on-earth-the-zombie-game-a-look-at-the-web-exclusive-expansions/1894 (LNoE web expansions; 2024-10-29, 196w)
+- Keeper series post (~250w prose / series register; Exhibit Catalogue integrates the 3 `related_imported_ids` — Walking Dead Universe RPG (t/1643), Here's Negan (t/1645), ZomBN1 (t/606) — with the 8 new posts, 11 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/95.
+- Stats: 1037 total, 680 imported, 347 pending, 10 no_transcript. Archive: 601 transcripts, 680 posts.
+- `series_queue.json`: `zombie-undead-survival` moved to `completed_series` (parts_completed: 1, total_videos: 8, completed_date: 2026-07-07). Removed from `active_series`; the 3 remaining series shift forward, so rotation_index stays 0 → now `wander-barnacle-bay` (preserves queued FIFO order). 3 series / 20 videos remain queued.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-06 — Priority drop: Corrupted Crypts (1 video)
 - Decision tree: 1 priority pending in last 14 days (`uNX13pgpGBU`, published 2026-07-05) → ad-hoc priority run. Queue **not** drained; `zombie-undead-survival` (rotation_index 0, first of 4 series queued 2026-07-06) waits one cycle.
 - Transcript pulled cleanly (22,800 chars, 0 transient/permanent failures).
