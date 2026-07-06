@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-06 — Priority drop: Corrupted Crypts (1 video)
+- Decision tree: 1 priority pending in last 14 days (`uNX13pgpGBU`, published 2026-07-05) → ad-hoc priority run. Queue **not** drained; `zombie-undead-survival` (rotation_index 0, first of 4 series queued 2026-07-06) waits one cycle.
+- Transcript pulled cleanly (22,800 chars, 0 transient/permanent failures).
+- Post: https://dungeondive.quest/t/corrupted-crypts-solo-dungeon-crawl-review/1887 (War Claw Games solo card-crawl by Waclaw Trauer; 2026-07-05, 211w).
+- Keeper priority-drop post (~175w alert register; "From the deeper stacks" cross-refs 3 — Doom Pilgrim (t/1758) & Elder Space (t/1183), same designer, + Vanaheim (t/1841), fellow Game Crafter indie crawl): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/94.
+- Stats: 1037 total, 672 imported, 355 pending, 10 no_transcript. Archive: 593 transcripts, 672 posts.
+- `series_queue.json` untouched (priority runs never mutate the queue). 4 series remain queued (28 videos): zombie-undead-survival → wander-barnacle-bay → keepers-october-horror → 2024-solo-rpg-wave.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-02 — Survival & Wilderness Crawls (7 videos) — queue drain, series complete
 - Pre-flight: `fetch_channel_videos.py` hit transient SSL EOF errors (`www.googleapis.com`) on first two attempts; curl confirmed network healthy; succeeded on retry (0 new videos). Noted as intermittent TLS flakiness, not a quota/config issue.
 - Decision tree: 0 priority pending in last 14 days → queue drain. `survival-wilderness-crawls` at rotation_index 0 (one_shot, vpb=7). All 7 video_ids drift-checked pending; full slate fetched in one go.

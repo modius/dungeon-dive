@@ -1,5 +1,92 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "zombie-undead-survival",
+      "title": "Zombie & Undead Survival",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "hsiq1QlJqCs",
+        "V3IHs2DwX0U",
+        "UZ3583GSSOo",
+        "k3yhL30Kpnw",
+        "j3BrzaBGJqY",
+        "wpWCpGTZE2A",
+        "dv-40oFi5ak",
+        "uk5ADKNqHoc"
+      ],
+      "related_imported_ids": [
+        "a8g5MvFPwxo",
+        "s2GjWfPbh9I",
+        "-pXsceBZ-uI"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "wander-barnacle-bay",
+      "title": "Wander: The Cult of Barnacle Bay — Complete Let's Play",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "AaCd4amsV0U",
+        "F8PMKa1dz9g",
+        "de7gpeHMS1Q",
+        "D4p6nv2t2FA",
+        "GTD7cyckPnA"
+      ],
+      "related_imported_ids": [
+        "q4mgxHWrmLM"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "keepers-october-horror",
+      "title": "The Keeper's October — Horror Films & Reading Lists",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "ZA_G9BP9HLY",
+        "UKzsE2t00Jw",
+        "UiD0-skn904",
+        "87Vb6sa1KcY",
+        "RO6gVW9tdbY",
+        "tcomjtcMjLE",
+        "OcgJZnE1a6o"
+      ],
+      "related_imported_ids": [],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "2024-solo-rpg-wave",
+      "title": "The 2024–25 Solo RPG Wave",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "m6233lu5J9Q",
+        "-FJcDEQ2CB0",
+        "k1SjNJaOJcA",
+        "kYmLSudfROM",
+        "_r9bm8JLsKc",
+        "fFdiFTfeCwE",
+        "m1gcxwLGPos",
+        "_8p1UyvwmhI"
+      ],
+      "related_imported_ids": [],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
