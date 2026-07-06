@@ -5,6 +5,11 @@ name: Deploy dashboard to GitHub Pages
 # skills). This workflow uploads docs/ as-is and deploys it via the modern
 # Pages artifact flow — no Jekyll processing. It replaces the legacy
 # "deploy from a branch" build.
+#
+# Split into build + deploy jobs (the official GitHub pattern) so a deploy-only
+# re-run never re-uploads the artifact. GitHub Pages deployments occasionally
+# fail with a transient "Deployment failed, try again later" — when that
+# happens, re-run just the deploy job (gh run rerun <id> --job deploy).
 
 on:
   # Redeploy whenever the published site or this workflow changes.
@@ -13,8 +18,7 @@ on:
     paths:
       - 'docs/**'
       - '.github/workflows/pages.yml'
-  # Allow manual redeploys from the Actions tab (useful to retry a transient
-  # deployment failure without an empty commit).
+  # Allow manual redeploys from the Actions tab.
   workflow_dispatch:
 
 # Least-privilege token scoped for Pages deployment.
@@ -30,11 +34,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,6 +48,13 @@ jobs:
         with:
           path: docs
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
