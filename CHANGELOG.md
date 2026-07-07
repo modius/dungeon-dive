@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-07 — Wander: The Cult of Barnacle Bay (5 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days → queue drain. `wander-barnacle-bay` at rotation_index 0 (one_shot, vpb=5). All 5 video_ids drift-checked pending; full slate fetched in one go.
+- Transcripts: 5/5 pulled cleanly (12,038 → 22,252 chars, 0 transient/permanent failures). Complete single-game Let's Play; parts run 1 → 2 → 3 → 5 → 7 (Parts 4 & 6 never uploaded — flagged at plan-batch, catalogue renders the gap without comment).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/wander-the-cult-of-barnacle-bay-let-s-play-and-review-part-1/1897 (2019-10-29, 196w)
+  - https://dungeondive.quest/t/wander-the-cult-of-barnacle-bay-let-s-play-and-review-part-2/1899 (2019-11-01, 197w)
+  - https://dungeondive.quest/t/wander-the-cult-of-barnacle-bay-let-s-play-and-review-part-3/1901 (2019-11-03, 197w)
+  - https://dungeondive.quest/t/wander-the-cult-of-barnacle-bay-let-s-play-and-review-part-5/1898 (Part 5 — above-ground swarm, hero downed — 2019-11-12, 188w)
+  - https://dungeondive.quest/t/wander-the-cult-of-barnacle-bay-let-s-play-and-review-part-7/1900 (Part 7 finale/boss — 2019-11-18, 178w)
+- Keeper series post (~250w prose / series register; Exhibit Catalogue integrates the 1 `related_imported_id` — FOMO/Wander reflection (t/1552) — with the 5 new posts, 6 entries chronological by publish date): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/96.
+- Stats: 1037 total, 685 imported, 342 pending, 10 no_transcript. Archive: 606 transcripts, 685 posts.
+- `series_queue.json`: `wander-barnacle-bay` moved to `completed_series` (parts_completed: 1, total_videos: 5, completed_date: 2026-07-07). Removed from `active_series`; remaining 2 shift forward, rotation_index stays 0 → now `keepers-october-horror`. 2 series / 15 videos remain queued.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-07 — Zombie & Undead Survival (8 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days → queue drain. `zombie-undead-survival` at rotation_index 0 (first of 4 series queued 2026-07-06), one_shot, vpb=8. All 8 video_ids drift-checked pending; full slate fetched in one go.
 - Transcripts: 8/8 pulled cleanly (12,291 → 60,793 chars, 0 transient/permanent failures).

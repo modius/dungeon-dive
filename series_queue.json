@@ -1,26 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "wander-barnacle-bay",
-      "title": "Wander: The Cult of Barnacle Bay — Complete Let's Play",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "AaCd4amsV0U",
-        "F8PMKa1dz9g",
-        "de7gpeHMS1Q",
-        "D4p6nv2t2FA",
-        "GTD7cyckPnA"
-      ],
-      "related_imported_ids": [
-        "q4mgxHWrmLM"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "keepers-october-horror",
       "title": "The Keeper's October — Horror Films & Reading Lists",
       "status": "continuing",
@@ -385,6 +365,13 @@
       "title": "Zombie & Undead Survival",
       "parts_completed": 1,
       "total_videos": 8,
+      "completed_date": "2026-07-07"
+    },
+    {
+      "theme": "wander-barnacle-bay",
+      "title": "Wander: The Cult of Barnacle Bay — Complete Let's Play",
+      "parts_completed": 1,
+      "total_videos": 5,
       "completed_date": "2026-07-07"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-07-06T21:09:08.993302+00:00",
+  "last_fetched": "2026-07-07T00:44:17.004960+00:00",
   "videos": [
     {
       "video_id": "uNX13pgpGBU",
@@ -9172,9 +9172,9 @@
       "description": "",
       "published_at": "2019-11-18T20:39:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/GTD7cyckPnA/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1900,
+      "imported_at": "2026-07-07T00:47:07.353069Z"
     },
     {
       "video_id": "V2d8qoEGyEU",
@@ -9222,9 +9222,9 @@
       "description": "",
       "published_at": "2019-11-12T04:48:51Z",
       "thumbnail_url": "https://i.ytimg.com/vi/D4p6nv2t2FA/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1898,
+      "imported_at": "2026-07-07T00:46:57.102823Z"
     },
     {
       "video_id": "nRTuARH-N9A",
@@ -9252,9 +9252,9 @@
       "description": "",
       "published_at": "2019-11-03T18:49:46Z",
       "thumbnail_url": "https://i.ytimg.com/vi/de7gpeHMS1Q/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1901,
+      "imported_at": "2026-07-07T00:47:12.354851Z"
     },
     {
       "video_id": "F8PMKa1dz9g",
@@ -9262,9 +9262,9 @@
       "description": "",
       "published_at": "2019-11-01T03:09:45Z",
       "thumbnail_url": "https://i.ytimg.com/vi/F8PMKa1dz9g/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1899,
+      "imported_at": "2026-07-07T00:47:02.362333Z"
     },
     {
       "video_id": "AaCd4amsV0U",
@@ -9272,9 +9272,9 @@
       "description": "",
       "published_at": "2019-10-29T02:59:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/AaCd4amsV0U/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1897,
+      "imported_at": "2026-07-07T00:46:52.004189Z"
     },
     {
       "video_id": "SWoYNH7OMZI",
