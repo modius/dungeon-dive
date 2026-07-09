@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-09 — Priority drop: Fixing Tedious Combat in Solo RPGs (1 video)
+- Decision tree: 1 priority pending in last 14 days (`roO2HBjdtQw`, published 2026-07-08) → ad-hoc priority run. Queue **not** drained; `keepers-october-horror` (rotation_index 0) waits one cycle.
+- Transcript pulled cleanly (0 transient/permanent failures).
+- Post: https://dungeondive.quest/t/fixing-tedious-combat-in-solo-rpgs/1902 (solo-RPG combat house-rules discussion; 2026-07-08, 205w).
+- Keeper priority-drop post (~150w alert register; "From the deeper stacks" cross-refs 3 — 2D6 Dungeon (t/1703), Scarlet Heroes/Cymbaline (t/1575), A Land in Peril (t/1756) — all directly referenced or thematically tight): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/97.
+- Stats: 1038 total, 686 imported, 342 pending, 10 no_transcript. Archive: 607 transcripts, 686 posts.
+- `series_queue.json` untouched (priority runs never mutate the queue). 2 series remain queued (15 videos): keepers-october-horror → 2024-solo-rpg-wave.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-07 — Wander: The Cult of Barnacle Bay (5 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days → queue drain. `wander-barnacle-bay` at rotation_index 0 (one_shot, vpb=5). All 5 video_ids drift-checked pending; full slate fetched in one go.
 - Transcripts: 5/5 pulled cleanly (12,038 → 22,252 chars, 0 transient/permanent failures). Complete single-game Let's Play; parts run 1 → 2 → 3 → 5 → 7 (Parts 4 & 6 never uploaded — flagged at plan-batch, catalogue renders the gap without comment).

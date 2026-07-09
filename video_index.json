@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-07-07T00:44:17.004960+00:00",
+  "last_fetched": "2026-07-09T01:55:52.357774+00:00",
   "videos": [
+    {
+      "video_id": "roO2HBjdtQw",
+      "title": "Fixing Tedious Combat in Solo RPGs",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-07-08T16:00:05Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/roO2HBjdtQw/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1902,
+      "imported_at": "2026-07-09T01:57:24.057604Z"
+    },
     {
       "video_id": "uNX13pgpGBU",
       "title": "Corrupted Crypts - Solo Dungeon Crawl - Review",
