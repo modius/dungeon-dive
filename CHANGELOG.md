@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-07-10 — The Keeper's October: the lost parcel (1 video) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days → queue drain. `keepers-october-horror` at rotation_index 0 with a single remaining ID — `ZA_G9BP9HLY`, the transient `VideoUnplayable` failure from this morning's run. Retry succeeded cleanly (17,189 chars), confirming the failure was genuinely transient; no manual YouTube check needed.
+- Post: https://dungeondive.quest/t/five-one-killer-works-of-horror-to-read-in-october-2020/1910 (October 2020 horror reading list — Ligotti, Ducornet, Chambers, Prime Evil, To Sleep Perchance to Dream; 2020-09-27, 210w).
+- Keeper series post ("The Lost Parcel" — follows up the morning's October Annex post; 1-entry Exhibit Catalogue): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/99.
+- Stats: 1038 total, 693 imported, 335 pending, 10 no_transcript. Archive: 614 transcripts, 693 posts.
+- `series_queue.json`: `keepers-october-horror` drained empty → moved to `completed_series` (parts_completed: 2, total_videos: 7, completed_date: 2026-07-10). rotation_index advanced and wrapped to 0 → `2024-solo-rpg-wave` (8 videos) is next. 1 series remains queued.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-10 — The Keeper's October: Horror Films & Reading Lists (6 of 7 videos) — queue drain, partial
 - Decision tree: 0 priority pending in last 14 days → queue drain. `keepers-october-horror` at rotation_index 0 (one_shot, vpb=7). All 7 video_ids drift-checked pending; full slate attempted.
 - Transcripts: 6/7 pulled cleanly (3,991 → 35,608 chars). **1 transient failure:** `ZA_G9BP9HLY` ("Five (+ one) Killer Works of Horror to Read in October 2020") — `VideoUnplayable` ("This video is not available"), flagged `permanent: false` by the fetcher, so it stays `pending` and remains in the queue for the next cycle. If it fails again next run it may be delisted/region-locked on YouTube's side and worth a manual check.

@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-07-10T09:03:58.700358+00:00",
+  "last_fetched": "2026-07-10T11:16:57.049821+00:00",
   "videos": [
     {
       "video_id": "roO2HBjdtQw",
@@ -8052,9 +8052,9 @@
       "description": "Five (+ one) Killer Works of Horror to Read in October 2020\nMy Work is Not Yet Done, by Thomas Ligotti\nThe Complete Butcher's Tales, by Rikki Ducornet\nThe King in Yellow, by Robert W. Chambers\nPrime Evil, ed. Douglas E. Winter\nTo Sleep, Perchance to Dream...Nightmare, Barnes & Noble Books",
       "published_at": "2020-09-27T23:20:02Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ZA_G9BP9HLY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1910,
+      "imported_at": "2026-07-10T11:17:55.989799Z"
     },
     {
       "video_id": "IF966yryyqY",

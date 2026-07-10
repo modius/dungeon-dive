@@ -1,20 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "keepers-october-horror",
-      "title": "The Keeper's October — Horror Films & Reading Lists",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "ZA_G9BP9HLY"
-      ],
-      "related_imported_ids": [],
-      "last_part": 1,
-      "last_imported": "2026-07-10",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/98"
-    },
-    {
       "theme": "2024-solo-rpg-wave",
       "title": "The 2024–25 Solo RPG Wave",
       "status": "continuing",
@@ -367,6 +353,13 @@
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-07-07"
+    },
+    {
+      "theme": "keepers-october-horror",
+      "title": "The Keeper's October — Horror Films & Reading Lists",
+      "parts_completed": 2,
+      "total_videos": 7,
+      "completed_date": "2026-07-10"
     }
   ],
   "rotation_index": 0
