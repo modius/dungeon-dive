@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-10 — The Keeper's October: Horror Films & Reading Lists (6 of 7 videos) — queue drain, partial
+- Decision tree: 0 priority pending in last 14 days → queue drain. `keepers-october-horror` at rotation_index 0 (one_shot, vpb=7). All 7 video_ids drift-checked pending; full slate attempted.
+- Transcripts: 6/7 pulled cleanly (3,991 → 35,608 chars). **1 transient failure:** `ZA_G9BP9HLY` ("Five (+ one) Killer Works of Horror to Read in October 2020") — `VideoUnplayable` ("This video is not available"), flagged `permanent: false` by the fetcher, so it stays `pending` and remains in the queue for the next cycle. If it fails again next run it may be delisted/region-locked on YouTube's side and worth a manual check.
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/the-house-on-abigail-lane-and-others-horror-novella-round-up-for-october-10-2020/1907 (Burke/Cisco/Barker novella round-up; 2020-10-10, 199w)
+  - https://dungeondive.quest/t/horror-reading-list-for-october-2022-poltergeist-we-are-here-to-hurt-each-other-and-more/1908 (October 2022 reading list; 2022-09-30, 200w)
+  - https://dungeondive.quest/t/the-ten-greatest-my-favorite-horror-films-of-all-time-imo/1904 (top 10 horror films; 2022-10-07, 190w)
+  - https://dungeondive.quest/t/ghost-stories-taoist-monks-hopping-vampires-and-brides-with-white-hair/1906 (Ghost Stories board game review; 2022-10-13, 197w)
+  - https://dungeondive.quest/t/horror-themed-video-games-and-board-games-which-works-best-audio-only/1909 (horror in games essay; 2022-10-21, 186w)
+  - https://dungeondive.quest/t/the-dungeon-dive-reviews-31-1-horror-movies-watched-october-2022/1905 (31 (+1) October movie reviews; 2022-11-04, 190w)
+- Keeper series post (~250w prose / series register; Exhibit Catalogue of 6, chronological; no `related_imported_ids`): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/98.
+- Stats: 1038 total, 692 imported, 336 pending, 10 no_transcript. Archive: 613 transcripts, 692 posts.
+- `series_queue.json`: 6 IDs drained from `keepers-october-horror`; `ZA_G9BP9HLY` remains its sole video_id, so the series stays active (last_part → 1, last_imported 2026-07-10). rotation_index stays 0. 2 series / 9 videos remain queued: keepers-october-horror (1) → 2024-solo-rpg-wave (8).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-09 — Priority drop: Fixing Tedious Combat in Solo RPGs (1 video)
 - Decision tree: 1 priority pending in last 14 days (`roO2HBjdtQw`, published 2026-07-08) → ad-hoc priority run. Queue **not** drained; `keepers-october-horror` (rotation_index 0) waits one cycle.
 - Transcript pulled cleanly (0 transient/permanent failures).
