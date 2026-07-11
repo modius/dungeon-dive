@@ -1,27 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "2024-solo-rpg-wave",
-      "title": "The 2024–25 Solo RPG Wave",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 8,
-      "video_ids": [
-        "m6233lu5J9Q",
-        "-FJcDEQ2CB0",
-        "k1SjNJaOJcA",
-        "kYmLSudfROM",
-        "_r9bm8JLsKc",
-        "fFdiFTfeCwE",
-        "m1gcxwLGPos",
-        "_8p1UyvwmhI"
-      ],
-      "related_imported_ids": [],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -360,6 +338,13 @@
       "parts_completed": 2,
       "total_videos": 7,
       "completed_date": "2026-07-10"
+    },
+    {
+      "theme": "2024-solo-rpg-wave",
+      "title": "The 2024–25 Solo RPG Wave",
+      "parts_completed": 1,
+      "total_videos": 8,
+      "completed_date": "2026-07-12"
     }
   ],
   "rotation_index": 0

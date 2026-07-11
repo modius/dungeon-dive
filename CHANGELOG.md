@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-12 — The 2024–25 Solo RPG Wave (8 videos) — queue drain, series complete, queue now empty
+- Decision tree: 0 priority pending in last 14 days → queue drain. `2024-solo-rpg-wave` at rotation_index 0 (one_shot, vpb=8). All 8 video_ids drift-checked pending; full slate fetched in one go.
+- Transcripts: 8/8 pulled cleanly (18,426 → 66,322 chars, 0 transient/permanent failures). Note: `batch_fetch_transcripts.py` needs a `--` separator when an ID starts with a dash (`-FJcDEQ2CB0`) — argparse otherwise treats it as a flag and exits 2 without fetching anything.
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/a-solo-rpg-with-an-entire-galaxy-to-explore-space-aces-review-and-gameplay/1918 (Space Aces: Voyages in Infinite Space; 2024-04-07, 203w)
+  - https://dungeondive.quest/t/a-superb-solo-rpg-of-paranormal-investigation-the-unseen-world-review-and-gameplay/1911 (The Unseen World; 2024-05-05, 214w)
+  - https://dungeondive.quest/t/and-the-gunslinger-followed-we-deal-in-lead-overview-review-game-play-solo-rpg/1915 (We Deal in Lead; 2024-05-26, 214w)
+  - https://dungeondive.quest/t/3-solo-rpgs-3-reviews-3-play-sessions-rage-in-hell-the-outcast-and-corny-gron-solo-rpg/1916 (Rage in Hell / The Outcast / Chëdny Groń; 2024-06-12, 214w)
+  - https://dungeondive.quest/t/a-land-in-peril-lets-make-a-quest-solo-rpg-design-diary/1913 (A Land in Peril design diary; 2024-07-24, 209w)
+  - https://dungeondive.quest/t/roll-and-play-fiction-and-fantasy-solo-rpg-tools/1914 (Roll & Play toolkits; 2024-12-22, 200w)
+  - https://dungeondive.quest/t/loom-the-bells-of-basin-city-lore-solo-rpg/1917 (LOOM: Bells of Basin City + lore book; 2024-12-26, 216w)
+  - https://dungeondive.quest/t/substratum-protocol-solo-rpg-review/1912 (Substratum Protocol; 2025-01-22, 226w)
+- Keeper series post ("The Zine Flood" — ~200w prose / series register; Exhibit Catalogue of 8, chronological; no `related_imported_ids`): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/100.
+- Stats: 1038 total, 701 imported, 327 pending, 10 no_transcript. Archive: 622 transcripts, 701 posts.
+- `series_queue.json`: `2024-solo-rpg-wave` drained empty → moved to `completed_series` (parts_completed: 1, total_videos: 8, completed_date: 2026-07-12). **`active_series` is now empty; rotation_index reset to 0. Next run needs `/plan-batch` unless a priority video appears.**
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-10 — The Keeper's October: the lost parcel (1 video) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days → queue drain. `keepers-october-horror` at rotation_index 0 with a single remaining ID — `ZA_G9BP9HLY`, the transient `VideoUnplayable` failure from this morning's run. Retry succeeded cleanly (17,189 chars), confirming the failure was genuinely transient; no manual YouTube check needed.
 - Post: https://dungeondive.quest/t/five-one-killer-works-of-horror-to-read-in-october-2020/1910 (October 2020 horror reading list — Ligotti, Ducornet, Chambers, Prime Evil, To Sleep Perchance to Dream; 2020-09-27, 210w).
