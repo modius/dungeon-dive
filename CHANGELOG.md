@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-13 — Priority drop: Astroprisma (1 video)
+- Decision tree: 1 priority pending in last 14 days (`NEahGL5R0HI`, published 2026-07-12) → ad-hoc priority run. Queue untouched (it's empty anyway — still needs `/plan-batch`).
+- Transcript pulled cleanly (53,635 chars, 0 failures).
+- Post: https://dungeondive.quest/t/astroprisma-one-book-solution-for-great-sci-fi-solo-roleplaying-solo-rpg/1919 (Camilla Mah's one-book sci-fi solo RPG; 2026-07-12, 220w).
+- Keeper priority-drop post (~180w alert register; "From the deeper stacks" cross-refs 3 — Space Aces (t/1918), Substratum Protocol (t/1912), Ironsworn: Starforged review (t/1728) — all sci-fi solo RPGs, first two share the Star Dogs referee-handbook pairing): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/101.
+- Stats: 1039 total, 702 imported, 327 pending, 10 no_transcript. Archive: 623 transcripts, 702 posts.
+- `series_queue.json` untouched (priority runs never mutate the queue). **Queue remains empty — run `/plan-batch` before the next non-priority import.**
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-12 — The 2024–25 Solo RPG Wave (8 videos) — queue drain, series complete, queue now empty
 - Decision tree: 0 priority pending in last 14 days → queue drain. `2024-solo-rpg-wave` at rotation_index 0 (one_shot, vpb=8). All 8 video_ids drift-checked pending; full slate fetched in one go.
 - Transcripts: 8/8 pulled cleanly (18,426 → 66,322 chars, 0 transient/permanent failures). Note: `batch_fetch_transcripts.py` needs a `--` separator when an ID starts with a dash (`-FJcDEQ2CB0`) — argparse otherwise treats it as a flag and exits 2 without fetching anything.
