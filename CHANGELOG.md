@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-20 — Priority drop: Battletech Alpha Strike + Hellboy revisit (2 videos)
+- Decision tree: 2 priority pending in last 14 days (`aVKjY_uB3tA` published 2026-07-15, `NJXuNpJ26us` published 2026-07-19) → ad-hoc priority run. Queue untouched (still empty — `/plan-batch` needed).
+- Transcripts: 2/2 pulled cleanly (7,673 and 21,908 chars, 0 failures).
+- Posts:
+  - https://dungeondive.quest/t/battletech-alpha-strike-with-aces-co-op-solo-rules-overview/1922 (Alpha Strike + Aces co-op/solo AI; 2026-07-15, 211w)
+  - https://dungeondive.quest/t/hellboy-the-board-game-2026-revisit/1921 (Hellboy revisit — five loves, eternal #11; 2026-07-19, 202w)
+- Keeper priority-drop post (~200w alert register; "From the deeper stacks" cross-refs 3 — Battle Masters (t/1192, explicitly referenced in the Battletech video), Silver Tower Part One (t/1510, same designer as Hellboy), HeroQuest Episode 1 (t/1424)): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/102.
+- Stats: 1041 total, 704 imported, 327 pending, 10 no_transcript. Archive: 625 transcripts, 704 posts.
+- `series_queue.json` untouched (priority runs never mutate the queue). **Queue remains empty — run `/plan-batch` before the next non-priority import.**
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-13 — Priority drop: Astroprisma (1 video)
 - Decision tree: 1 priority pending in last 14 days (`NEahGL5R0HI`, published 2026-07-12) → ad-hoc priority run. Queue untouched (it's empty anyway — still needs `/plan-batch`).
 - Transcript pulled cleanly (53,635 chars, 0 failures).

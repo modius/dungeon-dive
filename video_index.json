@@ -1,7 +1,27 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-07-13T13:41:09.259491+00:00",
+  "last_fetched": "2026-07-20T04:16:21.258999+00:00",
   "videos": [
+    {
+      "video_id": "NJXuNpJ26us",
+      "title": "Hellboy: The Board Game - 2026 Revisit",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-07-19T16:00:15Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/NJXuNpJ26us/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1921,
+      "imported_at": "2026-07-20T04:17:30.287616Z"
+    },
+    {
+      "video_id": "aVKjY_uB3tA",
+      "title": "Battletech: Alpha Strike with Aces Co-Op/Solo Rules (Overview)",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-07-15T16:00:38Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/aVKjY_uB3tA/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1922,
+      "imported_at": "2026-07-20T04:17:35.432323Z"
+    },
     {
       "video_id": "NEahGL5R0HI",
       "title": "Astroprisma - One Book Solution for Great Sci-Fi Solo Roleplaying (Solo RPG)",
