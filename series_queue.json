@@ -5,14 +5,16 @@
       "title": "The Dungeon Dive Book Club",
       "status": "continuing",
       "one_shot": true,
-      "videos_per_batch": 10,
+      "videos_per_batch": 12,
       "video_ids": [
         "UQIBN4D_qIs",
+        "SWoYNH7OMZI",
         "umNEJg2sj50",
         "Gs03wWJ6vFc",
         "CgzCQr9ilsw",
         "c2ket6Qczzw",
         "ktZgSqvfl8o",
+        "9wgzzLCatp8",
         "onlJoxwtQec",
         "8hbiWsIlhQ0",
         "jgfWTFUl_58",
@@ -89,6 +91,58 @@
         "ANYrzwn5h_M"
       ],
       "related_imported_ids": [],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "second-shelf",
+      "title": "The Second Shelf — Bookshelf Tours & the Wider Library",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 12,
+      "video_ids": [
+        "cevjHgZRbrg",
+        "zyY2aRVZMp4",
+        "CYvruxt8Ocw",
+        "9Ot1RhssfL0",
+        "kzApFdb-KEs",
+        "cR199eKHJ4k",
+        "IKIrneFKwJY",
+        "b4fNiXZPqRQ",
+        "_OsQEaApgwY",
+        "xwLoo8ThKHI",
+        "RgeVF0tu6ng",
+        "Ix6NRPPJhd8"
+      ],
+      "related_imported_ids": [
+        "8fwEHUkKTFc",
+        "k1SjNJaOJcA",
+        "UKzsE2t00Jw"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "loose-pages-exhibit-completions",
+      "title": "Loose Pages — Exhibit Completions",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "r3P6BU0gEVU",
+        "5I2-cQ7oa10",
+        "zSvZdF7CBjU",
+        "qMz0UbGJq4Y",
+        "jdAA_65-h0E"
+      ],
+      "related_imported_ids": [
+        "24Ib0j0xDxE",
+        "Gjf4AsYGwU8",
+        "0JFuxpSFiLo",
+        "h1qNF-YaHX8"
+      ],
       "last_part": 0,
       "last_imported": null,
       "keeper_post": null

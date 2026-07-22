@@ -17,8 +17,25 @@ Propose candidate batches for the next import cycle and — when the user picks 
 - `youtube_stats.json` — view_count, like_count, comment_count per video
 - `keeper-posts/` — prior themes to avoid re-covering
 - `docs/insights.html` — most recent insights suggestions (optional signal)
+- **Channel playlists** (YouTube Data API, live) — Daniel's own curation; see *Playlist signal* below
 
 If `transcript_analytics.json` or `youtube_stats.json` is stale (>24h), suggest the user run `/refresh` first.
+
+## Playlist signal
+
+The channel maintains ~85 public playlists — the creator's own editorial taxonomy. Fetch them fresh during every proposal pass (cheap: `playlists.list` + a few `playlistItems.list` calls, ~1 quota unit each; no cache file needed):
+
+1. `GET youtube/v3/playlists?part=snippet,contentDetails&channelId=UCKW6yMwL_aEu83g6DdjVfxw&maxResults=50` (paginate).
+2. For playlists relevant to a forming candidate, fetch membership via `playlistItems.list` (part=`snippet,contentDetails`).
+3. **Filter to owner:** playlists can contain other creators' videos (e.g. the *Myth 2* playlist is entirely Keith Lowe's uploads). Drop any item whose `videoOwnerChannelTitle` isn't The Dungeon Dive / whose ID isn't in `video_index.json`.
+
+Use membership three ways:
+
+- **Slate authority.** When a candidate theme matches a playlist, prefer the playlist's membership over title matching — it catches typo'd titles ("Dungeon Degenerats") and videos that never name the game ("Zona" in *Runebound Alternatives*).
+- **Straggler sweeps** (candidate type 7). Diff each playlist against `video_index.json` status: a playlist that is ≥80% imported with 1–3 pending remainders is an exhibit-completion opportunity. Bundle stragglers across playlists into a single small batch when individually too few.
+- **Uncovered territories.** Playlists with substantial pending membership and no completed theme (music/culture: *Dungeon Synth*, *vaporwave*, *Radio dramas*; formats: *Digital Dive*, *Vanishing Point*, *Shelf by Shelf*) are ready-made candidate themes.
+
+Also consult playlist membership during the related-imported survey — co-membership in a curated playlist is a strong cross-reference signal, often stronger than shared taxonomy tags.
 
 ## Propose — what to surface
 
@@ -33,6 +50,7 @@ Then add 1–2 creative options from:
 4. **Thematic cluster** — pending videos sharing a game tag (5–10 videos), especially ones that form a coherent sub-theme.
 5. **High-performer format cluster** — pending videos in a format that historically averages high views (deep-dive, top-list, tutorial).
 6. **Era dive** — pending videos from a specific year + game-family combination.
+7. **Playlist-derived cluster** — a straggler sweep or uncovered territory surfaced by the *Playlist signal* pass above.
 
 Cap candidates at **4**. Minimum **2**.
 
