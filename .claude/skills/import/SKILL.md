@@ -28,7 +28,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
    2. **Drain the queue.** Only if no priority videos exist. If `series_queue.active_series` is non-empty and `active_series[rotation_index].video_ids` is non-empty:
       - Take the first `videos_per_batch` IDs from `video_ids`.
       - **Drift check:** for each ID, look it up in `video_index.json`. Skip any where `status != "pending"` (already imported, or `no_transcript`) — log skipped IDs to CHANGELOG. If an ID isn't found in `video_index.json` at all, that's an error; stop and surface it.
-      - If after drift-check the slate is empty, skip this series (remove its remaining `video_ids`, move to `completed_series` with a note), advance `rotation_index`, and re-evaluate from step 2.
+      - If after drift-check the slate is empty, skip this series (remove its remaining `video_ids`, move to `completed_series` with a note). Do NOT increment `rotation_index` — removal already shifts the next series into the current slot; just wrap to 0 if the index is now past the end, then re-evaluate from step 2.
       - Otherwise, proceed to import the surviving IDs. Cap at 12.
 
    3. **Skip.** If no priority videos and the queue is empty (or fully drift-checked to nothing): do nothing, log "queue empty — run /plan-batch" to CHANGELOG, exit cleanly.
@@ -39,7 +39,8 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 
 ## Transcribe & Post
 
-7. `python3 scripts/batch_fetch_transcripts.py VIDEO_ID1 VIDEO_ID2 ...`
+7. `python3 scripts/batch_fetch_transcripts.py -- VIDEO_ID1 VIDEO_ID2 ...`
+   - **Always pass `--` before the video IDs.** YouTube IDs can start with a hyphen (e.g. `-FJcDEQ2CB0`); without the `--` separator, argparse treats such an ID as an unknown flag and exits 2 having fetched nothing. The `--` is harmless when no ID starts with a dash, so use it every time.
    - The script writes structured failure records to `pending_imports/manifest.json` under the `failures` key, each with `error_type` and `permanent: true|false`.
    - **Permanent failures** (`permanent: true` — i.e. `TranscriptsDisabled`, `NoTranscriptFound`, `VideoUnavailable`): the video genuinely has no captions. Mark it as `no_transcript` in `video_index.json` and continue.
    - **Transient failures** (`permanent: false` — typically `RequestBlocked`, `IpBlocked`, `TooManyRequests`, `YouTubeRequestFailed`, network errors): DO NOT mutate the index. The video remains `pending`. Note in CHANGELOG which IDs hit transient errors and continue with whatever transcripts succeeded.
@@ -102,7 +103,9 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
       - `total_videos`: sum of all videos imported across parts (track via a running counter, or count post files)
       - `completed_date`: today (YYYY-MM-DD)
       Drop fields that don't apply to completed entries (`video_ids`, `videos_per_batch`, `one_shot`, `status`, `last_imported`, `keeper_post`).
-    - **Advance rotation:** if the entry was completed, advance `rotation_index`. If it now points past the end of `active_series`, wrap to 0. If `active_series` is empty, set to 0.
+    - **Advance rotation:**
+      - **If the entry was completed (removed from `active_series`):** do NOT increment `rotation_index`. Removing the entry already shifts every later entry forward one slot, so the same index now points at what was the *next* series — incrementing on top of that skips a series. Only clamp: if `rotation_index` is now past the end of `active_series`, wrap to 0; if `active_series` is empty, set to 0.
+      - **If the entry was NOT completed (multi-part, still has `video_ids`):** increment `rotation_index` for round-robin fairness so the next run rotates to the following series. If it now points past the end, wrap to 0.
 13. Update CHANGELOG.md with run summary.
 14. Commit and push:
     ```

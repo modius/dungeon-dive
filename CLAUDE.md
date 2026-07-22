@@ -91,7 +91,7 @@ python3 scripts/check_rate_limit.py
 
 # Raw script invocations (skills wrap these — rarely needed manually)
 python3 scripts/fetch_channel_videos.py --config config.json --index video_index.json
-python3 scripts/batch_fetch_transcripts.py VIDEO_ID1 VIDEO_ID2 ...
+python3 scripts/batch_fetch_transcripts.py -- VIDEO_ID1 VIDEO_ID2 ...  # `--` guards IDs that start with a hyphen
 python3 scripts/batch_post.py --config config.json --input-dir ready_to_post [--dry-run]
 python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html
 python3 scripts/build_insights.py --index video_index.json --stats youtube_stats.json --analytics transcript_analytics.json --series series_queue.json --dashboard docs/insights.html
