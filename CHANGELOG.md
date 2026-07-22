@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-22 — The Dungeon Dive Book Club (12 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days → queue drain. `dungeon-dive-book-club` at rotation_index 0 (one_shot, vpb=12 — amended from 10 on 2026-07-21 with two playlist-sourced additions). All 12 drift-checked pending; full slate fetched cleanly (3,097 → 20,340 chars, 0 failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/gateways-to-abomination-by-matthew-m-bartlett-book-review/1928 (Bartlett; 2018-09-27, 204w)
+  - https://dungeondive.quest/t/the-exorcist-william-peter-blatty-and-the-trilogy-of-faith/1927 (Blatty Trilogy of Faith; 2019-10-25, 198w)
+  - https://dungeondive.quest/t/dungeon-dive-book-club-agents-of-dreamland-by-caitlin-r-kiernan/1934 (club founding announcement; 2020-07-20, 196w)
+  - https://dungeondive.quest/t/agents-of-dreamland-by-caitlin-r-kiernan-dungeon-dive-book-club-review/1926 (Kiernan review; 2020-08-18, 208w)
+  - https://dungeondive.quest/t/channel-update-and-september-book-club-announcement-the-gods-of-pegana-by-lord-dunsany/1925 (Pegāna announcement + channel-split poll; 2020-08-25, 194w)
+  - https://dungeondive.quest/t/gods-of-pegana-by-lord-dunsany-dungeon-dive-book-club-review/1929 (Dunsany review; 2020-09-19, 195w)
+  - https://dungeondive.quest/t/the-dark-tower-re-read-read-dungeon-dive-book-club/1931 (Dark Tower re-read announcement; 2020-09-26, 199w)
+  - https://dungeondive.quest/t/october-2021-reading-schedule/1924 (Oct 2021 devil-books slate; 2021-09-30, 193w)
+  - https://dungeondive.quest/t/the-devil-is-dead-by-r-a-lafferty-book-review/1933 (Lafferty; 2021-10-11, 198w)
+  - https://dungeondive.quest/t/the-torturer-by-peter-saxon-book-review/1923 (Saxon; 2021-10-17, 208w)
+  - https://dungeondive.quest/t/the-auctioneer-by-joan-samson-book-review/1930 (Samson; 2021-10-30, 200w)
+  - https://dungeondive.quest/t/vermis-by-plastiboo-a-book-so-good-i-dont-want-to-finish-it/1932 (Vermis; 2023-05-17, 197w)
+- Keeper series post ("The Reading Room" — ~140w prose / series register; integrated Exhibit Catalogue of 16: 12 new + 4 `related_imported_ids` (t/1910, t/1907, t/1797, t/1908), chronological): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/103.
+- Stats: 1041 total, 716 imported, 315 pending, 10 no_transcript. Archive: 637 transcripts, 716 posts.
+- `series_queue.json`: `dungeon-dive-book-club` drained empty → moved to `completed_series` (parts_completed: 1, total_videos: 12, completed_date: 2026-07-22). rotation_index stays 0 (FIFO — remaining entries shift forward) → next is `big-box-kickstarter-wave`. 5 series / 40 videos remain queued.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-20 — Priority drop: Battletech Alpha Strike + Hellboy revisit (2 videos)
 - Decision tree: 2 priority pending in last 14 days (`aVKjY_uB3tA` published 2026-07-15, `NJXuNpJ26us` published 2026-07-19) → ad-hoc priority run. Queue untouched (still empty — `/plan-batch` needed).
 - Transcripts: 2/2 pulled cleanly (7,673 and 21,908 chars, 0 failures).

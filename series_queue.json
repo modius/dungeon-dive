@@ -1,36 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "dungeon-dive-book-club",
-      "title": "The Dungeon Dive Book Club",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 12,
-      "video_ids": [
-        "UQIBN4D_qIs",
-        "SWoYNH7OMZI",
-        "umNEJg2sj50",
-        "Gs03wWJ6vFc",
-        "CgzCQr9ilsw",
-        "c2ket6Qczzw",
-        "ktZgSqvfl8o",
-        "9wgzzLCatp8",
-        "onlJoxwtQec",
-        "8hbiWsIlhQ0",
-        "jgfWTFUl_58",
-        "oPCHIAxcTHw"
-      ],
-      "related_imported_ids": [
-        "ZA_G9BP9HLY",
-        "UKzsE2t00Jw",
-        "4b4THjNuDW0",
-        "UiD0-skn904"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "big-box-kickstarter-wave",
       "title": "Crates of Ambition — The Big-Box Kickstarter Wave",
       "status": "continuing",
@@ -493,6 +463,13 @@
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-07-12"
+    },
+    {
+      "theme": "dungeon-dive-book-club",
+      "title": "The Dungeon Dive Book Club",
+      "parts_completed": 1,
+      "total_videos": 12,
+      "completed_date": "2026-07-22"
     }
   ],
   "rotation_index": 0
