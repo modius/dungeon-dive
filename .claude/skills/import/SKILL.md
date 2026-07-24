@@ -102,7 +102,8 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
       - `parts_completed`: final `last_part` value
       - `total_videos`: sum of all videos imported across parts (track via a running counter, or count post files)
       - `completed_date`: today (YYYY-MM-DD)
-      Drop fields that don't apply to completed entries (`video_ids`, `videos_per_batch`, `one_shot`, `status`, `last_imported`, `keeper_post`).
+      - `keeper_post`: retain the URL of the final part's Keeper reply (provenance — lets you find the announcement for a completed series)
+      Drop fields that don't apply to completed entries (`video_ids`, `videos_per_batch`, `one_shot`, `status`, `last_imported`).
     - **Advance rotation:**
       - **If the entry was completed (removed from `active_series`):** do NOT increment `rotation_index`. Removing the entry already shifts every later entry forward one slot, so the same index now points at what was the *next* series — incrementing on top of that skips a series. Only clamp: if `rotation_index` is now past the end of `active_series`, wrap to 0; if `active_series` is empty, set to 0.
       - **If the entry was NOT completed (multi-part, still has `video_ids`):** increment `rotation_index` for round-robin fairness so the next run rotates to the following series. If it now points past the end, wrap to 0.

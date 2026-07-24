@@ -1,31 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "big-box-kickstarter-wave",
-      "title": "Crates of Ambition — The Big-Box Kickstarter Wave",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 12,
-      "video_ids": [
-        "MxDzq8aLzTo",
-        "dgkZoy66esM",
-        "_fcTS5NosDs",
-        "FIEy7T-kMmQ",
-        "enR1CfAS5zo",
-        "WvVMuiXrqcI",
-        "2vAcCPS9-YE",
-        "7NbPwroPQ80",
-        "2WaFFWc3lno",
-        "x3gjYoDR5tA",
-        "0t_oTJZ6Irs",
-        "SB5QPpcWDXk"
-      ],
-      "related_imported_ids": [],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "spring-2019-review-season",
       "title": "Spring 2019 — The Miniatures-Adventure Review Season",
       "status": "continuing",
@@ -470,6 +445,14 @@
       "parts_completed": 1,
       "total_videos": 12,
       "completed_date": "2026-07-22"
+    },
+    {
+      "theme": "big-box-kickstarter-wave",
+      "title": "Crates of Ambition — The Big-Box Kickstarter Wave",
+      "parts_completed": 1,
+      "total_videos": 12,
+      "completed_date": "2026-07-24",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/105"
     }
   ],
   "rotation_index": 0

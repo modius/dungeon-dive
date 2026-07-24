@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-24 — Crates of Ambition: The Big-Box Kickstarter Wave (12 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days → queue drain. `big-box-kickstarter-wave` at rotation_index 0 (one_shot, vpb=12). All 12 drift-checked pending; full slate fetched cleanly (15,705 → 69,753 chars, 0 failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/the-ghosts-betwixt-a-prototype-preview/1941 (Ghosts Betwixt prototype — family crawl; 2019-04-03, 189w)
+  - https://dungeondive.quest/t/assault-on-doomrock-an-underrated-gem/1945 (Doomrock 2nd ptg + Doompocalypse; 2020-04-09, 194w)
+  - https://dungeondive.quest/t/ghosts-betwixt-unboxing/1944 (Ghosts Betwixt retail unboxing; 2021-12-01, 192w)
+  - https://dungeondive.quest/t/lets-take-a-look-at-the-ghosts-betwixt-chapter-1/1940 (Ghosts Betwixt Ch.1 in-depth; 2021-12-28, 194w)
+  - https://dungeondive.quest/t/stars-of-akarios-a-casual-unboxing/1946 (Stars of Akarios unboxing; 2022-06-28, 185w)
+  - https://dungeondive.quest/t/10-things-i-love-about-stars-of-akarios-a-great-game-thats-not-for-me/1943 (Stars of Akarios impressions; 2022-06-30, 198w)
+  - https://dungeondive.quest/t/the-everrain-a-detailed-unboxing-of-the-base-kickstarter-pledge/1938 (The Everrain unboxing; 2023-03-17, 186w)
+  - https://dungeondive.quest/t/valor-villainy-lludwigs-labyrinth-detailed-unboxing/1939 (Valor & Villainy unboxing; 2023-05-21, 190w)
+  - https://dungeondive.quest/t/assault-on-doomrock-ultimate-edition-a-detailed-casual-unboxing-and-comparison/1937 (Doomrock Ultimate Ed. + comparison; 2024-01-02, 186w)
+  - https://dungeondive.quest/t/dead-throne-world-of-veles-a-casual-unboxing/1947 (Dead Throne 2nd ed. unboxing; 2024-02-13, 189w)
+  - https://dungeondive.quest/t/ultimate-tanares-adventures-a-casual-and-detailed-unboxing/1936 (Ultimate Tanares unboxing; 2024-06-16, 189w)
+  - https://dungeondive.quest/t/forging-the-path-to-arydia-unboxing-organizing-and-the-learning-process/1942 (Arydia prep/unboxing; 2025-01-26, 199w)
+- Keeper series post ("Crates of Ambition" — 190w prose / series register; Exhibit Catalogue of 12, chronological; `related_imported_ids` empty): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/105.
+- Stats: 1042 total, 729 imported, 303 pending, 10 no_transcript. Archive: 650 transcripts, 729 posts.
+- `series_queue.json`: `big-box-kickstarter-wave` drained empty → moved to `completed_series` (parts_completed: 1, total_videos: 12, completed_date: 2026-07-24, keeper_post retained). rotation_index stays 0 (FIFO — remaining entries shift forward) → next is `spring-2019-review-season`. 4 series / 28 videos remain queued.
+- SKILL patch: import step 12 no longer instructs dropping `keeper_post` on completed entries — provenance is worth keeping and recent completions already retained it.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-24 — Priority drop: Mini Rogue: Season 2 (1 video)
 - Decision tree: 1 priority pending in last 14 days (`4n4yKMederk`, published 2026-07-22) → ad-hoc priority run. Queue untouched; `big-box-kickstarter-wave` (rotation_index 0) waits one cycle.
 - Transcript pulled cleanly (28,045 chars, 0 failures).
