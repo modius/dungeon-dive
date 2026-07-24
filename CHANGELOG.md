@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-24 — Priority drop: Mini Rogue: Season 2 (1 video)
+- Decision tree: 1 priority pending in last 14 days (`4n4yKMederk`, published 2026-07-22) → ad-hoc priority run. Queue untouched; `big-box-kickstarter-wave` (rotation_index 0) waits one cycle.
+- Transcript pulled cleanly (28,045 chars, 0 failures).
+- Post: https://dungeondive.quest/t/mini-rogue-season-2-expanded-and-better-than-ever/1935 (Mini Rogue: The Council standalone expansion; 2026-07-22, 203w).
+- Keeper priority-drop post (~150w alert register; "From the deeper stacks" cross-refs 3 — original Mini Rogue review (t/1714), 2026 Mini Rogue revisit (t/1323, direct game-name overlap), Rolling Deep roguelike (t/1828, genre)): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/104.
+- Stats: 1042 total, 717 imported, 315 pending, 10 no_transcript. Archive: 638 transcripts, 717 posts.
+- `series_queue.json` untouched (priority runs never mutate the queue). 5 series / 40 videos remain queued: big-box-kickstarter-wave → spring-2019-review-season → city-of-kings-2018 → second-shelf → loose-pages-exhibit-completions.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-22 — The Dungeon Dive Book Club (12 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days → queue drain. `dungeon-dive-book-club` at rotation_index 0 (one_shot, vpb=12 — amended from 10 on 2026-07-21 with two playlist-sourced additions). All 12 drift-checked pending; full slate fetched cleanly (3,097 → 20,340 chars, 0 failures).
 - Posts (chronological by publish date):
