@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-27 — Priority drop: When Less is More — Minimalism in Adventure Games (1 video)
+- Decision tree: 1 priority pending in last 14 days (`9rJgQmuc2SM`, published 2026-07-26) → ad-hoc priority run. Queue untouched; `spring-2019-review-season` (rotation_index 0) waits one cycle.
+- Transcript pulled cleanly (17,502 chars, 0 failures).
+- Post: https://dungeondive.quest/t/when-less-is-more-minimalism-in-table-top-adventure-games/1949 (essay on artistic/component/mechanical minimalism — Adventure of D, Seven Moons, Glory 2e, Shadows of Malice, Darkest Night, Dragons Down, Search for the Emperor's Treasure; 2026-07-26, 210w).
+- Keeper priority-drop post (~150w alert register; "From the deeper stacks" cross-refs 3 — Search for the Emperor's Treasure (t/1821, the game that inspired the topic), Dragons Down review (t/308, direct game-name overlap), Small Box Thunderdome incl. Adventure of D (t/1681)): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/106.
+- Stats: 1043 total, 730 imported, 303 pending, 10 no_transcript. Archive: 651 transcripts, 730 posts.
+- `series_queue.json` untouched (priority runs never mutate the queue). 4 series / 28 videos remain queued: spring-2019-review-season → city-of-kings-2018 → second-shelf → loose-pages-exhibit-completions.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-24 — Crates of Ambition: The Big-Box Kickstarter Wave (12 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days → queue drain. `big-box-kickstarter-wave` at rotation_index 0 (one_shot, vpb=12). All 12 drift-checked pending; full slate fetched cleanly (15,705 → 69,753 chars, 0 failures).
 - Posts (chronological by publish date):

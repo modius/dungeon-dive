@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-07-24T06:37:59.241256+00:00",
+  "last_fetched": "2026-07-27T05:00:26.178466+00:00",
   "videos": [
+    {
+      "video_id": "9rJgQmuc2SM",
+      "title": "When Less is More - Minimalism in Table Top Adventure Games",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-07-26T16:00:32Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/9rJgQmuc2SM/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1949,
+      "imported_at": "2026-07-27T05:02:19.165464Z"
+    },
     {
       "video_id": "4n4yKMederk",
       "title": "Mini Rogue: Season 2 - Expanded and Better than Ever",
