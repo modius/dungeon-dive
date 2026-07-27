@@ -1,26 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "spring-2019-review-season",
-      "title": "Spring 2019 — The Miniatures-Adventure Review Season",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 4,
-      "video_ids": [
-        "NWOjsRjPomI",
-        "wzSn1b5XXtk",
-        "b_Obp5cBRZk",
-        "ytt9pEb78FA"
-      ],
-      "related_imported_ids": [
-        "NJXuNpJ26us",
-        "E_DqVHrHIxM"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "city-of-kings-2018",
       "title": "The Expedition That Turned Back — City of Kings, March 2018",
       "status": "continuing",
@@ -453,6 +433,14 @@
       "total_videos": 12,
       "completed_date": "2026-07-24",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/105"
+    },
+    {
+      "theme": "spring-2019-review-season",
+      "title": "Spring 2019 — The Miniatures-Adventure Review Season",
+      "parts_completed": 1,
+      "total_videos": 4,
+      "completed_date": "2026-07-27",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/107"
     }
   ],
   "rotation_index": 0

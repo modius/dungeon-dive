@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-07-27T05:00:26.178466+00:00",
+  "last_fetched": "2026-07-27T05:06:58.439405+00:00",
   "videos": [
     {
       "video_id": "9rJgQmuc2SM",
@@ -9532,9 +9532,9 @@
       "description": "I take a look at what is now a venerable classic, Mice and Mystics.",
       "published_at": "2019-05-29T03:53:21Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ytt9pEb78FA/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1953,
+      "imported_at": "2026-07-27T05:09:55.064415Z"
     },
     {
       "video_id": "5t3KYPZKUe4",
@@ -9582,9 +9582,9 @@
       "description": "A review of Hellboy: The Board Game",
       "published_at": "2019-04-30T04:21:27Z",
       "thumbnail_url": "https://i.ytimg.com/vi/b_Obp5cBRZk/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1951,
+      "imported_at": "2026-07-27T05:09:45.262035Z"
     },
     {
       "video_id": "mhXS2cpJlRo",
@@ -9612,9 +9612,9 @@
       "description": "Widower's Wood - An Iron Kingdon's Adventure Board Game - Review",
       "published_at": "2019-04-09T05:32:46Z",
       "thumbnail_url": "https://i.ytimg.com/vi/wzSn1b5XXtk/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1952,
+      "imported_at": "2026-07-27T05:09:50.129646Z"
     },
     {
       "video_id": "MxDzq8aLzTo",
@@ -9662,9 +9662,9 @@
       "description": "A review for Fireteam Zero.",
       "published_at": "2019-02-27T04:59:02Z",
       "thumbnail_url": "https://i.ytimg.com/vi/NWOjsRjPomI/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 1950,
+      "imported_at": "2026-07-27T05:09:40.405370Z"
     },
     {
       "video_id": "oZjiL501lAY",

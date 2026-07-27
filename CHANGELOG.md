@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-27 — Spring 2019: The Miniatures-Adventure Review Season (4 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days → queue drain. `spring-2019-review-season` at rotation_index 0 (one_shot, vpb=4). All 4 drift-checked pending; full slate fetched cleanly (15,854 → 27,678 chars, 0 failures).
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/fireteam-zero-a-weird-war-2-game-review/1950 (Fireteam Zero — ultra-lean Weird War skirmish; 2019-02-27, 193w)
+  - https://dungeondive.quest/t/widowers-wood-an-iron-kingdoms-adventure-board-game-review/1952 (Widower's Wood — Iron Kingdoms co-op tactical; 2019-04-09, 193w)
+  - https://dungeondive.quest/t/hellboy-the-board-game-the-review-the-video/1951 (Hellboy — Kickstarter-vs-retail gap; 2019-04-30, 195w)
+  - https://dungeondive.quest/t/mice-and-mystics-an-overview-review/1953 (Mice and Mystics — Jerry Hawthorne beast epic; 2019-05-29, 196w)
+- Keeper series post ("The Spring 2019 Field Season" — ~230w prose / series register; Exhibit Catalogue of 6, chronological, integrating 2 `related_imported_ids` — Silver Tower Pt1 (t/1510, Hewitt-Williams bloodline) + Hellboy 2026 Revisit (t/1921) — inline with the 4 new, no new/existing distinction): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/107.
+- Stats: 1043 total, 734 imported, 299 pending, 10 no_transcript. Archive: 655 transcripts, 734 posts.
+- `series_queue.json`: `spring-2019-review-season` drained empty → moved to `completed_series` (parts_completed: 1, total_videos: 4, completed_date: 2026-07-27, keeper_post retained). rotation_index stays 0 (FIFO — remaining entries shift forward) → next is `city-of-kings-2018`. 3 series / 24 videos remain queued: city-of-kings-2018 → second-shelf → loose-pages-exhibit-completions.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-27 — Priority drop: When Less is More — Minimalism in Adventure Games (1 video)
 - Decision tree: 1 priority pending in last 14 days (`9rJgQmuc2SM`, published 2026-07-26) → ad-hoc priority run. Queue untouched; `spring-2019-review-season` (rotation_index 0) waits one cycle.
 - Transcript pulled cleanly (17,502 chars, 0 failures).
