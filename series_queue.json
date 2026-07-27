@@ -1,26 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "city-of-kings-2018",
-      "title": "The Expedition That Turned Back — City of Kings, March 2018",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "9Fhr7gYQPBM",
-        "615ClJ5oqkw",
-        "_NHlgOF-WU0",
-        "LpqnF4FROjg",
-        "PgvLUj9yWDQ",
-        "LMbdAdrLzXg",
-        "ANYrzwn5h_M"
-      ],
-      "related_imported_ids": [],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "second-shelf",
       "title": "The Second Shelf — Bookshelf Tours & the Wider Library",
       "status": "continuing",
@@ -441,6 +421,14 @@
       "total_videos": 4,
       "completed_date": "2026-07-27",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/107"
+    },
+    {
+      "theme": "city-of-kings-2018",
+      "title": "The Expedition That Turned Back — City of Kings, March 2018",
+      "parts_completed": 1,
+      "total_videos": 7,
+      "completed_date": "2026-07-27",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/108"
     }
   ],
   "rotation_index": 0

@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-27 — City of Kings, March 2018: the aborted let's-play saga (7 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days → queue drain. `city-of-kings-2018` at rotation_index 0 (one_shot, vpb=7). All 7 drift-checked pending; full slate fetched cleanly (1,815 → 24,949 chars, 0 failures). Day's transcript total reached 12 — at the low edge of the ~12–15/hr throttle, no transient errors.
+- Posts (chronological by publish date — a coherent narrative arc: coverage → aborted playthrough → reset → scenario win → review → 2023 reflection):
+  - https://dungeondive.quest/t/city-of-kings-take-a-look/1955 (Take a Look — unboxing/overview, standees-vs-minis soapbox; 2018-03-03, 205w)
+  - https://dungeondive.quest/t/aborted-city-of-kings-story-one-chapter-one-lets-play/1954 (ABORTED Story 1 Ch1 — Oakwood; 2018-03-08, 197w)
+  - https://dungeondive.quest/t/aborted-city-of-kings-story-one-chapter-2-part-1-lets-play/1960 (ABORTED Story 1 Ch2 pt1 — Orc Hunt, game bares its teeth; 2018-03-10, 193w)
+  - https://dungeondive.quest/t/a-message-about-the-city-of-kings-lets-play/1958 (A Message — 2-min mea culpa, playthrough reset; 2018-03-10, 180w)
+  - https://dungeondive.quest/t/city-of-kings-desecration-scenario-lets-play-easy-mode/1959 (Desecration Scenario, easy mode — first win; 2018-03-11, 198w)
+  - https://dungeondive.quest/t/city-of-kings-review/1957 (Review — admired then sold; theme/mechanism disconnect; 2018-03-13, 207w)
+  - https://dungeondive.quest/t/why-i-dont-do-many-if-any-lets-play-videos-and-who-to-watch-instead/1956 (2023 vlog — why he doesn't do let's-plays; retroactive coda; 2023-07-13, 206w)
+- Keeper series post ("The Case That Was Never Closed" — ~225w prose / series register; Exhibit Catalogue of 7, chronological; `related_imported_ids` empty): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/108.
+- Stats: 1043 total, 741 imported, 292 pending, 10 no_transcript. Archive: 662 transcripts, 741 posts.
+- `series_queue.json`: `city-of-kings-2018` drained empty → moved to `completed_series` (parts_completed: 1, total_videos: 7, completed_date: 2026-07-27, keeper_post retained). rotation_index stays 0 (FIFO — remaining entries shift forward) → next is `second-shelf`. 2 series / 17 videos remain queued: second-shelf → loose-pages-exhibit-completions.
+- Note: three imports today (1 priority + 4 + 7 = 12 videos posted); analytics from the mid-day /refresh are now stale by 11 imported videos — next /refresh will reconcile.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-27 — Spring 2019: The Miniatures-Adventure Review Season (4 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days → queue drain. `spring-2019-review-season` at rotation_index 0 (one_shot, vpb=4). All 4 drift-checked pending; full slate fetched cleanly (15,854 → 27,678 chars, 0 failures).
 - Posts (chronological by publish date):
