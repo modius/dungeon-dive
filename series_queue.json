@@ -1,35 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "second-shelf",
-      "title": "The Second Shelf — Bookshelf Tours & the Wider Library",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 12,
-      "video_ids": [
-        "cevjHgZRbrg",
-        "zyY2aRVZMp4",
-        "CYvruxt8Ocw",
-        "9Ot1RhssfL0",
-        "kzApFdb-KEs",
-        "cR199eKHJ4k",
-        "IKIrneFKwJY",
-        "b4fNiXZPqRQ",
-        "_OsQEaApgwY",
-        "xwLoo8ThKHI",
-        "RgeVF0tu6ng",
-        "Ix6NRPPJhd8"
-      ],
-      "related_imported_ids": [
-        "8fwEHUkKTFc",
-        "k1SjNJaOJcA",
-        "UKzsE2t00Jw"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "loose-pages-exhibit-completions",
       "title": "Loose Pages — Exhibit Completions",
       "status": "continuing",
@@ -429,6 +400,14 @@
       "total_videos": 7,
       "completed_date": "2026-07-27",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/108"
+    },
+    {
+      "theme": "second-shelf",
+      "title": "The Second Shelf — Bookshelf Tours & the Wider Library",
+      "parts_completed": 1,
+      "total_videos": 12,
+      "completed_date": "2026-07-28",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/109"
     }
   ],
   "rotation_index": 0

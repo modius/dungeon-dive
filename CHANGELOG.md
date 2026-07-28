@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-28 — The Second Shelf: Bookshelf Tours & the Wider Library (12 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days (most recent pending is 2025-01-19) → queue drain. `second-shelf` at rotation_index 0 (one_shot, vpb=12). All 12 drift-checked pending; full slate fetched cleanly (1,689 → 21,292 chars, 0 failures). Day's transcript total = 12, at the low edge of the ~12–15/hr throttle, no transient errors.
+- Posts (chronological by publish date — five *Shelf by Shelf* tours interleaved with the channel's literary/art sidelines: literary update → weird-western dive → Fighting Fantasy history → Warhammer illustrated guide → art-RPG zines → 90s cyberpunk):
+  - https://dungeondive.quest/t/beyond-the-reading-rainbow-literary-update/1971 (Beyond the Reading Rainbow — Fracassi/Carson/Chiang; 2018-10-18, 183w)
+  - https://dungeondive.quest/t/shelf-by-shelf-part-one/1974 (Shelf by Shelf Pt1 — Philip K. Dick, Dunsany, McDermott; 2019-04-22, 176w)
+  - https://dungeondive.quest/t/when-the-west-gets-weird/1964 (When the West Gets Weird — western/weird-western fiction, Brimstone-inspired; 2020-07-12, 175w)
+  - https://dungeondive.quest/t/shelf-by-shelf-part-two/1963 (Shelf by Shelf Pt2 — Lansdale, Simak, Gene Wolfe; 2020-08-04, 174w)
+  - https://dungeondive.quest/t/shelf-by-shelf-part-three/1972 (Shelf by Shelf Pt3 — Michael Cisco, Bradbury, Sturgeon, Akira; 2020-08-09, 157w)
+  - https://dungeondive.quest/t/win-a-copy-of-michael-cisco-s-unlanguage/1970 (Unlanguage giveaway — period piece, contest long closed; 2020-08-13, 163w)
+  - https://dungeondive.quest/t/shelf-by-shelf-part-four/1965 (Shelf by Shelf Pt4 — Ballard, Blatty, Ligotti; 2020-09-06, 161w)
+  - https://dungeondive.quest/t/you-are-the-hero-damn-right-i-am/1969 (YOU Are the Hero — Fighting Fantasy history, artist credits; 2020-11-03, 167w)
+  - https://dungeondive.quest/t/the-world-of-warhammer-the-official-illustrated-guide-take-a-look/1968 (World of Warhammer Illustrated Guide — Old World lore, no artist credits; 2020-11-17, 167w)
+  - https://dungeondive.quest/t/super-blood-harvest-omnibus-taking-a-look-at-this-wonderfully-illustrated-artistic-rpg-module/1973 (Super Blood Harvest — Dirk w/ a Vengeance art-RPG zines; 2020-12-15, 164w)
+  - https://dungeondive.quest/t/shelf-by-shelf-part-five/1967 (Shelf by Shelf Pt5 — Stapledon, Wellman/Silver John, Rucker; 2020-12-19, 152w)
+  - https://dungeondive.quest/t/solis-by-a-a-attanasio-quintessential-90s-cyberpunk/1966 (Solis — A.A. Attanasio 90s cyberpunk review; 2021-07-19, 172w)
+- Keeper series post ("The Second Shelf" — ~223w prose / series register; Exhibit Catalogue of 15, chronological, integrating 3 `related_imported_ids` inline with the 12 new (no new/existing distinction): House of Danger (t/1763, CYOA on the table), House on Abigail Lane (t/1907, horror novella round-up), ...and the Gunslinger Followed (t/1915, solo western RPG)): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/109.
+- Stats: 1043 total, 753 imported, 280 pending, 10 no_transcript. Archive: 674 transcripts, 753 posts.
+- `series_queue.json`: `second-shelf` drained empty → moved to `completed_series` (parts_completed: 1, total_videos: 12, completed_date: 2026-07-28, keeper_post retained). rotation_index stays 0 (FIFO — removal shifts remaining forward) → next is `loose-pages-exhibit-completions`. 1 series / 5 videos remain queued: loose-pages-exhibit-completions.
+- Note: Discourse threw two 502s (nginx) on the Keeper reply during a forum update; per-video posts had already landed. Reply succeeded on retry once the update finished.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-27 — City of Kings, March 2018: the aborted let's-play saga (7 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days → queue drain. `city-of-kings-2018` at rotation_index 0 (one_shot, vpb=7). All 7 drift-checked pending; full slate fetched cleanly (1,815 → 24,949 chars, 0 failures). Day's transcript total reached 12 — at the low edge of the ~12–15/hr throttle, no transient errors.
 - Posts (chronological by publish date — a coherent narrative arc: coverage → aborted playthrough → reset → scenario win → review → 2023 reflection):
