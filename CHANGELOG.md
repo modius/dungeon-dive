@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-30 — Priority drop: Dungeons of Galora (1 video) — ad-hoc, queue untouched
+- Decision tree: 1 priority pending in last 14 days (JJ0wEMAa0Qg, "Dungeons of Galora", published 2026-07-29) → ad-hoc priority run. Exited after posting; queue NOT drained or mutated — `loose-pages-exhibit-completions` (1 series / 5 videos) waits one cycle per the priority rule.
+- Pre-flight: rate limit OK (0/20 posted in 24h), config OK, integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking). `fetch_channel_videos` picked up 1 new video (JJ0wEMAa0Qg).
+- Transcript fetched cleanly (23,898 chars, 0 failures).
+- Post: https://dungeondive.quest/t/dungeons-of-galora-a-solo-dungeon-crawl-rpg/1976 (Dungeons of Galora — Gustavo Fileto's Latin-American-folklore solo crawl; scaling test target + fixed-round combat; 2026-07-29, 221w).
+- Keeper priority drop ("Fresh Despatch" — 151w / priority register; "From the deeper stacks" cross-ref of 3: Fixing Tedious Combat in Solo RPGs (t/1902, the combat sermon Galora practises), Corrupted Crypts (t/1887, kindred one-author crawl), 2D6 Dungeon (t/1703, last crawl combat that excited him)): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/110.
+- Stats: 1044 total, 754 imported, 280 pending, 10 no_transcript. Archive: 675 transcripts, 754 posts.
+- `series_queue.json`: untouched (priority run). rotation_index stays 0; `loose-pages-exhibit-completions` remains next in the queue (1 series / 5 videos).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-28 — The Second Shelf: Bookshelf Tours & the Wider Library (12 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days (most recent pending is 2025-01-19) → queue drain. `second-shelf` at rotation_index 0 (one_shot, vpb=12). All 12 drift-checked pending; full slate fetched cleanly (1,689 → 21,292 chars, 0 failures). Day's transcript total = 12, at the low edge of the ~12–15/hr throttle, no transient errors.
 - Posts (chronological by publish date — five *Shelf by Shelf* tours interleaved with the channel's literary/art sidelines: literary update → weird-western dive → Fighting Fantasy history → Warhammer illustrated guide → art-RPG zines → 90s cyberpunk):
