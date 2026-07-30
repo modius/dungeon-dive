@@ -46,7 +46,7 @@ Always include (if applicable):
 
 Then add 1–2 creative options from:
 
-3. **Untapped topic** — a game with high cross-reference count but low dedicated coverage (ratio ≥5:1). Pull pending videos that mention it.
+3. **Untapped topic** — a game with high cross-reference count but low dedicated coverage (ratio ≥5:1). Pull pending videos that mention it. **Verify against playlists before proposing:** a gap is only real if the game has no near-complete playlist already imported. Coverage is inferred from tags, so a game Daniel covered under a parent series name can still read as uncovered.
 4. **Thematic cluster** — pending videos sharing a game tag (5–10 videos), especially ones that form a coherent sub-theme.
 5. **High-performer format cluster** — pending videos in a format that historically averages high views (deep-dive, top-list, tutorial).
 6. **Era dive** — pending videos from a specific year + game-family combination.

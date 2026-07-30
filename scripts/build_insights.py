@@ -190,35 +190,70 @@ def compute_publishing_patterns(videos):
     }
 
 
-def compute_coverage_gaps(analytics):
-    """Games mentioned across videos but with few dedicated videos.
+LEADING_ARTICLE_RE = re.compile(r"^(?:the|a|an)\s+", re.IGNORECASE)
 
-    Only surfaces genuinely under-served games: those with 3+ cross-references
-    but 2 or fewer dedicated videos. Games with substantial dedicated coverage
-    are excluded — being mentioned often is a sign of importance, not a gap.
+
+def normalize_game_name(name):
+    """Canonical form for comparing game names.
+
+    Drops a leading article and reduces punctuation to single spaces, so
+    "The Restless" and "Restless" resolve to the same subject.
+    """
+    stripped = LEADING_ARTICLE_RE.sub("", (name or "").strip().lower())
+    return re.sub(r"[^a-z0-9]+", " ", stripped).strip()
+
+
+def compute_coverage_gaps(analytics, min_mentions=3, max_dedicated=2):
+    """Games discussed across many videos but with little dedicated coverage.
+
+    Dedicated coverage is judged by title evidence as well as primary_game: a
+    video whose title names the game is dedicated to it, whatever the tagger
+    chose as primary. primary_game alone undercounts badly, because it holds one
+    name per video and the longest matching name wins — so a sub-title always
+    loses to its parent family. "Silver Tower" has four dedicated videos (the
+    Masterclass series) yet zero of them carry it as primary_game; they are all
+    filed under the longer "Warhammer Quest", which used to report Silver Tower
+    as a 22:0 coverage gap.
+
+    Name variants that differ only by a leading article are folded together, so
+    "Restless" and "The Restless" count as one subject rather than two thin ones.
     """
     if not analytics:
         return []
 
-    # Count dedicated (primary_game) and cross-references (games list)
-    dedicated = Counter()
-    mentions = Counter()
+    videos = analytics.get("videos", [])
 
-    for v in analytics.get("videos", []):
-        pg = v.get("primary_game")
-        if pg:
-            dedicated[pg] += 1
+    # Canonical key -> spellings seen, and the set of videos mentioning it.
+    spellings = defaultdict(Counter)
+    mention_videos = defaultdict(set)
+    for v in videos:
         for g in v.get("games", []):
-            mentions[g] += 1
+            key = normalize_game_name(g)
+            if not key:
+                continue
+            spellings[key][g] += 1
+            mention_videos[key].add(v["video_id"])
+
+    normalized = [
+        (v["video_id"], normalize_game_name(v.get("title")),
+         normalize_game_name(v.get("primary_game")))
+        for v in videos
+    ]
 
     results = []
-    for game, mention_count in mentions.items():
-        ded_count = dedicated.get(game, 0)
-        # Only show games that are genuinely under-covered:
-        # mentioned in 3+ videos but with 2 or fewer dedicated videos
-        if mention_count >= 3 and ded_count <= 2:
-            ratio = round(mention_count / max(ded_count, 1), 1)
-            results.append([game, mention_count, ded_count, ratio])
+    for key, mentioned in mention_videos.items():
+        if len(mentioned) < min_mentions:
+            continue
+        word_rx = re.compile(r"\b" + re.escape(key) + r"\b")
+        ded_videos = {
+            vid for vid, title, primary in normalized
+            if primary == key or word_rx.search(title)
+        }
+        if len(ded_videos) > max_dedicated:
+            continue
+        display = spellings[key].most_common(1)[0][0]
+        ratio = round(len(mentioned) / max(len(ded_videos), 1), 1)
+        results.append([display, len(mentioned), len(ded_videos), ratio])
 
     results.sort(key=lambda x: x[3], reverse=True)
     return results

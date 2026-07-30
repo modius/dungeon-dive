@@ -262,6 +262,24 @@ def match_tags(text, compiled_patterns):
     return tags
 
 
+def is_decorated_known_game(candidate):
+    """True when a title-derived candidate is a known game plus decoration.
+
+    "Runebound Retrospective - Episode 3" is not a game, it is Runebound with a
+    series label attached. Kept as its own name, each such variant becomes a
+    one-video "game" that also outranks the real name in primary_game selection
+    (longest match wins), draining the parent's dedicated count.
+    """
+    lowered = candidate.lower()
+    for game in KNOWN_GAMES:
+        game_lower = game.lower()
+        if game_lower == lowered:
+            return False  # the direct-match pass already added it
+        if re.search(r"\b" + re.escape(game_lower) + r"\b", lowered):
+            return True
+    return False
+
+
 def extract_games_from_title(title):
     """Extract game name from video title heuristics."""
     games = set()
@@ -276,8 +294,9 @@ def extract_games_from_title(title):
     m = re.match(r"^(.+?)(?:\s*[-–—]\s*(?:Review|Overview|Take a Look|Part \d|A |The |Let'?s))", title)
     if m:
         candidate = m.group(1).strip()
-        # Don't add very generic titles
-        if len(candidate) > 2 and candidate.lower() not in ("the", "a", "an"):
+        # Don't add very generic titles, or variants of a game we already have
+        if (len(candidate) > 2 and candidate.lower() not in ("the", "a", "an")
+                and not is_decorated_known_game(candidate)):
             games.add(candidate)
 
     return games
@@ -422,12 +441,17 @@ def analyze_video(video, post_body, transcript_text=None):
     title_games = extract_games_from_title(title)
     all_games = extract_games_from_text(text, title_games)
 
-    # Primary game = first game from title, or largest set
+    # Primary game = longest name from the title, else longest found in the text.
+    # Tie-break alphabetically: these are sets, so length alone leaves the winner
+    # to set iteration order, which shifts between runs and churns primary_game.
+    def most_specific(names):
+        return sorted(names, key=lambda n: (-len(n), n))[0]
+
     primary_game = None
     if title_games:
-        primary_game = sorted(title_games, key=len, reverse=True)[0]
+        primary_game = most_specific(title_games)
     elif all_games:
-        primary_game = sorted(all_games, key=len, reverse=True)[0]
+        primary_game = most_specific(all_games)
 
     # Content category classification
     content_category, category_source = classify_content_category(
