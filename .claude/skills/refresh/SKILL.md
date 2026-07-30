@@ -19,6 +19,8 @@ python3 scripts/analyze_content.py --index video_index.json
 
 Tags all imported videos with game, format, mechanic, theme, player mode, platform, and era facets. Only processes new/untagged videos by default.
 
+**Add `--reanalyze` after any change to the tagging logic** (`KNOWN_GAMES`, `AMBIGUOUS_GAME_NAMES`, the extractors in `analyze_content.py`). Cached tags are never revisited otherwise, so a fix silently applies to new videos only and the dashboards keep serving the old numbers. Costs ~40s for the full archive and touches no APIs.
+
 ### 2. Fetch YouTube engagement stats
 
 ```bash
