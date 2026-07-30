@@ -203,7 +203,8 @@ def normalize_game_name(name):
     return re.sub(r"[^a-z0-9]+", " ", stripped).strip()
 
 
-def compute_coverage_gaps(analytics, min_mentions=3, max_dedicated=2):
+def compute_coverage_gaps(analytics, all_videos=None, min_mentions=3,
+                          max_dedicated=2):
     """Games discussed across many videos but with little dedicated coverage.
 
     Dedicated coverage is judged by title evidence as well as primary_game: a
@@ -217,6 +218,11 @@ def compute_coverage_gaps(analytics, min_mentions=3, max_dedicated=2):
 
     Name variants that differ only by a leading article are folded together, so
     "Restless" and "The Restless" count as one subject rather than two thin ones.
+
+    all_videos is the full video_index, used so coverage counts the channel
+    rather than the archive. Without it, a game Daniel covered in a video that
+    has not been imported yet reads as never covered — Gloomhaven has a 2020
+    video still sitting in the pending queue.
     """
     if not analytics:
         return []
@@ -239,6 +245,11 @@ def compute_coverage_gaps(analytics, min_mentions=3, max_dedicated=2):
          normalize_game_name(v.get("primary_game")))
         for v in videos
     ]
+    # Titles from the whole channel, so pending videos count as coverage.
+    channel_titles = [
+        (v["video_id"], normalize_game_name(v.get("title")))
+        for v in (all_videos or [])
+    ]
 
     results = []
     for key, mentioned in mention_videos.items():
@@ -249,6 +260,8 @@ def compute_coverage_gaps(analytics, min_mentions=3, max_dedicated=2):
             vid for vid, title, primary in normalized
             if primary == key or word_rx.search(title)
         }
+        ded_videos.update(
+            vid for vid, title in channel_titles if word_rx.search(title))
         if len(ded_videos) > max_dedicated:
             continue
         display = spellings[key].most_common(1)[0][0]
@@ -759,7 +772,7 @@ def main():
     game_perf = compute_game_performance(analytics, stats)
     format_perf = compute_format_performance(analytics, stats)
     publishing = compute_publishing_patterns(videos)
-    gaps = compute_coverage_gaps(analytics)
+    gaps = compute_coverage_gaps(analytics, videos)
     series = compute_series_health(series_data, analytics)
     web = compute_content_web(analytics)
     content_cats, content_cats_3y = compute_content_categories(videos, stats, analytics)

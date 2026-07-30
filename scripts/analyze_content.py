@@ -251,6 +251,41 @@ PLATFORM_RE = compile_patterns(PLATFORM_PATTERNS)
 ERA_RE = compile_patterns(ERA_PATTERNS)
 
 
+def compile_game_pattern(name):
+    """Whole-word matcher for a game name, tolerating a plural.
+
+    Game names must not match inside longer words. Plain substring search made
+    "Rove" fire on improve/proved/grove (112 false hits across the archive) and
+    "Vantage" on advantage/disadvantage (90) — enough to put a barely-covered
+    game at the top of the dashboard. The optional trailing "s" keeps genuine
+    mentions like "talismans" and "fallen lands".
+    """
+    return re.compile(r"\b" + re.escape(name.lower()) + r"s?\b")
+
+
+KNOWN_GAME_RE = [(game, compile_game_pattern(game)) for game in KNOWN_GAMES]
+
+# Game names that are also ordinary English words. In a transcript, "legendary"
+# and "descent" are the adjective and the noun far more often than the games —
+# "Legendary" scored 81 mentions and 17 primary_game assignments across the
+# archive without appearing in a single video title. These names must appear in
+# the title or the post body, which is deliberate prose, rather than anywhere in
+# the auto-captioned transcript.
+AMBIGUOUS_GAME_NAMES = {
+    "Legendary", "Descent", "Restless", "The Restless", "Rove", "Vantage",
+    "Talisman", "He is Coming",
+}
+
+# For those names, capitalisation in the post body separates the game from the
+# word: the Keeper writes "Descent" for the game and "the descent into hell" for
+# the noun. Matched case-sensitively against the body only — a title mention is
+# deliberate whatever its case, and is picked up by extract_games_from_title.
+AMBIGUOUS_GAME_RE = {
+    game: re.compile(r"\b" + re.escape(game) + r"s?\b")
+    for game in AMBIGUOUS_GAME_NAMES
+}
+
+
 def match_tags(text, compiled_patterns):
     """Return set of tags that match in text."""
     tags = set()
@@ -271,11 +306,10 @@ def is_decorated_known_game(candidate):
     (longest match wins), draining the parent's dedicated count.
     """
     lowered = candidate.lower()
-    for game in KNOWN_GAMES:
-        game_lower = game.lower()
-        if game_lower == lowered:
+    for game, rx in KNOWN_GAME_RE:
+        if game.lower() == lowered:
             return False  # the direct-match pass already added it
-        if re.search(r"\b" + re.escape(game_lower) + r"\b", lowered):
+        if rx.search(lowered):
             return True
     return False
 
@@ -286,8 +320,8 @@ def extract_games_from_title(title):
 
     # Direct match against known games
     title_lower = title.lower()
-    for game in KNOWN_GAMES:
-        if game.lower() in title_lower:
+    for game, rx in KNOWN_GAME_RE:
+        if rx.search(title_lower):
             games.add(game)
 
     # Pattern: "GAME - Review" or "GAME - Take a Look" etc.
@@ -302,13 +336,23 @@ def extract_games_from_title(title):
     return games
 
 
-def extract_games_from_text(text, title_games):
-    """Find game mentions in text, prioritizing known games."""
+def extract_games_from_text(text, title_games, post_body=None):
+    """Find game mentions in text, prioritizing known games.
+
+    Ambiguous names are credited only on a capitalised match in post_body, which
+    is edited prose. An auto-captioned transcript cannot distinguish the game
+    "Legendary" from the adjective, and treating it as evidence credited 81
+    videos with a game that has never appeared in one of Daniel's titles.
+    """
     games = set()
     text_lower = text.lower()
+    body = post_body or ""
 
-    for game in KNOWN_GAMES:
-        if game.lower() in text_lower:
+    for game, rx in KNOWN_GAME_RE:
+        if game in AMBIGUOUS_GAME_NAMES:
+            if AMBIGUOUS_GAME_RE[game].search(body):
+                games.add(game)
+        elif rx.search(text_lower):
             games.add(game)
 
     # Include title-extracted games
@@ -439,19 +483,18 @@ def analyze_video(video, post_body, transcript_text=None):
     has_transcript = bool(transcript_text and len(transcript_text) > 100)
 
     title_games = extract_games_from_title(title)
-    all_games = extract_games_from_text(text, title_games)
+    all_games = extract_games_from_text(text, title_games, post_body)
 
-    # Primary game = longest name from the title, else longest found in the text.
-    # Tie-break alphabetically: these are sets, so length alone leaves the winner
-    # to set iteration order, which shifts between runs and churns primary_game.
-    def most_specific(names):
-        return sorted(names, key=lambda n: (-len(n), n))[0]
-
+    # Primary game comes from the title only. Falling back to the longest name
+    # found in the transcript put a primary game on 162 videos that are not about
+    # one — "Why I Love A Touch of Evil" was filed under Arkham Horror, "Hellboy:
+    # The Board Game" under Warhammer Quest — which then skewed the per-game view
+    # averages. A video whose title names no game has no primary game.
+    # Tie-break alphabetically: title_games is a set, so length alone leaves the
+    # winner to iteration order, which shifts between runs and churns the tag.
     primary_game = None
     if title_games:
-        primary_game = most_specific(title_games)
-    elif all_games:
-        primary_game = most_specific(all_games)
+        primary_game = sorted(title_games, key=lambda n: (-len(n), n))[0]
 
     # Content category classification
     content_category, category_source = classify_content_category(
