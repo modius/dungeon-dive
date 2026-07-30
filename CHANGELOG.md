@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-30 — Loose Pages: Exhibit Completions (5 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days (yesterday's JJ0wEMAa0Qg already imported) → queue drain. `loose-pages-exhibit-completions` at rotation_index 0 (one_shot, vpb=5). All 5 drift-checked pending; full slate fetched cleanly (17,501 → 24,862 chars, 0 failures). Day's transcript total = 5, well under the ~12–15/hr throttle.
+- Pre-flight: rate limit OK (1/20 videos posted in 24h), config OK, integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 0 new videos.
+- Posts (chronological by publish date — a grab-bag slate whose only common thread is the exhibits each one completes):
+  - https://dungeondive.quest/t/dungeon-degenerats-mean-streets-expansion-and-my-five-favorite-characters/1980 (Dungeon Degenerates *Mean Streets* — plague tokens in the settlements, settlement encounter deck, top-5 characters; 2019-05-31, 208w)
+  - https://dungeondive.quest/t/zona-it-ain-t-a-roadside-picnic/1977 (Zona: The Secret of Chernobyl — *Roadside Picnic* lineage, competitive not co-op, emissions-wave timer; 2020-06-10, 214w)
+  - https://dungeondive.quest/t/glory-2nd-edition-simplicity-is-thy-name/1981 (Glory 2nd Ed — 7-page rulebook, opt-in combat, rule-breaking ability/goods/fate decks; 2022-11-01, 215w)
+  - https://dungeondive.quest/t/forbidden-psalm-using-battlemats-to-suggest-narrative-and-customizing-your-experience/1979 (Forbidden Psalm follow-up — battlemat exits as branching campaign, Solitary Defilement crossover, home-made paper minis; 2023-01-16, 204w)
+  - https://dungeondive.quest/t/pirates-of-the-scumribbean-pirate-borg-review-solo-rpg-friday/1978 (Pirate Borg — Spirit as fifth stat, d66 apocalypse table, naval combat, Skeleton Point sandbox; 2023-03-31, 207w)
+- Keeper series post ("Loose Pages" — 233w prose / 464w total, series register; Exhibit Catalogue of 9, chronological, integrating all 4 `related_imported_ids` inline with the 5 new with no new/existing distinction: Dungeon Degenerates Traditional Review (t/1373), An overview of Forbidden Psalm (t/1259), Six Runebound Alternatives (t/1345), The Everrain/Sleeping Gods/Pirate Borg (t/1745)): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/111.
+- Stats: 1044 total, 759 imported, 275 pending, 10 no_transcript. Archive: 680 transcripts, 759 posts.
+- `series_queue.json`: `loose-pages-exhibit-completions` drained empty → moved to `completed_series` (parts_completed: 1, total_videos: 5, completed_date: 2026-07-30, keeper_post retained). rotation_index stays 0 (removal shifts remaining forward) → next is `witawitadd-essays`. 3 series / 32 videos remain queued: witawitadd-essays (11), drafting-table (9), hobbycast-2022 (12).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-30 — Priority drop: Dungeons of Galora (1 video) — ad-hoc, queue untouched
 - Decision tree: 1 priority pending in last 14 days (JJ0wEMAa0Qg, "Dungeons of Galora", published 2026-07-29) → ad-hoc priority run. Exited after posting; queue NOT drained or mutated — `loose-pages-exhibit-completions` (1 series / 5 videos) waits one cycle per the priority rule.
 - Pre-flight: rate limit OK (0/20 posted in 24h), config OK, integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking). `fetch_channel_videos` picked up 1 new video (JJ0wEMAa0Qg).

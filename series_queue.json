@@ -1,29 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "loose-pages-exhibit-completions",
-      "title": "Loose Pages — Exhibit Completions",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "r3P6BU0gEVU",
-        "5I2-cQ7oa10",
-        "zSvZdF7CBjU",
-        "qMz0UbGJq4Y",
-        "jdAA_65-h0E"
-      ],
-      "related_imported_ids": [
-        "24Ib0j0xDxE",
-        "Gjf4AsYGwU8",
-        "0JFuxpSFiLo",
-        "h1qNF-YaHX8"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "witawitadd-essays",
       "title": "What I Talk About When I Talk About Dungeon Diving",
       "status": "continuing",
@@ -497,6 +474,14 @@
       "total_videos": 12,
       "completed_date": "2026-07-28",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/109"
+    },
+    {
+      "theme": "loose-pages-exhibit-completions",
+      "title": "Loose Pages — Exhibit Completions",
+      "parts_completed": 1,
+      "total_videos": 5,
+      "completed_date": "2026-07-30",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/111"
     }
   ],
   "rotation_index": 0
