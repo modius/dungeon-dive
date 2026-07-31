@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-31 — What I Talk About When I Talk About Dungeon Diving (11 videos) — queue drain, series complete
+- Decision tree: 0 priority pending in last 14 days (all six most-recent uploads already imported) → queue drain. `witawitadd-essays` at rotation_index 0 (one_shot, vpb=11). All 11 drift-checked pending, none skipped; full slate fetched cleanly (9,506 → 32,008 chars, 0 permanent and 0 transient failures). Day's transcript total = 11, under the ~12–15/hr throttle.
+- Pre-flight: rate limit OK (5/20 videos posted in 24h, 15 headroom), config OK (Discourse admin confirmed → backdating works), integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 0 new videos.
+- The channel's essay wing: nine WITAWITADD entries (2019–2022, incl. the unlabelled *Confessions of a Rule Book Junkie*) plus the two *Diving In* episodes that succeeded the series. No games on the table — the archivist working backwards from the shelf to the reason for the shelf.
+- Posts (chronological by publish date):
+  - https://dungeondive.quest/t/what-i-talk-about-when-i-talk-about-dungeon-diving-episode-one/1984 (Episode One — collections aren't personality tests; the 1984 red box during the Satanic Panic; imagination as a tool that dulls unused; 2019-01-30, 224w)
+  - https://dungeondive.quest/t/witawitadd-episode-two-house-rules/1988 (House Rules — the Order of Vampire Hunters timer made elastic, deferred armour damage, carried-over XP; 2019-05-19, 243w)
+  - https://dungeondive.quest/t/witawitadd-yo-dawg-i-heard-you-like-games/1990 (Yo Dawg — games played before games: Microscope, Fiasco, The Quiet Year, Call to Adventure, Life and Legend; 2019-11-09, 241w)
+  - https://dungeondive.quest/t/witawitadd-exploration/1985 (Exploration — the five ingredients of the *illusion* of exploration; Forgotten Depths' tetromino legendary locations; 2019-12-12, 229w)
+  - https://dungeondive.quest/t/witawitadd-escapism/1989 (Escapism — recorded late March 2020; escapism starts at the storefront, not the table; the R2-D2 fire hydrant; 2020-03-30, 234w)
+  - https://dungeondive.quest/t/witawitadd-empty-tombs/1987 (Empty Tombs — answering the "nothing happens" complaint; Anor Londo's emptiness as choice, not limit; 2020-04-21, 243w)
+  - https://dungeondive.quest/t/witawitadd-slow-questing/1982 (Slow Questing — upkeep as the test of a leave-standing game; Runebound house rules; Fabled Lands' purchasable house; 2020-05-06, 246w)
+  - https://dungeondive.quest/t/confessions-of-a-rule-book-junkie/1986 (Rule Book Junkie — NES manuals as the origin story; ten rulebooks he admires; credit your artists, include an index; 2020-12-13, 250w)
+  - https://dungeondive.quest/t/lets-talk-about-combat-witawitadd/1992 (Combat — the genre's central verb, mostly unloved; KDM S-tier, Space Hulk most intense, initiative tracks worth stealing; 2022-02-27, 247w)
+  - https://dungeondive.quest/t/diving-in-episode-1-why-do-i-love-dice/1991 (Dice — luck grants permission to lose; five dice systems ranked; the unidentified plus/minus die; 2023-12-07, 250w)
+  - https://dungeondive.quest/t/diving-in-episode-2-stat-tests-and-my-issues-with-player-focused-puzzles-in-rpgs/1983 (Stat tests — a viewer comment reframed; if the GM tests your wits, why not your deadlift?; 2023-12-21, 250w)
+- Keeper series post ("What I Talk About When I Talk About Dungeon Diving" — 180w prose / 500w total, series register at the hard cap; Exhibit Catalogue of 16, chronological, integrating all 5 `related_imported_ids` inline with the 11 new with no new/existing distinction: Shadows of Brimstone Part 30 house rules (t/1518), Expedition to Skull Island (t/1825), Why I don't do let's plays (t/1956), My thoughts on AI art (t/241), Witcher Adventure Game house rules (t/1172)): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/112.
+- Stats: 1044 total, 770 imported, 264 pending, 10 no_transcript. Archive: 691 transcripts, 770 posts.
+- `series_queue.json`: `witawitadd-essays` drained empty → moved to `completed_series` (parts_completed: 1, total_videos: 11, completed_date: 2026-07-31, keeper_post retained). rotation_index stays 0 (removal shifts remaining forward) → next is `drafting-table`. 2 series / 21 videos remain queued: drafting-table (9), hobbycast-2022 (12).
+- Skill patch: `import/SKILL.md` register A word budget clarified — the 250–400 target / 500 hard cap now applies to **body prose**, with the Exhibit Catalogue excluded, since catalogue length scales with batch size (16 entries here ≈ 300 words, which alone left almost no room for prose under a total-word cap).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-30 — Loose Pages: Exhibit Completions (5 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days (yesterday's JJ0wEMAa0Qg already imported) → queue drain. `loose-pages-exhibit-completions` at rotation_index 0 (one_shot, vpb=5). All 5 drift-checked pending; full slate fetched cleanly (17,501 → 24,862 chars, 0 failures). Day's transcript total = 5, well under the ~12–15/hr throttle.
 - Pre-flight: rate limit OK (1/20 videos posted in 24h), config OK, integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 0 new videos.

@@ -1,36 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "witawitadd-essays",
-      "title": "What I Talk About When I Talk About Dungeon Diving",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 11,
-      "video_ids": [
-        "EckbfLRDGjE",
-        "fg72xV_ZX8g",
-        "nRTuARH-N9A",
-        "Sf25ENrbQGM",
-        "hyisCTgnS0g",
-        "ad5pxORFPfk",
-        "8r9S_xIzqLk",
-        "W6U3fBgQoVg",
-        "y6T5kX1L0aw",
-        "x_KffjhARa0",
-        "BfjZU1zyiOc"
-      ],
-      "related_imported_ids": [
-        "IH591H86iFQ",
-        "x5fPiJUOMk0",
-        "ANYrzwn5h_M",
-        "CD6KcQMdzfc",
-        "4tli9Q4KZ3w"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "drafting-table",
       "title": "The Drafting Table — Design, Art, and Conversation",
       "status": "continuing",
@@ -482,6 +452,14 @@
       "total_videos": 5,
       "completed_date": "2026-07-30",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/111"
+    },
+    {
+      "theme": "witawitadd-essays",
+      "title": "What I Talk About When I Talk About Dungeon Diving",
+      "parts_completed": 1,
+      "total_videos": 11,
+      "completed_date": "2026-07-31",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/112"
     }
   ],
   "rotation_index": 0

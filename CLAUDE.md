@@ -64,7 +64,7 @@ Body structure: YouTube link → 150–250 word summary → `----` → discussio
 ## The Keeper's three voices (don't conflate them)
 
 1. **Per-video summary** (step 8 of `/import`) — analytical, 150–250 words, encourages viewing the video.
-2. **Series Keeper update** (queue drain) — atmospheric Vancian wry humour, **target 400 words / hard cap 600**, encourages thematic forum browsing. Group videos by sub-theme, 1–2 sentences narrative each, never a paragraph per video.
+2. **Series Keeper update** (queue drain) — atmospheric Vancian wry humour, **target 250–400 words of body prose / hard cap 500, excluding the Exhibit Catalogue** (which scales with batch size), encourages thematic forum browsing. Prose is framing only; the catalogue carries the per-video hooks.
 3. **Priority drop** (ad-hoc fresh upload run) — terse alert, **target 100–200 words / hard cap 250**. Linked list of new videos with one short hook each. Close with "planned excavations resume next cycle."
 
 All three sign off:
