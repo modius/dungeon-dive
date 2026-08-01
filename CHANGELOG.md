@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-01 — A Normal Guy Plays Dark Souls Part 1 (1 video) — ad-hoc priority drop
+- Decision tree: 1 priority pending in last 14 days (`r6_PIKzQJ8Q`, published 2026-07-31) → ad-hoc priority batch, exit after posting. Queue untouched; drain waits one cycle.
+- Pre-flight: rate limit OK (0/20 videos posted in 24h, full headroom), config OK (Discourse admin confirmed → backdating works), integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 1 new video. Transcript fetched cleanly (33,058 chars, 0 permanent and 0 transient failures).
+- Post:
+  - https://dungeondive.quest/t/a-normal-guy-plays-dark-souls-part-1-intro-through-taurus-demon/1993 (Digital Dive casual let's play — hunter start, master key, claymore build; Dark Souls as level-design masterclass; no-tutorial design; Firekeeper Soul suicide run, Petrus' stashed treachery, Solaire, Taurus Demon via gold pine resin; two episodes planned, more depends on views; 2026-07-31, 239w)
+- Keeper priority drop (169w body, alert register, well under the 250 cap) with a 3-entry **From the deeper stacks** cross-reference — Rune (t/1832, Dark Souls on the table), Revisiting Bloodborne: The Board Game (t/1833, same studio, less kind translation), Video Games? Why? Channel Update (t/1161, why the Digital Dive exists): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/113.
+- Stats: 1045 total, 771 imported, 264 pending, 10 no_transcript. Archive: 692 transcripts, 771 posts.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). 2 series / 21 videos still queued: drafting-table (9, rotation_index 0), hobbycast-2022 (12).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-07-31 — What I Talk About When I Talk About Dungeon Diving (11 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days (all six most-recent uploads already imported) → queue drain. `witawitadd-essays` at rotation_index 0 (one_shot, vpb=11). All 11 drift-checked pending, none skipped; full slate fetched cleanly (9,506 → 32,008 chars, 0 permanent and 0 transient failures). Day's transcript total = 11, under the ~12–15/hr throttle.
 - Pre-flight: rate limit OK (5/20 videos posted in 24h, 15 headroom), config OK (Discourse admin confirmed → backdating works), integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 0 new videos.

@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-07-31T02:09:32.974501+00:00",
+  "last_fetched": "2026-08-01T10:06:21.763393+00:00",
   "videos": [
+    {
+      "video_id": "r6_PIKzQJ8Q",
+      "title": "A Normal Guy Plays Dark Souls - Part 1 - Intro Through Taurus Demon",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-07-31T16:00:40Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/r6_PIKzQJ8Q/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 1993,
+      "imported_at": "2026-08-01T10:07:43.213121Z"
+    },
     {
       "video_id": "JJ0wEMAa0Qg",
       "title": "Dungeons of Galora - A Solo, dungeon crawl, RPG",
