@@ -96,7 +96,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 
 11. `python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html`
 12. Update `series_queue.json` (skip entirely if this was an ad-hoc priority run — priority videos never touch the queue — or an interactive user override):
-    - **Drain:** remove the imported IDs from `active_series[rotation_index].video_ids`.
+    - **Drain:** remove the imported IDs from `active_series[rotation_index].video_ids`. **Also remove any ID from this run's slate that hit a `permanent: true` transcript failure** — it was just marked `no_transcript` and can never become importable, so leaving it in `video_ids` only forces a wasted rotation where the next run drift-checks the slate to nothing. Removing it now reaches the same end state one cycle earlier. Note the dropped ID and its reason in the `completed_series` entry (or CHANGELOG if the series continues). IDs that hit **transient** failures stay in `video_ids` — they're still `pending` and will retry.
     - **Record progress:** increment `last_part`, set `last_imported` to today's date (YYYY-MM-DD), set `keeper_post` to the URL of the keeper reply just posted.
     - **Complete if drained:** if `video_ids` is now empty, remove the entry from `active_series` and append to `completed_series` with:
       - `parts_completed`: final `last_part` value

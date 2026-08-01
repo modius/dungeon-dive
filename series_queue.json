@@ -1,34 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "drafting-table",
-      "title": "The Drafting Table — Design, Art, and Conversation",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 9,
-      "video_ids": [
-        "mhXS2cpJlRo",
-        "Tj9CJM4ti2w",
-        "KiOKGmcOb_g",
-        "F5y8-ztKpCM",
-        "dnUUMRDbasE",
-        "_9BI3P-OH84",
-        "J1tRJRX44zc",
-        "cfGpIvLPcPw",
-        "EIKIx9Xpl7c"
-      ],
-      "related_imported_ids": [
-        "IJdPXXMpYPk",
-        "B0IPEMdrCRA",
-        "9hgzA60ZGZg",
-        "kuoLAhyeaJQ",
-        "B9zmRMY6ISI"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "hobbycast-2022",
       "title": "Hobbycast — The 2022 Podcast Run",
       "status": "continuing",
@@ -460,6 +432,15 @@
       "total_videos": 11,
       "completed_date": "2026-07-31",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/112"
+    },
+    {
+      "theme": "drafting-table",
+      "title": "The Drafting Table — Design, Art, and Conversation",
+      "parts_completed": 1,
+      "total_videos": 8,
+      "completed_date": "2026-08-02",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/114",
+      "note": "Tj9CJM4ti2w (The Art of Cave Evil) permanently captionless — marked no_transcript, dropped from slate"
     }
   ],
   "rotation_index": 0
