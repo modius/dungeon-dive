@@ -1,37 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "hobbycast-2022",
-      "title": "Hobbycast — The 2022 Podcast Run",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 12,
-      "video_ids": [
-        "KlnSnb7YFEY",
-        "Hwi-jokx7aI",
-        "LMryIj-gt9A",
-        "vUEmbLAxZ0Y",
-        "DnXALAe3BtY",
-        "DDiDtP-uOqU",
-        "8UOwBfCgZn8",
-        "e061vqWD0lQ",
-        "FlbiS6qn6oE",
-        "TDOWMduvE1o",
-        "PdO8UebbbSA",
-        "7NZvpCqH7eA"
-      ],
-      "related_imported_ids": [
-        "UCaZFYzYm9k",
-        "i5Ufb0FYkDM",
-        "U4zBHwf2MTw",
-        "YpCAi9ofhjs",
-        "q4mgxHWrmLM"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -91,42 +59,42 @@
     },
     {
       "theme": "dungeon-universalis",
-      "title": "Dungeon Universalis — the third leg of the heavyweights triangle",
+      "title": "Dungeon Universalis \u2014 the third leg of the heavyweights triangle",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-07"
     },
     {
       "theme": "dungeon-crusade",
-      "title": "Dungeon Crusade — Avalon Beckons",
+      "title": "Dungeon Crusade \u2014 Avalon Beckons",
       "parts_completed": 2,
       "total_videos": 11,
       "completed_date": "2026-05-09"
     },
     {
       "theme": "machina-arcana",
-      "title": "Machina Arcana — Three Editions of the Lovecraftian Crawler",
+      "title": "Machina Arcana \u2014 Three Editions of the Lovecraftian Crawler",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-05-11"
     },
     {
       "theme": "folklore-fall-of-the-spire",
-      "title": "Folklore the Affliction — Fall of the Spire",
+      "title": "Folklore the Affliction \u2014 Fall of the Spire",
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-05-11"
     },
     {
       "theme": "aftermath",
-      "title": "Aftermath — Daniel's Wasteland Let's Play",
+      "title": "Aftermath \u2014 Daniel's Wasteland Let's Play",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-05-12"
     },
     {
       "theme": "one-thing-i-love",
-      "title": "One thing I love about... — a 2024 micro-format experiment",
+      "title": "One thing I love about... \u2014 a 2024 micro-format experiment",
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-05-13"
@@ -139,49 +107,49 @@
     },
     {
       "theme": "d100-dungeon",
-      "title": "D100 Dungeon — a complete game's arc, all of it",
+      "title": "D100 Dungeon \u2014 a complete game's arc, all of it",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-15"
     },
     {
       "theme": "secrets-of-the-lost-tomb",
-      "title": "Secrets of the Lost Tomb — Daniel's #1 of all time, complete arc",
+      "title": "Secrets of the Lost Tomb \u2014 Daniel's #1 of all time, complete arc",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-05-18"
     },
     {
       "theme": "grey-gnome-games",
-      "title": "Grey Gnome Games — the Jason Glover catalogue, all of it",
+      "title": "Grey Gnome Games \u2014 the Jason Glover catalogue, all of it",
       "parts_completed": 1,
       "total_videos": 11,
       "completed_date": "2026-05-19"
     },
     {
       "theme": "a-touch-of-evil",
-      "title": "A Touch of Evil — a five-year supernatural-game dossier",
+      "title": "A Touch of Evil \u2014 a five-year supernatural-game dossier",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-05-23"
     },
     {
       "theme": "solo-rpg-toolkit-canon",
-      "title": "Solo RPG Tools — the 2022–2023 toolkit canon",
+      "title": "Solo RPG Tools \u2014 the 2022\u20132023 toolkit canon",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-06-01"
     },
     {
       "theme": "small-box-non-glover",
-      "title": "Small Box Dungeon Crawls (non-Glover) — the 2020–2022 boom, minus Grey Gnome",
+      "title": "Small Box Dungeon Crawls (non-Glover) \u2014 the 2020\u20132022 boom, minus Grey Gnome",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-06-03"
     },
     {
       "theme": "ironsworn-starforged",
-      "title": "Ironsworn: Starforged — Vincent Baker's sci-fi trilogy (May 2023)",
+      "title": "Ironsworn: Starforged \u2014 Vincent Baker's sci-fi trilogy (May 2023)",
       "parts_completed": 1,
       "total_videos": 3,
       "completed_date": "2026-06-05",
@@ -189,7 +157,7 @@
     },
     {
       "theme": "etherfields",
-      "title": "Etherfields — the dreams quartet (Nov–Dec 2020)",
+      "title": "Etherfields \u2014 the dreams quartet (Nov\u2013Dec 2020)",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-06-08",
@@ -197,7 +165,7 @@
     },
     {
       "theme": "solo-rpg-friday-2023",
-      "title": "Solo RPG Friday — the 2023 review wave",
+      "title": "Solo RPG Friday \u2014 the 2023 review wave",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-06-09",
@@ -205,7 +173,7 @@
     },
     {
       "theme": "sleeping-gods",
-      "title": "Sleeping Gods — Red Raven's open-world deep dive (Feb 2021 + 2023 reappraisal)",
+      "title": "Sleeping Gods \u2014 Red Raven's open-world deep dive (Feb 2021 + 2023 reappraisal)",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-06-10",
@@ -213,7 +181,7 @@
     },
     {
       "theme": "kingdom-death-monologues",
-      "title": "Kingdom Death: Monster — the Monologues + the art-book postscript (late-2018 → early-2019)",
+      "title": "Kingdom Death: Monster \u2014 the Monologues + the art-book postscript (late-2018 \u2192 early-2019)",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-06-10",
@@ -221,7 +189,7 @@
     },
     {
       "theme": "massive-darkness",
-      "title": "Massive Darkness — CMON's untapped crawl + the MD2 reassessment",
+      "title": "Massive Darkness \u2014 CMON's untapped crawl + the MD2 reassessment",
       "parts_completed": 1,
       "total_videos": 3,
       "completed_date": "2026-06-11",
@@ -229,7 +197,7 @@
     },
     {
       "theme": "solo-rpg-tools",
-      "title": "Solo RPG Tools — oracles, encounter cards, and the toolkit-builder dispatches",
+      "title": "Solo RPG Tools \u2014 oracles, encounter cards, and the toolkit-builder dispatches",
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-06-12",
@@ -237,7 +205,7 @@
     },
     {
       "theme": "gamebooks-cyoa",
-      "title": "Gamebooks & Choose Your Own Adventure — the solo gamebook dispatches",
+      "title": "Gamebooks & Choose Your Own Adventure \u2014 the solo gamebook dispatches",
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-06-13",
@@ -245,7 +213,7 @@
     },
     {
       "theme": "city-of-chaos",
-      "title": "Warhammer Quest: City of Chaos — the complete Let's Play",
+      "title": "Warhammer Quest: City of Chaos \u2014 the complete Let's Play",
       "parts_completed": 1,
       "total_videos": 9,
       "completed_date": "2026-06-15",
@@ -253,7 +221,7 @@
     },
     {
       "theme": "small-box-micro-crawls",
-      "title": "Small-Box & Micro Solo Crawls — big adventures, tiny footprints",
+      "title": "Small-Box & Micro Solo Crawls \u2014 big adventures, tiny footprints",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-06-18",
@@ -261,21 +229,21 @@
     },
     {
       "theme": "ran-king-of-king",
-      "title": "The Ran(King) of King — a ranked pilgrimage through Stephen King",
+      "title": "The Ran(King) of King \u2014 a ranked pilgrimage through Stephen King",
       "parts_completed": 2,
       "total_videos": 11,
       "completed_date": "2026-06-19"
     },
     {
       "theme": "xia-drift-system",
-      "title": "Xia: Legends of a Drift System — the space-western sandbox playthrough",
+      "title": "Xia: Legends of a Drift System \u2014 the space-western sandbox playthrough",
       "parts_completed": 1,
       "total_videos": 3,
       "completed_date": "2026-06-19"
     },
     {
       "theme": "paupers-ladder",
-      "title": "Pauper's Ladder — the King-Crimson adventure game",
+      "title": "Pauper's Ladder \u2014 the King-Crimson adventure game",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-06-22"
@@ -289,7 +257,7 @@
     },
     {
       "theme": "into-the-grimdark",
-      "title": "Into the Grimdark — Games Workshop's Sci-Fi Skirmishes",
+      "title": "Into the Grimdark \u2014 Games Workshop's Sci-Fi Skirmishes",
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-06-24"
@@ -303,14 +271,14 @@
     },
     {
       "theme": "video-game-adaptations",
-      "title": "Screen to Tabletop — Video-Game Adaptations on the Table",
+      "title": "Screen to Tabletop \u2014 Video-Game Adaptations on the Table",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-06-26"
     },
     {
       "theme": "modern-minis-crawlers",
-      "title": "The New Wave — Modern Miniatures Dungeon Crawlers",
+      "title": "The New Wave \u2014 Modern Miniatures Dungeon Crawlers",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-06-26"
@@ -324,21 +292,21 @@
     },
     {
       "theme": "map-making-solo-games",
-      "title": "Draw Your Own Dungeon — Map-Making Solo Games",
+      "title": "Draw Your Own Dungeon \u2014 Map-Making Solo Games",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-06-29"
     },
     {
       "theme": "retrolook-vintage-classics",
-      "title": "RetroLook — Vintage Dungeon & Adventure Classics",
+      "title": "RetroLook \u2014 Vintage Dungeon & Adventure Classics",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-06-30"
     },
     {
       "theme": "effortless-fun-cozy-adventures",
-      "title": "Effortless Fun — Cozy Narrative Adventures",
+      "title": "Effortless Fun \u2014 Cozy Narrative Adventures",
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-06-30"
@@ -359,21 +327,21 @@
     },
     {
       "theme": "wander-barnacle-bay",
-      "title": "Wander: The Cult of Barnacle Bay — Complete Let's Play",
+      "title": "Wander: The Cult of Barnacle Bay \u2014 Complete Let's Play",
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-07-07"
     },
     {
       "theme": "keepers-october-horror",
-      "title": "The Keeper's October — Horror Films & Reading Lists",
+      "title": "The Keeper's October \u2014 Horror Films & Reading Lists",
       "parts_completed": 2,
       "total_videos": 7,
       "completed_date": "2026-07-10"
     },
     {
       "theme": "2024-solo-rpg-wave",
-      "title": "The 2024–25 Solo RPG Wave",
+      "title": "The 2024\u201325 Solo RPG Wave",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-07-12"
@@ -387,7 +355,7 @@
     },
     {
       "theme": "big-box-kickstarter-wave",
-      "title": "Crates of Ambition — The Big-Box Kickstarter Wave",
+      "title": "Crates of Ambition \u2014 The Big-Box Kickstarter Wave",
       "parts_completed": 1,
       "total_videos": 12,
       "completed_date": "2026-07-24",
@@ -395,7 +363,7 @@
     },
     {
       "theme": "spring-2019-review-season",
-      "title": "Spring 2019 — The Miniatures-Adventure Review Season",
+      "title": "Spring 2019 \u2014 The Miniatures-Adventure Review Season",
       "parts_completed": 1,
       "total_videos": 4,
       "completed_date": "2026-07-27",
@@ -403,7 +371,7 @@
     },
     {
       "theme": "city-of-kings-2018",
-      "title": "The Expedition That Turned Back — City of Kings, March 2018",
+      "title": "The Expedition That Turned Back \u2014 City of Kings, March 2018",
       "parts_completed": 1,
       "total_videos": 7,
       "completed_date": "2026-07-27",
@@ -411,7 +379,7 @@
     },
     {
       "theme": "second-shelf",
-      "title": "The Second Shelf — Bookshelf Tours & the Wider Library",
+      "title": "The Second Shelf \u2014 Bookshelf Tours & the Wider Library",
       "parts_completed": 1,
       "total_videos": 12,
       "completed_date": "2026-07-28",
@@ -419,7 +387,7 @@
     },
     {
       "theme": "loose-pages-exhibit-completions",
-      "title": "Loose Pages — Exhibit Completions",
+      "title": "Loose Pages \u2014 Exhibit Completions",
       "parts_completed": 1,
       "total_videos": 5,
       "completed_date": "2026-07-30",
@@ -435,12 +403,20 @@
     },
     {
       "theme": "drafting-table",
-      "title": "The Drafting Table — Design, Art, and Conversation",
+      "title": "The Drafting Table \u2014 Design, Art, and Conversation",
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-08-02",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/114",
-      "note": "Tj9CJM4ti2w (The Art of Cave Evil) permanently captionless — marked no_transcript, dropped from slate"
+      "note": "Tj9CJM4ti2w (The Art of Cave Evil) permanently captionless \u2014 marked no_transcript, dropped from slate"
+    },
+    {
+      "theme": "hobbycast-2022",
+      "title": "Hobbycast \u2014 The 2022 Podcast Run",
+      "parts_completed": 1,
+      "total_videos": 12,
+      "completed_date": "2026-08-03",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/116"
     }
   ],
   "rotation_index": 0
