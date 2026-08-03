@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-03 — Astroprisma: Expansion Overview and Cybersphere Update (1 video) — ad-hoc priority drop
+- Decision tree: 1 priority pending in last 14 days (`aEQu0cO-iG8`, published 2026-08-02) → ad-hoc priority batch, exit after posting. Queue untouched; drain waits one cycle (second consecutive cycle deferred — `hobbycast-2022` has now waited twice).
+- Pre-flight: rate limit OK (0/20 videos posted in 24h, full headroom), config OK (Discourse admin confirmed → backdating works), integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 0 new videos — `aEQu0cO-iG8` was already in the index from a prior fetch. Transcript fetched cleanly (11,085 chars, 0 permanent and 0 transient failures).
+- Post:
+  - https://dungeondive.quest/t/astroprisma-expansion-overview-and-cybersphere-update-solo-rpg/2004 (follow-up to the 2026-07-12 Astroprisma review — the Cybersphere hacking-legend criticism withdrawn after viewers found it printed one page early in the settlement-activities spread; six expansions ranked: Exo Anomaly (connective tissue between set pieces, bundled with his copy) > Cloud Nine Casino (five-chapter Ambrosia infiltration) > Wanted (six bounties + contractor/hiding-place/complication/twist tables) > Vaporwave 3000, Sea of Neon, Ceramic Skin; album picks The Black Dog *Feral Grace* and Eno/Lanois/Eno *Apollo*; 2026-08-02, 234w)
+- Keeper priority drop (135w body, alert register, well under the 250 cap) with a 3-entry **From the deeper stacks** cross-reference — Astroprisma original review (t/1919, the review this despatch amends), Grimscar Expanded (t/1697, same expansions-overview exercise on a different shelf), CY_Korg (t/1558, cyberpunk stripped to its meanest parts): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/115.
+- Stats: 1046 total, 780 imported, 255 pending, 11 no_transcript. Archive: 701 transcripts, 780 posts.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). 1 series / 12 videos still queued: hobbycast-2022 (rotation_index 0).
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-08-02 — The Drafting Table: Design, Art, and Conversation (8 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days (yesterday's `r6_PIKzQJ8Q` already imported) → queue drain. `drafting-table` at rotation_index 0 (one_shot, vpb=9). All 9 drift-checked pending, none skipped.
 - Pre-flight: rate limit OK (1/20 videos posted in 24h, 19 headroom), config OK (Discourse admin confirmed → backdating works), integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 0 new videos.
