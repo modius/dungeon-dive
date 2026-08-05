@@ -1,5 +1,119 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "dark-venture",
+      "title": "Dark Venture \u2014 Eight Years in the Company of One Weird Game",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "N54m3zy-uzk",
+        "e83i1spluHo",
+        "NRlM9dhgPTg",
+        "RdvRwihvUUM",
+        "LRySNa5Y0No",
+        "FEqKnaBExZU"
+      ],
+      "related_imported_ids": [
+        "B0IPEMdrCRA",
+        "OYxpHMuv29k",
+        "lSkunEYX5Go",
+        "7sRKccOoPbY"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "nearly-effortless-fun-pt2",
+      "title": "Nearly Effortless Fun, Part Two",
+      "status": "continuing",
+      "one_shot": false,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "zrRTPvOBEnU",
+        "YA_LFvsyLoU",
+        "_LzDM8xt_dA",
+        "gXT5p-IBNMg",
+        "dlABqtYhbMk",
+        "ZvUISEnjqbQ",
+        "VTOl1gAKo44",
+        "8UWpsEyQwCU",
+        "Ao4VRNX_h4A",
+        "IQ3zeRLgnt4",
+        "NX-1jJ1PuxY",
+        "cga1y52KSCk",
+        "bJHikj8skz4",
+        "6ob9UwPviJA"
+      ],
+      "related_imported_ids": [
+        "1yK9VWnQpx4",
+        "MhZ5AKwboh0",
+        "AgcnylfczPE",
+        "Lk6JhpGO69M",
+        "ZE9ENcHPRr8"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "annals",
+      "title": "The Annals \u2014 The Channel's Own Ledger, 2018\u20132024",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 10,
+      "video_ids": [
+        "1APEiSZz2zM",
+        "MsxCeW9nTb0",
+        "I3T6O4ez75M",
+        "WjgW6u9Tde8",
+        "B5xTJMahaK4",
+        "Vb5gSRAHXCA",
+        "7wuBlcFsfvc",
+        "2OdJHlmdu3A",
+        "KMTemVbHKS4",
+        "eu92DDq5snw"
+      ],
+      "related_imported_ids": [
+        "9gFQ9rFMKEA",
+        "u7xKzLuKt5I",
+        "CSTFP0gKnd8",
+        "WYGsRorORyI"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "prototype-table",
+      "title": "The Prototype Table \u2014 Games Seen Before They Existed",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 12,
+      "video_ids": [
+        "HRQ4Ibbkkco",
+        "aQF7qqm1iHE",
+        "3xtwXWyEfhk",
+        "n_8ek8wvHc8",
+        "Y_mkJt3oY_k",
+        "o_FRQ02nigQ",
+        "u00LAYagwGo",
+        "aIcW25HaFsI",
+        "n93OGgP941o",
+        "zvjhIylspTc",
+        "rckZ2uBOGYs",
+        "LmDOOPuqYG8"
+      ],
+      "related_imported_ids": [
+        "A4wr-iI2hJU",
+        "rLfvnvBj8Ls"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
