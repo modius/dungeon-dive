@@ -87,6 +87,11 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
       -- The Keeper
       *[Witty observation]*
       ```
+      **Where the two numbers come from** (these go into a public post — get them right):
+      - **transcripts** = `ls archive/transcripts/ | wc -l`
+      - **posts archived** = the `imported` count in `video_index.json`, equivalently `ls archive/posts/*_post.json | wc -l`
+
+      Do **not** use a bare `ls archive/posts/ | wc -l` — that directory also holds ~120 `post_results_*.json` run manifests and overstates the count by that much. Both numbers must be read *after* `batch_post.py` has run (it archives the transcript and post files on success), and the Keeper post is composed before `update_dashboard.py`, so don't wait for the dashboard's "Archive: N transcripts, N posts" line — use it afterwards as a cross-check instead.
     - Save to `keeper-posts/keeper-THEME.md`
     - `python3 scripts/post_reply.py --config config.json --topic-id 1170 --body @keeper-posts/keeper-THEME.md`
 
