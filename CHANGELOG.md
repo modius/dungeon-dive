@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-05 — A Normal Guy Plays Dark Souls Part 2 (1 video) — ad-hoc priority drop
+- Decision tree: 1 priority pending in last 14 days (`JpctKDg71Pg`, published 2026-08-03) → ad-hoc priority batch, exit after posting. Queue untouched — and empty in any case since `hobbycast-2022` completed on 2026-08-03, so nothing was deferred by taking the priority path.
+- Pre-flight: rate limit OK (0/20 videos posted in 24h, full headroom), config OK (Discourse admin confirmed → backdating works), integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 1 new video (`JpctKDg71Pg`). Transcript fetched cleanly (36,055 chars, 0 permanent and 0 transient failures).
+- Post:
+  - https://dungeondive.quest/t/a-normal-guy-plays-dark-souls-part-2-ringing-the-first-bell-of-awakening/2017 (Hellkite bridge → first Bell of Awakening; two noob traps named — the unscaling Drake Sword he leaned on for half his first playthrough, and the Ring of Favor and Protection that breaks on removal; Lautrec kicked off the ledge without aggro; Solaire summoned for the Bell Gargoyles for the first time in ~8 years; the Firelink elevator that took him 30 hours to reach originally, tied to an argument for limited fast travel and against Elden Ring's open world; 2026-08-03, 229w)
+- Keeper priority drop (166w body, alert register, inside the 100–200 target) with a 3-entry **From the deeper stacks** cross-reference — Part 1 (t/1993, the run's start), Hobbycast E1 (t/2011, the full FromSoftware ranking incl. the Elden Ring and Sekiro complaints Part 2 alludes to), Rune (t/1832, Dark Souls folded onto cardboard): https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/117.
+- Stats: 1047 total, 793 imported, 243 pending, 11 no_transcript. Archive: 714 transcripts, 793 posts.
+- `series_queue.json`: unchanged (priority runs never mutate the queue). **`active_series` is empty** — `/plan-batch` still needed before the next non-priority `/import`.
+- Health: 79 imported videos still missing local transcripts (issue #2 — unchanged).
+
 ## 2026-08-03 — Hobbycast: The 2022 Podcast Run (12 videos) — queue drain, series complete
 - Decision tree: 0 priority pending in last 14 days (yesterday's `aEQu0cO-iG8` already imported) → queue drain. `hobbycast-2022` at rotation_index 0 (one_shot, vpb=12). All 12 drift-checked `pending`, none skipped — the slate survived intact after waiting two deferred cycles.
 - Pre-flight: rate limit OK (1/20 videos posted in 24h, 19 headroom), config OK (Discourse admin confirmed → backdating works), integrity WARN (79 imported missing local transcripts, issue #2 — non-blocking; dashboard stats unparseable — cosmetic). `fetch_channel_videos` found 0 new videos.

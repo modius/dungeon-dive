@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-03T02:52:09.534849+00:00",
+  "last_fetched": "2026-08-05T03:46:58.787898+00:00",
   "videos": [
+    {
+      "video_id": "JpctKDg71Pg",
+      "title": "A Normal Guy Plays Dark Souls - Part 2 - Ringing the First Bell of Awakening",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-03T16:00:06Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/JpctKDg71Pg/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2017,
+      "imported_at": "2026-08-05T03:48:24.247641Z"
+    },
     {
       "video_id": "aEQu0cO-iG8",
       "title": "Astroprisma: Expansion Overview and Cybersphere Update (Solo RPG)",
