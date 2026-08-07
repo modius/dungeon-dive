@@ -63,6 +63,8 @@ git reset --hard HEAD~1          # drop your commit; the dashboards are regenera
 git pull --ff-only origin main   # take the other run's commit
 ```
 
+> This reset is safe **only because a `/refresh` commit contains nothing but generated dashboards.** Do not carry it over to `/import`, whose commit holds the archive, live Discourse topic IDs, and the Keeper post — that one recovers with `git pull --rebase`.
+
 Then re-run step 4 and commit again. Your local `youtube_stats.json` survives the reset (it is gitignored), so the rebuilt dashboards carry whichever data is fresher — compare the total-views figure in the other run's commit message against yours to confirm which that is. History stays linear and no data is lost.
 
 ## When to run

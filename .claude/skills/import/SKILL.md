@@ -11,7 +11,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 
 ## Pre-flight
 
-1. `git pull origin main`
+1. `git pull origin main` — **before anything else generates a file.** A nightly `/refresh` pushes `docs/*.html` to this same branch, and once step 11 has rewritten the dashboards a plain `git pull` refuses to run ("local changes would be overwritten"). Pulling here, while the tree is clean, is the only cheap moment. It does not eliminate the race — this run holds the branch from step 1 to step 14, which on a full batch is many minutes — so see the recovery note on step 14.
 2. `python3 scripts/check_rate_limit.py` — if exit 1, STOP (daily limit reached).
 3. `python3 scripts/test_config.py --config config.json` — if fails, STOP.
 4. `python3 scripts/check_integrity.py --config config.json` — if exit 2, STOP and log error.
@@ -122,8 +122,28 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
     git push origin main
     ```
 
+    **If the push is rejected** (`! [rejected] main -> main (fetch first)`), a concurrent run — usually the nightly `/refresh` — landed while this import was working. Rebase; do not reset:
+
+    ```
+    git pull --rebase origin main
+    ```
+
+    > **Never use `/refresh`'s `git reset --hard HEAD~1` recovery here.** That advice is safe in `/refresh` because its commit contains only regenerable dashboards. An `/import` commit does not: it carries `archive/posts/` and `archive/transcripts/` (the permanent record), the `discourse_topic_id` values written into `video_index.json` for topics that are **already live on Discourse**, the Keeper post, the drained `series_queue.json`, and the CHANGELOG. Discarding that commit loses work that re-running cannot recreate — the posts exist remotely, so a second run would not repost them, and the index would no longer know their topic IDs.
+
+    The only file both runs touch is `docs/*.html`, so that is the only place the rebase can conflict. Resolve it by regenerating, never by hand-editing the HTML:
+
+    ```
+    python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html
+    git add docs/index.html docs/content.html docs/health.html
+    git rebase --continue
+    ```
+
+    Then push again. If the rebase conflicts in any file *other* than `docs/*.html`, stop and surface it — that means two runs mutated the archive or the queue concurrently, which is not a case to resolve automatically.
+
 ## Rules
 - Do NOT modify Python scripts unless explicitly asked
+- Recover from a rejected push with `git pull --rebase`, never `git reset --hard` — an `/import` commit contains the archive, live topic IDs, and the Keeper post, none of which a re-run can recreate
+- Never resolve a conflict in `docs/*.html` by hand; regenerate with `update_dashboard.py` and continue the rebase
 - If transcript fetch returns transient failures (IP block, rate limit, network), do NOT mark videos as `no_transcript` — they remain `pending` for the next run. Only `permanent: true` failures from `manifest.json` warrant the `no_transcript` flag.
 - One Keeper post per run
 - Quality over quantity: a themed batch of 5 is better than 12 random videos
