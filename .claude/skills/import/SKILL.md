@@ -117,10 +117,12 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 13. Update CHANGELOG.md with run summary.
 14. Commit and push:
     ```
-    git add video_index.json docs/index.html archive/ keeper-posts/ CHANGELOG.md series_queue.json
+    git add video_index.json docs/index.html docs/content.html docs/health.html archive/ keeper-posts/ CHANGELOG.md series_queue.json
     git commit -m "sync: imported N videos (theme description)"
     git push origin main
     ```
+
+    **Stage all three dashboards, not just `docs/index.html`.** Step 11's `update_dashboard.py` regenerates `docs/content.html` and `docs/health.html` as well. Leaving them unstaged doesn't fail this run — it fails the *next* one, whose step-1 `git pull` aborts with "local changes would be overwritten" against the nightly `/refresh`'s dashboard commit. Check `git status` is clean (bar untracked scratch dirs) before you finish.
 
     **If the push is rejected** (`! [rejected] main -> main (fetch first)`), a concurrent run — usually the nightly `/refresh` — landed while this import was working. Rebase; do not reset:
 
