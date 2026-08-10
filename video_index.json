@@ -1,7 +1,27 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-07T03:04:16.764411+00:00",
+  "last_fetched": "2026-08-10T02:38:59.363750+00:00",
   "videos": [
+    {
+      "video_id": "hVVP3uqEbXg",
+      "title": "Ten Tabletop Games for fans of Dark Souls",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-09T19:04:31Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/hVVP3uqEbXg/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2033,
+      "imported_at": "2026-08-10T02:40:24.813349Z"
+    },
+    {
+      "video_id": "fwJag8kazvc",
+      "title": "A Normal Guy Plays Dark Souls - Part 3 - The Capra Demon",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-07T16:00:38Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/fwJag8kazvc/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2032,
+      "imported_at": "2026-08-10T02:40:19.538503Z"
+    },
     {
       "video_id": "pCghepSi0M8",
       "title": "Arkham Horror 2nd Edition - Remastered - My Thoughts",
