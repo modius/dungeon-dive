@@ -146,6 +146,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 - Do NOT modify Python scripts unless explicitly asked
 - Recover from a rejected push with `git pull --rebase`, never `git reset --hard` — an `/import` commit contains the archive, live topic IDs, and the Keeper post, none of which a re-run can recreate
 - Never resolve a conflict in `docs/*.html` by hand; regenerate with `update_dashboard.py` and continue the rebase
+- Leave `pending_imports/` alone at the end of a run — `/repair`'s `cleanup` subcommand owns sweeping it, and it keeps staging files for still-`pending` videos on purpose so a half-finished run can resume without re-hitting the transcript API. Never `rm` the directory to tidy it.
 - If transcript fetch returns transient failures (IP block, rate limit, network), do NOT mark videos as `no_transcript` — they remain `pending` for the next run. Only `permanent: true` failures from `manifest.json` warrant the `no_transcript` flag.
 - One Keeper post per run
 - Quality over quantity: a themed batch of 5 is better than 12 random videos
