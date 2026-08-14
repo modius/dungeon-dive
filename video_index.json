@@ -1,7 +1,27 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-10T02:54:55.849608+00:00",
+  "last_fetched": "2026-08-14T00:33:20.632671+00:00",
   "videos": [
+    {
+      "video_id": "nqQ_uK7yUBw",
+      "title": "Tower of Elmarsh - A Paupers' Ladder Adventure Game",
+      "description": "Get the game:\nhttps://www.bedsitgames.co.uk/the-tower-of-elmarsh\n\nJoin the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-12T16:00:39Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/nqQ_uK7yUBw/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2051,
+      "imported_at": "2026-08-14T00:35:28.654607Z"
+    },
+    {
+      "video_id": "I6nU9HD6GVk",
+      "title": "A Normal Guy Plays Dark Souls - Part 4 - The Depths and the Gaping Dragon",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-10T16:00:40Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/I6nU9HD6GVk/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2050,
+      "imported_at": "2026-08-14T00:35:23.451391Z"
+    },
     {
       "video_id": "hVVP3uqEbXg",
       "title": "Ten Tabletop Games for fans of Dark Souls",
