@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-14T03:33:47.964707+00:00",
+  "last_fetched": "2026-08-16T13:06:37.201886+00:00",
   "videos": [
+    {
+      "video_id": "0c5PF6WpL7o",
+      "title": "A Normal Guy Plays Dark Souls - Part 5 - To the Bottom of Blighttown",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-14T16:00:36Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/0c5PF6WpL7o/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2065,
+      "imported_at": "2026-08-16T13:08:05.575990Z"
+    },
     {
       "video_id": "nqQ_uK7yUBw",
       "title": "Tower of Elmarsh - A Paupers' Ladder Adventure Game",

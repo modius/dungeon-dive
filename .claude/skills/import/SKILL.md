@@ -19,6 +19,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 ## Fetch & Select
 
 5. `python3 scripts/fetch_channel_videos.py --config config.json --index video_index.json`
+   - **A `requests.exceptions.SSLError` / `SSLEOFError` against `www.googleapis.com` mid-pagination is transient — just re-run the command unchanged.** The script collects every `playlistItems` page before it writes anything, so an aborted run leaves `video_index.json` untouched and a retry is safe (and costs no more quota than the first attempt). Don't be misled by the traceback: it's a wall of `requests` internals with the API key visible in the URL, which reads like a credentials or quota failure and is neither. If a second attempt also fails, treat it as a network/upstream problem and abort the run — do not proceed to selection on a stale index.
 6. Select a batch. Batch selection is now queue-driven — `/plan-batch` populates `series_queue.json`; `/import` drains it.
 
    **Selection decision tree:**
