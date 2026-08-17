@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-16T13:06:37.201886+00:00",
+  "last_fetched": "2026-08-17T06:46:08.121468+00:00",
   "videos": [
+    {
+      "video_id": "Pg0oIg89uDQ",
+      "title": "Forgotten Depths - Reprint Coming Soon!",
+      "description": "Follow the BGG thread below to stay up to date:\nhttps://boardgamegeek.com/thread/3739255/reprint-pending\n\nJoin the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-16T16:00:18Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/Pg0oIg89uDQ/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2066,
+      "imported_at": "2026-08-17T06:48:05.619233Z"
+    },
     {
       "video_id": "0c5PF6WpL7o",
       "title": "A Normal Guy Plays Dark Souls - Part 5 - To the Bottom of Blighttown",
