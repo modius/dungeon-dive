@@ -1,32 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "nearly-effortless-fun-pt2",
-      "title": "Nearly Effortless Fun, Part Two",
-      "status": "continuing",
-      "one_shot": false,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "8UWpsEyQwCU",
-        "Ao4VRNX_h4A",
-        "IQ3zeRLgnt4",
-        "NX-1jJ1PuxY",
-        "cga1y52KSCk",
-        "bJHikj8skz4",
-        "6ob9UwPviJA"
-      ],
-      "related_imported_ids": [
-        "1yK9VWnQpx4",
-        "MhZ5AKwboh0",
-        "AgcnylfczPE",
-        "Lk6JhpGO69M",
-        "ZE9ENcHPRr8"
-      ],
-      "last_part": 1,
-      "last_imported": "2026-08-07",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/120"
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -468,6 +441,14 @@
       "total_videos": 12,
       "completed_date": "2026-08-14",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/124"
+    },
+    {
+      "theme": "nearly-effortless-fun-pt2",
+      "title": "Nearly Effortless Fun, Part Two",
+      "parts_completed": 2,
+      "total_videos": 14,
+      "completed_date": "2026-08-17",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/127"
     }
   ],
   "rotation_index": 0
