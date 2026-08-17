@@ -163,7 +163,7 @@
   <div class="chart-card">
     <div class="chart-title">Taxonomy Tag Cloud</div>
     <div class="tag-cloud" id="tagCloud"></div>
-    <p class="chart-note">Based on 800 analyzed videos — tag size reflects frequency across all content</p>
+    <p class="chart-note">Based on 842 analyzed videos — tag size reflects frequency across all content</p>
   </div>
 
   <!-- Top Games Chart -->
@@ -172,7 +172,7 @@
     <div class="chart-canvas-wrap bar-chart">
       <canvas id="topGamesChart"></canvas>
     </div>
-    <p class="chart-note">Based on 800 analyzed videos — primary game subject per video</p>
+    <p class="chart-note">Based on 842 analyzed videos — primary game subject per video</p>
   </div>
 
   <!-- Themes + Player Modes + Formats -->
@@ -228,15 +228,15 @@
 <script>
 // ── Embedded data (updated by update_dashboard.py + analyze_content.py) ──
 
-const topGames = [["Shadows of Brimstone", 43], ["Warhammer Quest", 37], ["Mork Borg", 19], ["Four Against Darkness", 13], ["Arkham Horror", 12], ["Talisman", 12], ["League of Dungeoneers", 12], ["Dungeon Degenerates", 10], ["Runebound", 10], ["HEXplore It", 10], ["Dark Venture", 9], ["HeroQuest", 8], ["Scarlet Heroes", 8], ["City of Chaos", 8], ["Fallen Land", 7], ["Advanced HeroQuest", 6], ["Darklight Memento Mori", 6], ["Dungeon Universalis", 5], ["Wander: The Cult of Barnacle Bay - Let\u2019s Play and Review", 5], ["Vantage", 4], ["The Sword & Sorcery Saga", 4], ["Secrets of the Lost Tomb", 4], ["Doom Pilgrim", 3], ["Dungeons & Dragons", 3], ["Quest for the Lost Pixel", 3]];
+const topGames = [["Shadows of Brimstone", 43], ["Warhammer Quest", 37], ["Mork Borg", 19], ["Four Against Darkness", 13], ["Arkham Horror", 12], ["Talisman", 12], ["League of Dungeoneers", 12], ["Dungeon Degenerates", 10], ["Runebound", 10], ["HEXplore It", 10], ["Dark Venture", 9], ["HeroQuest", 8], ["Scarlet Heroes", 8], ["City of Chaos", 8], ["Fallen Land", 7], ["Advanced HeroQuest", 6], ["Darklight Memento Mori", 6], ["A Normal Guy Plays Dark Souls", 5], ["Dungeon Universalis", 5], ["Wander: The Cult of Barnacle Bay - Let\u2019s Play and Review", 5], ["Vantage", 4], ["The Sword & Sorcery Saga", 4], ["Secrets of the Lost Tomb", 4], ["Doom Pilgrim", 3], ["Dungeons & Dragons", 3]];
 
-const categories = {"overview": 523, "review": 485, "lets-play": 332, "comparison": 308, "crowdfund-preview": 259, "unboxing": 217, "discussion": 179, "deep-dive": 172, "tutorial": 148, "top-list": 141, "digital-dive": 122, "buyers-guide": 115, "dungeon-crawler": 542, "rpg": 437, "campaign": 414, "miniatures": 345, "sandbox": 121, "hex-crawl": 89, "wargame": 84, "card-game": 66, "dice-game": 59, "press-your-luck": 59, "deck-builder": 34, "tower-defense": 23, "tile-laying": 14};
+const categories = {"overview": 554, "review": 517, "lets-play": 351, "comparison": 322, "crowdfund-preview": 282, "unboxing": 240, "discussion": 196, "deep-dive": 176, "top-list": 154, "tutorial": 154, "digital-dive": 130, "buyers-guide": 121, "dungeon-crawler": 571, "rpg": 468, "campaign": 441, "miniatures": 367, "sandbox": 129, "hex-crawl": 91, "wargame": 88, "card-game": 73, "dice-game": 64, "press-your-luck": 63, "deck-builder": 37, "tower-defense": 26, "tile-laying": 15};
 
-const tagCloud = [["tabletop", 555], ["dungeon-crawler", 542], ["fantasy", 524], ["overview", 523], ["solo", 496], ["review", 485], ["rpg", 437], ["campaign", 414], ["horror", 367], ["miniatures", 345], ["lets-play", 332], ["comparison", 308], ["crowdfund-preview", 259], ["digital", 234], ["unboxing", 217], ["discussion", 179], ["classic", 172], ["deep-dive", 172], ["sci-fi", 167], ["cooperative", 154], ["tutorial", 148], ["top-list", 141], ["modern", 130], ["competitive", 124], ["digital-dive", 122], ["sandbox", 121], ["buyers-guide", 115], ["western", 89], ["hex-crawl", 89], ["post-apocalyptic", 87], ["wargame", 84], ["pirate", 79], ["card-game", 66], ["dice-game", 59], ["press-your-luck", 59], ["two-player", 36], ["deck-builder", 34], ["tower-defense", 23], ["steampunk", 15], ["tile-laying", 14], ["mythology", 11], ["print-and-play", 10]];
+const tagCloud = [["tabletop", 591], ["dungeon-crawler", 571], ["overview", 554], ["fantasy", 553], ["solo", 525], ["review", 517], ["rpg", 468], ["campaign", 441], ["horror", 386], ["miniatures", 367], ["lets-play", 351], ["comparison", 322], ["crowdfund-preview", 282], ["digital", 253], ["unboxing", 240], ["discussion", 196], ["classic", 180], ["sci-fi", 179], ["deep-dive", 176], ["cooperative", 165], ["top-list", 154], ["tutorial", 154], ["modern", 139], ["digital-dive", 130], ["sandbox", 129], ["competitive", 127], ["buyers-guide", 121], ["western", 91], ["hex-crawl", 91], ["post-apocalyptic", 88], ["wargame", 88], ["pirate", 79], ["card-game", 73], ["dice-game", 64], ["press-your-luck", 63], ["two-player", 39], ["deck-builder", 37], ["tower-defense", 26], ["steampunk", 17], ["tile-laying", 15], ["mythology", 12], ["print-and-play", 10]];
 
-const themeData = [["fantasy", 524], ["horror", 367], ["sci-fi", 167], ["western", 89], ["post-apocalyptic", 87], ["pirate", 79], ["steampunk", 15], ["mythology", 11]];
+const themeData = [["fantasy", 553], ["horror", 386], ["sci-fi", 179], ["western", 91], ["post-apocalyptic", 88], ["pirate", 79], ["steampunk", 17], ["mythology", 12]];
 
-const playerModes = [["solo", 496], ["cooperative", 154], ["competitive", 124], ["two-player", 36]];
+const playerModes = [["solo", 525], ["cooperative", 165], ["competitive", 127], ["two-player", 39]];
 
 const keeperPosts = [
   {
