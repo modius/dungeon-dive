@@ -1,7 +1,27 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-17T06:52:20.470143+00:00",
+  "last_fetched": "2026-08-26T06:00:52.813009+00:00",
   "videos": [
+    {
+      "video_id": "0Zsljntls0k",
+      "title": "Vanaheim - 2026 Revisit and Buyer's Guide",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-23T16:00:25Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/0Zsljntls0k/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2075,
+      "imported_at": "2026-08-26T06:02:11.896455Z"
+    },
+    {
+      "video_id": "GkiVQ_WvpZA",
+      "title": "In Ruins: Build a Castle, Ruin a Castle, Make a Dungeon (solo RPG)",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-19T16:00:07Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/GkiVQ_WvpZA/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2076,
+      "imported_at": "2026-08-26T06:02:17.425994Z"
+    },
     {
       "video_id": "Pg0oIg89uDQ",
       "title": "Forgotten Depths - Reprint Coming Soon!",
