@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-27T03:20:41.131358+00:00",
+  "last_fetched": "2026-08-27T03:29:40.127866+00:00",
   "videos": [
     {
       "video_id": "fnKAo4k4j0I",
@@ -9364,9 +9364,9 @@
       "description": "",
       "published_at": "2019-11-19T08:00:07Z",
       "thumbnail_url": "https://i.ytimg.com/vi/Ry8PCL00Sjc/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2079,
+      "imported_at": "2026-08-27T03:33:09.956852Z"
     },
     {
       "video_id": "GTD7cyckPnA",
@@ -9394,9 +9394,9 @@
       "description": "",
       "published_at": "2019-11-17T20:30:14Z",
       "thumbnail_url": "https://i.ytimg.com/vi/WNFEf_ZwNFw/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2080,
+      "imported_at": "2026-08-27T03:33:14.970647Z"
     },
     {
       "video_id": "_eLkGBx1XiE",
@@ -9414,9 +9414,9 @@
       "description": "",
       "published_at": "2019-11-14T06:35:37Z",
       "thumbnail_url": "https://i.ytimg.com/vi/dFH36q7iWiU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2081,
+      "imported_at": "2026-08-27T03:33:19.927566Z"
     },
     {
       "video_id": "D4p6nv2t2FA",
@@ -9444,9 +9444,9 @@
       "description": "",
       "published_at": "2019-11-05T20:38:10Z",
       "thumbnail_url": "https://i.ytimg.com/vi/-WID9zHoKhE/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2078,
+      "imported_at": "2026-08-27T03:33:05.068892Z"
     },
     {
       "video_id": "de7gpeHMS1Q",
@@ -9774,9 +9774,9 @@
       "description": "Let's take a look at Wander: The Cult of Barnacle Bay, one of my most anticipated games of 2019!",
       "published_at": "2019-03-06T01:20:33Z",
       "thumbnail_url": "https://i.ytimg.com/vi/xvdkNKQAbJ8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2082,
+      "imported_at": "2026-08-27T03:33:24.968537Z"
     },
     {
       "video_id": "qzy12XbaJQ4",
