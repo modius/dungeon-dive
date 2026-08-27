@@ -19,7 +19,9 @@ Propose candidate batches for the next import cycle and — when the user picks 
 - `docs/insights.html` — most recent insights suggestions (optional signal)
 - **Channel playlists** (YouTube Data API, live) — Daniel's own curation; see *Playlist signal* below
 
-If `transcript_analytics.json` or `youtube_stats.json` is stale (>24h), suggest the user run `/refresh` first.
+If `transcript_analytics.json` or `youtube_stats.json` is stale (>24h), say so — but **do not block on it**. Taxonomy for already-imported videos does not drift, so clustering stays sound; only the view figures age. Note in the proposal that engagement numbers are indicative and carry on.
+
+**A fresh `docs/insights.html` does not mean fresh local analytics.** The nightly `/refresh` may run on a different machine and commit only `docs/*.html`; `youtube_stats.json` and `transcript_analytics.json` are gitignored, so the local copies can be days older than the dashboards they produced. Check the files' own mtimes and `last_fetched` / `last_run` fields, never the dashboards.
 
 ## Playlist signal
 
@@ -33,7 +35,9 @@ Use membership three ways:
 
 - **Slate authority.** When a candidate theme matches a playlist, prefer the playlist's membership over title matching — it catches typo'd titles ("Dungeon Degenerats") and videos that never name the game ("Zona" in *Runebound Alternatives*).
 - **Straggler sweeps** (candidate type 7). Diff each playlist against `video_index.json` status: a playlist that is ≥80% imported with 1–3 pending remainders is an exhibit-completion opportunity. Bundle stragglers across playlists into a single small batch when individually too few.
-- **Uncovered territories.** Playlists with substantial pending membership and no completed theme (music/culture: *Dungeon Synth*, *vaporwave*, *Radio dramas*; formats: *Digital Dive*, *Vanishing Point*, *Shelf by Shelf*) are ready-made candidate themes.
+- **A completed theme is not proof of a complete exhibit — check every one.** `completed_series` records what a *batch* drained, not what the channel holds on that subject, and past runs have closed a theme while leaving pending videos behind. Verified Aug 2026: `wander-barnacle-bay` was completed 2026-07-07 under the title "Complete Let's Play" with **5 of the arc's 10 videos still pending**, and its Keeper post wrote the gaps into the story as lost to the tide. So: for each `completed_series` theme, re-derive the subject's full membership (playlist **plus** title match) and diff it against `video_index.json`. Any completed theme with pending remainders is a first-class straggler candidate — often a better one than a fresh theme, because the imported half is already there to serve as `related_imported_ids` and the reader gets a genuinely finished exhibit. Queue these as `-pt2` continuations and say plainly in the Risk line that the theme was previously declared done.
+- **Uncovered territories.** Playlists with substantial *own-channel* pending membership and no completed theme are ready-made candidate themes. Compute pending count **after** the owner filter — several playlists are Daniel curating *other people's* uploads and contain almost no Dungeon Dive videos at all (verified Aug 2026: *Dungeon Synth* 41 items / 1 own, *vaporwave and related* 26 / 0, *Radio dramas* 13 / 0, *Vanishing Point* 14 / 0). Those are listening/watching recommendations, not archive gaps — never propose them as themes.
+- **Playlists are not exhaustive.** Membership is a strong signal but an incomplete one: Daniel omits videos from his own series playlists (e.g. the *Wander: The Cult of Barnacle Bay* playlist omits both Part 6 and Part 7 — verified Aug 2026, and a straggler diff run off the playlist alone therefore under-reports that arc by two videos). After a playlist-derived slate forms, title-match the same subject across `video_index.json` to catch omissions.
 
 Also consult playlist membership during the related-imported survey — co-membership in a curated playlist is a strong cross-reference signal, often stronger than shared taxonomy tags.
 
@@ -48,7 +52,7 @@ Then add 1–2 creative options from:
 
 3. **Untapped topic** — a game with high cross-reference count but low dedicated coverage (ratio ≥5:1). Pull pending videos that mention it. **Verify against playlists before proposing:** a gap is only real if the game has no near-complete playlist already imported. Coverage is inferred from tags, so a game Daniel covered under a parent series name can still read as uncovered.
 4. **Thematic cluster** — pending videos sharing a game tag (5–10 videos), especially ones that form a coherent sub-theme.
-5. **High-performer format cluster** — pending videos in a format that historically averages high views (deep-dive, top-list, tutorial).
+5. **High-performer format cluster** — pending videos in a format whose **median** view count beats the channel median. Rank formats by median, never by mean: view counts are long-tailed, so one viral entry drags a mediocre format's average above its typical performance. Measured Aug 2026 against a channel median of ~4,550 — `deep-dive` (median ~6,890) and `tutorial` (~6,520) genuinely over-perform, while **`top-list` does not** (median ~4,800, *mean* ~9,690): high variance, not reliable reach. If you cite a format's strength, quote the median and say so.
 6. **Era dive** — pending videos from a specific year + game-family combination.
 7. **Playlist-derived cluster** — a straggler sweep or uncovered territory surfaced by the *Playlist signal* pass above.
 
@@ -84,6 +88,8 @@ For each candidate batch, scan the imported pool (`video_index.json` entries wit
 
 When the user picks a candidate they can also direct edits to the related list ("add X, drop Y, the rest are fine"). Default: queue the suggested list as-is unless overridden.
 
+**Watch the cap on multi-exhibit straggler sweeps.** The 5-ID limit is per queue entry, not per exhibit, so a sweep closing four exhibits at once gets roughly one representative each and the resulting catalogue is broad but thin. That is an acceptable trade, not a bug — but name it in the Risk line so the user can choose to split the highest-value exhibit out into its own batch instead. Pick the single most representative imported video per exhibit rather than spending three slots on the strongest one.
+
 Note for the user-facing proposal: the *Related already-imported* section in each candidate is informational only — at render time the related-imported entries and the just-imported entries become a single chronologically-ordered Exhibit Catalogue in the Keeper post. The reader sees one coherent thematic tour.
 
 ## Queue — what to write when user picks
@@ -108,7 +114,10 @@ When the user selects one or more candidates, append each to `series_queue.activ
 Rules for queue writes:
 
 - `video_ids`: the exact list of video IDs from the candidate, in the order presented.
-- `videos_per_batch`: default to `len(video_ids)` for a one-shot. If the user's candidate has >8 videos, ask whether to split (e.g. "9 videos — one batch or split into 5+4?"). Clamp to 3–12.
+- `videos_per_batch`: default to `len(video_ids)` for a one-shot. If a candidate has >8 videos, ask whether to split (e.g. "9 videos — one batch or split into 5+4?"). Clamp to 3–12.
+  - **Ask about every selected candidate over 8, not just the largest one** — a proposal can easily carry two.
+  - **If the user approves in bulk without answering the split question** ("queue 1,2,3,4"), do not stall for a second round-trip. Decide, apply, and state each call and its reasoning in the confirmation so a one-line correction is enough. Default: split anything over 8 unless the batch's premise depends on arriving whole (a straggler sweep framed as "four exhibits closed in one pass" is a fair reason to keep 10 together; a heterogeneous thematic cluster is not).
+- **When a slate will be split, check what the order does to the parts.** Candidates are presented chronologically, and `videos_per_batch` slices that order — so a deliberate pairing you cited in the Rationale can land in different parts and different Keeper posts. (Aug 2026: the `second-verdict` slate's 2020 Prophecy review and its 2024 revisit — offered as a before/after pair — fell either side of a 6+5 split, leaving the payoff in part 2 without its setup.) Do **not** silently reorder to fix it: keep the presented order, tell the user which pairing splits, and offer the one-line reorder. Slate order has no effect on the Exhibit Catalogue, which `/import` always renders chronologically — it only decides which videos ride in which part.
 - `one_shot`: `true` when `len(video_ids) <= videos_per_batch`, else `false`.
 - `status: "continuing"` for multi-part; `one_shot` flag carries the rest of the intent.
 - `related_imported_ids`: the editorial cross-references the user confirmed. Each ID must exist in `video_index.json` with `status: "imported"` *and* a non-null `discourse_topic_id` (so `/import` can build a valid Discourse link). Cap at 5. The IDs themselves are unordered — `/import` renders the integrated Exhibit Catalogue in chronological order by publish date. Omit the field or use `[]` when there are no clean matches.
