@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-26T06:00:52.813009+00:00",
+  "last_fetched": "2026-08-27T03:20:41.131358+00:00",
   "videos": [
+    {
+      "video_id": "fnKAo4k4j0I",
+      "title": "Crimson Desert and the Joys of Digital Tourism",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-08-26T16:00:30Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/fnKAo4k4j0I/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2077,
+      "imported_at": "2026-08-27T03:22:17.651484Z"
+    },
     {
       "video_id": "0Zsljntls0k",
       "title": "Vanaheim - 2026 Revisit and Buyer's Guide",
