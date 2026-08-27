@@ -1,5 +1,109 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "wander-barnacle-bay-pt2",
+      "title": "Wander: The Cult of Barnacle Bay — The Tide Gives Them Back",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 5,
+      "video_ids": [
+        "xvdkNKQAbJ8",
+        "-WID9zHoKhE",
+        "dFH36q7iWiU",
+        "WNFEf_ZwNFw",
+        "Ry8PCL00Sjc"
+      ],
+      "related_imported_ids": [
+        "AaCd4amsV0U",
+        "F8PMKa1dz9g",
+        "de7gpeHMS1Q",
+        "D4p6nv2t2FA",
+        "GTD7cyckPnA"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "second-verdict",
+      "title": "The Second Verdict — Amended Judgements",
+      "status": "continuing",
+      "one_shot": false,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "-3dLSMzi38k",
+        "pms2oKZcuqo",
+        "j9lMyW5Emo0",
+        "fj2SC2FA324",
+        "QeCKLvz2tIM",
+        "qqQxwunPfLo",
+        "9rVcXaVHCXw",
+        "vqsoh8y6xa8",
+        "OddgScxecfA",
+        "Ulotto-Re6w",
+        "ZrqtNoiNSdw"
+      ],
+      "related_imported_ids": [
+        "DAuagmdRSOE",
+        "UqLF2eIaDxg",
+        "hX5lVJXMurI",
+        "UUUH5xnM-Mc",
+        "8pRl03u-hjI"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "escape-from-dulce",
+      "title": "Escape From Dulce — Secret Unknown Stuff",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 4,
+      "video_ids": [
+        "LdYe9MF1QMs",
+        "rJ6YCE4gWS0",
+        "K2T8Cd4-ba8",
+        "RhUoPPchFBU"
+      ],
+      "related_imported_ids": [
+        "-FJcDEQ2CB0",
+        "lr1GJQXbj4c",
+        "hJ3DwYLFjcY"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "loose-pages-exhibit-completions-pt2",
+      "title": "Loose Pages, Part Two — Exhibit Completions",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 10,
+      "video_ids": [
+        "j50kYrWuR6U",
+        "hBhD4lpfrvw",
+        "GqAXRVF_edY",
+        "KLTqQaG2asM",
+        "Xm4ScqSNV10",
+        "w3HciqK70s4",
+        "TWUoFcCtDhA",
+        "_EZK5vA1EX0",
+        "8OPlCKgcSO8",
+        "VvVtNiE0bjA"
+      ],
+      "related_imported_ids": [
+        "7dlhZLngdvM",
+        "CJkJWnPzguM",
+        "FG5G2G-XjhE",
+        "Pg0oIg89uDQ"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
