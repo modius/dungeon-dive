@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-08-28 — normalised 2 legacy HTML-bodied post records (repair, no import)
+
+- Follow-up to today's `second-verdict` batch, which surfaced `hX5lVJXMurI` (Quest for the Lost Pixel, t/607) and `UUUH5xnM-Mc` (DungeonQuest, t/605) as post records stored as **rendered Discourse HTML** — youtube-onebox `<div>`, `<p>` wrappers, `<a class="mention">` — rather than the markdown schema.
+- **Cause identified:** `repair_data.py cmd_posts` recovers a missing post file by storing `topic["post_stream"]["posts"][0]["cooked"]`, which is Discourse's *rendered* HTML. It does not store `raw`. Every post file carrying a `recovered_at` key is therefore HTML-bodied by construction, and also lacks `video_date` and `category`, which `cmd_posts` never writes.
+- **Fix used — lossless, not a conversion.** Discourse exposes the original authored markdown at `/posts/{post_id}.json` → `raw`. Both records were rebuilt from `raw` rather than by HTML→markdown translation, so the archived body is now byte-for-byte what was actually published. `raw` is *not* present on the topic endpoint's post_stream entries; it needs the per-post endpoint, which is why the recovery path never had it.
+- **Two findings that changed what got written, neither of them assumptions:**
+  - **`category` is 6, not 8.** Both topics live in category 6, not the category 8 used by current per-video posts. Recorded the real `category_id` read from the topic rather than defaulting to the schema's usual value.
+  - **Neither post has a `----` discussion question.** Confirmed against `raw` — this is genuinely absent from the live posts, not lost in recovery. **No question was fabricated.** Inventing one would make the archive assert something that was never published; the archive's job is to record what went out, not to improve it retroactively.
+- `video_date` backfilled from `video_index.json` `published_at` (2025-03-16T21:00:23Z and 2025-03-26T16:00:30Z). Note these differ from the Discourse `created_at` values (2025-03-16T13:00:00Z, 2025-03-25T13:00:00Z) — `video_date` is the video's publish date by schema definition, not the topic's.
+- Provenance preserved: `recovered_at` retained, `normalized_at` added. Key order now matches the current schema on the core five (`video_id`, `title`, `body`, `video_date`, `category`) with `discourse_topic_id` and the two provenance stamps following.
+- Verified: no HTML tags remain, both bodies open with their own watch URL, `check_integrity.py` File Validity **PASS** across all 856 post files.
+- **Scope note — this class is much larger than the two.** A full scan of `archive/posts/` found **82 HTML-bodied recovered records** (these two now fixed, **80 remaining**) and a further **66 markdown records missing `video_date` or `category`**. 148 of 856 post files are non-uniform. The remaining 80 are fixable by exactly this method; the 66 need only field backfill from the index. Not actioned this run — the request was scoped to the two.
+- `scripts/repair_data.py` deliberately **not modified** (per CLAUDE.md); the fix ran as a one-off scratchpad script. A `normalize` subcommand wrapping this method is the obvious permanent home for it.
+
 ## 2026-08-28 — The Second Verdict, part 1: amended judgements (6 videos) — queue drain, series continuing
 
 - Decision tree: `fetch_channel_videos` found **0 new videos** (index steady at 1057); **0** pending published since 2026-08-14 → no priority batch. Drained `active_series[0]` = `second-verdict` (`videos_per_batch: 6`, 11 IDs queued). **Drift check: all 6 slate IDs confirmed `pending`, nothing skipped.** 5 IDs remain → series stays in `active_series` as part 2.
