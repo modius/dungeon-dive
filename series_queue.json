@@ -7,12 +7,6 @@
       "one_shot": false,
       "videos_per_batch": 6,
       "video_ids": [
-        "-3dLSMzi38k",
-        "pms2oKZcuqo",
-        "j9lMyW5Emo0",
-        "fj2SC2FA324",
-        "QeCKLvz2tIM",
-        "qqQxwunPfLo",
         "9rVcXaVHCXw",
         "vqsoh8y6xa8",
         "OddgScxecfA",
@@ -26,9 +20,9 @@
         "UUUH5xnM-Mc",
         "8pRl03u-hjI"
       ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
+      "last_part": 1,
+      "last_imported": "2026-08-28",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/131"
     },
     {
       "theme": "escape-from-dulce",
@@ -539,5 +533,5 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/130"
     }
   ],
-  "rotation_index": 0
+  "rotation_index": 1
 }
