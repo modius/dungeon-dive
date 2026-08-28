@@ -50,7 +50,8 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
    - Read transcript from `pending_imports/`
    - Write 150-250 word summary per SKILL.md guidelines
    - Every post MUST use "Daniel (@dungeondive)" on its first mention of Daniel
-   - Save to `ready_to_post/{video_id}_post.json` with `video_date` for backdating, `category: 8`
+   - Save to `ready_to_post/{video_id}_post.json` with `video_date` for backdating, `category: 5`
+   - **`category` is not read by `batch_post.py`** — it takes the category from `config.json` (5, "The Channel"). Write 5 so the record matches where the topic actually lands. The long-standing `category: 8` was dead data and factually wrong (8 is "Patreon").
    - Validate all JSON files
 9. `python3 scripts/batch_post.py --config config.json --input-dir ready_to_post`
 

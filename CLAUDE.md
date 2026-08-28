@@ -53,7 +53,7 @@ Per-video Discourse posts (in `ready_to_post/{video_id}_post.json`) MUST use thi
   "title": "Video Title",
   "video_date": "2024-06-15T14:00:00Z",
   "body": "https://www.youtube.com/watch?v=abc123\n\n[Summary]\n\n----\n\n[Discussion question]",
-  "category": 8
+  "category": 5
 }
 ```
 
@@ -96,7 +96,7 @@ python3 scripts/batch_post.py --config config.json --input-dir ready_to_post [--
 python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html
 python3 scripts/build_insights.py --index video_index.json --stats youtube_stats.json --analytics transcript_analytics.json --series series_queue.json --dashboard docs/insights.html
 python3 scripts/post_reply.py --config config.json --topic-id 1170 --body @keeper-posts/keeper-THEME.md
-python3 scripts/repair_data.py {timestamps|posts|transcripts|rename} ...
+python3 scripts/repair_data.py {report|schema|rename|cleanup|timestamps|posts|normalize|transcripts} ...
 ```
 
 Dependencies: `pip3 install -r requirements.txt` (just `requests` and `youtube-transcript-api`).
@@ -124,5 +124,6 @@ Dependencies: `pip3 install -r requirements.txt` (just `requests` and `youtube-t
 ## Key external IDs
 
 - Discourse keeper-thread topic ID for archive updates: **1170** (used by `post_reply.py` for Keeper posts)
-- Discourse category for per-video posts: **8** (set in post JSON)
-- Discourse category in `config.json`: **5** ("The Channel")
+- Discourse category for per-video posts: **5** ("The Channel") — taken from `config.json`'s `category_id` by `batch_post.py`, **not** from the post JSON
+- **The post JSON's `category` field is not read when posting.** `batch_post.py:52` sets the category from `config.json` alone. The field is a *record* of where the topic lives, so write the same value config uses (5). It was documented as 8 until 2026-08-28 and 698 archived records carried that value; 8 is in fact "Patreon", and nothing ever honoured it. Archived records now hold each topic's real `category_id` — see `/repair`'s `normalize`.
+- Category ids in use: 4 Dungeon Diving, 5 The Channel, 6 The Channel/Reviews, 8 Patreon, 10 Digital Dive, 14 Books & Movies. Subcategories exist under The Channel (6, 7, 9, 12, 18).
