@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-08-30 — imported 9 videos (Loose Pages, Part Two — Exhibit Completions)
+
+- Second import of the day. Queue drain, `rotation_index` 1 → **loose-pages-exhibit-completions-pt2** (one-shot, `videos_per_batch` 10). No priority videos: `fetch_channel_videos.py` found 0 new uploads, and no pending video published in the last 14 days.
+- Drift check passed — all 10 slate IDs still `pending`. Transcripts: **9 fetched, 1 permanent failure, 0 transient**.
+  - `KLTqQaG2asM` The Peril of Cymbaline Isle - Solo RPG - Trailer — `TranscriptsDisabled` (`permanent: true`) → marked `no_transcript` in `video_index.json` and removed from the slate rather than left to force a wasted rotation.
+- Posted to Discourse (category 5, backdated to each video's `published_at`):
+  - `hBhD4lpfrvw` Forgotten Depths - A Unique Dungeon Adventure → [t/2101](https://dungeondive.quest/t/2101)
+  - `j50kYrWuR6U` Mertwig's Maze and the Satanic Panic → [t/2102](https://dungeondive.quest/t/2102)
+  - `GqAXRVF_edY` Warlock of Firetop Mountain - Take a Look → [t/2096](https://dungeondive.quest/t/2096)
+  - `Xm4ScqSNV10` The Peril of Cymbaline Isle - Introduction → [t/2099](https://dungeondive.quest/t/2099)
+  - `w3HciqK70s4` Peril of Cymbaline Isle - Interlude → [t/2103](https://dungeondive.quest/t/2103)
+  - `TWUoFcCtDhA` Forgotten Depths - A Smallish Game in a GIANT BOX! → [t/2097](https://dungeondive.quest/t/2097)
+  - `_EZK5vA1EX0` Return of the Heroes - A Hidden Gem, or a Game Best Forgotten? → [t/2100](https://dungeondive.quest/t/2100)
+  - `8OPlCKgcSO8` Defenders of the Realm - a long and casual discussion → [t/2095](https://dungeondive.quest/t/2095)
+  - `VvVtNiE0bjA` Defenders of the Realm - detailed game discussion → [t/2098](https://dungeondive.quest/t/2098)
+- Keeper post **"Loose Pages, Part Two"** (register A, 370 words of prose) → [t/1170/133](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/133). Framing is exhibits assembled out of order rather than the part-one framing of exhibits with holes. Exhibit Catalogue runs 13 entries in publish-date order, integrating all 4 queued `related_imported_ids` — DungeonQuest (t/1389), Cymbaline Isle Session 0 (t/1575), Forgotten Depths top-10 revisit (t/1392), Forgotten Depths reprint notice (t/2066) — with no visual distinction from the new arrivals, so the Forgotten Depths wing now reads 2019 prototype → 2022 retail → 2024 revisit → 2026 reprint, and the Cymbaline Isle sub-run reads introduction → session 0 → interlude.
+- Series **completed**: `loose-pages-exhibit-completions-pt2` drained to empty, moved to `completed_series` (`parts_completed` 1, `total_videos` 9, dropped-ID note recorded). `rotation_index` wrapped 1 → 0 per the completion rule (removal left `second-verdict` as the only active series, so it is next with 5 IDs remaining).
+- Index now: **869 imported**, 176 pending, 12 no_transcript (1057 total). Archive: 790 transcripts, 869 posts.
+- Pre-flight: rate limit 4/20 videos in the last 24h (16 headroom); `check_integrity.py` returned WARN (exit 1) on the long-standing missing-local-transcripts gap and an unparseable dashboard stats line — not a stop condition, no errors.
+
 ## 2026-08-30 — imported 4 videos (Escape From Dulce — Secret Unknown Stuff)
 
 - Queue drain, `rotation_index` 1 → **escape-from-dulce** (one-shot, `videos_per_batch` 4). No priority videos: `fetch_channel_videos.py` found 0 new uploads, and no pending video published in the last 14 days.
