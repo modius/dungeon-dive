@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-28T01:36:47.115240+00:00",
+  "last_fetched": "2026-08-30T00:32:49.570640+00:00",
   "videos": [
     {
       "video_id": "fnKAo4k4j0I",
@@ -8734,9 +8734,9 @@
       "description": "",
       "published_at": "2020-04-30T14:12:03Z",
       "thumbnail_url": "https://i.ytimg.com/vi/RhUoPPchFBU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2093,
+      "imported_at": "2026-08-30T00:35:12.510267Z"
     },
     {
       "video_id": "K2T8Cd4-ba8",
@@ -8744,9 +8744,9 @@
       "description": "",
       "published_at": "2020-04-30T00:41:43Z",
       "thumbnail_url": "https://i.ytimg.com/vi/K2T8Cd4-ba8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2091,
+      "imported_at": "2026-08-30T00:35:02.222756Z"
     },
     {
       "video_id": "pKvwesJ8-t0",
@@ -8774,9 +8774,9 @@
       "description": "",
       "published_at": "2020-04-29T01:46:07Z",
       "thumbnail_url": "https://i.ytimg.com/vi/rJ6YCE4gWS0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2094,
+      "imported_at": "2026-08-30T00:35:17.731747Z"
     },
     {
       "video_id": "acvpoQwncqI",
@@ -9164,9 +9164,9 @@
       "description": "Secret Unknown Stuff: Escape From Dulce - Review",
       "published_at": "2020-01-04T20:28:50Z",
       "thumbnail_url": "https://i.ytimg.com/vi/LdYe9MF1QMs/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2092,
+      "imported_at": "2026-08-30T00:35:07.470587Z"
     },
     {
       "video_id": "_xEjpsA_iVg",

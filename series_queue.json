@@ -25,27 +25,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/131"
     },
     {
-      "theme": "escape-from-dulce",
-      "title": "Escape From Dulce — Secret Unknown Stuff",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 4,
-      "video_ids": [
-        "LdYe9MF1QMs",
-        "rJ6YCE4gWS0",
-        "K2T8Cd4-ba8",
-        "RhUoPPchFBU"
-      ],
-      "related_imported_ids": [
-        "-FJcDEQ2CB0",
-        "lr1GJQXbj4c",
-        "hJ3DwYLFjcY"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "loose-pages-exhibit-completions-pt2",
       "title": "Loose Pages, Part Two — Exhibit Completions",
       "status": "continuing",
@@ -531,6 +510,14 @@
       "total_videos": 5,
       "completed_date": "2026-08-27",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/130"
+    },
+    {
+      "theme": "escape-from-dulce",
+      "title": "Escape From Dulce — Secret Unknown Stuff",
+      "parts_completed": 1,
+      "total_videos": 4,
+      "completed_date": "2026-08-30",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/132"
     }
   ],
   "rotation_index": 1

@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-08-30 — imported 4 videos (Escape From Dulce — Secret Unknown Stuff)
+
+- Queue drain, `rotation_index` 1 → **escape-from-dulce** (one-shot, `videos_per_batch` 4). No priority videos: `fetch_channel_videos.py` found 0 new uploads, and no pending video published in the last 14 days.
+- Drift check passed — all 4 slate IDs still `pending`. Transcripts fetched cleanly: **4 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to each video's `published_at`):
+  - `LdYe9MF1QMs` Secret Unknown Stuff: Escape From Dulce - Review → [t/2092](https://dungeondive.quest/t/2092)
+  - `rJ6YCE4gWS0` The Hidden Shrine of Umugatu - Part One → [t/2094](https://dungeondive.quest/t/2094)
+  - `K2T8Cd4-ba8` The Hidden Shrine of Umugatu - Part Two → [t/2091](https://dungeondive.quest/t/2091)
+  - `RhUoPPchFBU` The Hidden Shrine of Umugatu - Part Three - Finale → [t/2093](https://dungeondive.quest/t/2093)
+- Keeper post **"The Dulce Cabinet"** (register A, 327 words of prose) → [t/1170/132](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/132). Exhibit Catalogue runs 7 entries in publish-date order, integrating the queue's 3 `related_imported_ids` — The Unseen World (t/1911), Minion Hunter (t/1862), Kryptothera (t/1751) — as one conspiracy/cryptid/paranormal tour with no visual distinction from the new arrivals.
+- Series **completed**: `escape-from-dulce` drained to empty, moved to `completed_series` (`parts_completed` 1, `total_videos` 4). `rotation_index` left at 1 per the completion rule — removal shifted `loose-pages-exhibit-completions-pt2` into that slot, so it is next.
+- Index now: **860 imported**, 186 pending, 11 no_transcript (1057 total). Archive: 781 transcripts, 860 posts.
+- Pre-flight `check_integrity.py` returned WARN (exit 1) on the long-standing 79 imported-videos-missing-local-transcripts gap and an unparseable dashboard stats line — not a stop condition, no errors.
+
 ## 2026-08-28 — normalised all 856 archived post records; added `/repair normalize` (no import)
 
 Follow-on from today's two-record fix. What began as an inconsistency in two files turned out to be systemic, and the root cause was in the tooling rather than the data.
