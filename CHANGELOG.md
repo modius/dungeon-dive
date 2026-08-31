@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-08-31 — imported 5 videos (The Second Verdict, Part Two — Amended Judgements)
+
+- Second import of the day. Queue drain, `rotation_index` 0 → **second-verdict** (`videos_per_batch` 6, 5 IDs remaining). No priority videos: `fetch_channel_videos.py` found 0 new uploads, and no pending video published in the last 14 days.
+- Drift check passed — all 5 slate IDs still `pending`. Transcripts: **5 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to each video's `published_at`):
+  - `9rVcXaVHCXw` Some Things I Like about 5 Games I Don't Like → [t/2105](https://dungeondive.quest/t/2105)
+  - `vqsoh8y6xa8` Apocrypha: The Adventure Card Game - is it time for a reevaluation? → [t/2109](https://dungeondive.quest/t/2109)
+  - `OddgScxecfA` Top 5 Games that Deserved More Attention → [t/2106](https://dungeondive.quest/t/2106)
+  - `Ulotto-Re6w` Top 5 games made better with house rules → [t/2107](https://dungeondive.quest/t/2107)
+  - `ZrqtNoiNSdw` Revisiting Prophecy - A game I like more with each passing year → [t/2108](https://dungeondive.quest/t/2108)
+- Keeper post **"The Second Verdict, Part Two"** (register A, 326 words of prose) → [t/1170/135](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/135). Part one framed the ledger as crossings-out — verdicts overturned. Part two shifts to the margin: these five are not reversals but annotations, judgements that stood while the reasoning beside them stayed incomplete (a disliked game with one admirable thing in it; a good game sunk by presentation; a game amended by the player rather than the designer). Exhibit Catalogue runs 10 entries in publish-date order, reusing all 5 queued `related_imported_ids` per the multi-part rule — Hand of Fate: Ordeals (t/1847), Bloodborne (t/1833), Quest for the Lost Pixel (t/607), DungeonQuest (t/605), Fallen Land 2nd Ed (t/1174) — with hooks rewritten from `archive/posts/` rather than lifted from part one's phrasing, so a reader of both parts gets a different lure for the same five topics.
+- Series **completed**: `second-verdict` drained to empty, moved to `completed_series` (`parts_completed` 2, `total_videos` 16 across both parts, `related_imported_ids` retained). `active_series` is now **empty** and `rotation_index` set to 0 per the completion rule — the next `/import` will have nothing to drain, so **run `/plan-batch` before the next cycle**.
+- Index now: **875 imported**, 171 pending, 12 no_transcript (1058 total). Archive: 796 transcripts, 875 posts.
+- Pre-flight: rate limit 1/20 videos in the last 24h (19 headroom); `check_integrity.py` returned WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — not a stop condition, 0 errors.
+
 ## 2026-08-31 — imported 1 video (priority drop — Cthulhu: Death May Die Season 4)
 
 - **Ad-hoc priority run.** `fetch_channel_videos.py` found 1 new upload; `ATXZbbUsHVw` (published 2026-08-30, 1 day old) fell inside the 14-day priority window, so the queue was *not* drained and `series_queue.json` is untouched. Both active series (`second-verdict`, 5 IDs remaining) wait one cycle; `rotation_index` unchanged at 0.

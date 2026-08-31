@@ -1,30 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "second-verdict",
-      "title": "The Second Verdict — Amended Judgements",
-      "status": "continuing",
-      "one_shot": false,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "9rVcXaVHCXw",
-        "vqsoh8y6xa8",
-        "OddgScxecfA",
-        "Ulotto-Re6w",
-        "ZrqtNoiNSdw"
-      ],
-      "related_imported_ids": [
-        "DAuagmdRSOE",
-        "UqLF2eIaDxg",
-        "hX5lVJXMurI",
-        "UUUH5xnM-Mc",
-        "8pRl03u-hjI"
-      ],
-      "last_part": 1,
-      "last_imported": "2026-08-28",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/131"
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -505,6 +480,21 @@
         "Pg0oIg89uDQ"
       ],
       "note": "KLTqQaG2asM (The Peril of Cymbaline Isle - Solo RPG - Trailer) dropped from the slate: TranscriptsDisabled, permanent — marked no_transcript in video_index.json."
+    },
+    {
+      "theme": "second-verdict",
+      "title": "The Second Verdict — Amended Judgements",
+      "parts_completed": 2,
+      "total_videos": 16,
+      "completed_date": "2026-08-31",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/135",
+      "related_imported_ids": [
+        "DAuagmdRSOE",
+        "UqLF2eIaDxg",
+        "hX5lVJXMurI",
+        "UUUH5xnM-Mc",
+        "8pRl03u-hjI"
+      ]
     }
   ],
   "rotation_index": 0
