@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-31 — imported 1 video (priority drop — Cthulhu: Death May Die Season 4)
+
+- **Ad-hoc priority run.** `fetch_channel_videos.py` found 1 new upload; `ATXZbbUsHVw` (published 2026-08-30, 1 day old) fell inside the 14-day priority window, so the queue was *not* drained and `series_queue.json` is untouched. Both active series (`second-verdict`, 5 IDs remaining) wait one cycle; `rotation_index` unchanged at 0.
+- Transcript fetched cleanly: **1 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to `published_at`):
+  - `ATXZbbUsHVw` Cthulhu Death May Die: 2026 Revisit and a Look at Season 4 (review) → [t/2104](https://dungeondive.quest/t/2104)
+- Keeper post **"Fresh Despatch"** (register B, 202 words) → [t/1170/134](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/134). "From the deeper stacks" cross-reference ran the full 3 entries, all direct game-name matches: the 2019 review (t/1548), the 2022 return (t/1549), and the 2022 FOMO video (t/1552) in which he declined the crowdfunding campaign and asked for small-box expansions instead — the same wish the new video repeats, which is the thread the drop is built on.
+- Index now: **870 imported**, 176 pending, 12 no_transcript (1058 total). Archive: 791 transcripts, 870 posts.
+- Pre-flight: rate limit 9/20 videos in the last 24h (11 headroom); `check_integrity.py` returned WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — not a stop condition, 0 errors.
+
 ## 2026-08-30 — imported 9 videos (Loose Pages, Part Two — Exhibit Completions)
 
 - Second import of the day. Queue drain, `rotation_index` 1 → **loose-pages-exhibit-completions-pt2** (one-shot, `videos_per_batch` 10). No priority videos: `fetch_channel_videos.py` found 0 new uploads, and no pending video published in the last 14 days.
