@@ -1,7 +1,27 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-08-31T05:52:35.464508+00:00",
+  "last_fetched": "2026-09-03T01:43:25.844949+00:00",
   "videos": [
+    {
+      "video_id": "1GeNGNh50Fw",
+      "title": "The Dwarves: Big Box - Review",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-09-02T16:00:35Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/1GeNGNh50Fw/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2113,
+      "imported_at": "2026-09-03T01:44:51.178534Z"
+    },
+    {
+      "video_id": "132bn7FWRws",
+      "title": "A Normal Guy Plays Dark Souls - Part 6 - Exploring the Swamp and Getting a Huge Sword",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-09-01T18:15:33Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/132bn7FWRws/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2112,
+      "imported_at": "2026-09-03T01:44:45.792570Z"
+    },
     {
       "video_id": "ATXZbbUsHVw",
       "title": "Cthulhu Death May Die: 2026 Revisit and a Look at Season 4 (review)",

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-03 — imported 2 videos (priority drop — Dark Souls Pt 6 & The Dwarves: Big Box)
+
+- **Ad-hoc priority run.** `fetch_channel_videos.py` found 2 new uploads and both fell inside the 14-day priority window (`132bn7FWRws` published 2026-09-01, `1GeNGNh50Fw` published 2026-09-02), so the queue was *not* drained and `series_queue.json` is untouched. `active_series` is in any case still **empty** since `second-verdict` completed on 2026-08-31 — **run `/plan-batch` before the next cycle** or the next non-priority `/import` will skip.
+- Transcripts fetched cleanly: **2 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to each video's `published_at`):
+  - `132bn7FWRws` A Normal Guy Plays Dark Souls - Part 6 - Exploring the Swamp and Getting a Huge Sword → [t/2112](https://dungeondive.quest/t/2112)
+  - `1GeNGNh50Fw` The Dwarves: Big Box - Review → [t/2113](https://dungeondive.quest/t/2113)
+- Keeper post **"Fresh Despatch"** (register B, 239 words) → [t/1170/136](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/136). Two unrelated arrivals, so the framing pairs them on the one thing they share — something placed just out of reach. "From the deeper stacks" ran the full 3 entries, split across both veins: Rune (t/1832) and Ten Tabletop Games for fans of Dark Souls (t/2033) for the playthrough, and Defenders of the Realm (t/2095) for the review, which Daniel himself names as a comparison point alongside *Legends of Andor*.
+- Index now: **877 imported**, 171 pending, 12 no_transcript (1060 total). Archive: 798 transcripts, 877 posts.
+- Pre-flight: rate limit 0/20 videos in the last 24h (20 headroom); `check_integrity.py` returned WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — not a stop condition, 0 errors.
+
 ## 2026-08-31 — imported 5 videos (The Second Verdict, Part Two — Amended Judgements)
 
 - Second import of the day. Queue drain, `rotation_index` 0 → **second-verdict** (`videos_per_batch` 6, 5 IDs remaining). No priority videos: `fetch_channel_videos.py` found 0 new uploads, and no pending video published in the last 14 days.
