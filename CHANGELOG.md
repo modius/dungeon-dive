@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-04 — Queue empty — no import (skipped)
+
+- Pre-flight passed: rate limit 0/20 videos in the last 24h (20 headroom); `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
+- `fetch_channel_videos.py` found **0 new uploads** (1060 total, unchanged). No pending video published in the last 14 days, so no priority batch — the two 2026-09-01/02 uploads were imported yesterday.
+- `series_queue.json`: `active_series` **empty**, `rotation_index` 0 — unchanged since `second-verdict` completed on 2026-08-31. Nothing to drain.
+- Decision: **skip cleanly** per the selection decision tree (branch 3). No transcripts fetched, no posts generated, no Keeper post, no queue mutation.
+- Action requested: **run `/plan-batch`** to populate the queue before the next `/import`, which will otherwise skip again.
+- Index unchanged: 877 imported, 171 pending, 12 no_transcript (1060 total). Archive: 798 transcripts, 877 posts.
+
 ## 2026-09-03 — imported 2 videos (priority drop — Dark Souls Pt 6 & The Dwarves: Big Box)
 
 - **Ad-hoc priority run.** `fetch_channel_videos.py` found 2 new uploads and both fell inside the 14-day priority window (`132bn7FWRws` published 2026-09-01, `1GeNGNh50Fw` published 2026-09-02), so the queue was *not* drained and `series_queue.json` is untouched. `active_series` is in any case still **empty** since `second-verdict` completed on 2026-08-31 — **run `/plan-batch` before the next cycle** or the next non-priority `/import` will skip.
