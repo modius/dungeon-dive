@@ -1,32 +1,6 @@
 {
   "active_series": [
     {
-      "theme": "hobbycast-2022-pt2",
-      "title": "Hobbycast, Part Two — The Asian Cinema Nostalgia Arc",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "dtdf5AeXwB8",
-        "UJOAvX_FD7o",
-        "gK1VHYEXt_0",
-        "rVEh3PGiggk",
-        "Sq3rkK6GhuE",
-        "_wWswU9t8HU",
-        "i4tThjQW98w"
-      ],
-      "related_imported_ids": [
-        "UCaZFYzYm9k",
-        "vUEmbLAxZ0Y",
-        "DnXALAe3BtY",
-        "DDiDtP-uOqU",
-        "i5Ufb0FYkDM"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "modern-shelf",
       "title": "The Modern Shelf — Closing 2024–25",
       "status": "continuing",
@@ -618,6 +592,21 @@
         "UUUH5xnM-Mc",
         "8pRl03u-hjI"
       ]
+    },
+    {
+      "theme": "hobbycast-2022-pt2",
+      "title": "Hobbycast, Part Two — The Asian Cinema Nostalgia Arc",
+      "related_imported_ids": [
+        "UCaZFYzYm9k",
+        "vUEmbLAxZ0Y",
+        "DnXALAe3BtY",
+        "DDiDtP-uOqU",
+        "i5Ufb0FYkDM"
+      ],
+      "parts_completed": 1,
+      "total_videos": 7,
+      "completed_date": "2026-09-05",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/137"
     }
   ],
   "rotation_index": 0

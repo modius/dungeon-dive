@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-09-05 — imported 7 videos (The Hobbycast, Part Two — The Asian Cinema Nostalgia Arc)
+
+- Queue drain, `rotation_index` 0 → **hobbycast-2022-pt2** (one-shot, `videos_per_batch` 7, 7 IDs). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1060 total, unchanged), and no pending video published in the last 14 days.
+- Drift check passed — all 7 slate IDs still `pending`. Transcripts: **7 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to each video's `published_at`):
+  - `dtdf5AeXwB8` Hobbycast Episode 5: Asian Cinema Nostalgia - Part 1 → [t/2118](https://dungeondive.quest/t/2118)
+  - `UJOAvX_FD7o` Hobbycast Episode 6: Asian Cinema Nostalgia - Part 2 → [t/2116](https://dungeondive.quest/t/2116)
+  - `gK1VHYEXt_0` Hobbycast Episode 8 (NEW UPLOAD): Asian Cinema Nostalgia - Part 3 → [t/2119](https://dungeondive.quest/t/2119)
+  - `rVEh3PGiggk` Hobbycast Episode 10: Asian Cinema Nostalgia - Part 4 → [t/2121](https://dungeondive.quest/t/2121)
+  - `Sq3rkK6GhuE` Hobbycast Episode 11: Asian Cinema Nostalgia - Part 5 → [t/2115](https://dungeondive.quest/t/2115)
+  - `_wWswU9t8HU` Hobbycast Episode 13: Asian Cinema Nostalgia - Part 6 → [t/2117](https://dungeondive.quest/t/2117)
+  - `i4tThjQW98w` Episode 27: The Dungeon Dive at Disneyland → [t/2120](https://dungeondive.quest/t/2120)
+- Keeper post **"The Hobbycast, Part Two — The Asian Cinema Nostalgia Arc"** (register A, 379 words of prose) → [t/1170/137](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/137). Picks up part one's framing (the podcast room off the east wall) and finds binders wheeled into it: six weeks of an archivist narrating the sleeves of a disc-less DVD collection — a catalogue of a catalogue, which the Keeper claims as its own trade. The prose gestures at the arc (Fresno video stores → Johnnie To and Tsui Hark → Thailand/Japan/Korea → the Shaw Brothers, where Daniel argues kung fu films are the channel's sword-and-sorcery) and lands the Disneyland coda as the same man admiring the same built worlds. Exhibit Catalogue runs 12 entries in publish-date order, reusing all 5 queued `related_imported_ids` from part one — Mörk Borg (t/1268), Ten SF Novels (t/2016), Anime SF (t/2008), Board Games Least Favourite (t/2007), Top 50 Postmortem (t/1588) — with hooks rewritten from `archive/posts/` rather than lifted from part one. One hook (Ep 6) runs 16 words against the ≤15 guideline; noticed after the reply was live and left as posted so the committed file matches Discourse.
+- Series **completed**: `hobbycast-2022-pt2` drained to empty, moved to `completed_series` (`parts_completed` 1, `total_videos` 7, `related_imported_ids` retained). `rotation_index` stays 0 per the completion rule — removal shifts **modern-shelf** (18 IDs, `videos_per_batch` 12) into slot 0 for the next drain. Three series remain active: modern-shelf, out-there-science-fiction, spooky-shelf.
+- Index now: **884 imported**, 164 pending, 12 no_transcript (1060 total). Archive: 805 transcripts, 884 posts.
+- Pre-flight: `git pull` fast-forwarded two dashboard files from the nightly `/refresh`; rate limit 0/20 videos in the last 24h (20 headroom); `check_integrity.py` returned WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — not a stop condition, 0 errors.
+
 ## 2026-09-04 — Queue empty — no import (skipped)
 
 - Pre-flight passed: rate limit 0/20 videos in the last 24h (20 headroom); `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
