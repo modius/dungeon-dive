@@ -1,5 +1,128 @@
 {
-  "active_series": [],
+  "active_series": [
+    {
+      "theme": "hobbycast-2022-pt2",
+      "title": "Hobbycast, Part Two — The Asian Cinema Nostalgia Arc",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "dtdf5AeXwB8",
+        "UJOAvX_FD7o",
+        "gK1VHYEXt_0",
+        "rVEh3PGiggk",
+        "Sq3rkK6GhuE",
+        "_wWswU9t8HU",
+        "i4tThjQW98w"
+      ],
+      "related_imported_ids": [
+        "UCaZFYzYm9k",
+        "vUEmbLAxZ0Y",
+        "DnXALAe3BtY",
+        "DDiDtP-uOqU",
+        "i5Ufb0FYkDM"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "modern-shelf",
+      "title": "The Modern Shelf — Closing 2024–25",
+      "status": "continuing",
+      "one_shot": false,
+      "videos_per_batch": 12,
+      "video_ids": [
+        "73a6CtNTac4",
+        "p6uuiKju1Gc",
+        "RVWlgBZt6h8",
+        "UHGfFw-ZT98",
+        "cpd3lbm5tL8",
+        "6vhfb7LUUYc",
+        "sO1rprIWDas",
+        "Te57wukDp8g",
+        "FfCJfpHXt8c",
+        "2CnmP8lvGE4",
+        "kb2G7jcB3Ls",
+        "yo-Wdxc6ng0",
+        "ZaksbmqvxNM",
+        "Qrag4Jg-veo",
+        "Drqehd-O2ak",
+        "FAIITnGT4wo",
+        "pGUjxBQqY5E",
+        "vuvK_DUcqCk"
+      ],
+      "related_imported_ids": [
+        "vQI78T3g4Gg",
+        "7BkLmVdcaJw",
+        "H5yOaNKxZ-4",
+        "9gFQ9rFMKEA",
+        "sqx6twZgR-k"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "out-there-science-fiction",
+      "title": "Out There — Science Fiction on the Table",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 12,
+      "video_ids": [
+        "gtGmlmLZ3Ps",
+        "HUbRq3GR8SI",
+        "acvpoQwncqI",
+        "5R6l50LDlV4",
+        "r4YE2Zghgbc",
+        "I66Prbdjcn0",
+        "akC-r5hlDkc",
+        "SKEcZIJKPzc",
+        "gy_rDsWx8_4",
+        "aDDnbn7KVls",
+        "K8o_u0_iFJU",
+        "n9XvIj6hOjc"
+      ],
+      "related_imported_ids": [
+        "5t3KYPZKUe4",
+        "vUEmbLAxZ0Y",
+        "A5ojgoN39Lc",
+        "Ac6AOC9yxJE",
+        "m6233lu5J9Q"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "spooky-shelf",
+      "title": "The Spooky Shelf — Horror Games, Not Horror Films",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 9,
+      "video_ids": [
+        "zsaXdCEuYsY",
+        "ASSnCNI-KlM",
+        "IB_3oFDAULc",
+        "CufCJMTTKHk",
+        "CEF9v_JMVe8",
+        "Jep6zVwriOA",
+        "wBWXzI7uJYo",
+        "iHt3VLuizj4",
+        "QUNzVqhLUBw"
+      ],
+      "related_imported_ids": [
+        "txSX7-1XQOE",
+        "j3BrzaBGJqY",
+        "87Vb6sa1KcY",
+        "wpWCpGTZE2A",
+        "OcgJZnE1a6o"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    }
+  ],
   "completed_series": [
     {
       "theme": "heroquest",
