@@ -29,6 +29,10 @@ Tags all imported videos with game, format, mechanic, theme, player mode, platfo
 
 **Add `--reanalyze` after any change to the tagging logic** (`KNOWN_GAMES`, `AMBIGUOUS_GAME_NAMES`, the extractors in `analyze_content.py`). Cached tags are never revisited otherwise, so a fix silently applies to new videos only and the dashboards keep serving the old numbers. Costs ~40s for the full archive and touches no APIs.
 
+**Use `--reanalyze` on a local run too, whenever the local cache is more than a day or two old.** The nightly `/refresh` runs from a clean clone, and `transcript_analytics.json` is gitignored — so the nightly has no cache and re-derives all 877 videos from scratch every time. A local incremental run does not reproduce that: cached entries keep tags derived from transcripts that have since gone missing from `archive/transcripts/`, so the local dashboard carries tags the nightly cannot regenerate and silently reverts the next day. Verified 2026-09-05: incremental output held 11 extra tags across 11 videos (`review`, `crowdfund-preview`, `discussion`, `tutorial`, `rpg`, `miniatures`, `hex-crawl`, `wargame`), and **all 11 were among the 79 imported videos with no local transcript**. Reproducibility beats the richer-but-unregenerable cache — match the nightly, and fix the cause with `/repair transcripts`.
+
+> **The 79 missing transcripts are the real defect here, not the tagging.** `check_integrity.py` has been reporting `warn` with the recommendation "79 imported videos missing local transcripts" — 42 of them from 2024. Those videos are tagged from title and description alone, every night, on the published dashboards. Treat a rising count as a data-loss signal, not noise.
+
 ### 3. Fetch YouTube engagement stats
 
 ```bash
@@ -51,8 +55,11 @@ Updates the main dashboard (index, health, content pages) and the insights dashb
 ```bash
 git add docs/index.html docs/content.html docs/health.html docs/insights.html
 git commit -m "insights: refreshed engagement data (N videos, N total views)"
+
 git push origin main
 ```
+
+**`N videos` means the analyzed count** — the figure `analyze_content.py` prints in step 2 ("Analyzed 877 videos"), i.e. imported videos carrying taxonomy. It is **not** the figure `fetch_youtube_stats.py` prints in step 3 ("Fetched stats for 1060 videos (6 new, 1054 updated)"), which counts the whole channel including pending. Past runs mixed the two, so the history reads 842 → 850 → 856 → **1057** → 870 → 875, and the jumps look like data loss when nothing was wrong. `N total views` is the `total_views` from step 4's insights output. Not committing `docs/index.html` is normal — it only changes when `video_index.json` does, i.e. after an `/import`, not after a `/refresh`.
 
 Note: `youtube_stats.json` is gitignored — do not commit it.
 
