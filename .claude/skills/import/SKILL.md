@@ -12,7 +12,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 ## Pre-flight
 
 1. `git pull origin main` — **before anything else generates a file.** A nightly `/refresh` pushes `docs/*.html` to this same branch, and once step 11 has rewritten the dashboards a plain `git pull` refuses to run ("local changes would be overwritten"). Pulling here, while the tree is clean, is the only cheap moment. It does not eliminate the race — this run holds the branch from step 1 to step 14, which on a full batch is many minutes — so see the recovery note on step 14.
-2. `python3 scripts/check_rate_limit.py` — if exit 1, STOP (daily limit reached).
+2. `python3 scripts/check_rate_limit.py` — if exit 1, STOP (daily limit reached). The exit code is the gate; the "N video(s) of headroom" line is informational and the slate is **not** trimmed to fit it — a one-shot series is meant to land as one Keeper post, and the real constraint (YouTube's ~12–15 fetches per ~1h throttle window) is already covered by the 12-video cap in step 6. Record the headroom figure in the CHANGELOG pre-flight note as the other runs do.
 3. `python3 scripts/test_config.py --config config.json` — if fails, STOP.
 4. `python3 scripts/check_integrity.py --config config.json` — if exit 2, STOP and log error.
 
@@ -46,6 +46,9 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
    - **Permanent failures** (`permanent: true` — i.e. `TranscriptsDisabled`, `NoTranscriptFound`, `VideoUnavailable`): the video genuinely has no captions. Mark it as `no_transcript` in `video_index.json` and continue.
    - **Transient failures** (`permanent: false` — typically `RequestBlocked`, `IpBlocked`, `TooManyRequests`, `YouTubeRequestFailed`, network errors): DO NOT mutate the index. The video remains `pending`. Note in CHANGELOG which IDs hit transient errors and continue with whatever transcripts succeeded.
    - **Exit code 2** means the script bailed: more than half the batch hit transient failures, so the runner is almost certainly IP-blocked from YouTube. In that case: do NOT mark anything as `no_transcript`, log "transcript fetch blocked — runner IP issue" to CHANGELOG, abort the run cleanly without proceeding to post generation. The queue is unchanged so the next run will retry.
+     - **A one-video priority batch trips the >50% rule on any single transient failure**, so exit 2 there is not by itself proof of an IP block. Confirm with at most one retry (pause ~45s first) and, if that fails too, **one** diagnostic `YouTubeTranscriptApi().fetch()` against an already-imported video — not `list()`: listing hits the watch page and can succeed while the caption-download endpoint is blocked (2026-09-07: `list()` returned tracks for both the new upload and a known-good video, `fetch()` raised `IpBlocked` on both). If the known-good fetch also raises `IpBlocked`/`RequestBlocked`, it is the runner IP — abort as above and **stop probing**; every extra request extends the block.
+     - Whatever the diagnosis, do **not** fall through to a queue drain. The priority video stays `pending` inside its 14-day window and will be picked up first by the next run; the queue waits for it regardless, exactly as it would have had the fetch succeeded.
+     - An aborted run still commits, following the 2026-09-04 skip precedent: `video_index.json` (step 5 may have added the new upload's record), `CHANGELOG.md`, and the run's `archive/integrity_*.json`. No dashboard rebuild, no Keeper post, no `series_queue.json` change.
 8. Generate post files for each video:
    - Read transcript from `pending_imports/`
    - Write 150-250 word summary per SKILL.md guidelines

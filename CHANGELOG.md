@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-07 — Transcript fetch blocked — no import (aborted)
+
+- **Ad-hoc priority run, aborted at step 7.** `fetch_channel_videos.py` found **1 new upload**: `MdkVvgET0Wg` Horror on the Orient Express: Board Game - Review, published 2026-09-06T16:00Z (~5 h before the run) — inside the 14-day priority window, so the queue was *not* drained and `series_queue.json` is untouched (`rotation_index` 1 → `out-there-science-fiction` is still next; the queue waits one cycle).
+- `batch_fetch_transcripts.py -- MdkVvgET0Wg` → **0 fetched, 0 permanent, 1 transient** (`IpBlocked`, `permanent: false`) → **exit 2**. One retry after a 45 s pause returned the same. Diagnostics (one request each, then stopped): `list()` succeeds for both the new video (a single auto-generated `en` track exists) and a known-good one (`ATXZbbUsHVw`, 20 tracks), but `fetch()` raises `IpBlocked` on the known-good video too — the caption-download endpoint is blocked for this IP while the watch-page listing is not. **Runner IP issue**, not a fresh-upload caption lag. `youtube-transcript-api` 1.2.4. Yesterday's 12-video fetch at 07:53 UTC succeeded cleanly ~13 h earlier, so either the block outlasts the usual ~1 h window or YouTube changed something; if the next run fails the same way, check the library version and the runner IP before anything else.
+- Per the exit-2 rule: **nothing marked `no_transcript`**, no posts generated, **no Keeper post**, no dashboard rebuild. `MdkVvgET0Wg` stays `pending` and remains the priority for the next `/import` (window closes 2026-09-20). `pending_imports/manifest.json` carries the failure record; prior runs' staging files left alone per the cleanup rule.
+- Index now: 896 imported, **153 pending** (+1), 12 no_transcript (**1061 total**). Archive unchanged: 817 transcripts, 896 posts.
+- Pre-flight: `git pull` already up to date; rate limit **12/20** videos in the last 24h (8 headroom, exit 0); `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
+- `import/SKILL.md` patched from this run: step 7's exit-2 bullet now explains that a one-video batch trips the >50% rule on any single failure, how to confirm a real IP block (one retry, one `fetch()` diagnostic — not `list()` — then stop probing), that a failed priority never falls through to a queue drain, and what an aborted run commits; step 2 now states the headroom figure is informational and the slate is not trimmed to it.
+
 ## 2026-09-06 — imported 12 videos (The Modern Shelf, Part One — January to May 2024)
 
 - Queue drain, `rotation_index` 0 → **modern-shelf** (`videos_per_batch` 12, 18 IDs queued). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1060 total, unchanged), and no pending video published in the last 14 days.
