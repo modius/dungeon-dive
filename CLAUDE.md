@@ -86,8 +86,8 @@ python3 scripts/test_config.py --config config.json
 # Archive integrity (run before/after imports; exit 2 = stop)
 python3 scripts/check_integrity.py --config config.json
 
-# Rate limit guard for transcript fetches (exit 1 = skip the run)
-python3 scripts/check_rate_limit.py
+# Rate limit guard for transcript fetches (exit 1 = skip the run; /import uses --max-videos 12)
+python3 scripts/check_rate_limit.py --max-videos 12
 
 # Raw script invocations (skills wrap these — rarely needed manually)
 python3 scripts/fetch_channel_videos.py --config config.json --index video_index.json
@@ -103,9 +103,9 @@ Dependencies: `pip3 install -r requirements.txt` (just `requests` and `youtube-t
 
 ## Rate limits to respect
 
-- **YouTube transcript API:** ~12–15 fetches before IP throttle (~1h reset). The 12-video cap in `/import` stays under this.
+- **YouTube transcript API:** a burst of ~12 caption fetches gets the IP blocked for **~24h**, not ~1h (2026-09-07: a 12-video drain, then a single fetch 13h later was refused with `IpBlocked`). The 12-video cap in `/import` is therefore the whole day's budget, and `/import` passes `--max-videos 12` to the guard below so a second run inside that window stops at pre-flight.
 - **YouTube Data API:** ~0.2% of daily quota per `/fetch-stats` — safe to run frequently.
-- **`check_rate_limit.py`:** enforces a video-count quota per 24h locally (default 20 videos posted in the period); respect its exit code. The video count is the meaningful unit — a 1-video priority drop and a 12-video drain don't deserve equal weight.
+- **`check_rate_limit.py`:** enforces a video-count quota per 24h locally (script default 20; `/import` runs it with `--max-videos 12`, which matches the observed block threshold); respect its exit code. The video count is the meaningful unit — a 1-video priority drop and a 12-video drain don't deserve equal weight.
 - **Discourse:** no practical limit at current volumes.
 
 ## Workflow rules (from SKILL.md, easy to violate)
