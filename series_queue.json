@@ -7,18 +7,6 @@
       "one_shot": false,
       "videos_per_batch": 12,
       "video_ids": [
-        "73a6CtNTac4",
-        "p6uuiKju1Gc",
-        "RVWlgBZt6h8",
-        "UHGfFw-ZT98",
-        "cpd3lbm5tL8",
-        "6vhfb7LUUYc",
-        "sO1rprIWDas",
-        "Te57wukDp8g",
-        "FfCJfpHXt8c",
-        "2CnmP8lvGE4",
-        "kb2G7jcB3Ls",
-        "yo-Wdxc6ng0",
         "ZaksbmqvxNM",
         "Qrag4Jg-veo",
         "Drqehd-O2ak",
@@ -33,9 +21,9 @@
         "9gFQ9rFMKEA",
         "sqx6twZgR-k"
       ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
+      "last_part": 1,
+      "last_imported": "2026-09-06",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/138"
     },
     {
       "theme": "out-there-science-fiction",
@@ -609,5 +597,5 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/137"
     }
   ],
-  "rotation_index": 0
+  "rotation_index": 1
 }

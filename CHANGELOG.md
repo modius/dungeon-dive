@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-09-06 — imported 12 videos (The Modern Shelf, Part One — January to May 2024)
+
+- Queue drain, `rotation_index` 0 → **modern-shelf** (`videos_per_batch` 12, 18 IDs queued). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1060 total, unchanged), and no pending video published in the last 14 days.
+- Drift check passed — all 12 slate IDs still `pending`. Transcripts: **12 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to each video's `published_at`):
+  - `73a6CtNTac4` Four Against the Great Old Ones - a nestled deep dive → [t/2124](https://dungeondive.quest/t/2124)
+  - `p6uuiKju1Gc` A Treasure Trove of Tantalizing Trinkets - a preview of what's to come → [t/2131](https://dungeondive.quest/t/2131)
+  - `RVWlgBZt6h8` You Meet in a Tavern, You Die in a Dungeon - TTRPG / Dungeon Crawl Review → [t/2126](https://dungeondive.quest/t/2126)
+  - `UHGfFw-ZT98` Chronicles of Avel - Review of base game and expansions → [t/2128](https://dungeondive.quest/t/2128)
+  - `cpd3lbm5tL8` Escape from 100 Million B.C. - Review → [t/2129](https://dungeondive.quest/t/2129)
+  - `6vhfb7LUUYc` Super Hazard Quest w/ Solo Expansion - a 16-bit Sidescroller on your Table (Review) → [t/2123](https://dungeondive.quest/t/2123)
+  - `sO1rprIWDas` Unreliable Wizard (Review) - a small solo card game → [t/2132](https://dungeondive.quest/t/2132)
+  - `Te57wukDp8g` The most unique solo adventure game in my collection! (Review of Life & Legend) → [t/2127](https://dungeondive.quest/t/2127)
+  - `FfCJfpHXt8c` A fantasy skirmish board game based on Christian Mythology - Deliverance Review → [t/2125](https://dungeondive.quest/t/2125)
+  - `2CnmP8lvGE4` Dwarves delving for gold and glory! A review and overview of Stalagbite! → [t/2122](https://dungeondive.quest/t/2122)
+  - `kb2G7jcB3Ls` A dungeon crawl for ants? The Abandons (review) → [t/2130](https://dungeondive.quest/t/2130)
+  - `yo-Wdxc6ng0` Leviathan Wilds - climb your way to victory! (Review) → [t/2133](https://dungeondive.quest/t/2133)
+- Keeper post **"The Modern Shelf, Part One — January to May 2024"** (register A, 373 words of prose) → [t/1170/138](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/138). Framing: the Keeper sent from the deep stacks to the shelf nearest the door, where the archivist parks things still warm from the table before time has sorted them — and notes how few of these 2024 boxes he actually loved (the dwarves, the climbing game, the $20 dinosaur one) against a more interesting middle register of dissents and caveats. Exhibit Catalogue runs 17 entries in publish-date order: the 12 new topics plus all 5 queued `related_imported_ids` — Doom Pilgrim (t/1758), Little Town & Eldritch Town (t/1544), 4AD Buyer's Guide 2024 (t/425), Best Games of 2024 (t/609), Stalagbite! Deeper Caverns (t/1188) — hooks drawn from `archive/posts/`. All 17 hooks ≤15 words.
+- Series **continues**: `modern-shelf` drained 18 → **6 IDs remaining** (`ZaksbmqvxNM`, `Qrag4Jg-veo`, `Drqehd-O2ak`, `FAIITnGT4wo`, `pGUjxBQqY5E`, `vuvK_DUcqCk` — Cyberflesh through Little Town / Eerie Town, July 2024 to January 2025). `last_part` 0 → 1, `last_imported` 2026-09-06, `keeper_post` set. `rotation_index` 0 → **1** for round-robin, so the next drain is **out-there-science-fiction** (12 IDs); modern-shelf Part Two follows after spooky-shelf. Part Two must reuse the same 5 `related_imported_ids` with fresh hook wording.
+- Index now: **896 imported**, 152 pending, 12 no_transcript (1060 total). Archive: 817 transcripts, 896 posts.
+- Pre-flight: `git pull` fast-forwarded two dashboard files from the nightly `/refresh`; rate limit 0/20 videos in the last 24h (20 headroom); `check_integrity.py` returned WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — not a stop condition, 0 errors.
+
 ## 2026-09-05 — imported 7 videos (The Hobbycast, Part Two — The Asian Cinema Nostalgia Arc)
 
 - Queue drain, `rotation_index` 0 → **hobbycast-2022-pt2** (one-shot, `videos_per_batch` 7, 7 IDs). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1060 total, unchanged), and no pending video published in the last 14 days.
