@@ -2,7 +2,7 @@
 
 ## 2026-09-10 — imported 3 videos (priority drop — fresh uploads 6–9 September)
 
-- **Ad-hoc priority run.** `fetch_channel_videos.py` found **2 new uploads** (1061 → **1063** total): `ozShLRF_xgU` A Normal Guy Plays Dark Souls - Part 7 (published 2026-09-07T16:00Z) and `eARwhWcSGKo` Crimson Desert - Travelogue - The Village of the Sick (2026-09-09T16:00Z). Together with `MdkVvgET0Wg` Horror on the Orient Express: Board Game - Review (2026-09-06, carried over from the aborted 09-07 run) that is **3 pending videos inside the 14-day window** → priority batch. Queue *not* drained; `series_queue.json` untouched (`rotation_index` still 1 → `None` is next).
+- **Ad-hoc priority run.** `fetch_channel_videos.py` found **2 new uploads** (1061 → **1063** total): `ozShLRF_xgU` A Normal Guy Plays Dark Souls - Part 7 (published 2026-09-07T16:00Z) and `eARwhWcSGKo` Crimson Desert - Travelogue - The Village of the Sick (2026-09-09T16:00Z). Together with `MdkVvgET0Wg` Horror on the Orient Express: Board Game - Review (2026-09-06, carried over from the aborted 09-07 run) that is **3 pending videos inside the 14-day window** → priority batch. Queue *not* drained; `series_queue.json` untouched (`rotation_index` still 1 → `out-there-science-fiction` is next).
 - Transcripts: **3 fetched, 0 permanent failures, 0 transient.** The `IpBlocked` state seen on 09-07 has cleared — roughly 72 h after the 09-06 twelve-video drain, consistent with the ~24 h block model.
 - Posted to Discourse (category 5, backdated to each video's `published_at`):
   - `MdkVvgET0Wg` Horror on the Orient Express: Board Game - Review → [t/2139](https://dungeondive.quest/t/2139)
@@ -11,7 +11,7 @@
 - Keeper post **"Fresh Despatch"** (register B, 174 words of authored prose; 296 total with link titles, stats and sign-off, in line with the 09-03 despatch at 293) → [t/1170/139](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/139). Framing: three parcels, the first arriving by rail and reviewed from the kitchen table rather than carried between rooms. "From the deeper stacks" cross-references, one per vein: *Some thoughts on Eldritch Horror, "Lovecraftian" theming, and Brian Lumley* (t/1545 — Daniel invokes the same Lumley argument in the Orient Express review), *A Normal Guy Plays Dark Souls - Part 2 - Ringing the First Bell of Awakening* (t/2017), *Crimson Desert and the Joys of Digital Tourism* (t/2077 — the video this travelogue explicitly revisits). Hooks drawn from `archive/posts/`.
 - Index now: **899 imported**, 152 pending, 12 no_transcript (1063 total). Archive: 820 transcripts, 899 posts. Dashboard cross-check matched the Keeper sign-off figures.
 - Pre-flight: `git pull` fast-forwarded four dashboard files from the nightly `/refresh`; rate limit **0/15** videos in the last 24h (15 headroom, exit 0); `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
-- Rate budget after this run: **3/15** in the rolling 24h, 12 headroom. A full 12-video queue drain before ~2026-09-11 12:00 UTC would sit exactly at the cap with zero margin; prefer to let the window roll over before draining `None`.
+- Rate budget after this run: **3/15** in the rolling 24h, 12 headroom. A full 12-video queue drain before ~2026-09-11 12:00 UTC would sit exactly at the cap with zero margin; prefer to let the window roll over before draining `out-there-science-fiction`.
 
 ## 2026-09-07 — Transcript fetch blocked — no import (aborted)
 
