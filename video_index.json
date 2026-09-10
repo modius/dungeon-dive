@@ -1,16 +1,36 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-09-06T21:17:09.395634+00:00",
+  "last_fetched": "2026-09-10T02:07:07.312959+00:00",
   "videos": [
+    {
+      "video_id": "eARwhWcSGKo",
+      "title": "Crimson Desert - Travelogue - The Village of the Sick",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-09-09T16:00:26Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/eARwhWcSGKo/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2140,
+      "imported_at": "2026-09-10T02:10:17.574452Z"
+    },
+    {
+      "video_id": "ozShLRF_xgU",
+      "title": "A Normal Guy Plays Dark Souls - Part 7 - The 2nd Bell of Awakening and Return to Firelink Shrine",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-09-07T16:00:03Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/ozShLRF_xgU/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2141,
+      "imported_at": "2026-09-10T02:10:22.656566Z"
+    },
     {
       "video_id": "MdkVvgET0Wg",
       "title": "Horror on the Orient Express: Board Game - Review",
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2026-09-06T16:00:12Z",
       "thumbnail_url": "https://i.ytimg.com/vi/MdkVvgET0Wg/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2139,
+      "imported_at": "2026-09-10T02:10:12.702389Z"
     },
     {
       "video_id": "1GeNGNh50Fw",
