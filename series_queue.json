@@ -52,6 +52,126 @@
       "last_part": 0,
       "last_imported": null,
       "keeper_post": null
+    },
+    {
+      "theme": "quick-delve-dungeonquest",
+      "title": "The Quick Delve — DungeonQuest & the One-Evening Dungeon",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "4r4Fv5i5zCI",
+        "0irTZK6Z_YI",
+        "bHJfRtPpY6E",
+        "t4gVVdxtNWE",
+        "CKAGWlmyXbA",
+        "QY2ox96a1zA",
+        "9dFDeUNHViY",
+        "Fs8L9V90RDk"
+      ],
+      "related_imported_ids": [
+        "7dlhZLngdvM",
+        "UUUH5xnM-Mc",
+        "hhwrtf3g0yY"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "small-boxes-big-games",
+      "title": "Small Boxes, Big Games — Closing the Playlist",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 11,
+      "video_ids": [
+        "t_RBOUZAqGw",
+        "nZ-Yf21ufww",
+        "nPV7ftm2WSg",
+        "RrVaJ5z_3mU",
+        "afLeJEbZs2k",
+        "Pk77G5OfECU",
+        "VLJJ9zvdj2Y",
+        "uxxwN68AJHE",
+        "fMmn4SMuSdE",
+        "wnahjxPk5rk",
+        "7PSt_Gouh6g"
+      ],
+      "related_imported_ids": [
+        "9TvuNO-fnXM",
+        "aqbo0yu_l6g",
+        "w68xGF_YIgU",
+        "z2SU31i7Uo4",
+        "B9zmRMY6ISI"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "tavern-door",
+      "title": "The Tavern Door — D&D, the OSR, and the Fantasy Pub",
+      "status": "continuing",
+      "one_shot": false,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "OLPoLPMdW_g",
+        "Fa8jGX5mvj4",
+        "AO1WNfgIgiE",
+        "IrGSyH2wlK0",
+        "qabDQ1ebZbQ",
+        "eGnLjzejgI4",
+        "7tKbMZqzLks",
+        "aOOR5vp4Kl0",
+        "9BmwbWSPXwY",
+        "GJRAN3_x8U4",
+        "fG1-74pj6A4",
+        "zpX-Xs1a9MY"
+      ],
+      "related_imported_ids": [
+        "zDtacZ_qT0Y",
+        "fKvvShsdaWU",
+        "hUQqvZGsp6A",
+        "RVWlgBZt6h8",
+        "uXbngiOXOD0"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "long-spring-2021",
+      "title": "The Long Spring — January to June 2021",
+      "status": "continuing",
+      "one_shot": false,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "NHGisiXq7eg",
+        "Mtqdsr2BC_A",
+        "B_OF2TYLnQw",
+        "cqPVe0nQ1A0",
+        "lZj5qfUurLw",
+        "oUdstwXRu2c",
+        "ChKL1KyjlZ4",
+        "DBkInEbzPk0",
+        "zVMIZRDSvCc",
+        "kETEBzJrtSA",
+        "jh22fly0d-k",
+        "iCrYuW2ixu8",
+        "zxwGfKCo6as",
+        "qJ6pJMN4eiA",
+        "scIFhQSvvlE"
+      ],
+      "related_imported_ids": [
+        "B5xTJMahaK4",
+        "Vb5gSRAHXCA",
+        "KEnYv8bMxXM",
+        "9TvuNO-fnXM",
+        "cga1y52KSCk"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
     }
   ],
   "completed_series": [
