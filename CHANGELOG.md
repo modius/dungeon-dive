@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-09-11 — imported 12 videos (Out There — Science Fiction on the Table)
+
+- Queue drain, `rotation_index` 1 → **out-there-science-fiction** (`videos_per_batch` 12, 12 IDs queued, `one_shot`). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1063 total, unchanged), and no pending video published in the last 14 days.
+- Drift check passed — all 12 slate IDs still `pending`. Transcripts: **12 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to each video's `published_at`):
+  - `gtGmlmLZ3Ps` Posthuman: Survive/Evolve - Take a Look → [t/2153](https://dungeondive.quest/t/2153)
+  - `HUbRq3GR8SI` Let's Take a Look at Hunters AD 2114 → [t/2146](https://dungeondive.quest/t/2146)
+  - `acvpoQwncqI` Let's Take a Look at Space Cadets Away Missions → [t/2151](https://dungeondive.quest/t/2151)
+  - `5R6l50LDlV4` A Look at Hunted: Mining Colony 415 → [t/2145](https://dungeondive.quest/t/2145)
+  - `r4YE2Zghgbc` Tales from the Loop - Board Gaming in an '80s that Never Was → [t/2156](https://dungeondive.quest/t/2156)
+  - `I66Prbdjcn0` Deep Space D-6, The Long Way Home, and more Vintage SF Books → [t/2147](https://dungeondive.quest/t/2147)
+  - `akC-r5hlDkc` A look at Dead Belt and the Penguin Library Science Fiction postcards → [t/2152](https://dungeondive.quest/t/2152)
+  - `SKEcZIJKPzc` A Look at Metamorphosis Alpha → [t/2149](https://dungeondive.quest/t/2149)
+  - `gy_rDsWx8_4` Taking a Look at Star Wars: Outer Rim, with the Unfinished Business Expansion → [t/2154](https://dungeondive.quest/t/2154)
+  - `aDDnbn7KVls` Notorious - Have Blaster, Will Travel (solo RPG) → [t/2150](https://dungeondive.quest/t/2150)
+  - `K8o_u0_iFJU` I highly recommend Space Aces: The New Guidebook - solo science fiction RPG → [t/2148](https://dungeondive.quest/t/2148)
+  - `n9XvIj6hOjc` One Breath Left - Derelicts and Danger! → [t/2155](https://dungeondive.quest/t/2155)
+- Keeper post **"Out There — Science Fiction on the Table"** (register A, 393 words of prose; 862 total with the catalogue) → [t/1170/140](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/140). Framing: a crate that arrives with a hiss, an owl that lives in a void and is unimpressed by outer space, and the discovery that the archivist's science fiction is mostly about being broke and boarding derelicts — the Keeper's own trade. Gestures at the May 2022 science-fiction month and the 2023 solo-Friday spring, the recurring vintage paperbacks, Daniel's "look, not ideas" complaint from the Shoot Out, and the March 2020 "watching from the future" line. Exhibit Catalogue runs 17 entries in publish-date order: the 12 new topics plus all 5 queued `related_imported_ids` — Core Space (t/1816), Hobbycast Ep 7 (t/2016), Death Angel (t/1817), SF Small Box Shoot Out (t/1782), Space Aces Voyages (t/1918) — hooks drawn from `archive/posts/`. All 17 hooks ≤15 words.
+- Series **completed**: `out-there-science-fiction` drained 12 → 0 in a single part; removed from `active_series` and appended to `completed_series` (`parts_completed` 1, `total_videos` 12, `completed_date` 2026-09-11, `keeper_post` set). `rotation_index` **stays 1** — removing the entry shifts `spooky-shelf` into slot 1 — so the next drain is **spooky-shelf** (9 IDs, `videos_per_batch` 9); `modern-shelf` Part Two (6 IDs) follows in slot 0 after that.
+- Index now: **911 imported**, 140 pending, 12 no_transcript (1063 total). Archive: 832 transcripts, 911 posts. Dashboard cross-check matched the Keeper sign-off figures.
+- Pre-flight: `git pull` fast-forwarded two dashboard files (`docs/content.html`, `docs/insights.html`) from the nightly `/refresh`; rate limit **3/15** videos in the last 24h (12 headroom, exit 0) — the 12-video slate fits the headroom exactly, so under the binding-headroom rule the run proceeded rather than waiting for the window to roll over as the 09-10 note preferred; the fetch was clean, 12/12. `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
+- Rate budget after this run: **15/15** in the rolling 24h, 0 headroom. The 09-10 despatch's 3 age out at ~02:10 UTC today (12/15), this run's 12 at ~01:06 UTC 2026-09-12 (`post_results_20260911_010615.json`). `/import` before then stops at pre-flight; a priority upload in that window simply waits a cycle.
+
 ## 2026-09-10 — imported 3 videos (priority drop — fresh uploads 6–9 September)
 
 - **Ad-hoc priority run.** `fetch_channel_videos.py` found **2 new uploads** (1061 → **1063** total): `ozShLRF_xgU` A Normal Guy Plays Dark Souls - Part 7 (published 2026-09-07T16:00Z) and `eARwhWcSGKo` Crimson Desert - Travelogue - The Village of the Sick (2026-09-09T16:00Z). Together with `MdkVvgET0Wg` Horror on the Orient Express: Board Game - Review (2026-09-06, carried over from the aborted 09-07 run) that is **3 pending videos inside the 14-day window** → priority batch. Queue *not* drained; `series_queue.json` untouched (`rotation_index` still 1 → `out-there-science-fiction` is next).

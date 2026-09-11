@@ -26,37 +26,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/138"
     },
     {
-      "theme": "out-there-science-fiction",
-      "title": "Out There — Science Fiction on the Table",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 12,
-      "video_ids": [
-        "gtGmlmLZ3Ps",
-        "HUbRq3GR8SI",
-        "acvpoQwncqI",
-        "5R6l50LDlV4",
-        "r4YE2Zghgbc",
-        "I66Prbdjcn0",
-        "akC-r5hlDkc",
-        "SKEcZIJKPzc",
-        "gy_rDsWx8_4",
-        "aDDnbn7KVls",
-        "K8o_u0_iFJU",
-        "n9XvIj6hOjc"
-      ],
-      "related_imported_ids": [
-        "5t3KYPZKUe4",
-        "vUEmbLAxZ0Y",
-        "A5ojgoN39Lc",
-        "Ac6AOC9yxJE",
-        "m6233lu5J9Q"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "spooky-shelf",
       "title": "The Spooky Shelf — Horror Games, Not Horror Films",
       "status": "continuing",
@@ -595,6 +564,21 @@
       "total_videos": 7,
       "completed_date": "2026-09-05",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/137"
+    },
+    {
+      "theme": "out-there-science-fiction",
+      "title": "Out There — Science Fiction on the Table",
+      "related_imported_ids": [
+        "5t3KYPZKUe4",
+        "vUEmbLAxZ0Y",
+        "A5ojgoN39Lc",
+        "Ac6AOC9yxJE",
+        "m6233lu5J9Q"
+      ],
+      "parts_completed": 1,
+      "total_videos": 12,
+      "completed_date": "2026-09-11",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/140"
     }
   ],
   "rotation_index": 1
