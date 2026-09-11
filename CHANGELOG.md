@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-12 — imported 1 video (priority drop — A Normal Guy Plays Dark Souls, Part 8)
+
+- **Ad-hoc priority run.** `fetch_channel_videos.py` found **1 new upload** (1063 → **1064** total): `5zi4AXEg4HE` A Normal Guy Plays Dark Souls - Part 8 - Return to the Asylum and Darkroot Garden (published 2026-09-11T16:00Z, ~8 h before the run). That is **1 pending video inside the 14-day window** → priority batch. Queue *not* drained; `series_queue.json` untouched (`rotation_index` still 1 → **spooky-shelf** is next, 9 IDs / `videos_per_batch` 9).
+- Transcripts: **1 fetched, 0 permanent failures, 0 transient.** Fetched ~22.8 h after the 09-11 twelve-video drain with no `IpBlocked` — the first return inside 24 h of a full drain to succeed (the 09-07 attempt at 13 h was refused), so the block window is somewhere between 13 h and 23 h, not a hard 24.
+- Posted to Discourse (category 5, backdated to `published_at`):
+  - `5zi4AXEg4HE` A Normal Guy Plays Dark Souls - Part 8 - Return to the Asylum and Darkroot Garden → [t/2157](https://dungeondive.quest/t/2157)
+- Keeper post **"Fresh Despatch"** (register B, 194 words of authored prose; 249 total with link titles, stats and sign-off) → [t/1170/141](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/141). Framing: one parcel delivered by crow, the archivist gone back to the prison he escaped in Part 1 to tidy up. "From the deeper stacks" cross-references, both in the same Souls vein: *A Normal Guy Plays Dark Souls - Part 1 - Intro Through Taurus Demon* (t/1993 — the Asylum the first time through) and *Dungeon Dive Hobbycast - E1 - Intro and Ranking of SoulsBorneRingKiro games* (t/2011 — the full FromSoftware ranking). Hooks drawn from `archive/posts/`. Neither was used in the 09-03 or 09-10 despatches, which took Rune, Ten Tabletop Games and Part 2.
+- Index now: **912 imported**, 140 pending, 12 no_transcript (1064 total). Archive: 833 transcripts, 912 posts. Dashboard cross-check matched the Keeper sign-off figures.
+- Pre-flight: `git pull` already up to date; rate limit **12/15** videos in the last 24h (3 headroom, exit 0) — a one-video priority batch fits, so the run proceeded; `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
+- Rate budget after this run: **13/15** in the rolling 24h, 2 headroom. The 09-11 drain's 12 age out at ~01:06 UTC 2026-09-12 (`post_results_20260911_010615.json`, filenames are UTC), leaving 1/15; this run's 1 ages out at ~23:53 UTC 2026-09-12. A spooky-shelf drain (9) fits comfortably any time after ~01:06 UTC.
+
 ## 2026-09-11 — imported 12 videos (Out There — Science Fiction on the Table)
 
 - Queue drain, `rotation_index` 1 → **out-there-science-fiction** (`videos_per_batch` 12, 12 IDs queued, `one_shot`). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1063 total, unchanged), and no pending video published in the last 14 days.
