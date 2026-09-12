@@ -26,34 +26,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/138"
     },
     {
-      "theme": "spooky-shelf",
-      "title": "The Spooky Shelf — Horror Games, Not Horror Films",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 9,
-      "video_ids": [
-        "zsaXdCEuYsY",
-        "ASSnCNI-KlM",
-        "IB_3oFDAULc",
-        "CufCJMTTKHk",
-        "CEF9v_JMVe8",
-        "Jep6zVwriOA",
-        "wBWXzI7uJYo",
-        "iHt3VLuizj4",
-        "QUNzVqhLUBw"
-      ],
-      "related_imported_ids": [
-        "txSX7-1XQOE",
-        "j3BrzaBGJqY",
-        "87Vb6sa1KcY",
-        "wpWCpGTZE2A",
-        "OcgJZnE1a6o"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "quick-delve-dungeonquest",
       "title": "The Quick Delve — DungeonQuest & the One-Evening Dungeon",
       "status": "continuing",
@@ -699,6 +671,21 @@
       "total_videos": 12,
       "completed_date": "2026-09-11",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/140"
+    },
+    {
+      "theme": "spooky-shelf",
+      "title": "The Spooky Shelf — Horror Games, Not Horror Films",
+      "related_imported_ids": [
+        "txSX7-1XQOE",
+        "j3BrzaBGJqY",
+        "87Vb6sa1KcY",
+        "wpWCpGTZE2A",
+        "OcgJZnE1a6o"
+      ],
+      "parts_completed": 1,
+      "total_videos": 9,
+      "completed_date": "2026-09-12",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/142"
     }
   ],
   "rotation_index": 1

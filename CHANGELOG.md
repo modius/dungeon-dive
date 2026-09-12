@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-09-12 — imported 9 videos (The Spooky Shelf — Horror Games, Not Horror Films)
+
+- Queue drain, `rotation_index` 1 → **spooky-shelf** (`videos_per_batch` 9, 9 IDs queued, `one_shot`). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1064 total, unchanged), and no pending video published in the last 14 days.
+- **Waited for the rate window rather than trimming.** At pre-flight (00:04 UTC) the guard reported **13/15** in the rolling 24h — 2 of headroom against a 9-video slate — because the 09-11 twelve-video drain (`post_results_20260911_010615.json`) was still inside the window and due to age out at 01:06 UTC, 62 minutes later. The strict headroom-is-binding rule would have split a one-shot series 2 + 7 to save an hour. The run instead armed a background poll of the guard (one check a minute), did the fetch-independent prep meanwhile (Keeper voice samples, `related_imported_ids` hooks), and proceeded when the poll fired at 01:06:53 UTC with **1/15** (14 headroom). `import/SKILL.md` step 2 and CLAUDE.md now record this as the rule whenever the shortfall clears within ~90 minutes.
+- Drift check passed — all 9 slate IDs still `pending`. Transcripts: **9 fetched, 0 permanent failures, 0 transient**, ~24 h after the 09-11 drain.
+- Posted to Discourse (category 5, backdated to each video's `published_at`; `post_results_20260912_011356.json`, posted_at 2026-09-12T01:13Z):
+  - `zsaXdCEuYsY` Village Attacks - Take a look → [t/2166](https://dungeondive.quest/t/2166)
+  - `ASSnCNI-KlM` Walking Dead: Here's Negan - Board Game → [t/2158](https://dungeondive.quest/t/2158)
+  - `IB_3oFDAULc` A Look at Alone Against Fear → [t/2161](https://dungeondive.quest/t/2161)
+  - `CufCJMTTKHk` The Exorcism at the House of Monkton Falls - a spooky and charming co-op game → [t/2160](https://dungeondive.quest/t/2160)
+  - `CEF9v_JMVe8` Elder Sign - Scary Dice and Creepy Monsters → [t/2159](https://dungeondive.quest/t/2159)
+  - `Jep6zVwriOA` Roll-With-It: The Fortress of Terror - a solo roll-and-write adventure game system → [t/2162](https://dungeondive.quest/t/2162)
+  - `wBWXzI7uJYo` Horrified - A Perfect Game (for what it is) → [t/2165](https://dungeondive.quest/t/2165)
+  - `iHt3VLuizj4` Alone Against Fear - The Coming of the Dark Templars - The Tombs of the Blind Dead → [t/2164](https://dungeondive.quest/t/2164)
+  - `QUNzVqhLUBw` Into the Wet and Pulsating Cavernous Spaces of Devoured: Fallen Colossus → [t/2163](https://dungeondive.quest/t/2163)
+- Keeper post **"The Spooky Shelf — Horror Games, Not Horror Films"** (register A, 400 words of prose; 811 total with the catalogue) → [t/1170/142](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/142). Framing: a parcel left on the step after dark with a label reading *horror games, not horror films*, underlined twice; the Keeper as staff rather than audience for horror; the observation that this collection's famous monsters live in its friendliest boxes (Horrified bought five times as a gift, Cthulhu as six green dice, a Vermont manor exorcised by a carpenter and his dog) while the cruelty sits in the small Game Crafter boxes; and the archivist's habit of leaving things alive (Rabbit Face, the black-robed Templar, Negan). Exhibit Catalogue runs 14 entries in publish-date order: the 9 new topics plus all 5 queued `related_imported_ids` — Arkham Horror 3e (t/1542), Carnival Zombie 2e (t/1892), Ten Greatest Horror Films (t/1904), Pandemonium (t/1895), 31 (+1) Horror Movies (t/1905) — hooks drawn from `archive/posts/`. All 14 hooks ≤15 words.
+- Series **completed**: `spooky-shelf` drained 9 → 0 in a single part; removed from `active_series` and appended to `completed_series` (`parts_completed` 1, `total_videos` 9, `completed_date` 2026-09-12, `keeper_post` set). `rotation_index` **stays 1** — removing the entry shifts `quick-delve-dungeonquest` into slot 1 — so the next drain is **quick-delve-dungeonquest** (8 IDs, `videos_per_batch` 8); `modern-shelf` Part Two (6 IDs) remains in slot 0 for the run after.
+- Index now: **921 imported**, 131 pending, 12 no_transcript (1064 total). Archive: 842 transcripts, 921 posts. Dashboard cross-check matched the Keeper sign-off figures.
+- Pre-flight: `git pull` already up to date; rate limit 13/15 at 00:04 UTC and 1/15 at fetch time (see above); `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
+- Rate budget after this run: **10/15** in the rolling 24h, 5 headroom. The 09-11 despatch's 1 ages out at ~23:53 UTC 2026-09-12; this run's 9 at ~01:13 UTC 2026-09-13. An 8-video quick-delve drain fits any time after that, or a 5-video slice before it.
+
 ## 2026-09-12 — imported 1 video (priority drop — A Normal Guy Plays Dark Souls, Part 8)
 
 - **Ad-hoc priority run.** `fetch_channel_videos.py` found **1 new upload** (1063 → **1064** total): `5zi4AXEg4HE` A Normal Guy Plays Dark Souls - Part 8 - Return to the Asylum and Darkroot Garden (published 2026-09-11T16:00Z, ~8 h before the run). That is **1 pending video inside the 14-day window** → priority batch. Queue *not* drained; `series_queue.json` untouched (`rotation_index` still 1 → **spooky-shelf** is next, 9 IDs / `videos_per_batch` 9).
