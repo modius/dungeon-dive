@@ -105,7 +105,7 @@ Dependencies: `pip3 install -r requirements.txt` (just `requests` and `youtube-t
 
 - **YouTube transcript API:** a burst of ~12 caption fetches gets the IP blocked for **~24h**, not ~1h (2026-09-07: a 12-video drain, then a single fetch 13h later was refused with `IpBlocked`). `/import` passes `--max-videos 15` to the guard below — the most that has passed in a day — so a full 12-video drain leaves only 3 of headroom for the rest of that window.
 - **YouTube Data API:** ~0.2% of daily quota per `/fetch-stats` — safe to run frequently.
-- **`check_rate_limit.py`:** enforces a video-count quota per 24h locally (script default 20; `/import` runs it with `--max-videos 15`, the most observed to pass in a day); respect its exit code. The video count is the meaningful unit — a 1-video priority drop and a 12-video drain don't deserve equal weight. Headroom is binding on a slate, but if the guard's listed runs show the shortfall ageing out within ~90 min, `/import` waits for the window rather than trimming (see `import/SKILL.md` step 2).
+- **`check_rate_limit.py`:** enforces a video-count quota per 24h locally (script default 20; `/import` runs it with `--max-videos 15`, the most observed to pass in a day); respect its exit code. The video count is the meaningful unit — a 1-video priority drop and a 12-video drain don't deserve equal weight. Headroom is binding on a slate, but if the guard's listed runs show the shortfall ageing out within ~90 min (up to ~2 h when the trim would split a one-shot and the fetch would land 13–23 h after the last multi-video drain), `/import` waits for the window rather than trimming (see `import/SKILL.md` step 2).
 - **Discourse:** no practical limit at current volumes.
 
 ## Workflow rules (from SKILL.md, easy to violate)

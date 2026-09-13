@@ -26,31 +26,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/138"
     },
     {
-      "theme": "quick-delve-dungeonquest",
-      "title": "The Quick Delve — DungeonQuest & the One-Evening Dungeon",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 8,
-      "video_ids": [
-        "4r4Fv5i5zCI",
-        "0irTZK6Z_YI",
-        "bHJfRtPpY6E",
-        "t4gVVdxtNWE",
-        "CKAGWlmyXbA",
-        "QY2ox96a1zA",
-        "9dFDeUNHViY",
-        "Fs8L9V90RDk"
-      ],
-      "related_imported_ids": [
-        "7dlhZLngdvM",
-        "UUUH5xnM-Mc",
-        "hhwrtf3g0yY"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "small-boxes-big-games",
       "title": "Small Boxes, Big Games — Closing the Playlist",
       "status": "continuing",
@@ -686,6 +661,19 @@
       "total_videos": 9,
       "completed_date": "2026-09-12",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/142"
+    },
+    {
+      "theme": "quick-delve-dungeonquest",
+      "title": "The Quick Delve — DungeonQuest & the One-Evening Dungeon",
+      "related_imported_ids": [
+        "7dlhZLngdvM",
+        "UUUH5xnM-Mc",
+        "hhwrtf3g0yY"
+      ],
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/143",
+      "parts_completed": 1,
+      "total_videos": 8,
+      "completed_date": "2026-09-13"
     }
   ],
   "rotation_index": 1
