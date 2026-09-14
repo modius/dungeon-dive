@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-14 — imported 1 video (priority drop — Sunrot)
+
+- **Ad-hoc priority run.** `fetch_channel_videos.py` found **1 new upload** (1064 → **1065** total): `1eL6P_PR6FA` Sunrot - The Simplest Game I've ever Played (published 2026-09-13T16:00Z, ~13 h before the run). That is **1 pending video inside the 14-day window** → priority batch. Queue *not* drained; `series_queue.json` untouched (`rotation_index` still 1 → **small-boxes-big-games** is next, 11 IDs / `videos_per_batch` 11, `one_shot`; `modern-shelf` Part Two stays in slot 0).
+- Transcripts: **1 fetched, 0 permanent failures, 0 transient.** Fetched ~28 h after the 09-13 eight-video drain (`post_results_20260913_011936.json`), well clear of the 13–23 h band.
+- Posted to Discourse (category 5, backdated to `published_at`; `post_results_20260914_052343.json`, posted_at 2026-09-14T05:23Z):
+  - `1eL6P_PR6FA` Sunrot - The Simplest Game I've ever Played → [t/2175](https://dungeondive.quest/t/2175)
+- Keeper post **"Fresh Despatch"** (register B, 178 words of authored prose; 267 total with link titles, stats and sign-off) → [t/1170/144](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/144). Framing: one parcel arriving by hearsay — the reader's comment beneath the Dark Souls top-ten that sent the archivist to Sunrot — and a box that looks like forty pages of rules and carries two poker cards. "From the deeper stacks" cross-references, three, each a direct subject match rather than a genre one: *An overview of Forbidden Psalm* (t/1259 — Daniel names Forbidden Psalm and Mörk Borg as the games Sunrot's terrain and standees would furnish), *When Less is More - Minimalism in Table Top Adventure Games* (t/1949 — the simplicity double-edge is the video's whole premise), and *Ten Tabletop Games for fans of Dark Souls* (t/2033 — the video whose comment thread surfaced Sunrot; used in the 09-03 despatch too, with a different hook here). Hooks drawn from `archive/posts/`. Dark Venture (t/2019, narrative skirmish) was the runner-up and left out to hold the 1–3 cap.
+- Index now: **930 imported**, 123 pending, 12 no_transcript (1065 total). Archive: 851 transcripts, 930 posts. Dashboard cross-check matched the Keeper sign-off figures.
+- Pre-flight: `git pull` fast-forwarded two dashboard files (`docs/content.html`, `docs/insights.html`) from the nightly `/refresh`; rate limit **0/15** videos in the last 24h (15 headroom, exit 0); `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
+- Rate budget after this run: **1/15** in the rolling 24h, 14 headroom. This run's 1 ages out at ~05:23 UTC 2026-09-15. The next slate, `small-boxes-big-games` (11), fits inside that headroom now — no wait needed — and lands the one-shot whole.
+
 ## 2026-09-13 — imported 8 videos (The Quick Delve — DungeonQuest & the One-Evening Dungeon)
 
 - Queue drain, `rotation_index` 1 → **quick-delve-dungeonquest** (`videos_per_batch` 8, 8 IDs queued, `one_shot`). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1064 total, unchanged), and no pending video published in the last 14 days.
