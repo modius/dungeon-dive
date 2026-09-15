@@ -26,36 +26,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/138"
     },
     {
-      "theme": "small-boxes-big-games",
-      "title": "Small Boxes, Big Games — Closing the Playlist",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 11,
-      "video_ids": [
-        "t_RBOUZAqGw",
-        "nZ-Yf21ufww",
-        "nPV7ftm2WSg",
-        "RrVaJ5z_3mU",
-        "afLeJEbZs2k",
-        "Pk77G5OfECU",
-        "VLJJ9zvdj2Y",
-        "uxxwN68AJHE",
-        "fMmn4SMuSdE",
-        "wnahjxPk5rk",
-        "7PSt_Gouh6g"
-      ],
-      "related_imported_ids": [
-        "9TvuNO-fnXM",
-        "aqbo0yu_l6g",
-        "w68xGF_YIgU",
-        "z2SU31i7Uo4",
-        "B9zmRMY6ISI"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "tavern-door",
       "title": "The Tavern Door — D&D, the OSR, and the Fantasy Pub",
       "status": "continuing",
@@ -674,6 +644,21 @@
       "parts_completed": 1,
       "total_videos": 8,
       "completed_date": "2026-09-13"
+    },
+    {
+      "theme": "small-boxes-big-games",
+      "title": "Small Boxes, Big Games — Closing the Playlist",
+      "related_imported_ids": [
+        "9TvuNO-fnXM",
+        "aqbo0yu_l6g",
+        "w68xGF_YIgU",
+        "z2SU31i7Uo4",
+        "B9zmRMY6ISI"
+      ],
+      "parts_completed": 1,
+      "total_videos": 11,
+      "completed_date": "2026-09-15",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/145"
     }
   ],
   "rotation_index": 1

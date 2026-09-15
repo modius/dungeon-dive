@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-09-15 — imported 11 videos (Small Boxes, Big Games — Closing the Playlist)
+
+- Queue drain, `rotation_index` 1 → **small-boxes-big-games** (`videos_per_batch` 11, 11 IDs queued, `one_shot`). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1065 total, unchanged), and no pending video published in the last 14 days (newest pending is 2025-01-19).
+- **No wait needed this time.** At pre-flight (00:10 UTC) the guard reported **1/15** in the rolling 24h (the 09-14 Sunrot despatch, `post_results_20260914_052343.json`), 14 of headroom against an 11-video slate — the whole one-shot fit, ~47 h after the 09-13 eight-video drain.
+- Drift check passed — all 11 slate IDs still `pending`. Transcripts: **11 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to each video's `published_at`; `post_results_20260915_001610.json`, posted_at 2026-09-15T00:16Z):
+  - `t_RBOUZAqGw` The Adventure of D (Second Edition) - Take a Look → [t/2184](https://dungeondive.quest/t/2184)
+  - `nZ-Yf21ufww` Taking a Look at Paperbag Dungeon - Dungeon-themed, tile-laying, puzzle card game → [t/2183](https://dungeondive.quest/t/2183)
+  - `nPV7ftm2WSg` Fire of Eidolon - How a theme can win me over → [t/2182](https://dungeondive.quest/t/2182)
+  - `RrVaJ5z_3mU` Taking a look at Cartaventura: Adventure Awaits: Vinland → [t/2178](https://dungeondive.quest/t/2178)
+  - `afLeJEbZs2k` A look at Fortune, Fame & Glory - A free PnP Adventure Game → [t/2180](https://dungeondive.quest/t/2180)
+  - `Pk77G5OfECU` A look at Card Tactics (Game Crafter) → [t/2177](https://dungeondive.quest/t/2177)
+  - `VLJJ9zvdj2Y` Taking a look at Set a Watch: Swords of the Coin → [t/2179](https://dungeondive.quest/t/2179)
+  - `uxxwN68AJHE` Tower of the Ice Lich and The Castle of Sanguine Blight - Big Adventure, Small Decks → [t/2185](https://dungeondive.quest/t/2185)
+  - `fMmn4SMuSdE` The Last Stronghold - a Realms of Shadow game → [t/2181](https://dungeondive.quest/t/2181)
+  - `wnahjxPk5rk` Dungeon Hoard - Build the Dungeon, Stop the Heroes (Game Crafter) → [t/2186](https://dungeondive.quest/t/2186)
+  - `7PSt_Gouh6g` Shadowscape: Mechanically rich, thematically poor → [t/2176](https://dungeondive.quest/t/2176)
+- Keeper post **"Small Boxes, Big Games — Closing the Playlist"** (register A, 397 words of prose; ~865 total with the catalogue) → [t/1170/145](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/145). Framing: a carton the Keeper lifts in one foot, and not one box inside the size it claimed (one unfolds across a table, one is its own table, one is a gamebook with the spine cut off, one is ink and Frazetta sleeves and free); The Game Crafter as the wing's address, three review copies plus the DriveThru and Kickstarter arrivals, and the Keeper's sympathy for things that exist only when asked for; the archivist's yardstick this cycle being theme rather than size (a Euro forgiven for its pixels, a mechanically rich box unforgiven for naming no card, two decks of flavour text and a nine ordered five minutes into someone else's review); two boxes that put the player on the dungeon's side of the door, which the Keeper notes with professional interest. Exhibit Catalogue runs 16 entries in publish-date order: the 11 new topics plus all 5 queued `related_imported_ids` — Dungeon of D (t/1711), Smaller Things shelf tour (t/1715), Four Small Box Games (t/1717), Small Box Thunderdome (t/1681), JT Smith / Game Crafter conversation (t/809) — hooks drawn from `archive/posts/`. All 16 hooks ≤15 words.
+- Series **completed**: `small-boxes-big-games` drained 11 → 0 in a single part; removed from `active_series` and appended to `completed_series` (`parts_completed` 1, `total_videos` 11, `completed_date` 2026-09-15, `keeper_post` set). `rotation_index` **stays 1** — removing the entry shifts `tavern-door` into slot 1 — so the next drain is **tavern-door** (12 IDs, `videos_per_batch` 6, multi-part); `modern-shelf` Part Two (6 IDs) remains in slot 0, `long-spring-2021` (15 IDs, vpb 8) in slot 2.
+- Index now: **941 imported**, 112 pending, 12 no_transcript (1065 total). Archive: 862 transcripts, 941 posts. Dashboard cross-check matched the Keeper sign-off figures.
+- Pre-flight: `git pull` already up to date; rate limit 1/15 (14 headroom, exit 0); `test_config.py` OK; `check_integrity.py` WARN (exit 1) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
+- Rate budget after this run: **12/15** in the rolling 24h, 3 headroom. The 09-14 despatch's 1 ages out at ~05:23 UTC 2026-09-15; this run's 11 at ~00:16 UTC 2026-09-16. The next slate, `tavern-door` Part One (6), fits any time after that stamp; before it only 3 fit, and a fetch inside the 13–23 h band after an 11-video drain is exactly where the block has bitten — wait for the window.
+
 ## 2026-09-14 — imported 1 video (priority drop — Sunrot)
 
 - **Ad-hoc priority run.** `fetch_channel_videos.py` found **1 new upload** (1064 → **1065** total): `1eL6P_PR6FA` Sunrot - The Simplest Game I've ever Played (published 2026-09-13T16:00Z, ~13 h before the run). That is **1 pending video inside the 14-day window** → priority batch. Queue *not* drained; `series_queue.json` untouched (`rotation_index` still 1 → **small-boxes-big-games** is next, 11 IDs / `videos_per_batch` 11, `one_shot`; `modern-shelf` Part Two stays in slot 0).
