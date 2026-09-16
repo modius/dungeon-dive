@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-09-16 — imported 6 videos (The Tavern Door — D&D, the OSR, and the Fantasy Pub, Part One)
+
+- Queue drain, `rotation_index` 1 → **tavern-door** (`videos_per_batch` 6, 12 IDs queued, multi-part). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1065 total, unchanged), and no pending video published in the last 14 days.
+- **Full headroom, no wait.** At pre-flight (03:25 UTC) the guard reported **0/15** in the rolling 24h across 0 runs — the 09-15 eleven-video drain (`post_results_20260915_001610.json`) had aged out at ~00:16 UTC, ~3 h earlier. 15 of headroom against a 6-video slate.
+- Drift check passed — all 6 slate IDs still `pending`. Transcripts: **6 fetched, 0 permanent failures, 0 transient**.
+- Posted to Discourse (category 5, backdated to each video's `published_at`; `post_results_20260916_032858.json`, posted_at 2026-09-16T03:28Z):
+  - `OLPoLPMdW_g` The Dungeon Alphabet - Let's Take a Look → [t/2191](https://dungeondive.quest/t/2191)
+  - `Fa8jGX5mvj4` Temple of Elemental Evil - D&D Adventure Board Game Series → [t/2189](https://dungeondive.quest/t/2189)
+  - `AO1WNfgIgiE` Dungeons & Dragons: Adventure Begins - an Introduction to Board Games and RPGs → [t/2188](https://dungeondive.quest/t/2188)
+  - `IrGSyH2wlK0` A Look at Rackham Vale - An OSR setting based on the art of Arthur Rackham → [t/2190](https://dungeondive.quest/t/2190)
+  - `qabDQ1ebZbQ` The Broken Cask - Welcome to the Mangy Monk - Part 1 → [t/2193](https://dungeondive.quest/t/2193)
+  - `eGnLjzejgI4` The Broken Cask - Session Recap and Thoughts on the Game → [t/2192](https://dungeondive.quest/t/2192)
+- Keeper post **"The Tavern Door — D&D, the OSR, and the Fantasy Pub"** (register A, 321 words of prose; ~640 total with the catalogue) → [t/1170/146](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/146). Framing: a crate in off the river, and every panel in it about a threshold — the Keeper, which lives in a void between two shelves, takes thresholds personally. The wing's subject is the step *before* the dungeon: an A-to-Z the archivist uses solo rather than as referee, a licensed D&D box that punishes lingering and rewards leaving, a twenty-dollar cooperative that teaches well and then resolves a child's invented plan on a die that never listens, a fairy-tale country grown from one dead illustrator's line work. Then the door itself twice — the Mangy Monk, its retired-assassin cook, its syndicate on a roll of four, and the brewhouse portal that swallowed a visiting ex-wife. Exhibit Catalogue runs 11 entries in publish-date order: the 6 new topics plus all 5 queued `related_imported_ids` — Dragon Quest RetroLook (t/1864), Cairn + Escape the City (t/1705), Broken Cask Society (t/1739), You Meet in a Tavern You Die in a Dungeon (t/2126), The Secret of Weepstone (t/1189) — hooks drawn fresh from `archive/posts/`. All 11 hooks ≤15 words.
+- Series **continues**: `tavern-door` drained 12 → **6**; `last_part` 1, `last_imported` 2026-09-16, `keeper_post` set. Part Two slate is `7tKbMZqzLks`, `aOOR5vp4Kl0`, `9BmwbWSPXwY`, `GJRAN3_x8U4`, `fG1-74pj6A4`, `zpX-Xs1a9MY`. Entry not completed, so `rotation_index` **incremented 1 → 2** for round-robin fairness — next drain is **long-spring-2021** (15 IDs, vpb 8); `modern-shelf` Part Two (6 IDs) stays in slot 0.
+- Index now: **947 imported**, 106 pending, 12 no_transcript (1065 total). Archive: 868 transcripts, 947 posts. Dashboard cross-check matched the Keeper sign-off figures.
+- Pre-flight: `git pull` fast-forwarded 34e52f6 → 6e8b38a (nightly `/refresh` dashboards); rate limit 0/15 (15 headroom, exit 0); `test_config.py` OK; `check_integrity.py` WARN (exit 0) on the same long-standing missing-local-transcripts gap (79) and unparseable dashboard stats line — 0 errors, not a stop condition.
+- Rate budget after this run: **6/15** in the rolling 24h, 9 headroom, ageing out at ~03:28 UTC 2026-09-17. The next slate, `long-spring-2021` Part One (8), fits on headroom alone *before* that stamp — but a fetch 13–23 h after this drain lands in the band where the block has bitten, so a run between ~16:30 UTC today and ~02:30 UTC tomorrow should prefer waiting for the window over trusting the count.
+
 ## 2026-09-15 — imported 11 videos (Small Boxes, Big Games — Closing the Playlist)
 
 - Queue drain, `rotation_index` 1 → **small-boxes-big-games** (`videos_per_batch` 11, 11 IDs queued, `one_shot`). No priority videos: `fetch_channel_videos.py` found 0 new uploads (1065 total, unchanged), and no pending video published in the last 14 days (newest pending is 2025-01-19).
