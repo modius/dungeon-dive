@@ -115,7 +115,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
     - **Record progress:** increment `last_part`, set `last_imported` to today's date (YYYY-MM-DD), set `keeper_post` to the URL of the keeper reply just posted.
     - **Complete if drained:** if `video_ids` is now empty, remove the entry from `active_series` and append to `completed_series` with:
       - `parts_completed`: final `last_part` value
-      - `total_videos`: sum of all videos imported across parts (track via a running counter, or count post files)
+      - `total_videos`: sum of all videos imported across parts. There is no running counter in the queue, and `archive/posts/` is not sliceable by series, so for a multi-part series read the earlier parts' counts out of **CHANGELOG.md** — each part's entry opens with `imported N videos (<series title>, Part <n>)` — and add this run's slate. Cross-check against the previous part's Keeper post if you want a second source: its Exhibit Catalogue length minus `len(related_imported_ids)` is that part's slate size. A one-shot drained in a single run is just this run's slate.
       - `completed_date`: today (YYYY-MM-DD)
       - `keeper_post`: retain the URL of the final part's Keeper reply (provenance — lets you find the announcement for a completed series)
       Drop fields that don't apply to completed entries (`video_ids`, `videos_per_batch`, `one_shot`, `status`, `last_imported`).
