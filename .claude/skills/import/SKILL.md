@@ -59,6 +59,16 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
    - **`category` is not read by `batch_post.py`** — it takes the category from `config.json` (5, "The Channel"). Write 5 so the record matches where the topic actually lands. The long-standing `category: 8` was dead data and factually wrong (8 is "Patreon").
    - Validate all JSON files
 9. `python3 scripts/batch_post.py --config config.json --input-dir ready_to_post`
+   - **If the script dies partway through with a traceback, do NOT re-run it over the same directory.** A network failure mid-batch (2026-09-19: `requests.exceptions.ConnectionError` / `No route to host` raised inside `backdate_topic`) is an *uncaught* exception — the script exits without writing `post_results.json` and without archiving, so `ready_to_post/` still holds every post file including the ones whose topics are already live on Discourse. Re-running posts them a second time.
+   - The loop order per video is: **create topic → backdate → update index → (after the whole loop) results file → archive**. So a crash inside the backdate leaves that video's topic live, un-backdated, and absent from `video_index.json`, while every video *earlier* in the batch is fully indexed. Files are sorted by filename (`sorted(os.listdir)`), which is ASCII order — digits, then uppercase, then lowercase — not queue order.
+   - **Recover in this order:**
+     1. **Establish what is actually live before changing anything.** Read the last topic ID the traceback mentions, then GET `/t/<id>.json` for that ID and the few around it until one 404s. That boundary, not the script's stdout, is the truth. Cross-check each topic's `created_at` — a correct backdate shows the video's publish date, an un-backdated one shows today.
+     2. Backdate any topic that needs it: `PUT /t/<id>/change-timestamp` with `{"timestamp": <unix>}`, the same call `backdate_topic` makes.
+     3. Write the missing `video_index.json` entries by hand (`status: imported`, `discourse_topic_id`, `imported_at`).
+     4. Move the completed videos' `{id}_post.json` to `archive/posts/` and `{id}_transcript.txt` to `archive/transcripts/`, mirroring `archive_files()`.
+     5. **Hand-write a `archive/posts/post_results_<UTC timestamp>.json`** for the recovered videos — `{"posted_at": "...Z", "results": [{video_id, topic_id, url, status: "success"}, ...]}`. `check_rate_limit.py` sums `len(results)` across these manifests, so skipping this under-counts the day's fetches and lets the next run exceed the real budget.
+     6. Re-run `batch_post.py` with only the genuinely unposted files left in `ready_to_post/`. It will handle those normally.
+   - The run then continues from step 10 as usual. Note the crash and the repair in the CHANGELOG; the run legitimately ends up with its videos split across two results manifests, which the guard handles (it sums across files).
 
 ## Keeper Post
 
