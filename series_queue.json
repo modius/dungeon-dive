@@ -75,6 +75,89 @@
       "last_part": 1,
       "last_imported": "2026-09-16",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/147"
+    },
+    {
+      "theme": "disappointment-wing",
+      "title": "The Disappointment Wing",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "oZjiL501lAY",
+        "yF9W5KZ4lfs",
+        "ISKY2Bgz_c0",
+        "OVHP92ag6d4",
+        "wX47G7oi_Z4",
+        "e6iHP-UMZnk",
+        "hBqhV23fZnE"
+      ],
+      "related_imported_ids": [
+        "wxWz6zDC2wo",
+        "rV23IXWdDOY",
+        "WvVMuiXrqcI",
+        "3gPoLb5rT70",
+        "9rVcXaVHCXw"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "adjacent-frequencies",
+      "title": "Adjacent Frequencies — Synth, Zines, and Outsider Art",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 7,
+      "video_ids": [
+        "1WejSH57PSA",
+        "_eLkGBx1XiE",
+        "V2d8qoEGyEU",
+        "AUG114ir5eQ",
+        "3nGph8PX2-Q",
+        "mHSNcvaQ8YU",
+        "VoU-7YGmoo0"
+      ],
+      "related_imported_ids": [
+        "nF0VXXPcAh4",
+        "ZfQ7oKzL-Pw",
+        "Sl5Fl_vOthI",
+        "5sVEspUzpGY",
+        "Ati51CQqpKY"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "annals-pt2",
+      "title": "The Back Office — The Channel's Own Housekeeping",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 12,
+      "video_ids": [
+        "Aq3emUbqTbA",
+        "ZY_oCjE95Ss",
+        "3Cm_qVj04z0",
+        "R7utAmGPE_M",
+        "jrnfWiLWFJw",
+        "YOe2PL-1gT0",
+        "fHYBRGdrXo0",
+        "H3JH96ZJWzM",
+        "R6Ukz91VIAY",
+        "htuK8cgwC-E",
+        "lOciy5N92Lg",
+        "v_JJzLJ0eRw"
+      ],
+      "related_imported_ids": [
+        "1APEiSZz2zM",
+        "zyY2aRVZMp4",
+        "RgeVF0tu6ng",
+        "7wuBlcFsfvc",
+        "u7xKzLuKt5I"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
     }
   ],
   "completed_series": [
