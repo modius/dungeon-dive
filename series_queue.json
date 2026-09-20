@@ -7,8 +7,6 @@
       "one_shot": true,
       "videos_per_batch": 7,
       "video_ids": [
-        "oZjiL501lAY",
-        "yF9W5KZ4lfs",
         "ISKY2Bgz_c0",
         "OVHP92ag6d4",
         "wX47G7oi_Z4",
@@ -22,9 +20,9 @@
         "3gPoLb5rT70",
         "9rVcXaVHCXw"
       ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
+      "last_part": 1,
+      "last_imported": "2026-09-20",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/152"
     },
     {
       "theme": "adjacent-frequencies",
@@ -699,5 +697,5 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/151"
     }
   ],
-  "rotation_index": 0
+  "rotation_index": 1
 }

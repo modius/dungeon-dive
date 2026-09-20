@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-09-20T08:12:36.345155+00:00",
+  "last_fetched": "2026-09-20T14:52:14.316755+00:00",
   "videos": [
     {
       "video_id": "W1UJAOQQDWk",
@@ -9725,9 +9725,9 @@
       "description": "",
       "published_at": "2019-07-13T21:42:23Z",
       "thumbnail_url": "https://i.ytimg.com/vi/yF9W5KZ4lfs/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2223,
+      "imported_at": "2026-09-20T14:54:28.678511Z"
     },
     {
       "video_id": "bHuv7kKqe-A",
@@ -9905,9 +9905,9 @@
       "description": "...or something.",
       "published_at": "2019-02-24T20:06:23Z",
       "thumbnail_url": "https://i.ytimg.com/vi/oZjiL501lAY/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2222,
+      "imported_at": "2026-09-20T14:54:24.359382Z"
     },
     {
       "video_id": "UhuJQBAZv84",
