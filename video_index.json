@@ -1,7 +1,37 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-09-22T08:14:53.579941+00:00",
+  "last_fetched": "2026-09-28T18:06:53.225372+00:00",
   "videos": [
+    {
+      "video_id": "5POKUC3oXqw",
+      "title": "A Normal Guy Plays Dark Souls - Part 10 - Anor Londo",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-09-28T18:00:21Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/5POKUC3oXqw/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2228,
+      "imported_at": "2026-09-28T18:09:20.129265Z"
+    },
+    {
+      "video_id": "Ak6bqOmu8ZI",
+      "title": "Deep Rock Galactic - Deluxe 2nd Edition (Review)",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-09-27T16:00:34Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/Ak6bqOmu8ZI/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2229,
+      "imported_at": "2026-09-28T18:09:24.548936Z"
+    },
+    {
+      "video_id": "uyU-yMW5jMg",
+      "title": "Skyrim - Let's Play - Heart of the Mountain - Part 1",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-09-23T16:00:08Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/uyU-yMW5jMg/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2230,
+      "imported_at": "2026-09-28T18:09:28.444565Z"
+    },
     {
       "video_id": "rOfzCD6AT9A",
       "title": "A Normal Guy Plays Dark Souls - Part 9 - Sen's Fortress (Deathtrap Dungeon!)",
