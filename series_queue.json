@@ -25,32 +25,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/152"
     },
     {
-      "theme": "adjacent-frequencies",
-      "title": "Adjacent Frequencies — Synth, Zines, and Outsider Art",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 7,
-      "video_ids": [
-        "1WejSH57PSA",
-        "_eLkGBx1XiE",
-        "V2d8qoEGyEU",
-        "AUG114ir5eQ",
-        "3nGph8PX2-Q",
-        "mHSNcvaQ8YU",
-        "VoU-7YGmoo0"
-      ],
-      "related_imported_ids": [
-        "nF0VXXPcAh4",
-        "ZfQ7oKzL-Pw",
-        "Sl5Fl_vOthI",
-        "5sVEspUzpGY",
-        "Ati51CQqpKY"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "annals-pt2",
       "title": "The Back Office — The Channel's Own Housekeeping",
       "status": "continuing",
@@ -695,6 +669,22 @@
       "total_videos": 15,
       "completed_date": "2026-09-20",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/151"
+    },
+    {
+      "theme": "adjacent-frequencies",
+      "title": "Adjacent Frequencies — Synth, Zines, and Outsider Art",
+      "related_imported_ids": [
+        "nF0VXXPcAh4",
+        "ZfQ7oKzL-Pw",
+        "Sl5Fl_vOthI",
+        "5sVEspUzpGY",
+        "Ati51CQqpKY"
+      ],
+      "parts_completed": 1,
+      "total_videos": 6,
+      "completed_date": "2026-09-28",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/155",
+      "note": "mHSNcvaQ8YU (The Mists of Mourning (Part 1)) dropped from the slate: TranscriptsDisabled, permanent — marked no_transcript in video_index.json."
     }
   ],
   "rotation_index": 1
