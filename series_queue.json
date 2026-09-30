@@ -23,37 +23,6 @@
       "last_part": 1,
       "last_imported": "2026-09-20",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/152"
-    },
-    {
-      "theme": "annals-pt2",
-      "title": "The Back Office — The Channel's Own Housekeeping",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 12,
-      "video_ids": [
-        "Aq3emUbqTbA",
-        "ZY_oCjE95Ss",
-        "3Cm_qVj04z0",
-        "R7utAmGPE_M",
-        "jrnfWiLWFJw",
-        "YOe2PL-1gT0",
-        "fHYBRGdrXo0",
-        "H3JH96ZJWzM",
-        "R6Ukz91VIAY",
-        "htuK8cgwC-E",
-        "lOciy5N92Lg",
-        "v_JJzLJ0eRw"
-      ],
-      "related_imported_ids": [
-        "1APEiSZz2zM",
-        "zyY2aRVZMp4",
-        "RgeVF0tu6ng",
-        "7wuBlcFsfvc",
-        "u7xKzLuKt5I"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
     }
   ],
   "completed_series": [
@@ -685,7 +654,22 @@
       "completed_date": "2026-09-28",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/155",
       "note": "mHSNcvaQ8YU (The Mists of Mourning (Part 1)) dropped from the slate: TranscriptsDisabled, permanent — marked no_transcript in video_index.json."
+    },
+    {
+      "theme": "annals-pt2",
+      "title": "The Back Office — The Channel's Own Housekeeping",
+      "related_imported_ids": [
+        "1APEiSZz2zM",
+        "zyY2aRVZMp4",
+        "RgeVF0tu6ng",
+        "7wuBlcFsfvc",
+        "u7xKzLuKt5I"
+      ],
+      "parts_completed": 1,
+      "total_videos": 12,
+      "completed_date": "2026-10-01",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/157"
     }
   ],
-  "rotation_index": 1
+  "rotation_index": 0
 }
