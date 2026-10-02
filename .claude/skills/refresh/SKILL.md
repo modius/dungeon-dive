@@ -50,7 +50,57 @@ python3 scripts/build_insights.py --index video_index.json --stats youtube_stats
 
 Updates the main dashboard (index, health, content pages) and the insights dashboard.
 
-### 5. Commit and push
+### 5. Validate the generated dashboards
+
+**Run this before `git add`.** Step 6 stages `docs/*.html` by path and commits whatever is on disk — it never looks at the contents. On 2026-10-02 a `git stash pop` left conflict markers inside the inline `<script>` of `docs/insights.html`; the refresh committed and pushed them, and because one syntax error kills the whole script block, **every chart, table and panel on the live insights page rendered blank for ~11 hours.** Nothing in the pipeline noticed.
+
+```bash
+python3 - <<'PY'
+import pathlib, re, subprocess, sys
+bad = []
+for name in ("index", "content", "health", "insights"):
+    f = pathlib.Path(f"docs/{name}.html")
+    if not f.exists():
+        continue
+    text = f.read_text(encoding="utf-8")
+    for marker in ("<<<<<<< ", ">>>>>>> "):
+        if re.search("^" + re.escape(marker), text, re.M):
+            bad.append(f"{f}: merge conflict markers")
+            break
+    else:
+        # one syntax error in the inline script blanks the entire page
+        for script in re.findall(r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", text, re.S):
+            if not script.strip():
+                continue
+            try:
+                r = subprocess.run(["node", "--check", "-"], input=script,
+                                   capture_output=True, text=True)
+            except FileNotFoundError:
+                print("note: node not found - skipped JS parse check")
+                break
+            if r.returncode != 0:
+                err = next((l.strip() for l in r.stderr.splitlines() if "Error" in l),
+                           "syntax error")
+                bad.append(f"{f}: inline script fails to parse - {err}")
+                break
+if bad:
+    print("REFUSING TO COMMIT:")
+    for b in bad:
+        print("  -", b)
+    sys.exit(1)
+print("dashboards validated")
+PY
+```
+
+If it fails, **do not hand-edit the HTML** — discard and regenerate, per the conflict rule below:
+
+```bash
+git checkout -- docs/   # or: git stash drop, if a pop caused it
+```
+
+Then re-run step 4 and validate again.
+
+### 6. Commit and push
 
 ```bash
 git add docs/index.html docs/content.html docs/health.html docs/insights.html
@@ -86,3 +136,4 @@ Then re-run step 4 and commit again. Your local `youtube_stats.json` survives th
 - Safe to run multiple times per day
 - Always pull before generating (step 1) — a nightly `/refresh` shares this branch and touches the same generated files
 - Never resolve a conflict in `docs/*.html` by hand; discard and regenerate
+- Never commit `docs/*.html` without running step 5 — a committed conflict marker or JS syntax error blanks the whole live page silently
