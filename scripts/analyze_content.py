@@ -12,6 +12,10 @@ Reads archive/posts/ summaries and video_index.json to extract:
 - Meta tags (crowdfund, top-10, house-rules, etc.)
 - Publishers/designers mentioned
 
+Curated per-video records from video_classification.json (see
+classify_videos.py) override the heuristic subject, content category and solo
+mode, and are copied through as subject / primary_format / lane / series.
+
 Outputs transcript_analytics.json with per-video tags and aggregate stats.
 
 Usage:
@@ -25,6 +29,8 @@ import json
 import os
 import re
 from collections import Counter, defaultdict
+
+from classify_videos import load_classification
 
 
 # ── Tag taxonomy ───────────────────────────────────────────────────
@@ -297,6 +303,41 @@ def match_tags(text, compiled_patterns):
     return tags
 
 
+# A single transcript mention is not evidence of what a video is about: matching
+# anywhere in a 40-minute auto-caption put "solo" on 628 of 1001 videos and
+# "overview" on 672. A transcript-only tag needs this many hits.
+MIN_TRANSCRIPT_HITS = 3
+
+
+def match_tags_weighted(deliberate_text, transcript, compiled_patterns,
+                        min_hits=MIN_TRANSCRIPT_HITS):
+    """Tags from deliberate text (title + post body), or repeated transcript hits."""
+    tags = match_tags(deliberate_text, compiled_patterns)
+    if not transcript:
+        return tags
+    for tag, regexes in compiled_patterns.items():
+        if tag in tags:
+            continue
+        hits = 0
+        for rx in regexes:
+            hits += len(rx.findall(transcript))
+            if hits >= min_hits:
+                tags.add(tag)
+                break
+    return tags
+
+
+# Curated classification -> legacy content_category used by older consumers.
+LANE_TO_CATEGORY = {
+    "videogame": "digital",
+    "books-screen": "books",
+    "solo-rpg": "rpg",
+    "group-rpg": "rpg",
+    "gamebook": "rpg",
+}
+GAME_SUBJECT_TYPES = {"boardgame", "rpg", "gamebook", "videogame"}
+
+
 def is_decorated_known_game(candidate):
     """True when a title-derived candidate is a known game plus decoration.
 
@@ -475,11 +516,17 @@ def classify_content_category(title, text, has_transcript):
     return "boardgame", source
 
 
-def analyze_video(video, post_body, transcript_text=None):
-    """Analyze a single video and return tag structure."""
+def analyze_video(video, post_body, transcript_text=None, curated=None):
+    """Analyze a single video and return tag structure.
+
+    `curated` is the video's record from video_classification.json. When present
+    it is authoritative for subject, format, lane, theme, solo focus and series;
+    the regex facets remain as secondary, multi-valued tags.
+    """
     title = video.get("title", "")
     # Combine title + post body + transcript for analysis
     text = "{}\n{}\n{}".format(title, post_body or "", transcript_text or "")
+    deliberate = "{}\n{}".format(title, post_body or "")
     has_transcript = bool(transcript_text and len(transcript_text) > 100)
 
     title_games = extract_games_from_title(title)
@@ -500,6 +547,27 @@ def analyze_video(video, post_body, transcript_text=None):
     content_category, category_source = classify_content_category(
         title, text, has_transcript)
 
+    transcript = transcript_text or ""
+    player_modes = match_tags_weighted(deliberate, transcript, MODE_RE)
+
+    if curated:
+        subject = curated.get("subject")
+        if curated.get("subject_type") in GAME_SUBJECT_TYPES:
+            primary_game = subject
+        else:
+            primary_game = None
+        if subject and curated.get("subject_type") in GAME_SUBJECT_TYPES:
+            all_games.add(subject)
+        if curated.get("format") == "interview":
+            content_category = "interview"
+        else:
+            content_category = LANE_TO_CATEGORY.get(curated.get("lane"), "boardgame")
+        category_source = "curated"
+        # Solo focus is a judgement about the whole video, not a word count.
+        player_modes.discard("solo")
+        if curated.get("solo"):
+            player_modes.add("solo")
+
     result = {
         "video_id": video["video_id"],
         "title": title,
@@ -508,13 +576,27 @@ def analyze_video(video, post_body, transcript_text=None):
         "games": sorted(all_games),
         "content_category": content_category,
         "category_source": category_source,
-        "format": sorted(match_tags(text, FORMAT_RE)),
-        "mechanics": sorted(match_tags(text, MECHANIC_RE)),
-        "themes": sorted(match_tags(text, THEME_RE)),
-        "player_modes": sorted(match_tags(text, MODE_RE)),
-        "platforms": sorted(match_tags(text, PLATFORM_RE)),
-        "era": sorted(match_tags(text, ERA_RE)),
+        # Format is what the video *is*; the title and post body say that, a
+        # passing transcript phrase does not.
+        "format": sorted(match_tags(deliberate, FORMAT_RE)),
+        "mechanics": sorted(match_tags_weighted(deliberate, transcript, MECHANIC_RE)),
+        "themes": sorted(match_tags_weighted(deliberate, transcript, THEME_RE)),
+        "player_modes": sorted(player_modes),
+        "platforms": sorted(match_tags_weighted(deliberate, transcript, PLATFORM_RE)),
+        "era": sorted(match_tags(deliberate, ERA_RE)),
     }
+    if curated:
+        result.update({
+            "subject": curated.get("subject"),
+            "franchise": curated.get("franchise"),
+            "subject_type": curated.get("subject_type"),
+            "primary_format": curated.get("format"),
+            "lane": curated.get("lane"),
+            "primary_theme": curated.get("theme"),
+            "solo_focus": bool(curated.get("solo")),
+            "series": curated.get("series"),
+            "part": curated.get("part"),
+        })
 
     # Build flat tag list for tag cloud
     all_tags = set()
@@ -600,6 +682,8 @@ def main():
     parser.add_argument("--posts-dir", default="archive/posts")
     parser.add_argument("--transcripts-dir", default="archive/transcripts")
     parser.add_argument("--output", default="transcript_analytics.json")
+    parser.add_argument("--classification", default="video_classification.json",
+                        help="Curated per-video classification (committed)")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--reanalyze", action="store_true",
                         help="Reanalyze all videos, not just new ones")
@@ -609,6 +693,7 @@ def main():
         index_data = json.load(f)
     videos = index_data.get("videos", [])
     imported = [v for v in videos if v.get("status") == "imported"]
+    curated = load_classification(args.classification)
 
     # Load existing analytics if not reanalyzing
     existing = {}
@@ -646,7 +731,7 @@ def main():
             with open(tx_path) as f:
                 transcript = f.read()
 
-        result = analyze_video(video, post_body, transcript)
+        result = analyze_video(video, post_body, transcript, curated.get(vid))
         analyzed.append(result)
         new_count += 1
 
@@ -665,6 +750,11 @@ def main():
     print("Analyzed {} videos ({} new, {} cached)".format(
         len(analyzed), new_count, len(analyzed) - new_count
     ))
+    unclassified = [v["video_id"] for v in videos if v["video_id"] not in curated]
+    if unclassified:
+        print("WARNING: {} videos have no curated classification — run "
+              "`python3 scripts/classify_videos.py missing --out ...` and classify them "
+              "(dashboards treat them as unclassified)".format(len(unclassified)))
     print("Top games: {}".format(
         ", ".join("{} ({})".format(g, c) for g, c in aggregates["games"][:10])
     ))

@@ -10,7 +10,7 @@ Automated sync of The Dungeon Dive YouTube channel (`UCKW6yMwL_aEu83g6DdjVfxw`) 
 
 Run from a Claude Code session in this repo:
 
-1. **`/refresh`** — pulls fresh analytics (taxonomy, engagement, insights). Cheap (~30s, 0.2% YouTube quota). Run before `/plan-batch` so signals are current.
+1. **`/refresh`** — classifies new videos, pulls fresh analytics (taxonomy, engagement), records the view history, and rebuilds the showcase and insights pages. Cheap (~1 min, 0.2% YouTube quota). Run before `/plan-batch` so signals are current. A nightly routine runs it too.
 2. **`/plan-batch`** — proposes 2–4 candidate batches; on user pick, writes explicit `video_ids` slates into `series_queue.json`. **Never imports.**
 3. **`/import`** — drains the queue: fetch, transcribe, post per-video, compose Keeper update, update dashboards, commit, push. **One Keeper post per run.**
 
@@ -30,11 +30,13 @@ The system is mostly stateless scripts coordinating around a few JSON files. Und
 | `series_queue.json` | `/plan-batch` writes, `/import` drains | active_series with explicit `video_ids`, completed_series log, rotation_index | **yes** |
 | `youtube_stats.json` | `/fetch-stats` | engagement data; volatile | **no** (gitignored) |
 | `transcript_analytics.json` | `/analyze` | per-video taxonomy tags; computed | **no** (gitignored) |
+| `video_classification.json` | `/refresh` only | curated per-video subject / format / lane / theme / solo / series, judged by Claude from the title and summary; validated by `classify_videos.py` | **yes** |
+| `stats_history/YYYY-MM.csv` | `/refresh` only | thinned daily view history (daily under 90 days old, weekly after); the only source of launch curves and evergreen rates | **yes** (un-ignored from `*.csv`) |
 | `config.json` | user | API keys (YouTube, Discourse) | **no** (gitignored) |
 | `pending_imports/`, `ready_to_post/` | transient working dirs | transcript + post staging | **no** (gitignored except `.gitkeep`) |
 | `archive/transcripts/`, `archive/posts/` | post-success archive | committed permanent record | **yes** |
 | `keeper-posts/keeper-*.md` | per-batch Keeper post bodies | committed | **yes** |
-| `docs/*.html` | dashboards | rebuilt by `update_dashboard.py` / `build_insights.py` | **yes** |
+| `docs/*.html` | dashboards | `index`/`health` by `update_dashboard.py`; `insights` by `build_insights.py`; `content` (the showcase) by `build_showcase.py` | **yes** |
 
 **Selection logic in `/import` (decision tree, in order):**
 1. **Priority** — pending video in last 14 days → ad-hoc batch (cap 12), exit after posting; queue waits one cycle.
@@ -42,6 +44,14 @@ The system is mostly stateless scripts coordinating around a few JSON files. Und
 3. **Skip** — log empty-queue note to CHANGELOG, exit.
 
 Priority videos never mutate `series_queue.json`. Interactive user overrides also skip queue mutation.
+
+## Analytics pages (showcase + insights)
+
+`docs/content.html` (**Showcase**) tells the channel's story: year cards, records, milestones, obsessions, rituals, sagas. `docs/insights.html` (**Insights**) makes evidence-backed recommendations. Both are templates with one embedded data blob between `// @…-data-begin` / `// @…-data-end` markers, which the builders rewrite. The shared metrics live in `scripts/dashboard_data.py`.
+
+- **Public data only.** There is no YouTube Analytics access (no impressions, CTR, retention or traffic sources). Everything is inferred from public counts, durations, titles, transcripts, the curated classification and `stats_history/`.
+- **Compare videos by breakout ratio, never by raw or mean views.** Breakout ratio is views ÷ the median of the ~20 uploads around the video, which cancels video age and channel growth. Views per day come from the history, not from views ÷ age.
+- `/refresh` is the single writer of `video_classification.json` and `stats_history/`, so a local run and the nightly never both append to them. `/import` and `/fetch-stats` don't touch either file.
 
 ## Post format (CRITICAL — read before editing post-related code)
 
@@ -94,7 +104,10 @@ python3 scripts/fetch_channel_videos.py --config config.json --index video_index
 python3 scripts/batch_fetch_transcripts.py -- VIDEO_ID1 VIDEO_ID2 ...  # `--` guards IDs that start with a hyphen
 python3 scripts/batch_post.py --config config.json --input-dir ready_to_post [--dry-run]
 python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html
-python3 scripts/build_insights.py --index video_index.json --stats youtube_stats.json --analytics transcript_analytics.json --series series_queue.json --dashboard docs/insights.html
+python3 scripts/build_insights.py --index video_index.json --stats youtube_stats.json --analytics transcript_analytics.json --dashboard docs/insights.html
+python3 scripts/build_showcase.py --index video_index.json --stats youtube_stats.json --analytics transcript_analytics.json --dashboard docs/content.html
+python3 scripts/classify_videos.py {missing --out FILE|apply RECORDS.json|validate|spec}   # curated classification
+python3 scripts/stats_history.py {snapshot|summary}                                        # committed view history
 python3 scripts/post_reply.py --config config.json --topic-id 1170 --body @keeper-posts/keeper-THEME.md
 python3 scripts/repair_data.py {report|schema|rename|cleanup|timestamps|posts|normalize|transcripts} ...
 ```

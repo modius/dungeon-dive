@@ -20,6 +20,8 @@ transcript_analytics.json
 youtube_stats.json
 discourse_topics_export.json
 *.csv
+# ...except the committed view history (scripts/stats_history.py, written by /refresh)
+!stats_history/*.csv
 fetch_*.sh
 fix_sf_books_post.py
 post_body.txt

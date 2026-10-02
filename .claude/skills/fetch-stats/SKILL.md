@@ -21,7 +21,7 @@ Fetch YouTube engagement statistics for all indexed videos.
 
 2. Rebuild insights dashboard:
    ```bash
-   python3 scripts/build_insights.py --index video_index.json --stats youtube_stats.json --analytics transcript_analytics.json --series series_queue.json --dashboard docs/insights.html
+   python3 scripts/build_insights.py --index video_index.json --stats youtube_stats.json --analytics transcript_analytics.json --dashboard docs/insights.html
    ```
 
 ## Safety
@@ -33,6 +33,10 @@ This is completely separate from transcript fetching (youtube-transcript-api) an
 ## Output
 
 `youtube_stats.json` — per-video engagement data (view_count, like_count, comment_count, duration_seconds, duration_display). This file is gitignored as engagement data is volatile.
+
+## View history
+
+`youtube_stats.json` is overwritten on every fetch. The durable record is `stats_history/` (committed), and **only `/refresh` writes it** (`stats_history.py snapshot`), committing and pushing in the same run. Don't take a snapshot from this skill. An uncommitted snapshot left in the tree would block the next `/refresh`'s `git pull` against the nightly's.
 
 ## Rules
 - Safe to run multiple times per day

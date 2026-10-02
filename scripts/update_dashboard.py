@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
-Update all dashboard pages (docs/index.html, docs/health.html, docs/content.html).
+Update the archive dashboards (docs/index.html, docs/health.html).
 
-Reads from video_index.json, the archive directory, integrity reports, and
-keeper-posts/ to update embedded data in all three dashboard pages.
+Reads from video_index.json, the archive directory, integrity reports,
+keeper-posts/ and series_queue.json to update embedded data in both pages.
+docs/content.html (the channel showcase) is built by build_showcase.py and
+docs/insights.html by build_insights.py.
 
 Usage:
     python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html
@@ -14,6 +16,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -264,157 +267,88 @@ def update_health(html: str, videos: list, archive_dir: str) -> str:
     return html
 
 
-# ── content.html updater ───────────────────────────────────────────
+# ── health.html: archive operations (Keeper posts, import series) ──
+
+def _git_added_dates(keeper_dir: str) -> dict:
+    """{filename: YYYY-MM-DD the file was first committed}, from one git log call.
+
+    File mtimes are useless here: the nightly runs from a fresh clone, so every
+    Keeper post would carry the clone's date.
+    """
+    try:
+        out = subprocess.run(
+            ["git", "log", "--diff-filter=A", "--name-only", "--format=@%cs", "--", keeper_dir],
+            capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    dates, current = {}, None
+    for line in out.splitlines():
+        line = line.strip()
+        if line.startswith("@"):
+            current = line[1:]
+        elif line and current:
+            # log is newest first, so the last write is the first time it was added
+            dates[os.path.basename(line)] = current
+    return dates
+
 
 def build_keeper_posts_data(keeper_dir: str) -> list:
-    """Build keeper posts timeline from keeper-posts/ directory."""
+    """Keeper posts in publication order: theme, date, linked video count."""
     posts = []
     if not os.path.isdir(keeper_dir):
         return posts
-
+    added = _git_added_dates(keeper_dir)
     for fname in sorted(os.listdir(keeper_dir)):
         if not fname.startswith("keeper-") or not fname.endswith(".md"):
             continue
         fpath = os.path.join(keeper_dir, fname)
         with open(fpath) as f:
             content = f.read()
-
-        # Extract theme from first heading
         theme_match = re.search(r"^#\s+(.+?)(?:\s*\(Part.*?\))?\s*(?:—.*)?$", content, re.MULTILINE)
         theme = theme_match.group(1).strip() if theme_match else fname.replace("keeper-", "").replace(".md", "").replace("-", " ").title()
-
-        # Count linked videos (Discourse topic links)
         links = re.findall(r"https://dungeondive\.quest/t/\d+", content)
-        count = len(set(links))
-
-        # Get file mtime as approximate date
-        mtime = os.path.getmtime(fpath)
-        date = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
-
-        posts.append({"theme": theme, "date": date, "count": count})
-
+        date = added.get(fname) or datetime.fromtimestamp(os.path.getmtime(fpath)).strftime("%Y-%m-%d")
+        posts.append({"theme": theme, "date": date, "count": len(set(links))})
+    posts.sort(key=lambda p: p["date"])
     return posts
 
 
-def build_weekly_imports(videos: list) -> list:
-    """Build weekly import counts from imported_at timestamps."""
-    from collections import defaultdict
-    weeks = defaultdict(int)
-    for v in videos:
-        ts = v.get("imported_at")
-        if ts and v.get("status") == "imported":
-            try:
-                dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
-                # ISO week start (Monday)
-                week_start = dt - __import__("datetime").timedelta(days=dt.weekday())
-                week_key = week_start.strftime("%Y-%m-%d")
-                weeks[week_key] += 1
-            except (ValueError, TypeError):
-                pass
-    return [[k, v] for k, v in sorted(weeks.items())]
+def build_import_series(videos: list, series_path: str) -> list:
+    """Active and completed import series from series_queue.json."""
+    if not os.path.exists(series_path):
+        return []
+    with open(series_path) as f:
+        queue = json.load(f)
+    status = {v["video_id"]: v.get("status") for v in videos}
+    out = []
+    for s in queue.get("active_series", []):
+        ids = s.get("video_ids", [])
+        out.append({
+            "title": s.get("title", s.get("theme", "Unknown")),
+            "status": "active",
+            "total": len(ids),
+            "imported": sum(1 for vid in ids if status.get(vid) == "imported"),
+            "date": s.get("last_imported") or "",
+        })
+    for s in reversed(queue.get("completed_series", [])):
+        total = s.get("total_videos", 0)
+        out.append({
+            "title": s.get("title", s.get("theme", "Unknown")),
+            "status": "completed",
+            "total": total,
+            "imported": total,
+            "date": s.get("completed_date", ""),
+        })
+    return out
 
 
-def load_analytics(analytics_path: str):
-    """Load transcript_analytics.json if it exists."""
-    if os.path.exists(analytics_path):
-        with open(analytics_path) as f:
-            return json.load(f)
-    return None
-
-
-def update_content(html: str, videos: list, keeper_dir: str, analytics_path: str = "transcript_analytics.json") -> str:
-    """Update embedded data in content.html from analytics and project state."""
-
-    analytics = load_analytics(analytics_path)
-
-    # Update keeperPosts
-    keeper_data = build_keeper_posts_data(keeper_dir)
-    if keeper_data:
-        keeper_js = json.dumps(keeper_data, indent=2)
-        html = safe_re_sub(
-            r"const keeperPosts = \[.*?\];",
-            "const keeperPosts = {};".format(keeper_js),
-            html,
-            flags=re.DOTALL,
-        )
-
-    # Update weeklyImports
-    weekly = build_weekly_imports(videos)
-    if weekly:
-        weekly_js = json.dumps(weekly)
-        html = safe_re_sub(
-            r"const weeklyImports = \[.*?\];",
-            "const weeklyImports = {};".format(weekly_js),
-            html,
-            flags=re.DOTALL,
-        )
-
-    if analytics:
-        agg = analytics.get("aggregates", {})
-        total = analytics.get("total_analyzed", 0)
-
-        # Update topGames
-        games = agg.get("primary_games") or agg.get("games", [])
-        if games:
-            html = safe_re_sub(
-                r"const topGames = \[.*?\];",
-                "const topGames = {};".format(json.dumps(games[:25])),
-                html,
-                flags=re.DOTALL,
-            )
-
-        # Update categories (merge formats + mechanics)
-        cats = {}
-        for tag, count in agg.get("formats", []):
-            cats[tag] = count
-        for tag, count in agg.get("mechanics", []):
-            cats[tag] = count
-        if cats:
-            html = safe_re_sub(
-                r"const categories = \{.*?\};",
-                "const categories = {};".format(json.dumps(cats)),
-                html,
-                flags=re.DOTALL,
-            )
-
-        # Update tag cloud data
-        tag_cloud = agg.get("tag_cloud", [])
-        if tag_cloud:
-            html = safe_re_sub(
-                r"const tagCloud = \[.*?\];",
-                "const tagCloud = {};".format(json.dumps(tag_cloud)),
-                html,
-                flags=re.DOTALL,
-            )
-
-        # Update theme data
-        themes = agg.get("themes", [])
-        if themes:
-            html = safe_re_sub(
-                r"const themeData = \[.*?\];",
-                "const themeData = {};".format(json.dumps(themes)),
-                html,
-                flags=re.DOTALL,
-            )
-
-        # Update player modes
-        modes = agg.get("player_modes", [])
-        if modes:
-            html = safe_re_sub(
-                r"const playerModes = \[.*?\];",
-                "const playerModes = {};".format(json.dumps(modes)),
-                html,
-                flags=re.DOTALL,
-            )
-
-        # Update "Based on N analyzed" notes
-        if total > 0:
-            html = re.sub(
-                r"Based on \d+ analyzed (?:transcripts|videos)",
-                "Based on {} analyzed videos".format(total),
-                html,
-            )
-
+def update_health_ops(html: str, videos: list, keeper_dir: str, series_path: str) -> str:
+    keeper_js = json.dumps(build_keeper_posts_data(keeper_dir))
+    html = safe_re_sub(r"const KEEPER_POSTS = \[.*?\];", "const KEEPER_POSTS = {};".format(keeper_js),
+                       html, flags=re.DOTALL)
+    series_js = json.dumps(build_import_series(videos, series_path))
+    html = safe_re_sub(r"const IMPORT_SERIES = \[.*?\];", "const IMPORT_SERIES = {};".format(series_js),
+                       html, flags=re.DOTALL)
     return html
 
 
@@ -424,6 +358,7 @@ def main():
     parser.add_argument("--dashboard", default="docs/index.html", help="Path to dashboard HTML")
     parser.add_argument("--archive-dir", default="archive", help="Path to archive directory")
     parser.add_argument("--keeper-dir", default="keeper-posts", help="Path to keeper posts directory")
+    parser.add_argument("--series", default="series_queue.json", help="Path to series_queue.json")
     parser.add_argument("--dry-run", action="store_true", help="Show changes without writing")
     args = parser.parse_args()
 
@@ -462,6 +397,7 @@ def main():
             health_original = f.read()
 
         health_updated = update_health(health_original, videos, args.archive_dir)
+        health_updated = update_health_ops(health_updated, videos, args.keeper_dir, args.series)
 
         if health_original != health_updated:
             changes.append("health.html")
@@ -473,25 +409,6 @@ def main():
             print("\nHealth dashboard already up to date.")
     else:
         print("\nHealth dashboard not found at {}".format(health_path))
-
-    # ── content.html ──
-    content_path = os.path.join(docs_dir, "content.html")
-    if os.path.exists(content_path):
-        with open(content_path) as f:
-            content_original = f.read()
-
-        content_updated = update_content(content_original, videos, args.keeper_dir)
-
-        if content_original != content_updated:
-            changes.append("content.html")
-            if not args.dry_run:
-                with open(content_path, "w") as f:
-                    f.write(content_updated)
-            print("Content dashboard updated: {}".format(content_path))
-        else:
-            print("Content dashboard already up to date.")
-    else:
-        print("Content dashboard not found at {}".format(content_path))
 
     if not changes:
         print("\nAll dashboards already up to date.")

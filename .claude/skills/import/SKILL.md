@@ -121,6 +121,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 ## Wrap Up
 
 11. `python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html`
+    This rebuilds the archive pages (`index.html`, `health.html`, including the Keeper timeline and import-series progress). It does **not** touch `content.html` (the showcase) or `insights.html`, and this skill doesn't classify the new videos either. The nightly `/refresh` does all three: it classifies new videos into `video_classification.json`, records the view history, and rebuilds both analytics pages. `/refresh` is the single writer of `video_classification.json` and `stats_history/`, so leave both alone here, or a local import and the nightly will both append to them.
 12. Update `series_queue.json` (skip entirely if this was an ad-hoc priority run — priority videos never touch the queue — or an interactive user override):
     - **Write it with `json.dump(..., indent=2, ensure_ascii=False)` and no trailing newline.** Python's default `ensure_ascii=True` escapes every non-ASCII character in the *whole* file, and almost every series title contains an em-dash — so a one-entry edit comes back as a 77-insertion/93-deletion whole-file diff with `\u2014` scattered through the completed log. The file is valid either way, which is why this passes unnoticed; check `git diff --stat series_queue.json` before committing and expect roughly twice the line count of the entry you touched, not hundreds. The file is also stored without a trailing newline, so `rstrip("\n")` after dumping to keep the diff to the lines you meant to change. (2026-10-01: caught at commit time on the `annals-pt2` completion.)
     - **Drain:** remove the imported IDs from `active_series[rotation_index].video_ids`. **Also remove any ID from this run's slate that hit a `permanent: true` transcript failure** — it was just marked `no_transcript` and can never become importable, so leaving it in `video_ids` only forces a wasted rotation where the next run drift-checks the slate to nothing. Removing it now reaches the same end state one cycle earlier. Note the dropped ID and its reason in the `completed_series` entry (or CHANGELOG if the series continues). IDs that hit **transient** failures stay in `video_ids` — they're still `pending` and will retry.
@@ -138,12 +139,12 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 13. Update CHANGELOG.md with run summary.
 14. Commit and push:
     ```
-    git add video_index.json docs/index.html docs/content.html docs/health.html archive/ keeper-posts/ CHANGELOG.md series_queue.json
+    git add video_index.json docs/index.html docs/health.html archive/ keeper-posts/ CHANGELOG.md series_queue.json
     git commit -m "sync: imported N videos (theme description)"
     git push origin main
     ```
 
-    **Stage all three dashboards, not just `docs/index.html`.** Step 11's `update_dashboard.py` regenerates `docs/content.html` and `docs/health.html` as well. Leaving them unstaged doesn't fail this run — it fails the *next* one, whose step-1 `git pull` aborts with "local changes would be overwritten" against the nightly `/refresh`'s dashboard commit. Check `git status` is clean (bar untracked scratch dirs) before you finish.
+    **Stage both archive dashboards, not just `docs/index.html`.** Step 11's `update_dashboard.py` regenerates `docs/health.html` as well. Leaving them unstaged doesn't fail this run — it fails the *next* one, whose step-1 `git pull` aborts with "local changes would be overwritten" against the nightly `/refresh`'s dashboard commit. Check `git status` is clean (bar untracked scratch dirs) before you finish.
 
     **If the push is rejected** (`! [rejected] main -> main (fetch first)`), a concurrent run — usually the nightly `/refresh` — landed while this import was working. Rebase; do not reset:
 
@@ -157,7 +158,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 
     ```
     python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html
-    git add docs/index.html docs/content.html docs/health.html
+    git add docs/index.html docs/health.html
     git rebase --continue
     ```
 

@@ -13,7 +13,8 @@ Propose candidate batches for the next import cycle and — when the user picks 
 
 - `video_index.json` — pending videos with title, published_at, status
 - `series_queue.json` — active_series, rotation_index, completed_series (written to only after user selection)
-- `transcript_analytics.json` — per-video taxonomy (games, formats, mechanics, themes, modes)
+- `video_classification.json` — curated, committed, one judged record per video: `subject`, `franchise`, `format`, `lane`, `theme`, `solo`, `series`, `part`. **Prefer it for clustering.** Shared `franchise` or `series` is a far stronger "these belong together" signal than co-occurring regex tags, and it covers pending videos too (classified by `/refresh`).
+- `transcript_analytics.json` — per-video taxonomy (games, formats, mechanics, themes, modes), with the curated fields merged in for imported videos
 - `youtube_stats.json` — view_count, like_count, comment_count per video
 - `keeper-posts/` — prior themes to avoid re-covering
 - `docs/insights.html` — most recent insights suggestions (optional signal)
