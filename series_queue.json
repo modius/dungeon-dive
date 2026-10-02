@@ -1,28 +1,84 @@
 {
   "active_series": [
     {
-      "theme": "disappointment-wing",
-      "title": "The Disappointment Wing",
+      "theme": "deepest-stratum",
+      "title": "The Deepest Stratum — Closing the Pre-2020 Archive",
       "status": "continuing",
       "one_shot": true,
-      "videos_per_batch": 7,
+      "videos_per_batch": 9,
       "video_ids": [
-        "ISKY2Bgz_c0",
-        "OVHP92ag6d4",
-        "wX47G7oi_Z4",
-        "e6iHP-UMZnk",
-        "hBqhV23fZnE"
+        "DohrPYUe11o",
+        "etbk0Z69oDs",
+        "ADwtKtLtE8Q",
+        "AU7Z9h1x1Ys",
+        "HlwfZ6atyLw",
+        "ahyTF-4Agkg",
+        "49KORRES2ks",
+        "9cZh_IuGMyM",
+        "rULrrI9GfWU"
       ],
       "related_imported_ids": [
-        "wxWz6zDC2wo",
-        "rV23IXWdDOY",
-        "WvVMuiXrqcI",
-        "3gPoLb5rT70",
-        "9rVcXaVHCXw"
+        "ixG3RWG-Xdw",
+        "I3T6O4ez75M",
+        "PUTrIDHNxQs",
+        "j9lMyW5Emo0",
+        "QeCKLvz2tIM"
       ],
-      "last_part": 1,
-      "last_imported": "2026-09-20",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/152"
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "closing-the-playlists",
+      "title": "Closing the Playlists — The Last Open Exhibits",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 6,
+      "video_ids": [
+        "0U0-9stDv2w",
+        "EFc5_Nct8wE",
+        "w6b2AkddE8Y",
+        "ptv9GRoEKs0",
+        "pRB23hC8dZY",
+        "dWatNWKO9uk"
+      ],
+      "related_imported_ids": [
+        "iYHt1pdScK0",
+        "ZtUTR0E7VPY",
+        "v9INdKeBJEI",
+        "jV8i3ErC3MA",
+        "eM2S4pWeczs"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
+    },
+    {
+      "theme": "borrowed-fiction",
+      "title": "Borrowed Fiction — Page, Screen, and Panel on the Table",
+      "status": "continuing",
+      "one_shot": true,
+      "videos_per_batch": 8,
+      "video_ids": [
+        "XVwO4OvjwI4",
+        "rAxPIoC8bB4",
+        "BkAhos9qrLQ",
+        "LSGYVCqNEjc",
+        "O_7ZySSl0mk",
+        "7BXf6nTyiCQ",
+        "V50CUypS7UM",
+        "oRXt4EmUmKk"
+      ],
+      "related_imported_ids": [
+        "zzWIE6Sg_E0",
+        "xMbY5fkmK0A",
+        "AKJRVoJu_Q4",
+        "ipf-y1PaGBg",
+        "GME--_-r_lU"
+      ],
+      "last_part": 0,
+      "last_imported": null,
+      "keeper_post": null
     }
   ],
   "completed_series": [
@@ -669,6 +725,21 @@
       "total_videos": 12,
       "completed_date": "2026-10-01",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/157"
+    },
+    {
+      "theme": "disappointment-wing",
+      "title": "The Disappointment Wing",
+      "related_imported_ids": [
+        "wxWz6zDC2wo",
+        "rV23IXWdDOY",
+        "WvVMuiXrqcI",
+        "3gPoLb5rT70",
+        "9rVcXaVHCXw"
+      ],
+      "parts_completed": 2,
+      "total_videos": 7,
+      "completed_date": "2026-10-02",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/158"
     }
   ],
   "rotation_index": 0

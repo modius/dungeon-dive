@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-09-30T20:05:51.697007+00:00",
+  "last_fetched": "2026-10-02T05:19:42.734261+00:00",
   "videos": [
     {
       "video_id": "5nA2pvB3qjA",
@@ -3340,9 +3340,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nAll Fiction is Fantasy - the new all book channel!\nhttps://www.youtube.com/@allfictionisfantasy\n\nDungeon Dive FB Group  \nhttps://www.facebook.com/groups/2571172249675057    \n\nThe Dungeon Dive Guild  \nhttps://boardgamegeek.com/guild/4030    \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2023-11-07T18:00:23Z",
       "thumbnail_url": "https://i.ytimg.com/vi/hBqhV23fZnE/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2261,
+      "imported_at": "2026-10-02T05:22:29.646680Z"
     },
     {
       "video_id": "bJHikj8skz4",
@@ -4190,9 +4190,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nAll Fiction is Fantasy - the new all book channel!\nhttps://www.youtube.com/@allfictionisfantasy\n\nDungeon Dive FB Group  \nhttps://www.facebook.com/groups/2571172249675057    \n\nThe Dungeon Dive Guild  \nhttps://boardgamegeek.com/guild/4030    \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
       "published_at": "2023-04-12T20:00:12Z",
       "thumbnail_url": "https://i.ytimg.com/vi/e6iHP-UMZnk/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2260,
+      "imported_at": "2026-10-02T05:22:24.161390Z"
     },
     {
       "video_id": "1_CE104JHi8",
@@ -5960,9 +5960,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-05-12T15:00:24Z",
       "thumbnail_url": "https://i.ytimg.com/vi/wX47G7oi_Z4/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2262,
+      "imported_at": "2026-10-02T05:22:34.548203Z"
     },
     {
       "video_id": "gK1VHYEXt_0",
@@ -9215,9 +9215,9 @@
       "description": "",
       "published_at": "2020-02-10T20:41:25Z",
       "thumbnail_url": "https://i.ytimg.com/vi/OVHP92ag6d4/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2259,
+      "imported_at": "2026-10-02T05:22:18.970579Z"
     },
     {
       "video_id": "ISKY2Bgz_c0",
@@ -9225,9 +9225,9 @@
       "description": "",
       "published_at": "2020-02-09T21:21:07Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ISKY2Bgz_c0/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2258,
+      "imported_at": "2026-10-02T05:22:12.840360Z"
     },
     {
       "video_id": "-3dLSMzi38k",
