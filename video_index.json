@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-10-03T01:00:26.367932+00:00",
+  "last_fetched": "2026-10-03T01:02:38.286815+00:00",
   "videos": [
     {
       "video_id": "bQrjspu4mSo",
@@ -9375,9 +9375,9 @@
       "description": "",
       "published_at": "2019-12-17T15:19:58Z",
       "thumbnail_url": "https://i.ytimg.com/vi/rULrrI9GfWU/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2271,
+      "imported_at": "2026-10-03T01:05:36.213062Z"
     },
     {
       "video_id": "hBhD4lpfrvw",
@@ -9465,9 +9465,9 @@
       "description": "Tangled Tales - Gatekeeper Chronicles - Take a Look",
       "published_at": "2019-11-27T02:56:06Z",
       "thumbnail_url": "https://i.ytimg.com/vi/9cZh_IuGMyM/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2265,
+      "imported_at": "2026-10-03T01:05:04.005913Z"
     },
     {
       "video_id": "TaY5NrLNABM",
@@ -9785,9 +9785,9 @@
       "description": "In this video I take a look at FFP\u2019s board game of pulp adventure.",
       "published_at": "2019-08-06T03:32:57Z",
       "thumbnail_url": "https://i.ytimg.com/vi/49KORRES2ks/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2264,
+      "imported_at": "2026-10-03T01:04:56.369100Z"
     },
     {
       "video_id": "yF9W5KZ4lfs",
@@ -10025,9 +10025,9 @@
       "description": "",
       "published_at": "2019-02-10T05:38:36Z",
       "thumbnail_url": "https://i.ytimg.com/vi/HlwfZ6atyLw/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2269,
+      "imported_at": "2026-10-03T01:05:25.720992Z"
     },
     {
       "video_id": "SW7PfbETFx8",
@@ -10275,9 +10275,9 @@
       "description": "In this video we will take a look at the new Big Trouble in Little China board game from Everything Epic Games, and discuss a bit, the tradition of the wuxia pian/flying swordsman genre of martial arts cinema.",
       "published_at": "2018-07-06T05:25:20Z",
       "thumbnail_url": "https://i.ytimg.com/vi/AU7Z9h1x1Ys/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2267,
+      "imported_at": "2026-10-03T01:05:15.604137Z"
     },
     {
       "video_id": "0irTZK6Z_YI",
@@ -10405,9 +10405,9 @@
       "description": "Taking a brief look at this great fantasy adventure game.",
       "published_at": "2018-05-04T05:25:17Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ADwtKtLtE8Q/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2266,
+      "imported_at": "2026-10-03T01:05:09.901179Z"
     },
     {
       "video_id": "vyg196YvsgE",
@@ -10615,9 +10615,9 @@
       "description": "Probably best to avoid the Forest of Fate, for now.",
       "published_at": "2018-03-07T00:57:30Z",
       "thumbnail_url": "https://i.ytimg.com/vi/etbk0Z69oDs/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2270,
+      "imported_at": "2026-10-03T01:05:31.089128Z"
     },
     {
       "video_id": "4r4Fv5i5zCI",
@@ -10745,9 +10745,9 @@
       "description": "A quick little review and let's read of Bodie Hartley's Slowquest: Quest 1: The Goblin Guard. \n\nAvailable - http://slowquest.bigcartel.com/\n\nPlease subscribe, and remember to visit the blog for all of y our Dungeon Diving needs.\n\nwww.dungeondive.com",
       "published_at": "2017-12-30T00:38:34Z",
       "thumbnail_url": "https://i.ytimg.com/vi/DohrPYUe11o/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2268,
+      "imported_at": "2026-10-03T01:05:20.764494Z"
     }
   ]
 }

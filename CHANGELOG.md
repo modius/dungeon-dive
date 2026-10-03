@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-10-03 (second run) — imported 8 videos (The Deepest Stratum — Closing the Pre-2020 Archive, Part 1)
+
+- Queue drain, `rotation_index` 0 → **deepest-stratum** (one-shot, `videos_per_batch` 9, 9 IDs queued). Second `/import` of the day, after the 01:01 UTC priority drop (Dark Souls Part 11). `fetch_channel_videos.py` found **0 new uploads** (1073 total), and the Dark Souls video is now `imported`, so branch 1 was empty.
+- Rate limit: **6/15 across 2 runs** (2026-10-02T05:22, 5 videos; 2026-10-03T01:01, 1 video), so **9 of headroom** against a 9-video slate. It fit exactly, so there was no trim or wait. The fetch landed ~20 h after the 5-video drain, inside the 13–23 h band, and still went through. Budget after this run: **14/15 counted** (8 posted plus 6 earlier), but 9 fetch attempts. The window is spent until the 2026-10-02T05:22 run ages out.
+- Drift check passed — all 9 slate IDs `pending`, none missing from the index.
+- Transcripts: **8 fetched, 0 permanent, 1 transient.** `ahyTF-4Agkg` (*A Brief Look at The 7th Continent and the works of A. Merritt.*) hit `YouTubeRequestFailed` (a 500 from the watch page). The video stays `pending` and in `video_ids`. Exit 0 (1/9 is under the >50% bail threshold).
+- Posts: 8 summaries of 210–226 words, `video_date`/`title` copied from the index by the generator, and order-independent validation passed. `batch_post.py` ran clean (8/8, single manifest): t/2264 Fortune & Glory, t/2265 Tangled Tales, t/2266 Gloom of Kilforth, t/2267 Big Trouble in Little China, t/2268 Slowquest, t/2269 The Shared Dream, t/2270 Forest of Fate, t/2271 Call to Adventure.
+- **Slowquest (`DohrPYUe11o`, 2017-12-30) is the channel's first upload.** It is the earliest `published_at` in the index, and Daniel calls it "the first video for this channel". *Forest of Fate* (2018-03-07) calls itself the channel's first negative video. Both summaries say so.
+- **Transcript name corrections used in summaries:** "Choi Hawk" → Tsui Hark, "Zoo Warriors" → *Zu Warriors from the Magic Mountain*, "anny Krakowski" → Ania Kryczkowska (Kilforth artist), "Chris and Johnny O'Neil" → O'Neal, "Bay Logan" → Bey Logan.
+- Keeper post **"The Deepest Stratum"** (register A, **~290 words of prose**, 13-entry catalogue) → [t/1170/160](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/160). The prose frames the batch as the bottom of the dig: the first video, the first complaint, and the later revisits that grew from this layer. It names the one crate left in the pit. The catalogue runs in publish-date order: the 8 new topics plus all 5 `related_imported_ids` (t/1380, t/2038, t/1357, t/2087, t/2085), with hooks written fresh from the archived posts. All hooks are ≤ 14 words.
+- **Series continues (Part 1 of an intended one-shot).** `video_ids` now holds only `ahyTF-4Agkg`. `last_part` 0 → 1, `last_imported` 2026-10-03, `keeper_post` set; `one_shot`/`videos_per_batch` left alone per the step-12 rule. It is the **last pre-2020 pending video** in the index, so Part 2 will be a single-video drain that closes the stratum. The "strand fewer than 3" rule governs headroom trims, not transient failures, so nothing to skip here.
+- **Rotation:** entry not completed, so `rotation_index` 0 → **1** (**closing-the-playlists**, 6 IDs). `series_queue.json` written with `ensure_ascii=False`, no trailing newline; diff 5+/13−.
+- Index now: **1015 imported**, 45 pending, 13 no_transcript (1073 total). Archive: 936 transcripts, 1015 posts.
+- Pre-flight: `git pull` up to date; `test_config.py` OK; `check_integrity.py` WARN, exit 1 (same 2 warnings, 0 errors).
+
 ## 2026-10-03 — imported 1 video (priority drop: A Normal Guy Plays Dark Souls, Part 11)
 
 - **Priority run.** `fetch_channel_videos.py` found **1 new upload** (1073 total): `bQrjspu4mSo` *A Normal Guy Plays Dark Souls - Part 11 - They Kicked my Butt* (2026-10-02), pending inside the 14-day window. Imported as an ad-hoc batch; `series_queue.json` untouched, so **deepest-stratum** (rotation 0, 9 IDs) waits one more cycle.

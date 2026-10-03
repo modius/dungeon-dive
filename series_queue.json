@@ -7,15 +7,7 @@
       "one_shot": true,
       "videos_per_batch": 9,
       "video_ids": [
-        "DohrPYUe11o",
-        "etbk0Z69oDs",
-        "ADwtKtLtE8Q",
-        "AU7Z9h1x1Ys",
-        "HlwfZ6atyLw",
-        "ahyTF-4Agkg",
-        "49KORRES2ks",
-        "9cZh_IuGMyM",
-        "rULrrI9GfWU"
+        "ahyTF-4Agkg"
       ],
       "related_imported_ids": [
         "ixG3RWG-Xdw",
@@ -24,9 +16,9 @@
         "j9lMyW5Emo0",
         "QeCKLvz2tIM"
       ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
+      "last_part": 1,
+      "last_imported": "2026-10-03",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/160"
     },
     {
       "theme": "closing-the-playlists",
@@ -742,5 +734,5 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/158"
     }
   ],
-  "rotation_index": 0
+  "rotation_index": 1
 }
