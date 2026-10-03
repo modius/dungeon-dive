@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-03 — imported 1 video (priority drop: A Normal Guy Plays Dark Souls, Part 11)
+
+- **Priority run.** `fetch_channel_videos.py` found **1 new upload** (1073 total): `bQrjspu4mSo` *A Normal Guy Plays Dark Souls - Part 11 - They Kicked my Butt* (2026-10-02), pending inside the 14-day window. Imported as an ad-hoc batch; `series_queue.json` untouched, so **deepest-stratum** (rotation 0, 9 IDs) waits one more cycle.
+- Rate limit: **5/15 across 1 run** (2026-10-02T05:22, 5 videos), **10 of headroom** against a 1-video slate, so no trim or wait. Budget after this run: **6/15, 9 of headroom.**
+- Transcripts: **1 fetched, 0 permanent, 0 transient.** The auto-captions say "Sin's Fortress" at the start, but Daniel corrects himself at the end ("Sins or not Sins Fortress… Orlando"), and the content (Siegmeyer, the giant blacksmith, Ornstein and Smough) is Anor Londo. The summary uses Anor Londo.
+- Post: 207-word summary, `video_date`/`title` copied from the index in the generator, and validation passed all checks. `batch_post.py` ran clean → [t/2263](https://dungeondive.quest/t/2263), backdated to 2026-10-02T16:00:26Z.
+- Keeper post **"One Parcel, Slightly Singed"** (register B, ~105 words of authored prose) → [t/1170/159](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/159). The deeper stacks hold the three tabletop Souls videos: *Rune* (t/1832), *Ten Tabletop Games for fans of Dark Souls* (t/2033) and the Hobbycast E1 FromSoftware ranking (t/2011).
+- Index now: **1007 imported**, 53 pending, 13 no_transcript (1073 total). Archive: 928 transcripts, 1007 posts.
+- Pre-flight: `git pull` already up to date; `test_config.py` OK; `check_integrity.py` **WARN, exit 1** (0 errors, 2 warnings: the same 79 missing local transcripts and the dashboard stats line). Only exit 2 is a stop condition.
+
 ## 2026-10-02 — imported 5 videos (The Disappointment Wing, Part Two; series complete)
 
 - Queue drain, `rotation_index` 0 → **disappointment-wing** (resuming as Part Two, `videos_per_batch` 7, 5 IDs left from the Part One trim). `fetch_channel_videos.py` found **0 new uploads** (1072 total, unchanged) and no pending video published inside the 14-day window — the newest pending is from 2023-12-31 — so branch 1 was empty and the queue got its turn. First cycle in four that priority material has not pre-empted the drain.
