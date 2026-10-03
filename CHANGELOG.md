@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-04 — imported 1 video (priority drop: Skyrim, Heart of the Mountain, Part 2)
+
+- **Priority run.** `fetch_channel_videos.py` found **1 new upload** (1074 total): `2ofNdVb9xTo` *Skyrim - Let's Play - Heart of the Mountain - Part 2* (2026-10-03), pending inside the 14-day window. Imported as an ad-hoc batch; `series_queue.json` untouched, so **closing-the-playlists** (rotation 1, 6 IDs) waits one more cycle.
+- Rate limit: **9/15 across 2 runs** (2026-10-03T01:01, 1 video; 2026-10-03T01:05, 8 videos), **6 of headroom** against a 1-video slate, so no trim or wait. The fetch landed ~22.7 h after the 8-video drain and went through. Budget after this run: **10/15, 5 of headroom**, until the 01:01/01:05 runs age out at ~01:05 UTC.
+- Transcripts: **1 fetched, 0 permanent, 0 transient.** Transcript "Varmina" rendered as Vaermina in the summary.
+- Post: 210-word summary, `video_date`/`title` copied from the index in the generator, and validation passed all checks. `batch_post.py` ran clean → [t/2272](https://dungeondive.quest/t/2272), backdated to 2026-10-03T16:00:32Z.
+- Keeper post **"A Chisel, Returned with Interest"** (register B, ~130 words of authored prose) → [t/1170/161](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/161). The deeper stacks hold Heart of the Mountain Part 1 (t/2230), the Skyrim Adventure Game review (t/1836) and the Arkham/Fallout/Skyrim comparison (t/1537). **Edited after posting:** the Part 1 hook first said "thirteen years of Skyrim"; Daniel has played since 2011, so it was corrected to "fifteen" via `PUT /posts/<id>`, and the local file matches.
+- Index now: **1016 imported**, 45 pending, 13 no_transcript (1074 total). Archive: 937 transcripts, 1016 posts.
+- Pre-flight: `git pull` fast-forwarded the nightly `/refresh`; `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+
 ## 2026-10-03 (second run) — imported 8 videos (The Deepest Stratum — Closing the Pre-2020 Archive, Part 1)
 
 - Queue drain, `rotation_index` 0 → **deepest-stratum** (one-shot, `videos_per_batch` 9, 9 IDs queued). Second `/import` of the day, after the 01:01 UTC priority drop (Dark Souls Part 11). `fetch_channel_videos.py` found **0 new uploads** (1073 total), and the Dark Souls video is now `imported`, so branch 1 was empty.
