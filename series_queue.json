@@ -21,31 +21,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/160"
     },
     {
-      "theme": "closing-the-playlists",
-      "title": "Closing the Playlists — The Last Open Exhibits",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "0U0-9stDv2w",
-        "EFc5_Nct8wE",
-        "w6b2AkddE8Y",
-        "ptv9GRoEKs0",
-        "pRB23hC8dZY",
-        "dWatNWKO9uk"
-      ],
-      "related_imported_ids": [
-        "iYHt1pdScK0",
-        "ZtUTR0E7VPY",
-        "v9INdKeBJEI",
-        "jV8i3ErC3MA",
-        "eM2S4pWeczs"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "borrowed-fiction",
       "title": "Borrowed Fiction — Page, Screen, and Panel on the Table",
       "status": "continuing",
@@ -732,6 +707,21 @@
       "total_videos": 7,
       "completed_date": "2026-10-02",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/158"
+    },
+    {
+      "theme": "closing-the-playlists",
+      "title": "Closing the Playlists — The Last Open Exhibits",
+      "related_imported_ids": [
+        "iYHt1pdScK0",
+        "ZtUTR0E7VPY",
+        "v9INdKeBJEI",
+        "jV8i3ErC3MA",
+        "eM2S4pWeczs"
+      ],
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/162",
+      "parts_completed": 1,
+      "total_videos": 6,
+      "completed_date": "2026-10-04"
     }
   ],
   "rotation_index": 1

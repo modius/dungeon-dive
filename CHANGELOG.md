@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-10-04 (second run) — imported 6 videos (Closing the Playlists — The Last Open Exhibits; series complete)
+
+- Queue drain, `rotation_index` 1 → **closing-the-playlists** (one-shot, `videos_per_batch` 6, 6 IDs queued). `fetch_channel_videos.py` found **0 new uploads** (1074 total), and the morning's Skyrim priority video is now `imported`, so branch 1 was empty.
+- Rate limit: **1/15 across 1 run** (2026-10-03T23:47, 1 video), **14 of headroom** against a 6-video slate, so no trim or wait. The 2026-10-03 01:01/01:05 runs had aged out. Budget after this run: **7/15, 8 of headroom.**
+- Drift check passed — all 6 slate IDs `pending`, none missing from the index.
+- Transcripts: **6 fetched, 0 permanent, 0 transient.** Exit 0.
+- Posts: 6 summaries of 201–224 words, `video_date`/`title` copied from the index by the generator, and order-independent validation passed. `batch_post.py` ran clean (6/6, single manifest): t/2273 Rad Zone, t/2274 Pilgrimage of the Sun Guard, t/2275 Top 5 Board Game Wishlist, t/2276 Darkroot Forest, t/2277 Ronin / Dagger of Kamui, t/2278 D6 Video Games.
+- **Transcript name corrections used in summaries:** "coicina verde" → Coisinha Verde, "rin taro"/"rentaro" → Rintaro, "Galzir"/"Galzibar" → *Lands of Galzyr*, "Zai Legends of a Drift system" → *Xia: Legends of a Drift System*, "Choy Hawk" → Tsui Hark (dropped from the final summary), "machinen mensch" → Maschinen-Mensch, "gambrina's games" → Gambrinous, "tangle deep" → Tangledeep, "Chronicles of Junagarh" → *Chronicles of Drunagor*.
+- Keeper post **"The Last Open Exhibits"** (register A, **~300 words of prose**, 11-entry catalogue) → [t/1170/162](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/162). The prose frames the batch as the knotted ends of the playlist guide-ropes, with the Darkroot Forest field trip as the key to the solo wing. The catalogue runs in publish-date order: the 6 new topics plus all 5 `related_imported_ids` (t/1244, t/19, t/1704, t/1400, t/18), with hooks written fresh from the archived posts. All hooks are ≤ 14 words.
+- **Series complete** in one part: `completed_series` entry with `parts_completed` 1, `total_videos` 6, `completed_date` 2026-10-04, `keeper_post` t/1170/162. Entry removed from `active_series`, so `rotation_index` stays at **1**, which now points at **borrowed-fiction** (8 IDs). `active_series` down to 2: `deepest-stratum` (1, `ahyTF-4Agkg`), `borrowed-fiction` (8). `series_queue.json` written with `ensure_ascii=False`, no trailing newline; diff 15+/25−.
+- Index now: **1022 imported**, 39 pending, 13 no_transcript (1074 total). Archive: 943 transcripts, 1022 posts; the index `imported` count and `archive/posts/*_post.json` agree with the Keeper sign-off.
+- Pre-flight: `git pull` up to date; `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+
 ## 2026-10-04 — imported 1 video (priority drop: Skyrim, Heart of the Mountain, Part 2)
 
 - **Priority run.** `fetch_channel_videos.py` found **1 new upload** (1074 total): `2ofNdVb9xTo` *Skyrim - Let's Play - Heart of the Mountain - Part 2* (2026-10-03), pending inside the 14-day window. Imported as an ad-hoc batch; `series_queue.json` untouched, so **closing-the-playlists** (rotation 1, 6 IDs) waits one more cycle.
