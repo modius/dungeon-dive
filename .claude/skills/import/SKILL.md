@@ -137,7 +137,7 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
       - **If the entry was completed (removed from `active_series`):** do NOT increment `rotation_index`. Removing the entry already shifts every later entry forward one slot, so the same index now points at what was the *next* series — incrementing on top of that skips a series. Only clamp: if `rotation_index` is now past the end of `active_series`, wrap to 0; if `active_series` is empty, set to 0.
       - **If the entry was NOT completed (multi-part, still has `video_ids`):** increment `rotation_index` for round-robin fairness so the next run rotates to the following series. If it now points past the end, wrap to 0.
 13. Update CHANGELOG.md with run summary.
-14. Commit and push:
+14. Validate the dashboards, then commit and push. **Run `/refresh`'s step 7 validation script (`.claude/skills/refresh/SKILL.md`) first.** It checks `docs/*.html` for conflict markers and makes sure each inline script parses, and it must print `dashboards validated`. If it fails, don't commit. Restore the page with `git checkout -- docs/`, re-run step 11, then validate again. If HEAD itself holds the markers, so restoring brings them back, surface it to the user rather than committing over it.
     ```
     git add video_index.json docs/index.html docs/health.html archive/ keeper-posts/ CHANGELOG.md series_queue.json
     git commit -m "sync: imported N videos (theme description)"
@@ -154,20 +154,25 @@ Run a full Dungeon Dive video archive import cycle. Read SKILL.md for post forma
 
     > **Never use `/refresh`'s `git reset --hard HEAD~1` recovery here.** That advice is safe in `/refresh` because its commit contains only regenerable dashboards. An `/import` commit does not: it carries `archive/posts/` and `archive/transcripts/` (the permanent record), the `discourse_topic_id` values written into `video_index.json` for topics that are **already live on Discourse**, the Keeper post, the drained `series_queue.json`, and the CHANGELOG. Discarding that commit loses work that re-running cannot recreate — the posts exist remotely, so a second run would not repost them, and the index would no longer know their topic IDs.
 
-    The only file both runs touch is `docs/*.html`, so that is the only place the rebase can conflict. Resolve it by regenerating, never by hand-editing the HTML:
+    The only file both runs touch is `docs/*.html`, so that is the only place the rebase can conflict. Resolve it by taking the upstream copy and regenerating, never by hand-editing the HTML:
 
     ```
+    git checkout --ours docs/index.html docs/health.html   # mid-rebase, "ours" = upstream, i.e. a clean, marker-free page
     python3 scripts/update_dashboard.py --index video_index.json --dashboard docs/index.html
+    # run the dashboard validation (refresh/SKILL.md step 7) — must print "dashboards validated"
     git add docs/index.html docs/health.html
     git rebase --continue
     ```
+
+    **The `checkout --ours` is not optional.** `update_dashboard.py` rewrites only the embedded data constants. It does not rebuild the page, so conflict markers in the conflicted file survive regeneration untouched. On 2026-10-03 the "Closing the Playlists" import (29901ea) regenerated and continued without it, which committed and pushed `<<<<<<<` markers around `IMPORT_SERIES`/`KEEPER_POSTS` in `docs/health.html` and blanked the live health page until the next `/refresh` caught them.
 
     Then push again. If the rebase conflicts in any file *other* than `docs/*.html`, stop and surface it — that means two runs mutated the archive or the queue concurrently, which is not a case to resolve automatically.
 
 ## Rules
 - Do NOT modify Python scripts unless explicitly asked
 - Recover from a rejected push with `git pull --rebase`, never `git reset --hard` — an `/import` commit contains the archive, live topic IDs, and the Keeper post, none of which a re-run can recreate
-- Never resolve a conflict in `docs/*.html` by hand; regenerate with `update_dashboard.py` and continue the rebase
+- Never resolve a conflict in `docs/*.html` by hand; take the upstream copy (`git checkout --ours`), regenerate with `update_dashboard.py`, validate, then continue the rebase. Regeneration alone leaves the conflict markers in place
+- Never commit `docs/*.html` without running the dashboard validation: a conflict marker or JS syntax error blanks the whole live page silently
 - Leave `pending_imports/` alone at the end of a run — `/repair`'s `cleanup` subcommand owns sweeping it, and it keeps staging files for still-`pending` videos on purpose so a half-finished run can resume without re-hitting the transcript API. Never `rm` the directory to tidy it.
 - If transcript fetch returns transient failures (IP block, rate limit, network), do NOT mark videos as `no_transcript` — they remain `pending` for the next run. Only `permanent: true` failures from `manifest.json` warrant the `no_transcript` flag.
 - One Keeper post per run
