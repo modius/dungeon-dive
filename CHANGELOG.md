@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-10-05 — imported 8 videos (Borrowed Fiction — Page, Screen, and Panel on the Table; series complete)
+
+- Queue drain, `rotation_index` 1 → **borrowed-fiction** (one-shot, `videos_per_batch` 8, 8 IDs queued). `fetch_channel_videos.py` found **0 new uploads** (1074 total), and no pending video falls inside the 14-day window, so branch 1 was empty.
+- **Uncommitted `/plan-batch` output found at start:** `series_queue.json` already held four new slates that had never been committed: `overland-road` (9), `crawler-annex` (10), `ends-of-the-world` (5), `last-six` (6). Upstream was level with HEAD, so `git pull` was a no-op and nothing needed stashing. Those four slates are committed with this run.
+- Rate limit: **6/15 across 1 run** (2026-10-04T04:25, 6 videos), **9 of headroom** against an 8-video slate, so no trim or wait. Budget after this run: **14/15, 1 of headroom**, until the 04:25 run ages out at ~04:25 UTC 2026-10-05.
+- Drift check passed — all 8 slate IDs `pending`, none missing from the index.
+- Transcripts: **8 fetched, 0 permanent, 0 transient.** Exit 0.
+- Posts: 8 summaries of 226–248 words, `video_date`/`title` copied from the index by the generator, and order-independent validation passed. `batch_post.py` ran clean (8/8, single manifest `post_results_20261005_000515.json`): t/2279 Shadowgate, t/2280 Robin Hood, t/2281 Tales of the Arabian Nights, t/2282 Red Sonja, t/2283 Gascony's Legacy, t/2284 Big Trouble in Little China, t/2285 Unmatched Adventures, t/2286 Journeys in Middle-earth.
+- **Transcript name corrections used in summaries:** "red Sonia"/"hercania's" → Red Sonja / Hyrkania's, "Lynn Vander"/"linander" → Lynnvander, "omra" → Amra, "oron"/"auron" → Oron, "Simon Magis"/"Simon of Gita" → Simon of Gitta, "albon's Legacy" → Avalon's Legacy, "gasin"/"gasan" → Gascony's, "Duma"/"dumah" → Dumas, "ishloo"/"rishloo" → Richelieu, "k de rfor" → Rochefort, "michael manziel" → Michael Menzel, "cosmos" → Kosmos, "zojoy" → Zojoi, "Icom" → ICOM Simulations, "fx9" → F.X. Nine, "Herod"/"heret" → Herat, "tanh Houser" → Tannhäuser. The Robin Hood transcript's "eridia the paths we dare tread" is left unnamed in the summary because the spelling couldn't be confirmed.
+- Keeper post **"Borrowed Fiction"** (register A, **292 words of prose**, 13-entry catalogue) → [t/1170/163](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/163). The prose frames the batch as an annex of borrowed stories, each judged twice: once against the game it became and once against its source. The catalogue runs in publish-date order: the 8 new topics plus all 5 `related_imported_ids` (t/1365, t/1863, t/226, t/1225, t/1804), with hooks for the older entries written from the archived posts.
+- **Series complete** in one part: `completed_series` entry with `parts_completed` 1, `total_videos` 8, `completed_date` 2026-10-05, `keeper_post` t/1170/163. Entry removed from `active_series`, so `rotation_index` stays at **1**, which now points at **overland-road** (9 IDs, 5 per batch). `active_series` now holds 5: `deepest-stratum` (1), `overland-road` (9), `crawler-annex` (10), `ends-of-the-world` (5), `last-six` (6). `series_queue.json` written with `ensure_ascii=False`, no trailing newline.
+- Index now: **1030 imported**, 31 pending, 13 no_transcript (1074 total). Archive: 951 transcripts, 1030 posts; the index `imported` count and `archive/posts/*_post.json` agree with the Keeper sign-off.
+- Pre-flight: `git pull` up to date; `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+
 ## 2026-10-04 (second run) — imported 6 videos (Closing the Playlists — The Last Open Exhibits; series complete)
 
 - Queue drain, `rotation_index` 1 → **closing-the-playlists** (one-shot, `videos_per_batch` 6, 6 IDs queued). `fetch_channel_videos.py` found **0 new uploads** (1074 total), and the morning's Skyrim priority video is now `imported`, so branch 1 was empty.
