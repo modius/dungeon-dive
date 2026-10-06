@@ -49,30 +49,6 @@
       "keeper_post": null
     },
     {
-      "theme": "ends-of-the-world",
-      "title": "Ends of the World — Wastelands, Weird Wars, and Doomed Skirmishes",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "tGsk0H21JgE",
-        "QLdp2ZNFM_s",
-        "mHE2XXExu7Q",
-        "jTEvYjhQKTM",
-        "PkjXvpbR1q8"
-      ],
-      "related_imported_ids": [
-        "Mtqdsr2BC_A",
-        "0JFuxpSFiLo",
-        "Pt8zI30MFm8",
-        "dv-40oFi5ak",
-        "YBMZINlORaw"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "last-six",
       "title": "The Last Six — Curiosities from the Back Room",
       "status": "continuing",
@@ -802,6 +778,22 @@
       ],
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/166",
       "note": "Part 2 run out of rotation by interactive request (crawler-annex slate exceeded headroom); finished the series alongside ends-of-the-world."
+    },
+    {
+      "theme": "ends-of-the-world",
+      "title": "Ends of the World — Wastelands, Weird Wars, and Doomed Skirmishes",
+      "parts_completed": 1,
+      "total_videos": 5,
+      "completed_date": "2026-10-07",
+      "related_imported_ids": [
+        "Mtqdsr2BC_A",
+        "0JFuxpSFiLo",
+        "Pt8zI30MFm8",
+        "dv-40oFi5ak",
+        "YBMZINlORaw"
+      ],
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/167",
+      "note": "Run out of rotation by interactive request alongside overland-road Part 2, to fill the 9 of headroom while crawler-annex (10) waited."
     }
   ],
   "rotation_index": 1

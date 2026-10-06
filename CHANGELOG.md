@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-07 (third run) — imported 5 videos (Ends of the World — Wastelands, Weird Wars, and Doomed Skirmishes; series complete)
+
+- Second half of the interactive "fit what we can" override (see the run below). The 5 transcripts were fetched alongside the Overland Road four (**9/9, 0 failures**). Drift check passed: all 5 were `pending`.
+- Rate limit after both runs: **15/15 across 4 runs**, 0 headroom. The window starts reopening when the 07:25 UTC run ages out on 2026-10-07; full headroom for crawler-annex's 10 returns after the 22:32/22:35 UTC runs age out (~22:35 UTC 2026-10-07). (The guard counts by `posted_at`, which is about 40 min after the actual fetch.)
+- Posts: 5 summaries of 236–250 words, `video_date`/`title` copied from the index, and validation passed. `batch_post.py` ran clean (5/5): t/2302 Wreckland Run, t/2299 Escape from Stalingrad Z, t/2301 Peacemakers: Horrors of War, t/2300 Dead Air / CBR+PNK, t/2298 The Doomed.
+- **Transcript name corrections:** "Scott alms" → Scott Almes, "Sammy laxo" → Sami Laakso, "Mike delicio" → Mike DiLisio, "lands of gaussier" → Lands of Galzyr, "game found" → Gamefound, "Chris McDow"/"mcel" → Chris McDowall, "Lok battl mats" → Loke battle mats, "cyber plus Punk" → CBR+PNK, "Mona rise" → Mona Rise. Left unnamed because they couldn't be confirmed: the Escape from Stalingrad Z publisher and designer ("raybox games", "Marco pakota"), and the Dead Air designer's surname ("Fiona ruthan").
+- Keeper post **"Ends of the World"** (register A, **~285 words of prose**, 10-entry catalogue) → [t/1170/167](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/167). The catalogue holds the 5 new topics plus all 5 `related_imported_ids` (t/2197, t/1259, t/1674, t/1890, t/1321).
+- **Series complete** in one part: `completed_series` entry with `total_videos` 5, `completed_date` 2026-10-07, `keeper_post` t/1170/167, plus a note on the out-of-rotation run. `rotation_index` stays at **1** = **crawler-annex**. `active_series` now holds 3: `deepest-stratum` (1), `crawler-annex` (10), `last-six` (6).
+- Index now: **1045 imported**, 17 pending, 13 no_transcript (1075 total). Archive: 966 transcripts, 1045 posts.
+
 ## 2026-10-07 (second run) — imported 4 videos (The Overland Road — Adventure Games Beyond the Dungeon Door, Part 2; series complete)
 
 - **Interactive override of the morning skip.** The user asked to fit whatever the plan allowed into the 9 of headroom (6/15 used; crawler-annex needs 10). Two planned slates sum to exactly 9: the remaining 4 of **overland-road** and the 5-video **ends-of-the-world** one-shot. They ran as two back-to-back imports, each with its own Keeper post. Both drew their slates from the queue, so the queue *is* updated (contrary to the usual override rule), and `rotation_index` was set to keep **crawler-annex** next in line.
