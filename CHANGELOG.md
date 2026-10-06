@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-06 — imported 1 video (priority drop: A Normal Guy Plays Dark Souls, Part 12)
+
+- **Priority run.** `fetch_channel_videos.py` found **1 new upload** (1075 total): `mptmQfQw-iw` *A Normal Guy Plays Dark Souls - Part 12 - Revenge! And the Painted World* (2026-10-05), pending inside the 14-day window. Imported as an ad-hoc batch; `series_queue.json` untouched, so **overland-road** (rotation 1, 9 IDs) waits one more cycle.
+- Rate limit: **0/15 across 0 runs**, **15 of headroom** against a 1-video slate, so no trim or wait. Budget after this run: **1/15, 14 of headroom.**
+- Transcripts: **1 fetched, 0 permanent, 0 transient.** Transcript names used in the summary: "SMO"/"Smoke" → Smough, "Ornestine" → Ornstein, "failank" → Phalanx, "Gwyn bearwin" → Gwynevere, "lore vessel" → Lord Vessel. The boss Daniel declines to fight is unnamed in the transcript; she is identified as Priscilla.
+- Post: 228-word summary, `video_date`/`title` copied from the index in the generator, and validation passed all checks. `batch_post.py` ran clean → [t/2288](https://dungeondive.quest/t/2288), backdated to 2026-10-05T16:00:38Z (manifest `post_results_20261006_072503.json`).
+- Keeper post **"A Grudge, Settled; A Painting, Entered"** (register B, ~120 words of authored prose) → [t/1170/164](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/164). The deeper stacks hold Part 11 (t/2263), the failed first attempt at the pair, and Hobbycast E1 (t/2011) for the Demon's Souls ranking, which ties to the episode's Painted World / Japan Studio aside.
+- Index now: **1031 imported**, 31 pending, 13 no_transcript (1075 total). Archive: 952 transcripts, 1031 posts.
+- Pre-flight: `git pull` fast-forwarded the nightly `/refresh`; `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+
 ## 2026-10-05 — imported 8 videos (Borrowed Fiction — Page, Screen, and Panel on the Table; series complete)
 
 - Queue drain, `rotation_index` 1 → **borrowed-fiction** (one-shot, `videos_per_batch` 8, 8 IDs queued). `fetch_channel_videos.py` found **0 new uploads** (1074 total), and no pending video falls inside the 14-day window, so branch 1 was empty.
