@@ -21,29 +21,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/160"
     },
     {
-      "theme": "overland-road",
-      "title": "The Overland Road — Adventure Games Beyond the Dungeon Door",
-      "status": "continuing",
-      "one_shot": false,
-      "videos_per_batch": 5,
-      "video_ids": [
-        "Jyn59AgDf6o",
-        "TvvDTvo-L74",
-        "1vJB1yOPOf0",
-        "9h2v-rVmwEA"
-      ],
-      "related_imported_ids": [
-        "ADwtKtLtE8Q",
-        "QeCKLvz2tIM",
-        "FlGf6zZGtkk",
-        "I1sccj6fjQs",
-        "eokbRB_Y2CU"
-      ],
-      "last_part": 1,
-      "last_imported": "2026-10-06",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/165"
-    },
-    {
       "theme": "crawler-annex",
       "title": "The Crawler Annex — Corridors Left Unmapped",
       "status": "continuing",
@@ -809,7 +786,23 @@
         "GME--_-r_lU"
       ],
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/163"
+    },
+    {
+      "theme": "overland-road",
+      "title": "The Overland Road — Adventure Games Beyond the Dungeon Door",
+      "parts_completed": 2,
+      "total_videos": 9,
+      "completed_date": "2026-10-07",
+      "related_imported_ids": [
+        "ADwtKtLtE8Q",
+        "QeCKLvz2tIM",
+        "FlGf6zZGtkk",
+        "I1sccj6fjQs",
+        "eokbRB_Y2CU"
+      ],
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/166",
+      "note": "Part 2 run out of rotation by interactive request (crawler-annex slate exceeded headroom); finished the series alongside ends-of-the-world."
     }
   ],
-  "rotation_index": 2
+  "rotation_index": 1
 }

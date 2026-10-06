@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-07 (second run) — imported 4 videos (The Overland Road — Adventure Games Beyond the Dungeon Door, Part 2; series complete)
+
+- **Interactive override of the morning skip.** The user asked to fit whatever the plan allowed into the 9 of headroom (6/15 used; crawler-annex needs 10). Two planned slates sum to exactly 9: the remaining 4 of **overland-road** and the 5-video **ends-of-the-world** one-shot. They ran as two back-to-back imports, each with its own Keeper post. Both drew their slates from the queue, so the queue *is* updated (contrary to the usual override rule), and `rotation_index` was set to keep **crawler-annex** next in line.
+- Transcripts for all 9 were fetched in one call at ~21:55 UTC 2026-10-06: **9 fetched, 0 permanent, 0 transient**, landing ~14.4 h after the 5-video drain without being blocked. Budget after both runs: **15/15, 0 headroom** until the 07:25 UTC run ages out.
+- Drift check passed: all 4 slate IDs were `pending`.
+- Posts: 4 summaries of 243–250 words, `video_date`/`title` copied from the index, and validation passed. `batch_post.py` ran clean (4/4): t/2296 Zerywia, t/2297 Miru, t/2294 Albion's Legacy, t/2295 Freelancers.
+- **Transcript name corrections:** "jedvya"/"yet via"/"zed via" → Zerywia (the title's spelling), "sventovit" → Svantevit (dropped from the summary), "alkalon of Gaul" → Accolon of Gaul, "Lynn Vander" → Lynnvander, "Thomas M gofton" → Thomas M. Gofton.
+- Keeper post **"The Overland Road (Part Two)"** (register A, **~285 words of prose**, 9-entry catalogue) → [t/1170/166](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/166). The catalogue holds the 4 new topics plus the same 5 `related_imported_ids` as Part One, with fresh hooks.
+- **Series complete:** `completed_series` entry with `parts_completed` 2, `total_videos` 9 (5 + 4), `completed_date` 2026-10-07, `keeper_post` t/1170/166, plus a note recording the out-of-rotation finish. `rotation_index` 2 → **1**, which is crawler-annex after the removal.
+- Index now: **1040 imported**, 22 pending, 13 no_transcript (1075 total). Archive: 961 transcripts, 1040 posts.
+
 ## 2026-10-07 — skipped (headroom: crawler-annex slate 10 vs 9 available)
 
 - No priority videos. `fetch_channel_videos.py` found **0 new uploads** (1075 total). Next in rotation is `rotation_index` 2, **crawler-annex** (one-shot, `videos_per_batch` 10, 10 IDs, all `pending`).
