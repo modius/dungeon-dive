@@ -27,11 +27,6 @@
       "one_shot": false,
       "videos_per_batch": 5,
       "video_ids": [
-        "HvQpYQlLGzg",
-        "7cpCkvLwQsI",
-        "TqAy1jbJ9w8",
-        "EkKqSnrdG7U",
-        "y8mTWAs2PPw",
         "Jyn59AgDf6o",
         "TvvDTvo-L74",
         "1vJB1yOPOf0",
@@ -44,9 +39,9 @@
         "I1sccj6fjQs",
         "eokbRB_Y2CU"
       ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
+      "last_part": 1,
+      "last_imported": "2026-10-06",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/165"
     },
     {
       "theme": "crawler-annex",
@@ -816,5 +811,5 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/163"
     }
   ],
-  "rotation_index": 1
+  "rotation_index": 2
 }

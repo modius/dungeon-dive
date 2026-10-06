@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-10-06 (second run) — imported 5 videos (The Overland Road — Adventure Games Beyond the Dungeon Door, Part 1)
+
+- Queue drain, `rotation_index` 1 → **overland-road** (multi-part, `videos_per_batch` 5, 9 IDs queued). `fetch_channel_videos.py` found **0 new uploads** (1075 total), and the morning's Dark Souls priority video is now `imported`, so branch 1 was empty.
+- Rate limit: **1/15 across 1 run** (2026-10-06T07:25, 1 video), **14 of headroom** against a 5-video slate, so no trim or wait. Budget after this run: **6/15, 9 of headroom.**
+- Drift check passed: all 5 slate IDs were `pending`, and none was missing from the index.
+- Transcripts: **5 fetched, 0 permanent, 0 transient.** Exit 0.
+- Posts: 5 summaries of 241–248 words. `video_date`/`title` were copied from the index by the generator, and the order-independent validation passed. `batch_post.py` ran clean (5/5, single manifest `post_results_20261006_073030.json`): t/2291 Shadows of Malice, t/2289 Dreamwars, t/2292 Adventure Realms, t/2290 Fearsome Wilderness, t/2293 GRIT.
+- **Transcript name corrections used in summaries:** "jim feli" → Jim Felli, "devious weasel" → Devious Weasel Games, "peter jenk"/"peter drank" → Peter Jank, "final boss blues" → Final Boss Blues, "manly wade wellman" → Manly Wade Wellman, "ease eight" → Ys VIII. The Dreamwars publisher ("Royal Art Games" in the transcript) couldn't be confirmed, so the summary leaves it unnamed.
+- Keeper post **"The Overland Road (Part One)"** (register A, **~295 words of prose**, 10-entry catalogue) → [t/1170/165](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/165). The prose frames the wing as the road outside the dungeon door, measured by distance and supplies rather than damage. The catalogue runs in publish-date order: the 5 new topics plus all 5 `related_imported_ids` (t/2266, t/2085, t/1546, t/1289, t/1325), with hooks for the older entries written from the archived posts.
+- **Series continues:** `overland-road` `last_part` 1, `last_imported` 2026-10-06, `keeper_post` t/1170/165, with 4 IDs left (Zerywia, Miru, Albion's Legacy, Freelancers). `rotation_index` 1 → **2** (**crawler-annex**, 10 IDs). `series_queue.json` written with `ensure_ascii=False`, no trailing newline; diff 4+/9−.
+- Index now: **1036 imported**, 26 pending, 13 no_transcript (1075 total). Archive: 957 transcripts, 1036 posts. The index `imported` count and `archive/posts/*_post.json` agree with the Keeper sign-off.
+- Pre-flight: `git pull` up to date; `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+
 ## 2026-10-06 — imported 1 video (priority drop: A Normal Guy Plays Dark Souls, Part 12)
 
 - **Priority run.** `fetch_channel_videos.py` found **1 new upload** (1075 total): `mptmQfQw-iw` *A Normal Guy Plays Dark Souls - Part 12 - Revenge! And the Painted World* (2026-10-05), pending inside the 14-day window. Imported as an ad-hoc batch; `series_queue.json` untouched, so **overland-road** (rotation 1, 9 IDs) waits one more cycle.

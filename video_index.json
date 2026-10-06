@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-10-06T07:24:20.709123+00:00",
+  "last_fetched": "2026-10-06T07:28:11.143754+00:00",
   "videos": [
     {
       "video_id": "mptmQfQw-iw",
@@ -6452,9 +6452,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nGet it here:\nhttps://tgc.link/tdd-grit",
       "published_at": "2022-02-07T16:34:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/y8mTWAs2PPw/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2293,
+      "imported_at": "2026-10-06T07:30:30.019311Z"
     },
     {
       "video_id": "sQH3xPVic6Y",
@@ -6472,9 +6472,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2022-01-30T08:00:16Z",
       "thumbnail_url": "https://i.ytimg.com/vi/EkKqSnrdG7U/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2290,
+      "imported_at": "2026-10-06T07:30:14.364692Z"
     },
     {
       "video_id": "MhZ5AKwboh0",
@@ -6792,9 +6792,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive\n\nBuy the game:\nHttps://tgc.link/tdd-ar",
       "published_at": "2021-10-09T23:31:35Z",
       "thumbnail_url": "https://i.ytimg.com/vi/TqAy1jbJ9w8/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2292,
+      "imported_at": "2026-10-06T07:30:24.776328Z"
     },
     {
       "video_id": "X22UHszz5Dg",
@@ -6993,9 +6993,9 @@
       "description": "Join the Dungeon Dive Patreon - Thanks for the support!\nhttps://www.patreon.com/thedungeondive",
       "published_at": "2021-08-18T14:16:06Z",
       "thumbnail_url": "https://i.ytimg.com/vi/7cpCkvLwQsI/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2289,
+      "imported_at": "2026-10-06T07:30:09.248687Z"
     },
     {
       "video_id": "ol2a1T0BgrM",
@@ -8215,9 +8215,9 @@
       "description": "I take a look at Shadows of Malice, and offer some preliminary thoughts on this interesting game while I am learning it.\n\n\nJoin the Dungeon Dive Partreon - thank you for your support.\nhttps://www.patreon.com/thedungeondive\n\n\nJoin the Dungeon Dive Facebook group - we have a really nice group of people, with active and thoughtful conversations.\nhttps://www.facebook.com/groups/2571172249675057",
       "published_at": "2020-11-15T04:37:22Z",
       "thumbnail_url": "https://i.ytimg.com/vi/HvQpYQlLGzg/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2291,
+      "imported_at": "2026-10-06T07:30:19.447095Z"
     },
     {
       "video_id": "YOe2PL-1gT0",
