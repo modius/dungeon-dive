@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-07 — skipped (headroom: crawler-annex slate 10 vs 9 available)
+
+- No priority videos. `fetch_channel_videos.py` found **0 new uploads** (1075 total). Next in rotation is `rotation_index` 2, **crawler-annex** (one-shot, `videos_per_batch` 10, 10 IDs, all `pending`).
+- Rate limit: **6/15 across 2 runs** (2026-10-06T07:25, 1 video; 2026-10-06T07:30, 5 videos), so **9 of headroom** against a 10-video slate. Trimming to 9 would strand 1 video (fewer than 3), so **this cycle is skipped** to let the one-shot land whole. Waiting wouldn't help: the shortfall clears when the 07:25 run ages out at ~07:25 UTC 2026-10-07, about 9.5 h after this check (21:51 UTC), well beyond the ~90 min wait window. A fetch now would also land ~14 h after the 5-video drain, inside the 13–23 h band where the block has bitten.
+- Queue untouched. The next run after ~07:30 UTC 2026-10-07 will have 15 of headroom for the full slate.
+- Pre-flight: `git pull` up to date; `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+
 ## 2026-10-06 (second run) — imported 5 videos (The Overland Road — Adventure Games Beyond the Dungeon Door, Part 1)
 
 - Queue drain, `rotation_index` 1 → **overland-road** (multi-part, `videos_per_batch` 5, 9 IDs queued). `fetch_channel_videos.py` found **0 new uploads** (1075 total), and the morning's Dark Souls priority video is now `imported`, so branch 1 was empty.
