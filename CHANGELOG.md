@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-08 — priority drop: 1 video (Pauper's Ladder — The Brighthelm Chronicle)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (stats_history, classification); tree otherwise clean, no uncommitted slates. `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+- Rate limit at 21:23 UTC 2026-10-07: **9/15 across 2 runs**, so **6 of headroom**. Enough for the priority batch; crawler-annex's 10 would have had to wait for the 22:32 UTC run to age out.
+- `fetch_channel_videos.py` found **1 new upload**: `S_O0v_5almw` "Pauper's Ladder - The Brighthelm Chronicle Expansion (Review)" (2026-10-07). Inside the 14-day window, so this run is an **ad-hoc priority batch**. The queue waits one cycle, and crawler-annex stays next (`rotation_index` 1).
+- Transcript fetched 1/1, 0 failures. Post: 219-word summary, `video_date`/`title` copied from the index, and validation passed. `batch_post.py` ran clean: t/2304.
+- **Transcript name corrections:** "Poppers Ladder"/"Pooper's Ladder" → Pauper's Ladder, "Bright Helm" → Brighthelm. The city names ("Lilacsville"/"Lilacville") and "Bodocks" were left out of the summary.
+- Keeper post **"A Book About Everything Else"** (register B, ~150 words of authored prose) → [t/1170/168](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/168). Deeper stacks: t/1806 (the intro), t/1808 (Moon Towers and its field guide, the Chronicle's forerunner), t/1807 (the comprehensive overview).
+- Index now: **1046 imported**, 17 pending, 13 no_transcript (1076 total). Archive: 967 transcripts, 1046 posts.
+
 ## 2026-10-07 (third run) — imported 5 videos (Ends of the World — Wastelands, Weird Wars, and Doomed Skirmishes; series complete)
 
 - Second half of the interactive "fit what we can" override (see the run below). The 5 transcripts were fetched alongside the Overland Road four (**9/9, 0 failures**). Drift check passed: all 5 were `pending`.
