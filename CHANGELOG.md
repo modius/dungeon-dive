@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-10-08 (second run) — imported 10 videos (The Crawler Annex — Corridors Left Unmapped; series complete)
+
+- Pre-flight: `git pull` was already up to date; tree clean apart from the untracked image dropbox, no uncommitted slates. `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors). A stray second integrity report from a re-run of the check was deleted, not committed.
+- Rate limit at 00:41 UTC: **1/15 across 1 run**, so **14 of headroom**. The 22:32/22:35 UTC 9-video drain of 2026-10-06 had aged out (~26 h before this fetch). The whole 10-video slate fit, with no trim and no wait.
+- `fetch_channel_videos.py`: 0 new uploads, so no priority batch. Queue drain of `rotation_index` 1 = **crawler-annex**, which had been held back twice for headroom. Drift check passed: all 10 IDs were `pending`.
+- Transcripts **10/10, 0 permanent, 0 transient**.
+- Posts: 10 summaries of 203–229 words, `video_date`/`title` copied from the index, and order-independent validation passed. `batch_post.py` ran clean (10/10): t/2305 Keep the Heroes Out!, t/2306 Caverns of the Dead / Dungeon Lairs / Dungeon Rooms, t/2307 Cryptic Explorers (unboxing), t/2308 Illumination of Deepsorrow, t/2309 D6, t/2310 Jaws of the Lion, t/2311 Legends Untold review, t/2312 Assassinorum Execution Force, t/2313 Super Fantasy, t/2314 Explorers of the Woodlands (unboxing).
+- **Transcript name corrections:** "kryptonites"/"kryptonauts" → cryptonauts, "cletus"/"collectors" assassin → Callidus/Culexus, "vermiling" → vermlings, "void warden" → Voidwarden, "Skull Kicker" → Skullkicker, "morkborg" → Mörk Borg, "deep sorrow" → Deepsorrow (the title's spelling), "fawford and grey mousers" → Fafhrd and the Gray Mouser. Left out because they couldn't be confirmed: the Execution Force patrol comparison is kept as Daniel's "Dungeon Crusade", and the insert-bloated game he names in the Deepsorrow preview ("forgotten depth") is not named.
+- Keeper post **"The Crawler Annex — Corridors Left Unmapped"** (register A, **274 words of prose**, 14-entry catalogue) → [t/1170/169](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/169). The catalogue holds the 10 new topics plus all 4 `related_imported_ids` (t/2234, t/1715, t/1515, t/2067), in publish order.
+- **Series complete** in one part: `completed_series` entry with `total_videos` 10, `completed_date` 2026-10-08, `keeper_post` t/1170/169. `rotation_index` stays at **1**, which now points to **last-six** (6). `active_series` holds 2: `deepest-stratum` (1) and `last-six` (6).
+- Rate budget after this run: **11/15**. The 10-video burst sets the next ~24 h window, so the 6-video last-six slate should wait for it to age out (~00:45 UTC 2026-10-09).
+- Index now: **1056 imported**, 7 pending, 13 no_transcript (1076 total). Archive: 977 transcripts, 1056 posts.
+
 ## 2026-10-08 — priority drop: 1 video (Pauper's Ladder — The Brighthelm Chronicle)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (stats_history, classification); tree otherwise clean, no uncommitted slates. `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).

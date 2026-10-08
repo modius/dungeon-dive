@@ -21,34 +21,6 @@
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/160"
     },
     {
-      "theme": "crawler-annex",
-      "title": "The Crawler Annex — Corridors Left Unmapped",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 10,
-      "video_ids": [
-        "mM4k2pf-l9E",
-        "N0_ptJC7W48",
-        "xTpYdSgeWPc",
-        "7EgU3ReHrIc",
-        "Ou7NGOVJ8Pc",
-        "JH6X6472Gdk",
-        "v-ylvHTi_Mc",
-        "Lbrq5ramx-A",
-        "4aUWIhJE2n4",
-        "xya7ZlFJ-x8"
-      ],
-      "related_imported_ids": [
-        "aqbo0yu_l6g",
-        "wHcblaGXua8",
-        "V2d8qoEGyEU",
-        "6ob9UwPviJA"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
-    },
-    {
       "theme": "last-six",
       "title": "The Last Six — Curiosities from the Back Room",
       "status": "continuing",
@@ -794,6 +766,20 @@
       ],
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/167",
       "note": "Run out of rotation by interactive request alongside overland-road Part 2, to fill the 9 of headroom while crawler-annex (10) waited."
+    },
+    {
+      "theme": "crawler-annex",
+      "title": "The Crawler Annex — Corridors Left Unmapped",
+      "parts_completed": 1,
+      "total_videos": 10,
+      "completed_date": "2026-10-08",
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/169",
+      "related_imported_ids": [
+        "aqbo0yu_l6g",
+        "wHcblaGXua8",
+        "V2d8qoEGyEU",
+        "6ob9UwPviJA"
+      ]
     }
   ],
   "rotation_index": 1
