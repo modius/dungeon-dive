@@ -1,26 +1,5 @@
 {
-  "active_series": [
-    {
-      "theme": "deepest-stratum",
-      "title": "The Deepest Stratum — Closing the Pre-2020 Archive",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 9,
-      "video_ids": [
-        "ahyTF-4Agkg"
-      ],
-      "related_imported_ids": [
-        "ixG3RWG-Xdw",
-        "I3T6O4ez75M",
-        "PUTrIDHNxQs",
-        "j9lMyW5Emo0",
-        "QeCKLvz2tIM"
-      ],
-      "last_part": 1,
-      "last_imported": "2026-10-03",
-      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/160"
-    }
-  ],
+  "active_series": [],
   "completed_series": [
     {
       "theme": "heroquest",
@@ -770,6 +749,22 @@
       "parts_completed": 1,
       "total_videos": 6,
       "completed_date": "2026-10-09"
+    },
+    {
+      "theme": "deepest-stratum",
+      "title": "The Deepest Stratum — Closing the Pre-2020 Archive",
+      "related_imported_ids": [
+        "ixG3RWG-Xdw",
+        "I3T6O4ez75M",
+        "PUTrIDHNxQs",
+        "j9lMyW5Emo0",
+        "QeCKLvz2tIM"
+      ],
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/171",
+      "parts_completed": 2,
+      "total_videos": 9,
+      "completed_date": "2026-10-09",
+      "note": "Planned as a 9-video one-shot; ahyTF-4Agkg hit a transient transcript error (YouTubeRequestFailed) in Part 1 (2026-10-03) and landed alone as Part 2. Final pending video in the archive."
     }
   ],
   "rotation_index": 0

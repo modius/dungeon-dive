@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-10-09 (second run) — imported 1 video (The Deepest Stratum — Closing the Pre-2020 Archive, Part 2; series complete — archive fully drained)
+
+- Pre-flight: fresh checkout with no `config.json`. The first attempt stopped at step 3 (`test_config.py` found no config); the user supplied `config.json` and the run resumed. `git pull` already up to date, tree clean, no uncommitted slates. `test_config.py` OK (Discourse admin access confirmed). `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+- Environment: the machine had no pip and no `youtube-transcript-api`. With the user's approval, `python3-pip`/`python3-venv` were installed via apt and the requirements put in a venv at `~/.venvs/dungeon-dive` (outside the repo). The transcript fetch ran with that venv's Python; every other script ran on the system Python.
+- Rate limit at 00:54 UTC: **6/15 across 1 run**, so **9 of headroom** against a 1-video slate. No trim or wait needed.
+- `fetch_channel_videos.py`: 0 new uploads (1076 total), so no priority batch. Queue drain of `rotation_index` 0 = **deepest-stratum**, the only active series. Drift check passed: `ahyTF-4Agkg` was `pending`.
+- Transcript **1/1, 0 permanent, 0 transient**. This is the video that hit `YouTubeRequestFailed` in Part 1 on 2026-10-03.
+- Post: 215-word summary, `video_date`/`title` copied from the index, and order-independent validation passed. `batch_post.py` ran clean: t/2321 *A Brief Look at The 7th Continent and the works of A. Merritt.*
+- **Transcript name corrections:** "Gary Chuck" → Gary Chalk, "Jody verse" → Joe Dever. The asides on "Keenan death monster" and "Tom vassals" were not used. The fifth dedicatee ("DDA goose Irit") couldn't be confirmed, so it was left out.
+- Keeper post **"The Deepest Stratum, Part Two: The Crate in the Pit"** (register A, **287 words of prose**, 6-entry catalogue) → [t/1170/171](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/171). The catalogue holds the 1 new topic plus all 5 `related_imported_ids` (t/1380, t/2038, t/1357, t/2087, t/2085), in publish order, with hooks rewritten fresh rather than copied from Part 1. The prose notes that the archive now has no pending videos.
+- **Series complete** in two parts: `completed_series` entry with `parts_completed` 2, `total_videos` 9 (8 in Part 1 + 1), `completed_date` 2026-10-09, `keeper_post` t/1170/171, and a `note` on the split. `active_series` is now **empty**, so `rotation_index` is 0.
+- **Every video is now accounted for: 0 pending.** Future runs will import only fresh uploads (priority branch) or skip with "queue empty".
+- Rate budget after this run: **7/15**.
+- Index now: **1063 imported**, 0 pending, 13 no_transcript (1076 total). Archive: 984 transcripts, 1063 posts.
+
 ## 2026-10-09 — imported 6 videos (The Last Six — Curiosities from the Back Room; series complete)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (stats_history, classification). The tree was otherwise clean, with no uncommitted slates. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors). A stray second integrity report from re-running the check was deleted and not committed.

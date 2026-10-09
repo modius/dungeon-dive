@@ -1,6 +1,6 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-10-08T23:06:17.863321+00:00",
+  "last_fetched": "2026-10-09T00:59:47.218744+00:00",
   "videos": [
     {
       "video_id": "S_O0v_5almw",
@@ -9845,9 +9845,9 @@
       "description": "A brief discussion on the 7th Continent and the works of A. Merritt.",
       "published_at": "2019-06-11T04:00:07Z",
       "thumbnail_url": "https://i.ytimg.com/vi/ahyTF-4Agkg/hqdefault.jpg",
-      "status": "pending",
-      "discourse_topic_id": null,
-      "imported_at": null
+      "status": "imported",
+      "discourse_topic_id": 2321,
+      "imported_at": "2026-10-09T01:04:30.248539Z"
     },
     {
       "video_id": "r3P6BU0gEVU",
