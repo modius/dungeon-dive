@@ -19,30 +19,6 @@
       "last_part": 1,
       "last_imported": "2026-10-03",
       "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/160"
-    },
-    {
-      "theme": "last-six",
-      "title": "The Last Six — Curiosities from the Back Room",
-      "status": "continuing",
-      "one_shot": true,
-      "videos_per_batch": 6,
-      "video_ids": [
-        "K1YD12TDxwo",
-        "K9Asd1xasRc",
-        "bQaZqs74i2Y",
-        "3KJwgGv_hq0",
-        "YqZzdPYfnso",
-        "kCTe19NTny4"
-      ],
-      "related_imported_ids": [
-        "9hgzA60ZGZg",
-        "z-n_vz4gFRw",
-        "7zHiFWEJfZY",
-        "zx1Xu1eI_UM"
-      ],
-      "last_part": 0,
-      "last_imported": null,
-      "keeper_post": null
     }
   ],
   "completed_series": [
@@ -780,7 +756,21 @@
         "V2d8qoEGyEU",
         "6ob9UwPviJA"
       ]
+    },
+    {
+      "theme": "last-six",
+      "title": "The Last Six — Curiosities from the Back Room",
+      "related_imported_ids": [
+        "9hgzA60ZGZg",
+        "z-n_vz4gFRw",
+        "7zHiFWEJfZY",
+        "zx1Xu1eI_UM"
+      ],
+      "keeper_post": "https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/170",
+      "parts_completed": 1,
+      "total_videos": 6,
+      "completed_date": "2026-10-09"
     }
   ],
-  "rotation_index": 1
+  "rotation_index": 0
 }

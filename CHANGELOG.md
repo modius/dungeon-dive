@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-10-09 — imported 6 videos (The Last Six — Curiosities from the Back Room; series complete)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (stats_history, classification). The tree was otherwise clean, with no uncommitted slates. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors). A stray second integrity report from re-running the check was deleted and not committed.
+- Rate limit at 23:05 UTC 2026-10-08: **10/15 across 1 run**, so **5 of headroom** against a 6-video one-shot. Trimming would have left 1 video behind (below 3) and put the fetch ~22.3 h after the 10-video crawler-annex drain, inside the 13–23 h band. The blocking run aged out ~100 min later, so the run **waited**. A background guard poll fired at 00:46 UTC with **15 of headroom**.
+- `fetch_channel_videos.py`: 0 new uploads, so no priority batch. Queue drain of `rotation_index` 1 = **last-six**. Drift check passed: all 6 IDs were `pending`.
+- Transcripts **6/6, 0 permanent, 0 transient** (fetched ~24 h after the previous drain).
+- Posts: 6 summaries of 233–249 words, with `video_date`/`title` copied from the index. Order-independent validation passed. `batch_post.py` ran clean (6/6): t/2315 Cozy Oaks, t/2316 2021 Quest Calendar (January), t/2317 Twisted Fate: Cowboys vs. Aliens, t/2318 Bloodsport Gambler, t/2319 Vagrantsong, t/2320 File 13.
+- **Transcript name corrections:** "play now" → Plaay Games (matching the History Maker Golf post), "Peter jenk" → Peter Jank (the archive's majority spelling), "Eric raddy/ratty" → Eric Radey, "right near kanitzia" → Reiner Knizia, "morkborg" → Mörk Borg, "weird games… malapho" → the makers of Malifaux (publisher not named), "Myron minuscule" → Myron Minuscule. Left out because they couldn't be confirmed: the Quest Calendar author ("thomas bedrin"), the Bloodsport Gambler designer ("Dylan Morton"), the third Vagrantsong vagrant ("emperors") and the ghost-form skill name ("westward").
+- Keeper post **"The Last Six — Curiosities from the Back Room"** (register A, **278 words of prose**, 10-entry catalogue) → [t/1170/170](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/170). The catalogue holds the 6 new topics plus all 4 `related_imported_ids` (t/276, t/1680, t/1160, t/1685), in publish order.
+- **Series complete** in one part: `completed_series` entry with `total_videos` 6, `completed_date` 2026-10-09, `keeper_post` t/1170/170. `rotation_index` wrapped to **0** = **deepest-stratum** (1 video), now the only active series.
+- Rate budget after this run: **6/15**.
+- Index now: **1062 imported**, 1 pending, 13 no_transcript (1076 total). Archive: 983 transcripts, 1062 posts.
+
 ## 2026-10-08 (second run) — imported 10 videos (The Crawler Annex — Corridors Left Unmapped; series complete)
 
 - Pre-flight: `git pull` was already up to date; tree clean apart from the untracked image dropbox, no uncommitted slates. `test_config.py` OK; `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors). A stray second integrity report from a re-run of the check was deleted, not committed.
