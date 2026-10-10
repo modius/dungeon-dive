@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-10 — Queue empty — no import (skipped)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (stats_history, insights); tree clean, no uncommitted slates. Rate limit at 00:33 UTC: **7/15 across 2 runs**, so 8 of headroom (unused). `test_config.py` OK. `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1076 total, unchanged). No pending video in the last 14 days, so no priority batch.
+- `series_queue.json`: `active_series` **empty**, `rotation_index` 0, unchanged since deepest-stratum completed on 2026-10-09.
+- Decision: **skip cleanly** per the selection decision tree (branch 3). No transcripts fetched, no posts, no Keeper post, no queue mutation.
+- queue empty — run /plan-batch. With 0 pending videos the backlog is fully drained, so `/plan-batch` has nothing to slate either; the next import will come from a fresh upload (priority branch).
+- Index unchanged: 1063 imported, 0 pending, 13 no_transcript (1076 total). Archive: 984 transcripts, 1063 posts.
+
 ## 2026-10-09 (second run) — imported 1 video (The Deepest Stratum — Closing the Pre-2020 Archive, Part 2; series complete — archive fully drained)
 
 - Pre-flight: fresh checkout with no `config.json`. The first attempt stopped at step 3 (`test_config.py` found no config); the user supplied `config.json` and the run resumed. `git pull` already up to date, tree clean, no uncommitted slates. `test_config.py` OK (Discourse admin access confirmed). `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
