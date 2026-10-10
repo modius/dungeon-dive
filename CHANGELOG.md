@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-10-10 (second run) — Transcript backfill (10 recovered)
+
+- First run of the new `/backfill-transcripts` skill, started by hand (standalone). Pre-flight: `git pull` up to date, tree clean. Rate limit at 03:04 UTC: **0/15**, so **15 of headroom** (the 2026-10-09 runs had aged out). Slate `min(10, 15)` = **10**. `check_integrity.py` WARN, exit 1 (79 imported videos missing local transcripts, 0 errors). 0 pending videos, so no import work was displaced.
+- Candidates: imported videos with no `archive/transcripts/` file, newest first (79 eligible; the `archive/transcript_backfill.json` ledger doesn't exist yet). Attempted:
+  - `KNwEQXDv5XM` 2026-04-05 *Dice Commandos - Tactical Espionage Dice Rolling Action*
+  - `dHJbG72Itp8` 2026-01-18 *Warhammer Quest: Darkwater - Review*
+  - `qmcbY6Sr_mw` 2026-01-07 *Hercules and the 12 Labors - Review*
+  - `CVFIzDp5iio` 2025-06-22 *Top 10 Life Changing Table Top Games*
+  - `B9zmRMY6ISI` 2025-05-25 *A Conversation all about the Game Crafter with JT Smith*
+  - `OwK8r2uyqHU` 2025-05-11 *Kingdom Legacy - A Solo Kingdom Building Card Game (Review)*
+  - `o4tmiD22BLI` 2025-04-27 *Judgemint of the Realm Lords - Runebound in Your Pocket! (Review)*
+  - `UUUH5xnM-Mc` 2025-03-26 *DungeonQuest (FFG and GW) - Top 10 Reevaluation*
+  - `hX5lVJXMurI` 2025-03-16 *Quest for the Lost Pixel - A Top 10 Reevaluation*
+  - `-pXsceBZ-uI` 2025-03-05 *ZomBN1 - A Game all About Brighton, With Zombies!*
+- Transcripts **10/10, 0 permanent, 0 transient** (23.6k–67.7k chars). Moved to `archive/transcripts/`. No permanent failures, so no ledger file was created.
+- Rate manifest `archive/posts/post_results_20261010_030405.json` (`kind: transcript_backfill`, 10 entries). The guard now reads **10/15** until 03:04 UTC 2026-10-11, so a fresh upload in that window has 5 of headroom.
+- No posts, no Keeper post, no queue or `status` changes. Archive dashboards rebuilt and validated.
+- **69 imported videos still missing local transcripts** (down from 79). Archive: 994 transcripts, 1063 posts.
+
 ## 2026-10-10 — Queue empty — no import (skipped)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (stats_history, insights); tree clean, no uncommitted slates. Rate limit at 00:33 UTC: **7/15 across 2 runs**, so 8 of headroom (unused). `test_config.py` OK. `check_integrity.py` WARN, exit 1 (79 missing local transcripts, 0 errors).
