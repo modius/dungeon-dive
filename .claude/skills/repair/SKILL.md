@@ -63,10 +63,7 @@ Incrementally fix known data problems in the Dungeon Dive archive.
 
    `--config` is optional: without it only the offline fixes run (a missing `video_date`), and records needing the API are reported and skipped. `--limit N` caps the run (default 0 = no limit); re-run to continue.
 
-5. Run transcript recovery (HIGH risk — uses youtube-transcript-api):
-   ```bash
-   python3 scripts/repair_data.py transcripts --limit 5  # Conservative default
-   ```
+5. Transcript recovery: **use `/backfill-transcripts`, not `repair_data.py transcripts`.** The subcommand checks the guard at the default 20 rather than 15, writes no `post_results_*.json` rate manifest (so the guard never counts its fetches), and re-requests captionless videos on every run. `/backfill-transcripts` fixes all three, and `/import` already calls it on idle days.
 
 ## Subcommands
 
@@ -79,15 +76,14 @@ Incrementally fix known data problems in the Dungeon Dive archive.
 | timestamps | Low | Discourse API |
 | posts | Low | Discourse API |
 | normalize | Low | Discourse API (optional) — idempotent; reports clean when done |
-| transcripts | **HIGH** | youtube-transcript-api |
+| transcripts | **HIGH** | youtube-transcript-api — superseded by `/backfill-transcripts`, don't use |
 
 ## Rules
 - Always run `report` first to see what needs fixing
 - Always run `cleanup` — it is free, and skipping it is why `pending_imports/` silently grows
 - `--dry-run` is a **global** flag and must come *before* the subcommand: `repair_data.py --dry-run cleanup`, **not** `repair_data.py cleanup --dry-run`. The latter exits 2 with "unrecognized arguments" having done nothing. Same for `--index`, `--archive-dir` and `--pending-dir`; only `--config` and `--limit` are subcommand args and go after.
-- The `transcripts` subcommand checks rate limits before starting
-- Default `--limit 5` for transcripts is intentionally conservative
-- Run safe subcommands freely; run `transcripts` only when there's headroom
+- Don't run the `transcripts` subcommand; recover transcripts with `/backfill-transcripts`
+- Run safe subcommands freely
 - `normalize` rewrites files in `archive/posts/` — the permanent record. **Always `--dry-run` first** and check the target count and skip count look sane before the real run.
 - A full `normalize` pass makes ~450 Discourse requests and takes several minutes. That is fine (Discourse has no practical limit at current volumes) but run it in the foreground and let it finish; a half-run archive is harder to reason about than an un-run one. `--limit` exists for deliberate incremental passes.
 - Never "fix" a legacy post by writing content that was not published — no invented discussion questions, no rewritten summaries. `normalize` recovers what went out; it does not improve it.

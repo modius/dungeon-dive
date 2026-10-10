@@ -14,9 +14,9 @@ Run from a Claude Code session in this repo:
 2. **`/plan-batch`** — proposes 2–4 candidate batches; on user pick, writes explicit `video_ids` slates into `series_queue.json`. **Never imports.**
 3. **`/import`** — drains the queue: fetch, transcribe, post per-video, compose Keeper update, update dashboards, commit, push. **One Keeper post per run.**
 
-If the queue is already populated, skip `/plan-batch`. If queue is empty AND no priority videos in last 14 days, `/import` skips cleanly and notes "queue empty — run /plan-batch" in CHANGELOG.
+If the queue is already populated, skip `/plan-batch`. If queue is empty AND no priority videos in last 14 days, `/import` notes "queue empty — run /plan-batch" in CHANGELOG and hands the idle fetch budget to **`/backfill-transcripts`** (up to 10 imported videos missing from `archive/transcripts/`; nothing is posted).
 
-Utility skills: `/fetch-stats`, `/analyze`, `/channel-insights` (subsets of `/refresh`); `/repair` for incremental data fixes.
+Utility skills: `/fetch-stats`, `/analyze`, `/channel-insights` (subsets of `/refresh`); `/repair` for incremental data fixes; `/backfill-transcripts` to recover missing archive transcripts (also run by `/import` on idle days).
 
 Skill definitions live in `.claude/skills/*/SKILL.md`. Read them when modifying behaviour — `import/SKILL.md` is the most prescriptive.
 
@@ -35,13 +35,15 @@ The system is mostly stateless scripts coordinating around a few JSON files. Und
 | `config.json` | user | API keys (YouTube, Discourse) | **no** (gitignored) |
 | `pending_imports/`, `ready_to_post/` | transient working dirs | transcript + post staging | **no** (gitignored except `.gitkeep`) |
 | `archive/transcripts/`, `archive/posts/` | post-success archive | committed permanent record | **yes** |
+| `archive/transcript_backfill.json` | `/backfill-transcripts` | `unavailable` map of imported videos confirmed captionless, so backfill skips them | **yes** |
 | `keeper-posts/keeper-*.md` | per-batch Keeper post bodies | committed | **yes** |
 | `docs/*.html` | dashboards | `index`/`health` by `update_dashboard.py`; `insights` by `build_insights.py`; `content` (the showcase) by `build_showcase.py` | **yes** |
 
 **Selection logic in `/import` (decision tree, in order):**
 1. **Priority** — pending video in last 14 days → ad-hoc batch (cap 12), exit after posting; queue waits one cycle.
 2. **Queue drain** — first `videos_per_batch` IDs from `active_series[rotation_index].video_ids`, drift-checked against `video_index.json` (skip non-pending).
-3. **Skip** — log empty-queue note to CHANGELOG, exit.
+3. **Transcript backfill** — log empty-queue note, then invoke `/backfill-transcripts`, which fetches up to `min(10, headroom)` imported-but-untranscribed videos (newest first) into `archive/transcripts/`. Captionless ones go in `archive/transcript_backfill.json` so they aren't retried. A hand-written `post_results_*.json` makes the fetches count against the rate guard. Interactive runs with pending videos prompt for `/plan-batch` instead.
+4. **Skip** — nothing to backfill, or headroom < 3: exit.
 
 Priority videos never mutate `series_queue.json`. Interactive user overrides also skip queue mutation.
 
