@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-12 — priority drop: 1 video (Deep Rock Galactic — A Look at the Expansions)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` runs, the 2026-10-10 transcript backfill, and the new `/backfill-transcripts` step in this skill. The tree was otherwise clean, with no uncommitted slates. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (0 errors).
+- Rate limit at 22:08 UTC 2026-10-11: **0/15**, so **15 of headroom**.
+- `fetch_channel_videos.py` found **1 new upload**: `S79d4NIt17U` "Deep Rock Galactic - A Look at the Expansions" (2026-10-11). It falls inside the 14-day window, so this run is an **ad-hoc priority batch**. The queue was already empty (`active_series` []), and this upload was the only pending video, so there was nothing to backfill around it.
+- Transcript fetched 1/1, 0 failures. Post: 245-word summary, with `video_date`/`title` copied from the index, and validation passed. `batch_post.py` ran clean: t/2322.
+- **Transcript name corrections:** none needed (the captions were auto-punctuated and spelled Mood Publishing, Korlok Tyrant Weed, Bulk Detonator and Drilldozer correctly). Sidearm and weapon names were left out of the summary.
+- Keeper post **"Further Down the Rock"** (register B, ~120 words of authored prose) → [t/1170/172](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/172). Deeper stacks: t/2229 (the Deluxe 2nd Edition base review), t/2122 (Stalagbite, the game that prompted viewers to ask about DRG), t/1888 (Zombicide Invader, the franchise Daniel says DRG replaced).
+- Rate budget after this run: **1/15**.
+- Index now: **1064 imported**, 0 pending, 13 no_transcript (1077 total). Archive: 995 transcripts, 1064 posts. **The queue is empty and nothing is pending**, so the next non-priority run will backfill transcripts.
+
 ## 2026-10-10 (second run) — Transcript backfill (10 recovered)
 
 - First run of the new `/backfill-transcripts` skill, started by hand (standalone). Pre-flight: `git pull` up to date, tree clean. Rate limit at 03:04 UTC: **0/15**, so **15 of headroom** (the 2026-10-09 runs had aged out). Slate `min(10, 15)` = **10**. `check_integrity.py` WARN, exit 1 (79 imported videos missing local transcripts, 0 errors). 0 pending videos, so no import work was displaced.
