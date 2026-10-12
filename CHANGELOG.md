@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-12 (second run) — Queue empty — transcript backfill (10 recovered)
+
+- Pre-flight: `git pull` up to date, tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 01:44 UTC: **1/15 across 1 run** (the 22:08 UTC Deep Rock Galactic priority drop), so **14 of headroom**. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (69 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1077 total, unchanged). No pending video in the last 14 days, so no priority batch. `series_queue.json`: `active_series` empty, `rotation_index` 0.
+- queue empty — run /plan-batch. With 0 pending videos there is nothing to plan, so per branch 3 the idle budget went to `/backfill-transcripts` (`headroom=14, from-import`); slate `min(10, 14)` = **10**.
+- Attempted (newest first; 69 eligible, `archive/transcript_backfill.json` ledger still absent):
+  - `Nz2xOcIryF4` 2025-01-01 *Robinson Crusoe - A casual discussion of a board game blind spot*
+  - `9gFQ9rFMKEA` 2024-12-29 *The Best Games of 2024 (solo RPGs, dungeon crawls, and adventure games)*
+  - `DPEZ-FtI4UI` 2024-12-18 *Caves of Qud - A Digital Dive Let's Play and Discussion*
+  - `ZE3jHXXiSBY` 2024-12-15 *The 7th Citadel - Better than 7th Continent (Review)*
+  - `fbZea8wkoe8` 2024-12-11 *Recent RPG Acquisitions (Solo and traditional RPG show and tell)*
+  - `vWTTG9XlMoY` 2024-12-01 *Tricube Tales - The Best Ultra-Rules-Lite RPG for Beginners*
+  - `H5yOaNKxZ-4` 2024-11-24 *Four Against Darkness - Updated Buyer's Guide for 2024*
+  - `JNuRoWbolfs` 2024-11-17 *Korg and Bilge - two great solo RPGs*
+  - `un8Mt5f-mUE` 2024-11-10 *Dead Cells - The Rogue-Lite Board Game (Review)*
+  - `V6d2Dc1l7BA` 2024-11-06 *The Dungeon Dive Holiday Gift Guide*
+- Transcripts **10/10, 0 permanent, 0 transient**. Moved to `archive/transcripts/`. No permanent failures, so still no ledger file.
+- Rate manifest `archive/posts/post_results_20261012_014508.json` (`kind: transcript_backfill`, 10 entries). The guard now reads **11/15** until 22:08 UTC today, then 10/15 until 01:45 UTC 2026-10-13, so a fresh upload in that window has 4–5 of headroom.
+- No posts, no Keeper post, no queue or `status` changes. Archive dashboards rebuilt and validated.
+- **59 imported videos still missing local transcripts** (down from 69). Archive: 1005 transcripts, 1064 posts.
+
 ## 2026-10-12 — priority drop: 1 video (Deep Rock Galactic — A Look at the Expansions)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` runs, the 2026-10-10 transcript backfill, and the new `/backfill-transcripts` step in this skill. The tree was otherwise clean, with no uncommitted slates. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (0 errors).
