@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-13 — priority drop aborted: transcript fetch blocked — runner IP issue
+
+- Pre-flight: `git pull` up to date, tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 21:58 UTC 2026-10-12: **11/15 across 2 runs** (1 at 2026-10-11T22:08, the Deep Rock Galactic drop; 10 at 2026-10-12T01:45, the transcript backfill), so **4 of headroom**. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (59 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py` found **1 new upload**: `aetKUNqLVbE` "A Normal Guy Plays Dark Souls - Part 13 - I, Invader of the Painted World!" (2026-10-12). It falls inside the 14-day window, so this was an **ad-hoc priority batch** (queue empty, `active_series` [], `rotation_index` 0).
+- `batch_fetch_transcripts.py`: **0 fetched, 0 permanent, 1 transient**, exit 2. `error_type: IpBlocked`. The fetch landed **20.2 h after the 10-video backfill burst**, inside the 13–23 h band where the block has bitten before. This is the trade-off `/backfill-transcripts` step 1 accepts: a 10-video backfill can push a fresh upload back a day. Yesterday's note that "a fresh upload in that window has 4–5 of headroom" turned out to be true of the guard's count and false of YouTube's block.
+- **No retry or diagnostic probe.** With an explicit `IpBlocked` inside the band, the probes could only extend the block. `/import` step 7 now says to skip them in that case.
+- **transcript fetch blocked — runner IP issue.** Aborted cleanly. `aetKUNqLVbE` stays `pending` (not marked `no_transcript`) and will be the next run's priority batch. No posts, no Keeper post, no dashboard rebuild, no `series_queue.json` change. Committed `video_index.json` (new upload record), this CHANGELOG, and the run's integrity report.
+- The backfill burst ages out at **01:45 UTC 2026-10-13**. Retry no earlier than the next scheduled run, ideally ≥24 h after that burst.
+- Index now: **1064 imported**, 1 pending, 13 no_transcript (1078 total). Archive: 1005 transcripts, 1064 posts.
+
 ## 2026-10-12 (second run) — Queue empty — transcript backfill (10 recovered)
 
 - Pre-flight: `git pull` up to date, tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 01:44 UTC: **1/15 across 1 run** (the 22:08 UTC Deep Rock Galactic priority drop), so **14 of headroom**. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (69 imported videos missing local transcripts, 0 errors).

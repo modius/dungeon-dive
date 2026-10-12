@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-10-12T01:44:13.473702+00:00",
+  "last_fetched": "2026-10-12T21:58:40.925950+00:00",
   "videos": [
+    {
+      "video_id": "aetKUNqLVbE",
+      "title": "A Normal Guy Plays Dark Souls - Part 13 - I, Invader of the Painted World!",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-10-12T16:00:18Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/aetKUNqLVbE/hqdefault.jpg",
+      "status": "pending",
+      "discourse_topic_id": null,
+      "imported_at": null
+    },
     {
       "video_id": "S79d4NIt17U",
       "title": "Deep Rock Galactic - A Look at the Expansions",
