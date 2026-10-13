@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-14 (second run) — Queue empty — transcript backfill (10 recovered)
+
+- Pre-flight: `git pull` up to date, tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 23:54 UTC 2026-10-13: **1/15 across 1 run** (the 23:42 UTC Dark Souls Part 13 priority drop), so **14 of headroom**. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (59 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1078 total). No pending videos at all, so no priority batch. `series_queue.json`: `active_series` empty, `rotation_index` 0.
+- queue empty — run /plan-batch. With 0 pending videos there is nothing to plan, so per branch 3 the idle budget went to `/backfill-transcripts` (`headroom=14, from-import`); slate `min(10, 14)` = **10**.
+- Attempted (newest first; 59 eligible, `archive/transcript_backfill.json` ledger still absent):
+  - `wuZgRtutoHQ` 2024-11-03 *Ballads & Tales - Why I am Backing (Crowdfund preview)*
+  - `rLfvnvBj8Ls` 2024-10-31 *Dragons Down: Desolation - expanding the realm and scenario brain storming*
+  - `A4wr-iI2hJU` 2024-10-20 *Dragons Down - An Adventure for the Ages (Review)*
+  - `eYY-goMG0N0` 2024-10-16 *Warhammer Quest - Gifts from Littlemonk*
+  - `8_fxIwJi8eI` 2024-10-13 *Kreel Manor: The Dungeon Crawl Card Game (review)*
+  - `CD6KcQMdzfc` 2024-10-09 *My thoughts on AI art (a totally non-controversial topic)*
+  - `DDd5prelU6A` 2024-10-02 *Dungeon Degenerates - a casual discussion on some new expansions*
+  - `OYxpHMuv29k` 2024-09-29 *Dark Venture - taking a look at the new expansions*
+  - `RyckAyrt7xQ` 2024-09-24 *Why I am backing Story of Many - an open world sandbox adventure game*
+  - `t1kj63890o8` 2024-09-22 *Star Wars - The Mandalorian Adventures (review)*
+- Transcripts **10/10, 0 permanent, 0 transient**. Moved to `archive/transcripts/`. No permanent failures, so still no ledger file.
+- Rate manifest `archive/posts/post_results_20261013_235531.json` (`kind: transcript_backfill`, 10 entries). The guard now reads **11/15** until 23:42 UTC 2026-10-14, then 10/15 until 23:55 UTC. A fresh upload before then may hit the ~24 h block and slip a day.
+- No posts, no Keeper post, no queue or `status` changes. Archive dashboards rebuilt and validated.
+- **49 imported videos still missing local transcripts** (down from 59). Archive: 1016 transcripts, 1065 posts.
+
 ## 2026-10-14 — priority drop: 1 video (A Normal Guy Plays Dark Souls, Part 13)
 
 - Pre-flight: `git pull` up to date, tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 23:41 UTC 2026-10-13: **0/15 across 0 runs**, so **15 of headroom**. The 2026-10-13 `IpBlocked` abort recorded no fetches, and the 10-video backfill aged out at 01:45 UTC 2026-10-13. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (59 imported videos missing local transcripts, 0 errors).
