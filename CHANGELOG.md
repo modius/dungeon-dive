@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-14 — priority drop: 1 video (A Normal Guy Plays Dark Souls, Part 13)
+
+- Pre-flight: `git pull` up to date, tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 23:41 UTC 2026-10-13: **0/15 across 0 runs**, so **15 of headroom**. The 2026-10-13 `IpBlocked` abort recorded no fetches, and the 10-video backfill aged out at 01:45 UTC 2026-10-13. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (59 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1078 total). Yesterday's blocked upload `aetKUNqLVbE` "A Normal Guy Plays Dark Souls - Part 13 - I, Invader of the Painted World!" (2026-10-12) is still pending inside the 14-day window, so this run was an **ad-hoc priority batch** (queue empty, `active_series` [], `rotation_index` 0).
+- Transcript fetched **1/1, 0 failures**. The fetch landed ~25.7 h after the blocked attempt and ~46 h after the backfill burst, so the block had lifted.
+- Post: 236-word summary, with `video_date`/`title` copied from the index, and validation passed. `batch_post.py` ran clean: t/2324.
+- **Transcript name corrections:** "baron necky knight" → Berenike Knight, "Dusk of Ulles"/"Ullesille" → Dusk of Oolacile, "Halbird" → halberd, "Guts great sword" → the Greatsword (Guts's sword).
+- Keeper priority drop posted: [1170/173](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/173) (`keeper-posts/keeper-priority-2026-10-14.md`). From the deeper stacks: Part 12 (t/2288), Rune (t/1832), Hobbycast E1 FromSoftware ranking (t/2011).
+- No `series_queue.json` change (priority run). Archive dashboards rebuilt and validated.
+- Index now: **1065 imported**, 0 pending, 13 no_transcript (1078 total). Archive: 1006 transcripts, 1065 posts.
+
 ## 2026-10-13 — priority drop aborted: transcript fetch blocked — runner IP issue
 
 - Pre-flight: `git pull` up to date, tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 21:58 UTC 2026-10-12: **11/15 across 2 runs** (1 at 2026-10-11T22:08, the Deep Rock Galactic drop; 10 at 2026-10-12T01:45, the transcript backfill), so **4 of headroom**. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (59 imported videos missing local transcripts, 0 errors).
