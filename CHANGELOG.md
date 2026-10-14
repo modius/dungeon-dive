@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-15 — priority drop: 1 video (Keeper of the Hidden Treasure: Zombie Game)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (insights + `stats_history/2026-10.csv`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 21:38 UTC 2026-10-14: **11/15 across 2 runs**, so **4 of headroom**. `test_config.py` OK. `check_integrity.py` WARN (49 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **1 new upload**, `xl-iPpFgCRM` "Keeper of the Hidden Treasure: Zombie Game - A Look at the Rarest Dungeon Crawl I Own" (2026-10-14), so this was an **ad-hoc priority batch** (queue empty, `rotation_index` 0).
+- **Waited 78 min before fetching despite enough headroom.** The 10-video backfill (23:55 UTC 2026-10-13) was 21.7 h old, inside the 13–23 h band where 2026-10-13's 20.2 h fetch hit `IpBlocked`. A background wait held the fetch until 22:56 UTC (~23.0 h, past the 22.8 h return that succeeded on 2026-09-12), and the guard re-check still showed 4 of headroom.
+- Transcript fetched **1/1, 0 failures** at ~23.0 h after a 10-video burst.
+- Post: 240-word summary, with `video_date`/`title` copied from the index, and validation passed. `batch_post.py` ran clean: t/2327. The illustrator's and designer's names were left out because the auto-captions looked unreliable.
+- Keeper priority drop (~130 words authored prose): [1170/174](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/174). Deeper stacks: TSR's The Classic Dungeon (t/1857), Dark World (t/1859) and DungeonQuest Top 10 Reevaluation (t/605). Daniel compares the game to all three in the video.
+- `import/SKILL.md` step 2 now says to wait toward the 23 h mark when headroom suffices but the fetch would land in the 13–23 h band.
+- Archive: 1017 transcripts, 1066 posts. Archive dashboards rebuilt and validated. No queue changes.
+
 ## 2026-10-14 (second run) — Queue empty — transcript backfill (10 recovered)
 
 - Pre-flight: `git pull` up to date, tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 23:54 UTC 2026-10-13: **1/15 across 1 run** (the 23:42 UTC Dark Souls Part 13 priority drop), so **14 of headroom**. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (59 imported videos missing local transcripts, 0 errors).
