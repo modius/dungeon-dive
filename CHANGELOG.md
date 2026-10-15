@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-16 — Queue empty — transcript backfill (10 recovered)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (insights, `stats_history/2026-10.csv`, `video_classification.json`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 22:20 UTC 2026-10-15: **1/15 across 1 run** (the 22:57 UTC 2026-10-14 Zombie Game priority drop), so **14 of headroom**. The 2026-10-13 10-video backfill had already aged out, so the fetch was outside the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (49 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1079 total; 1066 imported, 13 no_transcript). No pending videos, so no priority batch. `series_queue.json`: `active_series` empty, `rotation_index` 0.
+- queue empty — run /plan-batch. With 0 pending videos there is nothing to plan, so per branch 3 the idle budget went to `/backfill-transcripts` (`headroom=14, from-import`); slate `min(10, 14)` = **10**.
+- Attempted (newest first; 49 eligible, `archive/transcript_backfill.json` ledger still absent):
+  - `p23Rm9i_EIg` 2024-09-18 *Moonring - Old School Ultima-like -  a digital dive let's play and discussion*
+  - `Z12fVM_cnaI` 2024-09-15 *Hellbringer - Diablo the card game (Review)*
+  - `-27X7n7IstM` 2024-09-11 *The Crows of Coppershell Bay - A Tiny Tin Tale (review)*
+  - `4Q1Xe92xmwI` 2024-09-08 *Pauper's Ladder - 2nd Edition - an unboxing of my favorite adventure game*
+  - `R4hO35nd_OI` 2024-09-04 *Castaway and Ronin - total conversion mods of Mork Borg (solo RPG)*
+  - `xs2J2KW1q8Q` 2024-09-01 *Flying Ostriches & Floating Castles (Joust - the Solo RPG)*
+  - `AKJRVoJu_Q4` 2024-08-28 *Lord of the Rings: Adventure to Mount Doom (Review)*
+  - `q_TknmNwvqA` 2024-08-25 *Spacers: Space Adventure Board Game (Xia: Faster. Smaller. Better?)*
+  - `7m_UlzkGLlA` 2024-08-21 *A Guide to Solo Analog Horror (Solo RPG)*
+  - `dtoZraGBx54` 2024-08-18 *Arkham Horror 2nd Edition: 20 years later, still a good game?*
+- Transcripts **10/10, 0 permanent, 0 transient**. Moved to `archive/transcripts/`. No permanent failures, so still no ledger file.
+- Rate manifest `archive/posts/post_results_20261015_222138.json` (`kind: transcript_backfill`, 10 entries). The guard now reads **11/15** until 22:57 UTC 2026-10-15, then 10/15 until the burst ages out at 22:21 UTC 2026-10-16. A fresh upload fetched 13–23 h from now (11:21–21:21 UTC 2026-10-16) is in the block band and should wait for the 23 h mark.
+- No posts, no Keeper post, no queue or `status` changes. Archive dashboards rebuilt and validated.
+- **39 imported videos still missing local transcripts** (down from 49). Archive: 1027 transcripts, 1066 posts.
+
 ## 2026-10-15 — priority drop: 1 video (Keeper of the Hidden Treasure: Zombie Game)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (insights + `stats_history/2026-10.csv`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 21:38 UTC 2026-10-14: **11/15 across 2 runs**, so **4 of headroom**. `test_config.py` OK. `check_integrity.py` WARN (49 imported videos missing local transcripts, 0 errors).
