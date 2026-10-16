@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-10-16 — Queue empty — transcript backfill (5 recovered)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (insights, `stats_history/2026-10.csv`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 21:27 UTC 2026-10-16: **10/15 across 1 run** (the 22:21 UTC 2026-10-15 10-video backfill), so **5 of headroom**. That burst was 23.1 h old at fetch time, just past the 23 h mark, so the fetch went ahead without waiting. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (39 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1079 total; 1066 imported, 13 no_transcript). No pending videos, so no priority batch. `series_queue.json`: `active_series` empty, `rotation_index` 0.
+- queue empty — run /plan-batch. With 0 pending videos there is nothing to plan, so per branch 3 the idle budget went to `/backfill-transcripts` (`headroom=5, from-import`); slate `min(10, 5)` = **5**.
+- Attempted (newest first; 39 eligible, `archive/transcript_backfill.json` ledger still absent):
+  - `kSbp6GNfK7Y` 2024-08-11 *Three ways to create a galaxy for your solo RPGs*
+  - `5MHf5WPH1v4` 2024-07-31 *A Science Fiction Double Feature - Solus:Lost and Pocket Sci-Fi (solo sci-fi games)*
+  - `1uRRhugMzlE` 2024-07-26 *Arkham Horror (1987) - Just the Review*
+  - `6tcSoXsMs9c` 2024-07-21 *Arkham Horror (1987) - Where the Madness Began*
+  - `Sl5sYEh_UoU` 2024-07-17 *Civitas Nihilium - Solve crimes. In the future. (the best game I've played so far this year)*
+- Transcripts **5/5, 0 permanent, 0 transient**. Moved to `archive/transcripts/`. No permanent failures, so still no ledger file.
+- Rate manifest `archive/posts/post_results_20261016_212811.json` (`kind: transcript_backfill`, 5 entries). The guard now reads **15/15** until the 2026-10-15 burst ages out at 22:21 UTC 2026-10-16, then 5/15 until 21:28 UTC 2026-10-17. A fresh upload before 22:21 UTC tonight is refused by the guard and waits a cycle.
+- No posts, no Keeper post, no queue or `status` changes. Archive dashboards rebuilt and validated.
+- **34 imported videos still missing local transcripts** (down from 39). Archive: 1032 transcripts, 1066 posts.
+
 ## 2026-10-16 — Queue empty — transcript backfill (10 recovered)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (insights, `stats_history/2026-10.csv`, `video_classification.json`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 22:20 UTC 2026-10-15: **1/15 across 1 run** (the 22:57 UTC 2026-10-14 Zombie Game priority drop), so **14 of headroom**. The 2026-10-13 10-video backfill had already aged out, so the fetch was outside the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (49 imported videos missing local transcripts, 0 errors).
