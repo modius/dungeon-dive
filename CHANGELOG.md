@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-19 — priority drop: 1 video (Mask of the Sorcerer and XNOO #1)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (insights + `stats_history/2026-10.csv`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 00:08 UTC 2026-10-19: **0/15 across 0 runs**, so **15 of headroom**. The last fetch (the 5-video backfill, 21:28 UTC 2026-10-16) was ~51 h old, well clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (34 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **1 new upload**, `6Wh_Rf1B3lw` "Mask of the Sorcerer and XNOO #1 - The Sword & Sorcery Saga" (2026-10-18), so this was an **ad-hoc priority batch** (queue empty, `rotation_index` 0).
+- Transcript fetched **1/1, 0 failures**.
+- Post: 240-word summary, with `video_date`/`title` copied from the index, and validation passed. `batch_post.py` ran clean: t/2329. The captions mangle the author's name and the anthology's title ("Schwitzer", "Zenu"), so the summary uses Darrell Schweitzer and the title's *XNOO*, and it leaves out the anthology's publisher, which is named only as "the publishers of The Black Sword Hack".
+- Keeper priority drop `keeper-posts/keeper-priority-2026-10-19.md` → [1170/175](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/175). It runs ~115 words of authored prose. The deeper stacks are t/1165 (Top Tier Sword and Sorcery fiction) and t/1295 (Questing Fiction), the two archived videos where Daniel praises Schweitzer's *We Are All Legends*, which this video uses as its yardstick.
+- No queue change (priority run). Archive dashboards rebuilt and validated. Archive: 1033 transcripts, 1067 posts.
+
 ## 2026-10-16 — Queue empty — transcript backfill (5 recovered)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (insights, `stats_history/2026-10.csv`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 21:27 UTC 2026-10-16: **10/15 across 1 run** (the 22:21 UTC 2026-10-15 10-video backfill), so **5 of headroom**. That burst was 23.1 h old at fetch time, just past the 23 h mark, so the fetch went ahead without waiting. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (39 imported videos missing local transcripts, 0 errors).
