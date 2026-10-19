@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-19 — Queue empty — transcript backfill (10 recovered)
+
+- Pre-flight: `git pull` already up to date (run started straight after the Mask of the Sorcerer priority drop, `5497bc4`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 00:10 UTC 2026-10-19: **1/15 across 1 run** (that 1-video drop, 00:08 UTC), so **14 of headroom**. No multi-video run within the last 23 h, so nothing in the block band. `test_config.py` OK. `check_integrity.py` WARN (34 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1080 total; 1067 imported, 13 no_transcript). No pending videos, so no priority batch. `series_queue.json`: `active_series` empty, `rotation_index` 0.
+- queue empty — run /plan-batch. With 0 pending videos there is nothing to plan, so per branch 3 the idle budget went to `/backfill-transcripts` (`headroom=14, from-import`); slate `min(10, 14)` = **10**.
+- Attempted (newest first; 34 eligible, `archive/transcript_backfill.json` ledger still absent):
+  - `9yg2AIYdu6E` 2024-07-14 *An interview with Jerry Hawthorne - From Heroscape to Wandering Galaxy*
+  - `keYeekasjI8` 2024-06-23 *Top 10 Dungeon Crawls and Adventure Games - The Runners Up*
+  - `eM2S4pWeczs` 2024-06-19 *A guide to solo, analog, dungeon crawls (solo RPG)*
+  - `nMQCA_C9zoQ` 2024-06-09 *Top 10 Adventure Board Games - 2024 edition*
+  - `KqZv27fFQlQ` 2024-04-14 *The Top 10 Dungeon Crawls of all Time (2024 edition)*
+  - `jBZnliX8R7M` 2024-02-04 *Top 10 Works of Fantasy Fiction for Dungeon Divers*
+  - `GqRwtWVepYw` 2024-01-24 *Procedures to Discover the Path Ahead / How to Print a Zine / Let's Play (and stealth design diary)*
+  - `MWkhT5GG75k` 2024-01-14 *A conversation with Alex T. of Blackoath Entertainment (solo RPG)*
+  - `NELsP8DaEa8` 2023-12-17 *Mork Manual - Flip through, review, and session 0 (solo RPG) (Mork Borg)*
+  - `K4YFVRGWGEY` 2023-09-28 *Top 5 Games with Unique Settings*
+- Transcripts **10/10, 0 permanent, 0 transient**. Moved to `archive/transcripts/`. No permanent failures, so still no ledger file.
+- Rate manifest `archive/posts/post_results_20261019_001100.json` (`kind: transcript_backfill`, 10 entries). The guard now reads **11/15** until 00:08 UTC 2026-10-20, then 10/15 until 00:11 UTC 2026-10-20. A fresh upload fetched 13–23 h from now (13:11–23:11 UTC 2026-10-19) is in the block band and should wait for the 23 h mark.
+- No posts, no Keeper post, no queue or `status` changes. Archive dashboards rebuilt and validated.
+- **24 imported videos still missing local transcripts** (down from 34). Archive: 1043 transcripts, 1067 posts.
+
 ## 2026-10-19 — priority drop: 1 video (Mask of the Sorcerer and XNOO #1)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (insights + `stats_history/2026-10.csv`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 00:08 UTC 2026-10-19: **0/15 across 0 runs**, so **15 of headroom**. The last fetch (the 5-video backfill, 21:28 UTC 2026-10-16) was ~51 h old, well clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (34 imported videos missing local transcripts, 0 errors).

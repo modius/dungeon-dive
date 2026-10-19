@@ -1,0 +1,100 @@
+{
+  "run_at": "2026-10-19T00:10:38.954848+00:00",
+  "overall_status": "warn",
+  "exit_code": 1,
+  "error_count": 0,
+  "warning_count": 2,
+  "checks": {
+    "index_integrity": {
+      "status": "pass",
+      "issues": [],
+      "counts": {
+        "total": 1080,
+        "imported": 1067,
+        "pending": 0,
+        "no_transcript": 13,
+        "skipped": 0
+      },
+      "duplicates": [],
+      "missing_fields": [],
+      "imported_without_topic_id": [],
+      "imported_without_imported_at": []
+    },
+    "archive_files": {
+      "status": "warn",
+      "issues": [
+        "0 imported videos missing post files, 34 missing transcripts"
+      ],
+      "post_files_count": 1067,
+      "transcript_files_count": 1033,
+      "transcript_files_legacy": 0,
+      "imported_count": 1067,
+      "missing_posts": [],
+      "missing_transcripts": [
+        "9yg2AIYdu6E",
+        "keYeekasjI8",
+        "eM2S4pWeczs",
+        "nMQCA_C9zoQ",
+        "KqZv27fFQlQ",
+        "jBZnliX8R7M",
+        "GqRwtWVepYw",
+        "MWkhT5GG75k",
+        "NELsP8DaEa8",
+        "K4YFVRGWGEY",
+        "SGOEY0I_FQA",
+        "flbyvShpL18",
+        "9hgzA60ZGZg",
+        "1gAj8idUtrk",
+        "MA41DUCQWfw",
+        "KVaKaf9FX5I",
+        "gpKioDijRD4",
+        "B0IPEMdrCRA",
+        "iYHt1pdScK0",
+        "I-S-0EO3-FA",
+        "zjYgzIlRmOk",
+        "wSEMUoR4FS4",
+        "IJdPXXMpYPk",
+        "n5WXv528CII",
+        "sQH3xPVic6Y",
+        "nDLFzy9hIow",
+        "KOedI8Dr__Y",
+        "f8fN8Uqbb8s",
+        "oDeAAnpEEXU",
+        "6VUBa5NSLU8",
+        "TwfHRcdWHRg",
+        "TEqu2JH5dYc",
+        "G76WtaecxB4",
+        "SeWXiEIm9oI"
+      ],
+      "orphan_posts": [],
+      "orphan_transcripts": []
+    },
+    "file_validity": {
+      "status": "pass",
+      "issues": [],
+      "posts_checked": 1067,
+      "transcripts_checked": 1033,
+      "json_errors": [],
+      "empty_transcripts": []
+    },
+    "naming_anomalies": {
+      "status": "pass",
+      "issues": [],
+      "legacy_files": []
+    },
+    "dashboard_sync": {
+      "status": "warn",
+      "issues": [
+        "Could not parse stats from dashboard"
+      ],
+      "mismatches": {}
+    },
+    "discourse_verification": {
+      "status": "skipped",
+      "issues": []
+    }
+  },
+  "recommendations": [
+    "34 imported videos missing local transcripts"
+  ]
+}
