@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-20 — Queue empty — transcript backfill (10 recovered)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (`fc8874c`: insights, `stats_history/2026-10.csv`, `video_classification.json`). The tree was clean apart from the untracked image dropbox, and there were no uncommitted slates. Rate limit at 03:18 UTC 2026-10-20: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 10-video backfill at 00:11 UTC 2026-10-19) was ~27 h old, clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (24 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1080 total: 1067 imported, 13 no_transcript). No pending videos, so no priority batch. `series_queue.json`: `active_series` empty, `rotation_index` 0.
+- queue empty — run /plan-batch. With 0 pending videos there is nothing to plan, so per branch 3 the idle budget went to `/backfill-transcripts` (`headroom=15, from-import`). The slate was `min(10, 15)` = **10**.
+- Attempted (newest first, from 24 eligible; the `archive/transcript_backfill.json` ledger is still absent):
+  - `SGOEY0I_FQA` 2023-07-18 *Top 10 Solo Games (board and card games)*
+  - `flbyvShpL18` 2023-05-31 *A conversation all about Rogue Dungeon*
+  - `9hgzA60ZGZg` 2023-04-02 *A Conversation with Jason Glover: Iron Helm! Game Design! Solo Gaming! And More!*
+  - `1gAj8idUtrk` 2023-02-10 *An Introduction to the Hex Flower Game Engine - a versatile tool for RPGs*
+  - `MA41DUCQWfw` 2023-01-31 *Rodger Deering stops by the Dungeon Dive to talk about Dungeon Crusade and more! Give away!*
+  - `KVaKaf9FX5I` 2023-01-27 *A Conversation with Geek Gamers (solo RPG Friday)*
+  - `gpKioDijRD4` 2023-01-20 *An Interview with Stoneaxe Tabletop Gaming - Solo RPGs, Music, Old stuff, and more*
+  - `B0IPEMdrCRA` 2022-11-17 *Interview with Rob Lemon! Dark Venture! Battle of the Ancients! Galactic Keep! And More!*
+  - `iYHt1pdScK0` 2022-08-21 *A Beginner's Guide to Solo Role Playing (solo RPGs), by the Dungeon Dive*
+  - `I-S-0EO3-FA` 2022-07-28 *Realm Fables - Part 2 - More Tools for Generating Your World (especially a library)*
+- Transcripts **10/10, 0 permanent, 0 transient**, moved to `archive/transcripts/`. There were no permanent failures, so there is still no ledger file.
+- Rate manifest `archive/posts/post_results_20261020_031831.json` (`kind: transcript_backfill`, 10 entries). The guard now reads **10/15** until 03:18 UTC 2026-10-21. A fresh upload fetched 13–23 h from now (16:18 UTC 2026-10-20 to 02:18 UTC 2026-10-21) is in the block band and should wait for the 23 h mark.
+- No posts, no Keeper post, no queue or `status` changes. Archive dashboards rebuilt and validated.
+- **14 imported videos still missing local transcripts** (down from 24). Archive: 1053 transcripts, 1067 posts.
+
 ## 2026-10-19 — Queue empty — transcript backfill (10 recovered)
 
 - Pre-flight: `git pull` already up to date (run started straight after the Mask of the Sorcerer priority drop, `5497bc4`). Tree clean (bar the untracked image dropbox), no uncommitted slates. Rate limit at 00:10 UTC 2026-10-19: **1/15 across 1 run** (that 1-video drop, 00:08 UTC), so **14 of headroom**. No multi-video run within the last 23 h, so nothing in the block band. `test_config.py` OK. `check_integrity.py` WARN (34 imported videos missing local transcripts, 0 errors).
