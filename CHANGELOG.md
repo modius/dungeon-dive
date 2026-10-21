@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-21 — Queue empty — transcript backfill (10 recovered)
+
+- Pre-flight: `git pull` brought in the nightly `/refresh` (`6ac59b8`: insights, `stats_history/2026-10.csv`). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 10:38 UTC 2026-10-21: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 10-video backfill at 03:18 UTC 2026-10-20) was ~31 h old, clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 0 (14 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1080 total: 1067 imported, 13 no_transcript). No pending videos, so no priority batch. `series_queue.json`: `active_series` empty, `rotation_index` 0.
+- queue empty — run /plan-batch. With 0 pending videos there is nothing to plan, so per branch 3 the idle budget went to `/backfill-transcripts` (`headroom=15, from-import`). The slate was `min(10, 15)` = **10**.
+- Attempted (newest first, from 14 eligible; the `archive/transcript_backfill.json` ledger is still absent):
+  - `zjYgzIlRmOk` 2022-07-19 *Realm Fables - Part 1 - Tools for Generating Your World*
+  - `wSEMUoR4FS4` 2022-07-08 *A Casual Conversation with James M. Hewitt: LARPing! Warhammer Quest! Giant Tables! And More!*
+  - `IJdPXXMpYPk` 2022-07-01 *Hobbycast Episode 16: A Casual Conversation with Dustin Freund, Designer of The Ghosts Betwixt*
+  - `n5WXv528CII` 2022-05-31 *The Sword & Sorcery Saga - A look at Taschen's Masterpieces of Fantasy Art*
+  - `sQH3xPVic6Y` 2022-02-06 *The Sword and Sorcery Saga: The Elric Saga, by Michael Moorcock - Part 2*
+  - `nDLFzy9hIow` 2022-01-15 *The Sword and Sorcery Saga: The Elric Saga, by Michael Moorcock - Part 1*
+  - `KOedI8Dr__Y` 2021-07-11 *Warhammer Quest - Take a Look - Part 16 - Littlemonk's brick of cards*
+  - `f8fN8Uqbb8s` 2019-09-17 *Warhammer Quest - Take a Look - Part 15 - Fan Created and DIY stuff*
+  - `oDeAAnpEEXU` 2019-03-03 *Warhammer Quest - Take a Look - Part 14 - Deathblow Issues 1-3 (complete)*
+  - `6VUBa5NSLU8` 2019-02-18 *Warhammer Quest - Take a Look - Part 13 - The White Dwarf Issues (e)*
+- Transcripts **10/10, 0 permanent, 0 transient**, moved to `archive/transcripts/`. No permanent failures, so still no ledger file.
+- Rate manifest `archive/posts/post_results_20261021_103927.json` (`kind: transcript_backfill`, 10 entries). The guard now reads **10/15** until 10:39 UTC 2026-10-22. A fresh upload fetched 13–23 h from now (23:39 UTC 2026-10-21 to 09:39 UTC 2026-10-22) is in the block band and should wait for the 23 h mark.
+- No posts, no Keeper post, no queue or `status` changes. Archive dashboards rebuilt and validated.
+- **4 imported videos still missing local transcripts** (down from 14): `TwfHRcdWHRg`, `TEqu2JH5dYc`, `G76WtaecxB4`, `SeWXiEIm9oI`. Archive: 1063 transcripts, 1067 posts.
+
 ## 2026-10-20 — Queue empty — transcript backfill (10 recovered)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (`fc8874c`: insights, `stats_history/2026-10.csv`, `video_classification.json`). The tree was clean apart from the untracked image dropbox, and there were no uncommitted slates. Rate limit at 03:18 UTC 2026-10-20: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 10-video backfill at 00:11 UTC 2026-10-19) was ~27 h old, clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (24 imported videos missing local transcripts, 0 errors).
