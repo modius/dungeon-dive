@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-22 — Priority drop aborted — transcript fetch blocked (runner IP issue)
+
+- Pre-flight: `git pull` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 02:46 UTC 2026-10-22: **10/15 across 1 run**, so **5 of headroom**. The run counted was the 10-video transcript backfill at 10:39 UTC 2026-10-21, **16.1 h old**, inside the 13–23 h block band (23 h mark 09:39 UTC). `test_config.py` OK. `check_integrity.py` WARN, exit 0 (4 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **1 new upload**, `b2SwVLuFsvs` 2026-10-21 *A Look at Camp Grizzley 2nd Edition* (1081 total: 1067 imported, 13 no_transcript, 1 pending). Priority batch of 1.
+- The run proposed waiting for (or deferring to) the 23 h mark. The user chose to fetch immediately.
+- `batch_fetch_transcripts.py`: **0/1**, `b2SwVLuFsvs` raised **`IpBlocked`** (transient). transcript fetch blocked — runner IP issue. `IpBlocked` plus a fetch 16.1 h after a multi-video run is conclusive, so no retry and no diagnostic probe (per the 2026-10-13 precedent).
+- The video stays `pending` and keeps priority. No posts, no Keeper post, no dashboard rebuild, no queue change. Next attempt should wait at least 24 h from this fetch (after ~02:48 UTC 2026-10-23), since this request may have extended the block.
+- Block-band data point: an `IpBlocked` at **16.1 h** after a 10-video backfill, alongside 20.2 h (2026-10-13). The band's lower edge holds.
+
 ## 2026-10-21 — Queue empty — transcript backfill (10 recovered)
 
 - Pre-flight: `git pull` brought in the nightly `/refresh` (`6ac59b8`: insights, `stats_history/2026-10.csv`). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 10:38 UTC 2026-10-21: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 10-video backfill at 03:18 UTC 2026-10-20) was ~31 h old, clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 0 (14 imported videos missing local transcripts, 0 errors).

@@ -1,0 +1,70 @@
+{
+  "run_at": "2026-10-22T02:46:38.386326+00:00",
+  "overall_status": "warn",
+  "exit_code": 1,
+  "error_count": 0,
+  "warning_count": 2,
+  "checks": {
+    "index_integrity": {
+      "status": "pass",
+      "issues": [],
+      "counts": {
+        "total": 1080,
+        "imported": 1067,
+        "pending": 0,
+        "no_transcript": 13,
+        "skipped": 0
+      },
+      "duplicates": [],
+      "missing_fields": [],
+      "imported_without_topic_id": [],
+      "imported_without_imported_at": []
+    },
+    "archive_files": {
+      "status": "warn",
+      "issues": [
+        "0 imported videos missing post files, 4 missing transcripts"
+      ],
+      "post_files_count": 1067,
+      "transcript_files_count": 1063,
+      "transcript_files_legacy": 0,
+      "imported_count": 1067,
+      "missing_posts": [],
+      "missing_transcripts": [
+        "TwfHRcdWHRg",
+        "TEqu2JH5dYc",
+        "G76WtaecxB4",
+        "SeWXiEIm9oI"
+      ],
+      "orphan_posts": [],
+      "orphan_transcripts": []
+    },
+    "file_validity": {
+      "status": "pass",
+      "issues": [],
+      "posts_checked": 1067,
+      "transcripts_checked": 1063,
+      "json_errors": [],
+      "empty_transcripts": []
+    },
+    "naming_anomalies": {
+      "status": "pass",
+      "issues": [],
+      "legacy_files": []
+    },
+    "dashboard_sync": {
+      "status": "warn",
+      "issues": [
+        "Could not parse stats from dashboard"
+      ],
+      "mismatches": {}
+    },
+    "discourse_verification": {
+      "status": "skipped",
+      "issues": []
+    }
+  },
+  "recommendations": [
+    "4 imported videos missing local transcripts"
+  ]
+}
