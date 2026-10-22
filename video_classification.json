@@ -641,6 +641,7 @@
   "aqbo0yu_l6g": {"subject": null, "franchise": null, "subject_type": "multi", "format": "top-list", "lane": "dungeon-crawler", "theme": "fantasy", "solo": false, "series": null, "part": null},
   "ar-bXQYvUhs": {"subject": null, "franchise": null, "subject_type": "multi", "format": "discussion", "lane": "books-screen", "theme": "western", "solo": false, "series": "Shadows of Brimstone", "part": null},
   "ath0o3oOJCs": {"subject": null, "franchise": null, "subject_type": "multi", "format": "first-look", "lane": "solo-rpg", "theme": "mixed", "solo": true, "series": null, "part": null},
+  "b2SwVLuFsvs": {"subject": "Camp Grizzley", "franchise": "Camp Grizzley", "subject_type": "boardgame", "format": "first-look", "lane": "adventure-game", "theme": "horror", "solo": false, "series": null, "part": null},
   "b4fNiXZPqRQ": {"subject": "You Are the Hero", "franchise": "Fighting Fantasy", "subject_type": "book", "format": "first-look", "lane": "gamebook", "theme": "fantasy", "solo": false, "series": null, "part": null},
   "bHJfRtPpY6E": {"subject": "Ravage: Dungeons of Plunder", "franchise": "Ravage: Dungeons of Plunder", "subject_type": "boardgame", "format": "review", "lane": "dungeon-crawler", "theme": "fantasy", "solo": false, "series": null, "part": null},
   "bHuv7kKqe-A": {"subject": "Fallout: The Board Game", "franchise": "Fallout", "subject_type": "boardgame", "format": "review", "lane": "adventure-game", "theme": "post-apocalyptic", "solo": true, "series": null, "part": null},
