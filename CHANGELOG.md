@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-23 — Priority drop: imported 1 video (Camp Grizzley 2nd Edition)
+
+- Pre-flight: `git pull` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 03:44 UTC 2026-10-23: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 10-video backfill at 10:39 UTC 2026-10-21) was ~41 h old, clear of the 13–23 h band. Yesterday's blocked single fetch (~02:48 UTC 2026-10-22) was ~25 h old, past the 24 h wait the 2026-10-22 entry asked for. `test_config.py` OK. `check_integrity.py` WARN, exit 0 (4 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1081 total: 1067 imported, 13 no_transcript, 1 pending). Priority batch of 1: `b2SwVLuFsvs` 2026-10-21 *A Look at Camp Grizzley 2nd Edition*, carried over from the 2026-10-22 abort.
+- `batch_fetch_transcripts.py`: **1/1**, 0 permanent, 0 transient. The block lifted within ~25 h of the 16.1 h `IpBlocked`.
+- Posted topic **2331**, backdated to 2026-10-21T16:00:15Z. Rate manifest archived by `batch_post.py`.
+- Keeper priority drop: [1170/176](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/176) (`keeper-posts/keeper-priority-2026-10-23.md`). Deeper stacks: *Horror-themed video games and board games - which works best?* (1909) and *The Ten Greatest (my favorite) Horror Films of All Time* (1904).
+- No queue change (priority run). Archive dashboards rebuilt and validated. Archive: 1064 transcripts, 1068 posts.
+
 ## 2026-10-22 — Priority drop aborted — transcript fetch blocked (runner IP issue)
 
 - Pre-flight: `git pull` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 02:46 UTC 2026-10-22: **10/15 across 1 run**, so **5 of headroom**. The run counted was the 10-video transcript backfill at 10:39 UTC 2026-10-21, **16.1 h old**, inside the 13–23 h block band (23 h mark 09:39 UTC). `test_config.py` OK. `check_integrity.py` WARN, exit 0 (4 imported videos missing local transcripts, 0 errors).
