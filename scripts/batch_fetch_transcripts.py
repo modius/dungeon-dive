@@ -16,8 +16,10 @@ import os
 import sys
 import time
 from collections import namedtuple
+from urllib.parse import urlsplit
 
 try:
+    import requests
     from youtube_transcript_api import YouTubeTranscriptApi
 except ImportError:
     print("Error: youtube-transcript-api required.")
@@ -40,8 +42,62 @@ PERMANENT_FAILURES = {
 
 TranscriptResult = namedtuple(
     "TranscriptResult",
-    ["text", "error_type", "error_message", "permanent"],
+    ["text", "error_type", "error_message", "permanent", "block_kind", "http_trace"],
 )
+
+# youtube-transcript-api raises the same IpBlocked for two different signals:
+# an HTTP 429 on any request, or a watch page served as a reCAPTCHA challenge.
+# Its message is boilerplate either way, so we watch the responses ourselves.
+RECAPTCHA_MARKER = 'class="g-recaptcha"'
+
+
+def _trace_session(trace: list) -> "requests.Session":
+    """A Session that appends a summary of every response it receives to `trace`.
+
+    Query strings are dropped from URLs: the innertube call carries an API key
+    and the caption URL is a long signed blob, and neither helps a diagnosis.
+    """
+    session = requests.Session()
+
+    def record(response, *args, **kwargs):
+        parts = urlsplit(response.url)
+        body = response.text or ""
+        trace.append({
+            "method": response.request.method,
+            "url": f"{parts.scheme}://{parts.netloc}{parts.path}",
+            "status": response.status_code,
+            "redirected_from": [
+                f"{urlsplit(r.url).netloc}{urlsplit(r.url).path}"
+                for r in response.history
+            ],
+            "retry_after": response.headers.get("Retry-After"),
+            "recaptcha": RECAPTCHA_MARKER in body,
+            "body_snippet": body[:200],
+        })
+
+    session.hooks["response"].append(record)
+    return session
+
+
+def classify_block(trace: list) -> str:
+    """Name the response that made the library raise IpBlocked/RequestBlocked.
+
+    - "http_429": YouTube answered a request with 429 Too Many Requests.
+    - "recaptcha": the watch page came back as a "confirm you're not a robot" challenge.
+    - "sorry_redirect": a request was bounced to google.com/sorry, Google's
+      abuse interstitial (usually a 429 with a CAPTCHA).
+    - "unknown": none of the above appear in the trace.
+    """
+    for r in trace:
+        if r["status"] == 429:
+            return "http_429"
+    for r in trace:
+        if "/sorry" in r["url"] or any("/sorry" in h for h in r["redirected_from"]):
+            return "sorry_redirect"
+    for r in trace:
+        if r["recaptcha"]:
+            return "recaptcha"
+    return "unknown"
 
 
 def fetch_transcript(video_id: str) -> TranscriptResult:
@@ -51,8 +107,9 @@ def fetch_transcript(video_id: str) -> TranscriptResult:
         TranscriptResult with text=None and error_type/permanent set on failure.
         On success, error_type is None.
     """
+    trace = []
     try:
-        ytt_api = YouTubeTranscriptApi()
+        ytt_api = YouTubeTranscriptApi(http_client=_trace_session(trace))
         entries = ytt_api.fetch(video_id)
         texts = []
         for entry in entries:
@@ -63,15 +120,20 @@ def fetch_transcript(video_id: str) -> TranscriptResult:
             error_type=None,
             error_message=None,
             permanent=False,
+            block_kind=None,
+            http_trace=None,
         )
     except Exception as e:
         error_type = type(e).__name__
         error_message = str(e)[:300]  # cap to keep manifest readable
+        blocked = error_type in ("IpBlocked", "RequestBlocked")
         return TranscriptResult(
             text=None,
             error_type=error_type,
             error_message=error_message,
             permanent=error_type in PERMANENT_FAILURES,
+            block_kind=classify_block(trace) if blocked else None,
+            http_trace=trace,
         )
 
 
@@ -223,6 +285,11 @@ def main():
         else:
             classification = "PERMANENT" if result.permanent else "TRANSIENT"
             print(f"    ✗ {classification} {result.error_type}: {result.error_message[:120]}")
+            if result.block_kind:
+                print(f"      → block signal: {result.block_kind}")
+            for r in result.http_trace or []:
+                flag = " [reCAPTCHA]" if r["recaptcha"] else ""
+                print(f"      {r['method']} {r['url']} → {r['status']}{flag}")
             if result.permanent:
                 print(f"      → genuinely no captions, OK to mark no_transcript")
                 permanent_failed += 1
@@ -235,6 +302,8 @@ def main():
                 'error_type': result.error_type,
                 'error_message': result.error_message,
                 'permanent': result.permanent,
+                'block_kind': result.block_kind,
+                'http_trace': result.http_trace,
             })
 
         # Delay between fetches to avoid rate limiting
