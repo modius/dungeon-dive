@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-10-23T03:44:38.410242+00:00",
+  "last_fetched": "2026-10-25T20:42:29.304057+00:00",
   "videos": [
+    {
+      "video_id": "ZDmKI7YRHkk",
+      "title": "Top 10 Adventure Games of All Time (2026 edition)",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive\n\nIntro - 00:00\n10 - 02:22\n09 - 05:09\n08 - 06:46\n07 - 08:46\n06 - 11:50\n05 - 13:32\n04 - 17:12\n03 - 19:21\n02 - 22:16\n01 - 24:47",
+      "published_at": "2026-10-25T16:00:01Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/ZDmKI7YRHkk/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2334,
+      "imported_at": "2026-10-25T20:43:00.241851Z"
+    },
     {
       "video_id": "b2SwVLuFsvs",
       "title": "A Look at Camp Grizzley 2nd Edition",

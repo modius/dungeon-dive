@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-26 — Priority drop: imported 1 video (Top 10 Adventure Games, 2026 edition)
+
+- Pre-flight: `git pull` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at ~20:40 UTC 2026-10-25: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 10-video backfill at 10:39 UTC 2026-10-21) was ~106 h old, well clear of the 13–23 h band; the last fetch of any size (the 1-video drop at 03:45 UTC 2026-10-23) was ~65 h old. `test_config.py` OK. `check_integrity.py` WARN, exit 0 (4 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **1 new upload** (1082 total: 1068 imported, 13 no_transcript, 1 pending). Priority batch of 1: `ZDmKI7YRHkk` 2026-10-25 *Top 10 Adventure Games of All Time (2026 edition)*.
+- `batch_fetch_transcripts.py`: **1/1**, 0 permanent, 0 transient.
+- Posted topic **2334**, backdated to 2026-10-25T16:00:01Z. Rate manifest archived by `batch_post.py`.
+- Keeper priority drop: [1170/177](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/177) (`keeper-posts/keeper-priority-2026-10-26.md`). Deeper stacks: the earlier editions of the same list, *Top 10 Adventure Board Games - 2024 edition* (20) and *Top Ten Adventure Games* Parts One and Two (1398, 1399).
+- No queue change (priority run). Archive dashboards rebuilt and validated. Archive: 1065 transcripts, 1069 posts.
+
 ## 2026-10-23 — Priority drop: imported 1 video (Camp Grizzley 2nd Edition)
 
 - Pre-flight: `git pull` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 03:44 UTC 2026-10-23: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 10-video backfill at 10:39 UTC 2026-10-21) was ~41 h old, clear of the 13–23 h band. Yesterday's blocked single fetch (~02:48 UTC 2026-10-22) was ~25 h old, past the 24 h wait the 2026-10-22 entry asked for. `test_config.py` OK. `check_integrity.py` WARN, exit 0 (4 imported videos missing local transcripts, 0 errors).
