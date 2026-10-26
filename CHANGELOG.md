@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-26 — Queue empty — transcript backfill (4 recovered)
+
+- Pre-flight: `git pull` fast-forwarded the nightly `/refresh` (stats history, classification). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 11:07 UTC 2026-10-26: **1/15 across 1 run**, so **14 of headroom**. The only run counted was this morning's 1-video priority drop (20:43 UTC 2026-10-25, ~14.4 h old). The last multi-video fetch (the 10-video backfill at 10:39 UTC 2026-10-21) was ~120 h old, well clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (4 imported videos missing local transcripts, 0 errors).
+- `fetch_channel_videos.py`: **0 new uploads** (1082 total: 1069 imported, 13 no_transcript, 0 pending). No priority videos, and `series_queue.json` `active_series` is empty: queue empty — run /plan-batch. With 0 pending videos, the idle budget went to `/backfill-transcripts`.
+- Backfill slate: min(10, 14) capped by the 4 eligible candidates, newest first: `TwfHRcdWHRg` *Warhammer Quest: Blackstone Fortress - a brief overview* (2018-12-04), `TEqu2JH5dYc` *Warhammer Quest - Take a Look - Part 12 - The White Dwarf Issues (d)* (2018-10-11), `G76WtaecxB4` *Warhammer Quest - Take a Look - Part 11 - The White Dwarf Issues (c)* (2018-06-10), `SeWXiEIm9oI` *The Dungeon Dive Collection as of January, 2018* (2018-01-01).
+- `batch_fetch_transcripts.py`: **4/4**, 0 permanent, 0 transient. All four moved to `archive/transcripts/`. Rate manifest: `archive/posts/post_results_20261026_110746.json` (4 entries). No ledger additions.
+- **Remaining missing: 0.** The transcript backfill is complete: every imported video now has an archived transcript. Archive dashboards rebuilt and validated. Archive: 1069 transcripts, 1069 posts.
+
 ## 2026-10-26 — Priority drop: imported 1 video (Top 10 Adventure Games, 2026 edition)
 
 - Pre-flight: `git pull` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at ~20:40 UTC 2026-10-25: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 10-video backfill at 10:39 UTC 2026-10-21) was ~106 h old, well clear of the 13–23 h band; the last fetch of any size (the 1-video drop at 03:45 UTC 2026-10-23) was ~65 h old. `test_config.py` OK. `check_integrity.py` WARN, exit 0 (4 imported videos missing local transcripts, 0 errors).
