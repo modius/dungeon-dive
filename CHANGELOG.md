@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-29 — Priority drop: imported 1 video (Spooky Solo RPGs to Play in the Dark)
+
+- Pre-flight: `git pull` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 21:07 UTC 2026-10-28: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 4-video backfill at 11:07 UTC 2026-10-26) was ~58 h old, well clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (dashboard stats unparsed, 0 errors).
+- `fetch_channel_videos.py`: **1 new upload** (1083 total: 1069 imported, 13 no_transcript, 1 pending). Priority batch of 1: `d-624iToYr4` 2026-10-28 *Spooky Solo RPGs to Play in the Dark*.
+- `batch_fetch_transcripts.py`: **1/1**, 0 permanent, 0 transient.
+- Posted topic **2340**, backdated to 2026-10-28T16:00:10Z. Rate manifest archived by `batch_post.py`.
+- Keeper priority drop: [1170/178](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/178) (`keeper-posts/keeper-priority-2026-10-29.md`). Deeper stacks: *A Look at Alone Against Fear* (2161), *A Guide to Solo Analog Horror* (31), *Ghost Transmission* (1227).
+- No queue change (priority run). Archive dashboards rebuilt and validated. Archive: 1070 transcripts, 1070 posts.
+
 ## 2026-10-26 — Queue empty — transcript backfill (4 recovered)
 
 - Pre-flight: `git pull` fast-forwarded the nightly `/refresh` (stats history, classification). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 11:07 UTC 2026-10-26: **1/15 across 1 run**, so **14 of headroom**. The only run counted was this morning's 1-video priority drop (20:43 UTC 2026-10-25, ~14.4 h old). The last multi-video fetch (the 10-video backfill at 10:39 UTC 2026-10-21) was ~120 h old, well clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (4 imported videos missing local transcripts, 0 errors).
