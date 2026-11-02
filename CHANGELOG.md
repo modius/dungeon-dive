@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-02 — Priority drop: imported 1 video (Top 10 Dungeon Crawls, 2026 Edition)
+
+- Pre-flight: `git pull origin main` fast-forwarded the nightly refresh (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at ~00:16 UTC 2026-11-02: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (4-video backfill at 11:07 UTC 2026-10-26) was ~157 h old, well clear of the 13–23 h band; the last single-video drop was ~99 h old. `test_config.py` OK. Pre- and post-import integrity checks WARN (dashboard stats unparsed), with **0 errors**; index, archive files, file validity and naming all PASS.
+- `fetch_channel_videos.py`: **1 new upload** (1084 total: 1070 imported, 13 no_transcript, 1 pending). Priority batch of 1: `fHUOYIXcpuc` 2026-11-01 *Top 10 Dungeon Crawls of All Time (2026 Edition)*.
+- `batch_fetch_transcripts.py`: **1/1**, 0 permanent, 0 transient. Validated 218-word summary; title and publish timestamp copied directly from the index.
+- Posted topic **2343**, backdated to **2026-11-01T17:00:26Z**. Rate manifest: `archive/posts/post_results_20261102_001756.json`.
+- Keeper priority drop: [1170/179](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/179), "A Revised Order of Descent" (`keeper-posts/keeper-priority-2026-11-02.md`). Deeper stacks: 2024 dungeon crawl rankings (15) and the earlier two-part countdown (1397, 1396).
+- No queue change (priority run). Archive dashboards rebuilt; all four dashboard inline scripts validated and no conflict markers found. Archive: **1071 transcripts, 1071 posts**, 0 pending. Planned queue remains empty.
+
 ## 2026-10-29 — Priority drop: imported 1 video (Spooky Solo RPGs to Play in the Dark)
 
 - Pre-flight: `git pull` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at 21:07 UTC 2026-10-28: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (the 4-video backfill at 11:07 UTC 2026-10-26) was ~58 h old, well clear of the 13–23 h band. `test_config.py` OK. `check_integrity.py` WARN, exit 1 (dashboard stats unparsed, 0 errors).
