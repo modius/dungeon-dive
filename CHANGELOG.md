@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-09 — Priority drop: imported 1 video (Pulp Alley comprehensive guide)
+
+- Pre-flight: `git pull origin main` fast-forwarded nightly refresh updates (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate guard at ~23:33 UTC 2026-11-08: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video priority drop at 00:17 UTC 2026-11-02 (~167 h earlier); the last multi-video fetch was the 4-video backfill at 11:07 UTC 2026-10-26 (~324 h earlier), well clear of the 13–23 h band. `test_config.py` OK. Pre- and post-import integrity checks WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming all PASS.
+- `fetch_channel_videos.py`: **1 new upload** (1085 total: 1071 imported, 13 no_transcript, 1 pending). Priority batch: `OQB6-0dMtGU`, 2026-11-08 *Pulp Alley - A Comprehensive Guide to this Great Skirmish Game*.
+- `batch_fetch_transcripts.py`: **1/1**, 0 permanent, 0 transient. Read full transcript and validated 217-word summary; title and publish timestamp copied programmatically from the index. Summary distinguishes the solo card deck from automated enemy behaviour.
+- Posted topic **2347**, backdated to **2026-11-08T17:00:05Z**. Rate manifest: `archive/posts/post_results_20261108_233438.json`.
+- Keeper alert: [1170/180](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/180), "A League of Questionable Associates" (`keeper-posts/keeper-priority-2026-11-09.md`). Deeper stacks: *Forbidden Psalm* (1259) and *The Doomed* (2298), hooks read from archived summaries.
+- Queue untouched (priority run); planned queue remains empty. Archive dashboards rebuilt and all four dashboards validated. Archive: **1072 transcripts, 1072 posts**, 0 pending.
+
 ## 2026-11-02 — Priority drop: imported 1 video (Top 10 Dungeon Crawls, 2026 Edition)
 
 - Pre-flight: `git pull origin main` fast-forwarded the nightly refresh (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate limit at ~00:16 UTC 2026-11-02: **0/15 across 0 runs**, so **15 of headroom**. The last multi-video fetch (4-video backfill at 11:07 UTC 2026-10-26) was ~157 h old, well clear of the 13–23 h band; the last single-video drop was ~99 h old. `test_config.py` OK. Pre- and post-import integrity checks WARN (dashboard stats unparsed), with **0 errors**; index, archive files, file validity and naming all PASS.
