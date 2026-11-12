@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-12 — Priority drop: imported 1 video (Where's Game X? A Top 10 Discussion)
+
+- Pre-flight: `git pull origin main` fast-forwarded nightly refresh updates (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate guard at ~01:20 UTC 2026-11-12: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video priority drop at 23:34 UTC 2026-11-08 (~74 h earlier); last multi-video fetch was the 4-video backfill at 11:07 UTC 2026-10-26 (~398 h earlier), well clear of the 13–23 h band. `test_config.py` OK. Pre- and post-import integrity WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming PASS.
+- `fetch_channel_videos.py`: **1 new upload** (1086 total: 1072 imported, 13 no_transcript, 1 pending). Priority batch: `Gf_f0aCIBYM`, 2026-11-11 *Where's Game X? A Top 10 Discussion*.
+- `batch_fetch_transcripts.py`: **1/1**, 0 permanent, 0 transient. Full transcript read; 223-word summary validated. Title and publish timestamp copied programmatically from the index.
+- Posted topic **2351**, backdated to **2026-11-11T17:00:02Z**. Rate manifest: `archive/posts/post_results_20261112_012139.json`.
+- Keeper alert: [1170/181](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/181), "The Missing Name in the Ledger" (`keeper-posts/keeper-priority-2026-11-12.md`). Deeper stacks: the 2026 adventure rankings (2334) and dungeon crawl rankings (2343), hooks read from archived summaries.
+- Queue untouched (priority run); planned queue remains empty. Archive dashboards rebuilt and all four dashboards validated. Archive: **1073 transcripts, 1073 posts**, 0 pending.
+
 ## 2026-11-09 — Priority drop: imported 1 video (Pulp Alley comprehensive guide)
 
 - Pre-flight: `git pull origin main` fast-forwarded nightly refresh updates (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate guard at ~23:33 UTC 2026-11-08: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video priority drop at 00:17 UTC 2026-11-02 (~167 h earlier); the last multi-video fetch was the 4-video backfill at 11:07 UTC 2026-10-26 (~324 h earlier), well clear of the 13–23 h band. `test_config.py` OK. Pre- and post-import integrity checks WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming all PASS.

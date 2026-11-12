@@ -1,7 +1,17 @@
 {
   "channel_id": "UCKW6yMwL_aEu83g6DdjVfxw",
-  "last_fetched": "2026-11-08T23:33:38.332878+00:00",
+  "last_fetched": "2026-11-12T01:20:55.141082+00:00",
   "videos": [
+    {
+      "video_id": "Gf_f0aCIBYM",
+      "title": "Where's Game X? A Top 10 Discussion",
+      "description": "Join the Dungeon Dive Patreon - Thanks for the support!  \nhttps://www.patreon.com/thedungeondive    \n\nDungeon Dive Quest - The Dungeon Dive Forum\nhttps://dungeondive.quest/  \n\nGet your Dungeon Dive T-Shirts!  \nhttps://www.teepublic.com/user/the-dungeon-dive",
+      "published_at": "2026-11-11T17:00:02Z",
+      "thumbnail_url": "https://i.ytimg.com/vi/Gf_f0aCIBYM/hqdefault.jpg",
+      "status": "imported",
+      "discourse_topic_id": 2351,
+      "imported_at": "2026-11-12T01:21:39.446492Z"
+    },
     {
       "video_id": "OQB6-0dMtGU",
       "title": "Pulp Alley - A Comprehensive Guide to this Great Skirmish Game",
