@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-17 — Priority drop: imported 1 video (13 Great Games You Can Buy Right Now!*)
+
+- Pre-flight: `git pull origin main` fast-forwarded nightly refresh updates (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate guard at ~02:28 UTC 2026-11-17: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video priority drop at 01:21 UTC 2026-11-12 (~121 h earlier); last multi-video fetch was the 4-video backfill at 11:07 UTC 2026-10-26 (~519 h earlier), well clear of the 13–23 h band. `test_config.py` OK. Pre- and post-import integrity WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming PASS.
+- `fetch_channel_videos.py`: **1 new upload** (1087 total: 1073 imported, 13 no_transcript, 1 pending). Priority batch: `UyFtwB6-RNs`, 2026-11-15 *13 Great Games You Can Buy Right Now!*.
+- `batch_fetch_transcripts.py`: **1/1**, 0 permanent, 0 transient. Full transcript read; 223-word summary validated. Title and publish timestamp copied programmatically from the index. Availability claims attributed to Daniel's official US-store checks as of November 14, 2026, including geographic and shipping caveats.
+- Posted topic **2354**, backdated to **2026-11-15T17:00:36Z**. Rate manifest: `archive/posts/post_results_20261117_022953.json`.
+- Keeper alert: [1170/182](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/182), "Thirteen Without an Auction" (`keeper-posts/keeper-priority-2026-11-17.md`). Deeper stacks: *The Restless* review (1403) and *Horrified - A Perfect Game (for what it is)* (2165), hooks read from archived summaries.
+- Queue untouched (priority run); planned queue remains empty. Archive dashboards rebuilt and all four dashboards validated. Archive: **1074 transcripts, 1074 posts**, 0 pending.
+
 ## 2026-11-12 — Priority drop: imported 1 video (Where's Game X? A Top 10 Discussion)
 
 - Pre-flight: `git pull origin main` fast-forwarded nightly refresh updates (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate guard at ~01:20 UTC 2026-11-12: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video priority drop at 23:34 UTC 2026-11-08 (~74 h earlier); last multi-video fetch was the 4-video backfill at 11:07 UTC 2026-10-26 (~398 h earlier), well clear of the 13–23 h band. `test_config.py` OK. Pre- and post-import integrity WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming PASS.
