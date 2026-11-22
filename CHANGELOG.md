@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-23 — Priority drop: imported 1 video (HeroQuest newer expansions)
+
+- Pre-flight: `git pull origin main` fast-forwarded nightly refresh updates (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate guard at ~22:56 UTC 2026-11-22: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video priority drop at 02:57 UTC 2026-11-19 (~92 h earlier); last multi-video fetch was the 4-video backfill at 11:07 UTC 2026-10-26 (~660 h earlier), well clear of the 13–23 h band. `test_config.py` OK. Pre- and post-import integrity WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming PASS.
+- `fetch_channel_videos.py`: **1 new upload** (1089 total: 1075 imported, 13 no_transcript, 1 pending). Priority batch: `50FAA319hpc`, 2026-11-22 *HeroQuest - A Look at Some of the Newer (to me) Expansions*.
+- `batch_fetch_transcripts.py`: **1/1**, 0 permanent, 0 transient. Full transcript read; 223-word summary validated. Title and publish timestamp copied programmatically from the index. Summary covers the component tour and solo/sandbox perspective without implying a campaign playthrough.
+- Posted topic **2359**, backdated to **2026-11-22T17:00:19Z**. Rate manifest: `archive/posts/post_results_20261122_225753.json`.
+- Keeper alert: [1170/184](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/184), "More Potions for the Strongroom" (`keeper-posts/keeper-priority-2026-11-23.md`). Deeper stacks: AxianQuest Infinite Dungeons (1427), app-free solo customisation (1432), and the earlier expansion tour (1431), hooks read from archived summaries.
+- Queue untouched (priority run); planned queue remains empty. Archive dashboards rebuilt and all four dashboards validated. Archive: **1076 transcripts, 1076 posts**, 0 pending.
+
 ## 2026-11-19 — Priority drop: imported 1 video (Weird, Whimsy, and Wonder)
 
 - Pre-flight: `git pull origin main` already up to date. Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate guard at ~02:56 UTC 2026-11-19: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video priority drop at 02:29 UTC 2026-11-17 (~48.4 h earlier); last multi-video fetch was the 4-video backfill at 11:07 UTC 2026-10-26 (~568 h earlier), well clear of the 13–23 h band. `test_config.py` OK. Pre- and post-import integrity WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming PASS.
