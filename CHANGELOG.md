@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-23 — Queue empty — no import or backfill work
+
+- Pre-flight: `git pull origin main` already up to date. Tree clean apart from the untracked image dropbox. Rate guard at ~01:24 UTC: **1/15 across 1 run**, so **14 of headroom**. The only counted run was this morning's single-video HeroQuest priority drop (22:57 UTC 2026-11-22); no recent multi-video burst. `test_config.py` OK. Integrity WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming PASS.
+- `fetch_channel_videos.py`: **0 new uploads** (1089 total: 1076 imported, 13 no_transcript, 0 pending).
+- **queue empty — run /plan-batch**. Backfill complete: all 1076 imported videos have archived transcripts; no eligible candidates. No transcript requests, posts, Keeper alert, dashboard rebuild or queue changes this run.
+- Archive unchanged: **1076 transcripts, 1076 posts**. Recorded the refreshed index timestamp and integrity report.
+
 ## 2026-11-23 — Priority drop: imported 1 video (HeroQuest newer expansions)
 
 - Pre-flight: `git pull origin main` fast-forwarded nightly refresh updates (dashboards, classification, stats history). Tree clean apart from the untracked image dropbox, no uncommitted slates. Rate guard at ~22:56 UTC 2026-11-22: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video priority drop at 02:57 UTC 2026-11-19 (~92 h earlier); last multi-video fetch was the 4-video backfill at 11:07 UTC 2026-10-26 (~660 h earlier), well clear of the 13–23 h band. `test_config.py` OK. Pre- and post-import integrity WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming PASS.
