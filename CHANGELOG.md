@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-26 — Priority drop: imported 1 video (Tomb Raider: The Crypt of Chronos revisited)
+
+- Pre-flight: `git pull origin main` already up to date. No tracked changes or queued slates. Rate guard at 21:38 UTC on 2026-11-25 reported **0/15** across zero runs, with no recent multi-video burst. Configuration passed. Both integrity checks found zero errors and warned that dashboard stats could not be parsed.
+- Channel scan found **1 new upload**: `WlQ0dZTiUNo`, *Was I Wrong About Tomb Raider: The Crypt of Chronos?* The transcript fetched successfully and the 202-word summary passed validation.
+- Published [topic 2360](https://dungeondive.quest/t/2360), backdated to **2026-11-25T17:00:40Z**. Rate manifest: `archive/posts/post_results_20261125_213917.json`.
+- Posted the Keeper alert [A Second Descent into Chronos](https://dungeondive.quest/t/dungeon-dive-video-archive-update/1170/185), with a link to the original review (1698).
+- Rebuilt the archive dashboards and validated all four pages. Archive: **1,077 transcripts and 1,077 posts**, with zero videos pending and an empty planned queue.
+
 ## 2026-11-25 — Queue empty — no import or backfill work
 
 - Pre-flight: `git pull origin main` fast-forwarded nightly refresh updates (dashboards and stats history). Tree clean apart from the untracked image dropbox. Rate guard at ~04:52 UTC: **0/15 across 0 runs**, so **15 of headroom**. Last fetch was the single-video HeroQuest priority drop at 22:57 UTC 2026-11-22 (~54 h earlier); no recent multi-video burst. `test_config.py` OK. Integrity WARN (dashboard stats unparsed), **0 errors**; index, archive, validity and naming PASS.
